@@ -1,0 +1,65 @@
+.ButtonBase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--btn-padding);
+  color: var(--btn-color);
+  background-color: var(--btn-background);
+  font-weight: var(--btn-font-weight);
+  cursor: pointer;
+  min-height: var(--btn-height);
+  font-size: var(--btn-font-size);
+  border: var(--btn-border-width) solid transparent;
+  transition: var(--btn-transition);
+
+  &[disabled] {
+    background-color: var(--btn-background-disabled);
+    cursor: auto;
+    &:hover,
+    &:focus {
+      background-color: var(--btn-background-disabled);
+    }
+  }
+
+  &:hover {
+    background-color: var(--btn-background-hover);
+  }
+
+  &:focus {
+    background-color: var(--btn-background-focus);
+  }
+}
+
+.large {
+  font-size: var(--btn-font-size-lg);
+  min-height: var(--btn-height-lg);
+}
+
+.small {
+  font-size: var(--btn-font-size-sm);
+  min-height: var(--btn-height-sm);
+}
+
+.loading {
+  background-color:var(--btn-background-disabled);
+  cursor: auto;
+  pointer-events: none;
+  user-select: none;
+
+  span {
+    animation: rotate 1s linear infinite;
+  }
+}
+
+.block {
+  width: 100%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
