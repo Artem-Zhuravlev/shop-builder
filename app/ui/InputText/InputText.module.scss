@@ -1,0 +1,13 @@
+.InputText {
+  min-height: var(--input-height);
+  padding: var(--input-padding);
+  border: var(--input-border);
+
+  &:focus {
+    border-color: var(--input-border-focus);
+    outline: transparent;
+  }
+  &:disabled {
+    background-color: var(--input-disabled);
+  }
+}
