@@ -273,7 +273,8 @@ body {
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: var(--font-family);
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
 }
 
 a {
@@ -286,7 +287,8 @@ a {
 }
 
 :root {
-  --font-family: 'Roboto', sans-serif;
+  --base-font-size: 16px;
+  --base-font-family: 'Roboto', sans-serif;
   --color-primary: #222;
   --color-text: #000;
   --color-disabled: #565656;
@@ -304,7 +306,7 @@ a {
   --btn-color: var(--color-white);
   --btn-font-weight: var(--font-weight-medium);
   --btn-border-width: 2px;
-  --btn-font-size: 16px;
+  --btn-font-size: var(--base-font-size);
   --btn-height: 38px;
   --btn-font-size-lg: 20px;
   --btn-height-lg: 48px;
@@ -318,4 +320,6 @@ a {
   --input-border: 1px solid #222;
   --input-border-focus: #0ec1ae;
   --input-disabled: #c5c5c5;
+  --input-label-gap: 8px;
+  --input-label-size: var(--base-font-size);
 }

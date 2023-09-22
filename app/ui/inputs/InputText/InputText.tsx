@@ -1,6 +1,7 @@
-import React, { FC, InputHTMLAttributes, useCallback, useState } from 'react';
+import React, { FC, InputHTMLAttributes, useState } from 'react';
 import { Field } from 'react-final-form';
 import cls from './InputText.module.scss';
+import { Label } from '../Label/Label';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
@@ -10,6 +11,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   withForm?: boolean;
+  label: string;
 }
 
 export const InputText:FC<InputProps> = ({
@@ -22,47 +24,54 @@ export const InputText:FC<InputProps> = ({
   onFocus,
   onBlur,
   withForm = true,
+  label
 }) => {
   const [initialValue, setInitialValue] = useState(value);
-  const handleInputChange = useCallback((e:any) => {
+  const handleInputChange = (e: any) => {
     const newValue = e.target.value;
     setInitialValue(newValue);
     onChange(newValue);
-  }, [onChange]);
+  };
 
-  return withForm ? (
-    <Field
-      name={name}
+  return (
+    <Label
+      name={label}
     >
       {
-        
-        ({ input }) => (
+        withForm ? (
+          <Field
+            name={name}
+          >
+            {
+              ({ input }) => (
+                <input
+                  {...input}
+                  className={cls.InputText}
+                  type="text"
+                  id={id}
+                  placeholder={placeholder}
+                  disabled={disabled}
+                  onFocus={onFocus}
+                  onBlur={onBlur}
+                />  
+              )
+            }
+          </Field>
+        ) : (
           <input
-            {...input}
             className={cls.InputText}
             type="text"
+            name={name}
             id={id}
             placeholder={placeholder}
             disabled={disabled}
+            value={initialValue}
+            onChange={handleInputChange}
             onFocus={onFocus}
             onBlur={onBlur}
-          />  
+          />
         )
-
       }
-    </Field>
-  ) : (
-    <input
-      className={cls.InputText}
-      type="text"
-      name={name}
-      id={id}
-      placeholder={placeholder}
-      disabled={disabled}
-      value={initialValue}
-      onChange={handleInputChange}
-      onFocus={onFocus}
-      onBlur={onBlur}
-    />
+    </Label>
   );
 }

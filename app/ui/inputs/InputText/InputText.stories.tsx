@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { Form } from 'react-final-form';
 import { InputText } from './InputText';
-import { ButtonBase } from '../ButtonBase';
+import { ButtonBase } from '../../ButtonBase';
 
 export default {
   title: 'inputs/InputText',
@@ -24,7 +24,7 @@ const Template: StoryFn<typeof InputText> = (args) => {
       
       <form
         onSubmit={handleSubmit}
-        style={{ display: 'flex', gap: '20px' }}
+        style={{ display: 'flex', gap: '20px', alignItems: 'flex-end' }}
       >
         <InputText
           {...args}
@@ -40,7 +40,8 @@ export const Primary = Template.bind({});
 Primary.args = {
   value: 'Some string',
   withForm: true,
-  placeholder: 'Please add text'
+  placeholder: 'Please add text',
+  label: 'Field'
 };
 
 export const PrimaryDisabled = Template.bind({});
@@ -48,19 +49,22 @@ PrimaryDisabled.args = {
   value: 'Some string',
   withForm: true,
   disabled: true,
-  placeholder: 'Please add text'
+  placeholder: 'Please add text',
+  label: 'Field'
 };
 
 export const EmptyField = Template.bind({});
 EmptyField.args = {
   value: '',
   withForm: true,
-  placeholder: 'Please add text'
+  placeholder: 'Please add text',
+  label: 'Field'
 };
 
 export const WithoutFormWrapper = Template.bind({});
 WithoutFormWrapper.args = {
   value: 'without form wrapper',
   withForm: false,
-  placeholder: 'Please add text'
+  placeholder: 'Please add text',
+  label: 'Field'
 };
