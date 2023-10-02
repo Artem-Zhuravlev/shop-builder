@@ -295,6 +295,7 @@ a {
   --color-white: #fff;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
+  --gap-middle: 15px;
 
   /* button  */
   --btn-font-size: 1.4rem;
@@ -322,4 +323,5 @@ a {
   --input-disabled: #c5c5c5;
   --input-label-gap: 8px;
   --input-label-size: var(--base-font-size);
+  --input-radio-size: 15px;
 }

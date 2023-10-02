@@ -1,0 +1,52 @@
+.RadioGroup {
+  display: grid;
+  gap: var(--gap-middle);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr ));
+}
+
+.InputRadio {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  input[type="radio"] {
+    display: none;
+
+    &:checked + .InputRadioLabel {
+      &::after {
+        background-color: var(--color-primary);
+      }
+    }
+  } 
+}
+
+.InputRadioLabel {
+  position: relative;
+  font-size: var(--input-label-size);
+  padding-left: calc(var(--input-radio-size) * 2);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+  }
+
+  &::before {
+    left: 0;
+    width: var(--input-radio-size);
+    height: var(--input-radio-size);
+    border: var(--input-border);
+    border-radius: 50%;
+  }
+
+  &::after {
+    left: calc(var(--input-radio-size) * 0.3);
+    width: calc(var(--input-radio-size) * 0.5);
+    height: calc(var(--input-radio-size) * 0.5);
+    background-color: transparent;
+  }
+}
