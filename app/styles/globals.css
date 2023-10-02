@@ -315,8 +315,8 @@ a {
   --btn-transition: .2s ease;
 
   /* inputs */
-  --input-height: 38px;
-  --input-padding: 6px 12px;
+  --input-size: 38px;
+  --input-padding: 6px 44px 6px 12px;
   --input-border: 1px solid #222;
   --input-border-focus: #0ec1ae;
   --input-disabled: #c5c5c5;

@@ -1,8 +1,21 @@
 .Label {
+  position: relative;
   cursor: pointer;
 }
 
 .LabelName {
   margin-bottom: var(--input-label-gap);
+  font-size: var(--input-label-size);
+}
+
+.LabelSuffix {
+  position: absolute;
+  right: 0;
+  width: var(--input-size);
+  height: var(--input-size);
+  bottom: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
   font-size: var(--input-label-size);
 }
