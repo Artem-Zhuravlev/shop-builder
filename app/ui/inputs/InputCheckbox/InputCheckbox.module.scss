@@ -1,0 +1,41 @@
+.InputCheckbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked + .InputCheckboxLabel {
+      &::before {
+        color: var(--color-white);
+        background-color: var(--color-primary);
+      }
+    }
+  } 
+}
+
+.InputCheckboxLabel {
+  position: relative;
+  font-size: var(--input-label-size);
+  padding-left: calc(var(--input-radio-size) * 2);
+  user-select: none;
+
+  &::before {
+    content: "\ea10";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-family: 'icomoon';
+    color: transparent;
+    width: var(--input-radio-size);
+    height: var(--input-radio-size);
+    border: var(--input-border);
+  }
+}
