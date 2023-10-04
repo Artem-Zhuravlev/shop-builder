@@ -293,6 +293,8 @@ a {
   --color-text: #000;
   --color-disabled: #565656;
   --color-white: #fff;
+  --color-danger: #DE350B;
+  --color-danger-hover: #FFBDAD;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --gap-middle: 15px;
@@ -324,4 +326,6 @@ a {
   --input-label-gap: 8px;
   --input-label-size: var(--base-font-size);
   --input-radio-size: 15px;
+  --input-placeholder: #898989;
+  --input-select-multi-item: #0ec1ae;
 }

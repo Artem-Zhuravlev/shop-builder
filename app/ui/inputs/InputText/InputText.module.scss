@@ -2,6 +2,7 @@
   min-height: var(--input-size);
   padding: var(--input-padding);
   border: var(--input-border);
+  font-size: var(--base-font-size);
 
   &:focus {
     border-color: var(--input-border-focus);
@@ -9,5 +10,9 @@
   }
   &:disabled {
     background-color: var(--input-disabled);
+  }
+
+  &::placeholder {
+    color: var(--input-placeholder);
   }
 }
