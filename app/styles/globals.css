@@ -290,14 +290,25 @@ a {
   --base-font-size: 16px;
   --base-font-family: 'Roboto', sans-serif;
   --color-primary: #222;
+  --color-primary-rgba: 34, 34, 34;
+  --color-secondary: #0ec1ae;
   --color-text: #000;
   --color-disabled: #565656;
   --color-white: #fff;
+  --color-faded: #898989;
   --color-danger: #DE350B;
   --color-danger-hover: #FFBDAD;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --gap-middle: 15px;
+  --size-extra-small: 20px;
+  --size-small: 30px;
+  --size-middle: 40px;
+  --size-big: 50px;
+  --space-small: 10px;
+  --space-medium: 15px;
+  --space-extra-small: 5px;
+  --space-big: 25px;
 
   /* button  */
   --btn-font-size: 1.4rem;
@@ -326,6 +337,6 @@ a {
   --input-label-gap: 8px;
   --input-label-size: var(--base-font-size);
   --input-radio-size: 15px;
-  --input-placeholder: #898989;
+  --input-placeholder: var(--color-faded);
   --input-select-multi-item: #0ec1ae;
 }
