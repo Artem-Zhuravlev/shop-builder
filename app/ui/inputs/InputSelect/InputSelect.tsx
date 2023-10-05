@@ -14,6 +14,9 @@ interface SelectProps<
   isClearable?: boolean;
   isSearchable?: boolean;
   isMulti?: IsMulti;
+  value: object;
+  name: string;
+  placeholder: string;
 }
 
 export const InputSelect: FC<SelectProps> = (props) => {
@@ -23,7 +26,10 @@ export const InputSelect: FC<SelectProps> = (props) => {
     isLoading,
     isClearable,
     isSearchable,
-    isMulti
+    isMulti,
+    value,
+    name,
+    placeholder
   } = props;
 
   return (
@@ -35,6 +41,11 @@ export const InputSelect: FC<SelectProps> = (props) => {
       isClearable={isClearable}
       isSearchable={isSearchable}
       isMulti={isMulti}
+      value={value}
+      defaultValue={value}
+      menuPlacement="auto"
+      name={name}
+      placeholder={placeholder}
     />
   );
 };
