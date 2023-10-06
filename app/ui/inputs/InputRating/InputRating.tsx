@@ -29,8 +29,8 @@ export const InputRating:FC<RatingProps> = (props) => {
       transition={transition}
       size={size}
       readonly={readonly}
-      fillColor='var(--color-info)'
-      emptyColor='var(--color-faded)'
+      fillColor='var(--warning-main)'
+      emptyColor='var(--gray-40)'
     />
   )
 }

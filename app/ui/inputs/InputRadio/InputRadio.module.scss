@@ -14,7 +14,7 @@
 
     &:checked + .InputRadioLabel {
       &::after {
-        background-color: var(--color-primary);
+        background-color: var(--primary-main);
       }
     }
   } 
@@ -22,8 +22,8 @@
 
 .InputRadioLabel {
   position: relative;
-  font-size: var(--input-label-size);
-  padding-left: calc(var(--input-radio-size) * 2);
+  font-size: var(--font-size-lg);
+  padding-left: var(--size-small);
 
   &::before,
   &::after {
@@ -37,16 +37,16 @@
 
   &::before {
     left: 0;
-    width: var(--input-radio-size);
-    height: var(--input-radio-size);
-    border: var(--input-border);
+    width: var(--space-medium);
+    height: var(--space-medium);
+    border: 1px solid var(--gray-90);
     border-radius: 50%;
   }
 
   &::after {
-    left: calc(var(--input-radio-size) * 0.3);
-    width: calc(var(--input-radio-size) * 0.5);
-    height: calc(var(--input-radio-size) * 0.5);
+    left: calc(var(--space-medium) * 0.3);
+    width: calc(var(--space-medium) * 0.5);
+    height: calc(var(--space-medium) * 0.5);
     background-color: transparent;
   }
 }

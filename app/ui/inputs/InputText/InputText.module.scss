@@ -1,18 +1,21 @@
 .InputText {
-  min-height: var(--input-size);
+  min-height: var(--input-height);
   padding: var(--input-padding);
-  border: var(--input-border);
-  font-size: var(--base-font-size);
+  border: 1px solid var(--gray-40);
+  font-size: var(--font-size-md);
+  color: var(--gray-90);
+  border-radius: var(--interface-size-sm);
 
   &:focus {
-    border-color: var(--input-border-focus);
+    border-color: var(--gray-50);
     outline: transparent;
   }
   &:disabled {
-    background-color: var(--input-disabled);
+    color: var(--gray-70);
+    background-color: var(--gray-20);
   }
 
   &::placeholder {
-    color: var(--input-placeholder);
+    color: var(--gray-60);
   }
 }

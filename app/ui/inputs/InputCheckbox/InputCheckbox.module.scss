@@ -8,8 +8,8 @@
 
     &:checked + .InputCheckboxLabel {
       &::before {
-        color: var(--color-white);
-        background-color: var(--color-primary);
+        color: var(--gray-10);
+        background-color: var(--primary-main);
       }
     }
   } 
@@ -17,8 +17,8 @@
 
 .InputCheckboxLabel {
   position: relative;
-  font-size: var(--input-label-size);
-  padding-left: calc(var(--input-radio-size) * 2);
+  font-size: var(--font-size-lg);
+  padding-left: var(--size-small);
   user-select: none;
 
   &::before {
@@ -34,8 +34,9 @@
     font-size: 10px;
     font-family: 'icomoon';
     color: transparent;
-    width: var(--input-radio-size);
-    height: var(--input-radio-size);
-    border: var(--input-border);
+    width: var(--space-medium);
+    height: var(--space-medium);
+    border: 1px solid var(--gray-90);
+    border-radius: var(--interface-size-sm);
   }
 }

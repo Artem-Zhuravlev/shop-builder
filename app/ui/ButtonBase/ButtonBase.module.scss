@@ -2,52 +2,84 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--btn-padding);
-  color: var(--btn-color);
-  background-color: var(--btn-background);
+  padding: var(--space-extra-small) var(--space-big);
+  color: var(--gray-10);
+  background-color: var(--primary-main);
   font-weight: var(--btn-font-weight);
   cursor: pointer;
   min-height: var(--btn-height);
-  font-size: var(--btn-font-size);
+  font-size: var(--font-size-lg);
   border: var(--btn-border-width) solid transparent;
+  border-radius: var(--btn-border-radius);
   transition: var(--btn-transition);
 
   &[disabled] {
-    background-color: var(--btn-background-disabled);
+    color: var(--gray-50);
+    background-color: var(--gray-20);
     cursor: auto;
     &:hover,
     &:focus {
-      background-color: var(--btn-background-disabled);
+      background-color: var(--gray-20);
     }
   }
 
   &:hover {
-    background-color: var(--btn-background-hover);
+    background-color: var(--primary-hover);
   }
 
   &:focus {
-    background-color: var(--btn-background-focus);
+    background-color: var(--primary-pressed);
+    box-shadow: 0 0 0 3px var(--primary-focus);
+    outline: transparent;
   }
 }
 
 .large {
-  font-size: var(--btn-font-size-lg);
+  font-size: var(--font-size-lg);
   min-height: var(--btn-height-lg);
 }
 
-.small {
-  font-size: var(--btn-font-size-sm);
-  min-height: var(--btn-height-sm);
-}
-
 .loading {
-  background-color:var(--btn-background-disabled);
+  color: var(--gray-50);
+  background-color:var(--gray-20);
   cursor: auto;
   pointer-events: none;
   user-select: none;
 
   span {
     animation: rotate 1s linear infinite;
+  }
+}
+
+.secondary {
+  color: var(--primary-main);
+  background-color: var(--primary-secondary);
+
+  &:hover,
+  &:focus {
+    color: var(--primary-hover);
+    background-color: var(--primary-secondary);
+  }
+}
+
+.outline {
+  color: var(--primary-main);
+  background-color: var(--primary-secondary);
+  border-color: var(--primary-border);
+
+  &:hover {
+    border-color: var(--primary-hover);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--primary-hover);
+    background-color: var(--primary-secondary);
+  }
+
+  &[disabled] {
+    color: var(--gray-50);
+    border-color: var(--gray-40);
   }
 }
 
