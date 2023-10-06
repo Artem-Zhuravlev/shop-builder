@@ -28,8 +28,7 @@ export const InputEdit:FC<InputEditProps> = (props) => {
   return (
     <Editor
       editorState={value}
-      toolbarClassName="toolbarClassName"
-      wrapperClassName="wrapperClassName"
+      toolbarClassName={cls.InputEditToolbar}
       editorClassName={cls.InputEditEditor}
       onEditorStateChange={handleEditorStateChange}
     />
