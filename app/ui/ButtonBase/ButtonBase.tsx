@@ -11,6 +11,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   buttonType?: ButtonType;
   large?: boolean;
   small?: boolean;
+  secondary?: boolean;
+  outline?: boolean;
   additionalCls?: string;
   isLoading?: boolean;
   block?: boolean;
@@ -23,6 +25,8 @@ export const ButtonBase:FC<ButtonProps> = (props) => {
     children,
     large,
     small,
+    secondary,
+    outline,
     additionalCls = '',
     buttonType = ButtonType.BUTTON,
     isLoading,
@@ -35,7 +39,9 @@ export const ButtonBase:FC<ButtonProps> = (props) => {
     [cls.large]: large || false,
     [cls.small]: small || false,
     [cls.block]: block || false,
-    [cls.loading]: isLoading || false
+    [cls.loading]: isLoading || false,
+    [cls.secondary]: secondary || false,
+    [cls.outline]: outline || false
   };
 
   return (

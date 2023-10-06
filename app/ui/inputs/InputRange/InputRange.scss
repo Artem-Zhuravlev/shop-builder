@@ -1,23 +1,23 @@
 .rc-slider {
   &-rail {
-    background-color: var(--color-faded);
+    background-color: var(--gray-40);
     border-radius: var(--space-extra-small);
   }
   &-handle {
-    background-color: var(--color-white);
+    background-color: var(--gray-10);
     border-radius: 50%;
-    border-color: var(--color-primary);
+    border-color: var(--primary-main);
     &-dragging {
       border-color: var(--color-primary)!important;
-      box-shadow: 0 0 5px rgb(var(--color-primary-rgba), 0.9)!important;
+      box-shadow: 0 0 0 2px var(--primary-border)!important;
     }
     &:hover {
-      border-color: var(--color-primary);
-      box-shadow: 0 0 5px rgb(var(--color-primary-rgba), 0.9)!important;
+      border-color: var(--primary-main);
+      box-shadow: 0 0 0 2px var(--primary-border)!important;
     }
   }
   &-track {
-    background-color: var(--color-primary);
+    background-color: var(--primary-main);
   }
   &-disabled {
     background-color: transparent;

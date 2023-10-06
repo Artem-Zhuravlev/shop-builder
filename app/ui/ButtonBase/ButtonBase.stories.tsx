@@ -16,16 +16,22 @@ Primary.args = {
   children: 'Text',
 };
 
+export const Secondary = Template.bind({});
+Secondary.args = {
+  children: 'Text',
+  secondary: true
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+  children: 'Text',
+  outline: true
+};
+
 export const Large = Template.bind({});
 Large.args = {
   children: 'Text',
   large: true
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  children: 'Text',
-  small: true
 };
 
 export const withLoading = Template.bind({});
@@ -43,5 +49,5 @@ withDisabled.args = {
 export const withFullWidth = Template.bind({});
 withFullWidth.args = {
   children: 'Text',
-  disabled: true
+  block: true
 };

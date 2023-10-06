@@ -18,12 +18,12 @@ const controlBackground = ({ isDisabled }: ISelect) : string => {
 export const InputSelectStyles = {
   control (
     baseStyles: CSSObject, { isFocused, isDisabled }: ISelect) {
-    const borderColor = isFocused ? 'var(--input-border-focus)' : 'var(--color-primary)';
+    const borderColor = isFocused ? 'var(--gray-50)' : 'var(--gray-40)';
     return {
       ...baseStyles,
-      borderRadius: 0,
+      borderRadius: 'var(--interface-size-sm)',
       borderColor,
-      minHeight: 'var(--input-size)',
+      minHeight: 'var(--input-height)',
       boxShadow: 'none',
       backgroundColor: controlBackground({ isDisabled }),
       cursor: 'pointer',
@@ -36,81 +36,83 @@ export const InputSelectStyles = {
     return {
       ...baseStyles,
       boxShadow: 'none',
-      border: 'var(--input-border)',
-      borderRadius: 0
+      border: '1px solid var(--gray-40)',
+      borderRadius: 'var(--interface-size-sm)'
     }
   },
   option(baseStyles:CSSObject, { isFocused, isSelected }: ISelect) {
     return {
       ...baseStyles,
       cursor: 'pointer',
-      backgroundColor: isSelected ? 'var(--input-border-focus)' : 'initial',
+      backgroundColor: isSelected ? 'var(--primary-focus)' : 'initial',
+      color: 'var(--gray-90)',
       ':active': {
-        backgroundColor: 'var(--input-border-focus)'
+        backgroundColor: 'var(--primary-focus)',
+        color: 'var(--gray-90)',
       },
       ...(isFocused && {
-        color: 'var(--color-white)',
-        backgroundColor: 'var(--input-border-focus)'
+        color: 'var(--gray-10)',
+        backgroundColor: 'var(--primary-main)'
       }),
     };
   },
   placeholder (baseStyles: CSSObject) {
     return {
       ...baseStyles,
-      color: 'var(--input-placeholder)'
+      color: 'var(--gray-60)'
     }
   },
   dropdownIndicator (baseStyles: CSSObject, { isFocused }: ISelect) {
     return {
       ...baseStyles,
-      color: 'var(--color-primary)',
+      color: 'var(--gray-40)',
       ...(isFocused && {
-        color: 'var(--input-border-focus)'
+        color: 'var(--gray-50)'
       }),
     }
   },
   indicatorSeparator (baseStyles: CSSObject, { isFocused }: ISelect) {
     return {
       ...baseStyles,
-      backgroundColor: 'var(--color-primary)',
+      backgroundColor: 'var(--gray-40)',
       ...(isFocused && {
-        backgroundColor: 'var(--input-border-focus)'
+        backgroundColor: 'var(--gray-50)'
       }),
     }
   },
   clearIndicator (baseStyles: CSSObject, { isFocused }: ISelect) {
     return {
       ...baseStyles,
-      color: 'var(--color-primary)',
+      color: 'var(--gray-40)',
       ...(isFocused && {
-        color: 'var(--input-border-focus)'
+        color: 'var(--gray-50)'
       }),
     }
   },
   loadingIndicator (baseStyles: CSSObject, { isFocused }: ISelect) {
     return {
       ...baseStyles,
-      color: 'var(--color-primary)',
+      color: 'var(--gray-40)',
       ...(isFocused && {
-        color: 'var(--input-border-focus)'
+        color: 'var(--gray-50)'
       }),
     }
   },
   multiValueLabel (baseStyles: CSSObject) {
     return {
       ...baseStyles,
-      backgroundColor: 'var(--input-select-multi-item)',
-      color: 'var(--color-text)'
+      backgroundColor: 'var(--gray-40)',
+      color: 'var(--gray-90)'
     }
   },
   multiValueRemove (baseStyles: CSSObject, { isFocused }: ISelect) {
     return {
       ...baseStyles,
-      backgroundColor: 'var(--input-select-multi-item)',
-      color: 'var(--color-text)',
+      backgroundColor: 'var(--gray-40)',
+      color: 'var(--gray-90)',
       ...(isFocused && {
-        color: 'var(--color-danger)',
-        backgroundColor: 'var(--color-danger-hover)'
+        color: 'var(--danger-main)',
+        backgroundColor: 'var(--danger-focus)'
       }),
     }
   }
