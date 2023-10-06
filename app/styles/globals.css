@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
 
 @font-face {
   font-family: 'icomoon';
@@ -328,7 +328,7 @@ a {
   --gray-10: #ffffff;
 
   /* typography */
-  --font-family: 'Roboto', sans-serif;
+  --font-family: 'Manrope', sans-serif;
   --font-size-sm: 12px;
   --font-size-md: 14px;
   --font-size-lg: 16px;

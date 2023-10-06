@@ -59,7 +59,15 @@ export const InputSelectStyles = {
   placeholder (baseStyles: CSSObject) {
     return {
       ...baseStyles,
-      color: 'var(--gray-60)'
+      color: 'var(--gray-60)',
+      fontSize: 'var(--font-size-md)'
+    }
+  },
+  input (baseStyles: CSSObject) {
+    return {
+      ...baseStyles,
+      color: 'var(--gray-90)',
+      fontSize: 'var(--font-size-md)'
     }
   },
   dropdownIndicator (baseStyles: CSSObject, { isFocused }: ISelect) {
