@@ -13,6 +13,7 @@ const Template: StoryFn<typeof InputEdit> = (args) => {
 
   return (
     <InputEdit
+      {...args}
       value={editorState}
       onEditorStateChange={(e) => setEditorState(e)}
     />

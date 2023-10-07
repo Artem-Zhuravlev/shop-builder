@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import ReactDatePicker, { ReactDatePickerProps }  from "react-datepicker";
+import React, { FC } from 'react';
+import ReactDatePicker, { ReactDatePickerProps }  from 'react-datepicker';
 import cls from './InputDatePicker.module.scss';
 
 export const InputDatePicker:FC<ReactDatePickerProps> = (props) => {

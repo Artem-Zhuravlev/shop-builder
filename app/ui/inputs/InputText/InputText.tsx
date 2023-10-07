@@ -27,6 +27,7 @@ export const InputText:FC<InputProps> = ({
   label
 }) => {
   const [initialValue, setInitialValue] = useState(value);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleInputChange = (e: any) => {
     const newValue = e.target.value;
     setInitialValue(newValue);

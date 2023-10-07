@@ -1,7 +1,7 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Editor, EditorProps } from 'react-draft-wysiwyg';
 import { EditorState } from 'draft-js';
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import cls from './InputEdit.module.scss';
 
 interface InputEditProps extends EditorProps {

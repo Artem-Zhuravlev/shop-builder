@@ -1,4 +1,4 @@
-import React, { FC, TextareaHTMLAttributes, useState } from "react";
+import React, { FC, TextareaHTMLAttributes, useState } from 'react';
 import cls from './InputTextarea.module.scss';
 
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -23,6 +23,7 @@ export const InputTextarea:FC<TextareaProps> = (props) => {
   } = props;
 
   const [initialValue, setInitialValue] = useState(value);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleInputChange = (e: any) => {
     const newValue = e.target.value;
     setInitialValue(newValue);

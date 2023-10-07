@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes, useState } from 'react';
+import React, { FC, InputHTMLAttributes, ChangeEvent, useState } from 'react';
 import { Field } from 'react-final-form';
 import cls from './InputPassword.module.scss';
 import { Label } from '../Label/Label';
@@ -12,9 +12,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
   name: string;
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
   withForm?: boolean;
   label: string;
 }
@@ -34,6 +34,7 @@ export const InputPassword:FC<InputProps> = ({
   const [initialValue, setInitialValue] = useState(value);
   const [type, setType] = useState(InputType.PASSWORD);
   
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleInputChange = (e: any) => {
     const newValue = e.target.value;
     setInitialValue(newValue);
