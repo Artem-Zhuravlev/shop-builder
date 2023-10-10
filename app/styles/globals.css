@@ -295,7 +295,7 @@ a {
   --primary-pressed: #230f80;
   --primary-focus: #e7e3fc;
 
-  --danger-main: #921919;
+  --danger-main: #f36161;
   --danger-secondary: #e9d1d1;
   --danger-border: #dbb2b2;
   --danger-hover: #611111;
@@ -308,6 +308,13 @@ a {
   --warning-hover: #b69237;
   --warning-pressed: #a9945f;
   --warning-focus: #f8e8c0;
+
+  --success-main: #35b932;
+  --success-secondary: #d7f1d6;
+  --success-border: #9ADC98;
+  --success-hover: #4AAA48;
+  --success-pressed: #6DA66C;
+  --success-focus: #9ADC98;
 
   --info-colors: #194689;
   --info-secondary: #d1dae7;

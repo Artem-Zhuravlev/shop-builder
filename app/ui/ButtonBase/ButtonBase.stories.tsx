@@ -1,7 +1,6 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { ButtonBase } from './ButtonBase';
-import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'Buttons/ButtonBase',

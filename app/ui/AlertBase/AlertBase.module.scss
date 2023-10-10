@@ -1,0 +1,42 @@
+.AlertBase {
+  position: fixed;
+  right: var(--space-medium);
+  top: var(--space-medium);
+  z-index: 10;
+}
+
+.AlertItem {
+  position: relative;
+  padding:
+    var(--space-medium)
+    calc(var(--space-medium) * 2)
+    var(--space-medium)
+    var(--space-medium);
+  max-width: 250px;
+  border-radius: var(--interface-size-sm);
+
+  &:not(:last-of-type) {
+    margin-bottom: var(--space-medium);
+  }
+}
+
+.error {
+  background-color: var(--danger-main);
+}
+
+.success {
+  background-color: var(--success-main);
+}
+
+.AlertButton {
+  position: absolute;
+  width: var(--space-big);
+  height: var(--space-big);
+  right: var(--space-extra-small);
+  top: var(--space-extra-small);
+  border: none;
+  background-color: transparent;
+  font-size: 10px;
+  padding: 0;
+  cursor: pointer;
+}
