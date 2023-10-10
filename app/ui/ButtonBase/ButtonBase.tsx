@@ -1,5 +1,5 @@
-import React, { ButtonHTMLAttributes, FC } from "react";
-import { classNames } from "../../utils/classNames/classNames";
+import React, { ButtonHTMLAttributes, FC } from 'react';
+import { classNames } from '../../utils/classNames/classNames';
 import cls from './ButtonBase.module.scss';
 
 export enum ButtonType {
@@ -17,7 +17,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   block?: boolean;
   disabled?: boolean;
-  onClick?: () => void;
 }
 
 export const ButtonBase:FC<ButtonProps> = (props) => {

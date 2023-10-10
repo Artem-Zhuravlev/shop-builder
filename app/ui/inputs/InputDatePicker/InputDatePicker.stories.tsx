@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { InputDatePicker } from './InputDatePicker';
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default {
   title: 'inputs/InputDatePicker',
