@@ -1,0 +1,45 @@
+.PaginateBase {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--gray-90);
+}
+
+.PaginatePage,
+.PaginateBreak,
+.PaginateNext {
+  &:not(:first-child) {
+    margin-left: -1px;
+  }
+}
+
+.PaginatePageLink,
+.PaginateBreakLink,
+.PaginatePrevLink,
+.PaginateNextLink {
+  min-width: var(--size-middle);
+  border: 1px solid var(--primary-border);
+  text-align: center;
+  display: block;
+  padding: var(--interface-size-md) calc(var(--interface-size-md) * 2);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--primary-main);
+    color: var(--gray-10);
+  }
+}
+.PaginatePageLinkActive {
+  background-color: var(--primary-main);
+  color: var(--gray-10);
+}
+
+.PaginateDisabled {
+  cursor: auto;
+  background-color: var(--primary-focus);
+  &:hover {
+    background-color: var(--primary-focus);
+    color: var(--gray-90);
+  }
+}
