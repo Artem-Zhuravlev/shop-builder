@@ -1,0 +1,31 @@
+.BreadcrumbsList {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: var(--font-size-md);
+  color: var(--gray-90);
+}
+
+.BreadcrumbsItem {
+  position: relative;
+  padding-right: var(--space-medium);
+  margin-right: var(--space-small);
+
+  &:not(:last-of-type) {
+    &::after {
+      content: "/";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+}
+
+.BreadcrumbsLink {
+  &:hover {
+    color: var(--primary-main);
+  }
+}
