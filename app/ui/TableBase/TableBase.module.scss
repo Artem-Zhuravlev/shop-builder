@@ -1,0 +1,20 @@
+.TableBase {
+  :global {
+    table {
+      
+      border-collapse: collapse;
+    }
+    .rc-table-thead {
+      .rc-table-cell {
+        font-weight: 500;
+        background-color: var(--gray-30);
+      }
+    }
+    .rc-table-cell {
+      padding: var(--space-small) var(--space-medium);
+      border: 1px solid var(--gray-40);
+      text-align: left;
+      font-weight: 400;
+    }
+  }
+}
