@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-extra-small) var(--space-big);
+  padding: var(--space-extra-small) var(--space-small);
   color: var(--gray-10);
   background-color: var(--primary-main);
   font-weight: var(--btn-font-weight);
   cursor: pointer;
+  min-width: var(--btn-height);
   min-height: var(--btn-height);
   font-size: var(--font-size-lg);
   border: var(--btn-border-width) solid transparent;
@@ -36,6 +37,7 @@
 
 .large {
   font-size: var(--font-size-lg);
+  min-width: var(--btn-height-lg);
   min-height: var(--btn-height-lg);
 }
 
