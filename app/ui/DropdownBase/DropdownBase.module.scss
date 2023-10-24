@@ -1,0 +1,61 @@
+.DropdownBase {
+  position: relative;
+}
+
+.DropdownBtn {
+  position: relative;
+  padding-right: var(--size-extra-small);
+  border: none;
+  cursor: pointer;
+  color: var(--gray-90);
+  font-size: var(--font-size-md);
+  font-family: var(--font-family);
+  background-color: transparent;
+
+  &::after {
+    position: absolute;
+    top: var(--space-extra-small);
+    right: 0;
+    margin: auto;
+    content: "";
+    width: var(--interface-size-md);
+    height: var(--interface-size-md);
+    border-left: 1px solid var(--gray-90);
+    border-bottom: 1px solid var(--gray-90);
+    transform-origin: 50%;
+    transform: rotate(-45deg);
+  }
+
+  &.DropdownBtnLight {
+    color: var(--gray-10);
+    &::after {
+      border-color: var(--gray-10);
+    }
+  }
+
+  &.DropdownBtnOpen {
+    &::after {
+      top: var(--space-small);
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.DropdownList {
+  position: absolute;
+  background-color: var(--gray-10);
+  border: 1px solid var(--gray-40);
+  list-style: none;
+  padding-left: 0;
+  border-radius: var(--interface-size-sm);
+  overflow: hidden;
+
+  a {
+    display: block;
+    padding: var(--space-small) var(--space-medium);
+    &:hover {
+      background-color: var(--primary-main);
+      color: var(--gray-10);
+    }
+  }
+}
