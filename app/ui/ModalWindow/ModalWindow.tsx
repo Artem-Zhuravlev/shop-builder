@@ -13,7 +13,7 @@ export const ModalWindow: FC<ModalWindowProps> = ({ title, children, visibility 
 
   const handleClose = () => {
     setVisible(false);
-    onClose(visible);
+    onClose(false);
   }
 
   useEffect(() => {

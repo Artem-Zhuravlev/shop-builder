@@ -14,3 +14,14 @@ Default.args = {
   title: 'Modal Title',
   visibility: true
 };
+
+export const WithContent = Template.bind({});
+WithContent.args = {
+  title: 'Modal Title',
+  visibility: true,
+  children: (
+    <div>
+      <p>Some different content in this modal.</p>
+    </div>
+  ),
+};
