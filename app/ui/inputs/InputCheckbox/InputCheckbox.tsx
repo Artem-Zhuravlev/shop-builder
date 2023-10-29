@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent } from "react";
+import React, { FC, ChangeEvent } from 'react';
 import cls from './InputCheckbox.module.scss';
 
 interface InputProps {
