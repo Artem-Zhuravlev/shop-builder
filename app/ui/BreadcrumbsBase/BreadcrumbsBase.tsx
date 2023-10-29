@@ -10,6 +10,7 @@ export const BreadcrumbsBase:FC<BreadcrumbsProps> = ({ pages }) => {
   const id = useId();
   return (
     <nav
+      data-testid="breadcrumbs"
       className={cls.BreadcrumbsBase}
     >
       <ul className={cls.BreadcrumbsList}>
