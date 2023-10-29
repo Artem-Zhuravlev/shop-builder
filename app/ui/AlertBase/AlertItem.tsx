@@ -33,10 +33,12 @@ export const AlertItem:FC<AlertProps> = (props) => {
 
   return (
     <div
+      data-testid="alert-item"
       className={classNames(cls.AlertItem, mods)}
     >
       {message}
       <button
+        data-testid="alert-close"
         type="button"
         className={cls.AlertButton}
         onClick={handleClose}

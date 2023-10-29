@@ -19,6 +19,7 @@ export const AlertBase: FC<AlertsProps> = (props) => {
 
   return (
     <div
+      data-testid="alert-base"
       className={cls.AlertBase}
     >
       {
