@@ -50,7 +50,8 @@ export const ButtonBase:FC<ButtonProps> = (props) => {
       disabled={disabled}
       onClick={onClick}
     >
-      { isLoading ? (<span className="icon-spinner2" />) : children }      
+      { isLoading ? (<span className="icon-spinner2" />) : null } 
+      { children }      
     </button>
   )
 }
