@@ -16,16 +16,18 @@ export const InputNumber:FC<InputProps> = (props) => {
   const [numberValue, setNumberValue] = useState<number>(value);
 
   const handleDecrement = () => {
-    if (numberValue >= 1) {
-      setNumberValue(numberValue - 1);
-      onNumberChange(numberValue);
+    if (numberValue > 0) {
+      const updatedValue = numberValue - 1;
+      setNumberValue(updatedValue);
+      onNumberChange(updatedValue);
     }
-  }
+  };
 
   const handleIncrement = () => {
-    setNumberValue(numberValue + 1);
-    onNumberChange(numberValue);
-  }
+    const updatedValue = numberValue + 1;
+    setNumberValue(updatedValue);
+    onNumberChange(updatedValue);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(e.target.value, 10) || 0;
