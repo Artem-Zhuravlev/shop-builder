@@ -1,0 +1,38 @@
+.ModalBackdrop {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(var(--gray-100), 0.5);
+  display: grid;
+  place-items: center;
+}
+
+.ModalWindow {
+  position: relative;
+  background-color: var(--gray-10);
+  padding: var(--size-small);
+  border-radius: var(--interface-size-md);
+  max-width: 430px;
+  width: 100%;
+  min-height: 200px;
+}
+
+.ModalBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  width: var(--size-middle);
+  height: var(--size-middle);
+  cursor: pointer;
+  transition: var(--btn-transition);
+  &:hover,
+  &:focus {
+    color: var(--primary-hover);
+  }
+}
+
+.ModalTitle {
+  margin-top: 0;
+}
