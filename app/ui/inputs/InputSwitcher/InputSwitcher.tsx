@@ -27,6 +27,7 @@ export const InputSwitcher: FC<InputSwitcherProps> = (props) => {
 
   return (
     <label
+      data-testid="input-switcher"
       className={classNames(cls.InputSwitcher, mods)}
     >
       <input
