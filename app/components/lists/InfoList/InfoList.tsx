@@ -21,6 +21,8 @@ interface InfoListProps {
 }
 
 export const InfoList:FC<InfoListProps> = ({ item }) => {
+  const { t } = useTranslation();
+
   const labelClass = useMemo(() => {
     if (item.availability && item.availability === Availability.IN_STOCK) {
       return cls.InStock;
