@@ -2,6 +2,7 @@ import React, { FC, useMemo } from 'react';
 import cls from './InfoList.module.scss';
 import Link from 'next/link';
 import { InfoListItem } from './InfoListItem';
+import { useTranslations } from 'next-intl';
 
 export enum Availability {
   IN_STOCK = 'In stock',
@@ -21,7 +22,7 @@ interface InfoListProps {
 }
 
 export const InfoList:FC<InfoListProps> = ({ item }) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const labelClass = useMemo(() => {
     if (item.availability && item.availability === Availability.IN_STOCK) {
@@ -35,7 +36,7 @@ export const InfoList:FC<InfoListProps> = ({ item }) => {
     <ul
       className={cls.InfoList}
     >
-      <InfoListItem label="Brand">
+      <InfoListItem label={t('base.brand')}>
         <Link
           className={cls.InfoListLink}
           href={item.brand.url}

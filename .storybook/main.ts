@@ -1,9 +1,9 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
+import type { StorybookConfig } from '@storybook/react-webpack5/dist';
 
 const config: StorybookConfig = {
   stories: [
     '../app/ui/**/*.stories.@(js|jsx|ts|tsx)',
-    '../app/blocks/**/*.stories.@(js|jsx|ts|tsx)',
+    '../app/components/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     "@storybook/addon-links",
@@ -18,6 +18,19 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+  },
+  webpackFinal: async (config) => {
+    if (config && config.resolve) {
+      config.resolve.fallback = {
+        "zlib": false,
+        "fs": false,
+        "stream": false
+      };
+    } else {
+      console.error("Property 'resolve' is missing in the config object.");
+    }
+
+    return config;
   },
 };
 export default config;
