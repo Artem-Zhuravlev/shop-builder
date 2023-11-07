@@ -1,8 +1,11 @@
-/* Components */
-import { Counter } from './components/Counter/Counter'
+import React from 'react';
 
 export default function IndexPage() {
-  return <Counter />
+  return (
+    <div>
+      Home
+    </div>
+  )
 }
 
 export const metadata = {

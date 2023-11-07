@@ -1,7 +1,8 @@
 'use client'
 
 /* Core */
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import React from 'react';
 
 /* Instruments */
 import { reduxStore } from '@/lib/redux'
