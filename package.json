@@ -1,7 +1,7 @@
 {
   "name": "shop-builder",
   "private": true,
-  "version": "1.2.4",
+  "version": "1.2.5",
   "scripts": {
     "dev": "next",
     "build": "next build",
