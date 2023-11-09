@@ -26,6 +26,9 @@
 .icon-price-tags:before {
   content: "\e936";
 }
+.icon-cart:before {
+  content: "\e93a";
+}
 .icon-phone:before {
   content: "\e942";
 }
@@ -98,6 +101,12 @@
 .icon-bin2:before {
   content: "\e9ad";
 }
+.icon-power:before {
+  content: "\e9b5";
+}
+.icon-power-cord:before {
+  content: "\e9b7";
+}
 .icon-list-numbered:before {
   content: "\e9b9";
 }
@@ -109,6 +118,9 @@
 }
 .icon-upload3:before {
   content: "\e9c8";
+}
+.icon-link:before {
+  content: "\e9cb";
 }
 .icon-attachment:before {
   content: "\e9cd";
@@ -166,6 +178,9 @@
 }
 .icon-checkmark:before {
   content: "\ea10";
+}
+.icon-loop2:before {
+  content: "\ea2e";
 }
 .icon-arrow-up-left2:before {
   content: "\ea39";

@@ -1,0 +1,93 @@
+.CardBase {
+  padding: var(--space-medium);
+  border: 1px solid var(--gray-40);
+  border-radius: var(--interface-size-md);
+}
+
+.CardImages {
+  position: relative;
+  display: flex;
+  min-height: 300px;
+  margin-bottom: var(--size-extra-small);
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-height: 300px;
+    max-width: calc(100% - var(--space-medium) * 2);
+    transition: .3s ease opacity;
+
+    &:last-child {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    img {
+      &:first {
+        opacity: 0;
+      }
+      &:last-child {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.CardCaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-small);
+  margin-bottom: var(--space-medium);
+}
+
+.CardControls {
+  display: flex;
+  justify-content: center;
+  gap: var(--interface-size-md);
+  margin-bottom: var(--space-medium);
+}
+
+.CardControlsBtn {
+  width: var(--size-middle);
+  height: var(--size-middle);
+  border: 1px solid var(--gray-40);
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  border-radius: var(--interface-size-sm);
+
+  &:hover {
+    border-color: var(--success-border);
+  }
+}
+
+.CardInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--space-medium);
+}
+
+.CardPriceNew {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.CardPriceOld {
+  color: var(--warning-hover);
+}
+
+.CardPriceTax {
+  padding: var(--interface-size-sm);
+  border-radius: var(--interface-size-sm);
+  background-color: var(--danger-main);
+  color: var(--gray-10);
+  font-size: 14px;
+}

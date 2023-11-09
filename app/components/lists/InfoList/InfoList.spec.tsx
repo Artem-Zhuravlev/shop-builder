@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { InfoList, Availability } from './InfoList';
+import { customRender } from '../../../utils/intlWrapper/IntlWrapper';
 
 const mockItem = {
   brand: {
@@ -15,7 +15,7 @@ const mockItem = {
 
 describe('InfoList Component', () => {
   test('renders brand, viewed, reward points, and availability', () => {
-    const { container, getByText } = render(<InfoList item={mockItem} />);
+    const { container, getByText } = customRender(<InfoList item={mockItem} />);
 
     const brandElement = getByText(mockItem.brand.name);
     const viewedElement = getByText(mockItem.viewed.toString());
@@ -42,7 +42,7 @@ describe('InfoList Component', () => {
       viewed: 100,
     };
 
-    const { queryByText } = render(<InfoList item={itemWithoutOptionalProps} />);
+    const { queryByText } = customRender(<InfoList item={itemWithoutOptionalProps} />);
 
     const rewardPointsElement = queryByText('Reward Points');
     const availabilityElement = queryByText('Availability');

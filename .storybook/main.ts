@@ -24,7 +24,8 @@ const config: StorybookConfig = {
       config.resolve.fallback = {
         "zlib": false,
         "fs": false,
-        "stream": false
+        "stream": false,
+        "path": require.resolve("path-browserify")
       };
     } else {
       console.error("Property 'resolve' is missing in the config object.");
