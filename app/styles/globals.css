@@ -370,11 +370,11 @@ a {
   --space-medium: 15px;
   --space-extra-small: 5px;
   --space-big: 25px;
+  --transition-base: .2s ease;
 
   /* button */
   --btn-height: 36px;
   --btn-height-lg: 40px;
-  --btn-transition: .2s ease;
   --btn-border-radius: 4px;
   --btn-border-width: 1px;
   --btn-font-weight: 500;

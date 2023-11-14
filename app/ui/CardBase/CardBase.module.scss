@@ -60,7 +60,7 @@
   background-color: transparent;
   font-size: 16px;
   cursor: pointer;
-  transition: var(--btn-transition);
+  transition: var(--transition-base);
   border-radius: var(--interface-size-sm);
 
   &:hover {
