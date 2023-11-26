@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-webpack5/dist';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
@@ -26,6 +27,10 @@ const config: StorybookConfig = {
         "fs": false,
         "stream": false,
         "path": require.resolve("path-browserify")
+      };
+
+      config.resolve.alias = {
+        '@': path.resolve(__dirname, '../'),
       };
     } else {
       console.error("Property 'resolve' is missing in the config object.");
