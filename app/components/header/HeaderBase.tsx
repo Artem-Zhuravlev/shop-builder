@@ -1,9 +1,15 @@
 import React, { FC } from 'react';
 import { ContainerBase } from '@/app/ui/ContainerBase';
-import { HeaderLogo } from './common';
+import { HeaderLogo, HeaderNav, IMenuItem } from './common';
 import cls from './HeaderBase.module.scss';
 
-export const HeaderBase:FC = () => {
+interface HeaderBaseProps {
+  items: IMenuItem[]
+}
+
+export const HeaderBase:FC<HeaderBaseProps> = (props) => {
+  const { items } = props
+
   return (
     <header
       className={cls.Header}
@@ -14,6 +20,9 @@ export const HeaderBase:FC = () => {
         >
           <HeaderLogo
             className={cls.HeaderLogo}
+          />
+          <HeaderNav
+            items={items}
           />
         </div>
       </ContainerBase>
