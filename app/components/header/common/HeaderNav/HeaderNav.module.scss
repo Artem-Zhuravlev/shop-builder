@@ -1,3 +1,5 @@
+@import '../../../../styles/abstracts/include-media-or.scss';
+
 .HeaderNav {
 
 }
@@ -11,19 +13,23 @@
 }
 
 .HeaderNavItem {
+  display: flex;
+  align-items: center;
   position: relative;
 
-  &:hover {
-    .HeaderNavSubmenu {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
-      user-select: auto;
-    }
-
-    .HeaderNavLink {
-      &::before {
-        width: 100%;
+  @include media('hover') {
+    &:hover {
+      .HeaderNavSubmenu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        user-select: auto;
+      }
+  
+      .HeaderNavLink {
+        &::before {
+          width: 100%;
+        }
       }
     }
   }
@@ -58,16 +64,20 @@
 
 .HeaderNavSubmenu {
   position: absolute;
+  top: 100%;
   opacity: 0;
   left: -50%;
   visibility: hidden;
   pointer-events: none;
   user-select: none;
   background-color: var(--gray-20);
+  border: 1px solid var(--gray-40);
   transition: var(--transition-base);
   padding: var(--size-extra-small);
   width: 300px;
   display: flex;
+  box-shadow: 3px 3px 3px var(--gray-30);
+  border-radius: var(--interface-size-sm);
 }
 
 .HeaderNavSubmenuFull {
@@ -108,9 +118,23 @@
     transition: var(--transition-base);
   }
 
-  &:hover {
-    &::before {
-      width: 100%;
+  @include media('hover') {
+    &:hover {
+      &::before {
+        width: 100%;
+      }
     }
   }
+}
+
+.HeaderNavToggler {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  font-size: var(--font-size-lg);
+  border: none;
+  width: var(--size-small);
+  height: var(--size-small);
+  background-color: transparent;
 }

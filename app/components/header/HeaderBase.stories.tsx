@@ -60,5 +60,9 @@ Default.args = {
       name: 'News',
       url: '/news'
     }
+  ],
+  phones: [
+    '+3808005553535',
+    '+3808005553536',
   ]
 };

@@ -55,17 +55,24 @@ export const HeaderNav:FC<HeaderNavProps> = (props) => {
               >
                 {mainItem.name}
               </Link>
+              
               {mainItem.sub && (
-                <div
-                  className={submenuCls(mainItem.sub)}
-                >
-                  {mainItem.sub.map((subItem, subIndex) => (
-                    <HeaderSubmenu
-                      key={`${id}-${mainIndex}-${subIndex}`}
-                      item={subItem}
-                    />
-                  ))}
-                </div>
+                <>
+                  <button
+                    type="button"
+                    className={cls.HeaderNavToggler}
+                  >+</button>
+                  <div
+                    className={submenuCls(mainItem.sub)}
+                  >
+                    {mainItem.sub.map((subItem, subIndex) => (
+                      <HeaderSubmenu
+                        key={`${id}-${mainIndex}-${subIndex}`}
+                        item={subItem}
+                      />
+                    ))}
+                  </div>
+                </>
               )}
             </li>
           ))}

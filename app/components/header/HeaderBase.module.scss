@@ -4,10 +4,15 @@
 
 .HeaderTop {
   display: flex;
+  justify-content: space-between;
 } 
 
 .HeaderLogo {
   display: inline-block;
   max-width: 100px;
   width: 100%;
+}
+
+.HeaderBurger {
+  
 }

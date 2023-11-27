@@ -2,7 +2,7 @@ import React from 'react';
 import type { Preview } from "@storybook/react";
 import { NextIntlClientProvider } from 'next-intl';
 import en from '../messages/en';
-import '../app/styles/globals.css';
+import '../app/styles/globals.scss';
 
 const preview: Preview = {
   parameters: {

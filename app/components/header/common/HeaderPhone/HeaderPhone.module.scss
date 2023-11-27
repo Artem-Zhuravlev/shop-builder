@@ -1,0 +1,17 @@
+.HeaderPhone {
+  display: flex;
+  align-items: center;
+  gap: var(--space-medium);
+}
+
+.HeaderPhoneList {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.HeaderPhoneIcon {
+  color: var(--gray-80);
+  font-size: 20px;
+}
