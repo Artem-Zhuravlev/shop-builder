@@ -1,18 +1,13 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
+import cls from './HeaderLogo.module.scss';
 import { LogoBase } from '@/app/ui/icons/LogoBase';
 
-interface HeaderLogoProps {
-  className: string;
-}
-
-export const HeaderLogo:FC<HeaderLogoProps> = (props) => {
-  const { className } = props;
-
+export const HeaderLogo:FC = () => {
   return (
     <Link
       href="/"
-      className={className}
+      className={cls.HeaderLogo}
     >
       <LogoBase />
     </Link>

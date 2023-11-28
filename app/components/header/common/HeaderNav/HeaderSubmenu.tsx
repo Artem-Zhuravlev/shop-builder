@@ -1,6 +1,6 @@
 import React, { FC, useId } from 'react';
 import Link from 'next/link';
-import cls from './HeaderNav.module.scss';
+import cls from './HeaderSubmenu.module.scss';
 
 interface HeaderSubmenuProps {
   item: {

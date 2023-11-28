@@ -1,6 +1,7 @@
-import React, { FC, useId } from 'react';
+import React, { FC, useId, useState } from 'react';
 import cls from './HeaderNav.module.scss';
 import Link from 'next/link';
+import { classNames } from '@/app/utils/classNames/classNames';
 import { HeaderSubmenu } from './HeaderSubmenu';
 
 export interface ISubMenu {
@@ -27,14 +28,17 @@ export interface HeaderNavProps {
 export const HeaderNav:FC<HeaderNavProps> = (props) => {
   const { items } = props;
   const id = useId();
+  const [collapse, setCollapse] = useState<boolean>(false);
 
   const submenuCls = (sub: object[]): string => {
-    if (sub.length > 1) {
-      return `${cls.HeaderNavSubmenu} ${cls.HeaderNavSubmenuFull}`
-    }
-
-    return `${cls.HeaderNavSubmenu}`
+    if (sub.length < 1) { return '' }
+      
+    return `${cls.HeaderNavSubmenuFull}`
   }
+
+  const mods: Record<string, boolean> = {
+    [cls.HeaderNavSubmenuActive]: collapse
+  };
 
   return (
     <nav
@@ -61,9 +65,12 @@ export const HeaderNav:FC<HeaderNavProps> = (props) => {
                   <button
                     type="button"
                     className={cls.HeaderNavToggler}
-                  >+</button>
+                    onClick={() => setCollapse(prev => !prev)}
+                  >
+                    { collapse ? '-' : '+' }
+                  </button>
                   <div
-                    className={submenuCls(mainItem.sub)}
+                    className={classNames(cls.HeaderNavSubmenu, mods, [submenuCls(mainItem.sub)])}
                   >
                     {mainItem.sub.map((subItem, subIndex) => (
                       <HeaderSubmenu

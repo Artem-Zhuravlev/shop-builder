@@ -1,7 +1,17 @@
+@import '../../../../styles/abstracts/include-media-or.scss';
+
 .HeaderPhone {
   display: flex;
   align-items: center;
   gap: var(--space-medium);
+  margin-left: auto;
+  margin-right: 0;
+  @include media('<tablet') {
+    margin-top: auto;
+    margin-bottom: var(--size-extra-small);
+    margin-left: 0;
+    margin-right: auto;
+  }
 }
 
 .HeaderPhoneList {

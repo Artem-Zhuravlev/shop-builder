@@ -4,7 +4,8 @@ import {
   HeaderLogo,
   HeaderNav,
   IMenuItem,
-  HeaderPhone
+  HeaderPhone,
+  HeaderBurger
 } from './common';
 import cls from './HeaderBase.module.scss';
 
@@ -17,31 +18,39 @@ export const HeaderBase:FC<HeaderBaseProps> = (props) => {
   const {
     items,
     phones
-  } = props
+  } = props;
+
+  const toggleBurgerMenu = (isActive: boolean) => {
+    console.log(isActive);
+  }
 
   return (
     <header
       className={cls.Header}
     >
       <ContainerBase>
-        <div
-          className={cls.HeaderTop}
-        >
-          <HeaderLogo
-            className={cls.HeaderLogo}
+        <div className={cls.HeaderTop}>
+          <HeaderLogo />
+          <HeaderBurger
+            toggleBurger={toggleBurgerMenu}
           />
-          <HeaderNav
-            items={items}
-          />
-          <HeaderPhone
-            items={phones}
-          />
-          <button
-            type="button"
-            className={cls.HeaderBurger}
-          ></button>
         </div>
       </ContainerBase>
+      <div
+        className={cls.HeaderBottom}
+      >
+        <ContainerBase>
+          <div className={cls.HeaderBottomRow}>
+            
+            <HeaderNav
+              items={items}
+            />
+            <HeaderPhone
+              items={phones}
+            />
+          </div>
+        </ContainerBase>
+      </div>
     </header>
   )
 }

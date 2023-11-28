@@ -3,6 +3,7 @@ export default{
     title: 'Title'
   },
   base: {
-    brand: 'Brand'
+    brand: 'Brand',
+    burger_label: 'Burger button'
   }
 }
