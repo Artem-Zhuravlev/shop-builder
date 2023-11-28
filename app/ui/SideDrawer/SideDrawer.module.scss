@@ -1,3 +1,5 @@
+@import '../../styles/abstracts/mixins.scss';
+
 .SideDrawer {
   position: fixed;
   top: 0;
@@ -37,18 +39,5 @@
 .SideDrawerContent {
   max-height: calc(100vh - 115px);
   overflow: auto;
-
-  &::-webkit-scrollbar {
-    width: var( --interface-size-sm);
-  }
-
-  &::-webkit-scrollbar-track {
-    background: var(--gray-40);
-    border-radius: var(--space-small);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--primary-main);
-    border-radius: var(--space-small);
-  }
+  @extend %scroll-bar;
 }
