@@ -3,11 +3,19 @@ import cls from './HeaderControls.module.scss';
 import { useTranslations } from 'next-intl';
 
 interface HeaderControlsProps {
-  cartTotal?: number
+  cartTotal?: number;
+  handleCompare: () => void;
+  handleWishlist: () => void;
+  handleAddToCart: () => void;
 }
 
 export const HeaderControls:FC<HeaderControlsProps> = (props) => {
-  const { cartTotal = 0 } = props;
+  const {
+    cartTotal = 0,
+    handleCompare,
+    handleWishlist,
+    handleAddToCart
+  } = props;
 
   const t = useTranslations();
 
@@ -19,6 +27,7 @@ export const HeaderControls:FC<HeaderControlsProps> = (props) => {
         type="button"
         aria-label={t('base.compare')}
         className={cls.HeaderControlsBtn}
+        onClick={() => handleCompare()}
       >
         <span className="icon-loop2" />
       </button>
@@ -26,6 +35,7 @@ export const HeaderControls:FC<HeaderControlsProps> = (props) => {
         type="button"
         aria-label={t('base.wishlist')}
         className={cls.HeaderControlsBtn}
+        onClick={() => handleWishlist()}
       >
         <span className="icon-heart" />
       </button>
@@ -33,6 +43,7 @@ export const HeaderControls:FC<HeaderControlsProps> = (props) => {
         type="button"
         aria-label={t('base.cart_total')}
         className={cls.HeaderControlsBtn}
+        onClick={() => handleAddToCart()}
       >
         <span
           className={cls.CartItemTotal}

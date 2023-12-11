@@ -13,14 +13,20 @@ import cls from './HeaderBase.module.scss';
 interface HeaderBaseProps {
   items: IMenuItem[];
   phones: string[];
-  cartTotal?: number
+  cartTotal?: number;
+  handleCompare: () => void;
+  handleWishlist: () => void;
+  handleAddToCart: () => void;
 }
 
 export const HeaderBase:FC<HeaderBaseProps> = (props) => {
   const {
     items,
     phones,
-    cartTotal = 0
+    cartTotal = 0,
+    handleCompare,
+    handleWishlist,
+    handleAddToCart
   } = props;
 
   const toggleBurgerMenu = (isActive: boolean) => {
@@ -40,6 +46,9 @@ export const HeaderBase:FC<HeaderBaseProps> = (props) => {
           search
           <HeaderControls
             cartTotal={cartTotal}
+            handleCompare={handleCompare}
+            handleWishlist={handleWishlist}
+            handleAddToCart={handleAddToCart}
           />
         </div>
       </ContainerBase>

@@ -5,6 +5,11 @@ import { HeaderBase } from './HeaderBase';
 export default {
   title: 'Header',
   component: HeaderBase,
+  argTypes: {
+    handleCompare: { action: 'compare' },
+    handleWishlist: { action: 'wishlist' },
+    handleAddToCart: { action: 'add to cart' }
+  }
 } as Meta<typeof HeaderBase>;
 
 const Template: StoryFn<typeof HeaderBase> = (args) => <HeaderBase {...args} />;
