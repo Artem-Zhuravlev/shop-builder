@@ -5,7 +5,8 @@ import {
   HeaderNav,
   IMenuItem,
   HeaderPhone,
-  HeaderBurger
+  HeaderBurger,
+  HeaderControls
 } from './common';
 import cls from './HeaderBase.module.scss';
 
@@ -34,6 +35,8 @@ export const HeaderBase:FC<HeaderBaseProps> = (props) => {
           <HeaderBurger
             toggleBurger={toggleBurgerMenu}
           />
+          search
+          <HeaderControls />
         </div>
       </ContainerBase>
       <div

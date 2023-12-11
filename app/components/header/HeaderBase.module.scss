@@ -4,8 +4,15 @@
   max-width: 100%;
 }
 
+.HeaderTop {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  align-items: center;
+  padding: var(--space-extra-small) 0;
+}
+
 .HeaderBottom {
-  background-color: var(--success-secondary);
+  background-color: var(--warning-border);
   @include media('<tablet') {
     position: fixed;
     top: 0;
