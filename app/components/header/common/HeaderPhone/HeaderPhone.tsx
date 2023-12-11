@@ -9,12 +9,17 @@ export const HeaderPhone:FC<HeaderPhoneProps> = ({ items }) => {
   const id = useId();
 
   return (
-    <div
+    <details
       className={cls.HeaderPhone}
     >
-      <span
-        className={`icon-phone ${cls.HeaderPhoneIcon}`}
-      />
+      <summary
+        className={cls.HeaderPhoneSummary}
+      >
+        <span
+          className={`icon-phone ${cls.HeaderPhoneIcon}`}
+        />
+        {items[0]}
+      </summary>
       <ul
         className={cls.HeaderPhoneList}
       >
@@ -31,6 +36,6 @@ export const HeaderPhone:FC<HeaderPhoneProps> = ({ items }) => {
           </li>
         )) }
       </ul>
-    </div>
+    </details>
   )
 }

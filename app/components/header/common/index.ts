@@ -12,4 +12,6 @@ export {
   HeaderControls
 };
 
-export type { IMenuItem };
+export type {
+  IMenuItem
+};
