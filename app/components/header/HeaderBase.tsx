@@ -6,6 +6,7 @@ import {
   IMenuItem,
   HeaderPhone,
   HeaderBurger,
+  HeaderSearch,
   HeaderControls
 } from './common';
 import cls from './HeaderBase.module.scss';
@@ -43,7 +44,7 @@ export const HeaderBase:FC<HeaderBaseProps> = (props) => {
           <HeaderBurger
             toggleBurger={toggleBurgerMenu}
           />
-          search
+          <HeaderSearch />
           <HeaderControls
             cartTotal={cartTotal}
             handleCompare={handleCompare}

@@ -3,7 +3,7 @@ import cls from './Label.module.scss';
 
 interface LabelProps {
   children: ReactNode;
-  name: string;
+  name?: string;
   onSuffixClick?: () => void;
 }
 
@@ -25,9 +25,11 @@ export const Label:FC<LabelProps> = ({
     <label
       className={cls.Label}
     >
-      <div
-        className={cls.LabelName}
-      >{name}</div>
+      {name && (
+        <div
+          className={cls.LabelName}
+        >{name}</div>
+      )}
       {children}
       {
         onSuffixClick && (
