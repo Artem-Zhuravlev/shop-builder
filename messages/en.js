@@ -8,6 +8,7 @@ export default{
     compare: 'Compare',
     wishlist: 'Wishlist',
     cart_total: 'Cart total',
-    search: 'Search'
+    search: 'Search',
+    no_result: 'No search results'
   }
 }

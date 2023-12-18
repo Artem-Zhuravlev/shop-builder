@@ -5,6 +5,7 @@ export default{
     compare: 'Порівняти',
     wishlist: 'Обране',
     cart_total: 'Всього в кошику',
-    search: 'Пошук'
+    search: 'Пошук',
+    no_result: 'Не знайдено'
   }
 }

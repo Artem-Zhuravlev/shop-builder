@@ -20,5 +20,10 @@ a {
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 @import './abstracts/variables';
 @import './abstracts/include-media-or';

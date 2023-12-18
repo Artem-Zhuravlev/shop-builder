@@ -1,3 +1,36 @@
 .HeaderSearchList {
+  list-style: none;
+}
+
+.HeaderSearchItem {
+  margin-bottom: var(--space-extra-small);
+  padding-bottom: var(--space-extra-small);
   
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--gray-40);
+  }
+}
+
+.HeaderSearchEmptyImage,
+.HeaderSearchImage {
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.HeaderSearchEmptyImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-40);
+  svg {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.HeaderSearchLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-medium);
 }

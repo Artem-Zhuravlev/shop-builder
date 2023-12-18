@@ -1,3 +1,14 @@
 .HeaderSearch {
+  position: relative;
   display: grid;
+}
+
+.HeaderSearchDropdown {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: var(--gray-20);
+  border: 1px solid var(--gray-40);
+  box-shadow: 3px 3px 3px var(--gray-30);
+  z-index: 11;
 }

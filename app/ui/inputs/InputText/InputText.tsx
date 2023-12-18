@@ -66,6 +66,7 @@ export const InputText:FC<InputProps> = ({
             id={id}
             placeholder={placeholder}
             disabled={disabled}
+            autoComplete='false'
             value={initialValue}
             onChange={handleInputChange}
             onFocus={onFocus}

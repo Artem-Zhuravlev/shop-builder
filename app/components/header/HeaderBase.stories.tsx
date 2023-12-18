@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { HeaderBase } from './HeaderBase';
 
 export default {
-  title: 'Header',
+  title: 'Header/HeaderBase',
   component: HeaderBase,
   argTypes: {
     handleCompare: { action: 'compare' },

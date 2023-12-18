@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import cls from './HeaderSearch.module.scss';
-import { InputText } from '@/app/ui/inputs/InputText';
+import { InputText } from '../../../../ui/inputs/InputText';
+import { HeaderSearchList } from '../HeaderSearchList/HeaderSearchList';
 import { useTranslations } from 'next-intl';
 
 export const HeaderSearch = () => {
   const t = useTranslations();
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState<string>('');
+  const [noResults, setNoResults] = useState(false);
+  const [searchResult, setSearchResult] = useState(null)
 
-  const handleSearch = (e: { target: { value: React.SetStateAction<string>; }; }) => {
-    setSearchValue(e.target.value)
-  }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSearch = useCallback((e: any) => {
+    setSearchValue(e);
+  }, []);
 
   return (
     <div
@@ -22,6 +26,18 @@ export const HeaderSearch = () => {
         name="search"
         onChange={handleSearch}
       />
+      {
+        Boolean(searchValue) && (
+          <div
+            className={cls.HeaderSearchDropdown}
+          >
+            <HeaderSearchList
+              noResults={noResults}
+              items={searchResult}
+            />
+          </div>
+        )
+      }
     </div>
   )
 }
