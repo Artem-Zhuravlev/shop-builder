@@ -1,5 +1,11 @@
+@import '../../../../styles/abstracts/include-media-or.scss';
+
 .HeaderLogo {
   display: inline-block;
   max-width: 100px;
   width: 100%;
+
+  @include media('<tablet') {
+    order: 1;
+  }
 }

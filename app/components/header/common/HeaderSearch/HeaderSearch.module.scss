@@ -1,6 +1,13 @@
+@import '../../../../styles/abstracts/include-media-or.scss';
+
 .HeaderSearch {
   position: relative;
   display: grid;
+  @include media('<tablet') {
+    flex: 1 1 100%;
+    order: 4;
+    margin-top: 10px;
+  }
 }
 
 .HeaderSearchDropdown {

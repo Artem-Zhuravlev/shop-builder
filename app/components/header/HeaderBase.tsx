@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { ContainerBase } from '@/app/ui/ContainerBase';
+import { classNames } from '@/app/utils/classNames/classNames';
 import {
   HeaderLogo,
   HeaderNav,
@@ -30,9 +31,17 @@ export const HeaderBase:FC<HeaderBaseProps> = (props) => {
     handleAddToCart
   } = props;
 
+  const [isActive, setIsActive] = useState(false);
+
+
+
   const toggleBurgerMenu = (isActive: boolean) => {
-    console.log(isActive);
+    setIsActive(!isActive);
   }
+
+  const mods: Record<string, boolean> = {
+    [cls.HeaderBottomActive]: isActive
+  };
 
   return (
     <header
@@ -54,7 +63,7 @@ export const HeaderBase:FC<HeaderBaseProps> = (props) => {
         </div>
       </ContainerBase>
       <div
-        className={cls.HeaderBottom}
+        className={classNames(cls.HeaderBottom, mods)}
       >
         <ContainerBase>
           <div className={cls.HeaderBottomRow}>

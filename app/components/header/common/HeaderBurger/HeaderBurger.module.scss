@@ -10,6 +10,8 @@
   background-color: transparent;
   @include media('<tablet') {
     display: block;
+    right: 0;
+    order: 3;
   }
 
   span,

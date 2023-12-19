@@ -58,6 +58,10 @@
   box-shadow: 3px 3px 3px var(--gray-30);
   border-radius: var(--interface-size-sm);
   border: 1px solid var(--gray-40);
+  @include media('<tablet') {
+    top: auto;
+    bottom: 37px;
+  }
 }
 
 .HeaderPhoneIcon {

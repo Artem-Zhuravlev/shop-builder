@@ -23,7 +23,7 @@ export const Label:FC<LabelProps> = ({
 
   return (
     <label
-      className={cls.Label}
+      className={name && cls.Label}
     >
       {name && (
         <div
