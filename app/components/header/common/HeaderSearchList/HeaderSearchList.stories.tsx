@@ -32,4 +32,6 @@ Default.args = {
 };
 
 export const WithEmptyResult = Template.bind({});
-WithEmptyResult.args = {}
+WithEmptyResult.args = {
+  noResults: true
+}

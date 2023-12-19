@@ -19,13 +19,13 @@ interface HeaderSearchListProps {
 export const HeaderSearchList:FC<HeaderSearchListProps> = (props) => {
   const {
     items,
-    noResults = false
+    noResults
   } = props;
   const id = useId();
   const t = useTranslations();
 
   const renderItemsList = useMemo(() => {
-    return noResults ? items?.map((item, index) => (
+    return !noResults ? items?.map((item, index) => (
       <li
         key={`${id}-${index}`}
         className={cls.HeaderSearchItem}

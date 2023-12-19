@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 export const HeaderSearch = () => {
   const t = useTranslations();
   const [searchValue, setSearchValue] = useState<string>('');
-  const [noResults, setNoResults] = useState(false);
+  const [noResults, setNoResults] = useState(true);
   const [searchResult, setSearchResult] = useState(null)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
