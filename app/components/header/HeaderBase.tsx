@@ -33,8 +33,6 @@ export const HeaderBase:FC<HeaderBaseProps> = (props) => {
 
   const [isActive, setIsActive] = useState(false);
 
-
-
   const toggleBurgerMenu = (isActive: boolean) => {
     setIsActive(!isActive);
   }
