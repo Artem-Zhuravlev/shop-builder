@@ -4,15 +4,17 @@ import Link from 'next/link';
 import cls from './HeaderSearchList.module.scss';
 import { IconPicture } from '../../../../ui/icons/IconPicture';
 
+export type IResultList = Array<{
+  slug: string;
+  thumbnail?: {
+    url: string;
+    alt: string;
+  };
+  name: string;
+}> | null;
+
 interface HeaderSearchListProps {
-  items: Array<{
-    slug: string;
-    thumbnail?: {
-      url: string;
-      alt: string;
-    };
-    name: string;
-  }> | null;
+  items: IResultList;
   noResults: boolean;
 }
 
