@@ -1,70 +1,91 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { Form } from 'react-final-form';
-import { InputText } from './InputText';
-import { ButtonBase } from '../../ButtonBase';
+import { InputText, InputProps } from './InputText';
+import { ButtonBase, ButtonType } from '../../ButtonBase';
 
 export default {
   title: 'inputs/InputText',
   component: InputText,
+  decorators: [(Story) => <Story />],
 } as Meta<typeof InputText>;
 
-const Template: StoryFn<typeof InputText> = (args) => {
-  return (
-  <Form
-    onSubmit={async (values) => {
-      console.log('Form submitted with values:', values);
-    }}
-    initialValues={{field: 'Some value'}}
-    render={({ handleSubmit, values }) => (
-      <>
-        {
-          args?.withForm && JSON.stringify(values)
-        }
-      
-      <form
-        onSubmit={handleSubmit}
-        style={{ display: 'flex', gap: '20px', alignItems: 'flex-end' }}
-      >
-        <InputText
-          {...args}
-        />
-        <ButtonBase type="submit">Submit</ButtonBase>
-      </form>
-      </>
-    )}
-  />
-)};
+const Template: StoryFn<InputProps> = ({ ...args }) => {
+  const onSubmit = async (values: object) => {
+    console.log('Form submitted with values:', values);
+  };
 
-export const Primary = Template.bind({});
+  return (
+    <Form
+      onSubmit={onSubmit}
+      initialValues={{ field: args.value }}
+    >
+      {({ handleSubmit, values }) => (
+        <>
+          {args.withForm && JSON.stringify(values)}
+
+          <form
+            onSubmit={handleSubmit}
+            style={{ display: 'flex', gap: '20px', alignItems: 'flex-end' }}>
+            <InputText {...args} />
+            <ButtonBase buttonType={ButtonType.SUBMIT}>Submit</ButtonBase>
+          </form>
+        </>
+      )}
+    </Form>
+  );
+};
+
+export const Primary: StoryFn<InputProps> = Template.bind({});
 Primary.args = {
   value: 'Some string',
   withForm: true,
   placeholder: 'Please add text',
-  label: 'Field'
+  label: 'Field',
+  isRequired: true
 };
 
-export const PrimaryDisabled = Template.bind({});
+export const PrimaryDisabled: StoryFn<InputProps> = Template.bind({});
 PrimaryDisabled.args = {
   value: 'Some string',
   withForm: true,
   disabled: true,
   placeholder: 'Please add text',
-  label: 'Field'
+  label: 'Field',
 };
 
-export const EmptyField = Template.bind({});
+export const EmptyField: StoryFn<InputProps> = Template.bind({});
 EmptyField.args = {
   value: '',
   withForm: true,
   placeholder: 'Please add text',
-  label: 'Field'
+  label: 'Field',
+  isRequired: true
 };
 
-export const WithoutFormWrapper = Template.bind({});
+export const WithoutFormWrapper: StoryFn<InputProps> = Template.bind({});
 WithoutFormWrapper.args = {
   value: 'without form wrapper',
   withForm: false,
   placeholder: 'Please add text',
-  label: 'Field'
+  label: 'Field',
+};
+
+export const WithCustomValidation: StoryFn<InputProps> = Template.bind({});
+WithCustomValidation.args = {
+  value: 'without form wrapper',
+  withForm: true,
+  placeholder: 'Please add text',
+  label: 'Field',
+  isRequired: true,
+  validationHandler(value) {
+    if (!value) {
+      return 'Email is required';
+    }
+  
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    if (!emailRegex.test(value)) {
+      return 'Email is not valid';
+    }
+  }
 };

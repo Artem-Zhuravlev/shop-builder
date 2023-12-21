@@ -1,5 +1,6 @@
-import { ButtonBase } from './ButtonBase';
+import { ButtonBase, ButtonType } from './ButtonBase';
 
 export {
-  ButtonBase
+  ButtonBase,
+  ButtonType
 }

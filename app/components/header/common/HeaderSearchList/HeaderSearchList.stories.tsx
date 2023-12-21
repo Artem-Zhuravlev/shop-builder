@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { HeaderSearchList } from './HeaderSearchList';
 
 export default {
-  title: 'Header/HeaderSearchList',
+  title: 'Lists/HeaderSearchList',
   component: HeaderSearchList,
 } as Meta<typeof HeaderSearchList>;
 

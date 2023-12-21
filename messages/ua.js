@@ -7,5 +7,8 @@ export default{
     cart_total: 'Всього в кошику',
     search: 'Пошук',
     no_result: 'Не знайдено'
+  },
+  field_error: {
+    required: 'Обов\'язкове поле'
   }
 }

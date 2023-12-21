@@ -2,6 +2,9 @@
   display: inline-block;
   position: relative;
   cursor: pointer;
+  &:not(:last-of-type) {
+    margin-bottom: var(--size-middle);
+  }
 }
 
 .LabelName {
@@ -19,4 +22,12 @@
   background-color: transparent;
   cursor: pointer;
   font-size: var(--font-size-lg);
+}
+
+.ErrorMessage {
+  position: absolute;
+  left: 0;
+  bottom: calc(var(--size-extra-small) * -1);
+  color: var(--danger-main);
+  font-size: var(--font-size-sm);
 }

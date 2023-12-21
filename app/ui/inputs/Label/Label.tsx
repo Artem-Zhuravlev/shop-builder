@@ -5,12 +5,16 @@ interface LabelProps {
   children: ReactNode;
   name?: string;
   onSuffixClick?: () => void;
+  hasError?: boolean;
+  error?: string;
 }
 
 export const Label:FC<LabelProps> = ({
   children,
   name,
-  onSuffixClick
+  onSuffixClick,
+  hasError,
+  error
 }) => {
   const [showEyeIcon, setShowEyeIcon] = useState(true);
 
@@ -44,6 +48,15 @@ export const Label:FC<LabelProps> = ({
               : (<span className="icon-eye"></span>)
             }
           </button>
+        )
+      }
+      {
+        hasError && (
+          <span
+            className={cls.ErrorMessage}
+          >
+            {error}
+          </span>
         )
       }
     </label>
