@@ -1,5 +1,5 @@
 import React, { FC, useId, useState, useEffect, useRef, useCallback } from 'react';
-import { classNames } from '../../utils/classNames/classNames';
+import { classNames } from '@/utils/classNames/classNames';
 import cls from './DropdownBase.module.scss';
 import Link from 'next/link';
 

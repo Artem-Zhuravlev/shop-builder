@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { InfoList, Availability } from './InfoList';
-import { customRender } from '../../../utils/intlWrapper/IntlWrapper';
+import { customRender } from '@/utils/intlWrapper/IntlWrapper';
 
 const mockItem = {
   brand: {

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { Form } from 'react-final-form';
 import { InputPassword } from './InputPassword';
-import { ButtonBase } from '../../ButtonBase';
+import { ButtonBase } from '@/ui/ButtonBase';
 
 export default {
   title: 'inputs/InputPassword',

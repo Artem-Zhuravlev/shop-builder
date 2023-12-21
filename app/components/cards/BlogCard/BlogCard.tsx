@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { HeadingBase } from '../../../ui/HeadingBase';
+import { HeadingBase } from '@/ui/HeadingBase';
 import Link from 'next/link';
 import cls from './BlogCard.module.scss';
 

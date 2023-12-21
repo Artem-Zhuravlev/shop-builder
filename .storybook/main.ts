@@ -30,7 +30,7 @@ const config: StorybookConfig = {
       };
 
       config.resolve.alias = {
-        '@': path.resolve(__dirname, '../'),
+        '@': path.resolve(__dirname, '../app'),
       };
     } else {
       console.error("Property 'resolve' is missing in the config object.");

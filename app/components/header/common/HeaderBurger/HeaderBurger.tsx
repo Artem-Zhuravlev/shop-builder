@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import cls from './HeaderBurger.module.scss';
-import { classNames } from '@/app/utils/classNames/classNames';
+import { classNames } from '@/utils/classNames/classNames';
 import { useTranslations } from 'next-intl';
 
 interface HeaderBurgerProps {

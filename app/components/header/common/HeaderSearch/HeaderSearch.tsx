@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import cls from './HeaderSearch.module.scss';
-import { InputText } from '../../../../ui/inputs/InputText';
+import { InputText } from '@/ui/inputs/InputText';
 import { HeaderSearchList, IResultList } from '../HeaderSearchList/HeaderSearchList';
 import { useTranslations } from 'next-intl';
-import { DEBOUNCE_DELAY } from '../../../../constants/easing.constants';
-import { debounce } from '../../../../utils/debounce/debounce';
+import { DEBOUNCE_DELAY } from '@/constants/easing.constants';
+import { debounce } from '@/utils/debounce/debounce';
 
 export const HeaderSearch = () => {
   const t = useTranslations();

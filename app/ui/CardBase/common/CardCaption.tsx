@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import { InputRating } from '../../inputs/InputRating';
-import { HeadingBase } from '../../HeadingBase';
+import { InputRating } from '@/ui/inputs/InputRating';
+import { HeadingBase } from '@/ui/HeadingBase';
 import cls from '../CardBase.module.scss';
 
 interface CardCaptionProps {

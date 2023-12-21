@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import cls from './FooterBase.module.scss';
-import { ContainerBase } from '@/app/ui/ContainerBase';
+import { ContainerBase } from '@/ui/ContainerBase';
 import { FooterLogo } from './common';
 
 export const FooterBase: FC = () => {

@@ -1,6 +1,6 @@
 import React, { FC, useState, InputHTMLAttributes } from 'react';
 import cls from './InputNumber.module.scss';
-import { ButtonBase } from '../../ButtonBase';
+import { ButtonBase } from '@/ui/ButtonBase';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: number;

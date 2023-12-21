@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Field } from 'react-final-form';
 import cls from './InputText.module.scss';
 import { Label } from '../Label/Label';
-import { classNames } from '@/app/utils/classNames/classNames';
+import { classNames } from '@/utils/classNames/classNames';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;

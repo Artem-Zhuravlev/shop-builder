@@ -2,7 +2,7 @@ import React, { FC, useId, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import cls from './HeaderSearchList.module.scss';
-import { IconPicture } from '../../../../ui/icons/IconPicture';
+import { IconPicture } from '@/ui/icons/IconPicture';
 
 export type IResultList = Array<{
   slug: string;

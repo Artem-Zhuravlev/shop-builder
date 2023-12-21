@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { classNames } from '../../../utils/classNames/classNames';
+import { classNames } from '@/utils/classNames/classNames';
 import cls from './InputSwitcher.module.scss';
 
 interface InputSwitcherProps {

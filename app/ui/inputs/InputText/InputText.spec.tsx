@@ -9,6 +9,11 @@ const TestComponent = () => {
   return <InputText name="input" label="Your Label" value="" onChange={input.onChange} />;
 };
 
+jest.mock('next-intl', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  useTranslations: () => (key: any) => key
+}));
+
 describe('InputText component', () => {
   it('renders with the correct label', () => {
     const { getByLabelText } = render(

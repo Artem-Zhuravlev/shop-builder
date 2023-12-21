@@ -2,7 +2,7 @@ import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { Form } from 'react-final-form';
 import { InputText, InputProps } from './InputText';
-import { ButtonBase, ButtonType } from '../../ButtonBase';
+import { ButtonBase, ButtonType } from '@/ui/ButtonBase';
 
 export default {
   title: 'inputs/InputText',
