@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useState } from 'react';
 import cls from './SideDrawer.module.scss';
-import { classNames } from '@/utils/classNames/classNames';
+import { classNames } from '@/utils/classNames';
 import { HeadingBase } from '../HeadingBase';
 
 interface SideDrawerProps {

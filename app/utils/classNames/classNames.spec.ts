@@ -1,4 +1,4 @@
-import { classNames } from './classNames';
+import { classNames } from '.';
 
 describe('classNames function', () => {
   it('should return the base class when no modifiers or additional classes are provided', () => {

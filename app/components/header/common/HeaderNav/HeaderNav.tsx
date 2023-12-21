@@ -1,7 +1,7 @@
 import React, { FC, useId, useState } from 'react';
 import cls from './HeaderNav.module.scss';
 import Link from 'next/link';
-import { classNames } from '@/utils/classNames/classNames';
+import { classNames } from '@/utils/classNames';
 import { HeaderSubmenu } from './HeaderSubmenu';
 
 export interface ISubMenu {

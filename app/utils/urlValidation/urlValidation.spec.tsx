@@ -1,4 +1,4 @@
-import { isValidURL } from './urlValidation';
+import { isValidURL } from '.';
 
 describe('isValidURL', () => {
   test('String with a valid URL should return true', () => {

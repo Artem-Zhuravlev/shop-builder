@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import cls from './AlertBase.module.scss';
-import { classNames } from '@/utils/classNames/classNames';
+import { classNames } from '@/utils/classNames';
 
 export enum AlertType {
   ERROR = 'error',

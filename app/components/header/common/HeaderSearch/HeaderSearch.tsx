@@ -4,7 +4,7 @@ import { InputText } from '@/ui/inputs/InputText';
 import { HeaderSearchList, IResultList } from '../HeaderSearchList/HeaderSearchList';
 import { useTranslations } from 'next-intl';
 import { DEBOUNCE_DELAY } from '@/constants/easing.constants';
-import { debounce } from '@/utils/debounce/debounce';
+import { debounce } from '@/utils/debounce';
 
 export const HeaderSearch = () => {
   const t = useTranslations();

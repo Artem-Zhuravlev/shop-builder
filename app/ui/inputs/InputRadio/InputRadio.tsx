@@ -1,6 +1,6 @@
 import React, { FC, useId, useState } from 'react';
 import cls from './InputRadio.module.scss';
-import { classNames } from '@/utils/classNames/classNames';
+import { classNames } from '@/utils/classNames';
 
 interface InputProps {
   name: string;

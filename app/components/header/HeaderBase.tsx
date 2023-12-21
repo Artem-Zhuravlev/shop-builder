@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { ContainerBase } from '@/ui/ContainerBase';
-import { classNames } from '@/utils/classNames/classNames';
+import { classNames } from '@/utils/classNames';
 import {
   HeaderLogo,
   HeaderNav,

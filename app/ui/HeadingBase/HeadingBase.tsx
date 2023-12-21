@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { classNames } from '@/utils/classNames/classNames';
+import { classNames } from '@/utils/classNames';
 import cls from './HeadingBase.module.scss';
 
 interface HeadingProps {
