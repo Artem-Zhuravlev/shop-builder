@@ -1,5 +1,8 @@
 .FooterSubscribeForm {
 	display: grid;
 	grid-template-columns: 1fr 150px;
-	gap: var(--space-medium);
+}
+
+.FooterSubscribeBtn {
+	margin-left: -2px;
 }

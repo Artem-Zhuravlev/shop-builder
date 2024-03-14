@@ -27,11 +27,14 @@ export const FooterSubscribeForm: FC = () => {
 						placeholder='Email'
 						validationHandler={emailValidate}
 						isDarkMode
+						roundedLeftSide
 						withForm={false}
 					/>
 					<ButtonBase
 						type='submit'
-						variant='warning'>
+						variant='warning'
+						roundedRightSide
+						className={cls.FooterSubscribeBtn}>
 						{t('base.subscribe')}
 					</ButtonBase>
 				</form>
