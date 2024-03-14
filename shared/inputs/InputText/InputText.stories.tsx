@@ -62,6 +62,36 @@ EmptyField.args = {
 	isRequired: true,
 };
 
+export const Rounded: StoryFn<InputProps> = Template.bind({});
+Rounded.args = {
+	value: '',
+	withForm: true,
+	placeholder: 'Please add text',
+	label: 'Field',
+	isRequired: true,
+	rounded: true,
+};
+
+export const WithRoundedLeftSide: StoryFn<InputProps> = Template.bind({});
+WithRoundedLeftSide.args = {
+	value: '',
+	withForm: true,
+	placeholder: 'Please add text',
+	label: 'Field',
+	isRequired: true,
+	roundedLeftSide: true,
+};
+
+export const WithRoundedRightSide: StoryFn<InputProps> = Template.bind({});
+WithRoundedRightSide.args = {
+	value: '',
+	withForm: true,
+	placeholder: 'Please add text',
+	label: 'Field',
+	isRequired: true,
+	roundedRightSide: true,
+};
+
 export const WithoutFormWrapper: StoryFn<InputProps> = Template.bind({});
 WithoutFormWrapper.args = {
 	value: 'without form wrapper',

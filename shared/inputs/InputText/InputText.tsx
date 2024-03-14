@@ -13,6 +13,9 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	label?: string;
 	isRequired?: boolean;
 	isDarkMode?: boolean;
+	roundedLeftSide?: boolean;
+	roundedRightSide?: boolean;
+	rounded?: boolean;
 	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -29,6 +32,9 @@ export const InputText: FC<InputProps> = ({
 	disabled,
 	placeholder,
 	isDarkMode = false,
+	roundedLeftSide = false,
+	roundedRightSide = false,
+	rounded = false,
 	onChange,
 	onFocus,
 	onBlur,
@@ -62,11 +68,13 @@ export const InputText: FC<InputProps> = ({
 		return;
 	};
 
-	const inputClasses = classNames(
-		cls.InputText,
-		error ? cls.InputTextError : false,
-		isDarkMode ? cls.InputTextDark : false
-	);
+	const inputClasses = classNames(cls.InputText, {
+		[cls.InputTextError]: error,
+		[cls.InputTextDark]: isDarkMode,
+		[cls.roundedLeftSide]: roundedLeftSide,
+		[cls.roundedRightSide]: roundedRightSide,
+		[cls.rounded]: rounded,
+	});
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const renderInputField = ({ input, meta }: any) => {

@@ -1,5 +1,6 @@
 .InputText {
 	min-height: var(--input-height);
+	max-height: var(--input-height);
 	padding: var(--input-padding);
 	border: 1px solid var(--gray-40);
 	font-size: var(--font-size-md);
@@ -39,4 +40,21 @@
 
 .InputTextError {
 	border-color: var(--danger-main) !important;
+}
+
+.rounded {
+	padding-left: var(--size-extra-small);
+	padding-right: var(--size-extra-small);
+	border-radius: 30px;
+}
+
+.roundedLeftSide {
+	padding-left: var(--size-extra-small);
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+
+.roundedRightSide {
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
