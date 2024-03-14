@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { ContainerBase } from '@/shared/ContainerBase';
-import { classNames } from '@/utils/classNames';
+import classNames from 'classnames';
 import {
 	HeaderLogo,
 	HeaderNav,
@@ -37,9 +37,10 @@ export const TheHeader: FC<TheHeaderProps> = (props) => {
 		setIsActive(!isActive);
 	};
 
-	const mods: Record<string, boolean> = {
-		[cls.HeaderBottomActive]: isActive,
-	};
+	const headerBottomClasses = classNames(
+		cls.HeaderBottom,
+		isActive ? cls.HeaderBottomActive : null
+	);
 
 	return (
 		<header className={cls.Header}>
@@ -56,7 +57,7 @@ export const TheHeader: FC<TheHeaderProps> = (props) => {
 					/>
 				</div>
 			</ContainerBase>
-			<div className={classNames(cls.HeaderBottom, mods)}>
+			<div className={headerBottomClasses}>
 				<ContainerBase>
 					<div className={cls.HeaderBottomRow}>
 						<HeaderNav items={items} />

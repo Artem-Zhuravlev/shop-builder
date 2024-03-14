@@ -1,14 +1,14 @@
 .InputEditEditor {
-  padding: var(--input-padding);
-  border: 1px solid var(--gray-40);
-  font-size: var(--font-size-md);
-  border-radius: var(--interface-size-sm);
-  &:focus {
-    border-color: var(--gray-50);
-  }
+	padding: var(--input-padding);
+	border: 1px solid var(--gray-40);
+	font-size: var(--font-size-md);
+	border-radius: var(--interface-size-sm);
+	&:focus {
+		border-color: var(--gray-50);
+	}
 }
 
 .InputEditToolbar {
-  border: 1px solid var(--gray-40);
-  border-radius: var(--interface-size-sm);
+	border: 1px solid var(--gray-40);
+	border-radius: var(--interface-size-sm);
 }

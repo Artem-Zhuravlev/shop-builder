@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import cls from './FooterSubscribeForm.module.scss';
 import { emailValidate } from '@/utils/validations';
 import { InputText } from '@/shared/inputs/InputText';
-import { ButtonBase, ButtonType } from '@/shared/ButtonBase';
+import { ButtonBase } from '@/shared/ButtonBase';
 
 export const FooterSubscribeForm: FC = () => {
 	const [searchValue, setSearchValue] = useState('');
@@ -26,9 +26,7 @@ export const FooterSubscribeForm: FC = () => {
 						name='subscribe'
 						validationHandler={emailValidate}
 					/>
-					<ButtonBase buttonType={ButtonType.SUBMIT}>
-						{t('base.subscribe')}
-					</ButtonBase>
+					<ButtonBase type='submit'>{t('base.subscribe')}</ButtonBase>
 				</form>
 			)}
 		</Form>

@@ -2,13 +2,9 @@ import React, { FC, ReactNode } from 'react';
 import cls from './ContainerBase.module.scss';
 
 interface ContainerBaseProps {
-  children: ReactNode
+	children: ReactNode;
 }
 
-export const ContainerBase:FC<ContainerBaseProps> = ({ children }) => {
-  return (
-    <div className={cls.ContainerBase}>
-      {children}
-    </div>
-  )
-}
+export const ContainerBase: FC<ContainerBaseProps> = ({ children }) => {
+	return <div className={cls.ContainerBase}>{children}</div>;
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { Form } from 'react-final-form';
 import { InputText, InputProps } from './InputText';
-import { ButtonBase, ButtonType } from '@/shared/ButtonBase';
+import { ButtonBase } from '@/shared/ButtonBase';
 
 export default {
 	title: 'inputs/InputText',
@@ -27,7 +27,7 @@ const Template: StoryFn<InputProps> = ({ ...args }) => {
 						onSubmit={handleSubmit}
 						style={{ display: 'flex', gap: '20px', alignItems: 'flex-end' }}>
 						<InputText {...args} />
-						<ButtonBase buttonType={ButtonType.SUBMIT}>Submit</ButtonBase>
+						<ButtonBase type='submit'>Submit</ButtonBase>
 					</form>
 				</>
 			)}

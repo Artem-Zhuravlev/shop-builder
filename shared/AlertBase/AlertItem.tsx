@@ -1,52 +1,41 @@
 import React, { FC } from 'react';
 import cls from './AlertBase.module.scss';
-import { classNames } from '@/utils/classNames';
+import classNames from 'classnames';
 
-export enum AlertType {
-  ERROR = 'error',
-  SUCCESS = 'success'
+export interface IAlertItem {
+	type: 'error' | 'success';
+	message: string;
+}
+interface AlertProps extends IAlertItem {
+	onClose: (index: number) => void;
+	index: number;
 }
 
-interface AlertProps {
-  type: AlertType;
-  message: string;
-  onClose: (index: number) => void;
-  index: number;
-}
+export const AlertItem: FC<AlertProps> = (props) => {
+	const { type = 'success', message, onClose, index } = props;
 
-export const AlertItem:FC<AlertProps> = (props) => {
-  const {
-    type = AlertType.SUCCESS,
-    message,
-    onClose,
-    index
-  } = props;
+	const alertClasses = classNames(
+		cls.AlertItem,
+		type === 'success' && cls.success,
+		type === 'error' && cls.error
+	);
 
-  const mods: Record<string, boolean> = {
-    [cls.error]: type === AlertType.ERROR,
-    [cls.success]: type === AlertType.SUCCESS,
-  };
+	const handleClose = () => {
+		onClose(index);
+	};
 
-  const handleClose = () => {
-    onClose(index);
-  }
-
-  return (
-    <div
-      data-testid="alert-item"
-      className={classNames(cls.AlertItem, mods)}
-    >
-      {message}
-      <button
-        data-testid="alert-close"
-        type="button"
-        className={cls.AlertButton}
-        onClick={handleClose}
-      >
-        <span
-          className="icon-cross"
-        />
-      </button>
-    </div>
-  )
-}
+	return (
+		<div
+			data-testid='alert-item'
+			className={alertClasses}>
+			{message}
+			<button
+				data-testid='alert-close'
+				type='button'
+				className={cls.AlertButton}
+				onClick={handleClose}>
+				<span className='icon-cross' />
+			</button>
+		</div>
+	);
+};

@@ -1,99 +1,100 @@
 .ButtonBase {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-extra-small) var(--space-small);
-  color: var(--gray-10);
-  background-color: var(--primary-main);
-  font-weight: var(--btn-font-weight);
-  cursor: pointer;
-  min-width: var(--btn-height);
-  min-height: var(--btn-height);
-  font-size: var(--font-size-lg);
-  border: var(--btn-border-width) solid transparent;
-  border-radius: var(--btn-border-radius);
-  transition: var(--transition-base);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-extra-small);
+	padding: var(--space-extra-small) var(--space-small);
+	color: var(--gray-10);
+	background-color: var(--primary-main);
+	font-weight: var(--btn-font-weight);
+	cursor: pointer;
+	min-width: var(--btn-height);
+	min-height: var(--btn-height);
+	font-size: var(--font-size-lg);
+	border: var(--btn-border-width) solid transparent;
+	border-radius: var(--btn-border-radius);
+	transition: var(--transition-base);
 
-  &[disabled] {
-    color: var(--gray-50);
-    background-color: var(--gray-20);
-    cursor: auto;
-    &:hover,
-    &:focus {
-      background-color: var(--gray-20);
-    }
-  }
+	&[disabled] {
+		color: var(--gray-50);
+		background-color: var(--gray-20);
+		cursor: auto;
+		&:hover,
+		&:focus {
+			background-color: var(--gray-20);
+		}
+	}
 
-  &:hover {
-    background-color: var(--primary-hover);
-  }
+	&:hover {
+		background-color: var(--primary-hover);
+	}
 
-  &:focus {
-    background-color: var(--primary-pressed);
-    box-shadow: 0 0 0 3px var(--primary-focus);
-    outline: transparent;
-  }
+	&:focus {
+		background-color: var(--primary-pressed);
+		box-shadow: 0 0 0 3px var(--primary-focus);
+		outline: transparent;
+	}
 }
 
 .large {
-  font-size: var(--font-size-lg);
-  min-width: var(--btn-height-lg);
-  min-height: var(--btn-height-lg);
+	font-size: var(--font-size-lg);
+	min-width: var(--btn-height-lg);
+	min-height: var(--btn-height-lg);
 }
 
 .loading {
-  color: var(--gray-50);
-  background-color:var(--gray-20);
-  cursor: auto;
-  pointer-events: none;
-  user-select: none;
+	color: var(--gray-50);
+	background-color: var(--gray-20);
+	cursor: auto;
+	pointer-events: none;
+	user-select: none;
 
-  span {
-    animation: rotate 1s linear infinite;
-  }
+	span {
+		animation: rotate 1s linear infinite;
+	}
 }
 
 .secondary {
-  color: var(--primary-main);
-  background-color: var(--primary-secondary);
+	color: var(--primary-main);
+	background-color: var(--primary-secondary);
 
-  &:hover,
-  &:focus {
-    color: var(--primary-hover);
-    background-color: var(--primary-secondary);
-  }
+	&:hover,
+	&:focus {
+		color: var(--primary-hover);
+		background-color: var(--primary-secondary);
+	}
 }
 
 .outline {
-  color: var(--primary-main);
-  background-color: var(--primary-secondary);
-  border-color: var(--primary-border);
+	color: var(--primary-main);
+	background-color: var(--primary-secondary);
+	border-color: var(--primary-border);
 
-  &:hover {
-    border-color: var(--primary-hover);
-  }
+	&:hover {
+		border-color: var(--primary-hover);
+	}
 
-  &:hover,
-  &:focus {
-    color: var(--primary-hover);
-    background-color: var(--primary-secondary);
-  }
+	&:hover,
+	&:focus {
+		color: var(--primary-hover);
+		background-color: var(--primary-secondary);
+	}
 
-  &[disabled] {
-    color: var(--gray-50);
-    border-color: var(--gray-40);
-  }
+	&[disabled] {
+		color: var(--gray-50);
+		border-color: var(--gray-40);
+	}
 }
 
 .block {
-  width: 100%;
+	width: 100%;
 }
 
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

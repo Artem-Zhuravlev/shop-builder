@@ -4,21 +4,21 @@ import { InputEdit } from './InputEdit';
 import { EditorState } from 'draft-js';
 
 export default {
-  title: 'inputs/InputEdit',
-  component: InputEdit,
+	title: 'inputs/InputEdit',
+	component: InputEdit,
 } as Meta<typeof InputEdit>;
 
 const Template: StoryFn<typeof InputEdit> = (args) => {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+	const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
-  return (
-    <InputEdit
-      {...args}
-      value={editorState}
-      onEditorStateChange={(e) => setEditorState(e)}
-    />
-  )
-}
+	return (
+		<InputEdit
+			{...args}
+			value={editorState}
+			onEditorStateChange={(e) => setEditorState(e)}
+		/>
+	);
+};
 
 export const Default = Template.bind({});
 Default.args = {};
