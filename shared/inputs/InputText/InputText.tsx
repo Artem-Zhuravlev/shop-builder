@@ -9,12 +9,13 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	id?: string;
 	name: string;
 	value: string;
-	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	withForm?: boolean;
 	label?: string;
 	isRequired?: boolean;
+	isDarkMode?: boolean;
+	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	validationHandler?: (value: string) => string | void;
 }
 
@@ -22,15 +23,16 @@ export const InputText: FC<InputProps> = ({
 	id,
 	name = 'field',
 	value,
+	withForm = true,
+	label,
+	isRequired = false,
 	disabled,
 	placeholder,
+	isDarkMode = false,
 	onChange,
 	onFocus,
 	onBlur,
-	withForm = true,
-	isRequired = false,
 	validationHandler,
-	label,
 }) => {
 	const [initialValue, setInitialValue] = useState(value);
 	const t = useTranslations();
@@ -60,15 +62,16 @@ export const InputText: FC<InputProps> = ({
 		return;
 	};
 
+	const inputClasses = classNames(
+		cls.InputText,
+		error ? cls.InputTextError : false,
+		isDarkMode ? cls.InputTextDark : false
+	);
+
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const renderInputField = ({ input, meta }: any) => {
 		setError(!!meta.error && meta.touched && meta.submitFailed);
 		setErrorMessage(meta.error || '');
-
-		const inputClasses = classNames(
-			cls.InputText,
-			error ? cls.InputTextError : false
-		);
 
 		return (
 			<input
@@ -95,7 +98,7 @@ export const InputText: FC<InputProps> = ({
 				</Field>
 			) : (
 				<input
-					className={cls.InputText}
+					className={inputClasses}
 					type='text'
 					name={name}
 					id={id}

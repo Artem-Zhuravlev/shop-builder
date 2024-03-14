@@ -1,28 +1,42 @@
 .InputText {
-  min-height: var(--input-height);
-  padding: var(--input-padding);
-  border: 1px solid var(--gray-40);
-  font-size: var(--font-size-md);
-  font-family: var(--font-family);
-  color: var(--gray-90);
-  border-radius: var(--interface-size-sm);
-  pointer-events: none;
-  width: 100%;
+	min-height: var(--input-height);
+	padding: var(--input-padding);
+	border: 1px solid var(--gray-40);
+	font-size: var(--font-size-md);
+	font-family: var(--font-family);
+	color: var(--gray-90);
+	border-radius: var(--interface-size-sm);
+	pointer-events: none;
+	width: 100%;
 
-  &:focus {
-    border-color: var(--gray-50);
-    outline: transparent;
-  }
-  &:disabled {
-    color: var(--gray-70);
-    background-color: var(--gray-20);
-  }
+	&:focus {
+		border-color: var(--gray-50);
+		outline: transparent;
+	}
+	&:disabled {
+		color: var(--gray-70);
+		background-color: var(--gray-20);
+	}
 
-  &::placeholder {
-    color: var(--gray-60);
-  }
+	&::placeholder {
+		color: var(--gray-60);
+	}
+}
+
+.InputTextDark {
+	border-color: var(--gray-20);
+	background-color: transparent;
+	color: var(--gray-10);
+
+	&::placeholder {
+		color: var(--gray-20);
+	}
+
+	&:focus {
+		border-color: var(--gray-40);
+	}
 }
 
 .InputTextError {
-  border-color: var(--danger-main)!important;
+	border-color: var(--danger-main) !important;
 }

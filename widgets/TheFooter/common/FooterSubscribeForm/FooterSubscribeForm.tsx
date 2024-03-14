@@ -24,9 +24,16 @@ export const FooterSubscribeForm: FC = () => {
 						value={searchValue}
 						onChange={(e) => setSearchValue(e.target.value)}
 						name='subscribe'
+						placeholder='Email'
 						validationHandler={emailValidate}
+						isDarkMode
+						withForm={false}
 					/>
-					<ButtonBase type='submit'>{t('base.subscribe')}</ButtonBase>
+					<ButtonBase
+						type='submit'
+						variant='warning'>
+						{t('base.subscribe')}
+					</ButtonBase>
 				</form>
 			)}
 		</Form>
