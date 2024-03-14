@@ -3,9 +3,9 @@ import path from 'path';
 
 const config: StorybookConfig = {
 	stories: [
-		'../ui/**/*.stories.@(js|jsx|ts|tsx)',
+		'../shared/**/*.stories.@(js|jsx|ts|tsx)',
 		'../widgets/**/*.stories.@(js|jsx|ts|tsx)',
-		'../components/**/*.stories.@(js|jsx|ts|tsx)',
+		'../features/**/*.stories.@(js|jsx|ts|tsx)',
 	],
 	addons: [
 		'@storybook/addon-links',
