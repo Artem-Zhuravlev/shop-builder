@@ -3,16 +3,18 @@ import { HeadingBase } from '@/shared/HeadingBase';
 import Link from 'next/link';
 import cls from './BlogCard.module.scss';
 
+interface IBlogCardItem {
+	image: string;
+	author: string;
+	comments: number;
+	viewed: number;
+	title: string;
+	published_at: string;
+}
+
 interface BlogCardProps {
 	to: string;
-	item: {
-		image: string;
-		author: string;
-		comments: number;
-		viewed: number;
-		title: string;
-		published_at: string;
-	};
+	item: IBlogCardItem;
 }
 
 export const BlogCard: FC<BlogCardProps> = (props) => {

@@ -10,7 +10,9 @@ interface CardCaptionProps {
 	rating: number;
 }
 
-export const CardCaption: FC<CardCaptionProps> = ({ to, title, rating }) => {
+export const CardCaption: FC<CardCaptionProps> = (props) => {
+	const { to, title, rating } = props;
+
 	return (
 		<div className={cls.CardCaption}>
 			<Link href={to}>
