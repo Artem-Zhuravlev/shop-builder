@@ -10,9 +10,9 @@ import {
 	HeaderSearch,
 	HeaderControls,
 } from './common';
-import cls from './HeaderBase.module.scss';
+import cls from './TheHeader.module.scss';
 
-interface HeaderBaseProps {
+interface TheHeaderProps {
 	items: IMenuItem[];
 	phones: string[];
 	cartTotal?: number;
@@ -21,7 +21,7 @@ interface HeaderBaseProps {
 	handleAddToCart: () => void;
 }
 
-export const HeaderBase: FC<HeaderBaseProps> = (props) => {
+export const TheHeader: FC<TheHeaderProps> = (props) => {
 	const {
 		items,
 		phones,
