@@ -9,9 +9,12 @@ export default{
     wishlist: 'Wishlist',
     cart_total: 'Cart total',
     search: 'Search',
-    no_result: 'No search results'
+    no_result: 'No search results',
+    subscribe: 'Subscribe'
   },
   field_error: {
-    required: 'Field is required'
+    required: 'Field is required',
+    email_required: 'Email is required',
+    email_not_valid: 'Email is not valid'
   }
 }

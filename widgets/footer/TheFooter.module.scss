@@ -1,0 +1,9 @@
+.Footer {
+	padding-top: var(--size-middle);
+	background-color: var(--gray-90);
+}
+
+.FooterTop {
+	display: grid;
+	grid-template-columns: 150px 1fr;
+}
