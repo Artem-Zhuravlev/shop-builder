@@ -37,6 +37,39 @@ const config: StorybookConfig = {
 			console.error("Property 'resolve' is missing in the config object.");
 		}
 
+		if (config.mode === 'production') {
+			config?.module?.rules?.push({
+				test: /\.(js|jsx|ts|tsx)$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: [
+							'@babel/preset-env',
+							'@babel/preset-react',
+							'@babel/preset-typescript',
+						],
+						plugins: ['@babel/plugin-transform-runtime'],
+					},
+				},
+			});
+
+			config.optimization = {
+				minimize: true,
+			};
+
+			config.optimization.splitChunks = {
+				chunks: 'all',
+			};
+
+			config.cache = {
+				type: 'filesystem',
+				buildDependencies: {
+					config: [__filename],
+				},
+			};
+		}
+
 		return config;
 	},
 };

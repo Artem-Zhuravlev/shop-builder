@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.woff') format('woff');
+  src:  url('../fonts/icomoon.woff?sslww3') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -21,6 +21,9 @@
 .icon-home3:before {
   content: "\e902";
 }
+.icon-office:before {
+  content: "\e903";
+}
 .icon-price-tags:before {
   content: "\e936";
 }
@@ -38,6 +41,9 @@
 }
 .icon-compass:before {
   content: "\e949";
+}
+.icon-clock2:before {
+  content: "\e94f";
 }
 .icon-bubble2:before {
   content: "\e96e";
@@ -101,9 +107,6 @@
 }
 .icon-power:before {
   content: "\e9b5";
-}
-.icon-power-cord:before {
-  content: "\e9b7";
 }
 .icon-list-numbered:before {
   content: "\e9b9";
@@ -236,6 +239,9 @@
 }
 .icon-italic:before {
   content: "\ea64";
+}
+.icon-mail4:before {
+  content: "\ea86";
 }
 .icon-google2:before {
   content: "\ea89";
