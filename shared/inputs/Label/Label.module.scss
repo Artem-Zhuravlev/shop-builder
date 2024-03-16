@@ -1,6 +1,7 @@
 .Label {
 	display: inline-block;
 	position: relative;
+	cursor: text;
 
 	&:not(:last-of-type) {
 		margin-bottom: var(--size-middle);
