@@ -1,0 +1,40 @@
+@import '@styles/abstracts/mixins.scss';
+
+.SideDrawer {
+	position: fixed;
+	top: 0;
+	right: -300px;
+	max-height: 100vh;
+	height: 100%;
+	max-width: 300px;
+	width: 100%;
+	background-color: var(--gray-20);
+	box-shadow: -2px 0px 4px transparent;
+	padding: var(--size-middle) var(--space-medium) var(--space-medium);
+
+	transition: var(--transition-base);
+}
+
+.SideDrawerOpen {
+	right: 0;
+	box-shadow: -2px 0px 4px var(--gray-40);
+}
+
+.SideDrawerTitle {
+	margin-bottom: var(--size-extra-small) !important;
+}
+
+.SideDrawerClose {
+	position: absolute;
+	top: var(--space-medium);
+	right: var(--space-medium);
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+.SideDrawerContent {
+	max-height: calc(100vh - 115px);
+	overflow: auto;
+	@extend %scroll-bar;
+}

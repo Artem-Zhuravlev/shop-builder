@@ -2,7 +2,15 @@
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"paths": { "@/*": ["./*"] },
+		"paths": {
+			"@shared/*": ["app/components/shared/*"],
+			"@features/*": ["app/components/features/*"],
+			"@widgets/*": ["app/components/widgets/*"],
+			"@lib/*": ["app/lib/*"],
+			"@utils/*": ["utils/*"],
+			"@constants/*": ["constants/*"],
+			"@styles/*": ["styles/*"]
+		},
 		"target": "ESNext",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"allowJs": true,

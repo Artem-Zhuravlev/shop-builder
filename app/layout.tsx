@@ -1,7 +1,7 @@
 import React from 'react';
-import { Providers } from '@/lib/providers';
+import { Providers } from '@lib/providers';
 
-import '@/styles/globals.scss';
+import '@styles/globals.scss';
 
 export default function RootLayout(props: React.PropsWithChildren) {
 	return (

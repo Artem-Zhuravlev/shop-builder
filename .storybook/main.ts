@@ -3,9 +3,9 @@ import path from 'path';
 
 const config: StorybookConfig = {
 	stories: [
-		'../shared/**/*.stories.@(js|jsx|ts|tsx)',
-		'../widgets/**/*.stories.@(js|jsx|ts|tsx)',
-		'../features/**/*.stories.@(js|jsx|ts|tsx)',
+		'../app/components/shared/**/*.stories.@(js|jsx|ts|tsx)',
+		'../app/components/widgets/**/*.stories.@(js|jsx|ts|tsx)',
+		'../app/components/features/**/*.stories.@(js|jsx|ts|tsx)',
 	],
 	addons: [
 		'@storybook/addon-links',
@@ -31,7 +31,13 @@ const config: StorybookConfig = {
 			};
 
 			config.resolve.alias = {
-				'@': path.resolve(__dirname, '../'),
+				'@shared': path.resolve(__dirname, '../app/components/shared'),
+				'@features': path.resolve(__dirname, '../app/components/features'),
+				'@widgets': path.resolve(__dirname, '../app/components/widgets'),
+				'@lib': path.resolve(__dirname, '../app/lib'),
+				'@utils': path.resolve(__dirname, '../utils'),
+				'@constants': path.resolve(__dirname, '../constants'),
+				'@styles': path.resolve(__dirname, '../styles'),
 			};
 		} else {
 			console.error("Property 'resolve' is missing in the config object.");
