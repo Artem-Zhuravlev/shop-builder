@@ -1,33 +1,71 @@
 import React, { FC } from 'react';
 import { SliderBase } from '@shared/SliderBase/SliderBase';
+import {
+	CategoriesSliderItem,
+	CategoriesSliderItemProps,
+} from './CategoriesSliderItem';
 
-export const CategoriesSlider: FC = () => {
+interface CategoriesSliderProps {
+	items: CategoriesSliderItemProps[];
+}
+
+export const CategoriesSlider: FC<CategoriesSliderProps> = (props) => {
+	const { items } = props;
+
 	const settings = {
-		infinite: true,
 		slidesToScroll: 1,
-		slidesToShow: 5,
+		slidesToShow: 4,
+		infinite: false,
+		responsive: [
+			{
+				breakpoint: 1300,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					infinite: false,
+					arrows: false,
+					dots: true,
+				},
+			},
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3,
+					infinite: false,
+					dots: true,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					initialSlide: 2,
+					dots: true,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: true,
+				},
+			},
+		],
 	};
 
 	return (
 		<SliderBase settings={settings}>
-			<div>
-				<h3>1</h3>
-			</div>
-			<div>
-				<h3>2</h3>
-			</div>
-			<div>
-				<h3>3</h3>
-			</div>
-			<div>
-				<h3>4</h3>
-			</div>
-			<div>
-				<h3>5</h3>
-			</div>
-			<div>
-				<h3>6</h3>
-			</div>
+			{items &&
+				items.map((slide) => (
+					<CategoriesSliderItem
+						title={slide.title}
+						to={slide.to}
+						image={slide.image}
+					/>
+				))}
 		</SliderBase>
 	);
 };

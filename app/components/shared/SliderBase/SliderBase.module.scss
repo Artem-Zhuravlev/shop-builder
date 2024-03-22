@@ -1,0 +1,26 @@
+.sliderArrow {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: var(--size-middle);
+	height: var(--size-middle);
+	border-radius: 50%;
+	border: none;
+	background-color: var(--gray-30);
+	cursor: pointer;
+	transition: var(--transition-base);
+
+	&:hover,
+	&:focus {
+		background-color: var(--gray-40);
+	}
+}
+
+.sliderArrowPrev {
+	left: calc(var(--size-small) * -2);
+}
+
+.sliderArrowNext {
+	right: calc(var(--size-small) * -2);
+}

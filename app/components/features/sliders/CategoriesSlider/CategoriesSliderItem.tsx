@@ -1,33 +1,31 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { HeadingBase } from '@shared/HeadingBase';
 import cls from './CategoriesSlider.module.scss';
 
-interface CategoriesSliderItemProps {
+export interface CategoriesSliderItemProps {
+	title: string;
 	to: string;
 	image: string;
-	title: string;
 }
 
 export const CategoriesSliderItem: FC<CategoriesSliderItemProps> = (props) => {
-	const { to, image, title } = props;
+	const { title, to, image } = props;
 
 	return (
 		<Link
 			href={to}
 			className={cls.CategoriesSliderItem}>
-			<figure className={cls.CategoriesSliderItemFigure}>
-				<Image
-					src={image}
-					alt={title}
-					width={200}
-					height={200}
-					className={cls.CategoriesSliderItemImage}
-				/>
-				<figcaption className={cls.CategoriesSliderItemTitle}>
-					{title}
-				</figcaption>
-			</figure>
+			<img
+				src={image}
+				alt={title}
+				className={cls.CategoriesSliderImage}
+			/>
+			<HeadingBase
+				level={5}
+				className={cls.CategoriesSliderTit}>
+				{title}
+			</HeadingBase>
 		</Link>
 	);
 };
