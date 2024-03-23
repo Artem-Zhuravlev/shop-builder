@@ -39,7 +39,7 @@ export const SideDrawer: FC<SideDrawerProps> = (props) => {
 			{title && (
 				<HeadingBase
 					level={4}
-					additionalClass={cls.SideDrawerTitle}>
+					className={cls.SideDrawerTitle}>
 					{title}
 				</HeadingBase>
 			)}

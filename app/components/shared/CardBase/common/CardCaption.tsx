@@ -18,7 +18,7 @@ export const CardCaption: FC<CardCaptionProps> = (props) => {
 			<Link href={to}>
 				<HeadingBase
 					level={5}
-					additionalClass={cls.CardTitle}>
+					className={cls.CardTitle}>
 					{title}
 				</HeadingBase>
 			</Link>

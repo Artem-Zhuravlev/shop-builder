@@ -23,7 +23,7 @@ export const FooterCol: FC<FooterColProp> = (props) => {
 		<div className={cls.FooterCol}>
 			<HeadingBase
 				level={5}
-				additionalClass={cls.FooterTitle}>
+				className={cls.FooterTitle}>
 				{title}
 			</HeadingBase>
 			{description && <p className={cls.FooterDescription}>{description}</p>}

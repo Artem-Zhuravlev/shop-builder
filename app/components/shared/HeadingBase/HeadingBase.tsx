@@ -6,20 +6,14 @@ interface HeadingProps {
 	level: 1 | 2 | 3 | 4 | 5 | 6;
 	className?: string;
 	children: ReactNode;
-	additionalClass?: string;
 }
 
 export const HeadingBase: FC<HeadingProps> = (props) => {
-	const {
-		level,
-		children,
-		className = `h${props.level}`,
-		additionalClass = '',
-	} = props;
+	const { level, children, className } = props;
 
 	const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
-	const headingClasses = classNames(cls[className], additionalClass);
+	const headingClasses = classNames(cls[`h${level}`], className);
 
 	return <Tag className={headingClasses}>{children}</Tag>;
 };
