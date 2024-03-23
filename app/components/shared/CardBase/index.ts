@@ -1,5 +1,2 @@
-import { CardBase } from './CardBase';
-
-export {
-  CardBase
-}
+export { CardBase } from './CardBase';
+export type { CardBaseProps } from './CardBase';

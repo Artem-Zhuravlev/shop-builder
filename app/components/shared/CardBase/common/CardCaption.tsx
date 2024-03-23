@@ -16,7 +16,11 @@ export const CardCaption: FC<CardCaptionProps> = (props) => {
 	return (
 		<div className={cls.CardCaption}>
 			<Link href={to}>
-				<HeadingBase level={5}>{title}</HeadingBase>
+				<HeadingBase
+					level={5}
+					additionalClass={cls.CardTitle}>
+					{title}
+				</HeadingBase>
 			</Link>
 			<InputRating
 				readonly

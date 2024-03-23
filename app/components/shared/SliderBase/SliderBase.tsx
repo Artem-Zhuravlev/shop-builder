@@ -7,6 +7,7 @@ import cls from './SliderBase.module.scss';
 interface SliderBaseProps {
 	settings: Settings;
 	children: ReactNode;
+	className?: string;
 }
 
 interface ArrowProps {
@@ -36,7 +37,7 @@ const ArrowNext: FC<ArrowProps> = ({ onClick }) => {
 };
 
 export const SliderBase: FC<SliderBaseProps> = (props) => {
-	const { children, settings } = props;
+	const { children, settings, className } = props;
 
 	const sliderSettings = {
 		...settings,
@@ -44,5 +45,11 @@ export const SliderBase: FC<SliderBaseProps> = (props) => {
 		nextArrow: <ArrowNext />,
 	};
 
-	return <Slider {...sliderSettings}>{children}</Slider>;
+	return (
+		<Slider
+			{...sliderSettings}
+			className={className}>
+			{children}
+		</Slider>
+	);
 };
