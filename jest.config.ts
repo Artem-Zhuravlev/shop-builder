@@ -17,6 +17,7 @@ export default {
 		'^@constants/(.*)$': '<rootDir>/constants/$1',
 		'^@styles/(.*)$': '<rootDir>/styles/$1',
 	},
+	transformIgnorePatterns: ['/node_modules/(?!(react-slick)/)'],
 	setupFilesAfterEnv: ['@testing-library/jest-dom'],
 	transform: {
 		'^.+\\.js$': 'babel-jest',
