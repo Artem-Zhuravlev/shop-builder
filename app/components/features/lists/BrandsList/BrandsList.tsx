@@ -1,7 +1,7 @@
 import React, { FC, useId } from 'react';
 import Link from 'next/link';
 import cls from './BrandsList.module.scss';
-import { SectionBase } from '@shared/SectionBase/SectionBase';
+import { SectionBase } from '@shared/SectionBase';
 
 interface BrandItem {
 	name: string;
