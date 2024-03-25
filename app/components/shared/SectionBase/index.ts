@@ -1,1 +1,1 @@
-export { SectionBase } from '@shared/SectionBase/SectionBase';
+export { SectionBase } from './SectionBase';

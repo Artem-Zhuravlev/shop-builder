@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import { InputRating } from '@shared/inputs/InputRating';
+import { InputRating } from '@shared/inputs';
 import { HeadingBase } from '@shared/HeadingBase';
 import cls from '../CardBase.module.scss';
 

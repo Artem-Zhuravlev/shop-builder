@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import { HeadingBase } from '@shared/HeadingBase';
-import cls from './CategoriesSlider.module.scss';
+import cls from '../CategoriesSlider.module.scss';
 
 export interface CategoriesSliderItemProps {
 	title: string;

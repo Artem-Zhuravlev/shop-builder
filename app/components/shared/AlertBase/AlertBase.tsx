@@ -1,5 +1,5 @@
 import React, { FC, useId, useState } from 'react';
-import { AlertItem, IAlertItem } from './AlertItem';
+import { AlertItem, IAlertItem } from './common/AlertItem';
 import cls from './AlertBase.module.scss';
 
 interface AlertsProps {

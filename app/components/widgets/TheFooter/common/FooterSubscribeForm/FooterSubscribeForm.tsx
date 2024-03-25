@@ -3,7 +3,7 @@ import { Form } from 'react-final-form';
 import { useTranslations } from 'next-intl';
 import cls from './FooterSubscribeForm.module.scss';
 import { emailValidate } from '@utils/validations';
-import { InputText } from '@shared/inputs/InputText';
+import { InputText } from '@shared/inputs';
 import { ButtonBase } from '@shared/ButtonBase';
 
 export const FooterSubscribeForm: FC = () => {

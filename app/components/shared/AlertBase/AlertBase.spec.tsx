@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 import { AlertBase } from './AlertBase';
-import { IAlertItem } from './AlertItem';
+import { IAlertItem } from './common/AlertItem';
 
 describe('AlertBase Component', () => {
 	const mockAlerts: IAlertItem[] = [

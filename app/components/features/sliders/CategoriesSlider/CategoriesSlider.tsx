@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { SliderBase } from '@shared/SliderBase/SliderBase';
+import { SliderBase } from '@shared/SliderBase';
 import { SectionBase } from '@shared/SectionBase';
 import {
 	CategoriesSliderItem,
 	CategoriesSliderItemProps,
-} from './CategoriesSliderItem';
+} from './common/CategoriesSliderItem';
 
 interface CategoriesSliderProps {
 	items: CategoriesSliderItemProps[];

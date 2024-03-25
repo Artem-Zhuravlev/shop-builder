@@ -1,7 +1,7 @@
 import React, { FC, useMemo } from 'react';
 import cls from './InfoList.module.scss';
 import Link from 'next/link';
-import { InfoListItem } from './InfoListItem';
+import { InfoListItem } from './common/InfoListItem';
 import { useTranslations } from 'next-intl';
 
 export type Availability = 'In stock' | 'Out of stock';

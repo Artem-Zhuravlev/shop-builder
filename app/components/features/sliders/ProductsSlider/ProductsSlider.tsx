@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
-import { SliderBase } from '@shared/SliderBase/SliderBase';
+import { SliderBase } from '@shared/SliderBase';
 import { CardBase, CardBaseProps } from '@shared/CardBase';
+import { SectionBase } from '@shared/SectionBase';
 import cls from './ProductsSlider.module.scss';
-import { SectionBase } from '@shared/SectionBase/SectionBase';
-
 interface ProductsSliderProps {
 	title: string;
 	items?: CardBaseProps[];

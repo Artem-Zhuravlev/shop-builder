@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import cls from './HeaderSearch.module.scss';
-import { InputText } from '@shared/inputs/InputText';
+import { InputText } from '@shared/inputs';
 import {
 	HeaderSearchList,
 	IResultList,

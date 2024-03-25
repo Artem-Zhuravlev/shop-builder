@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cls from './TheFooter.module.scss';
 import { ContainerBase } from '@shared/ContainerBase';
-import { SocialList } from '@features/lists/SocialList';
+import { SocialList } from '@features/lists';
 import {
 	FooterLogo,
 	FooterSubscribeForm,

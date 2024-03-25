@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import cls from './AlertBase.module.scss';
+import cls from '../AlertBase.module.scss';
 import classNames from 'classnames';
 
 export interface IAlertItem {
