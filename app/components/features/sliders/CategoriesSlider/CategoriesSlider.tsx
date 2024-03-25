@@ -4,6 +4,7 @@ import {
 	CategoriesSliderItem,
 	CategoriesSliderItemProps,
 } from './CategoriesSliderItem';
+import { SectionBase } from '@shared/SectionBase/SectionBase';
 
 interface CategoriesSliderProps {
 	items: CategoriesSliderItemProps[];
@@ -57,15 +58,17 @@ export const CategoriesSlider: FC<CategoriesSliderProps> = (props) => {
 	};
 
 	return (
-		<SliderBase settings={settings}>
-			{items &&
-				items.map((slide) => (
-					<CategoriesSliderItem
-						title={slide.title}
-						to={slide.to}
-						image={slide.image}
-					/>
-				))}
-		</SliderBase>
+		<SectionBase>
+			<SliderBase settings={settings}>
+				{items &&
+					items.map((slide) => (
+						<CategoriesSliderItem
+							title={slide.title}
+							to={slide.to}
+							image={slide.image}
+						/>
+					))}
+			</SliderBase>
+		</SectionBase>
 	);
 };

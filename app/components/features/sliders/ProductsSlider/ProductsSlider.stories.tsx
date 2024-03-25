@@ -8,11 +8,7 @@ export default {
 } as Meta<typeof ProductsSlider>;
 
 const Template: StoryFn<typeof ProductsSlider> = (args) => {
-	return (
-		<div style={{ maxWidth: 1170, margin: '0 auto' }}>
-			<ProductsSlider {...args} />
-		</div>
-	);
+	return <ProductsSlider {...args} />;
 };
 
 export const Default = Template.bind({});

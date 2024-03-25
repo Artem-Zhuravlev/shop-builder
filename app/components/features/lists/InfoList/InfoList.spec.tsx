@@ -3,29 +3,29 @@ import '@testing-library/jest-dom';
 import { InfoList, Availability } from './InfoList';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
 
-const mockItem = {
+const item = {
 	brand: {
 		name: 'Test Brand',
-		url: '/test-url',
+		to: '/test-url',
 	},
 	viewed: 100,
 	reward_points: 50,
-	availability: Availability.IN_STOCK,
+	availability: 'In stock' as Availability,
 };
 
 describe('InfoList Component', () => {
 	test('renders brand, viewed, reward points, and availability', () => {
-		const { container, getByText } = customRender(<InfoList item={mockItem} />);
+		const { container, getByText } = customRender(<InfoList item={item} />);
 
-		const brandElement = getByText(mockItem.brand.name);
-		const viewedElement = getByText(mockItem.viewed.toString());
+		const brandElement = getByText(item.brand.name);
+		const viewedElement = getByText(item.viewed.toString());
 		expect(brandElement).toBeInTheDocument();
 		expect(viewedElement).toBeInTheDocument();
 
-		const rewardPointsElement = getByText(mockItem.reward_points.toString());
+		const rewardPointsElement = getByText(item.reward_points.toString());
 		expect(rewardPointsElement).toBeInTheDocument();
 
-		const availabilityElement = getByText(mockItem.availability);
+		const availabilityElement = getByText(item.availability);
 		expect(availabilityElement).toBeInTheDocument();
 		expect(availabilityElement).toHaveClass('InStock'); // Assuming 'InStock' class is present
 
@@ -37,7 +37,7 @@ describe('InfoList Component', () => {
 		const itemWithoutOptionalProps = {
 			brand: {
 				name: 'Test Brand',
-				url: '/test-url',
+				to: '/test-url',
 			},
 			viewed: 100,
 		};

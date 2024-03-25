@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { SliderBase } from '@shared/SliderBase/SliderBase';
-import { HeadingBase } from '@shared/HeadingBase';
 import { CardBase, CardBaseProps } from '@shared/CardBase';
 import cls from './ProductsSlider.module.scss';
+import { SectionBase } from '@shared/SectionBase/SectionBase';
 
 interface ProductsSliderProps {
 	title: string;
@@ -62,8 +62,7 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 	const productCompare = (slug: string) => {};
 
 	return (
-		<section className={cls.ProductSliderSection}>
-			<HeadingBase level={3}>{title}</HeadingBase>
+		<SectionBase title={title}>
 			{items && (
 				<SliderBase
 					settings={settings}
@@ -83,6 +82,6 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 					))}
 				</SliderBase>
 			)}
-		</section>
+		</SectionBase>
 	);
 };
