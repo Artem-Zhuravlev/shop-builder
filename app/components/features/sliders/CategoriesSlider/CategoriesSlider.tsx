@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { SliderBase } from '@shared/SliderBase';
 import { SectionBase } from '@shared/SectionBase';
+import { settings } from '../settings/sliderWithFourColumns';
 import {
 	CategoriesSliderItem,
 	CategoriesSliderItemProps,
@@ -12,51 +13,6 @@ interface CategoriesSliderProps {
 
 export const CategoriesSlider: FC<CategoriesSliderProps> = (props) => {
 	const { items } = props;
-
-	const settings = {
-		slidesToScroll: 1,
-		slidesToShow: 4,
-		infinite: false,
-		responsive: [
-			{
-				breakpoint: 1300,
-				settings: {
-					slidesToShow: 4,
-					slidesToScroll: 1,
-					infinite: false,
-					arrows: false,
-					dots: true,
-				},
-			},
-			{
-				breakpoint: 1200,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 3,
-					infinite: false,
-					dots: true,
-				},
-			},
-			{
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2,
-					initialSlide: 2,
-					dots: true,
-				},
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					dots: true,
-				},
-			},
-		],
-	};
-
 	return (
 		<SectionBase>
 			<SliderBase settings={settings}>
