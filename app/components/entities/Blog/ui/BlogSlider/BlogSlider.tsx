@@ -1,5 +1,7 @@
 import { SectionBase } from '@shared/SectionBase';
 import React, { FC } from 'react';
+import { settings } from '../settings/sliderWithThreeColumns';
+import { SliderBase } from '@shared/SliderBase';
 
 interface BlogSliderProps {
 	title?: string;
@@ -8,5 +10,9 @@ interface BlogSliderProps {
 export const BlogSlider: FC<BlogSliderProps> = (props) => {
 	const { title } = props;
 
-	return <SectionBase title={title}>Blog slider</SectionBase>;
+	return (
+		<SectionBase title={title}>
+			<SliderBase settings={settings}></SliderBase>
+		</SectionBase>
+	);
 };

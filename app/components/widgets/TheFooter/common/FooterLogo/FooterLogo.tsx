@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import cls from './FooterLogo.module.scss';
-import { LogoBase } from '@shared/icons/LogoBase';
+import { LogoBase } from '@shared/icons';
 
 export const FooterLogo: FC = () => {
 	return (

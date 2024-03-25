@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import cls from '../CardBase.module.scss';
+import cls from '../ProductCard.module.scss';
 
 interface CardInfoProps {
 	price: number;

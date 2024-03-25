@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { BlogCard } from './BlogCard';
 
 export default {
-	title: 'Cards/BlogCard',
+	title: 'Blog/BlogCard',
 	component: BlogCard,
 } as Meta<typeof BlogCard>;
 

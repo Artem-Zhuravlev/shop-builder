@@ -6,6 +6,7 @@ const config: StorybookConfig = {
 		'../app/components/shared/**/*.stories.@(js|jsx|ts|tsx)',
 		'../app/components/widgets/**/*.stories.@(js|jsx|ts|tsx)',
 		'../app/components/features/**/*.stories.@(js|jsx|ts|tsx)',
+		'../app/components/entities/**/*.stories.@(js|jsx|ts|tsx)',
 	],
 	addons: [
 		'@storybook/addon-links',
@@ -34,10 +35,12 @@ const config: StorybookConfig = {
 				'@shared': path.resolve(__dirname, '../app/components/shared'),
 				'@features': path.resolve(__dirname, '../app/components/features'),
 				'@widgets': path.resolve(__dirname, '../app/components/widgets'),
+				'@entities': path.resolve(__dirname, '../app/components/entities'),
 				'@lib': path.resolve(__dirname, '../app/lib'),
 				'@utils': path.resolve(__dirname, '../utils'),
 				'@constants': path.resolve(__dirname, '../constants'),
 				'@styles': path.resolve(__dirname, '../styles'),
+				'@settings': path.resolve(__dirname, '../settings'),
 			};
 		} else {
 			console.error("Property 'resolve' is missing in the config object.");

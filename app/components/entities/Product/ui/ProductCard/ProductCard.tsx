@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
-import cls from './CardBase.module.scss';
+import cls from './ProductCard.module.scss';
 import { CardInfo } from './common/CardInfo';
 import { CardControls } from './common/CardControls';
 import { CardCaption } from './common/CardCaption';
 import { CardImages } from './common/CardImages';
 
-export interface CardBaseProps {
+export interface ProductCardProps {
 	to: string;
 	slug: string;
 	item: {
@@ -28,7 +28,7 @@ export interface CardBaseProps {
 	className?: string;
 }
 
-export const CardBase: FC<CardBaseProps> = (props) => {
+export const ProductCard: FC<ProductCardProps> = (props) => {
 	const {
 		to,
 		slug,
@@ -58,7 +58,7 @@ export const CardBase: FC<CardBaseProps> = (props) => {
 	};
 
 	return (
-		<div className={classNames(cls.CardBase, className)}>
+		<div className={classNames(cls.ProductCard, className)}>
 			<CardImages
 				to={to}
 				images={images}

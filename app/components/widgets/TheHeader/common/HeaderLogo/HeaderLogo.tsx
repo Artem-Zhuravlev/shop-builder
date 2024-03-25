@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import cls from './HeaderLogo.module.scss';
-import { LogoBase } from '@shared/icons/LogoBase';
+import { LogoBase } from '@shared/icons';
 
 export const HeaderLogo: FC = () => {
 	return (

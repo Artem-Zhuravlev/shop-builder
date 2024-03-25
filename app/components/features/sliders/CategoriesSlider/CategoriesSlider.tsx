@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { SliderBase } from '@shared/SliderBase';
 import { SectionBase } from '@shared/SectionBase';
-import { settings } from '../settings/sliderWithFourColumns';
+import { settings } from '@settings/slider/sliderWithFourColumns';
 import {
 	CategoriesSliderItem,
 	CategoriesSliderItemProps,

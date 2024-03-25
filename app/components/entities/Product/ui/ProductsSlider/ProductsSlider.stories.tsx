@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { ProductsSlider } from './ProductsSlider';
 
 export default {
-	title: 'Sliders/ProductsSlider',
+	title: 'Product/ProductsSlider',
 	component: ProductsSlider,
 } as Meta<typeof ProductsSlider>;
 

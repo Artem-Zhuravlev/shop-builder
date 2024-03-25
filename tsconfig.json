@@ -5,11 +5,13 @@
 		"paths": {
 			"@shared/*": ["app/components/shared/*"],
 			"@features/*": ["app/components/features/*"],
+			"@entities/*": ["app/components/entities/*"],
 			"@widgets/*": ["app/components/widgets/*"],
 			"@lib/*": ["app/lib/*"],
 			"@utils/*": ["utils/*"],
 			"@constants/*": ["constants/*"],
-			"@styles/*": ["styles/*"]
+			"@styles/*": ["styles/*"],
+			"@settings/*": ["settings/*"]
 		},
 		"target": "ESNext",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],

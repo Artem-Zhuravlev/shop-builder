@@ -1,12 +1,15 @@
 import React, { FC } from 'react';
 import { SliderBase } from '@shared/SliderBase';
-import { CardBase, CardBaseProps } from '@shared/CardBase';
+import {
+	ProductCard,
+	ProductCardProps,
+} from '@entities/Product/ui/ProductCard';
 import { SectionBase } from '@shared/SectionBase';
-import { settings } from '../settings/sliderWithFourColumns';
+import { settings } from '@settings/slider/sliderWithFourColumns';
 import cls from './ProductsSlider.module.scss';
 interface ProductsSliderProps {
 	title: string;
-	items?: CardBaseProps[];
+	items?: ProductCardProps[];
 }
 
 export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
@@ -23,7 +26,7 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 					settings={settings}
 					className={cls.ProductSlider}>
 					{items.map((slide, index) => (
-						<CardBase
+						<ProductCard
 							key={`${index}_${slide.slug}`}
 							to={slide.to}
 							item={slide.item}
