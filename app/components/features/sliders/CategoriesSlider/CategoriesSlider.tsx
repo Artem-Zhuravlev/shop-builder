@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { SliderBase } from '@shared/SliderBase';
+import { SliderBase, SliderCard } from '@shared/SliderBase';
 import { SectionBase } from '@shared/SectionBase';
 import { settings } from '@settings/slider/sliderWithFourColumns';
 import {
@@ -18,11 +18,13 @@ export const CategoriesSlider: FC<CategoriesSliderProps> = (props) => {
 			<SliderBase settings={settings}>
 				{items &&
 					items.map((slide) => (
-						<CategoriesSliderItem
-							title={slide.title}
-							to={slide.to}
-							image={slide.image}
-						/>
+						<SliderCard>
+							<CategoriesSliderItem
+								title={slide.title}
+								to={slide.to}
+								image={slide.image}
+							/>
+						</SliderCard>
 					))}
 			</SliderBase>
 		</SectionBase>

@@ -23,7 +23,7 @@ export const BrandsList: FC<BrandsListProps> = (props) => {
 			<ul className={cls.BrandsList}>
 				{items &&
 					items.map((item, index) => (
-						<li key={`${id}_${index}`}>
+						<li key={`${id}-${index}`}>
 							<Link
 								href={item.to}
 								className={cls.BrandsLink}>

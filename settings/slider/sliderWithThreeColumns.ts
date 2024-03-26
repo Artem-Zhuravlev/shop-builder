@@ -1,6 +1,6 @@
 export const settings = {
 	slidesToScroll: 1,
-	slidesToShow: 4,
+	slidesToShow: 3,
 	infinite: false,
 	responsive: [
 		{
@@ -19,23 +19,26 @@ export const settings = {
 				slidesToShow: 3,
 				slidesToScroll: 3,
 				infinite: false,
+				arrows: false,
 				dots: true,
 			},
 		},
 		{
-			breakpoint: 600,
+			breakpoint: 992,
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 2,
 				initialSlide: 2,
+				arrows: false,
 				dots: true,
 			},
 		},
 		{
-			breakpoint: 480,
+			breakpoint: 576,
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
+				arrows: false,
 				dots: true,
 			},
 		},

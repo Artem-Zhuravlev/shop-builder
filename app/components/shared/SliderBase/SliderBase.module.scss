@@ -7,13 +7,13 @@
 	height: var(--size-middle);
 	border-radius: 50%;
 	border: none;
-	background-color: var(--gray-30);
+	background-color: var(--gray-40);
 	cursor: pointer;
 	transition: var(--transition-base);
 
 	&:hover,
 	&:focus {
-		background-color: var(--gray-40);
+		background-color: var(--gray-50);
 	}
 }
 
@@ -23,4 +23,9 @@
 
 .sliderArrowNext {
 	right: calc(var(--size-small) * -2);
+}
+
+.SliderCard {
+	margin-left: var(--interface-size-md);
+	margin-right: var(--interface-size-md);
 }

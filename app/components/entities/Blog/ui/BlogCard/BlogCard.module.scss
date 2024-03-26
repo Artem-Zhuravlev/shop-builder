@@ -1,44 +1,53 @@
 .BlogCard {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--gray-10);
+	border-radius: var(--space-medium);
+	overflow: hidden;
+	border: 1px solid var((--gray-40));
 }
 
 .BlogCardImage {
-  position: relative;
-  display: block;
-  min-height: 315px;
-  max-height: 315px;
-  border-radius: var(--space-medium);
-  overflow: hidden;
-  background-color: var(--gray-50);
+	position: relative;
+	display: block;
+	min-height: 315px;
+	max-height: 315px;
+	background-color: var(--gray-50);
 
-  img {
-    display: block;
-    max-width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    object-fit: cover;
-  }
+	img {
+		display: block;
+		max-width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		object-fit: cover;
+	}
+}
+
+.BlogCardDescription {
+	padding-left: var(--space-medium);
+	padding-right: var(--space-medium);
 }
 
 .BlogCardInfo {
-  display: flex;
-  padding: var(--size-extra-small) 0;
+	display: flex;
+	padding: var(--size-extra-small) 0;
+	flex-wrap: wrap;
+	row-gap: var(--space-small);
+	font-size: 14px;
 }
 
 .BlogCardInfoItem {
-  display: flex;
-  align-items: center;
-  gap: var(--space-small);
-
-  &:not(:last-of-type) {
-    padding-right: var(--space-small);
-    margin-right: var(--space-small);
-    border-right: 1px solid var(--gray-90);
-  }
+	display: flex;
+	align-items: center;
+	gap: var(--space-small);
+	&:not(:last-of-type) {
+		padding-right: var(--space-small);
+		margin-right: var(--space-small);
+		border-right: 1px solid var(--gray-90);
+	}
 }

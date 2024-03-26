@@ -3,7 +3,8 @@ import { HeadingBase } from '@shared/HeadingBase';
 import Link from 'next/link';
 import cls from './BlogCard.module.scss';
 
-interface IBlogCardItem {
+export interface BlogCardProps {
+	to: string;
 	image: string;
 	author: string;
 	comments: number;
@@ -12,15 +13,15 @@ interface IBlogCardItem {
 	published_at: string;
 }
 
-interface BlogCardProps {
-	to: string;
-	item: IBlogCardItem;
-}
-
 export const BlogCard: FC<BlogCardProps> = (props) => {
 	const {
+		image,
+		author,
+		comments = 0,
+		viewed = 0,
+		title,
+		published_at,
 		to,
-		item: { image, author, comments = 0, viewed = 0, title, published_at },
 	} = props;
 
 	return (
@@ -33,27 +34,29 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
 					alt={title}
 				/>
 			</Link>
-			<div className={cls.BlogCardInfo}>
-				<div className={cls.BlogCardInfoItem}>
-					<span className='icon-user'></span>
-					{author}
+			<div className={cls.BlogCardDescription}>
+				<div className={cls.BlogCardInfo}>
+					<div className={cls.BlogCardInfoItem}>
+						<span className='icon-user'></span>
+						{author}
+					</div>
+					<div className={cls.BlogCardInfoItem}>
+						<span className='icon-bubble2'></span>
+						{comments}
+					</div>
+					<div className={cls.BlogCardInfoItem}>
+						<span className='icon-eye'></span>
+						{viewed}
+					</div>
+					<div className={cls.BlogCardInfoItem}>
+						<span className='icon-eye'></span>
+						{new Date(published_at).toLocaleDateString()}
+					</div>
 				</div>
-				<div className={cls.BlogCardInfoItem}>
-					<span className='icon-bubble2'></span>
-					{comments}
-				</div>
-				<div className={cls.BlogCardInfoItem}>
-					<span className='icon-eye'></span>
-					{viewed}
-				</div>
-				<div className={cls.BlogCardInfoItem}>
-					<span className='icon-eye'></span>
-					{new Date(published_at).toLocaleDateString()}
-				</div>
+				<HeadingBase level={5}>
+					<Link href={to}>{title}</Link>
+				</HeadingBase>
 			</div>
-			<HeadingBase level={4}>
-				<Link href={to}>{title}</Link>
-			</HeadingBase>
 		</article>
 	);
 };

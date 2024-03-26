@@ -32,7 +32,7 @@ export const FooterCol: FC<FooterColProp> = (props) => {
 					{list.map((item, index) => (
 						<li
 							className={cls.FooterListItem}
-							key={`${index}_${id}`}>
+							key={`${id}-${index}`}>
 							{item.to ? (
 								<Link
 									href={item.to}
