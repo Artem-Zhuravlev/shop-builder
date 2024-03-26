@@ -13,6 +13,8 @@
 	min-height: 315px;
 	max-height: 315px;
 	background-color: var(--gray-50);
+	overflow: hidden;
+	margin: -1px;
 
 	img {
 		display: block;
@@ -25,6 +27,15 @@
 		right: 0;
 		margin: auto;
 		object-fit: cover;
+		transition: 0.4s ease transform;
+		transform-origin: 50%;
+	}
+
+	&:hover,
+	&:focus {
+		img {
+			transform: scale(1.2);
+		}
 	}
 }
 
@@ -49,5 +60,14 @@
 		padding-right: var(--space-small);
 		margin-right: var(--space-small);
 		border-right: 1px solid var(--gray-90);
+	}
+}
+
+.BlogCardTitle {
+	transition: var(--transition-base);
+
+	&:hover,
+	&:focus {
+		color: var(--gray-80);
 	}
 }

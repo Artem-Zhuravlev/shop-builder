@@ -53,7 +53,9 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
 						{new Date(published_at).toLocaleDateString()}
 					</div>
 				</div>
-				<HeadingBase level={5}>
+				<HeadingBase
+					level={5}
+					className={cls.BlogCardTitle}>
 					<Link href={to}>{title}</Link>
 				</HeadingBase>
 			</div>
