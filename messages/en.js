@@ -15,6 +15,7 @@ export default {
 		days: 'Days',
 		minutes: 'Minutes',
 		seconds: 'Seconds',
+		discount: 'Discount',
 	},
 	field_error: {
 		required: 'Field is required',

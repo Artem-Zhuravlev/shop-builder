@@ -12,6 +12,7 @@ export default {
 		days: 'Дні',
 		minutes: 'Хвилини',
 		seconds: 'Секунди',
+		discount: 'Знижка',
 	},
 	field_error: {
 		required: "Обов'язкове поле",
