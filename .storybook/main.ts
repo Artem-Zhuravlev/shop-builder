@@ -42,6 +42,11 @@ const config: StorybookConfig = {
 				'@styles': path.resolve(__dirname, '../styles'),
 				'@settings': path.resolve(__dirname, '../settings'),
 			};
+
+			config.resolve.alias['next/image'] = path.resolve(
+				__dirname,
+				'./mocks/Image.tsx'
+			);
 		} else {
 			console.error("Property 'resolve' is missing in the config object.");
 		}

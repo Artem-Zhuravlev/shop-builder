@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, forwardRef, ReactNode, Ref, RefObject } from 'react';
 import Slider, { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -8,6 +8,7 @@ interface SliderBaseProps {
 	settings: Settings;
 	children: ReactNode;
 	className?: string;
+	ref?: Ref<Slider>;
 }
 
 interface ArrowProps {
@@ -36,10 +37,10 @@ const ArrowNext: FC<ArrowProps> = ({ onClick }) => {
 	);
 };
 
-export const SliderBase: FC<SliderBaseProps> = (props) => {
+export const SliderBase: FC<SliderBaseProps> = forwardRef((props, ref) => {
 	const { children, settings, className } = props;
 
-	const sliderSettings = {
+	const sliderSettings: Settings = {
 		...settings,
 		prevArrow: <ArrowPrev />,
 		nextArrow: <ArrowNext />,
@@ -48,8 +49,9 @@ export const SliderBase: FC<SliderBaseProps> = (props) => {
 	return (
 		<Slider
 			{...sliderSettings}
+			ref={ref as RefObject<Slider>}
 			className={className}>
 			{children}
 		</Slider>
 	);
-};
+});

@@ -1,0 +1,33 @@
+.ProductSlider {
+	max-width: 450px;
+}
+
+.ProductSliderCard {
+	img {
+		width: 450px;
+		height: 590px;
+		object-fit: cover;
+	}
+}
+
+.ProductSliderPreviews {
+	margin-top: var(--interface-size-md);
+
+	& > * {
+		margin-left: calc(var(--interface-size-md) * -1);
+		margin-right: calc(var(--interface-size-md) * -1);
+	}
+}
+
+.ProductSliderThumb {
+	display: flex !important;
+	justify-content: flex-start;
+	padding-right: var(--interface-size-md);
+	padding-left: var(--interface-size-md);
+
+	img {
+		width: 100%;
+		height: 130px;
+		object-fit: cover;
+	}
+}
