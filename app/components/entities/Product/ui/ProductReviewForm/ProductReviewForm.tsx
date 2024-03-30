@@ -1,35 +1,59 @@
-import React, { useState, FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Form } from 'react-final-form';
 import { useTranslations } from 'next-intl';
-import { InputText, InputTextarea } from '@shared/inputs';
+import { InputRating, InputText, InputTextarea } from '@shared/inputs';
+import cls from './ProductReviewForm.module.scss';
+import { ButtonBase } from '@shared/ButtonBase';
+import { HeadingBase } from '@shared/HeadingBase';
 
 export const ProductReviewForm: FC = () => {
-	const [name, setName] = useState('');
-	const [review, setReview] = useState('');
+	const [rating, setRating] = useState<number>(1);
 	const t = useTranslations();
 
-	const onSubmit = () => {};
+	const handleRating = (value: number) => {
+		setRating(value);
+	};
+
+	const sleep = (ms: number) =>
+		new Promise((resolve) => setTimeout(resolve, ms));
+
+	const onSubmit = async (values: { name: string; review: string }) => {
+		await sleep(300);
+		window.alert(JSON.stringify({ ...values, rating }, null, 2));
+	};
 
 	return (
-		<Form
-			onSubmit={onSubmit}
-			initialValues={{ name, review }}>
-			{({ handleSubmit }) => (
-				<form onSubmit={handleSubmit}>
-					<InputText
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-						name='name'
-						placeholder={t('inputs.name')}
-					/>
-					<InputTextarea
-						name='review'
-						value={review}
-						onChange={(e) => setReview(e.target.value)}
-						placeholder={t('inputs.review')}
-					/>
-				</form>
-			)}
-		</Form>
+		<div className={cls.ProductReviewFormSection}>
+			<Form onSubmit={onSubmit}>
+				{({ handleSubmit, submitting }) => (
+					<>
+						<HeadingBase level={4}>{t('inputs.write_review')}</HeadingBase>
+						<form
+							onSubmit={handleSubmit}
+							className={cls.ProductReviewForm}>
+							<InputRating
+								initialValue={rating}
+								onClick={handleRating}
+							/>
+							<InputText
+								name='name'
+								placeholder={t('inputs.name')}
+								required
+							/>
+							<InputTextarea
+								name='review'
+								placeholder={t('inputs.review')}
+								required
+							/>
+							<ButtonBase
+								type='submit'
+								disabled={submitting}>
+								{t('inputs.write_review')}
+							</ButtonBase>
+						</form>
+					</>
+				)}
+			</Form>
+		</div>
 	);
 };

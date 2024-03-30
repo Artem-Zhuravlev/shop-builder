@@ -4,7 +4,7 @@
  * @returns {boolean} - True if the value is empty (empty string or 0), false otherwise.
  */
 const isEmpty = (value: string | number): boolean => {
-	return value === '' || value === 0;
+	return value === undefined;
 };
 
 /**

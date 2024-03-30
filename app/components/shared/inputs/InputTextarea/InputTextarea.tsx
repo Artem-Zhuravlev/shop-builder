@@ -1,22 +1,39 @@
 import React, { FC, TextareaHTMLAttributes, useState } from 'react';
-import cls from './InputTextarea.module.scss';
+import { useTranslations } from 'next-intl';
+import classNames from 'classnames';
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';
+import cls from './InputTextarea.module.scss';
+import { getValidationMessage } from '@utils/validations';
 
 export interface TextareaProps
 	extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 	id?: string;
 	name: string;
-	value: string;
-	onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+	required?: boolean;
 	onFocus?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+	validationHandler?: (value: string) => string | void;
 }
 
 export const InputTextarea: FC<TextareaProps> = (props) => {
-	const { id, name, onFocus, onBlur, placeholder, disabled } = props;
+	const {
+		id,
+		name,
+		onFocus,
+		onBlur,
+		placeholder,
+		disabled,
+		required = false,
+		validationHandler,
+	} = props;
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
+	const t = useTranslations();
+
+	const inputClasses = classNames(cls.InputTextarea, {
+		[cls.InputTextareaError]: error,
+	});
 
 	const renderInputField = ({ input, meta }: any) => {
 		setError(!!meta.error && meta.touched && meta.submitFailed);
@@ -25,7 +42,7 @@ export const InputTextarea: FC<TextareaProps> = (props) => {
 		return (
 			<textarea
 				{...input}
-				className={cls.InputTextarea}
+				className={inputClasses}
 				name={name}
 				id={id}
 				onFocus={onFocus}
@@ -40,7 +57,18 @@ export const InputTextarea: FC<TextareaProps> = (props) => {
 		<Label
 			hasError={error}
 			error={errorMessage}>
-			<Field name={name}>{renderInputField}</Field>
+			<Field
+				name={name}
+				validate={(value) =>
+					getValidationMessage(
+						value,
+						required,
+						t('field_error.required'),
+						validationHandler
+					)
+				}>
+				{renderInputField}
+			</Field>
 		</Label>
 	);
 };

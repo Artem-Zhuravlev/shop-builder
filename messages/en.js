@@ -25,5 +25,6 @@ export default {
 	inputs: {
 		name: 'Your name',
 		review: 'Your Review',
+		write_review: 'Write review',
 	},
 };

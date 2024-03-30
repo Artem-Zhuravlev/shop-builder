@@ -1,10 +1,7 @@
 .Label {
 	display: inline-block;
 	position: relative;
-
-	&:not(:last-of-type) {
-		margin-bottom: var(--size-middle);
-	}
+	margin-bottom: var(--size-small);
 }
 
 .LabelName {

@@ -20,3 +20,7 @@
 		color: var(--gray-60);
 	}
 }
+
+.InputTextareaError {
+	border-color: var(--danger-main) !important;
+}

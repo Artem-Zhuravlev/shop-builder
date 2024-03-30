@@ -22,5 +22,6 @@ export default {
 	inputs: {
 		name: "Ваше ім'я",
 		review: 'Ваш відгук',
+		write_review: 'Залишити відгук',
 	},
 };

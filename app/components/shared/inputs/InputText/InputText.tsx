@@ -9,7 +9,6 @@ import classNames from 'classnames';
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	id?: string;
 	name: string;
-	value: string;
 	withForm?: boolean;
 	label?: string;
 	required?: boolean;
@@ -17,7 +16,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	roundedLeftSide?: boolean;
 	roundedRightSide?: boolean;
 	rounded?: boolean;
-	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	validationHandler?: (value: string) => string | void;
@@ -25,7 +23,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const InputText: FC<InputProps> = ({
 	name = 'field',
-	label,
 	required = false,
 	disabled,
 	placeholder,
