@@ -1,7 +1,9 @@
 import React, { FC, InputHTMLAttributes, ChangeEvent, useState } from 'react';
 import { Field } from 'react-final-form';
+import { useTranslations } from 'next-intl';
 import cls from './InputPassword.module.scss';
 import { Label } from '../Label/Label';
+import { getValidationMessage } from '@utils/validations';
 
 export enum InputType {
 	PASSWORD = 'password',
@@ -12,75 +14,86 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	id?: string;
 	name: string;
 	value: string;
-	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 	onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
 	withForm?: boolean;
 	label: string;
+	required?: boolean;
+	validationHandler?: (value: string) => string | void;
 }
 
 export const InputPassword: FC<InputProps> = (props) => {
 	const {
 		id,
 		name = 'field',
-		value,
 		disabled,
 		placeholder,
-		onChange,
 		onFocus,
 		onBlur,
-		withForm = true,
-		label,
+		required = false,
+		validationHandler,
 	} = props;
-	const [initialValue, setInitialValue] = useState(value);
 	const [type, setType] = useState(InputType.PASSWORD);
+	const [showEyeIcon, setShowEyeIcon] = useState(true);
+	const [error, setError] = useState(false);
+	const [errorMessage, setErrorMessage] = useState('');
+	const t = useTranslations();
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const handleInputChange = (e: any) => {
-		const newValue = e.target.value;
-		setInitialValue(newValue);
-		onChange(newValue);
-	};
-
-	const handleSuffixClick = () => {
+	const toggleEyeIcon = () => {
+		setShowEyeIcon(!showEyeIcon);
 		const suffixType =
 			type === InputType.PASSWORD ? InputType.TEXT : InputType.PASSWORD;
 		setType(suffixType);
 	};
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const renderInputField = ({ input, meta }: any) => {
+		setError(!!meta.error && meta.touched && meta.submitFailed);
+		setErrorMessage(meta.error || '');
+
+		return (
+			<input
+				{...input}
+				id={id}
+				className={cls.InputPassword}
+				type={type}
+				placeholder={placeholder}
+				autoComplete='off'
+				disabled={disabled}
+				onFocus={onFocus}
+				onBlur={onBlur}
+			/>
+		);
+	};
+
 	return (
 		<Label
-			name={label}
-			onSuffixClick={handleSuffixClick}>
-			{withForm ? (
-				<Field name={name}>
-					{({ input }) => (
-						<input
-							{...input}
-							className={cls.InputPassword}
-							type={type}
-							id={id}
-							placeholder={placeholder}
-							disabled={disabled}
-							onFocus={onFocus}
-							onBlur={onBlur}
-						/>
+			suffix={
+				<button
+					type='button'
+					className={cls.InputSuffix}
+					onClick={toggleEyeIcon}>
+					{showEyeIcon ? (
+						<span className='icon-eye-blocked'></span>
+					) : (
+						<span className='icon-eye'></span>
 					)}
-				</Field>
-			) : (
-				<input
-					className={cls.InputPassword}
-					type={type}
-					name={name}
-					id={id}
-					placeholder={placeholder}
-					disabled={disabled}
-					value={initialValue}
-					onChange={handleInputChange}
-					onFocus={onFocus}
-					onBlur={onBlur}
-				/>
-			)}
+				</button>
+			}
+			hasError={error}
+			error={errorMessage}>
+			<Field
+				name={name}
+				validate={(value) =>
+					getValidationMessage(
+						value,
+						required,
+						t('field_error.required'),
+						validationHandler
+					)
+				}>
+				{renderInputField}
+			</Field>
 		</Label>
 	);
 };

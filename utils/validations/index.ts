@@ -1,5 +1,2 @@
-import { emailValidate } from './emailValidate';
-
-export {
-  emailValidate
-}
+export { emailValidate } from './emailValidate';
+export { getValidationMessage } from './getValidationMessage';

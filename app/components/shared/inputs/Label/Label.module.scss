@@ -1,7 +1,6 @@
 .Label {
 	display: inline-block;
 	position: relative;
-	cursor: text;
 
 	&:not(:last-of-type) {
 		margin-bottom: var(--size-middle);
@@ -12,18 +11,6 @@
 	margin-bottom: var(--space-extra-small);
 	font-size: var(--font-size-lg);
 	cursor: pointer;
-}
-
-.LabelSuffix {
-	position: absolute;
-	right: 0;
-	width: var(--input-height);
-	height: var(--input-height);
-	bottom: 0;
-	border: none;
-	background-color: transparent;
-	cursor: pointer;
-	font-size: var(--font-size-lg);
 }
 
 .ErrorMessage {

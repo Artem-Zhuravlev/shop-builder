@@ -19,4 +19,8 @@ export default {
 		email_required: "Email обов'якове",
 		email_not_valid: 'Email невірний',
 	},
+	inputs: {
+		name: "Ваше ім'я",
+		review: 'Ваш відгук',
+	},
 };

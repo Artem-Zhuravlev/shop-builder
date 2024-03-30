@@ -22,4 +22,8 @@ export default {
 		email_required: 'Email is required',
 		email_not_valid: 'Email is not valid',
 	},
+	inputs: {
+		name: 'Your name',
+		review: 'Your Review',
+	},
 };

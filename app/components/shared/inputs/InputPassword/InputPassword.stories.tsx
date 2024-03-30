@@ -16,10 +16,8 @@ const Template: StoryFn<typeof InputPassword> = (args) => {
 				console.log('Form submitted with values:', values);
 			}}
 			initialValues={{ field: 'Some value' }}
-			render={({ handleSubmit, values }) => (
+			render={({ handleSubmit }) => (
 				<>
-					{args?.withForm && JSON.stringify(values)}
-
 					<form
 						onSubmit={handleSubmit}
 						style={{ display: 'flex', gap: '20px', alignItems: 'flex-end' }}>
@@ -63,4 +61,17 @@ WithoutFormWrapper.args = {
 	withForm: false,
 	placeholder: 'Please add text',
 	label: 'Field',
+};
+
+export const WithCustomValidation = Template.bind({});
+WithCustomValidation.args = {
+	value: 'without form wrapper',
+	placeholder: 'Please add text',
+	label: 'Field',
+	required: true,
+	validationHandler(value) {
+		if (!value) {
+			return 'Password is required';
+		}
+	},
 };
