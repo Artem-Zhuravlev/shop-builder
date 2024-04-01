@@ -1,36 +1,30 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Label } from './Label';
 
 describe('Label component', () => {
-  it('renders label with the name and children', () => {
-    const labelText = 'Email';
-    const { getByText } = render(
-      <Label name={labelText}>
-        <input type="text" />
-      </Label>
-    );
+	it('renders children and suffix', () => {
+		const { getByText } = render(
+			<Label suffix={<span>Suffix</span>}>Test</Label>
+		);
+		expect(getByText('Test')).toBeInTheDocument();
+		expect(getByText('Suffix')).toBeInTheDocument();
+	});
 
-    const labelElement = getByText(labelText);
-    expect(labelElement).toBeInTheDocument();
+	it('renders error message when hasError is true', () => {
+		const { getByText } = render(
+			<Label
+				hasError
+				error='This is an error'>
+				Test
+			</Label>
+		);
+		expect(getByText('This is an error')).toBeInTheDocument();
+	});
 
-    const inputElement = getByText('Email');
-    expect(inputElement).toBeInTheDocument();
-  });
-
-  it('toggles the eye icon when clicked', () => {
-    const labelText = 'Password';
-    const mockClick = jest.fn();
-    const { getByRole } = render(
-      <Label name={labelText} onSuffixClick={mockClick}>
-        <input type="password" />
-      </Label>
-    );
-  
-    const eyeIcon = getByRole('button');
-    fireEvent.click(eyeIcon);
-  
-    expect(mockClick).toHaveBeenCalled();
-  });
+	it('does not render error message when hasError is false', () => {
+		const { queryByText } = render(<Label>Test</Label>);
+		expect(queryByText('This is an error')).toBeNull();
+	});
 });

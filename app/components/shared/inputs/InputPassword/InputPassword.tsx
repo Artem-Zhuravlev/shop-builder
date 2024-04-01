@@ -16,8 +16,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	value: string;
 	onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
-	withForm?: boolean;
-	label: string;
 	required?: boolean;
 	validationHandler?: (value: string) => string | void;
 }
