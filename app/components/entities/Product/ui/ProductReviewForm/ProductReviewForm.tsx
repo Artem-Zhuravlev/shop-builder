@@ -17,7 +17,10 @@ export const ProductReviewForm: FC = () => {
 	const sleep = (ms: number) =>
 		new Promise((resolve) => setTimeout(resolve, ms));
 
-	const onSubmit = async (values: { name: string; review: string }) => {
+	const onSubmit = async (values: {
+		name: string;
+		review: string;
+	}): Promise<void> => {
 		await sleep(300);
 		window.alert(JSON.stringify({ ...values, rating }, null, 2));
 	};
