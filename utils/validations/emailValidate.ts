@@ -1,14 +1,11 @@
-// import { useTranslations } from 'next-intl';
+import { TranslateFunction } from './types/TranslateFunction';
 
-// const t = useTranslations();
-
-export const emailValidate = (value: string): string | void => {
-	if (!value) {
-		return 'field_error.email_required';
-	}
-
+export const emailValidate = (
+	value: string,
+	t: TranslateFunction
+): string | void => {
 	const emailRegex = /^\S+@\S+\.\S+$/;
 	if (!emailRegex.test(value)) {
-		return 'field_error.email_not_valid';
+		return t('field_error.email_not_valid');
 	}
 };

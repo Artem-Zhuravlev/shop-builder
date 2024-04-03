@@ -3,8 +3,8 @@ import { useTranslations } from 'next-intl';
 import classNames from 'classnames';
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';
+import { getValidationMessage, TranslateFunction } from '@utils/validations';
 import cls from './InputTextarea.module.scss';
-import { getValidationMessage } from '@utils/validations';
 
 export interface TextareaProps
 	extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -13,7 +13,7 @@ export interface TextareaProps
 	required?: boolean;
 	onFocus?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-	validationHandler?: (value: string) => string | void;
+	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 }
 
 export const InputTextarea: FC<TextareaProps> = (props) => {
@@ -60,12 +60,7 @@ export const InputTextarea: FC<TextareaProps> = (props) => {
 			<Field
 				name={name}
 				validate={(value) =>
-					getValidationMessage(
-						value,
-						required,
-						t('field_error.required'),
-						validationHandler
-					)
+					getValidationMessage(value, required, t, validationHandler)
 				}>
 				{renderInputField}
 			</Field>

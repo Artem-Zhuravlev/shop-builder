@@ -2,6 +2,7 @@ import React, { FC, InputHTMLAttributes, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Field } from 'react-final-form';
 import { getValidationMessage } from '@utils/validations';
+import { TranslateFunction } from '@utils/validations/types/TranslateFunction';
 import cls from './InputText.module.scss';
 import { Label } from '../Label/Label';
 import classNames from 'classnames';
@@ -18,7 +19,8 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	rounded?: boolean;
 	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	validationHandler?: (value: string) => string | void;
+	validationHandler?: (value: string, t: TranslateFunction) => string | void;
+	className?: string;
 }
 
 export const InputText: FC<InputProps> = ({
@@ -33,6 +35,7 @@ export const InputText: FC<InputProps> = ({
 	onFocus,
 	onBlur,
 	validationHandler,
+	className,
 }) => {
 	const t = useTranslations();
 	const [error, setError] = useState(false);
@@ -56,7 +59,7 @@ export const InputText: FC<InputProps> = ({
 				{...input}
 				className={inputClasses}
 				type='text'
-				placeholder={placeholder}
+				placeholder={required ? `${placeholder} *` : placeholder}
 				autoComplete='off'
 				disabled={disabled}
 				onFocus={onFocus}
@@ -68,16 +71,12 @@ export const InputText: FC<InputProps> = ({
 	return (
 		<Label
 			hasError={error}
-			error={errorMessage}>
+			error={errorMessage}
+			className={className}>
 			<Field
 				name={name}
 				validate={(value) =>
-					getValidationMessage(
-						value,
-						required,
-						t('field_error.required'),
-						validationHandler
-					)
+					getValidationMessage(value, required, t, validationHandler)
 				}>
 				{renderInputField}
 			</Field>

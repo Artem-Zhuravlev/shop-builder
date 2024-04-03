@@ -1,9 +1,9 @@
 import React, { FC, InputHTMLAttributes, ChangeEvent, useState } from 'react';
 import { Field } from 'react-final-form';
 import { useTranslations } from 'next-intl';
-import cls from './InputPassword.module.scss';
+import { getValidationMessage, TranslateFunction } from '@utils/validations';
 import { Label } from '../Label/Label';
-import { getValidationMessage } from '@utils/validations';
+import cls from './InputPassword.module.scss';
 
 export enum InputType {
 	PASSWORD = 'password',
@@ -17,7 +17,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
 	required?: boolean;
-	validationHandler?: (value: string) => string | void;
+	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 }
 
 export const InputPassword: FC<InputProps> = (props) => {
@@ -83,12 +83,7 @@ export const InputPassword: FC<InputProps> = (props) => {
 			<Field
 				name={name}
 				validate={(value) =>
-					getValidationMessage(
-						value,
-						required,
-						t('field_error.required'),
-						validationHandler
-					)
+					getValidationMessage(value, required, t, validationHandler)
 				}>
 				{renderInputField}
 			</Field>

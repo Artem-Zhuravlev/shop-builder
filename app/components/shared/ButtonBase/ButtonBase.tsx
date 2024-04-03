@@ -31,7 +31,7 @@ export const ButtonBase: FC<ButtonProps> = (props) => {
 		large,
 		small,
 		variant = 'primary',
-		className = '',
+		className,
 		type = 'button',
 		isLoading,
 		block,

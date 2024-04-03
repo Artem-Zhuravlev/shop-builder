@@ -17,6 +17,17 @@ a {
 	text-decoration: none;
 }
 
+.link {
+	display: inline-block;
+	text-decoration: underline;
+	color: var(--warning-hover);
+	font-weight: bold;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
 * {
 	box-sizing: border-box;
 }

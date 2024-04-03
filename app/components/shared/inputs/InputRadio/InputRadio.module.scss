@@ -1,52 +1,52 @@
 .RadioGroup {
-  display: grid;
-  gap: var(--gap-middle);
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr ));
+	display: grid;
+	gap: var(--gap-middle);
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .InputRadio {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
 
-  input[type="radio"] {
-    display: none;
+	input[type='radio'] {
+		display: none;
 
-    &:checked + .InputRadioLabel {
-      &::after {
-        background-color: var(--primary-main);
-      }
-    }
-  } 
+		&:checked + .InputRadioLabel {
+			&::after {
+				background-color: var(--primary-main);
+			}
+		}
+	}
 }
 
 .InputRadioLabel {
-  position: relative;
-  font-size: var(--font-size-lg);
-  padding-left: var(--size-small);
+	position: relative;
+	font-size: var(--font-size-lg);
+	padding-left: var(--size-small);
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    border-radius: 50%;
-  }
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		border-radius: 50%;
+	}
 
-  &::before {
-    left: 0;
-    width: var(--space-medium);
-    height: var(--space-medium);
-    border: 1px solid var(--gray-90);
-    border-radius: 50%;
-  }
+	&::before {
+		left: 0;
+		width: var(--input-prefix-size);
+		height: var(--input-prefix-size);
+		border: 1px solid var(--gray-90);
+		border-radius: 50%;
+	}
 
-  &::after {
-    left: calc(var(--space-medium) * 0.3);
-    width: calc(var(--space-medium) * 0.5);
-    height: calc(var(--space-medium) * 0.5);
-    background-color: transparent;
-  }
+	&::after {
+		left: var(--space-extra-small);
+		width: calc(var(--input-prefix-size) * 0.5);
+		height: calc(var(--input-prefix-size) * 0.5);
+		background-color: transparent;
+	}
 }
