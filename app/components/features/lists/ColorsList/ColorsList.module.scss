@@ -1,0 +1,52 @@
+@import '@styles/abstracts/mixins.scss';
+.ColorsList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-extra-small);
+	align-items: flex-start;
+	@extend %listreset;
+}
+
+.ColorsListItem {
+	display: flex;
+}
+
+.ColorsListLabel {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	input[type='checkbox'] {
+		display: none;
+
+		&:checked + .ColorsListImage {
+			border-color: var(--gray-90);
+		}
+	}
+
+	input[type='radio'] {
+		display: none;
+
+		&:checked + .ColorsListImage {
+			border-color: var(--gray-90);
+		}
+	}
+}
+
+.ColorsListImage {
+	border: 1px solid transparent;
+	padding: 1px;
+
+	div {
+		width: var(--size-small);
+		height: var(--size-small);
+	}
+}
+
+.ColorsListImageRounded {
+	border-radius: 50%;
+	div {
+		border-radius: 50%;
+	}
+}
