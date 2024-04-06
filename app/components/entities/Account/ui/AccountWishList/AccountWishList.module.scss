@@ -1,0 +1,39 @@
+.AccountWishListProduct {
+	color: var(--primary-main);
+	border-bottom: 1px solid var(--primary-main);
+	transition: var(--transition-base);
+	&:hover,
+	&:focus {
+		border-color: transparent;
+	}
+}
+
+.AccountWishUnitPrice {
+	display: flex;
+	align-items: center;
+	gap: var(--space-small);
+}
+
+.AccountWishListActions {
+	display: flex;
+	gap: var(--interface-size-sm);
+}
+
+.AccountWishListBtn {
+	width: var(--size-small);
+	height: var(--size-small);
+	border: none;
+	cursor: pointer;
+	font-size: var(--font-size-sm);
+	background-color: var(--gray-30);
+	transition: var(--transition-base);
+
+	&:hover,
+	&:focus {
+		background-color: var(--gray-40);
+	}
+}
+
+.AccountWishListBtnDelete {
+	color: var(--danger-main);
+}

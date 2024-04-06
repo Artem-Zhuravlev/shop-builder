@@ -1,4 +1,15 @@
 export default {
+	account: {
+		wish_list: {
+			title: 'Мій список бажань',
+			image: 'Зображення',
+			product_name: 'Назва продукту',
+			model: 'Модель',
+			stock: 'Наявність',
+			unit_price: 'Ціна за одиницю',
+			action: 'Дія',
+		},
+	},
 	base: {
 		brand: 'Бренд',
 		burger_label: 'Бургер кнопка',
@@ -13,6 +24,8 @@ export default {
 		minutes: 'Хвилини',
 		seconds: 'Секунди',
 		discount: 'Знижка',
+		add_to_cart: 'Додати до корзини',
+		remove: 'Видалити',
 	},
 	field_error: {
 		required: "Обов'язкове поле",

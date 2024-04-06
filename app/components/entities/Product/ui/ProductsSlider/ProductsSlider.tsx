@@ -23,21 +23,27 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 				<SliderBase
 					settings={settings}
 					className={cls.ProductSlider}>
-					{items.map((slide, index) => (
-						<SliderCard>
-							<ProductCard
-								key={`${id}-${index}`}
-								to={slide.to}
-								item={slide.item}
-								slug={slide.slug}
-								addToCart={addToCart}
-								addToFavorite={addToFavorite}
-								quickView={quickView}
-								productCompare={productCompare}
-								className={cls.ProductSliderItem}
-							/>
-						</SliderCard>
-					))}
+					{items.map(
+						({ images, slug, title, rating, price, old_price, tax }, index) => (
+							<SliderCard>
+								<ProductCard
+									key={`${id}-${index}`}
+									images={images}
+									title={title}
+									rating={rating}
+									price={price}
+									old_price={old_price}
+									tax={tax}
+									slug={slug}
+									addToCart={addToCart}
+									addToFavorite={addToFavorite}
+									quickView={quickView}
+									productCompare={productCompare}
+									className={cls.ProductSliderItem}
+								/>
+							</SliderCard>
+						)
+					)}
 				</SliderBase>
 			)}
 		</SectionBase>

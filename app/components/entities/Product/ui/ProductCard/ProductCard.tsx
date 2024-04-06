@@ -7,20 +7,17 @@ import { CardCaption } from './common/CardCaption';
 import { CardImages } from './common/CardImages';
 
 export interface ProductCardProps {
-	to: string;
 	slug: string;
-	item: {
-		images: Array<{
-			url: string;
-			alt: string;
-		}>;
-		title: string;
-		rating: number;
-		price: number;
-		old_price?: number;
-		tax?: number;
-	};
-	symbol?: string;
+	images: Array<{
+		url: string;
+		alt: string;
+	}>;
+	title: string;
+	rating: number;
+	price: number;
+	old_price?: number;
+	tax?: number;
+	currency?: string;
 	addToCart?: (slug: string) => void;
 	addToFavorite?: (slug: string) => void;
 	quickView?: (slug: string) => void;
@@ -30,10 +27,14 @@ export interface ProductCardProps {
 
 export const ProductCard: FC<ProductCardProps> = (props) => {
 	const {
-		to,
 		slug,
-		item: { images, title, rating, price, old_price, tax },
-		symbol = '₴',
+		images,
+		title,
+		rating,
+		price,
+		old_price,
+		tax,
+		currency = '₴',
 		addToCart,
 		addToFavorite,
 		quickView,
@@ -60,12 +61,12 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
 	return (
 		<div className={classNames(cls.ProductCard, className)}>
 			<CardImages
-				to={to}
+				to={`/${slug}`}
 				images={images}
 			/>
 			<div className={cls.CardDescription}>
 				<CardCaption
-					to={to}
+					to={`/${slug}`}
 					title={title}
 					rating={rating}
 				/>
@@ -79,7 +80,7 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
 					price={price}
 					oldPrice={old_price}
 					tax={tax}
-					symbol={symbol}
+					symbol={currency}
 				/>
 			</div>
 		</div>

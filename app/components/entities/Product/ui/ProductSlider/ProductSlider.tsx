@@ -6,7 +6,7 @@ import { SliderBase } from '@shared/SliderBase';
 import cls from './ProductSlider.module.scss';
 
 interface ProductSliderProps {
-	items: Array<{ image: string; value: string }>;
+	items: Array<{ image: string; alt: string }>;
 }
 
 export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
@@ -56,7 +56,7 @@ export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
 							<Image
 								key={`${id}-${index}`}
 								src={item.image}
-								alt={item.value}
+								alt={item.alt}
 								width={450}
 								height={590}
 							/>
@@ -73,7 +73,7 @@ export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
 							<Image
 								key={`${id}-${index}-thumb`}
 								src={item.image}
-								alt={item.value}
+								alt={item.alt}
 								width={140}
 								height={130}
 							/>

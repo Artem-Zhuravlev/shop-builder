@@ -1,6 +1,14 @@
 export default {
-	Index: {
-		title: 'Title',
+	account: {
+		wish_list: {
+			title: 'My Wish List',
+			image: 'Image',
+			product_name: 'Product Name',
+			model: 'Model',
+			stock: 'Stock',
+			unit_price: 'Unit Price',
+			action: 'Action',
+		},
 	},
 	base: {
 		brand: 'Brand',
@@ -16,6 +24,8 @@ export default {
 		minutes: 'Minutes',
 		seconds: 'Seconds',
 		discount: 'Discount',
+		add_to_cart: 'Add to cart',
+		remove: 'Remove',
 	},
 	field_error: {
 		required: 'Field is required',

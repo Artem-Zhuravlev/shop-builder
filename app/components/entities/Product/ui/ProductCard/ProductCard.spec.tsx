@@ -5,20 +5,17 @@ import { ProductCard } from './ProductCard';
 
 describe('ProductCard Component', () => {
 	const mockData = {
-		to: '/product/123',
 		slug: '123',
-		item: {
-			images: [
-				{ url: 'image1.jpg', alt: 'Image 1' },
-				{ url: 'image2.jpg', alt: 'Image 2' },
-			],
-			title: 'Sample Product',
-			rating: 4.5,
-			price: 50,
-			old_price: 70,
-			tax: 10,
-			symbol: '$',
-		},
+		images: [
+			{ url: 'image1.jpg', alt: 'Image 1' },
+			{ url: 'image2.jpg', alt: 'Image 2' },
+		],
+		title: 'Sample Product',
+		rating: 4.5,
+		price: 50,
+		old_price: 70,
+		tax: 10,
+		currency: '$',
 		addToCart: jest.fn(),
 		addToFavorite: jest.fn(),
 		quickView: jest.fn(),
