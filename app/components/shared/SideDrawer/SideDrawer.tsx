@@ -1,7 +1,6 @@
 import React, { FC, ReactNode, useState } from 'react';
 import cls from './SideDrawer.module.scss';
 import classNames from 'classnames';
-import { HeadingBase } from '../HeadingBase';
 
 interface SideDrawerProps {
 	children: ReactNode;
@@ -36,13 +35,7 @@ export const SideDrawer: FC<SideDrawerProps> = (props) => {
 				onClick={onDrawerClose}>
 				<span className='icon-cross' />
 			</button>
-			{title && (
-				<HeadingBase
-					level={4}
-					className={cls.SideDrawerTitle}>
-					{title}
-				</HeadingBase>
-			)}
+			{title && <h4 className={cls.SideDrawerTitle}>{title}</h4>}
 			<div className={cls.SideDrawerContent}>{children}</div>
 		</div>
 	);

@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from 'react';
 import classNames from 'classnames';
-import { HeadingBase } from '@shared/HeadingBase';
 import { ContainerBase } from '@shared/ContainerBase';
 import cls from './SectionBase.module.scss';
 
@@ -20,7 +19,7 @@ export const SectionBase: FC<SectionBaseProps> = (props) => {
 	return (
 		<section className={sectionClasses}>
 			<ContainerBase>
-				{title && <HeadingBase level={3}>{title}</HeadingBase>}
+				{title && <h3>{title}</h3>}
 				{children}
 			</ContainerBase>
 		</section>

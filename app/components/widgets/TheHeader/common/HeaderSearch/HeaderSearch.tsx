@@ -8,6 +8,7 @@ import {
 import { useTranslations } from 'next-intl';
 import { DEBOUNCE_DELAY } from '@constants/easing.constants';
 import { debounce } from '@utils/debounce';
+import { Form } from 'react-final-form';
 
 export const HeaderSearch = () => {
 	const t = useTranslations();
@@ -38,13 +39,18 @@ export const HeaderSearch = () => {
 
 	return (
 		<div className={cls.HeaderSearch}>
-			<InputText
-				withForm={false}
-				placeholder={t('base.search')}
-				value={searchValue}
-				name='search'
-				onChange={handleSearch}
-			/>
+			<Form onSubmit={handleSearch}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputText
+							placeholder={t('base.search')}
+							name='search'
+							className='mb-0'
+							onChange={handleSearch}
+						/>
+					</form>
+				)}
+			</Form>
 			{Boolean(searchValue) && (
 				<div className={cls.HeaderSearchDropdown}>
 					<HeaderSearchList

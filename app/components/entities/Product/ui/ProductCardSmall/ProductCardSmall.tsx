@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import { HeadingBase } from '@shared/HeadingBase';
 import { InputRating } from '@shared/inputs';
 import cls from './ProductCardSmall.module.scss';
 
@@ -27,11 +26,9 @@ export const ProductCardSmall: FC<ProductCardSmallProps> = (props) => {
 				/>
 			</Link>
 			<div className={cls.ProductCardSmallDescription}>
-				<HeadingBase
-					level={5}
-					className={cls.ProductCardSmallTitle}>
+				<h5 className={cls.ProductCardSmallTitle}>
 					<Link href={to}>{title}</Link>
-				</HeadingBase>
+				</h5>
 				<InputRating
 					readonly
 					initialValue={rating}

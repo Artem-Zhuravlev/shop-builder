@@ -1,7 +1,6 @@
 import React, { FC, useId } from 'react';
 import Link from 'next/link';
 import cls from './FooterCol.module.scss';
-import { HeadingBase } from '@shared/HeadingBase';
 
 interface IFooterListItem {
 	to?: string;
@@ -21,11 +20,7 @@ export const FooterCol: FC<FooterColProp> = (props) => {
 
 	return (
 		<div className={cls.FooterCol}>
-			<HeadingBase
-				level={5}
-				className={cls.FooterTitle}>
-				{title}
-			</HeadingBase>
+			<h5 className={cls.FooterTitle}>{title}</h5>
 			{description && <p className={cls.FooterDescription}>{description}</p>}
 			{list && (
 				<ul className={cls.FooterList}>

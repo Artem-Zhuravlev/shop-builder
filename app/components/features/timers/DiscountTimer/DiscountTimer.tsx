@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { TimerBase } from '@shared/TimerBase/TimerBase';
-import { HeadingBase } from '@shared/HeadingBase';
 import { useTranslations } from 'next-intl';
 import cls from './DiscountTimer.module.scss';
 import { ContainerBase } from '@shared/ContainerBase';
@@ -19,7 +18,7 @@ export const DiscountTimer: FC<DiscountTimerProps> = (props) => {
 	return (
 		<ContainerBase className={cls.DiscountTimer}>
 			<div className={cls.DiscountTimerCol}>
-				<HeadingBase level={4}>{title}</HeadingBase>
+				<h4>{title}</h4>
 				<TimerBase deadline={deadline} />
 			</div>
 			<div className={cls.DiscountTimerCol}>
@@ -32,7 +31,7 @@ export const DiscountTimer: FC<DiscountTimerProps> = (props) => {
 				<img
 					src={image}
 					alt=''
-          className={cls.DiscountTimerImage}
+					className={cls.DiscountTimerImage}
 				/>
 			</div>
 		</ContainerBase>

@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { HeadingBase } from '@shared/HeadingBase';
 import Link from 'next/link';
 import cls from './BlogCard.module.scss';
 
@@ -53,11 +52,9 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
 						{new Date(published_at).toLocaleDateString()}
 					</div>
 				</div>
-				<HeadingBase
-					level={5}
-					className={cls.BlogCardTitle}>
+				<h5 className={cls.BlogCardTitle}>
 					<Link href={to}>{title}</Link>
-				</HeadingBase>
+				</h5>
 			</div>
 		</article>
 	);

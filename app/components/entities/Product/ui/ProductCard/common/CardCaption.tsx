@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import { InputRating } from '@shared/inputs';
-import { HeadingBase } from '@shared/HeadingBase';
 import cls from '../ProductCard.module.scss';
 
 interface CardCaptionProps {
@@ -16,11 +15,7 @@ export const CardCaption: FC<CardCaptionProps> = (props) => {
 	return (
 		<div className={cls.CardCaption}>
 			<Link href={to}>
-				<HeadingBase
-					level={5}
-					className={cls.CardTitle}>
-					{title}
-				</HeadingBase>
+				<h5 className={cls.CardTitle}>{title}</h5>
 			</Link>
 			<InputRating
 				readonly

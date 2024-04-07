@@ -1,6 +1,5 @@
 import React, { FC, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
-import { HeadingBase } from '@shared/HeadingBase';
 import { TableBase } from '@shared/TableBase';
 import {
 	AccountWishListImage,
@@ -120,7 +119,7 @@ export const AccountWishList: FC<AccountWishListProps> = (props) => {
 
 	return (
 		<div className={cls.AccountWishList}>
-			<HeadingBase level={2}>{t('title')}</HeadingBase>
+			<h2>{t('title')}</h2>
 			<TableBase
 				columns={columns}
 				data={data}

@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import { HeadingBase } from '@shared/HeadingBase';
 import cls from '../CategoriesSlider.module.scss';
 
 export interface CategoriesSliderItemProps {
@@ -21,11 +20,7 @@ export const CategoriesSliderItem: FC<CategoriesSliderItemProps> = (props) => {
 				alt={title}
 				className={cls.CategoriesSliderImage}
 			/>
-			<HeadingBase
-				level={5}
-				className={cls.CategoriesSliderTit}>
-				{title}
-			</HeadingBase>
+			<h5 className={cls.CategoriesSliderTit}>{title}</h5>
 		</Link>
 	);
 };

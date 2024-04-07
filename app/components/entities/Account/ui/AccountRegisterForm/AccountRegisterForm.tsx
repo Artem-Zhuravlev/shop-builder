@@ -9,7 +9,6 @@ import {
 } from '@utils/validations';
 import { InputCheckbox, InputText } from '@shared/inputs';
 import { ButtonBase } from '@shared/ButtonBase';
-import { HeadingBase } from '@shared/HeadingBase';
 import cls from './AccountRegisterForm.module.scss';
 
 export const AccountRegisterForm: FC = () => {
@@ -18,7 +17,7 @@ export const AccountRegisterForm: FC = () => {
 
 	return (
 		<div className={cls.AccountRegisterForm}>
-			<HeadingBase level={3}>Register Account</HeadingBase>
+			<h3>Register Account</h3>
 			<Form onSubmit={onSubmit}>
 				{({ handleSubmit }) => (
 					<form

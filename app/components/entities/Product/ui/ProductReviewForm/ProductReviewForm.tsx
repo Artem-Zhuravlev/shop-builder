@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 import { InputRating, InputText, InputTextarea } from '@shared/inputs';
 import cls from './ProductReviewForm.module.scss';
 import { ButtonBase } from '@shared/ButtonBase';
-import { HeadingBase } from '@shared/HeadingBase';
 
 export const ProductReviewForm: FC = () => {
 	const [rating, setRating] = useState<number>(1);
@@ -30,7 +29,7 @@ export const ProductReviewForm: FC = () => {
 			<Form onSubmit={onSubmit}>
 				{({ handleSubmit, submitting }) => (
 					<>
-						<HeadingBase level={4}>{t('inputs.write_review')}</HeadingBase>
+						<h4>{t('inputs.write_review')}</h4>
 						<form
 							onSubmit={handleSubmit}
 							className={cls.ProductReviewForm}>
