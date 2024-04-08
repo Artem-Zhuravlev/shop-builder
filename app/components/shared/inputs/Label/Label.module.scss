@@ -1,6 +1,8 @@
 .Label {
 	position: relative;
-	margin-bottom: var(--size-small);
+	&:not(:last-child) {
+		margin-bottom: var(--size-small);
+	}
 }
 
 .LabelName {

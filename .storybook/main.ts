@@ -1,36 +1,43 @@
-import type { StorybookConfig } from '@storybook/react-webpack5/dist';
+import { StorybookConfig } from '@storybook/nextjs';
 import path from 'path';
 
 const config: StorybookConfig = {
-	stories: [
-		'../app/components/shared/**/*.stories.@(js|jsx|ts|tsx)',
-		'../app/components/widgets/**/*.stories.@(js|jsx|ts|tsx)',
-		'../app/components/features/**/*.stories.@(js|jsx|ts|tsx)',
-		'../app/components/entities/**/*.stories.@(js|jsx|ts|tsx)',
-	],
+	stories: ['../app/**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: [
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
 		'@storybook/addon-onboarding',
 		'@storybook/addon-interactions',
-		'@storybook/preset-scss',
+		'@storybook/addon-a11y',
+		{
+			name: '@storybook/addon-styling-webpack',
+			options: {
+				rules: [
+					{
+						test: /\.(css|s[ac]ss)$/i,
+						use: [
+							"style-loader",
+							"css-loader",
+							{
+								loader: "sass-loader",
+								options: {
+									sassOptions: {
+										implementation: require.resolve("sass")
+									}
+								}
+							},
+						],
+					},
+				]
+			}
+		}
 	],
-	framework: {
-		name: '@storybook/react-webpack5',
-		options: {},
-	},
+	framework: '@storybook/nextjs',
 	docs: {
 		autodocs: 'tag',
 	},
 	webpackFinal: async (config) => {
 		if (config && config.resolve) {
-			config.resolve.fallback = {
-				zlib: false,
-				fs: false,
-				stream: false,
-				path: require.resolve('path-browserify'),
-			};
-
 			config.resolve.alias = {
 				'@shared': path.resolve(__dirname, '../app/components/shared'),
 				'@features': path.resolve(__dirname, '../app/components/features'),
@@ -47,41 +54,6 @@ const config: StorybookConfig = {
 				__dirname,
 				'./mocks/Image.tsx'
 			);
-		} else {
-			console.error("Property 'resolve' is missing in the config object.");
-		}
-
-		if (config.mode === 'production') {
-			config?.module?.rules?.push({
-				test: /\.(js|jsx|ts|tsx)$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: [
-							'@babel/preset-env',
-							'@babel/preset-react',
-							'@babel/preset-typescript',
-						],
-						plugins: ['@babel/plugin-transform-runtime'],
-					},
-				},
-			});
-
-			config.optimization = {
-				minimize: true,
-			};
-
-			config.optimization.splitChunks = {
-				chunks: 'all',
-			};
-
-			config.cache = {
-				type: 'filesystem',
-				buildDependencies: {
-					config: [__filename],
-				},
-			};
 		}
 
 		return config;

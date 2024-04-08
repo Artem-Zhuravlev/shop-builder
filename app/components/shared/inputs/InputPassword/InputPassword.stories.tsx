@@ -20,7 +20,7 @@ const Template: StoryFn<typeof InputPassword> = (args) => {
 				<>
 					<form
 						onSubmit={handleSubmit}
-						style={{ display: 'flex', gap: '20px', alignItems: 'flex-end' }}>
+						style={{ display: 'flex', gap: '20px' }}>
 						<InputPassword {...args} />
 						<ButtonBase type='submit'>Submit</ButtonBase>
 					</form>
@@ -33,41 +33,32 @@ const Template: StoryFn<typeof InputPassword> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
 	value: 'Some string',
-	withForm: true,
 	placeholder: 'Please add text',
-	label: 'Field',
 };
 
 export const PrimaryDisabled = Template.bind({});
 PrimaryDisabled.args = {
 	value: 'Some string',
-	withForm: true,
 	disabled: true,
 	placeholder: 'Please add text',
-	label: 'Field',
 };
 
 export const EmptyField = Template.bind({});
 EmptyField.args = {
 	value: '',
-	withForm: true,
 	placeholder: 'Please add text',
-	label: 'Field',
 };
 
 export const WithoutFormWrapper = Template.bind({});
 WithoutFormWrapper.args = {
 	value: 'without form wrapper',
-	withForm: false,
 	placeholder: 'Please add text',
-	label: 'Field',
 };
 
 export const WithCustomValidation = Template.bind({});
 WithCustomValidation.args = {
 	value: 'without form wrapper',
 	placeholder: 'Please add text',
-	label: 'Field',
 	required: true,
 	validationHandler(value) {
 		if (!value) {
