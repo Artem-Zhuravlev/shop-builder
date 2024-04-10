@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, ReactNode } from 'react';
 import { useForm, useFormState } from 'react-final-form';
 
-type SaveFunction = (attributes: Record<string, any>) => Promise<any>;
+type SaveFunction = (attributes: Record<string, any>) => Promise<any> | void;
 type ErrorHandler = (error: any) => void;
 
 interface AutoSaveProps {
@@ -51,7 +51,6 @@ const useAutoSave = ({
 				);
 				Object.assign(attributes, values);
 				return Promise.resolve(save(attributes)).then((errors) => {
-					console.log('errors', errors);
 					if (errors) mutators.setErrors(errors);
 					onCompleted();
 				}, onError);

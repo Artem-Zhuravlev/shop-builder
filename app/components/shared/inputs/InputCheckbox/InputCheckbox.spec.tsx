@@ -1,45 +1,87 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
+import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import '@testing-library/jest-dom';
 import { InputCheckbox } from './InputCheckbox';
+import { Form } from 'react-final-form';
 
 describe('InputCheckbox Component', () => {
-  const mockOnChange = jest.fn();
+	const mockOnChange = jest.fn();
 
-  it('renders the checkbox input with the given label', () => {
-    const label = 'Check me';
-    const id = 'checkbox-id';
-    const { getByText, getByLabelText } = render(
-      <InputCheckbox id={id} label={label} value={false} onChange={mockOnChange} />
-    );
+	it('renders the checkbox input with the given label', () => {
+		const label = 'Check me';
+		const id = 'checkbox-id';
+		const name = 'name';
 
-    expect(getByText(label)).toBeInTheDocument();
-    expect(getByLabelText(label)).toBeInTheDocument();
-  });
+		const { getByText, getByLabelText } = customRender(
+			<Form onSubmit={mockOnChange}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputCheckbox
+							id={id}
+							label={label}
+							name={name}
+						/>
+					</form>
+				)}
+			</Form>
+		);
 
-  it('triggers onChange when checkbox is clicked', () => {
-    const label = 'Check me';
-    const id = 'checkbox-id';
-    const { getByLabelText } = render(
-      <InputCheckbox id={id} label={label} value={false} onChange={mockOnChange} />
-    );
+		expect(getByText(label)).toBeInTheDocument();
+		expect(getByLabelText(label)).toBeInTheDocument();
+	});
 
-    const checkbox = getByLabelText(label) as HTMLInputElement;
+	it('triggers onChange when checkbox is clicked', () => {
+		const label = 'Check me';
+		const name = 'name';
+		const id = 'checkbox-id';
 
-    fireEvent.click(checkbox);
+		const { getByLabelText } = customRender(
+			<Form onSubmit={mockOnChange}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputCheckbox
+							id={id}
+							label={label}
+							name={name}
+							onChange={mockOnChange}
+						/>
+					</form>
+				)}
+			</Form>
+		);
 
-    expect(mockOnChange).toHaveBeenCalled();
-  });
+		const checkbox = getByLabelText(label) as HTMLInputElement;
 
-  it('renders the checkbox as checked when value is true', () => {
-    const label = 'Check me';
-    const id = 'checkbox-id';
-    const { getByLabelText } = render(
-      <InputCheckbox id={id} label={label} value={true} onChange={mockOnChange} />
-    );
+		fireEvent.click(checkbox);
 
-    const checkbox = getByLabelText(label) as HTMLInputElement;
+		expect(mockOnChange).toHaveBeenCalled();
+	});
 
-    expect(checkbox).toBeChecked();
-  });
+	it('renders the checkbox as checked when value is true', () => {
+		const label = 'Check me';
+		const id = 'checkbox-id';
+		const name = 'name';
+
+		const { getByLabelText } = customRender(
+			<Form onSubmit={mockOnChange}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputCheckbox
+							id={id}
+							label={label}
+							name={name}
+							checked={true}
+							onChange={mockOnChange}
+						/>
+					</form>
+				)}
+			</Form>
+		);
+
+		const checkbox = getByLabelText(label) as HTMLInputElement;
+
+		expect(checkbox).toBeInTheDocument();
+		expect(checkbox).toBeChecked();
+	});
 });

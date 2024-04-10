@@ -12,6 +12,9 @@ interface InputCheckboxProps {
 	required?: boolean;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 	className?: string;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	value?: boolean;
+	checked?: boolean;
 }
 
 export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
@@ -22,6 +25,9 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 		required = false,
 		validationHandler,
 		className,
+		onChange,
+		value,
+		checked,
 	} = props;
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
@@ -38,6 +44,9 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 					id={id}
 					type='checkbox'
 					name={name}
+					onChange={onChange}
+					value={value}
+					checked={checked}
 				/>
 				<div className={cls.InputCheckboxLabel}>{label}</div>
 			</label>

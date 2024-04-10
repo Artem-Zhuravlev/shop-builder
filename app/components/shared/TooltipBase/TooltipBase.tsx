@@ -19,7 +19,9 @@ export const TooltipBase: FC<TooltipBaseProps> = (props) => {
 				style={{ display: displayMode, alignItems: 'center' }}>
 				{children}
 			</div>
-			<Tooltip id={id}></Tooltip>
+			<Tooltip
+				id={id}
+				style={{ zIndex: 10 }}></Tooltip>
 		</>
 	);
 };

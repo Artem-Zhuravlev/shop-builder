@@ -30,6 +30,7 @@
 	background-color: transparent;
 	cursor: pointer;
 	font-size: var(--heading-6);
+	z-index: 10;
 
 	&::after {
 		content: '';
