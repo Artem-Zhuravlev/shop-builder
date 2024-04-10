@@ -19,24 +19,37 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	rounded?: boolean;
 	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 	className?: string;
+	value?: string | number;
+	defaultValue?: string | number;
+	type?: 'text' | 'number';
+	min?: number;
+	max?: number;
 }
 
-export const InputText: FC<InputProps> = ({
-	name = 'field',
-	required = false,
-	disabled,
-	placeholder,
-	isDarkMode = false,
-	roundedLeftSide = false,
-	roundedRightSide = false,
-	rounded = false,
-	onFocus,
-	onBlur,
-	validationHandler,
-	className,
-}) => {
+export const InputText: FC<InputProps> = (props) => {
+	const {
+		name = 'field',
+		required = false,
+		disabled,
+		placeholder,
+		isDarkMode = false,
+		roundedLeftSide = false,
+		roundedRightSide = false,
+		rounded = false,
+		onFocus,
+		onBlur,
+		onChange,
+		validationHandler,
+		className,
+		value,
+		defaultValue,
+		type = 'text',
+		min,
+		max,
+	} = props;
 	const t = useTranslations();
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
@@ -58,12 +71,17 @@ export const InputText: FC<InputProps> = ({
 			<input
 				{...input}
 				className={inputClasses}
-				type='text'
+				type={type}
+				value={value}
 				placeholder={required ? `${placeholder} *` : placeholder}
+				min={min}
+				max={max}
 				autoComplete='off'
 				disabled={disabled}
 				onFocus={onFocus}
 				onBlur={onBlur}
+				onChange={onChange}
+				defaultValue={defaultValue}
 			/>
 		);
 	};

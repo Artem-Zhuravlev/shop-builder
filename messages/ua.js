@@ -10,6 +10,18 @@ export default {
 			action: 'Дія',
 		},
 	},
+	filters: {
+		price: 'Ціна',
+		manufacturer: 'Виробник',
+		sub_category: 'Підкатегорія',
+		search: 'Пошук',
+		color: 'Колір',
+		availability: 'Наявність',
+		size: 'Розмір',
+		discount: 'Знижка',
+		rating: 'Рейтинг',
+		to: 'до',
+	},
 	base: {
 		brand: 'Бренд',
 		burger_label: 'Бургер кнопка',

@@ -10,6 +10,18 @@ export default {
 			action: 'Action',
 		},
 	},
+	filters: {
+		price: 'Price',
+		manufacturer: 'Manufacturer',
+		sub_category: 'Sub category',
+		search: 'Search',
+		color: 'Color',
+		availability: 'Availability',
+		size: 'Size',
+		discount: 'Discount',
+		rating: 'Rating',
+		to: 'to',
+	},
 	base: {
 		brand: 'Brand',
 		burger_label: 'Burger button',

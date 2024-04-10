@@ -3,7 +3,11 @@ import Slider, { SliderProps } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './InputRange.scss';
 
-export const InputRange: FC<SliderProps> = (props) => {
+interface InputRangeProps extends SliderProps {
+	className?: string;
+}
+
+export const InputRange: FC<InputRangeProps> = (props) => {
 	const {
 		disabled,
 		autoFocus,
@@ -18,6 +22,8 @@ export const InputRange: FC<SliderProps> = (props) => {
 		value,
 		defaultValue,
 		pushable,
+		className,
+		onChangeComplete,
 	} = props;
 
 	return (
@@ -27,6 +33,8 @@ export const InputRange: FC<SliderProps> = (props) => {
 			onFocus={onFocus}
 			onBlur={onBlur}
 			onChange={onChange}
+			onChangeComplete={onChangeComplete}
+			allowCross={false}
 			range={range}
 			count={count}
 			min={min}
@@ -35,6 +43,7 @@ export const InputRange: FC<SliderProps> = (props) => {
 			value={value}
 			defaultValue={defaultValue}
 			pushable={pushable}
+			className={className}
 		/>
 	);
 };

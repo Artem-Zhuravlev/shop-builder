@@ -28,7 +28,6 @@ const Template: StoryFn<InputProps> = ({ ...args }) => {
 						style={{
 							display: 'flex',
 							gap: '20px',
-							alignItems: 'flex-end',
 							flexWrap: 'wrap',
 						}}>
 						<InputText {...args} />
