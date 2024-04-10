@@ -12,3 +12,4 @@ export { InputSwitcher } from './InputSwitcher/InputSwitcher';
 export { InputText } from './InputText/InputText';
 export { InputTextarea } from './InputTextarea/InputTextarea';
 export { Label } from './Label/Label';
+export { AutoSave } from './AutoSave/AutoSave';
