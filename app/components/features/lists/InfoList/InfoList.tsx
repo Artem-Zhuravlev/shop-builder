@@ -18,7 +18,7 @@ export interface InfoListProps {
 }
 
 export const InfoList: FC<InfoListProps> = ({ item }) => {
-	const t = useTranslations();
+	const t = useTranslations('base');
 
 	const labelClass = useMemo(() => {
 		if (item.availability && item.availability === 'In stock') {
@@ -30,7 +30,7 @@ export const InfoList: FC<InfoListProps> = ({ item }) => {
 
 	return (
 		<ul className={cls.InfoList}>
-			<InfoListItem label={t('base.brand')}>
+			<InfoListItem label={t('brand')}>
 				<Link
 					className={cls.InfoListLink}
 					href={item.brand.to}>

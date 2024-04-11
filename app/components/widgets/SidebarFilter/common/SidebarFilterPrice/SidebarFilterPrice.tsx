@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';
 import { FORM_SUBMIT_DEBOUNCE_DELAY } from '@constants/easing.constants';
 import { AutoSave, InputRange, InputText } from '@shared/inputs';
-import { SidebarFilterItem } from '@widgets/SidebarFilter/SidebarFilterItem';
+import { SidebarToggler } from '@widgets/SidebarFilter/SidebarToggler';
 
 interface SidebarFilterPriceProps {
 	min?: number;
@@ -64,7 +64,7 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 	);
 
 	return (
-		<SidebarFilterItem
+		<SidebarToggler
 			title={t('price')}
 			resetMode={resetMode}
 			onReset={handleReset}>
@@ -108,6 +108,6 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 					);
 				}}
 			/>
-		</SidebarFilterItem>
+		</SidebarToggler>
 	);
 };

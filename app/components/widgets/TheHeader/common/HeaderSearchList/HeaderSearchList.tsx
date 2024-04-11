@@ -21,7 +21,7 @@ interface HeaderSearchListProps {
 export const HeaderSearchList: FC<HeaderSearchListProps> = (props) => {
 	const { items, noResults } = props;
 	const id = useId();
-	const t = useTranslations();
+	const t = useTranslations('base');
 
 	const renderItemsList = useMemo(() => {
 		return !noResults ? (
@@ -49,7 +49,7 @@ export const HeaderSearchList: FC<HeaderSearchListProps> = (props) => {
 				</li>
 			))
 		) : (
-			<li>{t('base.no_result')}</li>
+			<li>{t('no_result')}</li>
 		);
 	}, [noResults, items]);
 

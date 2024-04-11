@@ -38,6 +38,7 @@ export default {
 		discount: 'Discount',
 		add_to_cart: 'Add to cart',
 		remove: 'Remove',
+		clear: 'Clear',
 	},
 	field_error: {
 		required: 'Field is required',

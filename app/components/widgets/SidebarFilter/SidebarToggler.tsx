@@ -1,18 +1,20 @@
 import React, { FC, ReactNode, useState } from 'react';
 import classNames from 'classnames';
+import { useTranslations } from 'next-intl';
 import cls from './SidebarFilter.module.scss';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 
-interface SidebarFilterItemProps {
+interface SidebarTogglerProps {
 	title: string;
 	children: ReactNode;
 	resetMode?: boolean;
 	onReset?: (value: boolean) => void;
 }
 
-export const SidebarFilterItem: FC<SidebarFilterItemProps> = (props) => {
+export const SidebarToggler: FC<SidebarTogglerProps> = (props) => {
 	const { title, children, resetMode = false, onReset } = props;
 	const [isOpen, setIsOpen] = useState(true);
+	const t = useTranslations('base');
 
 	const handleReset = () => {
 		if (onReset) {
@@ -21,31 +23,31 @@ export const SidebarFilterItem: FC<SidebarFilterItemProps> = (props) => {
 	};
 
 	return (
-		<div className={cls.SidebarFilterItem}>
+		<div className={cls.SidebarToggler}>
 			<button
 				type='button'
 				onClick={() => setIsOpen(!isOpen)}
-				className={classNames(cls.SidebarFilterCollapseBtn, {
+				className={classNames(cls.SidebarCollapseBtn, {
 					[cls.buttonClose]: !isOpen,
 				})}>
 				{title}
 			</button>
 			{resetMode && (
-				<TooltipBase content='Clear'>
+				<TooltipBase content={t('clear')}>
 					<button
 						type='button'
-						className={cls.SidebarFilterResetBtn}
+						className={cls.SidebarResetBtn}
 						onClick={handleReset}
-						aria-label='Clear'>
+						aria-label={t('clear')}>
 						<span className='icon-cross' />
 					</button>
 				</TooltipBase>
 			)}
 			<div
-				className={classNames(cls.SidebarFilterItemContentWrapper, {
+				className={classNames(cls.SidebarContentWrapper, {
 					[cls.contentClose]: !isOpen,
 				})}>
-				<div className={cls.SidebarFilterItemContent}>{children}</div>
+				<div className={cls.SidebarContent}>{children}</div>
 			</div>
 		</div>
 	);

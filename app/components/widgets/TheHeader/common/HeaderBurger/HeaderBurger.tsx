@@ -10,7 +10,7 @@ interface HeaderBurgerProps {
 export const HeaderBurger: FC<HeaderBurgerProps> = (props) => {
 	const { toggleBurger } = props;
 
-	const t = useTranslations();
+	const t = useTranslations('base');
 
 	const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -28,7 +28,7 @@ export const HeaderBurger: FC<HeaderBurgerProps> = (props) => {
 		<button
 			type='button'
 			className={headerBurgerClasses}
-			aria-label={t('base.burger_label')}
+			aria-label={t('burger_label')}
 			onClick={handleClick}>
 			<span />
 		</button>

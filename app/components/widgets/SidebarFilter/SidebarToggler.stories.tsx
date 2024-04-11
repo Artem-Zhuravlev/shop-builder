@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
-import { SidebarFilterItem } from './SidebarFilterItem';
+import { SidebarToggler } from './SidebarToggler';
 
 export default {
-	title: 'Layout/SidebarFilter/SidebarFilterItem',
-	component: SidebarFilterItem,
-} as Meta<typeof SidebarFilterItem>;
+	title: 'Layout/SidebarFilter/SidebarToggler',
+	component: SidebarToggler,
+} as Meta<typeof SidebarToggler>;
 
-const Template: StoryFn<typeof SidebarFilterItem> = (args) => {
+const Template: StoryFn<typeof SidebarToggler> = (args) => {
 	const [resetMode, setResetMode] = useState(args.resetMode || false);
 
 	const handleReset = (value: boolean) => {
@@ -16,7 +16,7 @@ const Template: StoryFn<typeof SidebarFilterItem> = (args) => {
 
 	return (
 		<div style={{ maxWidth: 270, border: '1px solid var(--gray-40)' }}>
-			<SidebarFilterItem
+			<SidebarToggler
 				{...args}
 				resetMode={resetMode}
 				onReset={handleReset}

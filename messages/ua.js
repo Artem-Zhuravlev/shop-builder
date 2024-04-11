@@ -38,6 +38,7 @@ export default {
 		discount: 'Знижка',
 		add_to_cart: 'Додати до корзини',
 		remove: 'Видалити',
+		clear: 'Очистити',
 	},
 	field_error: {
 		required: "Обов'язкове поле",

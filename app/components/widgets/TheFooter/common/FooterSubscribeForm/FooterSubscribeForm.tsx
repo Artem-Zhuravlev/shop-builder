@@ -8,7 +8,7 @@ import { ButtonBase } from '@shared/ButtonBase';
 
 export const FooterSubscribeForm: FC = () => {
 	const [searchValue, setSearchValue] = useState('');
-	const t = useTranslations();
+	const t = useTranslations('base');
 
 	const onSubmit = () => {
 		console.log('submit');
@@ -35,7 +35,7 @@ export const FooterSubscribeForm: FC = () => {
 						variant='warning'
 						roundedRightSide
 						className={cls.FooterSubscribeBtn}>
-						{t('base.subscribe')}
+						{t('subscribe')}
 					</ButtonBase>
 				</form>
 			)}

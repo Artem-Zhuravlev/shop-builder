@@ -13,7 +13,7 @@ interface DiscountTimerProps {
 
 export const DiscountTimer: FC<DiscountTimerProps> = (props) => {
 	const { title, image, deadline, discount } = props;
-	const t = useTranslations();
+	const t = useTranslations('base');
 
 	return (
 		<ContainerBase className={cls.DiscountTimer}>
@@ -23,7 +23,7 @@ export const DiscountTimer: FC<DiscountTimerProps> = (props) => {
 			</div>
 			<div className={cls.DiscountTimerCol}>
 				<div className={cls.DiscountTimerAdv}>
-					{t('base.discount')}
+					{t('discount')}
 					<div className={cls.DiscountTimerAdvValue}>-{discount} %</div>
 				</div>
 			</div>

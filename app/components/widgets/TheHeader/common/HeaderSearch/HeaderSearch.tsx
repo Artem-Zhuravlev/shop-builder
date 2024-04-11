@@ -11,7 +11,7 @@ import { debounce } from '@utils/debounce';
 import { Form } from 'react-final-form';
 
 export const HeaderSearch = () => {
-	const t = useTranslations();
+	const t = useTranslations('base');
 	const [searchValue, setSearchValue] = useState<string>('');
 	const [noResults, setNoResults] = useState(true);
 	const [searchResult, setSearchResult] = useState<IResultList>(null);
@@ -43,7 +43,7 @@ export const HeaderSearch = () => {
 				{({ handleSubmit }) => (
 					<form onSubmit={handleSubmit}>
 						<InputText
-							placeholder={t('base.search')}
+							placeholder={t('search')}
 							name='search'
 							className='mb-0'
 							onChange={handleSearch}
