@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import cls from '../../SidebarFilter.module.scss';
+import cls from './SidebarFilterItem.module.scss';
 
 interface SidebarFilterItemProps {
 	children?: ReactNode;

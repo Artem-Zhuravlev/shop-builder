@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, useState, useRef } from 'react';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import cls from '../../SidebarFilter.module.scss';
+import cls from './SidebarToggler.module.scss';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 
 interface SidebarTogglerProps {
