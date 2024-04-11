@@ -73,16 +73,6 @@
 	background-color: var(--gray-10);
 }
 
-.SidebarContentWrapper {
-	overflow: hidden;
-	max-height: 200px;
-	transition: max-height 0.3s linear;
-}
-
-.contentClose {
-	max-height: 0;
-}
-
 .SidebarContent {
 	padding: 0 var(--space-medium) var(--space-medium) var(--space-medium);
 }

@@ -1,2 +1,2 @@
 export const DEBOUNCE_DELAY = 100;
-export const FORM_SUBMIT_DEBOUNCE_DELAY = 1000;
+export const FORM_SUBMIT_DEBOUNCE_DELAY = 500;

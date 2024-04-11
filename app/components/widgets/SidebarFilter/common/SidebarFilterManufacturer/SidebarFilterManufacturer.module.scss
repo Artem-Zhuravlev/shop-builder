@@ -1,0 +1,21 @@
+.SidebarFilterManufacturerItem {
+	display: flex;
+	align-items: center;
+	gap: var(--space-small);
+	cursor: pointer;
+	&:not(:last-child) {
+		margin-bottom: var(--space-small);
+	}
+
+	&:first-child {
+		margin-top: var(--interface-size-sm);
+	}
+
+	input[type='checkbox'] {
+		display: none;
+
+		&:checked + .SidebarFilterManufacturerImage {
+			outline: 1px solid var(--primary-main);
+		}
+	}
+}

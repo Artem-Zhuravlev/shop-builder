@@ -1,7 +1,7 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useState, useRef } from 'react';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import cls from './SidebarFilter.module.scss';
+import cls from '../../SidebarFilter.module.scss';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 
 interface SidebarTogglerProps {
@@ -14,6 +14,7 @@ interface SidebarTogglerProps {
 export const SidebarToggler: FC<SidebarTogglerProps> = (props) => {
 	const { title, children, resetMode = false, onReset } = props;
 	const [isOpen, setIsOpen] = useState(true);
+	const contentRef = useRef<HTMLDivElement>(null);
 	const t = useTranslations('base');
 
 	const handleReset = () => {
@@ -22,11 +23,20 @@ export const SidebarToggler: FC<SidebarTogglerProps> = (props) => {
 		}
 	};
 
+	const handleToggle = () => {
+		setIsOpen(!isOpen);
+		if (contentRef.current) {
+			contentRef.current.style.height = isOpen
+				? '0px'
+				: `${contentRef.current.scrollHeight}px`;
+		}
+	};
+
 	return (
 		<div className={cls.SidebarToggler}>
 			<button
 				type='button'
-				onClick={() => setIsOpen(!isOpen)}
+				onClick={handleToggle}
 				className={classNames(cls.SidebarCollapseBtn, {
 					[cls.buttonClose]: !isOpen,
 				})}>
@@ -44,9 +54,9 @@ export const SidebarToggler: FC<SidebarTogglerProps> = (props) => {
 				</TooltipBase>
 			)}
 			<div
-				className={classNames(cls.SidebarContentWrapper, {
-					[cls.contentClose]: !isOpen,
-				})}>
+				className={cls.SidebarContentWrapper}
+				ref={contentRef}
+				style={{ overflow: 'hidden', transition: 'height 0.3s ease' }}>
 				<div className={cls.SidebarContent}>{children}</div>
 			</div>
 		</div>
