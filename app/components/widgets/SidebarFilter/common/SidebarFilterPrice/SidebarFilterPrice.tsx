@@ -64,14 +64,14 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 	);
 
 	return (
-		<SidebarToggler
-			title={t('price')}
-			resetMode={resetMode}
-			onReset={handleReset}>
-			<Form
-				onSubmit={handleSubmit}
-				render={() => {
-					return (
+		<Form
+			onSubmit={handleSubmit}
+			render={() => {
+				return (
+					<SidebarToggler
+						title={t('price')}
+						resetMode={resetMode}
+						onReset={handleReset}>
 						<div
 							className='row'
 							style={{ gap: 'var(--space-medium)' }}>
@@ -105,9 +105,9 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 								}
 							/>
 						</div>
-					);
-				}}
-			/>
-		</SidebarToggler>
+					</SidebarToggler>
+				);
+			}}
+		/>
 	);
 };
