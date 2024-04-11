@@ -86,3 +86,19 @@
 .SidebarContent {
 	padding: 0 var(--space-medium) var(--space-medium) var(--space-medium);
 }
+
+.SidebarFilterItem {
+	display: flex;
+	align-items: center;
+	gap: var(--space-small);
+}
+
+.SidebarFilterItemAmount {
+	margin-right: 0;
+	margin-left: auto;
+	color: var(--gray-70);
+	font-size: var(--font-size-md);
+	background-color: var(--gray-30);
+	min-height: var(--size-extra-small);
+	padding: 0 var(--interface-size-sm);
+}
