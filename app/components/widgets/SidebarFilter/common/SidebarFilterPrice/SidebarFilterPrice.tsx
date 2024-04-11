@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';
 import { FORM_SUBMIT_DEBOUNCE_DELAY } from '@constants/easing.constants';
 import { AutoSave, InputRange, InputText } from '@shared/inputs';
-import { SidebarToggler } from '@widgets/SidebarFilter/SidebarToggler';
+import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 
 interface SidebarFilterPriceProps {
 	min?: number;
