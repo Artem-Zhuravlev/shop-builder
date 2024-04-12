@@ -2,25 +2,31 @@ import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { ColorsList } from './ColorsList';
 import { action as addonAction } from '@storybook/addon-actions';
+import { Form } from 'react-final-form';
+import { AutoSave } from '@shared/inputs';
 
 export default {
 	title: 'Lists/ColorsList',
 	component: ColorsList,
-	parameters: {
-		actions: {
-			handles: ['onChange'],
-		},
-	},
 } as Meta<typeof ColorsList>;
 
 const Template: StoryFn<typeof ColorsList> = (args) => {
-	const handleSelectedColors = (value: any) =>
+	const onSubmit = (value: any) => {
 		addonAction('onSelectedColor')(value);
+	};
 
 	return (
-		<ColorsList
-			{...args}
-			onSelectedColor={handleSelectedColors}
+		<Form
+			onSubmit={onSubmit}
+			render={({ handleSubmit }) => (
+				<div>
+					<AutoSave
+						save={handleSubmit}
+						debounce={0}
+					/>
+					<ColorsList {...args} />
+				</div>
+			)}
 		/>
 	);
 };

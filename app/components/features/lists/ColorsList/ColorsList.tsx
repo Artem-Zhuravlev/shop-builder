@@ -1,5 +1,6 @@
-import React, { FC, useEffect, useId, useState } from 'react';
+import React, { FC, useId } from 'react';
 import classNames from 'classnames';
+import { Field } from 'react-final-form';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import cls from './ColorsList.module.scss';
 
@@ -12,7 +13,6 @@ interface ColorsListItem {
 interface ColorsListProps {
 	type: 'radio' | 'checkbox';
 	items: ColorsListItem[];
-	onSelectedColor: (value: string | string[]) => void;
 	rounded?: boolean;
 }
 
@@ -20,29 +20,8 @@ export const ColorsList: FC<ColorsListProps> = ({
 	type = 'checkbox',
 	items,
 	rounded = false,
-	onSelectedColor,
 }) => {
 	const id = useId();
-	const [selectedValues, setSelectedValues] = useState<string[]>([]);
-
-	useEffect(() => {
-		if (type === 'checkbox') {
-			onSelectedColor(selectedValues);
-		}
-	}, [selectedValues]);
-
-	const handleChange = (value: string) => {
-		if (type === 'checkbox') {
-			if (selectedValues.includes(value)) {
-				setSelectedValues(selectedValues.filter((color) => color !== value));
-			} else {
-				setSelectedValues([...selectedValues, value]);
-			}
-		} else {
-			setSelectedValues([value]);
-			onSelectedColor(value);
-		}
-	};
 
 	return (
 		<ul className={cls.ColorsList}>
@@ -52,15 +31,11 @@ export const ColorsList: FC<ColorsListProps> = ({
 					key={`${id}-${index}`}>
 					<TooltipBase content={item.tip}>
 						<label className={cls.ColorsListLabel}>
-							<input
+							<Field
+								name='colors'
 								type={type}
-								name={type === 'radio' ? `colors-${id}` : undefined}
-								checked={
-									type === 'checkbox'
-										? selectedValues.includes(item.value)
-										: selectedValues[0] === item.value
-								}
-								onChange={() => handleChange(item.value)}
+								component='input'
+								value={item.value}
 							/>
 							<div
 								className={classNames(cls.ColorsListImage, {
