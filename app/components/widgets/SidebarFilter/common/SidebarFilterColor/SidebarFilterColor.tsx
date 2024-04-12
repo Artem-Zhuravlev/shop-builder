@@ -37,7 +37,7 @@ export const SidebarFilterColor: FC<SidebarFilterColorProps> = (props) => {
 						save={handleSubmit}
 					/>
 					<InputColors
-						type={'checkbox'}
+						type='checkbox'
 						items={items}
 					/>
 				</SidebarToggler>

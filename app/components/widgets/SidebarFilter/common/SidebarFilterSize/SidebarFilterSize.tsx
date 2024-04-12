@@ -1,15 +1,21 @@
-import React, { useCallback, useState } from 'react';
+import React, { FC, useCallback, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';
 import { AutoSave } from '@shared/inputs';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
+import { InputSizes } from '@shared/inputs/InputSizes/InputSizes';
 
-export const SidebarFilterSize = () => {
+interface SidebarFilterSizeProps {
+	items: string[];
+}
+
+export const SidebarFilterSize: FC<SidebarFilterSizeProps> = (props) => {
+	const { items } = props;
 	const t = useTranslations('filters');
 	const [resetMode, setResetMode] = useState(false);
 
-	const handleSubmit = useCallback((values: object) => {
-		const mode = Object.values(values).some((item) => item === true);
+	const handleSubmit = useCallback((values: { sizes: string[] }) => {
+		const mode = Object.keys(values).length > 0 && values.sizes.length > 0;
 		setResetMode(mode);
 	}, []);
 
@@ -29,6 +35,10 @@ export const SidebarFilterSize = () => {
 					<AutoSave
 						debounce={0}
 						save={handleSubmit}
+					/>
+					<InputSizes
+						type='checkbox'
+						items={items}
 					/>
 				</SidebarToggler>
 			)}

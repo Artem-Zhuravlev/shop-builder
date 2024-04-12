@@ -2,7 +2,7 @@
 .InputSizes {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space-small);
+	gap: var(--space-extra-small);
 	align-items: flex-start;
 	@extend %listreset;
 }
