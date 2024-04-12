@@ -2,7 +2,7 @@ import React, { FC, useId } from 'react';
 import classNames from 'classnames';
 import { Field } from 'react-final-form';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
-import cls from './ColorsList.module.scss';
+import cls from './InputColors.module.scss';
 
 interface ColorsListItem {
 	color: string;
@@ -10,13 +10,13 @@ interface ColorsListItem {
 	tip: string;
 }
 
-interface ColorsListProps {
+interface InputColorsProps {
 	type: 'radio' | 'checkbox';
 	items: ColorsListItem[];
 	rounded?: boolean;
 }
 
-export const ColorsList: FC<ColorsListProps> = ({
+export const InputColors: FC<InputColorsProps> = ({
 	type = 'checkbox',
 	items,
 	rounded = false,
@@ -24,13 +24,13 @@ export const ColorsList: FC<ColorsListProps> = ({
 	const id = useId();
 
 	return (
-		<ul className={cls.ColorsList}>
+		<ul className={cls.InputColors}>
 			{items.map((item, index) => (
 				<li
-					className={cls.ColorsListItem}
+					className={cls.InputColorsItem}
 					key={`${id}-${index}`}>
 					<TooltipBase content={item.tip}>
-						<label className={cls.ColorsListLabel}>
+						<label className={cls.InputColorsLabel}>
 							<Field
 								name='colors'
 								type={type}
@@ -38,8 +38,8 @@ export const ColorsList: FC<ColorsListProps> = ({
 								value={item.value}
 							/>
 							<div
-								className={classNames(cls.ColorsListImage, {
-									[cls.ColorsListImageRounded]: rounded,
+								className={classNames(cls.InputColorsImage, {
+									[cls.InputColorsImageRounded]: rounded,
 								})}>
 								<div style={{ backgroundColor: item.color }} />
 							</div>
