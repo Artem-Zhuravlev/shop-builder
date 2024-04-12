@@ -67,21 +67,31 @@ export const InputText: FC<InputProps> = (props) => {
 		setError(!!meta.error && meta.touched && meta.submitFailed);
 		setErrorMessage(meta.error || '');
 
+		const inputProps: Record<string, any> = {
+			className: inputClasses,
+			type: type,
+			placeholder: required ? `${placeholder} *` : placeholder,
+			min: min,
+			max: max,
+			autoComplete: 'off',
+			disabled: disabled,
+			onFocus: onFocus,
+			onBlur: onBlur,
+			defaultValue: defaultValue,
+		};
+
+		if (value !== undefined) {
+			inputProps.value = value;
+		}
+
+		if (onChange !== undefined) {
+			inputProps.onChange = onChange;
+		}
+
 		return (
 			<input
 				{...input}
-				className={inputClasses}
-				type={type}
-				value={value}
-				placeholder={required ? `${placeholder} *` : placeholder}
-				min={min}
-				max={max}
-				autoComplete='off'
-				disabled={disabled}
-				onFocus={onFocus}
-				onBlur={onBlur}
-				onChange={onChange}
-				defaultValue={defaultValue}
+				{...inputProps}
 			/>
 		);
 	};
