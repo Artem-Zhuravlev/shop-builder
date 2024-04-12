@@ -1,9 +1,8 @@
 import React, { FC, useCallback, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';
-import { AutoSave } from '@shared/inputs';
+import { AutoSave, InputSizes } from '@shared/inputs';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
-import { InputSizes } from '@shared/inputs/InputSizes/InputSizes';
 
 interface SidebarFilterSizeProps {
 	items: string[];
