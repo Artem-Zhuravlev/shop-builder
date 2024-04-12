@@ -4,7 +4,7 @@ import { Field } from 'react-final-form';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import cls from './InputColors.module.scss';
 
-interface ColorsListItem {
+export interface ColorsListItem {
 	color: string;
 	value: string;
 	tip: string;
@@ -36,6 +36,7 @@ export const InputColors: FC<InputColorsProps> = ({
 								type={type}
 								component='input'
 								value={item.value}
+								className='sr-only'
 							/>
 							<div
 								className={classNames(cls.InputColorsImage, {

@@ -47,6 +47,7 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 					onChange={onChange}
 					value={value}
 					checked={checked}
+					className='sr-only'
 				/>
 				<div className={cls.InputCheckboxLabel}>{label}</div>
 			</label>

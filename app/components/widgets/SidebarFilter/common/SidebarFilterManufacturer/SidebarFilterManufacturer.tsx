@@ -58,6 +58,7 @@ export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (
 										name={item.slug}
 										component='input'
 										type='checkbox'
+										className='sr-only'
 									/>
 									<Image
 										src={item.image}

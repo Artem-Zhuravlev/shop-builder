@@ -32,6 +32,7 @@ export const InputRadio: FC<InputProps> = (props) => {
 							value={label}
 							checked={label === selectedRadio}
 							onChange={handleRadioChange}
+							className='sr-only'
 						/>
 						<div className={cls.InputRadioLabel}>{label}</div>
 					</label>

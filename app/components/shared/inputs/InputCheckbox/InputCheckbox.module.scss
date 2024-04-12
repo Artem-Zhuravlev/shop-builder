@@ -4,12 +4,19 @@
 	cursor: pointer;
 
 	input[type='checkbox'] {
-		display: none;
-
 		&:checked + .InputCheckboxLabel {
 			&::before {
 				color: var(--gray-10);
 				background-color: var(--primary-main);
+				border-color: var(--gray-90);
+			}
+		}
+	}
+
+	&:focus-within {
+		.InputCheckboxLabel {
+			&::before {
+				border-color: var(--primary-border);
 			}
 		}
 	}

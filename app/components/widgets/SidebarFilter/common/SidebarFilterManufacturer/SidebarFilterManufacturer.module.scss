@@ -12,10 +12,14 @@
 	}
 
 	input[type='checkbox'] {
-		display: none;
-
 		&:checked + .SidebarFilterManufacturerImage {
 			outline: 1px solid var(--primary-main);
+		}
+	}
+
+	&:focus-within {
+		.SidebarFilterManufacturerImage {
+			outline: 1px solid var(--primary-border);
 		}
 	}
 }

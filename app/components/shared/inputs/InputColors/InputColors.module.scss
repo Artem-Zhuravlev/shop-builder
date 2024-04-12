@@ -17,19 +17,16 @@
 	align-items: center;
 	cursor: pointer;
 
+	input[type='radio'],
 	input[type='checkbox'] {
-		display: none;
-
 		&:checked + .InputColorsImage {
 			border-color: var(--gray-90);
 		}
 	}
 
-	input[type='radio'] {
-		display: none;
-
-		&:checked + .InputColorsImage {
-			border-color: var(--gray-90);
+	&:focus-within {
+		.InputColorsImage {
+			border-color: var(--primary-border);
 		}
 	}
 }

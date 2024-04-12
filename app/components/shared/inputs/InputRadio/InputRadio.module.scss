@@ -10,11 +10,18 @@
 	cursor: pointer;
 
 	input[type='radio'] {
-		display: none;
-
 		&:checked + .InputRadioLabel {
 			&::after {
+				border-color: var(--gray-90);
 				background-color: var(--primary-main);
+			}
+		}
+	}
+
+	&:focus-within {
+		.InputRadioLabel {
+			&::before {
+				border-color: var(--primary-border);
 			}
 		}
 	}
