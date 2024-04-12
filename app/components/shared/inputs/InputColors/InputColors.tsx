@@ -38,6 +38,7 @@ export const InputColors: FC<InputColorsProps> = ({
 								value={item.value}
 								className='sr-only'
 							/>
+							<div className='sr-only'>{item.value}</div>
 							<div
 								className={classNames(cls.InputColorsImage, {
 									[cls.InputColorsImageRounded]: rounded,
