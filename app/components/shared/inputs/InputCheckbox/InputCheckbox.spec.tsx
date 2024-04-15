@@ -10,7 +10,6 @@ describe('InputCheckbox Component', () => {
 
 	it('renders the checkbox input with the given label', () => {
 		const label = 'Check me';
-		const id = 'checkbox-id';
 		const name = 'name';
 
 		const { getByText, getByLabelText } = customRender(
@@ -18,7 +17,6 @@ describe('InputCheckbox Component', () => {
 				{({ handleSubmit }) => (
 					<form onSubmit={handleSubmit}>
 						<InputCheckbox
-							id={id}
 							label={label}
 							name={name}
 						/>
@@ -31,47 +29,19 @@ describe('InputCheckbox Component', () => {
 		expect(getByLabelText(label)).toBeInTheDocument();
 	});
 
-	it('triggers onChange when checkbox is clicked', () => {
-		const label = 'Check me';
-		const name = 'name';
-		const id = 'checkbox-id';
-
-		const { getByLabelText } = customRender(
-			<Form onSubmit={mockOnChange}>
-				{({ handleSubmit }) => (
-					<form onSubmit={handleSubmit}>
-						<InputCheckbox
-							id={id}
-							label={label}
-							name={name}
-							onChange={mockOnChange}
-						/>
-					</form>
-				)}
-			</Form>
-		);
-
-		const checkbox = getByLabelText(label) as HTMLInputElement;
-
-		fireEvent.click(checkbox);
-
-		expect(mockOnChange).toHaveBeenCalled();
-	});
-
 	it('renders the checkbox as checked when value is true', () => {
 		const label = 'Check me';
-		const id = 'checkbox-id';
 		const name = 'name';
 
 		const { getByLabelText } = customRender(
-			<Form onSubmit={mockOnChange}>
+			<Form
+				onSubmit={mockOnChange}
+				initialValues={{ [name]: true }}>
 				{({ handleSubmit }) => (
 					<form onSubmit={handleSubmit}>
 						<InputCheckbox
-							id={id}
 							label={label}
 							name={name}
-							checked={true}
 							onChange={mockOnChange}
 						/>
 					</form>

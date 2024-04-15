@@ -78,7 +78,7 @@ h6 {
 }
 
 .mb-0 {
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
 }
 
 input::-webkit-outer-spin-button,
@@ -103,6 +103,18 @@ input[type='number'] {
 	position: absolute !important;
 	width: 1px !important;
 	white-space: nowrap !important; /* 3 */
+}
+
+.d-flex {
+	display: flex;
+}
+
+.gap-1 {
+	gap: var(--space-small);
+}
+
+.flex-column {
+	flex-direction: column;
 }
 
 @import './abstracts/variables';

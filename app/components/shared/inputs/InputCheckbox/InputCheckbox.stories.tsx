@@ -43,7 +43,6 @@ const Template: StoryFn<typeof InputCheckbox> = ({ ...args }) => {
 export const Default = Template.bind({});
 Default.args = {
 	label: 'Checkbox label',
-	id: 'checkbox-1',
 	name: 'checkbox',
 };
 

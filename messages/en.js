@@ -21,6 +21,8 @@ export default {
 		discount: 'Discount',
 		rating: 'Rating',
 		to: 'to',
+		in_stock: 'In stock',
+		pre_order: 'Pre-order',
 	},
 	base: {
 		brand: 'Brand',

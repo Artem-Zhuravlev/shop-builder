@@ -21,6 +21,8 @@ export default {
 		discount: 'Знижка',
 		rating: 'Рейтинг',
 		to: 'до',
+		in_stock: 'В наявності',
+		pre_order: 'Предзамовлення',
 	},
 	base: {
 		brand: 'Бренд',

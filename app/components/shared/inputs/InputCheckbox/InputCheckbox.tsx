@@ -18,17 +18,7 @@ interface InputCheckboxProps {
 }
 
 export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
-	const {
-		id,
-		label,
-		name,
-		required = false,
-		validationHandler,
-		className,
-		onChange,
-		value,
-		checked,
-	} = props;
+	const { label, name, required = false, validationHandler, className } = props;
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 	const t = useTranslations();
@@ -41,12 +31,6 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 			<label className={cls.InputCheckbox}>
 				<input
 					{...input}
-					id={id}
-					type='checkbox'
-					name={name}
-					onChange={onChange}
-					value={value}
-					checked={checked}
 					className='sr-only'
 				/>
 				<div className={cls.InputCheckboxLabel}>{label}</div>
@@ -61,9 +45,12 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 			className={className}>
 			<Field
 				name={name}
-				validate={(value) =>
-					getValidationMessage(value, required, t, validationHandler)
-				}>
+				type='checkbox'
+				validate={(value) => {
+					if (value) {
+						getValidationMessage(value, required, t, validationHandler);
+					}
+				}}>
 				{renderInputField}
 			</Field>
 		</Label>
