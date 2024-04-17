@@ -15,10 +15,18 @@ interface InputCheckboxProps {
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	value?: boolean;
 	checked?: boolean;
+	suffix?: ReactNode;
 }
 
 export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
-	const { label, name, required = false, validationHandler, className } = props;
+	const {
+		label,
+		name,
+		required = false,
+		validationHandler,
+		className,
+		suffix,
+	} = props;
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 	const t = useTranslations();
@@ -33,7 +41,10 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 					{...input}
 					className='sr-only'
 				/>
-				<div className={cls.InputCheckboxLabel}>{label}</div>
+				<div className={cls.InputCheckboxLabel}>
+					{label}
+					{suffix && <div className={cls.InputCheckboxSuffix}>{suffix}</div>}
+				</div>
 			</label>
 		);
 	};

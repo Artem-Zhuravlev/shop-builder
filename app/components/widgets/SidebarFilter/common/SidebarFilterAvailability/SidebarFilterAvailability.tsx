@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 import { Form } from 'react-final-form';
 import { AutoSave, InputCheckbox } from '@shared/inputs';
-import { SidebarFilterItem } from '../SidebarFilterItem/SidebarFilterItem';
 
 interface SidebarFilterAvailabilityProps {
 	inStock: number;
@@ -40,20 +39,18 @@ export const SidebarFilterAvailability: FC<SidebarFilterAvailabilityProps> = (
 						save={handleSubmit}
 					/>
 					<div className='d-flex flex-column gap-1'>
-						<SidebarFilterItem amount={inStock}>
-							<InputCheckbox
-								label={t('in_stock')}
-								name='in_stock'
-								className='mb-0'
-							/>
-						</SidebarFilterItem>
-						<SidebarFilterItem amount={preOrder}>
-							<InputCheckbox
-								label={t('pre_order')}
-								name='pre_order'
-								className='mb-0'
-							/>
-						</SidebarFilterItem>
+						<InputCheckbox
+							label={t('in_stock')}
+							name='in_stock'
+							className='mb-0'
+							suffix={inStock}
+						/>
+						<InputCheckbox
+							label={t('pre_order')}
+							name='pre_order'
+							className='mb-0'
+							suffix={preOrder}
+						/>
 					</div>
 				</SidebarToggler>
 			)}

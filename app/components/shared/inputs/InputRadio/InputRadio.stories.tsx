@@ -31,6 +31,7 @@ const Template: StoryFn<typeof InputRadio> = (args) => {
 								value={item}
 								name={args.name}
 								key={index}
+								suffix={args.suffix}
 							/>
 						))}
 					</div>
@@ -45,7 +46,8 @@ Default.args = {
 	name: 'radio',
 };
 
-export const WithSelectedValue = Template.bind({});
-WithSelectedValue.args = {
-	...Default.args,
+export const WithSuffix = Template.bind({});
+WithSuffix.args = {
+	name: 'radio',
+	suffix: 10,
 };

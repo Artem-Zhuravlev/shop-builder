@@ -20,13 +20,23 @@
 			}
 		}
 	}
+
+	&:has(.InputCheckboxSuffix) {
+		display: flex;
+		width: 100%;
+	}
 }
 
 .InputCheckboxLabel {
 	position: relative;
+	display: flex;
+	justify-content: space-between;
 	font-size: var(--font-size-lg);
 	padding-left: var(--size-small);
 	user-select: none;
+	width: 100%;
+	align-items: center;
+	gap: var(--space-small);
 
 	&::before {
 		content: '';
@@ -46,4 +56,14 @@
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M20.293 5.293 9 16.586l-4.293-4.293-1.414 1.414L9 19.414 21.707 6.707l-1.414-1.414z' fill='%23fff'/%3E%3C/svg%3E");
 		background-size: contain;
 	}
+}
+
+.InputCheckboxSuffix {
+	margin-right: 0;
+	margin-left: auto;
+	color: var(--gray-70);
+	font-size: var(--font-size-md);
+	background-color: var(--gray-30);
+	min-height: var(--size-extra-small);
+	padding: 0 var(--interface-size-sm);
 }
