@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import cls from '../ProductCard.module.scss';
 
@@ -11,16 +12,14 @@ interface CardImagesProps {
 }
 
 export const CardImages: FC<CardImagesProps> = ({ to, images }) => {
-	const id = useId();
-
 	return (
 		<Link
 			href={to}
 			className={cls.CardImages}>
 			{images &&
-				images.map((item, index) => (
+				images.map((item) => (
 					<img
-						key={`${id}-${index}`}
+						key={uuidv4()}
 						height={300}
 						src={item.url}
 						alt={item.alt}

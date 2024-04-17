@@ -19,7 +19,7 @@
 
 	input[type='radio'],
 	input[type='checkbox'] {
-		&:checked + .InputColorsImage {
+		&:checked ~ .InputColorsImage {
 			border-color: var(--gray-90);
 		}
 	}

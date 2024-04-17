@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import cls from './BreadcrumbsBase.module.scss';
 
@@ -12,7 +13,6 @@ interface BreadcrumbsProps {
 }
 
 export const BreadcrumbsBase: FC<BreadcrumbsProps> = ({ pages }) => {
-	const id = useId();
 	return (
 		<nav
 			data-testid='breadcrumbs'
@@ -23,7 +23,7 @@ export const BreadcrumbsBase: FC<BreadcrumbsProps> = ({ pages }) => {
 						return (
 							<li
 								className={cls.BreadcrumbsItem}
-								key={`${id}-${index}`}>
+								key={uuidv4()}>
 								{url ? (
 									<Link
 										href={url}

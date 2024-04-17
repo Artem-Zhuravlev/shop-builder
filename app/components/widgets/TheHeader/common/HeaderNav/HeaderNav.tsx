@@ -1,4 +1,5 @@
-import React, { FC, useId, useState } from 'react';
+import React, { FC, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import cls from './HeaderNav.module.scss';
 import Link from 'next/link';
 import classNames from 'classnames';
@@ -27,7 +28,6 @@ export interface HeaderNavProps {
 
 export const HeaderNav: FC<HeaderNavProps> = (props) => {
 	const { items } = props;
-	const id = useId();
 	const [collapse, setCollapse] = useState<boolean>(false);
 
 	const submenuCls = (sub: object[]): string => {
@@ -44,7 +44,7 @@ export const HeaderNav: FC<HeaderNavProps> = (props) => {
 				{items &&
 					items.map((mainItem, mainIndex) => (
 						<li
-							key={`${id}-${mainIndex}`}
+							key={uuidv4()}
 							className={cls.HeaderNavItem}>
 							<Link
 								href={mainItem.url}
@@ -66,9 +66,9 @@ export const HeaderNav: FC<HeaderNavProps> = (props) => {
 											collapse ? cls.HeaderNavSubmenuActive : null,
 											submenuCls(mainItem.sub)
 										)}>
-										{mainItem.sub.map((subItem, subIndex) => (
+										{mainItem.sub.map((subItem) => (
 											<HeaderSubmenu
-												key={`${id}-${mainIndex}-${subIndex}`}
+												key={uuidv4()}
 												item={subItem}
 											/>
 										))}

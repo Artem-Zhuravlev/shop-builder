@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
@@ -16,16 +17,15 @@ interface AccountNavProps {
 
 export const AccountNav: FC<AccountNavProps> = (props) => {
 	const { items } = props;
-	const id = useId();
 	const pathname = usePathname();
 
 	return (
 		<ul className={cls.AccountNav}>
 			{items &&
-				items.map((item, index) => (
+				items.map((item) => (
 					<li
 						className={cls.AccountNavItem}
-						key={`${id}-${index}`}>
+						key={uuidv4()}>
 						<Link
 							href={item.to}
 							className={classNames(cls.AccountNavLink, {

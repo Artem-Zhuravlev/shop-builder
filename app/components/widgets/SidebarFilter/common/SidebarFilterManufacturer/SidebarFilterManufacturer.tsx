@@ -1,4 +1,5 @@
-import React, { FC, useCallback, useId, useState } from 'react';
+import React, { FC, useCallback, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Field, Form } from 'react-final-form';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -23,7 +24,6 @@ export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (
 ) => {
 	const { items } = props;
 	const [resetMode, setResetMode] = useState(false);
-	const id = useId();
 	const t = useTranslations('filters');
 
 	const handleSubmit = useCallback((values: object) => {
@@ -49,9 +49,9 @@ export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (
 						save={handleSubmit}
 					/>
 					{items &&
-						items.map((item, index) => (
+						items.map((item) => (
 							<SidebarFilterItem
-								key={`${id}-${index}`}
+								key={`${item.amount}-${item.slug}`}
 								amount={item.amount}>
 								<label className={cls.SidebarFilterManufacturerItem}>
 									<Field

@@ -1,4 +1,5 @@
-import React, { FC, useId, useMemo } from 'react';
+import React, { FC, useMemo } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import cls from './HeaderSearchList.module.scss';
@@ -20,14 +21,13 @@ interface HeaderSearchListProps {
 
 export const HeaderSearchList: FC<HeaderSearchListProps> = (props) => {
 	const { items, noResults } = props;
-	const id = useId();
 	const t = useTranslations('base');
 
 	const renderItemsList = useMemo(() => {
 		return !noResults ? (
-			items?.map((item, index) => (
+			items?.map((item) => (
 				<li
-					key={`${id}-${index}`}
+					key={uuidv4()}
 					className={cls.HeaderSearchItem}>
 					<Link
 						href={`/${item.slug}`}

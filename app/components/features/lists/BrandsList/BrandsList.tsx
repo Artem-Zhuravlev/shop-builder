@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import cls from './BrandsList.module.scss';
 import { SectionBase } from '@shared/SectionBase';
@@ -16,14 +17,13 @@ interface BrandsListProps {
 
 export const BrandsList: FC<BrandsListProps> = (props) => {
 	const { title, items } = props;
-	const id = useId();
 
 	return (
 		<SectionBase title={title}>
 			<ul className={cls.BrandsList}>
 				{items &&
-					items.map((item, index) => (
-						<li key={`${id}-${index}`}>
+					items.map((item) => (
+						<li key={uuidv4()}>
 							<Link
 								href={item.to}
 								className={cls.BrandsLink}>

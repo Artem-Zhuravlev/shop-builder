@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { SectionBase } from '@shared/SectionBase';
 import { settings } from '@settings/slider/sliderWithThreeColumns';
 import { SliderBase, SliderCard } from '@shared/SliderBase';
@@ -11,7 +12,6 @@ interface BlogSliderProps {
 
 export const BlogSlider: FC<BlogSliderProps> = (props) => {
 	const { title, items } = props;
-	const id = useId();
 
 	return (
 		<SectionBase
@@ -20,13 +20,10 @@ export const BlogSlider: FC<BlogSliderProps> = (props) => {
 			<SliderBase settings={settings}>
 				{items &&
 					items.map(
-						(
-							{ image, author, comments, viewed, title, published_at, to },
-							index
-						) => (
+						({ image, author, comments, viewed, title, published_at, to }) => (
 							<SliderCard>
 								<BlogCard
-									key={`${id}-${index}`}
+									key={uuidv4()}
 									image={image}
 									author={author}
 									comments={comments}

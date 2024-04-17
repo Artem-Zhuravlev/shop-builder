@@ -1,4 +1,5 @@
-import React, { FC, useId, useState } from 'react';
+import React, { FC, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { AlertItem, IAlertItem } from './common/AlertItem';
 import cls from './AlertBase.module.scss';
 
@@ -8,7 +9,6 @@ interface AlertsProps {
 
 export const AlertBase: FC<AlertsProps> = (props) => {
 	const { alerts } = props;
-	const id = useId();
 	const [alertItems, setAlertItems] = useState(alerts);
 
 	const handleClose = (index: number) => {
@@ -27,7 +27,7 @@ export const AlertBase: FC<AlertsProps> = (props) => {
 						index={index}
 						message={message}
 						type={type}
-						key={`${id}-${index}`}
+						key={uuidv4()}
 						onClose={handleClose}
 					/>
 				))}

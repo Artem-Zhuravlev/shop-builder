@@ -1,42 +1,35 @@
-import React, { FC, useId, useState } from 'react';
+import React, { FC, ReactNode } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { Field } from 'react-final-form';
+
 import cls from './InputRadio.module.scss';
+import classNames from 'classnames';
 
 interface InputProps {
 	name: string;
-	items: string[];
-	value: string;
-	onChange: (value: string, selectedRadio: string) => void;
+	value: string | number;
+	suffix?: ReactNode;
 }
 
-export const InputRadio: FC<InputProps> = (props) => {
-	const { name, items, onChange, value } = props;
-	const id = useId();
-	const [selectedRadio, setSelectedRadio] = useState<string>(value);
-
-	const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const { value } = event.target;
-		setSelectedRadio(value);
-		onChange(value, selectedRadio);
-	};
+export const InputRadio: FC<InputProps> = React.memo((props) => {
+	const { name, value, suffix } = props;
+	const radioClasses = classNames(cls.InputRadio, {
+		[cls.withSuffix]: !!suffix,
+	});
 
 	return (
-		<div className={cls.RadioGroup}>
-			{items &&
-				items.map((label, index) => (
-					<label
-						className={cls.InputRadio}
-						key={`${id}-${index}`}>
-						<input
-							type='radio'
-							name={name}
-							value={label}
-							checked={label === selectedRadio}
-							onChange={handleRadioChange}
-							className='sr-only'
-						/>
-						<div className={cls.InputRadioLabel}>{label}</div>
-					</label>
-				))}
-		</div>
+		<label className={radioClasses}>
+			<Field
+				name={name}
+				type='radio'
+				value={value}
+				className='sr-only'
+				component='input'
+			/>
+
+			<div className={cls.InputRadioLabel}>
+				{value} {suffix && <div className={cls.InputRadioSuffix}>{suffix}</div>}
+			</div>
+		</label>
 	);
-};
+});

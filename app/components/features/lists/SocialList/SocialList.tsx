@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
 import cls from './SocialList.module.scss';
 
@@ -13,7 +14,6 @@ interface SocialListProps {
 
 export const SocialList: FC<SocialListProps> = (props) => {
 	const { items, className } = props;
-	const id = useId();
 	const socialListClasses = classNames(cls.SocialList, className);
 
 	return (
@@ -21,7 +21,7 @@ export const SocialList: FC<SocialListProps> = (props) => {
 			{items &&
 				items.map((item, index) => (
 					<li
-						key={`${id}-${index}`}
+						key={uuidv4()}
 						className={cls.SocialItem}>
 						<a
 							href={item.url}

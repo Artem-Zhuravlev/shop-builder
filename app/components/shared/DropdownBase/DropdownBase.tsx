@@ -1,11 +1,5 @@
-import React, {
-	FC,
-	useId,
-	useState,
-	useEffect,
-	useRef,
-	useCallback,
-} from 'react';
+import React, { FC, useState, useEffect, useRef, useCallback } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
 import cls from './DropdownBase.module.scss';
 import Link from 'next/link';
@@ -19,8 +13,6 @@ interface DropdownProps {
 
 export const DropdownBase: FC<DropdownProps> = (props) => {
 	const { list, children, opened = false, isLightMode } = props;
-
-	const id = useId();
 	const [isOpen, setIsOpen] = useState(opened);
 	const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -63,8 +55,8 @@ export const DropdownBase: FC<DropdownProps> = (props) => {
 			{isOpen && (
 				<ul className={cls.DropdownList}>
 					{list &&
-						list.map((item, index) => (
-							<li key={`${id}-${index}`}>
+						list.map((item) => (
+							<li key={uuidv4()}>
 								<Link href={item.route}>{item.value}</Link>
 							</li>
 						))}

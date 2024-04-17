@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
 import { Field } from 'react-final-form';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
@@ -21,14 +22,12 @@ export const InputColors: FC<InputColorsProps> = ({
 	items,
 	rounded = false,
 }) => {
-	const id = useId();
-
 	return (
 		<ul className={cls.InputColors}>
-			{items.map((item, index) => (
+			{items.map((item) => (
 				<li
 					className={cls.InputColorsItem}
-					key={`${id}-${index}`}>
+					key={item.color}>
 					<TooltipBase content={item.tip}>
 						<label className={cls.InputColorsLabel}>
 							<Field

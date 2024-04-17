@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import cls from './FooterCol.module.scss';
 
@@ -16,7 +17,6 @@ interface FooterColProp {
 
 export const FooterCol: FC<FooterColProp> = (props) => {
 	const { title, description, list } = props;
-	const id = useId();
 
 	return (
 		<div className={cls.FooterCol}>
@@ -27,7 +27,7 @@ export const FooterCol: FC<FooterColProp> = (props) => {
 					{list.map((item, index) => (
 						<li
 							className={cls.FooterListItem}
-							key={`${id}-${index}`}>
+							key={uuidv4()}>
 							{item.to ? (
 								<Link
 									href={item.to}

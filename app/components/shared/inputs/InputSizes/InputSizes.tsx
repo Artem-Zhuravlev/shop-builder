@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Field } from 'react-final-form';
 import cls from './InputSizes.module.scss';
 
@@ -11,14 +12,12 @@ export const InputSizes: FC<InputSizesProps> = ({
 	type = 'checkbox',
 	items,
 }) => {
-	const id = useId();
-
 	return (
 		<ul className={cls.InputSizes}>
-			{items.map((item, index) => (
+			{items.map((item) => (
 				<li
 					className={cls.InputSizesItem}
-					key={`${id}-${index}`}>
+					key={item}>
 					<label className={cls.InputSizesLabel}>
 						<Field
 							name='sizes'

@@ -1,4 +1,5 @@
-import React, { FC, useId, useState } from 'react';
+import React, { FC, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import cls from './TabsBase.module.scss';
 
 interface ITab {
@@ -13,7 +14,6 @@ interface TabsBaseProps {
 
 export const TabsBase: FC<TabsBaseProps> = (props) => {
 	const { items, activeTab = 0 } = props;
-	const id = useId();
 	const initialActiveTab =
 		activeTab >= items.length ? items.length - 1 : activeTab;
 	const [value, setValue] = useState(initialActiveTab);
@@ -31,7 +31,7 @@ export const TabsBase: FC<TabsBaseProps> = (props) => {
 						return (
 							<button
 								className={tabClasses.join(' ')}
-								key={`${id}-${index}`}
+								key={uuidv4()}
 								onClick={() => setValue(index)}>
 								{item.label}
 							</button>

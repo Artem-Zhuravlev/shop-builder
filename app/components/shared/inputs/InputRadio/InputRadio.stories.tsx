@@ -1,31 +1,51 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { InputRadio } from './InputRadio';
+import { Form } from 'react-final-form';
 
 export default {
-  title: 'inputs/InputRadio',
-  component: InputRadio,
-  parameters: {
-    actions: {
-      handles: ['onChange'],
-    },
-  },
+	title: 'inputs/InputRadio',
+	component: InputRadio,
 } as Meta<typeof InputRadio>;
 
-const Template: StoryFn<typeof InputRadio> = (args) => <InputRadio {...args} />;
+const Template: StoryFn<typeof InputRadio> = (args) => {
+	const onSubmit = async (values: object) => {
+		console.log('Form submitted with values:', values);
+	};
+
+	const items = ['Label 1', 'Label 2', 'Label 3'];
+
+	return (
+		<Form onSubmit={onSubmit}>
+			{({ handleSubmit }) => (
+				<>
+					<div
+						style={{
+							display: 'flex',
+							gap: '20px',
+							alignItems: 'flex-end',
+							flexWrap: 'wrap',
+						}}>
+						{items.map((item, index) => (
+							<InputRadio
+								value={item}
+								name={args.name}
+								key={index}
+							/>
+						))}
+					</div>
+				</>
+			)}
+		</Form>
+	);
+};
 
 export const Default = Template.bind({});
 Default.args = {
-  items: [
-    'Label 1',
-    'Label 2',
-    'Label 3',
-  ],
-  name: 'radio-group-name'
+	name: 'radio',
 };
 
 export const WithSelectedValue = Template.bind({});
 WithSelectedValue.args = {
-  ...Default.args,
-  value: 'Label 2'
-}
+	...Default.args,
+};

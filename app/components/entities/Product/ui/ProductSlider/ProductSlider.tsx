@@ -1,5 +1,6 @@
 'use client';
-import React, { useState, useEffect, useRef, FC, useId } from 'react';
+import React, { useState, useEffect, useRef, FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Image from 'next/image';
 import Slider, { Settings } from 'react-slick';
 import { SliderBase } from '@shared/SliderBase';
@@ -12,7 +13,6 @@ interface ProductSliderProps {
 export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
 	const [mainNav, setMainNav] = useState<Slider | null>(null);
 	const [subNav, setSubNav] = useState<Slider | null>(null);
-	const id = useId();
 
 	const mainSliderRef = useRef<Slider>(null);
 	const thumbsSliderRef = useRef<Slider>(null);
@@ -51,10 +51,10 @@ export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
 				settings={mainSliderSettings}
 				ref={mainSliderRef}>
 				{items &&
-					items.map((item, index) => (
+					items.map((item) => (
 						<div className={cls.ProductSliderCard}>
 							<Image
-								key={`${id}-${index}`}
+								key={uuidv4()}
 								src={item.image}
 								alt={item.alt}
 								width={450}
@@ -68,10 +68,10 @@ export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
 				ref={thumbsSliderRef}
 				className={cls.ProductSliderPreviews}>
 				{items &&
-					items.map((item, index) => (
+					items.map((item) => (
 						<div className={cls.ProductSliderThumb}>
 							<Image
-								key={`${id}-${index}-thumb`}
+								key={uuidv4()}
 								src={item.image}
 								alt={item.alt}
 								width={140}

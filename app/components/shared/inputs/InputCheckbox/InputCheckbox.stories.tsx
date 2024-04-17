@@ -22,8 +22,6 @@ const Template: StoryFn<typeof InputCheckbox> = ({ ...args }) => {
 		<Form onSubmit={onSubmit}>
 			{({ handleSubmit, values }) => (
 				<>
-					{JSON.stringify(values)}
-
 					<form
 						onSubmit={handleSubmit}
 						style={{

@@ -1,4 +1,5 @@
-import React, { FC, useId } from 'react';
+import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { settings } from '@settings/slider/sliderWithFourColumns';
 import { SliderBase, SliderCard } from '@shared/SliderBase';
 import { SectionBase } from '@shared/SectionBase';
@@ -11,7 +12,6 @@ interface ProductsSliderProps {
 
 export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 	const { title, items } = props;
-	const id = useId();
 	const addToCart = (slug: string) => {};
 	const addToFavorite = (slug: string) => {};
 	const quickView = (slug: string) => {};
@@ -24,10 +24,10 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 					settings={settings}
 					className={cls.ProductSlider}>
 					{items.map(
-						({ images, slug, title, rating, price, old_price, tax }, index) => (
+						({ images, slug, title, rating, price, old_price, tax }) => (
 							<SliderCard>
 								<ProductCard
-									key={`${id}-${index}`}
+									key={uuidv4()}
 									images={images}
 									title={title}
 									rating={rating}
