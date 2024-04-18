@@ -8,7 +8,7 @@ import {
 	phoneValidate,
 } from '@utils/validations';
 import { InputCheckbox, InputText } from '@shared/inputs';
-import { ButtonBase } from '@shared/ButtonBase';
+import { ButtonBase } from '@shared';
 import cls from './AccountRegisterForm.module.scss';
 
 export const AccountRegisterForm: FC = () => {
@@ -17,7 +17,7 @@ export const AccountRegisterForm: FC = () => {
 
 	return (
 		<div className={cls.AccountRegisterForm}>
-			<h3>Register Account</h3>
+			<h3>{t('account.register')}</h3>
 			<Form onSubmit={onSubmit}>
 				{({ handleSubmit }) => (
 					<form

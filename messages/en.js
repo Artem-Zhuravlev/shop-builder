@@ -9,6 +9,7 @@ export default {
 			unit_price: 'Unit Price',
 			action: 'Action',
 		},
+		register: 'Register Account',
 	},
 	filters: {
 		price: 'Price',

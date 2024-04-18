@@ -9,6 +9,7 @@ export default {
 			unit_price: 'Ціна за одиницю',
 			action: 'Дія',
 		},
+		register: 'Реєстрація аккаунту',
 	},
 	filters: {
 		price: 'Ціна',
