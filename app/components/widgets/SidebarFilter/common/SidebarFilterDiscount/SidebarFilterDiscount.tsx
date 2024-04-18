@@ -1,3 +1,4 @@
+'use client';
 import React, { useCallback, useState, FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';

@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { AlertItem, AlertItemProps } from './common/AlertItem';

@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, ReactNode, useState } from 'react';
 import cls from './SideDrawer.module.scss';
 import classNames from 'classnames';

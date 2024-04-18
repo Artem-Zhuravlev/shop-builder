@@ -1,3 +1,4 @@
+'use client';
 import { AutoSave, InputRadio } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
 import React, { FC, useCallback, useState } from 'react';

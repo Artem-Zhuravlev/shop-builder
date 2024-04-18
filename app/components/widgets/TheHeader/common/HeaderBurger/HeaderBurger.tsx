@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, useState } from 'react';
 import cls from './HeaderBurger.module.scss';
 import classNames from 'classnames';

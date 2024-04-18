@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, ReactNode, useState, useEffect } from 'react';
 import cls from './ModalWindow.module.scss';
 

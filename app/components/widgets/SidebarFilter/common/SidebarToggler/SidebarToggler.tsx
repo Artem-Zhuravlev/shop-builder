@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, ReactNode, useState, useRef } from 'react';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';

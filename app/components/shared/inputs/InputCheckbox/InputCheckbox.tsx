@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, ReactNode, useState } from 'react';
 import { Field } from 'react-final-form';
 import { useTranslations } from 'next-intl';

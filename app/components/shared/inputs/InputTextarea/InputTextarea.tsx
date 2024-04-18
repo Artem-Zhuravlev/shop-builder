@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, TextareaHTMLAttributes, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import classNames from 'classnames';

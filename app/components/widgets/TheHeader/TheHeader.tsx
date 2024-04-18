@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, useState } from 'react';
 import { ContainerBase } from '@shared/ContainerBase';
 import classNames from 'classnames';

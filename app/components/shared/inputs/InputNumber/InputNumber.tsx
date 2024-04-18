@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, useState, InputHTMLAttributes } from 'react';
 import cls from './InputNumber.module.scss';
 import { ButtonBase } from '@shared/ButtonBase';

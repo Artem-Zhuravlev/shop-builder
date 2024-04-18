@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, useCallback, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Field, Form } from 'react-final-form';
