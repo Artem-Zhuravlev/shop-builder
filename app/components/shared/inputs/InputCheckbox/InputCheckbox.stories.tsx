@@ -2,15 +2,11 @@ import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { InputCheckbox } from './InputCheckbox';
 import { Form } from 'react-final-form';
+import { action } from '@storybook/addon-actions';
 
 export default {
 	title: 'inputs/InputCheckbox',
 	component: InputCheckbox,
-	parameters: {
-		actions: {
-			handles: ['onChange'],
-		},
-	},
 } as Meta<typeof InputCheckbox>;
 
 const Template: StoryFn<typeof InputCheckbox> = ({ ...args }) => {
@@ -18,19 +14,19 @@ const Template: StoryFn<typeof InputCheckbox> = ({ ...args }) => {
 		console.log('Form submitted with values:', values);
 	};
 
+	const handleChange = (e: any) => {
+		action('change')(e.target.checked);
+	};
+
 	return (
 		<Form onSubmit={onSubmit}>
-			{({ handleSubmit, values }) => (
+			{({ handleSubmit }) => (
 				<>
-					<form
-						onSubmit={handleSubmit}
-						style={{
-							display: 'flex',
-							gap: '20px',
-							alignItems: 'flex-end',
-							flexWrap: 'wrap',
-						}}>
-						<InputCheckbox {...args} />
+					<form onSubmit={handleSubmit}>
+						<InputCheckbox
+							{...args}
+							onChange={handleChange}
+						/>
 					</form>
 				</>
 			)}

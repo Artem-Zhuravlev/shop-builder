@@ -26,6 +26,7 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 		required = false,
 		className,
 		suffix,
+		onChange,
 		validationHandler,
 	} = props;
 
@@ -42,6 +43,12 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 				<input
 					{...input}
 					className='sr-only'
+					onChange={(e) => {
+						input.onChange(e);
+						if (onChange) {
+							onChange(e);
+						}
+					}}
 				/>
 				<div className={cls.InputCheckboxLabel}>
 					{label}

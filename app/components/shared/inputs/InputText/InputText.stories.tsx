@@ -4,13 +4,17 @@ import { Form } from 'react-final-form';
 import { InputText, InputProps } from './InputText';
 import { ButtonBase } from '@shared/ButtonBase';
 
+interface InputStoryProps extends InputProps {
+	field?: string;
+}
+
 export default {
 	title: 'inputs/InputText',
 	component: InputText,
 	decorators: [(Story) => <Story />],
 } as Meta<typeof InputText>;
 
-const Template: StoryFn<InputProps> = ({ ...args }) => {
+const Template: StoryFn<InputStoryProps> = ({ ...args }) => {
 	const onSubmit = async (values: object) => {
 		console.log('Form submitted with values:', values);
 	};
@@ -18,7 +22,7 @@ const Template: StoryFn<InputProps> = ({ ...args }) => {
 	return (
 		<Form
 			onSubmit={onSubmit}
-			initialValues={{ field: args.value }}>
+			initialValues={{ field: args.field }}>
 			{({ handleSubmit, values }) => (
 				<>
 					{JSON.stringify(values)}
@@ -39,67 +43,60 @@ const Template: StoryFn<InputProps> = ({ ...args }) => {
 	);
 };
 
-export const Primary: StoryFn<InputProps> = Template.bind({});
+export const Primary = Template.bind({});
 Primary.args = {
-	value: 'Some string',
+	field: 'Some string',
 	placeholder: 'Please add text',
 	label: 'Field',
 	required: true,
 };
 
-export const PrimaryDisabled: StoryFn<InputProps> = Template.bind({});
+export const PrimaryDisabled = Template.bind({});
 PrimaryDisabled.args = {
-	value: 'Some string',
+	field: 'Some string',
 	disabled: true,
 	placeholder: 'Please add text',
 	label: 'Field',
 };
 
-export const EmptyField: StoryFn<InputProps> = Template.bind({});
+export const EmptyField = Template.bind({});
 EmptyField.args = {
-	value: '',
+	field: '',
 	placeholder: 'Please add text',
 	label: 'Field',
 	required: true,
 };
 
-export const Rounded: StoryFn<InputProps> = Template.bind({});
+export const Rounded = Template.bind({});
 Rounded.args = {
-	value: '',
+	field: '',
 	placeholder: 'Please add text',
 	label: 'Field',
 	required: true,
 	rounded: true,
 };
 
-export const WithRoundedLeftSide: StoryFn<InputProps> = Template.bind({});
+export const WithRoundedLeftSide = Template.bind({});
 WithRoundedLeftSide.args = {
-	value: '',
+	field: '',
 	placeholder: 'Please add text',
 	label: 'Field',
 	required: true,
 	roundedLeftSide: true,
 };
 
-export const WithRoundedRightSide: StoryFn<InputProps> = Template.bind({});
+export const WithRoundedRightSide = Template.bind({});
 WithRoundedRightSide.args = {
-	value: '',
+	field: '',
 	placeholder: 'Please add text',
 	label: 'Field',
 	required: true,
 	roundedRightSide: true,
 };
 
-export const WithoutFormWrapper: StoryFn<InputProps> = Template.bind({});
-WithoutFormWrapper.args = {
-	value: 'without form wrapper',
-	placeholder: 'Please add text',
-	label: 'Field',
-};
-
-export const WithCustomValidation: StoryFn<InputProps> = Template.bind({});
+export const WithCustomValidation = Template.bind({});
 WithCustomValidation.args = {
-	value: 'without form wrapper',
+	field: 'without form wrapper',
 	placeholder: 'Please add text',
 	label: 'Field',
 	required: true,

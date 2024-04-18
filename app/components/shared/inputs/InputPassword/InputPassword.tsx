@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { getValidationMessage, TranslateFunction } from '@utils/validations';
 import { Label } from '../Label/Label';
 import cls from './InputPassword.module.scss';
+import classNames from 'classnames';
 
 export enum InputType {
 	PASSWORD = 'password',
@@ -39,6 +40,10 @@ export const InputPassword: FC<InputProps> = (props) => {
 	const [errorMessage, setErrorMessage] = useState('');
 	const t = useTranslations();
 
+	const inputClasses = classNames(cls.InputPassword, {
+		[cls.InputPasswordError]: error,
+	});
+
 	const toggleEyeIcon = () => {
 		setShowEyeIcon(!showEyeIcon);
 		const suffixType =
@@ -54,7 +59,7 @@ export const InputPassword: FC<InputProps> = (props) => {
 			<input
 				{...input}
 				id={id}
-				className={cls.InputPassword}
+				className={inputClasses}
 				type={type}
 				placeholder={placeholder}
 				autoComplete='off'

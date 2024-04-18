@@ -65,7 +65,6 @@ export const InputText: FC<InputProps> = (props) => {
 		setErrorMessage(meta.error || '');
 
 		const inputProps: Record<string, any> = {
-			autoComplete: 'off',
 			className: inputClasses,
 			defaultValue: defaultValue,
 			disabled: disabled,
@@ -79,14 +78,22 @@ export const InputText: FC<InputProps> = (props) => {
 			inputProps.value = value;
 		}
 
-		if (onChange !== undefined) {
-			inputProps.onChange = onChange;
-		}
-
 		return (
 			<input
 				{...input}
 				{...inputProps}
+				onChange={(e) => {
+					input.onChange(e);
+					if (onChange) {
+						onChange(e);
+					}
+				}}
+				onBlur={(e) => {
+					input.onBlur(e);
+					if (onBlur) {
+						onBlur(e);
+					}
+				}}
 			/>
 		);
 	};

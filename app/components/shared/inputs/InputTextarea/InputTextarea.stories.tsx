@@ -3,12 +3,16 @@ import { StoryFn, Meta } from '@storybook/react';
 import { InputTextarea, TextareaProps } from './InputTextarea';
 import { Form } from 'react-final-form';
 
+interface TextareaStoriesProps extends TextareaProps {
+	field?: string;
+}
+
 export default {
 	title: 'inputs/InputTextarea',
 	component: InputTextarea,
 } as Meta<typeof InputTextarea>;
 
-const Template: StoryFn<TextareaProps> = ({ ...args }) => {
+const Template: StoryFn<TextareaStoriesProps> = ({ ...args }) => {
 	const onSubmit = async (values: object) => {
 		console.log('Form submitted with values:', values);
 	};
@@ -16,10 +20,10 @@ const Template: StoryFn<TextareaProps> = ({ ...args }) => {
 	return (
 		<Form
 			onSubmit={onSubmit}
-			initialValues={{ field: args.value }}>
+			initialValues={{ field: args.field }}>
 			{({ handleSubmit, values }) => (
 				<>
-					{JSON.stringify([values, 1, 0])}
+					{JSON.stringify(values, null, 2)}
 					<form
 						onSubmit={handleSubmit}
 						style={{
@@ -38,9 +42,9 @@ const Template: StoryFn<TextareaProps> = ({ ...args }) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-	value: 'Some string',
+	field: 'Some string',
 	placeholder: 'Please add text',
 	disabled: false,
-	name: 'textarea-name',
+	name: 'field',
 	id: 'textarea-1',
 };

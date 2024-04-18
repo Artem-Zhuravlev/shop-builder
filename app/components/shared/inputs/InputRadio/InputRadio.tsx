@@ -4,14 +4,14 @@ import { Field } from 'react-final-form';
 import cls from './InputRadio.module.scss';
 import classNames from 'classnames';
 
-interface InputProps {
+export interface InputRadioProps {
 	name: string;
 	suffix?: ReactNode;
 	value: string | number | ReactNode;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const InputRadio: FC<InputProps> = memo((props) => {
+export const InputRadio: FC<InputRadioProps> = memo((props) => {
 	const { name, suffix, value, onChange } = props;
 	const radioClasses = classNames(cls.InputRadio, {
 		[cls.withSuffix]: !!suffix,
@@ -21,6 +21,7 @@ export const InputRadio: FC<InputProps> = memo((props) => {
 		return (
 			<input
 				{...input}
+				className='sr-only'
 				onChange={(e) => {
 					input.onChange(e);
 					if (onChange) {
@@ -37,7 +38,6 @@ export const InputRadio: FC<InputProps> = memo((props) => {
 				name={name}
 				type='radio'
 				value={value}
-				className='sr-only'
 				component='input'>
 				{renderInputField}
 			</Field>
