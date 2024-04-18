@@ -1,20 +1,29 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import '@testing-library/jest-dom';
 import { ProductCardSmall } from './ProductCardSmall';
+
+jest.mock('next/image', () => ({
+	__esModule: true,
+	default: (props: any) => {
+		return <img {...props} />;
+	},
+}));
 
 describe('ProductCardSmall', () => {
 	test('renders product card with correct props', () => {
 		const props = {
 			to: '/product/123',
-			image: 'image-url.jpg',
+			image: '/image-url.jpg',
 			rating: 4.5,
 			title: 'Example Product',
 			price: 20,
-			symbol: '$',
+			currency: '$',
 		};
 
-		const { getByAltText, getByText } = render(<ProductCardSmall {...props} />);
+		const { getByAltText, getByText } = customRender(
+			<ProductCardSmall {...props} />
+		);
 
 		const productImage = getByAltText(props.title);
 		expect(productImage).toBeInTheDocument();
@@ -24,7 +33,7 @@ describe('ProductCardSmall', () => {
 		expect(productTitle).toBeInTheDocument();
 		expect(productTitle.closest('a')).toHaveAttribute('href', props.to);
 
-		const productPrice = getByText(`${props.price} ${props.symbol}`);
+		const productPrice = getByText(`${props.price} ${props.currency}`);
 		expect(productPrice).toBeInTheDocument();
 	});
 });

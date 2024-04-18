@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 export interface AccountWishListImageProps {
 	image: string;
-	title: string;
 	slug: string;
+	title: string;
 }
 
 export const AccountWishListImage: FC<AccountWishListImageProps> = (props) => {
-	const { image, title, slug } = props;
+	const { image, slug, title } = props;
 
 	return (
 		<Link href={`/${slug}`}>

@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { AlertItem, AlertItemProps } from './common/AlertItem';
 import cls from './AlertBase.module.scss';
 
-interface AlertsProps {
-	alerts: AlertItemProps[];
+export interface AlertsProps {
+	alerts: Pick<AlertItemProps, 'type' | 'message'>[];
 }
 
 export const AlertBase: FC<AlertsProps> = (props) => {

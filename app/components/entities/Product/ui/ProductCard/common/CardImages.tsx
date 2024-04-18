@@ -20,6 +20,7 @@ export const CardImages: FC<CardImagesProps> = (props) => {
 				images.map((item) => (
 					<Image
 						key={uuidv4()}
+						width={300}
 						height={300}
 						src={item.url}
 						alt={item.alt}

@@ -4,15 +4,15 @@ import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import cls from '../AccountWishList.module.scss';
 
 export interface AccountWishListActionsProps {
+	slug: string;
 	addToCart: (slug: string) => void;
 	removeFromWishList: (slug: string) => void;
-	slug: string;
 }
 
 export const AccountWishListActions: FC<AccountWishListActionsProps> = (
 	props
 ) => {
-	const { addToCart, removeFromWishList, slug } = props;
+	const { slug, addToCart, removeFromWishList } = props;
 	const t = useTranslations('base');
 
 	return (

@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useSelector } from '@lib/redux';
 import classNames from 'classnames';
 import cls from './ProductCard.module.scss';
 import { CardInfo } from './common/CardInfo';
@@ -31,13 +32,15 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
 		price,
 		oldPrice,
 		tax,
-		currency = '₴',
+		currency,
 		className,
 		addToCart,
 		addToFavorite,
 		quickView,
 		productCompare,
 	} = props;
+
+	const defaultCurrency = useSelector((state) => state.product.currency);
 
 	const handleToCard = () => {
 		if (addToCart) addToCart(slug);
@@ -77,7 +80,7 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
 					price={price}
 					oldPrice={oldPrice}
 					tax={tax}
-					symbol={currency}
+					currency={currency || defaultCurrency}
 				/>
 			</div>
 		</div>

@@ -1,14 +1,22 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
+import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import '@testing-library/jest-dom';
 import { ProductCard } from './ProductCard';
+
+jest.mock('next/image', () => ({
+	__esModule: true,
+	default: (props: any) => {
+		return <img {...props} />;
+	},
+}));
 
 describe('ProductCard Component', () => {
 	const mockData = {
 		slug: '123',
 		images: [
-			{ url: 'image1.jpg', alt: 'Image 1' },
-			{ url: 'image2.jpg', alt: 'Image 2' },
+			{ url: '/image1.jpg', alt: 'Image 1' },
+			{ url: '/image2.jpg', alt: 'Image 2' },
 		],
 		title: 'Sample Product',
 		rating: 4.5,
@@ -26,7 +34,7 @@ describe('ProductCard Component', () => {
 		const { slug, addToCart, addToFavorite, quickView, productCompare } =
 			mockData;
 
-		const { getByLabelText } = render(<ProductCard {...mockData} />);
+		const { getByLabelText } = customRender(<ProductCard {...mockData} />);
 
 		// Simulate button clicks and check if corresponding functions are called
 		fireEvent.click(getByLabelText('Add to card'));

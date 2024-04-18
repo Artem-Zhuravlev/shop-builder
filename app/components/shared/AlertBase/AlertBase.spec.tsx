@@ -3,10 +3,10 @@ import '@testing-library/jest-dom';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 import { AlertBase } from './AlertBase';
-import { IAlertItem } from './common/AlertItem';
+import { AlertItemProps } from './common/AlertItem';
 
 describe('AlertBase Component', () => {
-	const mockAlerts: IAlertItem[] = [
+	const mockAlerts: Pick<AlertItemProps, 'type' | 'message'>[] = [
 		{ type: 'success', message: 'Success message' },
 		{ type: 'error', message: 'Error message' },
 	];

@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
+import { Providers } from '../app/lib/providers';
 import { NextIntlClientProvider } from 'next-intl';
 import en from '../messages/en';
 import '../styles/globals.scss';
@@ -16,11 +17,13 @@ const preview: Preview = {
 	},
 	decorators: [
 		(Story) => (
-			<NextIntlClientProvider
-				locale='en'
-				messages={en}>
-				<Story />
-			</NextIntlClientProvider>
+			<Providers>
+				<NextIntlClientProvider
+					locale='en'
+					messages={en}>
+					<Story />
+				</NextIntlClientProvider>
+			</Providers>
 		),
 	],
 };

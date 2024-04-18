@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useSelector } from '@lib/redux';
 import { InputRating } from '@shared/inputs';
 import cls from './ProductCardSmall.module.scss';
 
@@ -8,13 +9,14 @@ interface ProductCardSmallProps {
 	image: string;
 	price: number;
 	rating: number;
-	symbol?: string;
+	currency?: string;
 	title: string;
 	to: string;
 }
 
 export const ProductCardSmall: FC<ProductCardSmallProps> = (props) => {
-	const { image, price, rating, symbol = '₴', title, to } = props;
+	const { image, price, rating, currency, title, to } = props;
+	const defaultCurrency = useSelector((state) => state.product.currency);
 
 	return (
 		<article className={cls.ProductCardSmall}>
@@ -24,6 +26,8 @@ export const ProductCardSmall: FC<ProductCardSmallProps> = (props) => {
 				<Image
 					src={image}
 					alt={title}
+					width={105}
+					height={105}
 				/>
 			</Link>
 			<div className={cls.ProductCardSmallDescription}>
@@ -35,7 +39,10 @@ export const ProductCardSmall: FC<ProductCardSmallProps> = (props) => {
 					initialValue={rating}
 					size={18}
 				/>
-				<div className={cls.ProductCardSmallPrice}>{`${price} ${symbol}`}</div>
+				<div
+					className={
+						cls.ProductCardSmallPrice
+					}>{`${price} ${currency || defaultCurrency}`}</div>
 			</div>
 		</article>
 	);

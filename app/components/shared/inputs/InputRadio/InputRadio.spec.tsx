@@ -1,45 +1,61 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { Form } from 'react-final-form'; // Import Form from react-final-form
 import { InputRadio } from './InputRadio';
 
 describe('InputRadio component', () => {
-  it('renders radio options', () => {
-    const items = ['Option 1', 'Option 2', 'Option 3'];
-    const onChange = jest.fn();
-    const value = 'Option 2';
+	it('should render correctly', () => {
+		const { getByLabelText } = render(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputRadio
+							name='test'
+							value='option1'
+						/>
+					</form>
+				)}
+			</Form>
+		);
+		const radioInput = getByLabelText('option1');
+		expect(radioInput).toBeInTheDocument();
+	});
 
-    const { getByText, getByLabelText } = render(
-      <InputRadio name="test" items={items} value={value} onChange={onChange} />
-    );
+	it('should call onChange handler when radio button is clicked', () => {
+		const onChangeMock = jest.fn();
+		const { getByLabelText } = render(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputRadio
+							name='test'
+							value='option1'
+							onChange={onChangeMock}
+						/>
+					</form>
+				)}
+			</Form>
+		);
+		const radioInput = getByLabelText('option1');
+		fireEvent.click(radioInput);
+		expect(onChangeMock).toHaveBeenCalled();
+	});
 
-    items.forEach((label) => {
-      const radioElement = getByLabelText(label) as HTMLInputElement;
-      expect(radioElement).toBeInTheDocument();
-      expect(radioElement.type).toBe('radio');
-      expect(radioElement.value).toBe(label);
-      expect(radioElement.checked).toBe(label === value);
-
-      const labelElement = getByText(label);
-      expect(labelElement).toBeInTheDocument();
-    });
-  });
-
-  it('triggers onChange when a radio option is selected', () => {
-    const items = ['Option 1', 'Option 2', 'Option 3'];
-    const onChange = jest.fn();
-    const value = 'Option 2';
-  
-    const { getByLabelText } = render(
-      <InputRadio name="test" items={items} value={value} onChange={onChange} />
-    );
-  
-    const selectedOption = 'Option 3';
-    const radioElement = getByLabelText(selectedOption) as HTMLInputElement;
-  
-    fireEvent.click(radioElement);
-  
-    expect(onChange).toHaveBeenCalledWith(selectedOption, value);
-  });
-  
+	it('should render suffix when provided', () => {
+		const { getByText } = render(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputRadio
+							name='test'
+							value='option1'
+							suffix={<span>Suffix</span>}
+						/>
+					</form>
+				)}
+			</Form>
+		);
+		const suffixElement = getByText('Suffix');
+		expect(suffixElement).toBeInTheDocument();
+	});
 });

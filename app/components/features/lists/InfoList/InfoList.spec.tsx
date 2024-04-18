@@ -9,7 +9,7 @@ const item = {
 		to: '/test-url',
 	},
 	viewed: 100,
-	reward_points: 50,
+	rewardPoints: 50,
 	availability: 'In stock' as Availability,
 };
 
@@ -22,7 +22,7 @@ describe('InfoList Component', () => {
 		expect(brandElement).toBeInTheDocument();
 		expect(viewedElement).toBeInTheDocument();
 
-		const rewardPointsElement = getByText(item.reward_points.toString());
+		const rewardPointsElement = getByText(item.rewardPoints.toString());
 		expect(rewardPointsElement).toBeInTheDocument();
 
 		const availabilityElement = getByText(item.availability);

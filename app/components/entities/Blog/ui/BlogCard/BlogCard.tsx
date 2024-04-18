@@ -32,6 +32,8 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
 				<Image
 					src={image}
 					alt={title}
+					width={400}
+					height={315}
 				/>
 			</Link>
 			<div className={cls.BlogCardDescription}>

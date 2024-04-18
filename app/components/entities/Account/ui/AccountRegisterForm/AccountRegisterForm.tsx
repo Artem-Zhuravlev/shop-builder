@@ -35,7 +35,6 @@ export const AccountRegisterForm: FC = () => {
 							required
 							className='col-md-6'
 						/>
-
 						<InputText
 							name='email'
 							placeholder={t('inputs.email')}
