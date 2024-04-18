@@ -8,7 +8,7 @@ import {
 	phoneValidate,
 } from '@utils/validations';
 import { InputCheckbox, InputText } from '@shared/inputs';
-import { ButtonBase } from '@shared';
+import { ButtonBase } from '@shared/ButtonBase';
 import cls from './AccountRegisterForm.module.scss';
 
 export const AccountRegisterForm: FC = () => {
