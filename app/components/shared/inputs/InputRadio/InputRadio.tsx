@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { Field } from 'react-final-form';
 
 import cls from './InputRadio.module.scss';
@@ -7,7 +6,7 @@ import classNames from 'classnames';
 
 interface InputProps {
 	name: string;
-	value: string | number;
+	value: string | number | ReactNode;
 	suffix?: ReactNode;
 }
 

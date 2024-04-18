@@ -25,8 +25,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	value?: string | number;
 	defaultValue?: string | number;
 	type?: 'text' | 'number';
-	min?: number;
-	max?: number;
 }
 
 export const InputText: FC<InputProps> = (props) => {
@@ -47,8 +45,6 @@ export const InputText: FC<InputProps> = (props) => {
 		value,
 		defaultValue,
 		type = 'text',
-		min,
-		max,
 	} = props;
 	const t = useTranslations();
 	const [error, setError] = useState(false);
@@ -71,8 +67,6 @@ export const InputText: FC<InputProps> = (props) => {
 			className: inputClasses,
 			type: type,
 			placeholder: required ? `${placeholder} *` : placeholder,
-			min: min,
-			max: max,
 			autoComplete: 'off',
 			disabled: disabled,
 			onFocus: onFocus,
