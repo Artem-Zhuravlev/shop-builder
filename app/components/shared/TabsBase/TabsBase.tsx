@@ -2,18 +2,13 @@ import React, { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import cls from './TabsBase.module.scss';
 
-interface ITab {
-	label: string;
-	description: string;
-}
-
 interface TabsBaseProps {
-	items: ITab[];
 	activeTab?: number;
+	items: { description: string; label: string }[];
 }
 
 export const TabsBase: FC<TabsBaseProps> = (props) => {
-	const { items, activeTab = 0 } = props;
+	const { activeTab = 0, items } = props;
 	const initialActiveTab =
 		activeTab >= items.length ? items.length - 1 : activeTab;
 	const [value, setValue] = useState(initialActiveTab);

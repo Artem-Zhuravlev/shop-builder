@@ -21,7 +21,7 @@ export const HeaderSubmenu: FC<HeaderSubmenuProps> = (props) => {
 			{item.title && <h4 className={cls.HeaderNavTitle}>{item.title}</h4>}
 			{item.subMenu && (
 				<ul className={cls.HeaderNavSubList}>
-					{item.subMenu.map((item, index) => (
+					{item.subMenu.map((item) => (
 						<li key={uuidv4()}>
 							<Link
 								href={item.url}

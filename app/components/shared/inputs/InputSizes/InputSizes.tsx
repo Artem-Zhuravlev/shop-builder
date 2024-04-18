@@ -1,17 +1,15 @@
 import React, { FC } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { Field } from 'react-final-form';
 import cls from './InputSizes.module.scss';
 
 interface InputSizesProps {
-	type: 'radio' | 'checkbox';
 	items: string[];
+	type: 'radio' | 'checkbox';
 }
 
-export const InputSizes: FC<InputSizesProps> = ({
-	type = 'checkbox',
-	items,
-}) => {
+export const InputSizes: FC<InputSizesProps> = (props) => {
+	const { items, type = 'checkbox' } = props;
+
 	return (
 		<ul className={cls.InputSizes}>
 			{items.map((item) => (

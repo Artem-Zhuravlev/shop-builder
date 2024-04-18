@@ -3,23 +3,19 @@ import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
 import cls from './SocialList.module.scss';
 
-interface ISocialItem {
-	url: string;
-	icon: string;
-}
 interface SocialListProps {
-	items: ISocialItem[];
 	className?: string;
+	items: { url: string; icon: string }[];
 }
 
 export const SocialList: FC<SocialListProps> = (props) => {
-	const { items, className } = props;
+	const { className, items } = props;
 	const socialListClasses = classNames(cls.SocialList, className);
 
 	return (
 		<ul className={socialListClasses}>
 			{items &&
-				items.map((item, index) => (
+				items.map((item) => (
 					<li
 						key={uuidv4()}
 						className={cls.SocialItem}>

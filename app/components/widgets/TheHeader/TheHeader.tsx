@@ -13,22 +13,22 @@ import {
 import cls from './TheHeader.module.scss';
 
 interface TheHeaderProps {
+	cartTotal?: number;
 	items: IMenuItem[];
 	phones: string[];
-	cartTotal?: number;
+	handleAddToCart: () => void;
 	handleCompare: () => void;
 	handleWishlist: () => void;
-	handleAddToCart: () => void;
 }
 
 export const TheHeader: FC<TheHeaderProps> = (props) => {
 	const {
+		cartTotal = 0,
 		items,
 		phones,
-		cartTotal = 0,
+		handleAddToCart,
 		handleCompare,
 		handleWishlist,
-		handleAddToCart,
 	} = props;
 
 	const [isActive, setIsActive] = useState(false);

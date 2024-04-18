@@ -3,9 +3,16 @@ import classNames from 'classnames';
 import cls from './ButtonBase.module.scss';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	type?: 'submit' | 'button';
+	block?: boolean;
+	className?: string;
+	disabled?: boolean;
+	isLoading?: boolean;
 	large?: boolean;
+	rounded?: boolean;
+	roundedLeftSide?: boolean;
+	roundedRightSide?: boolean;
 	small?: boolean;
+	type?: 'submit' | 'button';
 	variant?:
 		| 'primary'
 		| 'secondary'
@@ -16,40 +23,33 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 		| 'light'
 		| 'dark'
 		| 'outline';
-	className?: string;
-	isLoading?: boolean;
-	block?: boolean;
-	disabled?: boolean;
-	roundedLeftSide?: boolean;
-	roundedRightSide?: boolean;
-	rounded?: boolean;
 }
 
 export const ButtonBase: FC<ButtonProps> = (props) => {
 	const {
-		children,
-		large,
-		small,
-		variant = 'primary',
-		className,
-		type = 'button',
-		isLoading,
 		block,
+		children,
+		className,
 		disabled,
+		isLoading,
+		large,
+		onClick,
+		rounded,
 		roundedLeftSide = false,
 		roundedRightSide = false,
-		rounded = false,
-		onClick,
+		small,
+		type = 'button',
+		variant = 'primary',
 	} = props;
 
 	const buttonClasses = classNames(cls.ButtonBase, cls[variant], className, {
-		[cls.large]: large,
-		[cls.small]: small,
 		[cls.block]: block,
+		[cls.large]: large,
 		[cls.loading]: isLoading,
+		[cls.rounded]: rounded,
 		[cls.roundedLeftSide]: roundedLeftSide,
 		[cls.roundedRightSide]: roundedRightSide,
-		[cls.rounded]: rounded,
+		[cls.small]: small,
 	});
 
 	return (

@@ -4,13 +4,13 @@ import { InputRating } from '@shared/inputs';
 import cls from '../ProductCard.module.scss';
 
 interface CardCaptionProps {
-	to: string;
-	title: string;
 	rating: number;
+	title: string;
+	to: string;
 }
 
 export const CardCaption: FC<CardCaptionProps> = (props) => {
-	const { to, title, rating } = props;
+	const { rating, title, to } = props;
 
 	return (
 		<div className={cls.CardCaption}>

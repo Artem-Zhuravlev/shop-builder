@@ -5,23 +5,15 @@ import { Field } from 'react-final-form';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import cls from './InputColors.module.scss';
 
-export interface ColorsListItem {
-	color: string;
-	value: string;
-	tip: string;
-}
-
-interface InputColorsProps {
-	type: 'radio' | 'checkbox';
-	items: ColorsListItem[];
+export interface InputColorsProps {
+	items: { color: string; tip: string; value: string }[];
 	rounded?: boolean;
+	type: 'radio' | 'checkbox';
 }
 
-export const InputColors: FC<InputColorsProps> = ({
-	type = 'checkbox',
-	items,
-	rounded = false,
-}) => {
+export const InputColors: FC<InputColorsProps> = (props) => {
+	const { items, rounded = false, type = 'checkbox' } = props;
+
 	return (
 		<ul className={cls.InputColors}>
 			{items.map((item) => (

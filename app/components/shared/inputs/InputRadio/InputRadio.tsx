@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, memo } from 'react';
 import { Field } from 'react-final-form';
 
 import cls from './InputRadio.module.scss';
@@ -6,12 +6,12 @@ import classNames from 'classnames';
 
 interface InputProps {
 	name: string;
-	value: string | number | ReactNode;
 	suffix?: ReactNode;
+	value: string | number | ReactNode;
 }
 
-export const InputRadio: FC<InputProps> = React.memo((props) => {
-	const { name, value, suffix } = props;
+export const InputRadio: FC<InputProps> = memo((props) => {
+	const { name, suffix, value } = props;
 	const radioClasses = classNames(cls.InputRadio, {
 		[cls.withSuffix]: !!suffix,
 	});

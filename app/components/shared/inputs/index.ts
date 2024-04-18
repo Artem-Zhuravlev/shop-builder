@@ -14,5 +14,5 @@ export { InputTextarea } from './InputTextarea/InputTextarea';
 export { Label } from './Label/Label';
 export { AutoSave } from './AutoSave/AutoSave';
 export { InputColors } from './InputColors/InputColors';
-export type { ColorsListItem } from './InputColors/InputColors';
+export type { InputColorsProps } from './InputColors/InputColors';
 export { InputSizes } from './InputSizes/InputSizes';

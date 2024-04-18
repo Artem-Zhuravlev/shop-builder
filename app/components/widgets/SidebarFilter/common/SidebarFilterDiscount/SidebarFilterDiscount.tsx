@@ -5,10 +5,7 @@ import { AutoSave, InputRadio } from '@shared/inputs';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 
 interface SidebarFilterDiscountProps {
-	items: Array<{
-		discount: number;
-		value: number;
-	}>;
+	items: { discount: number; value: number }[];
 }
 
 export const SidebarFilterDiscount: FC<SidebarFilterDiscountProps> = (

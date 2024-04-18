@@ -9,7 +9,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const InputNumber: FC<InputProps> = (props) => {
 	const { value = 0, onNumberChange } = props;
-
 	const [numberValue, setNumberValue] = useState<number>(value);
 
 	const handleDecrement = () => {

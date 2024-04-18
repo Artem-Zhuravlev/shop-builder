@@ -29,7 +29,6 @@ export const TimerBase: FC<TimerBaseProps> = (props) => {
 
 	useEffect(() => {
 		const interval = setInterval(() => getTime(deadline), 1000);
-
 		return () => clearInterval(interval);
 	}, []);
 

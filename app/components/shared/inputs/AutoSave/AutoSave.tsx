@@ -5,12 +5,12 @@ type SaveFunction = (attributes: Record<string, any>) => Promise<any> | void;
 type ErrorHandler = (error: any) => void;
 
 interface AutoSaveProps {
+	children?: ReactNode;
 	debounce?: number;
 	mutation?: any;
-	save: SaveFunction;
 	onCompleted?: () => void;
 	onError?: ErrorHandler;
-	children?: ReactNode;
+	save: SaveFunction;
 }
 
 const noop = () => {};

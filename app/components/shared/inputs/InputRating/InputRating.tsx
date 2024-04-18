@@ -3,10 +3,6 @@ import { Rating, RatingProps } from 'react-simple-star-rating';
 
 export const InputRating: FC<RatingProps> = (props) => {
 	const {
-		onClick,
-		onPointerMove,
-		onPointerEnter,
-		onPointerLeave,
 		initialValue,
 		allowFraction,
 		allowHover,
@@ -14,6 +10,10 @@ export const InputRating: FC<RatingProps> = (props) => {
 		transition,
 		size,
 		readonly,
+		onClick,
+		onPointerEnter,
+		onPointerLeave,
+		onPointerMove,
 	} = props;
 
 	return (

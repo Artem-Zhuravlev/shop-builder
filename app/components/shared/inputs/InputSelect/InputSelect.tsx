@@ -6,30 +6,30 @@ import { InputSelectStyles } from './InputSelectStyles';
 interface SelectProps<
 	Option = unknown,
 	IsMulti extends boolean = false,
-	Group extends GroupBase<Option> = GroupBase<Option>
+	Group extends GroupBase<Option> = GroupBase<Option>,
 > {
-	options: OptionsOrGroups<Option, Group>;
+	isClearable?: boolean;
 	isDisabled?: boolean;
 	isLoading?: boolean;
-	isClearable?: boolean;
-	isSearchable?: boolean;
 	isMulti?: IsMulti;
-	value: object;
+	isSearchable?: boolean;
 	name: string;
+	options: OptionsOrGroups<Option, Group>;
 	placeholder: string;
+	value: object;
 }
 
 export const InputSelect: FC<SelectProps> = (props) => {
 	const {
-		options,
+		isClearable,
 		isDisabled,
 		isLoading,
-		isClearable,
-		isSearchable,
 		isMulti,
-		value,
+		isSearchable,
 		name,
+		options,
 		placeholder,
+		value,
 	} = props;
 
 	return (

@@ -5,14 +5,14 @@ import cls from './DropdownBase.module.scss';
 import Link from 'next/link';
 
 interface DropdownProps {
-	list: Array<{ route: string; value: string }>;
 	children?: string;
-	opened?: boolean;
 	isLightMode?: boolean;
+	list: { route: string; value: string }[];
+	opened?: boolean;
 }
 
 export const DropdownBase: FC<DropdownProps> = (props) => {
-	const { list, children, opened = false, isLightMode } = props;
+	const { children, isLightMode, list, opened = false } = props;
 	const [isOpen, setIsOpen] = useState(opened);
 	const dropdownRef = useRef<HTMLDivElement | null>(null);
 

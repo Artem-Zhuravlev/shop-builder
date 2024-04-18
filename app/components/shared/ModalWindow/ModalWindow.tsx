@@ -2,14 +2,14 @@ import React, { FC, ReactNode, useState, useEffect } from 'react';
 import cls from './ModalWindow.module.scss';
 
 interface ModalWindowProps {
-	title?: string;
 	children: ReactNode;
+	title?: string;
 	visibility: boolean;
 	onClose: (visible: boolean) => void;
 }
 
 export const ModalWindow: FC<ModalWindowProps> = (props) => {
-	const { title, children, visibility = false, onClose } = props;
+	const { children, title, visibility = false, onClose } = props;
 	const [visible, setVisible] = useState(visibility);
 
 	const handleClose = () => {

@@ -8,21 +8,18 @@ import { CardImages } from './common/CardImages';
 
 export interface ProductCardProps {
 	slug: string;
-	images: Array<{
-		url: string;
-		alt: string;
-	}>;
+	images: { url: string; alt: string }[];
 	title: string;
 	rating: number;
 	price: number;
-	old_price?: number;
+	oldPrice?: number;
 	tax?: number;
 	currency?: string;
+	className?: string;
 	addToCart?: (slug: string) => void;
 	addToFavorite?: (slug: string) => void;
 	quickView?: (slug: string) => void;
 	productCompare?: (slug: string) => void;
-	className?: string;
 }
 
 export const ProductCard: FC<ProductCardProps> = (props) => {
@@ -32,14 +29,14 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
 		title,
 		rating,
 		price,
-		old_price,
+		oldPrice,
 		tax,
 		currency = '₴',
+		className,
 		addToCart,
 		addToFavorite,
 		quickView,
 		productCompare,
-		className,
 	} = props;
 
 	const handleToCard = () => {
@@ -78,7 +75,7 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
 				/>
 				<CardInfo
 					price={price}
-					oldPrice={old_price}
+					oldPrice={oldPrice}
 					tax={tax}
 					symbol={currency}
 				/>

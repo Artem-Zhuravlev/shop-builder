@@ -15,7 +15,7 @@ const item = {
 
 describe('InfoList Component', () => {
 	test('renders brand, viewed, reward points, and availability', () => {
-		const { container, getByText } = customRender(<InfoList item={item} />);
+		const { container, getByText } = customRender(<InfoList {...item} />);
 
 		const brandElement = getByText(item.brand.name);
 		const viewedElement = getByText(item.viewed.toString());
@@ -43,7 +43,7 @@ describe('InfoList Component', () => {
 		};
 
 		const { queryByText } = customRender(
-			<InfoList item={itemWithoutOptionalProps} />
+			<InfoList {...itemWithoutOptionalProps} />
 		);
 
 		const rewardPointsElement = queryByText('Reward Points');

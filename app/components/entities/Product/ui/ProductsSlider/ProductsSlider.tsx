@@ -24,7 +24,7 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 					settings={settings}
 					className={cls.ProductSlider}>
 					{items.map(
-						({ images, slug, title, rating, price, old_price, tax }) => (
+						({ images, slug, title, rating, price, oldPrice, tax }) => (
 							<SliderCard>
 								<ProductCard
 									key={uuidv4()}
@@ -32,7 +32,7 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 									title={title}
 									rating={rating}
 									price={price}
-									old_price={old_price}
+									oldPrice={oldPrice}
 									tax={tax}
 									slug={slug}
 									addToCart={addToCart}

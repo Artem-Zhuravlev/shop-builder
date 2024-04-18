@@ -8,7 +8,7 @@ interface TableBaseProps extends TableProps<DefaultRecordType> {
 }
 
 export const TableBase: FC<TableBaseProps> = (props) => {
-	const { data, columns } = props;
+	const { columns, data } = props;
 
 	return (
 		<Table

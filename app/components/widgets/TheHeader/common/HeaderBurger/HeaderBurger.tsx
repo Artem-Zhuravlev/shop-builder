@@ -9,9 +9,7 @@ interface HeaderBurgerProps {
 
 export const HeaderBurger: FC<HeaderBurgerProps> = (props) => {
 	const { toggleBurger } = props;
-
 	const t = useTranslations('base');
-
 	const [isActive, setIsActive] = useState<boolean>(false);
 
 	const handleClick = () => {

@@ -4,14 +4,13 @@ import { ContainerBase } from '@shared/ContainerBase';
 import cls from './SectionBase.module.scss';
 
 interface SectionBaseProps {
-	title?: string;
 	children: ReactNode;
 	secondary?: boolean;
+	title?: string;
 }
 
 export const SectionBase: FC<SectionBaseProps> = (props) => {
-	const { title, children, secondary } = props;
-
+	const { children, secondary, title } = props;
 	const sectionClasses = classNames(cls.SectionBase, {
 		[cls.SectionBaseSecondary]: secondary,
 	});

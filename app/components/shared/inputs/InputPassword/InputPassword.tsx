@@ -14,9 +14,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	id?: string;
 	name: string;
 	value: string;
-	onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
-	onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
 	required?: boolean;
+	onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
+	onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 }
 
@@ -26,11 +26,12 @@ export const InputPassword: FC<InputProps> = (props) => {
 		name = 'field',
 		disabled,
 		placeholder,
-		onFocus,
-		onBlur,
 		required = false,
+		onBlur,
+		onFocus,
 		validationHandler,
 	} = props;
+
 	const [type, setType] = useState(InputType.PASSWORD);
 	const [showEyeIcon, setShowEyeIcon] = useState(true);
 	const [error, setError] = useState(false);
@@ -44,7 +45,6 @@ export const InputPassword: FC<InputProps> = (props) => {
 		setType(suffixType);
 	};
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const renderInputField = ({ input, meta }: any) => {
 		setError(!!meta.error && meta.touched && meta.submitFailed);
 		setErrorMessage(meta.error || '');

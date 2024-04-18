@@ -5,12 +5,12 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import cls from './InputEdit.module.scss';
 
 interface InputEditProps extends EditorProps {
-	onEditorStateChange: (editorState: EditorState) => void;
 	value: EditorState;
+	onEditorStateChange: (editorState: EditorState) => void;
 }
 
 export const InputEdit: FC<InputEditProps> = (props) => {
-	const { onEditorStateChange, value } = props;
+	const { value, onEditorStateChange } = props;
 
 	useEffect(() => {
 		if (!value) {

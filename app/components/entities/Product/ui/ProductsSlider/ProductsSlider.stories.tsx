@@ -30,7 +30,7 @@ Default.args = {
 			title: 'Airpods',
 			rating: 4,
 			price: 400,
-			old_price: 450,
+			oldPrice: 450,
 			tax: 10,
 		},
 		{
@@ -48,7 +48,7 @@ Default.args = {
 			title: 'Airpods',
 			rating: 4,
 			price: 400,
-			old_price: 450,
+			oldPrice: 450,
 			tax: 10,
 		},
 		{
@@ -83,7 +83,7 @@ Default.args = {
 			title: 'Airpods',
 			rating: 4,
 			price: 400,
-			old_price: 450,
+			oldPrice: 450,
 		},
 		{
 			slug: 'airpods',
@@ -100,7 +100,7 @@ Default.args = {
 			title: 'Airpods',
 			rating: 4,
 			price: 400,
-			old_price: 450,
+			oldPrice: 450,
 			tax: 10,
 		},
 	],

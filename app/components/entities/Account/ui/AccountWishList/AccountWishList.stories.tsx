@@ -21,7 +21,7 @@ Default.args = {
 			model: 'Product 19',
 			stock: 'Out of stock',
 			price: 100,
-			old_price: 120,
+			oldPrice: 120,
 		},
 		{
 			slug: 'slug',
@@ -30,7 +30,7 @@ Default.args = {
 			model: 'Product 19',
 			stock: 'Out of stock',
 			price: 100,
-			old_price: 120,
+			oldPrice: 120,
 		},
 	],
 };

@@ -3,12 +3,12 @@ import cls from '../AccountWishList.module.scss';
 
 export interface AccountWishUnitPriceProps {
 	price: string;
-	old_price?: string;
+	oldPrice?: string;
 	currency?: string;
 }
 
 export const AccountWishUnitPrice: FC<AccountWishUnitPriceProps> = (props) => {
-	const { price, old_price, currency = '₴' } = props;
+	const { price, oldPrice, currency = '₴' } = props;
 
 	return (
 		<div className={cls.AccountWishUnitPrice}>
@@ -16,10 +16,10 @@ export const AccountWishUnitPrice: FC<AccountWishUnitPriceProps> = (props) => {
 				{currency}
 				{price}
 			</b>
-			{old_price && (
+			{oldPrice && (
 				<div className={cls.oldPrice}>
 					<s>
-						{currency} {old_price}
+						{currency} {oldPrice}
 					</s>
 				</div>
 			)}

@@ -3,7 +3,7 @@ import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
 import cls from './InputDatePicker.module.scss';
 
 export const InputDatePicker: FC<ReactDatePickerProps> = (props) => {
-	const { selected, onChange, placeholderText, dateFormat } = props;
+	const { dateFormat, placeholderText, selected, onChange } = props;
 
 	return (
 		<ReactDatePicker

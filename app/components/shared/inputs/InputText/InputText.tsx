@@ -8,70 +8,70 @@ import { Label } from '../Label/Label';
 import classNames from 'classnames';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+	className?: string;
+	defaultValue?: string | number;
 	id?: string;
-	name: string;
-	withForm?: boolean;
-	label?: string;
-	required?: boolean;
 	isDarkMode?: boolean;
+	label?: string;
+	name: string;
+	required?: boolean;
+	rounded?: boolean;
 	roundedLeftSide?: boolean;
 	roundedRightSide?: boolean;
-	rounded?: boolean;
+	type?: 'text' | 'number';
+	value?: string | number;
+	withForm?: boolean;
 	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
-	className?: string;
-	value?: string | number;
-	defaultValue?: string | number;
-	type?: 'text' | 'number';
 }
 
 export const InputText: FC<InputProps> = (props) => {
 	const {
-		name = 'field',
-		required = false,
+		className,
+		defaultValue,
 		disabled,
-		placeholder,
 		isDarkMode = false,
+		name = 'field',
+		placeholder,
+		required = false,
+		rounded = false,
 		roundedLeftSide = false,
 		roundedRightSide = false,
-		rounded = false,
-		onFocus,
-		onBlur,
-		onChange,
-		validationHandler,
-		className,
-		value,
-		defaultValue,
 		type = 'text',
+		value,
+		onChange,
+		onBlur,
+		onFocus,
+		validationHandler,
 	} = props;
+
 	const t = useTranslations();
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const inputClasses = classNames(cls.InputText, {
-		[cls.InputTextError]: error,
 		[cls.InputTextDark]: isDarkMode,
+		[cls.InputTextError]: error,
+		[cls.rounded]: rounded,
 		[cls.roundedLeftSide]: roundedLeftSide,
 		[cls.roundedRightSide]: roundedRightSide,
-		[cls.rounded]: rounded,
 	});
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const renderInputField = ({ input, meta }: any) => {
 		setError(!!meta.error && meta.touched && meta.submitFailed);
 		setErrorMessage(meta.error || '');
 
 		const inputProps: Record<string, any> = {
-			className: inputClasses,
-			type: type,
-			placeholder: required ? `${placeholder} *` : placeholder,
 			autoComplete: 'off',
-			disabled: disabled,
-			onFocus: onFocus,
-			onBlur: onBlur,
+			className: inputClasses,
 			defaultValue: defaultValue,
+			disabled: disabled,
+			placeholder: required ? `${placeholder} *` : placeholder,
+			type: type,
+			onBlur,
+			onFocus,
 		};
 
 		if (value !== undefined) {

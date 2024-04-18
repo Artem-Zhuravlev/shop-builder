@@ -6,44 +6,43 @@ import { useTranslations } from 'next-intl';
 
 export type Availability = 'In stock' | 'Out of stock';
 export interface InfoListProps {
-	item: {
-		brand: {
-			name: string;
-			to: string;
-		};
-		viewed: number;
-		reward_points?: number;
-		availability?: Availability;
+	availability?: Availability;
+	brand: {
+		name: string;
+		to: string;
 	};
+	rewardPoints?: number;
+	viewed: number;
 }
 
-export const InfoList: FC<InfoListProps> = ({ item }) => {
+export const InfoList: FC<InfoListProps> = (props) => {
+	const { availability, brand, rewardPoints, viewed } = props;
 	const t = useTranslations('base');
 
 	const labelClass = useMemo(() => {
-		if (item.availability && item.availability === 'In stock') {
+		if (availability && availability === 'In stock') {
 			return cls.InStock;
 		} else {
 			return cls.OutOfStock;
 		}
-	}, [item.availability]);
+	}, [availability]);
 
 	return (
 		<ul className={cls.InfoList}>
 			<InfoListItem label={t('brand')}>
 				<Link
 					className={cls.InfoListLink}
-					href={item.brand.to}>
-					{item.brand.name}
+					href={brand.to}>
+					{brand.name}
 				</Link>
 			</InfoListItem>
-			<InfoListItem label='Viewed'>{item.viewed}</InfoListItem>
-			{item.reward_points && (
-				<InfoListItem label='Reward Points'>{item.reward_points}</InfoListItem>
+			<InfoListItem label='Viewed'>{viewed}</InfoListItem>
+			{rewardPoints && (
+				<InfoListItem label='Reward Points'>{rewardPoints}</InfoListItem>
 			)}
-			{item.availability && (
+			{availability && (
 				<InfoListItem label='Availability'>
-					<span className={labelClass}>{item.availability}</span>
+					<span className={labelClass}>{availability}</span>
 				</InfoListItem>
 			)}
 		</ul>

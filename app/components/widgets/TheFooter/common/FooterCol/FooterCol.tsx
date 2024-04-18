@@ -3,20 +3,14 @@ import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import cls from './FooterCol.module.scss';
 
-interface IFooterListItem {
-	to?: string;
-	value: string;
-	icon?: string;
-}
-
 interface FooterColProp {
-	title: string;
 	description?: string;
-	list?: IFooterListItem[];
+	list?: { icon?: string; to?: string; value: string }[];
+	title: string;
 }
 
 export const FooterCol: FC<FooterColProp> = (props) => {
-	const { title, description, list } = props;
+	const { description, list, title } = props;
 
 	return (
 		<div className={cls.FooterCol}>
@@ -24,7 +18,7 @@ export const FooterCol: FC<FooterColProp> = (props) => {
 			{description && <p className={cls.FooterDescription}>{description}</p>}
 			{list && (
 				<ul className={cls.FooterList}>
-					{list.map((item, index) => (
+					{list.map((item) => (
 						<li
 							className={cls.FooterListItem}
 							key={uuidv4()}>

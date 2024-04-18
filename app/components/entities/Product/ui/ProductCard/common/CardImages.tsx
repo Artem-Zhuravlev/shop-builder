@@ -4,14 +4,13 @@ import Link from 'next/link';
 import cls from '../ProductCard.module.scss';
 
 interface CardImagesProps {
+	images: { alt: string; url: string }[];
 	to: string;
-	images: Array<{
-		url: string;
-		alt: string;
-	}>;
 }
 
-export const CardImages: FC<CardImagesProps> = ({ to, images }) => {
+export const CardImages: FC<CardImagesProps> = (props) => {
+	const { images, to } = props;
+
 	return (
 		<Link
 			href={to}

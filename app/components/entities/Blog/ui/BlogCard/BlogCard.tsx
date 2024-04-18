@@ -3,24 +3,24 @@ import Link from 'next/link';
 import cls from './BlogCard.module.scss';
 
 export interface BlogCardProps {
-	to: string;
-	image: string;
 	author: string;
 	comments: number;
-	viewed: number;
+	image: string;
+	publishedAt: string;
 	title: string;
-	published_at: string;
+	to: string;
+	viewed: number;
 }
 
 export const BlogCard: FC<BlogCardProps> = (props) => {
 	const {
-		image,
 		author,
 		comments = 0,
-		viewed = 0,
+		image,
+		publishedAt,
 		title,
-		published_at,
 		to,
+		viewed = 0,
 	} = props;
 
 	return (
@@ -49,7 +49,7 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
 					</div>
 					<div className={cls.BlogCardInfoItem}>
 						<span className='icon-eye'></span>
-						{new Date(published_at).toLocaleDateString()}
+						{new Date(publishedAt).toLocaleDateString()}
 					</div>
 				</div>
 				<h5 className={cls.BlogCardTitle}>

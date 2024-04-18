@@ -4,19 +4,13 @@ import Link from 'next/link';
 import cls from './BrandsList.module.scss';
 import { SectionBase } from '@shared/SectionBase';
 
-interface BrandItem {
-	name: string;
-	image: string;
-	to: string;
-}
-
 interface BrandsListProps {
+	items?: { image: string; name: string; to: string }[];
 	title: string;
-	items?: BrandItem[];
 }
 
 export const BrandsList: FC<BrandsListProps> = (props) => {
-	const { title, items } = props;
+	const { items, title } = props;
 
 	return (
 		<SectionBase title={title}>

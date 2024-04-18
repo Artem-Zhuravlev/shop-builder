@@ -24,7 +24,7 @@ Default.args = {
 			viewed: 50,
 			title:
 				'This revision focuses on checking the presence of specific elements or text within',
-			published_at: '2023-07-20',
+			publishedAt: '2023-07-20',
 		},
 		{
 			to: '/blog',
@@ -35,7 +35,7 @@ Default.args = {
 			viewed: 50,
 			title:
 				'This revision focuses on checking the presence of specific elements or text within',
-			published_at: '2023-07-20',
+			publishedAt: '2023-07-20',
 		},
 		{
 			to: '/blog',
@@ -46,7 +46,7 @@ Default.args = {
 			viewed: 50,
 			title:
 				'This revision focuses on checking the presence of specific elements or text within',
-			published_at: '2023-07-20',
+			publishedAt: '2023-07-20',
 		},
 		{
 			to: '/blog',
@@ -57,7 +57,7 @@ Default.args = {
 			viewed: 50,
 			title:
 				'This revision focuses on checking the presence of specific elements or text within',
-			published_at: '2023-07-20',
+			publishedAt: '2023-07-20',
 		},
 		{
 			to: '/blog',
@@ -68,7 +68,7 @@ Default.args = {
 			viewed: 50,
 			title:
 				'This revision focuses on checking the presence of specific elements or text within',
-			published_at: '2023-07-20',
+			publishedAt: '2023-07-20',
 		},
 		{
 			to: '/blog',
@@ -79,7 +79,7 @@ Default.args = {
 			viewed: 50,
 			title:
 				'This revision focuses on checking the presence of specific elements or text within',
-			published_at: '2023-07-20',
+			publishedAt: '2023-07-20',
 		},
 	],
 };

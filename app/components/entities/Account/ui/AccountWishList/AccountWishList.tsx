@@ -21,13 +21,13 @@ import {
 import cls from './AccountWishList.module.scss';
 
 interface AccountWishListItem {
-	slug: string;
-	title: string;
-	model: string;
-	stock: 'In stock' | 'Out of stock';
 	image?: string;
+	model: string;
+	oldPrice?: number;
 	price: number;
-	old_price?: number;
+	slug: string;
+	stock: 'In stock' | 'Out of stock';
+	title: string;
 }
 
 interface AccountWishListProps {
@@ -53,7 +53,7 @@ export const AccountWishList: FC<AccountWishListProps> = (props) => {
 				stock: item.stock,
 				unit_price: {
 					price: item.price,
-					old_price: item.old_price,
+					oldPrice: item.oldPrice,
 				},
 				action: {
 					slug: item.slug,
@@ -93,10 +93,10 @@ export const AccountWishList: FC<AccountWishListProps> = (props) => {
 			title: t('unit_price'),
 			dataIndex: 'unit_price',
 			key: 'unit_price',
-			render: ({ price, old_price }: AccountWishUnitPriceProps) => (
+			render: ({ price, oldPrice }: AccountWishUnitPriceProps) => (
 				<AccountWishUnitPrice
 					price={price}
-					old_price={old_price}
+					oldPrice={oldPrice}
 				/>
 			),
 		},

@@ -17,49 +17,41 @@ const Template: StoryFn<typeof InfoList> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-	item: {
-		brand: {
-			name: 'HTC',
-			to: '/htc',
-		},
-		viewed: 23211,
-		reward_points: 400,
-		availability: 'In stock',
+	brand: {
+		name: 'HTC',
+		to: '/htc',
 	},
+	viewed: 23211,
+	rewardPoints: 400,
+	availability: 'In stock',
 };
 
 export const OutOfStock = Template.bind({});
 OutOfStock.args = {
-	item: {
-		brand: {
-			name: 'HTC',
-			to: '/htc',
-		},
-		viewed: 23211,
-		reward_points: 400,
-		availability: 'Out of stock',
+	brand: {
+		name: 'HTC',
+		to: '/htc',
 	},
+	viewed: 23211,
+	rewardPoints: 400,
+	availability: 'Out of stock',
 };
 
 export const WithoutRewardPoints = Template.bind({});
 WithoutRewardPoints.args = {
-	item: {
-		brand: {
-			name: 'HTC',
-			to: '/htc',
-		},
-		viewed: 23211,
-		availability: 'Out of stock',
+	brand: {
+		name: 'HTC',
+		to: '/htc',
 	},
+	viewed: 23211,
+	availability: 'Out of stock',
 };
 
 export const WithoutAvailability = Template.bind({});
 WithoutAvailability.args = {
-	item: {
-		brand: {
-			name: 'HTC',
-			to: '/htc',
-		},
-		viewed: 23211,
+	brand: {
+		name: 'HTC',
+		to: '/htc',
 	},
+	viewed: 23211,
 };

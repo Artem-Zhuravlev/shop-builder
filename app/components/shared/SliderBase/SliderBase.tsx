@@ -5,10 +5,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import cls from './SliderBase.module.scss';
 
 interface SliderBaseProps {
-	settings: Settings;
 	children: ReactNode;
 	className?: string;
 	ref?: Ref<Slider>;
+	settings: Settings;
 }
 
 interface ArrowProps {

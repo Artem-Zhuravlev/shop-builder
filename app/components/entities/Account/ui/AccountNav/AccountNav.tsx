@@ -6,9 +6,9 @@ import classNames from 'classnames';
 import cls from './AccountNav.module.scss';
 
 interface AccountNavItem {
+	icon: string;
 	to: string;
 	value: string;
-	icon: string;
 }
 
 interface AccountNavProps {

@@ -13,7 +13,7 @@ describe('ProductCard Component', () => {
 		title: 'Sample Product',
 		rating: 4.5,
 		price: 50,
-		old_price: 70,
+		oldPrice: 70,
 		tax: 10,
 		currency: '$',
 		addToCart: jest.fn(),

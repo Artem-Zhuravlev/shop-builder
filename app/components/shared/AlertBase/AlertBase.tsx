@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { AlertItem, IAlertItem } from './common/AlertItem';
+import { AlertItem, AlertItemProps } from './common/AlertItem';
 import cls from './AlertBase.module.scss';
 
 interface AlertsProps {
-	alerts: IAlertItem[];
+	alerts: AlertItemProps[];
 }
 
 export const AlertBase: FC<AlertsProps> = (props) => {

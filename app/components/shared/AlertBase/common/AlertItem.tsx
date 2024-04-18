@@ -2,17 +2,15 @@ import React, { FC } from 'react';
 import cls from '../AlertBase.module.scss';
 import classNames from 'classnames';
 
-export interface IAlertItem {
-	type: 'error' | 'success';
-	message: string;
-}
-interface AlertProps extends IAlertItem {
-	onClose: (index: number) => void;
+export interface AlertItemProps {
 	index: number;
+	message: string;
+	type: 'error' | 'success';
+	onClose: (index: number) => void;
 }
 
-export const AlertItem: FC<AlertProps> = (props) => {
-	const { type = 'success', message, onClose, index } = props;
+export const AlertItem: FC<AlertItemProps> = (props) => {
+	const { index, message, type = 'success', onClose } = props;
 
 	const alertClasses = classNames(
 		cls.AlertItem,

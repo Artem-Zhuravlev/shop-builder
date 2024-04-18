@@ -10,12 +10,12 @@ interface InputCheckboxProps {
 	label: ReactNode;
 	name: string;
 	required?: boolean;
-	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 	className?: string;
-	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	value?: boolean;
 	checked?: boolean;
 	suffix?: ReactNode;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 }
 
 export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
@@ -23,10 +23,11 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 		label,
 		name,
 		required = false,
-		validationHandler,
 		className,
 		suffix,
+		validationHandler,
 	} = props;
+
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 	const t = useTranslations();

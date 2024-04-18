@@ -3,16 +3,13 @@ import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import cls from './BreadcrumbsBase.module.scss';
 
-interface BreadcrumbItem {
-	label: string;
-	url?: string;
-}
-
 interface BreadcrumbsProps {
-	pages: BreadcrumbItem[];
+	pages: { label: string; url?: string }[];
 }
 
-export const BreadcrumbsBase: FC<BreadcrumbsProps> = ({ pages }) => {
+export const BreadcrumbsBase: FC<BreadcrumbsProps> = (props) => {
+	const { pages } = props;
+
 	return (
 		<nav
 			data-testid='breadcrumbs'

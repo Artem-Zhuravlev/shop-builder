@@ -3,13 +3,13 @@ import Link from 'next/link';
 import cls from '../CategoriesSlider.module.scss';
 
 export interface CategoriesSliderItemProps {
+	image: string;
 	title: string;
 	to: string;
-	image: string;
 }
 
 export const CategoriesSliderItem: FC<CategoriesSliderItemProps> = (props) => {
-	const { title, to, image } = props;
+	const { image, title, to } = props;
 
 	return (
 		<Link

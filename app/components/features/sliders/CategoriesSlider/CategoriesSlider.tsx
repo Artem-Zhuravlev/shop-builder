@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { SliderBase, SliderCard } from '@shared/SliderBase';
 import { SectionBase } from '@shared/SectionBase';
 import { settings } from '@settings/slider/sliderWithFourColumns';
@@ -13,16 +14,17 @@ interface CategoriesSliderProps {
 
 export const CategoriesSlider: FC<CategoriesSliderProps> = (props) => {
 	const { items } = props;
+
 	return (
 		<SectionBase>
 			<SliderBase settings={settings}>
 				{items &&
-					items.map((slide) => (
-						<SliderCard>
+					items.map((item) => (
+						<SliderCard key={uuidv4()}>
 							<CategoriesSliderItem
-								title={slide.title}
-								to={slide.to}
-								image={slide.image}
+								title={item.title}
+								to={item.to}
+								image={item.image}
 							/>
 						</SliderCard>
 					))}

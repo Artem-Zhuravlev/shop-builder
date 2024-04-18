@@ -4,17 +4,17 @@ import { useTranslations } from 'next-intl';
 
 interface HeaderControlsProps {
 	cartTotal?: number;
+	handleAddToCart: () => void;
 	handleCompare: () => void;
 	handleWishlist: () => void;
-	handleAddToCart: () => void;
 }
 
 export const HeaderControls: FC<HeaderControlsProps> = (props) => {
 	const {
 		cartTotal = 0,
+		handleAddToCart,
 		handleCompare,
 		handleWishlist,
-		handleAddToCart,
 	} = props;
 
 	const t = useTranslations('base');

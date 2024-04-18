@@ -2,18 +2,15 @@ import React, { FC } from 'react';
 import cls from '../ProductCard.module.scss';
 
 interface CardInfoProps {
-	price: number;
 	oldPrice?: number;
-	tax?: number;
+	price: number;
 	symbol: string;
+	tax?: number;
 }
 
-export const CardInfo: FC<CardInfoProps> = ({
-	price,
-	oldPrice,
-	tax,
-	symbol,
-}) => {
+export const CardInfo: FC<CardInfoProps> = (props) => {
+	const { oldPrice, price, symbol, tax } = props;
+
 	return (
 		<div className={cls.CardInfo}>
 			<span className={cls.CardPriceNew}>

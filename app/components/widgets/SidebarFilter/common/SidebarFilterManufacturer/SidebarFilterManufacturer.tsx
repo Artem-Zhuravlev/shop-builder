@@ -7,16 +7,13 @@ import { SidebarFilterItem } from '../SidebarFilterItem/SidebarFilterItem';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 import cls from './SidebarFilterManufacturer.module.scss';
 import { AutoSave } from '@shared/inputs';
-
-interface SidebarFilterManufacturerItem {
-	image: string;
-	title: string;
-	amount: number;
-	slug: string;
-}
-
 interface SidebarFilterManufacturerProps {
-	items: SidebarFilterManufacturerItem[];
+	items: {
+		image: string;
+		title: string;
+		amount: number;
+		slug: string;
+	}[];
 }
 
 export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (

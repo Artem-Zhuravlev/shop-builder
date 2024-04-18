@@ -6,8 +6,8 @@ import { SliderBase, SliderCard } from '@shared/SliderBase';
 import { BlogCard, BlogCardProps } from '../BlogCard/BlogCard';
 
 interface BlogSliderProps {
-	title?: string;
 	items: BlogCardProps[];
+	title?: string;
 }
 
 export const BlogSlider: FC<BlogSliderProps> = (props) => {
@@ -20,7 +20,7 @@ export const BlogSlider: FC<BlogSliderProps> = (props) => {
 			<SliderBase settings={settings}>
 				{items &&
 					items.map(
-						({ image, author, comments, viewed, title, published_at, to }) => (
+						({ image, author, comments, viewed, title, publishedAt, to }) => (
 							<SliderCard>
 								<BlogCard
 									key={uuidv4()}
@@ -29,7 +29,7 @@ export const BlogSlider: FC<BlogSliderProps> = (props) => {
 									comments={comments}
 									viewed={viewed}
 									title={title}
-									published_at={published_at}
+									publishedAt={publishedAt}
 									to={to}
 								/>
 							</SliderCard>

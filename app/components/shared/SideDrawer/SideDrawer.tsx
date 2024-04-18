@@ -11,7 +11,6 @@ interface SideDrawerProps {
 
 export const SideDrawer: FC<SideDrawerProps> = (props) => {
 	const { children, title, visible, drawerClose } = props;
-
 	const [open, setOpen] = useState(visible);
 
 	const onDrawerClose = () => {

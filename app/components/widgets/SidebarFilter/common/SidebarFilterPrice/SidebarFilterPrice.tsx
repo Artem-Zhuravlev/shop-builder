@@ -6,14 +6,14 @@ import { AutoSave, InputRange, InputText } from '@shared/inputs';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 
 interface SidebarFilterPriceProps {
-	min?: number;
-	max?: number;
-	defaultMin?: number;
 	defaultMax?: number;
+	defaultMin?: number;
+	max?: number;
+	min?: number;
 }
 
 export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
-	const { min = 0, max = 100, defaultMin = 0, defaultMax = 100 } = props;
+	const { defaultMax = 100, defaultMin = 0, max = 100, min = 0 } = props;
 	const t = useTranslations('filters');
 	const [minValue, setMinValue] = useState(defaultMin);
 	const [maxValue, setMaxValue] = useState(defaultMax);

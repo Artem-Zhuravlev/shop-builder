@@ -5,14 +5,14 @@ import cls from './DiscountTimer.module.scss';
 import { ContainerBase } from '@shared/ContainerBase';
 
 interface DiscountTimerProps {
-	title: string;
-	image: string;
 	deadline: string;
 	discount: number;
+	image: string;
+	title: string;
 }
 
 export const DiscountTimer: FC<DiscountTimerProps> = (props) => {
-	const { title, image, deadline, discount } = props;
+	const { deadline, discount, image, title } = props;
 	const t = useTranslations('base');
 
 	return (

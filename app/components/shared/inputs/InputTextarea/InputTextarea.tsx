@@ -11,22 +11,23 @@ export interface TextareaProps
 	id?: string;
 	name: string;
 	required?: boolean;
-	onFocus?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-	onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
+	onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+	onFocus?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export const InputTextarea: FC<TextareaProps> = (props) => {
 	const {
+		disabled,
 		id,
 		name,
-		onFocus,
-		onBlur,
 		placeholder,
-		disabled,
 		required = false,
+		onBlur,
+		onFocus,
 		validationHandler,
 	} = props;
+
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 	const t = useTranslations();

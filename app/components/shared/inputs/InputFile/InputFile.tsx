@@ -2,11 +2,12 @@ import React, { ChangeEvent, FC, useRef, ReactNode } from 'react';
 import { ButtonBase } from '../../ButtonBase';
 
 interface InputFileProps {
-	handleFile: (file: File) => void;
 	children?: ReactNode;
+	handleFile: (file: File) => void;
 }
 
-export const InputFile: FC<InputFileProps> = ({ handleFile, children }) => {
+export const InputFile: FC<InputFileProps> = (props) => {
+	const { handleFile, children } = props;
 	const hiddenFileInput = useRef<HTMLInputElement>(null);
 
 	const handleClick = (): void => {

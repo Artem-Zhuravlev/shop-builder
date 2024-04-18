@@ -9,21 +9,21 @@ interface InputRangeProps extends SliderProps {
 
 export const InputRange: FC<InputRangeProps> = (props) => {
 	const {
-		disabled,
 		autoFocus,
-		onFocus,
-		onBlur,
-		onChange,
-		range,
+		className,
 		count,
-		min,
+		defaultValue,
+		disabled,
 		max,
+		min,
+		pushable,
+		range,
 		step,
 		value,
-		defaultValue,
-		pushable,
-		className,
+		onChange,
 		onChangeComplete,
+		onBlur,
+		onFocus,
 	} = props;
 
 	return (

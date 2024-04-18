@@ -4,16 +4,16 @@ import { InputRating } from '@shared/inputs';
 import cls from './ProductCardSmall.module.scss';
 
 interface ProductCardSmallProps {
-	to: string;
 	image: string;
-	rating: number;
-	title: string;
 	price: number;
+	rating: number;
 	symbol?: string;
+	title: string;
+	to: string;
 }
 
 export const ProductCardSmall: FC<ProductCardSmallProps> = (props) => {
-	const { to, image, rating, title, price, symbol = '₴' } = props;
+	const { image, price, rating, symbol = '₴', title, to } = props;
 
 	return (
 		<article className={cls.ProductCardSmall}>

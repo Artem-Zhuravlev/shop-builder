@@ -7,7 +7,7 @@ import { SliderBase } from '@shared/SliderBase';
 import cls from './ProductSlider.module.scss';
 
 interface ProductSliderProps {
-	items: Array<{ image: string; alt: string }>;
+	items: { image: string; alt: string }[];
 }
 
 export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
