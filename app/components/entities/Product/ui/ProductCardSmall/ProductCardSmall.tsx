@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { InputRating } from '@shared/inputs';
 import cls from './ProductCardSmall.module.scss';
 
@@ -20,7 +21,7 @@ export const ProductCardSmall: FC<ProductCardSmallProps> = (props) => {
 			<Link
 				href={to}
 				className={cls.ProductCardSmallImage}>
-				<img
+				<Image
 					src={image}
 					alt={title}
 				/>

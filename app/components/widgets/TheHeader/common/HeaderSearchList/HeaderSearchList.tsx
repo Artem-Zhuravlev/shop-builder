@@ -1,4 +1,5 @@
 import React, { FC, useMemo } from 'react';
+import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -34,7 +35,7 @@ export const HeaderSearchList: FC<HeaderSearchListProps> = (props) => {
 						className={cls.HeaderSearchLink}>
 						{item.thumbnail ? (
 							<div className={cls.HeaderSearchImage}>
-								<img
+								<Image
 									src={item.thumbnail.url}
 									alt={item.thumbnail.alt}
 								/>

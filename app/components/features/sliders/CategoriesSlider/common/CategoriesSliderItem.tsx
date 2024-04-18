@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import cls from '../CategoriesSlider.module.scss';
 
 export interface CategoriesSliderItemProps {
@@ -15,7 +16,7 @@ export const CategoriesSliderItem: FC<CategoriesSliderItemProps> = (props) => {
 		<Link
 			href={to}
 			className={cls.CategoriesSliderItem}>
-			<img
+			<Image
 				src={image}
 				alt={title}
 				className={cls.CategoriesSliderImage}

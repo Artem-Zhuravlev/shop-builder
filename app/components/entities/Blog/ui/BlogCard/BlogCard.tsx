@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import cls from './BlogCard.module.scss';
 
 export interface BlogCardProps {
@@ -28,7 +29,7 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
 			<Link
 				href={to}
 				className={cls.BlogCardImage}>
-				<img
+				<Image
 					src={image}
 					alt={title}
 				/>

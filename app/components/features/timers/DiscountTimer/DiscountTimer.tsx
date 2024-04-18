@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
 import { TimerBase } from '@shared/TimerBase/TimerBase';
 import { useTranslations } from 'next-intl';
 import cls from './DiscountTimer.module.scss';
@@ -28,7 +29,7 @@ export const DiscountTimer: FC<DiscountTimerProps> = (props) => {
 				</div>
 			</div>
 			<div className={cls.DiscountTimerCol}>
-				<img
+				<Image
 					src={image}
 					alt=''
 					className={cls.DiscountTimerImage}

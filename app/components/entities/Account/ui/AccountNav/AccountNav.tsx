@@ -5,14 +5,8 @@ import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
 import cls from './AccountNav.module.scss';
 
-interface AccountNavItem {
-	icon: string;
-	to: string;
-	value: string;
-}
-
 interface AccountNavProps {
-	items: AccountNavItem[];
+	items: { icon: string; to: string; value: string }[];
 }
 
 export const AccountNav: FC<AccountNavProps> = (props) => {

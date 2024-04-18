@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
+import Image from 'next/image';
 import cls from './BrandsList.module.scss';
 import { SectionBase } from '@shared/SectionBase';
 
@@ -21,7 +22,7 @@ export const BrandsList: FC<BrandsListProps> = (props) => {
 							<Link
 								href={item.to}
 								className={cls.BrandsLink}>
-								<img
+								<Image
 									src={item.image}
 									alt={item.name}
 									className={cls.BrandsImg}
