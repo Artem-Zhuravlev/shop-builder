@@ -48,7 +48,7 @@ export const InputRadio: FC<InputRadioProps> = memo((props) => {
 
 			<div className={cls.InputRadioLabel}>
 				{label || value}
-				{suffix && <div className={cls.InputRadioSuffix}>{suffix}</div>}
+				{suffix ? <div className={cls.InputRadioSuffix}>{suffix}</div> : null}
 			</div>
 		</label>
 	);

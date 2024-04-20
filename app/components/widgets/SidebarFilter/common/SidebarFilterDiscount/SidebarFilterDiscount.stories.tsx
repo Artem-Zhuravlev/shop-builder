@@ -32,7 +32,7 @@ Default.args = {
 		},
 		{
 			discount: 40,
-			value: 40,
+			value: 0,
 		},
 		{
 			discount: 50,

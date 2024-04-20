@@ -17,6 +17,6 @@ const Template: StoryFn<typeof SidebarFilterAvailability> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-	inStock: 10,
+	inStock: 0,
 	preOrder: 10,
 };

@@ -24,7 +24,7 @@ Default.args = {
 		},
 		{
 			stars: 4,
-			value: 20,
+			value: 0,
 		},
 		{
 			stars: 3,

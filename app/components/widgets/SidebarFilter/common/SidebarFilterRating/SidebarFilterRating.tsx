@@ -3,6 +3,7 @@ import { AutoSave, InputRadio } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
 import React, { FC, useCallback, useState } from 'react';
 import { Form } from 'react-final-form';
+import { InputRating } from '@shared/inputs';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 
 interface SidebarFilterRatingProps {
@@ -14,8 +15,8 @@ export const SidebarFilterRating: FC<SidebarFilterRatingProps> = (props) => {
 	const t = useTranslations('filters');
 	const [resetMode, setResetMode] = useState(false);
 
-	const handleSubmit = useCallback((values: object) => {
-		const mode = Object.values(values).some((item) => item === true);
+	const handleSubmit = useCallback((values: { rating: string }) => {
+		const mode = 'rating' in values;
 		setResetMode(mode);
 	}, []);
 
@@ -44,6 +45,14 @@ export const SidebarFilterRating: FC<SidebarFilterRatingProps> = (props) => {
 									name='rating'
 									value={`${item.stars}`}
 									suffix={item.value}
+									disabled={item.value <= 0}
+									label={
+										<InputRating
+											initialValue={item.stars}
+											readonly
+											size={16}
+										/>
+									}
 								/>
 							))}
 					</div>

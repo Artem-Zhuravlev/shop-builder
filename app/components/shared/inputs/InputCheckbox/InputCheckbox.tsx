@@ -14,8 +14,6 @@ interface InputCheckboxProps {
 	name: string;
 	required?: boolean;
 	className?: string;
-	value?: boolean;
-	checked?: boolean;
 	suffix?: ReactNode;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
@@ -57,7 +55,9 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 				/>
 				<div className={cls.InputCheckboxLabel}>
 					{label}
-					{suffix && <div className={cls.InputCheckboxSuffix}>{suffix}</div>}
+					{suffix ? (
+						<div className={cls.InputCheckboxSuffix}>{suffix}</div>
+					) : null}
 				</div>
 			</label>
 		);

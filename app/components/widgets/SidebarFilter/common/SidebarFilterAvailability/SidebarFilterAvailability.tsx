@@ -17,7 +17,7 @@ export const SidebarFilterAvailability: FC<SidebarFilterAvailabilityProps> = (
 	const t = useTranslations('filters');
 	const [resetMode, setResetMode] = useState(false);
 
-	const handleSubmit = useCallback((values: object) => {
+	const handleSubmit = useCallback((values: object): void => {
 		const mode = Object.values(values).some((item) => item === true);
 		setResetMode(mode);
 	}, []);
@@ -45,12 +45,14 @@ export const SidebarFilterAvailability: FC<SidebarFilterAvailabilityProps> = (
 							name='in_stock'
 							className='mb-0'
 							suffix={inStock}
+							disabled={inStock <= 0}
 						/>
 						<InputCheckbox
 							label={t('pre_order')}
 							name='pre_order'
 							className='mb-0'
 							suffix={preOrder}
+							disabled={preOrder <= 0}
 						/>
 					</div>
 				</SidebarToggler>

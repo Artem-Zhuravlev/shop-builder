@@ -18,7 +18,6 @@ export const SidebarFilterDiscount: FC<SidebarFilterDiscountProps> = (
 
 	const handleSubmit = useCallback((values: { discount: string }) => {
 		const mode = 'discount' in values;
-		console.log(mode);
 		setResetMode(mode);
 	}, []);
 
@@ -45,8 +44,10 @@ export const SidebarFilterDiscount: FC<SidebarFilterDiscountProps> = (
 								<InputRadio
 									key={`discount-${item.discount}}`}
 									name='discount'
-									value={`${item.discount}%`}
+									value={`${item.discount}`}
+									label={`${item.discount}%`}
 									suffix={item.value}
+									disabled={item.value <= 0}
 								/>
 							))}
 					</div>
