@@ -28,6 +28,11 @@ a {
 	}
 }
 
+.disabled {
+	opacity: 0.75;
+	cursor: auto !important;
+}
+
 * {
 	box-sizing: border-box;
 }

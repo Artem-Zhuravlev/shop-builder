@@ -5,22 +5,26 @@ import cls from './InputRadio.module.scss';
 import classNames from 'classnames';
 
 export interface InputRadioProps {
+	label?: ReactNode;
 	name: string;
 	suffix?: ReactNode;
-	value: string | number | ReactNode;
+	value: string | number;
+	disabled?: boolean;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const InputRadio: FC<InputRadioProps> = memo((props) => {
-	const { name, suffix, value, onChange } = props;
+	const { label, name, suffix, value, onChange, disabled = false } = props;
 	const radioClasses = classNames(cls.InputRadio, {
 		[cls.withSuffix]: !!suffix,
+		disabled,
 	});
 
 	const renderInputField = ({ input }: any) => {
 		return (
 			<input
 				{...input}
+				disabled={disabled}
 				className='sr-only'
 				onChange={(e) => {
 					input.onChange(e);
@@ -43,7 +47,8 @@ export const InputRadio: FC<InputRadioProps> = memo((props) => {
 			</Field>
 
 			<div className={cls.InputRadioLabel}>
-				{value} {suffix && <div className={cls.InputRadioSuffix}>{suffix}</div>}
+				{label || value}
+				{suffix && <div className={cls.InputRadioSuffix}>{suffix}</div>}
 			</div>
 		</label>
 	);

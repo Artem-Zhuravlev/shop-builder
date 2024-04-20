@@ -5,8 +5,10 @@ import { useTranslations } from 'next-intl';
 import { getValidationMessage, TranslateFunction } from '@utils/validations';
 import { Label } from '../Label/Label';
 import cls from './InputCheckbox.module.scss';
+import classNames from 'classnames';
 
 interface InputCheckboxProps {
+	disabled?: boolean;
 	id?: string;
 	label: ReactNode;
 	name: string;
@@ -21,6 +23,7 @@ interface InputCheckboxProps {
 
 export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 	const {
+		disabled,
 		label,
 		name,
 		required = false,
@@ -33,15 +36,17 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 	const t = useTranslations();
+	const inputCheckboxClasses = classNames(cls.InputCheckbox, { disabled });
 
 	const renderInputField = ({ input, meta }: any) => {
 		setError(!!meta.error && meta.touched && meta.submitFailed);
 		setErrorMessage(meta.error || '');
 
 		return (
-			<label className={cls.InputCheckbox}>
+			<label className={inputCheckboxClasses}>
 				<input
 					{...input}
+					disabled={disabled}
 					className='sr-only'
 					onChange={(e) => {
 						input.onChange(e);

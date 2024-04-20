@@ -55,3 +55,10 @@ WithLink.args = {
 	id: 'checkbox-1',
 	name: 'checkbox',
 };
+
+export const WithDisabled = Template.bind({});
+WithDisabled.args = {
+	label: 'Checkbox label',
+	name: 'checkbox',
+	disabled: true,
+};

@@ -37,7 +37,9 @@ const Template: StoryFn<InputRadioStoryProps> = (args) => {
 								name={args.name}
 								key={index}
 								suffix={args.suffix}
+								label={args.label}
 								onChange={handleChange}
+								disabled={args.disabled}
 							/>
 						))}
 					</div>
@@ -62,4 +64,17 @@ export const WithSuffix = Template.bind({});
 WithSuffix.args = {
 	name: 'radio',
 	suffix: 10,
+};
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+	name: 'radio',
+	suffix: 10,
+	label: <b>Label</b>,
+};
+
+export const WithDisabled = Template.bind({});
+WithDisabled.args = {
+	name: 'radio',
+	disabled: true,
 };
