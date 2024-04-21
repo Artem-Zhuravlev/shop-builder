@@ -42,6 +42,7 @@ export default {
 		add_to_cart: 'Add to cart',
 		remove: 'Remove',
 		clear: 'Clear',
+		close: 'Close',
 	},
 	field_error: {
 		required: 'Field is required',

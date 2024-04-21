@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useTranslations } from 'next-intl';
 import cls from '../AlertBase.module.scss';
 import classNames from 'classnames';
 
@@ -11,6 +12,7 @@ export interface AlertItemProps {
 
 export const AlertItem: FC<AlertItemProps> = (props) => {
 	const { index, message, type = 'success', onClose } = props;
+	const t = useTranslations('base');
 
 	const alertClasses = classNames(
 		cls.AlertItem,
@@ -31,6 +33,7 @@ export const AlertItem: FC<AlertItemProps> = (props) => {
 				data-testid='alert-close'
 				type='button'
 				className={cls.AlertButton}
+				aria-label={t('close')}
 				onClick={handleClose}>
 				<span className='icon-cross' />
 			</button>

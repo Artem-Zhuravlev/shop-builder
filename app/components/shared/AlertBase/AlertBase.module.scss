@@ -1,44 +1,41 @@
 .AlertBase {
-  position: fixed;
-  right: var(--space-medium);
-  top: var(--space-medium);
-  z-index: 10;
+	position: fixed;
+	right: var(--space-medium);
+	top: var(--space-medium);
+	z-index: 10;
 }
 
 .AlertItem {
-  position: relative;
-  padding:
-    var(--space-medium)
-    calc(var(--space-medium) * 2)
-    var(--space-medium)
-    var(--space-medium);
-  max-width: 250px;
-  border-radius: var(--interface-size-sm);
-  color: rgba(255, 255, 255, .85);
+	position: relative;
+	padding: var(--space-medium) calc(var(--space-medium) * 2) var(--space-medium)
+		var(--space-medium);
+	max-width: 250px;
+	border-radius: var(--interface-size-sm);
+	color: var(--gray-10);
 
-  &:not(:last-of-type) {
-    margin-bottom: var(--space-medium);
-  }
+	&:not(:last-of-type) {
+		margin-bottom: var(--space-medium);
+	}
 }
 
 .error {
-  background-color: var(--danger-main);
+	background-color: var(--danger-bg);
 }
 
 .success {
-  background-color: var(--success-main);
+	background-color: var(--success-bg);
 }
 
 .AlertButton {
-  position: absolute;
-  width: var(--space-big);
-  height: var(--space-big);
-  right: var(--space-extra-small);
-  top: var(--space-extra-small);
-  border: none;
-  background-color: transparent;
-  font-size: 10px;
-  padding: 0;
-  color: rgba(255, 255, 255, .85);
-  cursor: pointer;
+	position: absolute;
+	width: var(--space-big);
+	height: var(--space-big);
+	right: var(--space-extra-small);
+	top: var(--space-extra-small);
+	border: none;
+	background-color: transparent;
+	font-size: 10px;
+	padding: 0;
+	color: var(--gray-10);
+	cursor: pointer;
 }

@@ -24,8 +24,3 @@ Default.args = {
 		},
 	],
 };
-
-export const WithEmptyArray = Template.bind({});
-WithEmptyArray.args = {
-	alerts: [],
-};

@@ -42,6 +42,7 @@ export default {
 		add_to_cart: 'Додати до корзини',
 		remove: 'Видалити',
 		clear: 'Очистити',
+		close: 'Закрити',
 	},
 	field_error: {
 		required: "Обов'язкове поле",
