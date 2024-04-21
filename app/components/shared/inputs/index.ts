@@ -1,3 +1,4 @@
+import AutoSave from './AutoSave/AutoSave';
 export { InputCheckbox } from './InputCheckbox/InputCheckbox';
 export { InputDatePicker } from './InputDatePicker/InputDatePicker';
 export { InputEdit } from './InputEdit/InputEdit';
@@ -12,7 +13,7 @@ export { InputSwitcher } from './InputSwitcher/InputSwitcher';
 export { InputText } from './InputText/InputText';
 export { InputTextarea } from './InputTextarea/InputTextarea';
 export { Label } from './Label/Label';
-export { AutoSave } from './AutoSave/AutoSave';
 export { InputColors } from './InputColors/InputColors';
 export type { InputColorsProps } from './InputColors/InputColors';
 export { InputSizes } from './InputSizes/InputSizes';
+export { AutoSave };

@@ -1,41 +1,45 @@
-.TabsBase {
-
-}
-
 .Tabs {
-  display: flex;
-  border-bottom: var(--interface-size-sm) solid var(--gray-30);
-  margin-bottom: calc(var(--interface-size-sm) * -1);
+	display: flex;
+	border-bottom: var(--interface-size-sm) solid var(--gray-30);
+	margin-bottom: calc(var(--interface-size-sm) * -1);
 }
 
 .Tab {
-  position: relative;
-  padding: var(--space-small);
-  background-color: transparent;
-  border: none;
-  font-family: inherit;
-  font-size: var(--font-size-lg);
-  cursor: pointer;    
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: calc(var(--interface-size-sm) * -1);
-    border-bottom: var(--interface-size-sm) solid transparent;
-    transition: var(--transition-base);
-  }
-  &:focus {
-    outline: transparent;
-  }
+	position: relative;
+	padding: var(--space-small);
+	background-color: transparent;
+	border: none;
+	font-family: inherit;
+	font-size: var(--font-size-lg);
+	cursor: pointer;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: calc(var(--interface-size-sm) * -1);
+		border-bottom: var(--interface-size-sm) solid transparent;
+		transition: var(--transition-base);
+	}
+	&:focus {
+		outline: transparent;
+	}
+	&:focus,
+	&:hover {
+		&:not(.TabActive) {
+			&::before {
+				border-color: var(--primary-border);
+			}
+		}
+	}
 }
 
 .TabActive {
-  &::before {
-    border-color: var(--primary-main);
-  }
+	&::before {
+		border-color: var(--primary-main);
+	}
 }
 
 .TabDescription {
-  padding: var(--space-medium) 0
+	padding: var(--space-medium) 0;
 }

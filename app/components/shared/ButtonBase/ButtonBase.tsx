@@ -40,6 +40,7 @@ export const ButtonBase: FC<ButtonProps> = (props) => {
 		small,
 		type = 'button',
 		variant = 'primary',
+		...rest
 	} = props;
 
 	const buttonClasses = classNames(cls.ButtonBase, cls[variant], className, {
@@ -57,7 +58,8 @@ export const ButtonBase: FC<ButtonProps> = (props) => {
 			className={buttonClasses}
 			type={type}
 			disabled={disabled}
-			onClick={onClick}>
+			onClick={onClick}
+			{...rest}>
 			{isLoading ? <span className='icon-spinner2' /> : null}
 			{children}
 		</button>

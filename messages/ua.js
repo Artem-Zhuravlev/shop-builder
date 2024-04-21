@@ -43,6 +43,12 @@ export default {
 		remove: 'Видалити',
 		clear: 'Очистити',
 		close: 'Закрити',
+		decrement: 'Зменшити',
+		increment: 'Збільшити',
+		show: 'Показати',
+		hide: 'Приховати',
+		on: 'Вкл',
+		off: 'Викл',
 	},
 	field_error: {
 		required: "Обов'язкове поле",
@@ -70,5 +76,6 @@ export default {
 			agree: 'Я прочитав(ла) і погоджуюсь з ',
 			link: 'Політикою Конфіденційності',
 		},
+		number_label: 'Введіть число',
 	},
 };

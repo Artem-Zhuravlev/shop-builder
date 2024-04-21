@@ -1,5 +1,6 @@
 'use client';
 import React, { FC, ReactNode, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import cls from './SideDrawer.module.scss';
 import classNames from 'classnames';
 
@@ -13,6 +14,7 @@ interface SideDrawerProps {
 export const SideDrawer: FC<SideDrawerProps> = (props) => {
 	const { children, title, visible, drawerClose } = props;
 	const [open, setOpen] = useState(visible);
+	const t = useTranslations('base');
 
 	const onDrawerClose = () => {
 		setOpen(false);
@@ -32,11 +34,16 @@ export const SideDrawer: FC<SideDrawerProps> = (props) => {
 				data-testid='close-button'
 				type='button'
 				className={cls.SideDrawerClose}
-				onClick={onDrawerClose}>
+				onClick={onDrawerClose}
+				aria-label={t('close')}>
 				<span className='icon-cross' />
 			</button>
 			{title && <h4 className={cls.SideDrawerTitle}>{title}</h4>}
-			<div className={cls.SideDrawerContent}>{children}</div>
+			<div
+				className={cls.SideDrawerContent}
+				tabIndex={0}>
+				{children}
+			</div>
 		</div>
 	);
 };

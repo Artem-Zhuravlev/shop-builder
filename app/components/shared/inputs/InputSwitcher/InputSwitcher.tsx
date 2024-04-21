@@ -1,38 +1,43 @@
 'use client';
 import React, { FC, useState } from 'react';
+import { Field } from 'react-final-form';
+import { useTranslations } from 'next-intl';
 import classNames from 'classnames';
 import cls from './InputSwitcher.module.scss';
 
 interface InputSwitcherProps {
-	value: boolean;
-	onSwitch: (e: boolean) => void;
+	label?: string;
+	name: string;
 }
 
 export const InputSwitcher: FC<InputSwitcherProps> = (props) => {
-	const { value = false, onSwitch } = props;
+	const { label, name } = props;
+	const t = useTranslations('base');
 
-	const [switcherValue, setSwitcherValue] = useState<boolean>(value);
-
-	const inputSwitcherClasses = classNames(
-		cls.InputSwitcher,
-		switcherValue ? cls.checked : null
-	);
-
-	const handleSwitchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const newValue = e.target.checked;
-		setSwitcherValue(newValue);
-		onSwitch(newValue);
+	const renderInputField = ({ input }: any) => {
+		return (
+			<label
+				data-testid='input-switcher'
+				className={cls.InputSwitcher}>
+				<input
+					{...input}
+					className='sr-only'
+					aria-label={input.checked ? t('on') : t('off')}
+				/>
+				<div className={cls.InputSwitcherControl} />
+				{label}
+			</label>
+		);
 	};
 
 	return (
-		<label
-			data-testid='input-switcher'
-			className={inputSwitcherClasses}>
-			<input
-				checked={switcherValue}
-				onChange={handleSwitchChange}
-				type='checkbox'
-			/>
-		</label>
+		<>
+			<Field
+				name={name}
+				component='input'
+				type='checkbox'>
+				{renderInputField}
+			</Field>
+		</>
 	);
 };

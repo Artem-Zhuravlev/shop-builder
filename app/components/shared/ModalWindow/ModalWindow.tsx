@@ -1,5 +1,6 @@
 'use client';
 import React, { FC, ReactNode, useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import cls from './ModalWindow.module.scss';
 
 interface ModalWindowProps {
@@ -12,6 +13,7 @@ interface ModalWindowProps {
 export const ModalWindow: FC<ModalWindowProps> = (props) => {
 	const { children, title, visibility = false, onClose } = props;
 	const [visible, setVisible] = useState(visibility);
+	const t = useTranslations('base');
 
 	const handleClose = () => {
 		setVisible(false);
@@ -49,7 +51,8 @@ export const ModalWindow: FC<ModalWindowProps> = (props) => {
 						<button
 							type='button'
 							className={cls.ModalBtn}
-							onClick={handleClose}>
+							onClick={handleClose}
+							aria-label={t('close')}>
 							<span className='icon-cross' />
 						</button>
 						{children}

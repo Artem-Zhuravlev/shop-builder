@@ -43,6 +43,12 @@ export default {
 		remove: 'Remove',
 		clear: 'Clear',
 		close: 'Close',
+		decrement: 'Decrement',
+		increment: 'Increment',
+		show: 'Show',
+		hide: 'Hide',
+		on: 'On',
+		off: 'Off',
 	},
 	field_error: {
 		required: 'Field is required',
@@ -70,5 +76,6 @@ export default {
 			agree: 'I have read and agree to the ',
 			link: 'Privacy Policy',
 		},
+		number_label: 'Input number field',
 	},
 };

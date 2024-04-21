@@ -76,12 +76,9 @@ export const InputPassword: FC<InputProps> = (props) => {
 				<button
 					type='button'
 					className={cls.InputSuffix}
-					onClick={toggleEyeIcon}>
-					{showEyeIcon ? (
-						<span className='icon-eye-blocked'></span>
-					) : (
-						<span className='icon-eye'></span>
-					)}
+					onClick={toggleEyeIcon}
+					aria-label={showEyeIcon ? t('base.hide') : t('base.show')}>
+					<span className={showEyeIcon ? 'icon-eye-blocked' : 'icon-eye'} />
 				</button>
 			}
 			hasError={error}
