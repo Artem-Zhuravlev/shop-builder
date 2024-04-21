@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { InfoList } from './InfoList';
 
 export default {
-	title: 'Lists/InfoList',
+	title: 'Features/Lists/InfoList',
 	component: InfoList,
 } as Meta<typeof InfoList>;
 

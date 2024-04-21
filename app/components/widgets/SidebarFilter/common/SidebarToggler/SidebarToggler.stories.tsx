@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { SidebarToggler } from './SidebarToggler';
 
 export default {
-	title: 'Layout/SidebarFilter/SidebarToggler',
+	title: 'Widgets/SidebarFilter/SidebarToggler',
 	component: SidebarToggler,
 } as Meta<typeof SidebarToggler>;
 

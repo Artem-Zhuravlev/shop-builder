@@ -6,7 +6,7 @@ import { Form } from 'react-final-form';
 import { AutoSave } from '@shared/inputs';
 
 export default {
-	title: 'inputs/InputColors',
+	title: 'Shared/Inputs/InputColors',
 	component: InputColors,
 } as Meta<typeof InputColors>;
 

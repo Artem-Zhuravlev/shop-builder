@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AccountNav } from './AccountNav';
 
 export default {
-	title: 'Account/AccountNav',
+	title: 'Entities/Account/AccountNav',
 	component: AccountNav,
 } as Meta<typeof AccountNav>;
 

@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { ButtonBase } from './ButtonBase';
 
 export default {
-	title: 'Buttons/ButtonBase',
+	title: 'Shared/ButtonBase',
 	component: ButtonBase,
 	argTypes: { onClick: { action: 'clicked' } },
 } as Meta<typeof ButtonBase>;

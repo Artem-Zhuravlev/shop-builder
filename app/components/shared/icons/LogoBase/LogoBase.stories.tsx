@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { LogoBase } from './LogoBase';
 
 export default {
-	title: 'Icons/LogoBase',
+	title: 'Shared/Icons/LogoBase',
 	component: LogoBase,
 	argTypes: { onClick: { action: 'clicked' } },
 } as Meta<typeof LogoBase>;

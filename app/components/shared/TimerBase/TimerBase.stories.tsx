@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { TimerBase } from './TimerBase';
 
 export default {
-	title: 'Timers/TimerBase',
+	title: 'Shared/TimerBase',
 	component: TimerBase,
 	argTypes: {
 		onClick: { action: 'clicked' },

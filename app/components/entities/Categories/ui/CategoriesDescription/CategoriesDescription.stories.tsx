@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { CategoriesDescription } from './CategoriesDescription';
 
 export default {
-	title: 'Categories/CategoriesDescription',
+	title: 'Entities/Categories/CategoriesDescription',
 	component: CategoriesDescription,
 } as Meta<typeof CategoriesDescription>;
 

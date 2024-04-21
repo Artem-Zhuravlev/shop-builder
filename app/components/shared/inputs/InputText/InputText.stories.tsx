@@ -9,7 +9,7 @@ interface InputStoryProps extends InputProps {
 }
 
 export default {
-	title: 'inputs/InputText',
+	title: 'Shared/Inputs/InputText',
 	component: InputText,
 	decorators: [(Story) => <Story />],
 } as Meta<typeof InputText>;

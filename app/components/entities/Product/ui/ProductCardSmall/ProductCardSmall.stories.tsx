@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { ProductCardSmall } from './ProductCardSmall';
 
 export default {
-	title: 'Product/ProductCardSmall',
+	title: 'Entities/Product/ProductCardSmall',
 	component: ProductCardSmall,
 } as Meta<typeof ProductCardSmall>;
 

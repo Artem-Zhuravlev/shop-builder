@@ -4,7 +4,7 @@ import { InputDatePicker } from './InputDatePicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export default {
-	title: 'inputs/InputDatePicker',
+	title: 'Shared/Inputs/InputDatePicker',
 	component: InputDatePicker,
 } as Meta<typeof InputDatePicker>;
 

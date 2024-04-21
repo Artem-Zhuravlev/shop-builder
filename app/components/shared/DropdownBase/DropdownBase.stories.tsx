@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { DropdownBase } from './DropdownBase';
 
 export default {
-	title: 'Dropdown/DropdownBase',
+	title: 'Shared/DropdownBase',
 	component: DropdownBase,
 } as Meta<typeof DropdownBase>;
 

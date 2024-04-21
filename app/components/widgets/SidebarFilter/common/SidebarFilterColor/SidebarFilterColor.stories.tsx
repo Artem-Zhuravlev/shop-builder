@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { SidebarFilterColor } from './SidebarFilterColor';
 
 export default {
-	title: 'Layout/SidebarFilter/SidebarFilterColor',
+	title: 'Widgets/SidebarFilter/SidebarFilterColor',
 	component: SidebarFilterColor,
 } as Meta<typeof SidebarFilterColor>;
 

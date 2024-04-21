@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { DiscountTimer } from './DiscountTimer';
 
 export default {
-	title: 'Timers/DiscountTimer',
+	title: 'Features/Timers/DiscountTimer',
 	component: DiscountTimer,
 } as Meta<typeof DiscountTimer>;
 

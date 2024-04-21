@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AccountWishList } from './AccountWishList';
 
 export default {
-	title: 'Account/AccountWishList',
+	title: 'Entities/Account/AccountWishList',
 	component: AccountWishList,
 } as Meta<typeof AccountWishList>;
 

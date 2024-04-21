@@ -8,7 +8,7 @@ interface TextareaStoriesProps extends TextareaProps {
 }
 
 export default {
-	title: 'inputs/InputTextarea',
+	title: 'Shared/Inputs/InputTextarea',
 	component: InputTextarea,
 } as Meta<typeof InputTextarea>;
 

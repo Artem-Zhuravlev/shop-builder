@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AccountRegisterForm } from './AccountRegisterForm';
 
 export default {
-	title: 'Account/AccountRegisterForm',
+	title: 'Entities/Account/AccountRegisterForm',
 	component: AccountRegisterForm,
 } as Meta<typeof AccountRegisterForm>;
 

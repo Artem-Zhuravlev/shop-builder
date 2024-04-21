@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { TooltipBase } from './TooltipBase';
 
 export default {
-	title: 'Tooltip',
+	title: 'Shared/Tooltip',
 	component: TooltipBase,
 } as Meta<typeof TooltipBase>;
 

@@ -5,7 +5,7 @@ import { InputPassword } from './InputPassword';
 import { ButtonBase } from '@shared/ButtonBase';
 
 export default {
-	title: 'inputs/InputPassword',
+	title: 'Shared/Inputs/InputPassword',
 	component: InputPassword,
 } as Meta<typeof InputPassword>;
 

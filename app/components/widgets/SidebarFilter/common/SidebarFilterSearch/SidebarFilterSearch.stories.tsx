@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { SidebarFilterSearch } from './SidebarFilterSearch';
 
 export default {
-	title: 'Layout/SidebarFilter/SidebarFilterSearch',
+	title: 'Widgets/SidebarFilter/SidebarFilterSearch',
 	component: SidebarFilterSearch,
 } as Meta<typeof SidebarFilterSearch>;
 

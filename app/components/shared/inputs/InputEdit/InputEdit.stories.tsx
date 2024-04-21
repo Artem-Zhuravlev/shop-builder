@@ -4,7 +4,7 @@ import { InputEdit } from './InputEdit';
 import { EditorState } from 'draft-js';
 
 export default {
-	title: 'inputs/InputEdit',
+	title: 'Shared/Inputs/InputEdit',
 	component: InputEdit,
 } as Meta<typeof InputEdit>;
 

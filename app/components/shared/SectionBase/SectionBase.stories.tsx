@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { SectionBase } from './SectionBase';
 
 export default {
-	title: 'Layout/SectionBase',
+	title: 'Shared/SectionBase',
 	component: SectionBase,
 	argTypes: {
 		onClick: { action: 'clicked' },

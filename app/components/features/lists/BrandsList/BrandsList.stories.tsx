@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { BrandsList } from './BrandsList';
 
 export default {
-	title: 'Lists/BrandsList',
+	title: 'Features/Lists/BrandsList',
 	component: BrandsList,
 } as Meta<typeof BrandsList>;
 

@@ -6,7 +6,7 @@ import { Form } from 'react-final-form';
 import { AutoSave } from '@shared/inputs';
 
 export default {
-	title: 'inputs/InputSizes',
+	title: 'Shared/Inputs/InputSizes',
 	component: InputSizes,
 } as Meta<typeof InputSizes>;
 

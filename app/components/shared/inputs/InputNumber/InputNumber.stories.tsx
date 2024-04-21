@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { InputNumber } from './InputNumber';
 
 export default {
-	title: 'inputs/InputNumber',
+	title: 'Shared/Inputs/InputNumber',
 	component: InputNumber,
 	argTypes: { onNumberChange: { action: 'number change' } },
 } as Meta<typeof InputNumber>;

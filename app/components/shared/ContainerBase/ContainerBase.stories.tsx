@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { ContainerBase } from './ContainerBase';
 
 export default {
-	title: 'Layout/Container',
+	title: 'Shared/Container',
 	component: ContainerBase,
 } as Meta<typeof ContainerBase>;
 

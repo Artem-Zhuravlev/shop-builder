@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { SidebarFilterSize } from './SidebarFilterSize';
 
 export default {
-	title: 'Layout/SidebarFilter/SidebarFilterSize',
+	title: 'Widgets/SidebarFilter/SidebarFilterSize',
 	component: SidebarFilterSize,
 } as Meta<typeof SidebarFilterSize>;
 

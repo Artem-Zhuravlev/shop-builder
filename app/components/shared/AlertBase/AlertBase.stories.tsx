@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AlertBase } from './AlertBase';
 
 export default {
-	title: 'Alerts/AlertBase',
+	title: 'Shared/AlertBase',
 	component: AlertBase,
 	argTypes: { onClick: { action: 'clicked' } },
 } as Meta<typeof AlertBase>;

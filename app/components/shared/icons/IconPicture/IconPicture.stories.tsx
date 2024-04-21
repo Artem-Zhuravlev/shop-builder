@@ -3,12 +3,13 @@ import { StoryFn, Meta } from '@storybook/react';
 import { IconPicture } from './IconPicture';
 
 export default {
-  title: 'Icons/IconPicture',
-  component: IconPicture,
+	title: 'Shared/Icons/IconPicture',
+	component: IconPicture,
 } as Meta<typeof IconPicture>;
 
-const Template: StoryFn<typeof IconPicture> = (args) => <IconPicture {...args} />;
+const Template: StoryFn<typeof IconPicture> = (args) => (
+	<IconPicture {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};
-

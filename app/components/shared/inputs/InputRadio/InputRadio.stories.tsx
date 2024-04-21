@@ -9,7 +9,7 @@ interface InputRadioStoryProps extends InputRadioProps {
 }
 
 export default {
-	title: 'inputs/InputRadio',
+	title: 'Shared/Inputs/InputRadio',
 	component: InputRadio,
 } as Meta<typeof InputRadio>;
 

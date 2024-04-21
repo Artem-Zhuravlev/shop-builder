@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { SidebarFilterDiscount } from './SidebarFilterDiscount';
 
 export default {
-	title: 'Layout/SidebarFilter/SidebarFilterDiscount',
+	title: 'Widgets/SidebarFilter/SidebarFilterDiscount',
 	component: SidebarFilterDiscount,
 } as Meta<typeof SidebarFilterDiscount>;
 

@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { TheHeader } from './TheHeader';
 
 export default {
-	title: 'Layout/TheHeader',
+	title: 'Widgets/TheHeader',
 	component: TheHeader,
 	argTypes: {
 		handleCompare: { action: 'compare' },

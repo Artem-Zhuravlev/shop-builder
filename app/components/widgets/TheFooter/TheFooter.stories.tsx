@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { TheFooter } from './TheFooter';
 
 export default {
-	title: 'Layout/TheFooter',
+	title: 'Widgets/TheFooter',
 	component: TheFooter,
 } as Meta<typeof TheFooter>;
 

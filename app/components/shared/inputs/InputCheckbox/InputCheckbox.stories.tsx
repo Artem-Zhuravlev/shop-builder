@@ -5,7 +5,7 @@ import { Form } from 'react-final-form';
 import { action } from '@storybook/addon-actions';
 
 export default {
-	title: 'inputs/InputCheckbox',
+	title: 'Shared/Inputs/InputCheckbox',
 	component: InputCheckbox,
 } as Meta<typeof InputCheckbox>;
 

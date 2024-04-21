@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { SidebarFilterRating } from './SidebarFilterRating';
 
 export default {
-	title: 'Layout/SidebarFilter/SidebarFilterRating',
+	title: 'Widgets/SidebarFilter/SidebarFilterRating',
 	component: SidebarFilterRating,
 } as Meta<typeof SidebarFilterRating>;
 

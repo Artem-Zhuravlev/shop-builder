@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { SidebarFilterManufacturer } from './SidebarFilterManufacturer';
 
 export default {
-	title: 'Layout/SidebarFilter/SidebarFilterManufacturer',
+	title: 'Widgets/SidebarFilter/SidebarFilterManufacturer',
 	component: SidebarFilterManufacturer,
 } as Meta<typeof SidebarFilterManufacturer>;
 

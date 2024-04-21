@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { ProductReviewForm } from './ProductReviewForm';
 
 export default {
-	title: 'Product/ProductReviewForm',
+	title: 'Entities/Product/ProductReviewForm',
 	component: ProductReviewForm,
 } as Meta<typeof ProductReviewForm>;
 

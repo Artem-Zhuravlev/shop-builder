@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { CategoriesSlider } from './CategoriesSlider';
 
 export default {
-	title: 'Sliders/CategoriesSlider',
+	title: 'Features/Sliders/CategoriesSlider',
 	component: CategoriesSlider,
 } as Meta<typeof CategoriesSlider>;
 
