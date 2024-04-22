@@ -12,6 +12,7 @@ interface SelectProps<
 	IsMulti extends boolean = false,
 	Group extends GroupBase<Option> = GroupBase<Option>,
 > {
+	className?: string;
 	isClearable?: boolean;
 	isDisabled?: boolean;
 	isLoading?: boolean;
@@ -26,6 +27,7 @@ interface SelectProps<
 
 export const InputSelect: FC<SelectProps> = (props) => {
 	const {
+		className,
 		isClearable,
 		isDisabled,
 		isLoading,
@@ -65,7 +67,8 @@ export const InputSelect: FC<SelectProps> = (props) => {
 	return (
 		<Label
 			hasError={error}
-			error={errorMessage}>
+			error={errorMessage}
+			className={className}>
 			<Field
 				name={name}
 				options={options}

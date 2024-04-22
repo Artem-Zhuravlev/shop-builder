@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: ProductSliceState = {
 	currency: '₴',
+	compare: 0,
 };
 
 export const productSlice = createSlice({
@@ -14,4 +15,5 @@ export const productSlice = createSlice({
 /* Types */
 export interface ProductSliceState {
 	currency: string;
+	compare: number;
 }

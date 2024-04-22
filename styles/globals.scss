@@ -28,6 +28,15 @@ a {
 	}
 }
 
+.link-primary {
+	display: inline-block;
+	color: var(--primary-main);
+	&:hover,
+	&:focus {
+		color: var(--primary-hover);
+	}
+}
+
 .disabled {
 	opacity: 0.5;
 	cursor: auto !important;

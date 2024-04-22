@@ -24,6 +24,7 @@ export default {
 		to: 'to',
 		in_stock: 'In stock',
 		pre_order: 'Pre-order',
+		product_compare: 'Compare products',
 	},
 	base: {
 		brand: 'Brand',

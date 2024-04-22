@@ -1,5 +1,9 @@
 import React, { FC } from 'react';
-import { ProductsFilterGridSwitcher, ProductsFilterLimit } from './common';
+import {
+	ProductsFilterGridSwitcher,
+	ProductsFilterLimit,
+	ProductsFilterCompare,
+} from './common';
 import cls from './ProductsFilter.module.scss';
 
 interface ProductsFilterProps {
@@ -13,6 +17,7 @@ export const ProductsFilter: FC<ProductsFilterProps> = (props) => {
 		<nav className={cls.ProductsFilter}>
 			<ProductsFilterGridSwitcher handleSwitchLayout={handleSwitchLayout} />
 			<ProductsFilterLimit />
+			<ProductsFilterCompare />
 		</nav>
 	);
 };

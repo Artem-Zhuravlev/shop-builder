@@ -24,6 +24,7 @@ export default {
 		to: 'до',
 		in_stock: 'В наявності',
 		pre_order: 'Предзамовлення',
+		product_compare: 'Порівняти продукти',
 	},
 	base: {
 		brand: 'Бренд',

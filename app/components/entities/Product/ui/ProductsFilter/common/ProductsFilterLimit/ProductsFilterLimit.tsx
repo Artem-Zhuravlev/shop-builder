@@ -31,6 +31,7 @@ export const ProductsFilterLimit: FC = () => {
 						options={limits}
 						value={limits[0]}
 						label={`${t('show')}:`}
+						className='mb-0'
 					/>
 				</>
 			)}
