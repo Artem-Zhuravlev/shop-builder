@@ -51,6 +51,7 @@ export default {
 		off: 'Викл',
 		grid: 'Сітка',
 		list: 'Список',
+		limit: 'Ліміт',
 	},
 	field_error: {
 		required: "Обов'язкове поле",

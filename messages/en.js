@@ -51,6 +51,7 @@ export default {
 		off: 'Off',
 		grid: 'Grid',
 		list: 'List',
+		limit: 'Limit',
 	},
 	field_error: {
 		required: 'Field is required',
