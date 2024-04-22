@@ -4,20 +4,15 @@ import cls from './ProductsFilterGridSwitcher.module.scss';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import classNames from 'classnames';
 
-interface ProductsFilterGridSwitcherProps {
-	handleSwitchLayout: (value: string) => void;
-}
-
-export const ProductsFilterGridSwitcher: FC<ProductsFilterGridSwitcherProps> = (
-	props
-) => {
-	const { handleSwitchLayout } = props;
+export const ProductsFilterGridSwitcher: FC = () => {
 	const t = useTranslations('base');
-	const [layout, setLayout] = useState('');
+	const [layout, setLayout] = useState(
+		localStorage.getItem('display_grid') || ''
+	);
 
 	const handleClick = (value: string) => {
+		localStorage.setItem('display_grid', value);
 		setLayout(value);
-		handleSwitchLayout(value);
 	};
 
 	const buttons = [

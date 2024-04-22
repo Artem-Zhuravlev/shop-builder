@@ -9,11 +9,7 @@ export default {
 } as Meta<typeof ProductsFilter>;
 
 const Template: StoryFn<typeof ProductsFilter> = (args) => {
-	const handleSwitchLayout = (value: string) => {
-		action('switch layout')(value);
-	};
-
-	return <ProductsFilter handleSwitchLayout={handleSwitchLayout} />;
+	return <ProductsFilter />;
 };
 
 export const Default = Template.bind({});

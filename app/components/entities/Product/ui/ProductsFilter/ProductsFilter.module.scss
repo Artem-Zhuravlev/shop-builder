@@ -1,4 +1,6 @@
 .ProductsFilter {
 	display: flex;
+	align-items: center;
 	gap: var(--size-extra-small);
+	flex-wrap: wrap;
 }
