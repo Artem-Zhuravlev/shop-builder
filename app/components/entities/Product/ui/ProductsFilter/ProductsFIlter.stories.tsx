@@ -1,5 +1,6 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { ProductsFilter } from './ProductsFilter';
 
 export default {
@@ -8,7 +9,11 @@ export default {
 } as Meta<typeof ProductsFilter>;
 
 const Template: StoryFn<typeof ProductsFilter> = (args) => {
-	return <ProductsFilter />;
+	const handleSwitchLayout = (value: string) => {
+		action('switch layout')(value);
+	};
+
+	return <ProductsFilter handleSwitchLayout={handleSwitchLayout} />;
 };
 
 export const Default = Template.bind({});

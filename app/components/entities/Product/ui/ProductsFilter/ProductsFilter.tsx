@@ -2,10 +2,12 @@ import React, { FC } from 'react';
 import { ProductsFilterGridSwitcher } from './common/ProductsFilterGridSwitcher/ProductsFilterGridSwitcher';
 import cls from './ProductsFilter.module.scss';
 
-export const ProductsFilter: FC = () => {
-	const handleSwitchLayout = (value: string) => {
-		console.log(value);
-	};
+interface ProductsFilterProps {
+	handleSwitchLayout: (value: string) => void;
+}
+
+export const ProductsFilter: FC<ProductsFilterProps> = (props) => {
+	const { handleSwitchLayout } = props;
 
 	return (
 		<nav className={cls.ProductsFilter}>

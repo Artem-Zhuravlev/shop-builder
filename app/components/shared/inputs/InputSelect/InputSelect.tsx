@@ -1,7 +1,10 @@
-import React, { FC } from 'react';
+'use client';
+import React, { FC, useState } from 'react';
 import Select from 'react-select';
+import { Field } from 'react-final-form';
 import { GroupBase, OptionsOrGroups } from 'react-select';
 import { InputSelectStyles } from './InputSelectStyles';
+import { Label } from '../Label/Label';
 
 interface SelectProps<
 	Option = unknown,
@@ -32,20 +35,40 @@ export const InputSelect: FC<SelectProps> = (props) => {
 		value,
 	} = props;
 
+	const [error, setError] = useState(false);
+	const [errorMessage, setErrorMessage] = useState('');
+
+	const renderInputField = ({ input, ...rest }: any) => {
+		setError(!!rest.meta.error && rest.meta.touched && rest.meta.submitFailed);
+		setErrorMessage(rest.meta.error || '');
+
+		return (
+			<Select
+				{...input}
+				{...rest}
+			/>
+		);
+	};
+
 	return (
-		<Select
-			styles={InputSelectStyles}
-			options={options}
-			isDisabled={isDisabled}
-			isLoading={isLoading}
-			isClearable={isClearable}
-			isSearchable={isSearchable}
-			isMulti={isMulti}
-			value={value}
-			defaultValue={value}
-			menuPlacement='auto'
-			name={name}
-			placeholder={placeholder}
-		/>
+		<Label
+			hasError={error}
+			error={errorMessage}>
+			<Field
+				name={name}
+				options={options}
+				styles={InputSelectStyles}
+				isDisabled={isDisabled}
+				isLoading={isLoading}
+				isClearable={isClearable}
+				isSearchable={isSearchable}
+				isMulti={isMulti}
+				value={value}
+				defaultValue={value}
+				menuPlacement='auto'
+				placeholder={placeholder}>
+				{renderInputField}
+			</Field>
+		</Label>
 	);
 };

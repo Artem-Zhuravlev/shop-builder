@@ -1,15 +1,36 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
+import { AutoSave } from '@shared/inputs';
 import { InputSelect } from './InputSelect';
+import { Form } from 'react-final-form';
+import { action } from '@storybook/addon-actions';
 
 export default {
 	title: 'Shared/Inputs/InputSelect',
 	component: InputSelect,
 } as Meta<typeof InputSelect>;
 
-const Template: StoryFn<typeof InputSelect> = (args) => (
-	<InputSelect {...args} />
-);
+const Template: StoryFn<typeof InputSelect> = (args) => {
+	const onSubmit = (values: any) => {
+		action('onSubmit')(values);
+	};
+
+	return (
+		<Form onSubmit={onSubmit}>
+			{({ handleSubmit }) => (
+				<>
+					<div>
+						<AutoSave
+							debounce={0}
+							save={handleSubmit}
+						/>
+						<InputSelect {...args} />
+					</div>
+				</>
+			)}
+		</Form>
+	);
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -24,6 +45,7 @@ Default.args = {
 
 export const WithValue = Template.bind({});
 WithValue.args = {
+	name: 'select',
 	options: [
 		{ value: 'chocolate', label: 'Chocolate' },
 		{ value: 'strawberry', label: 'Strawberry' },
