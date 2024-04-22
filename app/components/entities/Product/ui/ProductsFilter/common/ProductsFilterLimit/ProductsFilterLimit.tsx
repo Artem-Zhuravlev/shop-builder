@@ -1,7 +1,7 @@
-import { AutoSave, InputSelect } from '@shared/inputs';
-import { useTranslations } from 'next-intl';
 import React, { FC } from 'react';
+import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';
+import { AutoSave, InputSelect } from '@shared/inputs';
 
 export const ProductsFilterLimit: FC = () => {
 	const t = useTranslations('base');

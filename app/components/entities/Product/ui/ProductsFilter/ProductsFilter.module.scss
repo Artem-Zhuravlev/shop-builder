@@ -1,6 +1,17 @@
+@import '@styles/abstracts/mixins.scss';
+
 .ProductsFilter {
 	display: flex;
 	align-items: center;
 	gap: var(--size-extra-small);
 	flex-wrap: wrap;
+
+	& > *:last-child {
+		max-width: 300px;
+		width: 100%;
+		margin-left: auto;
+		@include media('<tablet') {
+			margin-left: 0;
+		}
+	}
 }
