@@ -1,0 +1,21 @@
+.ProductsFilterGridSwitcher {
+	display: flex;
+	align-items: center;
+}
+
+.ProductsFilterGridSwitcherBtn {
+	display: grid;
+	place-items: center;
+	width: var(--size-small);
+	height: var(--size-small);
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 25px;
+	color: var(--gray-60);
+}
+
+.ProductsFilterGridSwitcherBtnActive {
+	color: var(--primary-main);
+}

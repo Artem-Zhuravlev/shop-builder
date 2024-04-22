@@ -49,6 +49,8 @@ export default {
 		hide: 'Приховати',
 		on: 'Вкл',
 		off: 'Викл',
+		grid: 'Сітка',
+		list: 'Список',
 	},
 	field_error: {
 		required: "Обов'язкове поле",

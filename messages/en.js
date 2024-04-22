@@ -49,6 +49,8 @@ export default {
 		hide: 'Hide',
 		on: 'On',
 		off: 'Off',
+		grid: 'Grid',
+		list: 'List',
 	},
 	field_error: {
 		required: 'Field is required',
