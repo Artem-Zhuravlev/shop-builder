@@ -3,8 +3,9 @@ import React, { FC, useState } from 'react';
 import Select from 'react-select';
 import { Field } from 'react-final-form';
 import { GroupBase, OptionsOrGroups } from 'react-select';
-import { InputSelectStyles } from './InputSelectStyles';
 import { Label } from '../Label/Label';
+import { InputSelectStyles } from './InputSelectStyles';
+import cls from './InputSelect.module.scss';
 
 interface SelectProps<
 	Option = unknown,
@@ -20,6 +21,7 @@ interface SelectProps<
 	options: OptionsOrGroups<Option, Group>;
 	placeholder: string;
 	value: object;
+	label?: string;
 }
 
 export const InputSelect: FC<SelectProps> = (props) => {
@@ -33,6 +35,7 @@ export const InputSelect: FC<SelectProps> = (props) => {
 		options,
 		placeholder,
 		value,
+		label,
 	} = props;
 
 	const [error, setError] = useState(false);
@@ -42,11 +45,20 @@ export const InputSelect: FC<SelectProps> = (props) => {
 		setError(!!rest.meta.error && rest.meta.touched && rest.meta.submitFailed);
 		setErrorMessage(rest.meta.error || '');
 
-		return (
+		const select = (
 			<Select
 				{...input}
 				{...rest}
 			/>
+		);
+
+		return label ? (
+			<label className={cls.InputSelectLabel}>
+				{label}
+				<div className={cls.InputSelectContainer}>{select}</div>
+			</label>
+		) : (
+			select
 		);
 	};
 

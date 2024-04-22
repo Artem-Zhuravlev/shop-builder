@@ -1,0 +1,10 @@
+.InputSelectLabel {
+	display: flex;
+	align-items: center;
+	gap: var(--interface-size-lg);
+	cursor: pointer;
+}
+
+.InputSelectContainer {
+	flex-grow: 1;
+}

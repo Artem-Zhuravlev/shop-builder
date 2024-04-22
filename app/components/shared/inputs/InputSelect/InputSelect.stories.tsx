@@ -53,3 +53,14 @@ WithValue.args = {
 	],
 	value: { value: 'chocolate', label: 'Chocolate' },
 };
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+	name: 'select',
+	label: 'Select:',
+	options: [
+		{ value: 'chocolate', label: 'Chocolate' },
+		{ value: 'strawberry', label: 'Strawberry' },
+		{ value: 'vanilla', label: 'Vanilla' },
+	],
+};
