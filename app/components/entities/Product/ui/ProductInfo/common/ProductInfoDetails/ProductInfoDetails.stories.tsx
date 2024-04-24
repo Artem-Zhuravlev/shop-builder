@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { ProductInfoDetails } from './ProductInfoDetails';
 
 export default {
-	title: 'Entities/Product/ProductInfoDetails',
+	title: 'Entities/Product/ProductInfo/ProductInfoDetails',
 	component: ProductInfoDetails,
 } as Meta<typeof ProductInfoDetails>;
 
