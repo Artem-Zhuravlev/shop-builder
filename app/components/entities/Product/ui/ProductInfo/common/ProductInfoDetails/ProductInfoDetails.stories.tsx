@@ -9,7 +9,7 @@ export default {
 
 const Template: StoryFn<typeof ProductInfoDetails> = (args) => {
 	return (
-		<div style={{ maxWidth: '300px' }}>
+		<div style={{ maxWidth: '570px' }}>
 			<ProductInfoDetails {...args} />
 		</div>
 	);
