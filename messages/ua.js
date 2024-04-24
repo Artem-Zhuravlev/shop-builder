@@ -66,6 +66,9 @@ export default {
 		grid: 'Сітка',
 		list: 'Список',
 		limit: 'Ліміт',
+		reviews:
+			'{count} {count, plural, one {1 Bідгук} few {Bідгуки} other {Bідгуків}}',
+		product_code: 'Код продукту',
 	},
 	field_error: {
 		required: "Обов'язкове поле",

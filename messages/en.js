@@ -66,6 +66,8 @@ export default {
 		grid: 'Grid',
 		list: 'List',
 		limit: 'Limit',
+		reviews: '{count, plural, =0 {No reviews} =1 {1 Review} other {# Reviews}}',
+		product_code: 'Product code',
 	},
 	field_error: {
 		required: 'Field is required',

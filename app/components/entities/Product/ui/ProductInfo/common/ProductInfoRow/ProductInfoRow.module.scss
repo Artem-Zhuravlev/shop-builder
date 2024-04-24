@@ -1,0 +1,7 @@
+.ProductInfoRow {
+	border-bottom: 1px solid var(--gray-40);
+	padding-bottom: var(--space-small);
+	&:not(:last-child) {
+		margin-bottom: var(--space-small);
+	}
+}
