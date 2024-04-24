@@ -1,11 +1,12 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
+import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import '@testing-library/jest-dom';
 import { SideDrawer } from './SideDrawer';
 
 describe('SideDrawer component', () => {
 	test('renders with or without a title', () => {
-		const { queryAllByTestId } = render(
+		const { queryAllByTestId } = customRender(
 			<SideDrawer
 				visible={true}
 				drawerClose={() => {}}>
@@ -18,7 +19,7 @@ describe('SideDrawer component', () => {
 
 	test('calls onDrawerClose when close button is clicked', () => {
 		const onDrawerCloseMock = jest.fn();
-		const { getByTestId } = render(
+		const { getByTestId } = customRender(
 			<SideDrawer
 				visible={true}
 				drawerClose={onDrawerCloseMock}>
@@ -33,7 +34,7 @@ describe('SideDrawer component', () => {
 
 	test('calls drawerClose when onDrawerClose is triggered', () => {
 		const drawerCloseMock = jest.fn();
-		const { getByTestId } = render(
+		const { getByTestId } = customRender(
 			<SideDrawer
 				visible={true}
 				drawerClose={drawerCloseMock}>

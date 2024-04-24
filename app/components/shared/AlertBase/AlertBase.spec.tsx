@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
+import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import { AlertBase } from './AlertBase';
 import { AlertItemProps } from './common/AlertItem';
 
@@ -12,7 +12,7 @@ describe('AlertBase Component', () => {
 	];
 
 	test('renders AlertBase component with alerts', () => {
-		render(<AlertBase alerts={mockAlerts} />);
+		customRender(<AlertBase alerts={mockAlerts} />);
 
 		const alertBaseElement = screen.getByTestId('alert-base');
 		expect(alertBaseElement).toBeInTheDocument();
@@ -24,7 +24,7 @@ describe('AlertBase Component', () => {
 	});
 
 	test('closes an alert when the close button is clicked', () => {
-		render(<AlertBase alerts={mockAlerts} />);
+		customRender(<AlertBase alerts={mockAlerts} />);
 
 		const closeButtons = screen.getAllByTestId((id) =>
 			id.startsWith('alert-close')

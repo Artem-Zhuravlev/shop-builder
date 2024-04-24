@@ -1,12 +1,13 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
+import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import '@testing-library/jest-dom';
 import { InputNumber } from './InputNumber';
 
 describe('InputNumber Component', () => {
 	it('increments the value when the increment button is clicked', async () => {
 		const mockOnNumberChange = jest.fn();
-		const { getByText } = render(
+		const { getByText } = customRender(
 			<InputNumber
 				value={0}
 				onNumberChange={mockOnNumberChange}
@@ -23,7 +24,7 @@ describe('InputNumber Component', () => {
 
 	it('decrements the value when the decrement button is clicked', async () => {
 		const mockOnNumberChange = jest.fn();
-		const { getByText } = render(
+		const { getByText } = customRender(
 			<InputNumber
 				value={2}
 				onNumberChange={mockOnNumberChange}
@@ -40,7 +41,7 @@ describe('InputNumber Component', () => {
 
 	it('updates the value when input is changed', () => {
 		const mockOnNumberChange = jest.fn();
-		const { getByRole } = render(
+		const { getByRole } = customRender(
 			<InputNumber
 				value={0}
 				onNumberChange={mockOnNumberChange}
@@ -55,7 +56,7 @@ describe('InputNumber Component', () => {
 
 	it('does not decrement the value if it is already 0', () => {
 		const mockOnNumberChange = jest.fn();
-		const { getByText } = render(
+		const { getByText } = customRender(
 			<InputNumber
 				value={0}
 				onNumberChange={mockOnNumberChange}
@@ -70,7 +71,7 @@ describe('InputNumber Component', () => {
 
 	it('calls onNumberChange with the incremented value', async () => {
 		const mockOnNumberChange = jest.fn();
-		const { getByText } = render(
+		const { getByText } = customRender(
 			<InputNumber
 				value={5}
 				onNumberChange={mockOnNumberChange}
