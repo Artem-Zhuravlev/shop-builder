@@ -1,16 +1,16 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
-import { InfoList } from './InfoList';
+import { ProductInfoDetails } from './ProductInfoDetails';
 
 export default {
-	title: 'Features/Lists/InfoList',
-	component: InfoList,
-} as Meta<typeof InfoList>;
+	title: 'Entities/Product/ProductInfoDetails',
+	component: ProductInfoDetails,
+} as Meta<typeof ProductInfoDetails>;
 
-const Template: StoryFn<typeof InfoList> = (args) => {
+const Template: StoryFn<typeof ProductInfoDetails> = (args) => {
 	return (
 		<div style={{ maxWidth: '300px' }}>
-			<InfoList {...args} />
+			<ProductInfoDetails {...args} />
 		</div>
 	);
 };

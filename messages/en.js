@@ -41,6 +41,9 @@ export default {
 	},
 	base: {
 		brand: 'Brand',
+		viewed: 'Viewed',
+		reward_points: 'Reward Points',
+		availability: 'Availability',
 		burger_label: 'Burger button',
 		compare: 'Compare',
 		wishlist: 'Wishlist',

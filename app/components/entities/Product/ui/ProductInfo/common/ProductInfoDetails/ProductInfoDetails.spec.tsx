@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { InfoList, Availability } from './InfoList';
+import { ProductInfoDetails, Availability } from './ProductInfoDetails';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
 
 const item = {
@@ -15,7 +15,9 @@ const item = {
 
 describe('InfoList Component', () => {
 	test('renders brand, viewed, reward points, and availability', () => {
-		const { container, getByText } = customRender(<InfoList {...item} />);
+		const { container, getByText } = customRender(
+			<ProductInfoDetails {...item} />
+		);
 
 		const brandElement = getByText(item.brand.name);
 		const viewedElement = getByText(item.viewed.toString());
@@ -43,7 +45,7 @@ describe('InfoList Component', () => {
 		};
 
 		const { queryByText } = customRender(
-			<InfoList {...itemWithoutOptionalProps} />
+			<ProductInfoDetails {...itemWithoutOptionalProps} />
 		);
 
 		const rewardPointsElement = queryByText('Reward Points');

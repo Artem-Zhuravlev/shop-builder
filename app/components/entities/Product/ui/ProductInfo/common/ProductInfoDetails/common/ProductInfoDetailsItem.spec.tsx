@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { InfoListItem } from './InfoListItem';
+import { ProductInfoDetailsItem } from './ProductInfoDetailsItem';
 
 describe('InfoListItem Component', () => {
 	test('renders label and children correctly', () => {
@@ -9,7 +9,9 @@ describe('InfoListItem Component', () => {
 		const childrenText = 'Test Children';
 
 		const { getByText } = render(
-			<InfoListItem label={label}>{childrenText}</InfoListItem>
+			<ProductInfoDetailsItem label={label}>
+				{childrenText}
+			</ProductInfoDetailsItem>
 		);
 
 		const renderedLabel = getByText(label);

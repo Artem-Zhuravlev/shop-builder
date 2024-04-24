@@ -41,6 +41,9 @@ export default {
 	},
 	base: {
 		brand: 'Бренд',
+		viewed: 'Переглянуто',
+		reward_points: 'Бали',
+		availability: 'Наявність',
 		burger_label: 'Бургер кнопка',
 		compare: 'Порівняти',
 		wishlist: 'Обране',

@@ -20,4 +20,11 @@ Default.args = {
 	title: 'iPod Nano',
 	productCode: 'Product ipod',
 	reviews: 3,
+	brand: {
+		name: 'HTC',
+		to: '/htc',
+	},
+	viewed: 23211,
+	rewardPoints: 400,
+	availability: 'In stock',
 };
