@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import cls from '../ProductInfoDetails.module.scss';
+import cls from './ProductInfoDetails.module.scss';
 
 interface ProductInfoDetailsItemProps {
 	children: ReactNode;

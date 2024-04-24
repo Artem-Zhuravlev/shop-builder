@@ -1,7 +1,7 @@
 import React, { FC, useMemo } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { ProductInfoDetailsItem } from './common/ProductInfoDetailsItem';
+import { ProductInfoDetailsItem } from './ProductInfoDetailsItem';
 import { ProductInfoRow } from '../ProductInfoRow/ProductInfoRow';
 import cls from './ProductInfoDetails.module.scss';
 
