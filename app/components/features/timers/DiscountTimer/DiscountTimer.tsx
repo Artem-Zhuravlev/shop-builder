@@ -14,7 +14,7 @@ interface DiscountTimerProps {
 
 export const DiscountTimer: FC<DiscountTimerProps> = (props) => {
 	const { deadline, discount, image, title } = props;
-	const t = useTranslations('base');
+	const t = useTranslations('product');
 
 	return (
 		<ContainerBase className={cls.DiscountTimer}>

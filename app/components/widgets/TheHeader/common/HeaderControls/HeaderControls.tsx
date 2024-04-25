@@ -17,7 +17,7 @@ export const HeaderControls: FC<HeaderControlsProps> = (props) => {
 		handleWishlist,
 	} = props;
 
-	const t = useTranslations('base');
+	const t = useTranslations('product');
 
 	return (
 		<div className={cls.HeaderControls}>

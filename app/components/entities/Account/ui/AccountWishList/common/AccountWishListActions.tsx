@@ -13,11 +13,11 @@ export const AccountWishListActions: FC<AccountWishListActionsProps> = (
 	props
 ) => {
 	const { slug, addToCart, removeFromWishList } = props;
-	const t = useTranslations('base');
+	const t = useTranslations('');
 
 	return (
 		<div className={cls.AccountWishListActions}>
-			<TooltipBase content={t('add_to_cart')}>
+			<TooltipBase content={t('product.add_to_cart')}>
 				<button
 					type='button'
 					onClick={() => addToCart(slug)}
@@ -26,7 +26,7 @@ export const AccountWishListActions: FC<AccountWishListActionsProps> = (
 				</button>
 			</TooltipBase>
 
-			<TooltipBase content={t('remove')}>
+			<TooltipBase content={t('base.remove')}>
 				<button
 					type='button'
 					onClick={() => removeFromWishList(slug)}

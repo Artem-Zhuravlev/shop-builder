@@ -1,17 +1,18 @@
 'use client';
 import React, { FC, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import cls from './TimerBase.module.scss';
 import classNames from 'classnames';
+import cls from './TimerBase.module.scss';
 
 interface TimerBaseProps {
+	className?: string;
 	deadline: string;
 	secondary?: boolean;
 	small?: boolean;
 }
 
 export const TimerBase: FC<TimerBaseProps> = (props) => {
-	const { deadline, secondary, small } = props;
+	const { className, deadline, secondary, small } = props;
 	const t = useTranslations('base');
 	const [days, setDays] = useState(0);
 	const [hours, setHours] = useState(0);
@@ -32,7 +33,7 @@ export const TimerBase: FC<TimerBaseProps> = (props) => {
 		return () => clearInterval(interval);
 	}, []);
 
-	const timerBaseClasses = classNames(cls.TimerBase, {
+	const timerBaseClasses = classNames(cls.TimerBase, className, {
 		[cls.TimerBaseSecondary]: secondary,
 		[cls.TimerBaseSmall]: small,
 	});

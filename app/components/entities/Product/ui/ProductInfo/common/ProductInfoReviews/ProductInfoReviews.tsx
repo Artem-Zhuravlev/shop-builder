@@ -12,7 +12,7 @@ interface ProductInfoReviewsProps {
 
 export const ProductInfoReviews: FC<ProductInfoReviewsProps> = (props) => {
 	const { productCode, rating, reviews } = props;
-	const t = useTranslations('base');
+	const t = useTranslations('product');
 
 	return (
 		<ProductInfoRow className={cls.ProductInfoReviews}>
