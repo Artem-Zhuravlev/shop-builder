@@ -28,7 +28,7 @@
 
 .ProductInfoTimer {
 	margin-left: auto;
-	@include media('<tablet') {
+	@include media('<520px') {
 		margin-left: 0;
 	}
 }

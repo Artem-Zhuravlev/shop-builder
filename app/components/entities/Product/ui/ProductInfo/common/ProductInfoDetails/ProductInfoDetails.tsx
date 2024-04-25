@@ -18,7 +18,7 @@ export interface ProductInfoDetailsProps {
 
 export const ProductInfoDetails: FC<ProductInfoDetailsProps> = (props) => {
 	const { availability, brand, rewardPoints, viewed } = props;
-	const t = useTranslations('base');
+	const t = useTranslations();
 
 	const labelClass = useMemo(() => {
 		if (availability && availability === 'In stock') {
@@ -31,23 +31,23 @@ export const ProductInfoDetails: FC<ProductInfoDetailsProps> = (props) => {
 	return (
 		<ProductInfoRow>
 			<ul className={cls.ProductInfoDetails}>
-				<ProductInfoDetailsItem label={t('brand')}>
+				<ProductInfoDetailsItem label={t('base.brand')}>
 					<Link
 						className={cls.ProductInfoDetailsLink}
 						href={brand.to}>
 						{brand.name}
 					</Link>
 				</ProductInfoDetailsItem>
-				<ProductInfoDetailsItem label={t('viewed')}>
+				<ProductInfoDetailsItem label={t('base.viewed')}>
 					{viewed}
 				</ProductInfoDetailsItem>
 				{rewardPoints && (
-					<ProductInfoDetailsItem label={t('reward_points')}>
+					<ProductInfoDetailsItem label={t('product.reward_points')}>
 						{rewardPoints}
 					</ProductInfoDetailsItem>
 				)}
 				{availability && (
-					<ProductInfoDetailsItem label={t('availability')}>
+					<ProductInfoDetailsItem label={t('base.availability')}>
 						<span className={labelClass}>{availability}</span>
 					</ProductInfoDetailsItem>
 				)}

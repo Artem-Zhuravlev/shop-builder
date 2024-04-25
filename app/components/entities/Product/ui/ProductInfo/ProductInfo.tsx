@@ -3,10 +3,14 @@ import {
 	ProductInfoReviews,
 	ProductInfoDetails,
 	ProductInfoDetailsProps,
+	ProductInfoPriceProps,
 } from './common';
 import cls from './ProductInfo.module.scss';
+import { ProductInfoPrice } from './common/ProductInfoPrice/ProductInfoPrice';
 
-interface ProductInfoProps extends ProductInfoDetailsProps {
+interface ProductInfoProps
+	extends ProductInfoDetailsProps,
+		ProductInfoPriceProps {
 	productCode: string | number;
 	title: string;
 	reviews: number;
@@ -21,6 +25,10 @@ export const ProductInfo: FC<ProductInfoProps> = (props) => {
 		brand,
 		rewardPoints,
 		viewed,
+		price,
+		oldPrice,
+		discount,
+		deadline,
 	} = props;
 
 	return (
@@ -36,6 +44,12 @@ export const ProductInfo: FC<ProductInfoProps> = (props) => {
 				brand={brand}
 				rewardPoints={rewardPoints}
 				viewed={viewed}
+			/>
+			<ProductInfoPrice
+				price={price}
+				oldPrice={oldPrice}
+				discount={discount}
+				deadline={deadline}
 			/>
 		</div>
 	);

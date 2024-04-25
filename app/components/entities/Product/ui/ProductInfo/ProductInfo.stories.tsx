@@ -27,4 +27,8 @@ Default.args = {
 	viewed: 23211,
 	rewardPoints: 400,
 	availability: 'In stock',
+	price: 1000,
+	oldPrice: 1200,
+	discount: 10,
+	deadline: '2024-07-10',
 };

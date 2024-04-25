@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 import cls from './ProductInfoPrice.module.scss';
+import { useTranslations } from 'next-intl';
 import { useSelector } from '@lib/redux';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import { TimerBase } from '@shared/TimerBase/TimerBase';
 import { ProductInfoRow } from '../ProductInfoRow/ProductInfoRow';
 
-interface ProductInfoPriceProps {
+export interface ProductInfoPriceProps {
 	price: number;
 	oldPrice?: number;
 	discount?: number;
@@ -14,6 +15,7 @@ interface ProductInfoPriceProps {
 
 export const ProductInfoPrice: FC<ProductInfoPriceProps> = (props) => {
 	const { price, oldPrice, discount, deadline } = props;
+	const t = useTranslations('product');
 	const currency = useSelector((state) => state.product.currency);
 
 	return (
@@ -27,7 +29,7 @@ export const ProductInfoPrice: FC<ProductInfoPriceProps> = (props) => {
 				</del>
 			)}
 			{discount && (
-				<TooltipBase content='Discount price'>
+				<TooltipBase content={t('discount_price')}>
 					<div className={cls.ProductInfoDiscount}>
 						-{discount}% <span className='icon-question' />
 					</div>
