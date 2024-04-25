@@ -3,6 +3,7 @@ import { Rating, RatingProps } from 'react-simple-star-rating';
 
 export const InputRating: FC<RatingProps> = (props) => {
 	const {
+		className,
 		initialValue,
 		allowFraction,
 		allowHover,
@@ -18,6 +19,7 @@ export const InputRating: FC<RatingProps> = (props) => {
 
 	return (
 		<Rating
+			className={className}
 			onClick={onClick}
 			onPointerMove={onPointerMove}
 			onPointerEnter={onPointerEnter}

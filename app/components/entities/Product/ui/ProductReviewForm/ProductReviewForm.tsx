@@ -30,13 +30,16 @@ export const ProductReviewForm: FC = () => {
 			<Form onSubmit={onSubmit}>
 				{({ handleSubmit, submitting }) => (
 					<>
-						<h4>{t('inputs.write_review')}</h4>
+						<h4 className={cls.ProductReviewFormTitle}>
+							{t('inputs.write_review')}
+						</h4>
 						<form
 							onSubmit={handleSubmit}
 							className={cls.ProductReviewForm}>
 							<InputRating
 								initialValue={rating}
 								onClick={handleRating}
+								className={cls.ProductReviewFormRating}
 							/>
 							<InputText
 								name='name'
