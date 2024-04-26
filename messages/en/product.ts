@@ -8,4 +8,6 @@ export const product = {
 	compare: 'Compare',
 	wishlist: 'Wishlist',
 	reward_points: 'Reward Points',
+	buy_now: 'Buy Now',
+	compare_product: 'Compare this product',
 };

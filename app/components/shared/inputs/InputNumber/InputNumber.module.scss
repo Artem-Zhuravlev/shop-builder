@@ -10,6 +10,7 @@
 		font-family: var(--font-family);
 		color: var(--gray-90);
 		border-radius: var(--interface-size-sm);
+		width: 100%;
 
 		-moz-appearance: textfield;
 		&::-webkit-outer-spin-button,

@@ -9,4 +9,6 @@ export const product = {
 	compare: 'Порівняти',
 	wishlist: 'Обране',
 	reward_points: 'Бали',
+	buy_now: 'Купити зараз',
+	compare_product: 'Порівняти цей продукт',
 };
