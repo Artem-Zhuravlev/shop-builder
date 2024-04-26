@@ -3,7 +3,6 @@
 .ProductInfoBenefits {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	gap: var(--size-extra-small);
 	align-items: center;
 	@extend %listreset;
@@ -17,7 +16,7 @@
 	align-items: center;
 	gap: var(--space-small);
 	font-weight: 700;
-	font-size: var(--heading-5);
+	font-size: var(--heading-6);
 
 	span {
 		color: var(--danger-hover);

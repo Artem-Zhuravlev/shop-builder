@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
@@ -12,6 +13,7 @@ interface AccountNavProps {
 export const AccountNav: FC<AccountNavProps> = (props) => {
 	const { items } = props;
 	const pathname = usePathname();
+	const t = useTranslations('account.nav');
 
 	return (
 		<ul className={cls.AccountNav}>
@@ -26,7 +28,7 @@ export const AccountNav: FC<AccountNavProps> = (props) => {
 								[cls.AccountNavLinkActive]: pathname === item.to,
 							})}>
 							<span className={item.icon} />
-							{item.value}
+							{t(item.value)}
 						</Link>
 					</li>
 				))}
