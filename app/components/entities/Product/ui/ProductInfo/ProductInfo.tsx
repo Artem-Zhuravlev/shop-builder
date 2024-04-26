@@ -5,6 +5,7 @@ import {
 	ProductInfoDetailsProps,
 	ProductInfoPriceProps,
 	ProductInfoControls,
+	ProductInfoBenefits,
 } from './common';
 import cls from './ProductInfo.module.scss';
 import { ProductInfoPrice } from './common/ProductInfoPrice/ProductInfoPrice';
@@ -53,6 +54,7 @@ export const ProductInfo: FC<ProductInfoProps> = (props) => {
 				deadline={deadline}
 			/>
 			<ProductInfoControls />
+			<ProductInfoBenefits />
 		</div>
 	);
 };

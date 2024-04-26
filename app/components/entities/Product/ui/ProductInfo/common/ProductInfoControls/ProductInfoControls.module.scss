@@ -6,6 +6,7 @@
 	padding: var(--size-extra-small);
 	border: 1px solid var(--gray-40);
 	background-color: var(--gray-20);
+	margin-bottom: var(--space-small);
 
 	@include media('<desktop') {
 		grid-template-columns: repeat(2, 1fr);

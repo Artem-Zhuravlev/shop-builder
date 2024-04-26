@@ -1,0 +1,25 @@
+@import '@styles/abstracts/mixins.scss';
+
+.ProductInfoBenefits {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: var(--size-extra-small);
+	align-items: center;
+	@extend %listreset;
+	@include media('<phone') {
+		justify-content: flex-start;
+	}
+}
+
+.ProductInfoBenefitsItem {
+	display: flex;
+	align-items: center;
+	gap: var(--space-small);
+	font-weight: 700;
+	font-size: var(--heading-5);
+
+	span {
+		color: var(--danger-hover);
+	}
+}

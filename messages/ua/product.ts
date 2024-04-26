@@ -11,4 +11,7 @@ export const product = {
 	reward_points: 'Бали',
 	buy_now: 'Купити зараз',
 	compare_product: 'Порівняти цей продукт',
+	online_payment: 'Онлайн платіж',
+	easy_return: 'Швидке повернення',
+	all_day_service: '24x7 Послуги',
 };
