@@ -3,35 +3,45 @@ import React, { FC, useState, InputHTMLAttributes } from 'react';
 import { useTranslations } from 'next-intl';
 import cls from './InputNumber.module.scss';
 import { ButtonBase } from '@shared/ButtonBase';
+import { Field, useForm, useFormState } from 'react-final-form';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-	value: number;
-	onNumberChange: (value: number) => void;
+	name: string;
 }
 
 export const InputNumber: FC<InputProps> = (props) => {
-	const { value = 0, onNumberChange } = props;
-	const [numberValue, setNumberValue] = useState<number>(value);
+	const { name } = props;
 	const t = useTranslations();
+	const form = useForm();
+	const formState = useFormState();
+	const inputValue = formState.values[name];
 
 	const handleDecrement = () => {
-		if (numberValue > 0) {
-			const updatedValue = numberValue - 1;
-			setNumberValue(updatedValue);
-			onNumberChange(updatedValue);
+		if (inputValue > 0) {
+			form.change(name, parseInt(inputValue) - 1);
 		}
 	};
 
 	const handleIncrement = () => {
-		const updatedValue = numberValue + 1;
-		setNumberValue(updatedValue);
-		onNumberChange(updatedValue);
+		form.change(name, parseInt(inputValue) + 1);
 	};
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const newValue = parseInt(e.target.value, 10) || 0;
-		setNumberValue(newValue);
-		onNumberChange(newValue);
+	const renderInputField = ({ input }: any) => {
+		const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+			const { value } = e.target;
+			if (value === '') {
+				form.change(name, 0);
+			}
+		};
+
+		return (
+			<input
+				{...input}
+				min={0}
+				aria-label={t('inputs.number_label')}
+				onBlur={handleBlur}
+			/>
+		);
 	};
 
 	return (
@@ -41,12 +51,12 @@ export const InputNumber: FC<InputProps> = (props) => {
 				aria-label={t('base.decrement')}>
 				-
 			</ButtonBase>
-			<input
+			<Field
+				name={name}
 				type='number'
-				value={numberValue.toString()}
-				onChange={handleChange}
-				aria-label={t('inputs.number_label')}
-			/>
+				component='input'>
+				{renderInputField}
+			</Field>
 			<ButtonBase
 				onClick={handleIncrement}
 				aria-label={t('base.increment')}>

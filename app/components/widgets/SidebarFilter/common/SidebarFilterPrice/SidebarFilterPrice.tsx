@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useState, useMemo, useCallback } from 'react';
+import React, { FC, useState, useMemo, useCallback, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';
 import { FORM_SUBMIT_DEBOUNCE_DELAY } from '@constants/easing.constants';
@@ -27,12 +27,15 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 		}
 	}, []);
 
-	const handleSubmit = useCallback(() => {
+	useEffect(() => {
+		setTimeout(() => handleSubmit(), FORM_SUBMIT_DEBOUNCE_DELAY);
+	}, [minValue, maxValue]);
+
+	const handleSubmit = () => {
 		if (defaultMin !== minValue || (defaultMax !== maxValue && !resetMode)) {
 			setResetMode(true);
-			console.log('submit');
 		}
-	}, [defaultMin, defaultMax, minValue, maxValue, resetMode]);
+	};
 
 	const handleInputChange = useCallback(
 		(
@@ -59,11 +62,6 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 		setMaxValue(defaultMax);
 	}, [defaultMin, defaultMax]);
 
-	const inputRangeDefaultValue = useMemo(
-		() => [defaultMin, defaultMax],
-		[defaultMin, defaultMax]
-	);
-
 	return (
 		<Form
 			onSubmit={handleSubmit}
@@ -84,7 +82,7 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 								className='col-12'
 								min={min}
 								max={max}
-								defaultValue={inputRangeDefaultValue}
+								defaultValue={[defaultMin, defaultMax]}
 								value={[minValue, maxValue]}
 								range
 								onChange={handleRange}

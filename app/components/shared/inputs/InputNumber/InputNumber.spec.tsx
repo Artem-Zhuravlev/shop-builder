@@ -1,88 +1,69 @@
 import React from 'react';
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import '@testing-library/jest-dom';
 import { InputNumber } from './InputNumber';
+import { Form } from 'react-final-form';
 
-describe('InputNumber Component', () => {
-	it('increments the value when the increment button is clicked', async () => {
-		const mockOnNumberChange = jest.fn();
-		const { getByText } = customRender(
-			<InputNumber
-				value={0}
-				onNumberChange={mockOnNumberChange}
-			/>
+describe('InputNumber component', () => {
+	it('renders without crashing', () => {
+		const { getByLabelText } = customRender(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputNumber name='test' />
+					</form>
+				)}
+			</Form>
 		);
-
-		const incrementButton = getByText('+');
-		fireEvent.click(incrementButton);
-
-		await waitFor(() => {
-			expect(mockOnNumberChange).toHaveBeenCalledWith(1);
-		});
+		expect(getByLabelText('Input number field')).toBeInTheDocument();
 	});
 
-	it('decrements the value when the decrement button is clicked', async () => {
-		const mockOnNumberChange = jest.fn();
-		const { getByText } = customRender(
-			<InputNumber
-				value={2}
-				onNumberChange={mockOnNumberChange}
-			/>
+	it('increments value correctly', () => {
+		const { getByText, getByLabelText } = customRender(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputNumber name='test' />
+					</form>
+				)}
+			</Form>
 		);
-
-		const decrementButton = getByText('-');
-		fireEvent.click(decrementButton);
-
-		await waitFor(() => {
-			expect(mockOnNumberChange).toHaveBeenCalledWith(1);
-		});
-	});
-
-	it('updates the value when input is changed', () => {
-		const mockOnNumberChange = jest.fn();
-		const { getByRole } = customRender(
-			<InputNumber
-				value={0}
-				onNumberChange={mockOnNumberChange}
-			/>
-		);
-
-		const input = getByRole('spinbutton');
+		const input = getByLabelText('Input number field') as HTMLInputElement;
 		fireEvent.change(input, { target: { value: '5' } });
-
-		expect(mockOnNumberChange).toHaveBeenCalledWith(5);
+		fireEvent.click(getByText('+'));
+		expect(input.value).toBe('6');
 	});
 
-	it('does not decrement the value if it is already 0', () => {
-		const mockOnNumberChange = jest.fn();
-		const { getByText } = customRender(
-			<InputNumber
-				value={0}
-				onNumberChange={mockOnNumberChange}
-			/>
+	it('decrements value correctly', () => {
+		const { getByText, getByLabelText } = customRender(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputNumber name='test' />
+					</form>
+				)}
+			</Form>
 		);
-
-		const decrementButton = getByText('-');
-		fireEvent.click(decrementButton);
-
-		expect(mockOnNumberChange).not.toHaveBeenCalled();
+		const input = getByLabelText('Input number field') as HTMLInputElement;
+		fireEvent.change(input, { target: { value: '5' } });
+		fireEvent.click(getByText('-'));
+		expect(input.value).toBe('4');
 	});
 
-	it('calls onNumberChange with the incremented value', async () => {
-		const mockOnNumberChange = jest.fn();
-		const { getByText } = customRender(
-			<InputNumber
-				value={5}
-				onNumberChange={mockOnNumberChange}
-			/>
+	it('does not allow decrementing below 0', () => {
+		const { getByText, getByLabelText } = customRender(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputNumber name='test' />
+					</form>
+				)}
+			</Form>
 		);
-
-		const incrementButton = getByText('+');
-		fireEvent.click(incrementButton);
-
-		await waitFor(() => {
-			expect(mockOnNumberChange).toHaveBeenCalledWith(6);
-		});
+		const input = getByLabelText('Input number field') as HTMLInputElement;
+		fireEvent.change(input, { target: { value: '0' } });
+		fireEvent.click(getByText('-'));
+		expect(input.value).toBe('0');
 	});
 });
