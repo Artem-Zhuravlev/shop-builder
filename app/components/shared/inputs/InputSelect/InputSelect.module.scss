@@ -8,3 +8,15 @@
 .InputSelectContainer {
 	flex-grow: 1;
 }
+
+.InputSelectError {
+	:global {
+		[class*='-control'] {
+			&,
+			&:hover,
+			&:focus {
+				border-color: var(--danger-main);
+			}
+		}
+	}
+}

@@ -14,4 +14,10 @@ export const inputs = {
 		link: 'Privacy Policy',
 	},
 	number_label: 'Input number field',
+	address: 'Address',
+	company: 'Company',
+	city: 'City',
+	post_code: 'Post Code',
+	country: 'Country',
+	region: 'Region / State',
 };

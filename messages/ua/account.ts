@@ -9,6 +9,7 @@ export const account = {
 		action: 'Дія',
 	},
 	register: 'Реєстрація аккаунту',
+	add_address: 'Додати адресу',
 	nav: {
 		login: 'Логін',
 		register: 'Реєстрація',

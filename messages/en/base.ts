@@ -22,4 +22,6 @@ export const base = {
 	grid: 'Grid',
 	list: 'List',
 	limit: 'Limit',
+	back: 'Back',
+	save: 'Save',
 };

@@ -23,7 +23,7 @@ export const InputSelectStyles = {
 			borderRadius: 'var(--interface-size-sm)',
 			borderColor,
 			minHeight: 'var(--input-height)',
-			boxShadow: 'none',
+			boxShadow: 'none!important',
 			backgroundColor: controlBackground({ isDisabled }),
 			cursor: 'pointer',
 			'&:hover': {

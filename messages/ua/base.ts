@@ -22,4 +22,6 @@ export const base = {
 	grid: 'Сітка',
 	list: 'Список',
 	limit: 'Ліміт',
+	back: 'Назад',
+	save: 'Зберегти',
 };

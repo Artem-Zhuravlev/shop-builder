@@ -14,4 +14,10 @@ export const inputs = {
 		link: 'Політикою Конфіденційності',
 	},
 	number_label: 'Введіть число',
+	address: 'Адреса',
+	company: 'Компанія',
+	city: 'Місто',
+	post_code: 'Поштовий індекс',
+	country: 'Країна',
+	region: 'Регіон / Область',
 };

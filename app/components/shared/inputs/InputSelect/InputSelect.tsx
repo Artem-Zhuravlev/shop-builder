@@ -1,11 +1,15 @@
 'use client';
 import React, { FC, useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { TranslateFunction } from '@utils/validations/types/TranslateFunction';
 import Select from 'react-select';
 import { Field } from 'react-final-form';
 import { GroupBase, OptionsOrGroups } from 'react-select';
+import { getValidationMessage } from '@utils/validations';
 import { Label } from '../Label/Label';
 import { InputSelectStyles } from './InputSelectStyles';
 import cls from './InputSelect.module.scss';
+import { CSSObject } from '@emotion/styled';
 
 interface SelectProps<
 	Option = unknown,
@@ -21,8 +25,13 @@ interface SelectProps<
 	name: string;
 	options: OptionsOrGroups<Option, Group>;
 	placeholder: string;
-	value: object;
+	required?: boolean;
+	value?: object;
 	label?: string;
+	validationHandler?: (
+		value: string | object,
+		t: TranslateFunction
+	) => string | void;
 }
 
 export const InputSelect: FC<SelectProps> = (props) => {
@@ -36,12 +45,15 @@ export const InputSelect: FC<SelectProps> = (props) => {
 		name,
 		options,
 		placeholder,
+		required = false,
 		value,
 		label,
+		validationHandler,
 	} = props;
 
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
+	const t = useTranslations();
 
 	const renderInputField = ({ input, ...rest }: any) => {
 		setError(!!rest.meta.error && rest.meta.touched && rest.meta.submitFailed);
@@ -51,6 +63,7 @@ export const InputSelect: FC<SelectProps> = (props) => {
 			<Select
 				{...input}
 				{...rest}
+				className={error ? cls.InputSelectError : ''}
 			/>
 		);
 
@@ -81,7 +94,10 @@ export const InputSelect: FC<SelectProps> = (props) => {
 				value={value}
 				defaultValue={value}
 				menuPlacement='auto'
-				placeholder={placeholder}>
+				placeholder={placeholder}
+				validate={(value) =>
+					getValidationMessage(value, required, t, validationHandler)
+				}>
 				{renderInputField}
 			</Field>
 		</Label>

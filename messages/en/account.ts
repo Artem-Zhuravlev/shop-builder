@@ -9,6 +9,7 @@ export const account = {
 		action: 'Action',
 	},
 	register: 'Register Account',
+	add_address: 'Add Address',
 	nav: {
 		login: 'Login',
 		register: 'Register',

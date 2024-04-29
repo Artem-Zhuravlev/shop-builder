@@ -5,8 +5,13 @@ import { TranslateFunction } from './types/TranslateFunction';
  * @param {string | number} value - The value to check.
  * @returns {boolean} - True if the value is empty (empty string or 0), false otherwise.
  */
-const isEmpty = (value: string | number): boolean => {
-	return value === undefined;
+const isEmpty = (value: string | number | object): boolean => {
+	if (typeof value === 'string' || Array.isArray(value)) {
+		return value.length === 0;
+	} else if (typeof value === 'object' && value !== null) {
+		return Object.keys(value).length === 0;
+	}
+	return value === undefined || value === null;
 };
 
 /**
@@ -22,10 +27,13 @@ const isEmpty = (value: string | number): boolean => {
  */
 
 export const getValidationMessage = (
-	value: string,
+	value: string | object,
 	required: boolean,
 	t: TranslateFunction,
-	validationHandler?: (value: string, t: TranslateFunction) => string | void
+	validationHandler?: (
+		value: string | object,
+		t: TranslateFunction
+	) => string | void
 ): string | void => {
 	if (required && isEmpty(value) && !validationHandler) {
 		return t('field_error.required');
