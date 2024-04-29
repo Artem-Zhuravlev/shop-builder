@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import { Form } from 'react-final-form';
-import { confirmPasswordValidate } from '@utils/validations';
+import { confirmPasswordValidate, passwordValidate } from '@utils/validations';
 import { AccountFormControls } from '../AccountFormControls/AccountFormControls';
 import cls from './AccountChangePasswordForm.module.scss';
 import { InputPassword } from '@shared/inputs';
@@ -24,6 +24,7 @@ export const AccountChangePasswordForm: FC = () => {
 							type='password'
 							name='password'
 							placeholder={t('inputs.password')}
+							validationHandler={passwordValidate}
 							required
 						/>
 						<InputPassword
