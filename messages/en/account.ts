@@ -10,6 +10,7 @@ export const account = {
 	},
 	register: 'Register Account',
 	add_address: 'Add Address',
+	change_password: 'Change Password',
 	nav: {
 		login: 'Login',
 		register: 'Register',

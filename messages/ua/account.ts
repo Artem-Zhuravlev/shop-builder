@@ -10,6 +10,7 @@ export const account = {
 	},
 	register: 'Реєстрація аккаунту',
 	add_address: 'Додати адресу',
+	change_password: 'Змінити пароль',
 	nav: {
 		login: 'Логін',
 		register: 'Реєстрація',

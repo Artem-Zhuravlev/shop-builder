@@ -9,4 +9,5 @@ export const field_error = {
 		'Password must contain at least one uppercase letter.',
 	phone_not_valid: 'Phone number is not valid.',
 	post_code_not_valid: 'Postcode must be between 2 and 10 characters!',
+	passwords_do_not_match: 'Password confirmation does not match password!',
 };

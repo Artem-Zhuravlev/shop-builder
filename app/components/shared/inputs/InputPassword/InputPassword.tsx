@@ -13,18 +13,22 @@ export enum InputType {
 }
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-	id?: string;
+	additionalValue?: string;
 	name: string;
-	value: string;
+	value?: string;
 	required?: boolean;
 	onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
 	onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
-	validationHandler?: (value: string, t: TranslateFunction) => string | void;
+	validationHandler?: (
+		value: string,
+		t: TranslateFunction,
+		additionalValue?: string
+	) => string | void;
 }
 
 export const InputPassword: FC<InputProps> = (props) => {
 	const {
-		id,
+		additionalValue,
 		name = 'field',
 		disabled,
 		placeholder,
@@ -58,7 +62,6 @@ export const InputPassword: FC<InputProps> = (props) => {
 		return (
 			<input
 				{...input}
-				id={id}
 				className={inputClasses}
 				type={type}
 				placeholder={placeholder}
@@ -86,7 +89,13 @@ export const InputPassword: FC<InputProps> = (props) => {
 			<Field
 				name={name}
 				validate={(value) =>
-					getValidationMessage(value, required, t, validationHandler)
+					getValidationMessage(
+						value,
+						required,
+						t,
+						validationHandler,
+						additionalValue
+					)
 				}>
 				{renderInputField}
 			</Field>

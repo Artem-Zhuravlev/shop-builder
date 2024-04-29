@@ -30,7 +30,12 @@ export const getValidationMessage = (
 	value: string | { value: string },
 	required: boolean,
 	t: TranslateFunction,
-	validationHandler?: (value: string, t: TranslateFunction) => string | void
+	validationHandler?: (
+		value: string,
+		t: TranslateFunction,
+		additionalValue?: string
+	) => string | void,
+	additionalValue?: string
 ): string | void => {
 	if (required && isEmpty(value) && !validationHandler) {
 		return t('field_error.required');
@@ -38,9 +43,9 @@ export const getValidationMessage = (
 
 	if (validationHandler && t) {
 		if (typeof value === 'object') {
-			return validationHandler(value.value, t);
+			return validationHandler(value.value, t, additionalValue);
 		}
-		return validationHandler(value, t);
+		return validationHandler(value, t, additionalValue);
 	}
 
 	return;
