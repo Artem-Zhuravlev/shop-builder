@@ -1,10 +1,11 @@
 'use client';
 import React, { FC } from 'react';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/router';
 import { Form } from 'react-final-form';
+import { postCodeValidate } from '@utils/validations';
 import { InputText, InputSelect } from '@shared/inputs';
 import { AccountFormControls } from '../AccountFormControls/AccountFormControls';
-import { useRouter } from 'next/router';
 import cls from './AccountAddressForm.module.scss';
 
 export const AccountAddressForm: FC = () => {
@@ -57,6 +58,7 @@ export const AccountAddressForm: FC = () => {
 							name='post_code'
 							placeholder={t('inputs.post_code')}
 							required
+							validationHandler={postCodeValidate}
 							className='col-md-6'
 						/>
 						<InputSelect

@@ -25,10 +25,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	validationHandler?: (
-		value: string | object,
-		t: TranslateFunction
-	) => string | void;
+	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 }
 
 export const InputText: FC<InputProps> = (props) => {

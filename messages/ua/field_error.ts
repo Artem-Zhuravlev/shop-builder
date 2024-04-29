@@ -8,4 +8,5 @@ export const field_error = {
 	password_required_uppercase_letter:
 		'Пароль повинен містити хоча б одну велику літеру.',
 	phone_not_valid: 'Нормер телефону невірний',
+	post_code_not_valid: 'Поштовий код повинен містити від 2 до 10 символів!',
 };

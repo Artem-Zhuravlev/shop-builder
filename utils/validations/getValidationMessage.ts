@@ -27,19 +27,19 @@ const isEmpty = (value: string | number | object): boolean => {
  */
 
 export const getValidationMessage = (
-	value: string | object,
+	value: string | { value: string },
 	required: boolean,
 	t: TranslateFunction,
-	validationHandler?: (
-		value: string | object,
-		t: TranslateFunction
-	) => string | void
+	validationHandler?: (value: string, t: TranslateFunction) => string | void
 ): string | void => {
 	if (required && isEmpty(value) && !validationHandler) {
 		return t('field_error.required');
 	}
 
 	if (validationHandler && t) {
+		if (typeof value === 'object') {
+			return validationHandler(value.value, t);
+		}
 		return validationHandler(value, t);
 	}
 

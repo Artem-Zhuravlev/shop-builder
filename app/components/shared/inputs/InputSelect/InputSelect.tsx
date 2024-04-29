@@ -26,12 +26,9 @@ interface SelectProps<
 	options: OptionsOrGroups<Option, Group>;
 	placeholder: string;
 	required?: boolean;
-	value?: object;
+	value?: { value: string; label: string };
 	label?: string;
-	validationHandler?: (
-		value: string | object,
-		t: TranslateFunction
-	) => string | void;
+	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 }
 
 export const InputSelect: FC<SelectProps> = (props) => {
