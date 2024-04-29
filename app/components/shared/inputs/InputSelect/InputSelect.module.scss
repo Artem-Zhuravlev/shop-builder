@@ -18,5 +18,19 @@
 				border-color: var(--danger-main);
 			}
 		}
+		[class*='-indicatorSeparator'] {
+			&,
+			&:hover,
+			&:focus {
+				background-color: var(--danger-main);
+			}
+		}
+		[class*='-indicatorContainer'] {
+			&,
+			&:hover,
+			&:focus {
+				color: var(--danger-main);
+			}
+		}
 	}
 }
