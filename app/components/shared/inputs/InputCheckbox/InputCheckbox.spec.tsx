@@ -1,5 +1,4 @@
 import React from 'react';
-import { fireEvent } from '@testing-library/react';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import '@testing-library/jest-dom';
 import { InputCheckbox } from './InputCheckbox';
