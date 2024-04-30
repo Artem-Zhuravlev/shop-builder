@@ -9,23 +9,21 @@ import cls from './InputTextarea.module.scss';
 
 export interface TextareaProps
 	extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-	id?: string;
 	name: string;
 	required?: boolean;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 	onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-	onFocus?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+	onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export const InputTextarea: FC<TextareaProps> = (props) => {
 	const {
 		disabled,
-		id,
 		name,
 		placeholder,
 		required = false,
 		onBlur,
-		onFocus,
+		onChange,
 		validationHandler,
 	} = props;
 
@@ -45,11 +43,19 @@ export const InputTextarea: FC<TextareaProps> = (props) => {
 			<textarea
 				{...input}
 				className={inputClasses}
-				name={name}
-				id={id}
-				onFocus={onFocus}
-				onBlur={onBlur}
-				placeholder={placeholder}
+				onChange={(e) => {
+					input.onChange(e);
+					if (onChange) {
+						onChange(e);
+					}
+				}}
+				onBlur={(e) => {
+					input.onBlur(e);
+					if (onBlur) {
+						onBlur(e);
+					}
+				}}
+				placeholder={required ? `${placeholder}*` : placeholder}
 				disabled={disabled}
 			/>
 		);

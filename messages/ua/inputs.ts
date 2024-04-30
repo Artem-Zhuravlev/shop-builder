@@ -20,4 +20,8 @@ export const inputs = {
 	post_code: 'Поштовий індекс',
 	country: 'Країна',
 	region: 'Регіон / Область',
+	full_name: 'Повне ім’я',
+	subject: 'Тема',
+	enquiry: 'Запитання',
+	send_enquiry: 'Надіслати запитання',
 };

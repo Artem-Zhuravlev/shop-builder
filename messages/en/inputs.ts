@@ -20,4 +20,8 @@ export const inputs = {
 	post_code: 'Post Code',
 	country: 'Country',
 	region: 'Region / State',
+	full_name: 'Full name',
+	subject: 'Subject',
+	enquiry: 'Enquiry',
+	send_enquiry: 'Send Enquiry',
 };
