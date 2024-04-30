@@ -4,6 +4,7 @@ import { base } from './en/base';
 import { product } from './en/product';
 import { field_error } from './en/field_error';
 import { inputs } from './en/inputs';
+import { contacts } from './en/contacts';
 
 export default {
 	account,
@@ -12,4 +13,5 @@ export default {
 	product,
 	field_error,
 	inputs,
+	contacts,
 };

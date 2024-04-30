@@ -4,6 +4,7 @@ import { base } from './ua/base';
 import { product } from './ua/product';
 import { field_error } from './ua/field_error';
 import { inputs } from './ua/inputs';
+import { contacts } from './ua/contacts';
 
 export default {
 	account,
@@ -12,4 +13,5 @@ export default {
 	product,
 	field_error,
 	inputs,
+	contacts,
 };
