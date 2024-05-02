@@ -29,35 +29,29 @@ export const ProductReviewForm: FC = () => {
 		<div className='form-wrapper'>
 			<Form onSubmit={onSubmit}>
 				{({ handleSubmit, submitting }) => (
-					<>
-						<h4 className={cls.ProductReviewFormTitle}>
+					<form onSubmit={handleSubmit}>
+						<h4>{t('inputs.write_review')}</h4>
+						<InputRating
+							initialValue={rating}
+							onClick={handleRating}
+							className={cls.ProductReviewFormRating}
+						/>
+						<InputText
+							name='name'
+							placeholder={t('inputs.name')}
+							required
+						/>
+						<InputTextarea
+							name='review'
+							placeholder={t('inputs.review')}
+							required
+						/>
+						<ButtonBase
+							type='submit'
+							disabled={submitting}>
 							{t('inputs.write_review')}
-						</h4>
-						<form
-							onSubmit={handleSubmit}
-							className={cls.ProductReviewForm}>
-							<InputRating
-								initialValue={rating}
-								onClick={handleRating}
-								className={cls.ProductReviewFormRating}
-							/>
-							<InputText
-								name='name'
-								placeholder={t('inputs.name')}
-								required
-							/>
-							<InputTextarea
-								name='review'
-								placeholder={t('inputs.review')}
-								required
-							/>
-							<ButtonBase
-								type='submit'
-								disabled={submitting}>
-								{t('inputs.write_review')}
-							</ButtonBase>
-						</form>
-					</>
+						</ButtonBase>
+					</form>
 				)}
 			</Form>
 		</div>

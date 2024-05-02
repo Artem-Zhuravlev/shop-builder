@@ -24,4 +24,7 @@ export const inputs = {
 	subject: 'Subject',
 	enquiry: 'Enquiry',
 	send_enquiry: 'Send Enquiry',
+	comment: 'Your comment',
+	post_comment: 'Post Comment',
+	write_comment: 'Write comment',
 };

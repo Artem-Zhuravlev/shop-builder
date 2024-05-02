@@ -24,4 +24,7 @@ export const inputs = {
 	subject: 'Тема',
 	enquiry: 'Запитання',
 	send_enquiry: 'Надіслати запитання',
+	comment: 'Ваш відгук',
+	post_comment: 'Опублікувати відгук',
+	write_comment: 'Написати відгук',
 };
