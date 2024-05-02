@@ -26,7 +26,7 @@ export const ProductReviewForm: FC = () => {
 	};
 
 	return (
-		<div className={cls.ProductReviewFormSection}>
+		<div className='form-wrapper'>
 			<Form onSubmit={onSubmit}>
 				{({ handleSubmit, submitting }) => (
 					<>
