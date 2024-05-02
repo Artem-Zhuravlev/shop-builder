@@ -24,4 +24,7 @@ export const base = {
 	limit: 'Limit',
 	back: 'Back',
 	save: 'Save',
+	comments:
+		'{count, plural, =0 {0 Comments} =1 {1 Comment} other {# Comments}}',
+	author: 'Author',
 };

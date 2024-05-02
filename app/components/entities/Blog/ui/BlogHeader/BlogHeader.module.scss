@@ -1,0 +1,19 @@
+@import '@styles/abstracts/mixins.scss';
+
+.BlogHeaderList {
+	@extend %listreset;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--size-extra-small);
+}
+
+.BlogHeaderListItem {
+	display: flex;
+	align-items: center;
+	gap: var(--interface-size-sm);
+}
+
+.BlogHeaderTitle {
+	margin-bottom: var(--space-small);
+}
