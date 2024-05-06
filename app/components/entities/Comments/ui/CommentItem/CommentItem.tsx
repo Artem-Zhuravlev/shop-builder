@@ -1,7 +1,8 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useState } from 'react';
 import Image from 'next/image';
 import { IconPicture } from '@shared/icons';
 import { ButtonBase } from '@shared/ButtonBase';
+import { CommentForm } from '../CommentForm/CommentForm';
 import cls from './CommentItem.module.scss';
 
 interface CommentItemProps {
@@ -19,6 +20,7 @@ interface CommentItemProps {
 export const CommentItem: FC<CommentItemProps> = (props) => {
 	const { comment, avatar, author, publishedAt, nestedComments, replyTo } =
 		props;
+	const [showRepliesForm, setShowRepliesForm] = useState(false);
 
 	return (
 		<article className={cls.Comment}>
@@ -44,7 +46,11 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 				</div>
 
 				<div className={cls.CommentControls}>
-					<ButtonBase variant='light'>Reply</ButtonBase>
+					<ButtonBase
+						variant='light'
+						onClick={() => setShowRepliesForm((prev) => !prev)}>
+						Reply
+					</ButtonBase>
 				</div>
 			</header>
 
@@ -52,6 +58,12 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 				{replyTo && <b>@{replyTo} </b>}
 				{comment}
 			</div>
+			{showRepliesForm && (
+				<div className={cls.CommentForm}>
+					<CommentForm />
+				</div>
+			)}
+
 			{nestedComments && (
 				<div className={cls.CommentReplies}>{nestedComments}</div>
 			)}

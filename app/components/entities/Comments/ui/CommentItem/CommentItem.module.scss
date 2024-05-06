@@ -64,6 +64,14 @@
 }
 
 .CommentReplies {
+	margin-top: var(--space-small);
+	margin-bottom: var(--space-small);
 	padding-top: var(--size-extra-small);
 	padding-left: var(--size-extra-small);
+	border-left: 2px solid var(--gray-40);
+}
+
+.CommentForm {
+	padding-top: var(--size-extra-small);
+	padding-bottom: var(--size-extra-small);
 }
