@@ -26,7 +26,9 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 	const t = useTranslations('base');
 
 	return (
-		<article className={cls.Comment}>
+		<article
+			className={cls.Comment}
+			data-testid='comment-item'>
 			<header className={cls.CommentHeader}>
 				<div className={cls.CommentAvatar}>
 					{avatar ? (
