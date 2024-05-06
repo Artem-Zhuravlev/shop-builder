@@ -1,5 +1,6 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { IconPicture } from '@shared/icons';
 import { ButtonBase } from '@shared/ButtonBase';
 import { CommentForm } from '../CommentForm/CommentForm';
@@ -22,6 +23,7 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 	const { comment, avatar, author, publishedAt, nestedComments, replyTo } =
 		props;
 	const [showRepliesForm, setShowRepliesForm] = useState(false);
+	const t = useTranslations('base');
 
 	return (
 		<article className={cls.Comment}>
@@ -50,7 +52,7 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 					<ButtonBase
 						variant='light'
 						onClick={() => setShowRepliesForm((prev) => !prev)}>
-						Reply
+						{t('reply')}
 					</ButtonBase>
 				</div>
 			</header>
@@ -60,7 +62,9 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 				{comment}
 			</div>
 			{showRepliesForm && (
-				<div className={cls.CommentForm}>
+				<div
+					className={cls.CommentForm}
+					data-testid='comment-form'>
 					<CommentForm />
 				</div>
 			)}
