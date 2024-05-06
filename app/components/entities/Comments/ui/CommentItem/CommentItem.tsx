@@ -1,18 +1,24 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import Image from 'next/image';
 import { IconPicture } from '@shared/icons';
 import { ButtonBase } from '@shared/ButtonBase';
 import cls from './CommentItem.module.scss';
 
 interface CommentItemProps {
+	author: string;
 	avatar?: string;
 	comment: string;
-	author: string;
+	id: number;
+	nestedComments?: ReactNode;
 	publishedAt: string;
+	repliedTo?: number;
+	relatedTo?: number;
+	replyTo?: string;
 }
 
 export const CommentItem: FC<CommentItemProps> = (props) => {
-	const { comment, avatar, author, publishedAt } = props;
+	const { comment, avatar, author, publishedAt, nestedComments, replyTo } =
+		props;
 
 	return (
 		<article className={cls.Comment}>
@@ -42,7 +48,13 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 				</div>
 			</header>
 
-			<div className={cls.CommentBody}>{comment}</div>
+			<div className={cls.CommentBody}>
+				{replyTo && <b>@{replyTo} </b>}
+				{comment}
+			</div>
+			{nestedComments && (
+				<div className={cls.CommentReplies}>{nestedComments}</div>
+			)}
 		</article>
 	);
 };

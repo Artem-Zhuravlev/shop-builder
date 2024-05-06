@@ -1,6 +1,10 @@
 .Comment {
 	padding-bottom: var(--space-small);
-	border-bottom: 1px solid var(--gray-40);
+
+	&:not(:last-child) {
+		margin-bottom: var(--space-small);
+		border-bottom: 1px solid var(--gray-40);
+	}
 }
 
 .CommentHeader {
@@ -53,4 +57,13 @@
 .CommentControls {
 	margin-right: 0;
 	margin-left: auto;
+}
+
+.CommentReplyTo {
+	font-weight: 700;
+}
+
+.CommentReplies {
+	padding-top: var(--size-extra-small);
+	padding-left: var(--size-extra-small);
 }
