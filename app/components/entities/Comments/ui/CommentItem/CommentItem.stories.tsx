@@ -27,31 +27,3 @@ WithAvatar.args = {
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum velit euismod in pellentesque massa placerat duis. Ipsum consequat nisl vel pretium lectus quam id. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Consequat mauris nunc congue nisi vitae suscipit tellus. Viverra vitae congue eu consequat ac felis donec et. Fermentum odio eu feugiat pretium. Vitae congue eu consequat ac felis. Cursus eget nunc scelerisque viverra mauris in.',
 	publishedAt: '2023-07-20',
 };
-
-export const WithRepliedComment = Template.bind({});
-WithRepliedComment.args = {
-	avatar: 'https://i.pravatar.cc/300',
-	author: 'John Doe',
-	comment:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum velit euismod in pellentesque massa placerat duis. Ipsum consequat nisl vel pretium lectus quam id. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Consequat mauris nunc congue nisi vitae suscipit tellus. Viverra vitae congue eu consequat ac felis donec et. Fermentum odio eu feugiat pretium. Vitae congue eu consequat ac felis. Cursus eget nunc scelerisque viverra mauris in.',
-	publishedAt: '2023-07-20',
-	nestedComments: (
-		<>
-			<CommentItem
-				id={2}
-				avatar='https://i.pravatar.cc/300'
-				author='John Doe'
-				comment='Lorem ipsum dolor sit amet, consectetur adipiscing elit'
-				publishedAt='2023-07-20'
-			/>
-			<CommentItem
-				id={3}
-				avatar='https://i.pravatar.cc/300'
-				author='John Doe'
-				comment='Lorem ipsum dolor sit amet, consectetur adipiscing elit'
-				publishedAt='2023-07-20'
-				replyTo='John Doe'
-			/>
-		</>
-	),
-};

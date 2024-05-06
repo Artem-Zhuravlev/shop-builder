@@ -4,13 +4,14 @@ import { IconPicture } from '@shared/icons';
 import { ButtonBase } from '@shared/ButtonBase';
 import { CommentForm } from '../CommentForm/CommentForm';
 import cls from './CommentItem.module.scss';
+import { Comment } from '../CommentsList/CommentsList';
 
 interface CommentItemProps {
 	author: string;
 	avatar?: string;
 	comment: string;
-	id: number;
-	nestedComments?: ReactNode;
+	id: number | string;
+	nestedComments?: Comment[];
 	publishedAt: string;
 	repliedTo?: number;
 	relatedTo?: number;
@@ -64,8 +65,21 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 				</div>
 			)}
 
-			{nestedComments && (
-				<div className={cls.CommentReplies}>{nestedComments}</div>
+			{nestedComments && nestedComments.length > 0 && (
+				<div className={cls.CommentReplies}>
+					{nestedComments.map((item) => (
+						<CommentItem
+							key={item.id}
+							author={item.author}
+							avatar={item.avatar}
+							id={item.id}
+							comment={item.comment}
+							publishedAt={item.published_at}
+							replyTo={item.reply_to}
+							nestedComments={item.nestedComments}
+						/>
+					))}
+				</div>
 			)}
 		</article>
 	);
