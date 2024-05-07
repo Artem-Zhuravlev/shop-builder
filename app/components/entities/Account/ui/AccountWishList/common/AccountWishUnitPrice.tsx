@@ -15,7 +15,7 @@ export const AccountWishUnitPrice: FC<AccountWishUnitPriceProps> = (props) => {
 	return (
 		<div className={cls.AccountWishUnitPrice}>
 			<b>
-				{currency}
+				{currency || defaultCurrency}
 				{price}
 			</b>
 			{oldPrice && (

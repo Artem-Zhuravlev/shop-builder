@@ -5,6 +5,7 @@ import { product } from './en/product';
 import { field_error } from './en/field_error';
 import { inputs } from './en/inputs';
 import { contacts } from './en/contacts';
+import { cart } from './en/cart';
 
 export default {
 	account,
@@ -14,4 +15,5 @@ export default {
 	field_error,
 	inputs,
 	contacts,
+	cart,
 };
