@@ -9,10 +9,11 @@ interface SideDrawerProps {
 	title?: string;
 	visible: boolean;
 	drawerClose: (visible: boolean) => void;
+	controls?: ReactNode;
 }
 
 export const SideDrawer: FC<SideDrawerProps> = (props) => {
-	const { children, title, visible, drawerClose } = props;
+	const { children, title, visible, drawerClose, controls } = props;
 	const [open, setOpen] = useState(visible);
 	const t = useTranslations('base');
 
@@ -38,12 +39,17 @@ export const SideDrawer: FC<SideDrawerProps> = (props) => {
 				aria-label={t('close')}>
 				<span className='icon-cross' />
 			</button>
-			{title && <h4 className={cls.SideDrawerTitle}>{title}</h4>}
+			{title && (
+				<header className={cls.SideDrawerHeader}>
+					<h4 className={cls.SideDrawerTitle}>{title}</h4>
+				</header>
+			)}
 			<div
 				className={cls.SideDrawerContent}
 				tabIndex={0}>
 				{children}
 			</div>
+			{controls && <div className={cls.SideDrawerControls}>{controls}</div>}
 		</div>
 	);
 };
