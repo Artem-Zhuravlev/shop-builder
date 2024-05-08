@@ -5,4 +5,7 @@ export const cart = {
 	unit_price: 'Ціна за одиницю',
 	total: 'Всього',
 	quantity: 'Кількість',
+	cart: 'Кошик',
+	edit_cart: 'Редагувати кошик',
+	checkout: 'Оформити',
 };

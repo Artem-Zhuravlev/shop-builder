@@ -5,4 +5,7 @@ export const cart = {
 	unit_price: 'Unit Price',
 	total: 'Total',
 	quantity: 'Quantity',
+	cart: 'Cart',
+	edit_cart: 'Edit Cart',
+	checkout: 'Checkout',
 };
