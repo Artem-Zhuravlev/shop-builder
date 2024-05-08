@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import cls from '../CartProductsTable.module.scss';
 
 export interface CartProductsTableProductProps {
 	slug: string;
@@ -15,7 +14,7 @@ export const CartProductsTableProduct: FC<CartProductsTableProductProps> = (
 	return (
 		<Link
 			href={`/${slug}`}
-			className={cls.CartProductsTableProduct}>
+			className='link-primary'>
 			{title}
 		</Link>
 	);

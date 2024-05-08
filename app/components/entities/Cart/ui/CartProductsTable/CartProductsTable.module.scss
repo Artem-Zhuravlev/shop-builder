@@ -1,13 +1,3 @@
-.CartProductsTableProduct {
-	color: var(--primary-main);
-	border-bottom: 1px solid var(--primary-main);
-	transition: var(--transition-base);
-	&:hover,
-	&:focus {
-		border-color: transparent;
-	}
-}
-
 .CartProductsTableAmount {
 	display: flex;
 	font-weight: 700;
