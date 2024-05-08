@@ -49,7 +49,6 @@
 
 .SideDrawerContent {
 	max-height: calc(100vh - 115px);
-	padding: var(--size-middle) var(--space-medium) var(--space-medium);
 	overflow: auto;
 	@extend %scroll-bar;
 }

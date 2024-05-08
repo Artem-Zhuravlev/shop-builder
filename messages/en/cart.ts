@@ -8,4 +8,5 @@ export const cart = {
 	cart: 'Cart',
 	edit_cart: 'Edit Cart',
 	checkout: 'Checkout',
+	cart_is_empty: 'Cart is empty',
 };

@@ -8,4 +8,5 @@ export const cart = {
 	cart: 'Кошик',
 	edit_cart: 'Редагувати кошик',
 	checkout: 'Оформити',
+	cart_is_empty: 'Кошик порожній',
 };
