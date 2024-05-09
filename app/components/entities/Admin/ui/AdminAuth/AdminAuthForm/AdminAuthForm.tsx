@@ -5,8 +5,8 @@ import { useTranslations } from 'next-intl';
 import { nameValidate, passwordValidate } from '@utils/validations';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputPassword, InputText } from '@shared/inputs';
+import { AdminAuthWrapper } from '../AdminAuthWrapper/AdminAuthWrapper';
 import cls from './AdminAuthForm.module.scss';
-import { ContainerBase } from '@shared/ContainerBase';
 
 export const AdminAuthForm: FC = () => {
 	const t = useTranslations('inputs');
@@ -18,9 +18,7 @@ export const AdminAuthForm: FC = () => {
 		<Form
 			onSubmit={handleSubmit}
 			render={({ handleSubmit }) => (
-				<ContainerBase
-					small
-					className={cls.AdminAuthForm}>
+				<AdminAuthWrapper>
 					<h3>{t('admin_login')}</h3>
 					<form onSubmit={handleSubmit}>
 						<InputText
@@ -43,7 +41,7 @@ export const AdminAuthForm: FC = () => {
 						</Link>
 						<ButtonBase type='submit'>{t('login')}</ButtonBase>
 					</form>
-				</ContainerBase>
+				</AdminAuthWrapper>
 			)}
 		/>
 	);

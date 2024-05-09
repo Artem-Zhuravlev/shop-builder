@@ -1,0 +1,15 @@
+.AdminAuthWrapper {
+	min-height: 100dvh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--gray-20);
+}
+
+.AdminAuthContainer {
+	padding-top: var(--size-extra-small) !important;
+	padding-bottom: var(--size-extra-small) !important;
+	border: 1px solid var(--gray-50);
+	border-radius: var(--interface-size-md);
+	background-color: var(--gray-10);
+}

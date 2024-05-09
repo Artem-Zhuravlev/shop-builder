@@ -4,6 +4,7 @@
 	max-width: 1170px;
 	padding: 0 var(--size-extra-small);
 	margin: 0 auto;
+	width: 100%;
 
 	@include media('<tablet') {
 		padding: 0 var(--space-medium);
