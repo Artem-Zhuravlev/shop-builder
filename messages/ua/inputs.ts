@@ -27,4 +27,7 @@ export const inputs = {
 	comment: 'Ваш відгук',
 	post_comment: 'Опублікувати відгук',
 	write_comment: 'Написати відгук',
+	username: 'Логін',
+	login: 'Увійти',
+	admin_login: 'Адміністратор',
 };

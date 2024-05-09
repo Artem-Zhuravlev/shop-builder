@@ -27,4 +27,7 @@ export const inputs = {
 	comment: 'Your comment',
 	post_comment: 'Post Comment',
 	write_comment: 'Write comment',
+	username: 'Username',
+	login: 'Login',
+	admin_login: 'Admin Login',
 };

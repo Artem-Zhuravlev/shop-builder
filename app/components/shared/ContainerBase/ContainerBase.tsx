@@ -5,11 +5,14 @@ import classNames from 'classnames';
 interface ContainerBaseProps {
 	children: ReactNode;
 	className?: string;
+	small?: boolean;
 }
 
 export const ContainerBase: FC<ContainerBaseProps> = (props) => {
-	const { children, className } = props;
-	const containerClasses = classNames(cls.ContainerBase, className);
+	const { children, className, small } = props;
+	const containerClasses = classNames(cls.ContainerBase, className, {
+		[cls.small]: small,
+	});
 
 	return <div className={containerClasses}>{children}</div>;
 };

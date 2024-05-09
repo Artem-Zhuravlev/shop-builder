@@ -64,7 +64,7 @@ export const InputPassword: FC<InputProps> = (props) => {
 				{...input}
 				className={inputClasses}
 				type={type}
-				placeholder={placeholder}
+				placeholder={required ? `${placeholder} *` : placeholder}
 				autoComplete='off'
 				disabled={disabled}
 				onFocus={onFocus}
