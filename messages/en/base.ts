@@ -28,4 +28,6 @@ export const base = {
 		'{count, plural, =0 {0 Comments} =1 {1 Comment} other {# Comments}}',
 	author: 'Author',
 	reply: 'Reply',
+	reset: 'Reset',
+	cancel: 'Cancel',
 };
