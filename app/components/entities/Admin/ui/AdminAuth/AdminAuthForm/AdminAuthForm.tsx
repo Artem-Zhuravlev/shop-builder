@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Form } from 'react-final-form';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { nameValidate, passwordValidate } from '@utils/validations';
 import { ButtonBase } from '@shared/ButtonBase';
@@ -35,6 +36,11 @@ export const AdminAuthForm: FC = () => {
 							placeholder={t('password')}
 							required
 						/>
+						<Link
+							href='/admin/forgot-password'
+							className={`${cls.ForgotPassword} link-primary`}>
+							{t('forgot_password')}
+						</Link>
 						<ButtonBase type='submit'>{t('login')}</ButtonBase>
 					</form>
 				</ContainerBase>

@@ -30,4 +30,5 @@ export const inputs = {
 	username: 'Username',
 	login: 'Login',
 	admin_login: 'Admin Login',
+	forgot_password: 'Forgot Password',
 };
