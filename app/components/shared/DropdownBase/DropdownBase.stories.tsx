@@ -1,6 +1,7 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { DropdownBase } from './DropdownBase';
+import { action } from '@storybook/addon-actions';
 
 export default {
 	title: 'Shared/DropdownBase',
@@ -21,11 +22,17 @@ Default.args = {
 	isLightMode: false,
 	list: [
 		{
-			route: '/route1',
+			to: '/route1',
 			value: 'Dropdown item 1',
 		},
 		{
-			route: '/route2',
+			to: '/route2',
+			value: 'Dropdown item 2',
+		},
+		{
+			onClick: () => {
+				console.log('click');
+			},
 			value: 'Dropdown item 2',
 		},
 	],

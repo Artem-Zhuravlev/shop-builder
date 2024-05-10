@@ -160,6 +160,18 @@
 	}
 }
 
+.link {
+	background-color: transparent;
+	&:hover,
+	&:focus {
+		background-color: var(--gray-30);
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 3px var(--gray-40);
+	}
+}
+
 .rounded {
 	padding-left: var(--size-extra-small);
 	padding-right: var(--size-extra-small);

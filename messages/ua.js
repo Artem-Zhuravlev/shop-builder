@@ -6,6 +6,7 @@ import { field_error } from './ua/field_error';
 import { inputs } from './ua/inputs';
 import { contacts } from './ua/contacts';
 import { cart } from './ua/cart';
+import { admin } from './ua/admin';
 
 export default {
 	account,
@@ -16,4 +17,5 @@ export default {
 	inputs,
 	contacts,
 	cart,
+	admin,
 };

@@ -63,6 +63,12 @@ Outline.args = {
 	variant: 'outline',
 };
 
+export const Link = Template.bind({});
+Link.args = {
+	children: 'Text',
+	variant: 'link',
+};
+
 export const Rounded = Template.bind({});
 Rounded.args = {
 	children: 'Some text for button',

@@ -30,4 +30,5 @@ export const base = {
 	reply: 'Reply',
 	reset: 'Reset',
 	cancel: 'Cancel',
+	logout: 'Logout',
 };

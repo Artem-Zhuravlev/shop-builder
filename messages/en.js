@@ -6,6 +6,7 @@ import { field_error } from './en/field_error';
 import { inputs } from './en/inputs';
 import { contacts } from './en/contacts';
 import { cart } from './en/cart';
+import { admin } from './en/admin';
 
 export default {
 	account,
@@ -16,4 +17,5 @@ export default {
 	inputs,
 	contacts,
 	cart,
+	admin,
 };

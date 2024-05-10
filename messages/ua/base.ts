@@ -30,4 +30,5 @@ export const base = {
 	reply: 'Відповісти',
 	reset: 'Скинути',
 	cancel: 'Скасувати',
+	logout: 'Вихід',
 };

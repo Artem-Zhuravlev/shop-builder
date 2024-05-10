@@ -16,6 +16,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?:
 		| 'primary'
 		| 'secondary'
+		| 'link'
 		| 'success'
 		| 'danger'
 		| 'warning'

@@ -1,19 +1,38 @@
 'use client';
-import React, { FC, useState, useEffect, useRef, useCallback } from 'react';
+import React, {
+	FC,
+	useState,
+	useEffect,
+	useRef,
+	useCallback,
+	ReactNode,
+} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
 import cls from './DropdownBase.module.scss';
 import Link from 'next/link';
 
 interface DropdownProps {
-	children?: string;
+	children: ReactNode;
 	isLightMode?: boolean;
-	list: { route: string; value: string }[];
+	list: {
+		to?: string;
+		value: string;
+		onClick?: () => void;
+		icon?: ReactNode;
+	}[];
 	opened?: boolean;
+	direction?: 'left' | 'right';
 }
 
 export const DropdownBase: FC<DropdownProps> = (props) => {
-	const { children, isLightMode, list, opened = false } = props;
+	const {
+		children,
+		isLightMode,
+		list,
+		opened = false,
+		direction = 'left',
+	} = props;
 	const [isOpen, setIsOpen] = useState(opened);
 	const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -54,11 +73,23 @@ export const DropdownBase: FC<DropdownProps> = (props) => {
 			</button>
 
 			{isOpen && (
-				<ul className={cls.DropdownList}>
+				<ul className={classNames(cls.DropdownList, cls[direction])}>
 					{list &&
 						list.map((item) => (
 							<li key={uuidv4()}>
-								<Link href={item.route}>{item.value}</Link>
+								{item.to ? (
+									<Link href={item.to}>
+										{item.icon}
+										{item.value}
+									</Link>
+								) : (
+									<button
+										type='button'
+										onClick={item.onClick}>
+										{item.icon}
+										{item.value}
+									</button>
+								)}
 							</li>
 						))}
 				</ul>
