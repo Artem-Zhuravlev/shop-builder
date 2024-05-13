@@ -1,0 +1,62 @@
+@import '@styles/abstracts/mixins.scss';
+
+.AdminSidebar {
+	background-color: var(--gray-90);
+	height: 100vh;
+	max-height: 100vh;
+	overflow: auto;
+	@extend %scroll-bar;
+	&::-webkit-scrollbar-thumb {
+		background-color: #000;
+	}
+
+	& > .SidebarList > li {
+		border-bottom: 1px solid var(--gray-60);
+	}
+}
+
+.SidebarList {
+	@extend %listreset;
+
+	& .SidebarList {
+		background-color: var(--gray-70);
+		padding-left: var(--space-small);
+	}
+}
+
+.SidebarItemLink,
+.SidebarItemBtn {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	font-size: var(--font-size-lg);
+	gap: var(--space-small);
+	padding: var(--space-small) var(--space-medium);
+	background-color: transparent;
+	border: none;
+	color: var(--info-secondary);
+	cursor: pointer;
+}
+
+.SidebarItemBtn {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		right: var(--space-medium);
+		content: '';
+		width: var(--interface-size-md);
+		height: var(--interface-size-md);
+		transform-origin: 50%;
+		border-right: 1px solid var(--info-secondary);
+		border-bottom: 1px solid var(--info-secondary);
+		transform: rotate(315deg);
+	}
+}
+
+.SidebarItemBtnOpen {
+	&::after {
+		transform: rotate(45deg);
+	}
+}
