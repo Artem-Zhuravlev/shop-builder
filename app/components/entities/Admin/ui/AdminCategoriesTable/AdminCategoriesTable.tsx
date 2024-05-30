@@ -19,7 +19,10 @@ import {
 	CellSelect,
 	useRowSelect,
 } from '@table-library/react-table-library/select';
-
+import {
+	defaultTableStyles,
+	defaultSortIcon,
+} from '@shared/TableBase/TableBase';
 import { ButtonBase } from '@shared/ButtonBase';
 import { useRouter } from 'next/router';
 import { TableNode } from '@table-library/react-table-library';
@@ -45,7 +48,8 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 	const data = { nodes };
 	const theme = useTheme({
 		...getTheme(),
-		Table: `--data-table-library_grid-template-columns:  50px 1fr 1fr 150px;`,
+		Table: `--data-table-library_grid-template-columns:  50px 1fr 150px 150px;`,
+		...defaultTableStyles,
 	});
 
 	const sort = useSort(
@@ -53,7 +57,9 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 		{
 			onChange: onSortChange,
 		},
+
 		{
+			sortIcon: { ...defaultSortIcon },
 			sortFns: {
 				CATEGORY: (array) =>
 					array.sort((a, b) => a.category_name.localeCompare(b.category_name)),
