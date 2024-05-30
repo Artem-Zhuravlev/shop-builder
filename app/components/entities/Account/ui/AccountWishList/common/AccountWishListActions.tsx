@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import cls from '../AccountWishList.module.scss';
 
-export interface AccountWishListActionsProps {
+interface AccountWishListActionsProps {
 	slug: string;
 	addToCart: (slug: string) => void;
 	removeFromWishList: (slug: string) => void;

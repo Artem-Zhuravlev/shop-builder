@@ -11,10 +11,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@reduxjs/toolkit": "1.9.5",
     "@storybook/addon-a11y": "^8.0.10",
     "@storybook/addon-styling-webpack": "^1.0.0",
+    "@table-library/react-table-library": "^4.1.7",
     "@types/react-datepicker": "^4.15.1",
     "@types/react-draft-wysiwyg": "^1.13.5",
     "@types/react-resizable": "^3.0.5",

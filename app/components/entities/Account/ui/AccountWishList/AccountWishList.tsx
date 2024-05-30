@@ -1,27 +1,18 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useMemo, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { TableBase } from '@shared/TableBase';
 import {
 	AccountWishListImage,
-	AccountWishListImageProps,
-} from './common/AccountWishListImage';
-import {
 	AccountWishUnitPrice,
-	AccountWishUnitPriceProps,
-} from './common/AccountWishUnitPrice';
-import {
 	AccountWishListProduct,
-	AccountWishListProductProps,
-} from './common/AccountWishListProduct';
-import {
 	AccountWishListActions,
-	AccountWishListActionsProps,
-} from './common/AccountWishListActions';
-
+} from './common';
 import cls from './AccountWishList.module.scss';
 
+// Types
 interface AccountWishListItem {
-	image?: string;
+	id: string | number;
+	image: string;
 	model: string;
 	oldPrice?: number;
 	price: number;
@@ -34,88 +25,118 @@ interface AccountWishListProps {
 	items: AccountWishListItem[];
 }
 
-export const AccountWishList: FC<AccountWishListProps> = (props) => {
-	const { items } = props;
+interface AccountWishListTableProps {
+	id: string | number;
+	image: {
+		slug: string;
+		title: string;
+		image: string;
+	};
+	product_name: {
+		title: string;
+		slug: string;
+	};
+	model: string;
+	stock: 'In stock' | 'Out of stock';
+	unit_price: {
+		price: number;
+		oldPrice?: number;
+	};
+	action: {
+		slug: string;
+	};
+}
 
-	const data = useMemo(() => {
-		return items.map((item) => {
-			return {
-				image: {
-					slug: item.slug,
-					title: item.title,
-					image: item.image,
-				},
-				product_name: {
-					title: item.title,
-					slug: item.slug,
-				},
-				model: item.model,
-				stock: item.stock,
-				unit_price: {
-					price: item.price,
-					oldPrice: item.oldPrice,
-				},
-				action: {
-					slug: item.slug,
-				},
-			};
-		});
-	}, [items]);
+const transformItemsToTableData = (
+	items: AccountWishListItem[]
+): AccountWishListTableProps[] => {
+	return items.map((item) => ({
+		id: item.id,
+		image: {
+			slug: item.slug,
+			title: item.title,
+			image: item.image,
+		},
+		product_name: {
+			title: item.title,
+			slug: item.slug,
+		},
+		model: item.model,
+		stock: item.stock,
+		unit_price: {
+			price: item.price,
+			oldPrice: item.oldPrice,
+		},
+		action: {
+			slug: item.slug,
+		},
+	}));
+};
 
+const addToCart = (slug: string): void => {
+	// Function implementation
+};
+
+const removeFromWishList = (slug: string): void => {
+	// Function implementation
+};
+
+export const AccountWishList: FC<AccountWishListProps> = ({ items }) => {
 	const t = useTranslations('account.wish_list');
-	const columns = [
-		{
-			title: t('image'),
-			dataIndex: 'image',
-			key: 'image',
-			render: ({ image, slug, title }: AccountWishListImageProps) => (
-				<AccountWishListImage
-					image={image}
-					slug={slug}
-					title={title}
-				/>
-			),
-		},
-		{
-			title: t('product_name'),
-			dataIndex: 'product_name',
-			key: 'product_name',
-			render: ({ slug, title }: AccountWishListProductProps) => (
-				<AccountWishListProduct
-					slug={slug}
-					title={title}
-				/>
-			),
-		},
-		{ title: t('model'), dataIndex: 'model', key: 'model' },
-		{ title: t('stock'), dataIndex: 'stock', key: 'stock' },
-		{
-			title: t('unit_price'),
-			dataIndex: 'unit_price',
-			key: 'unit_price',
-			render: ({ price, oldPrice }: AccountWishUnitPriceProps) => (
-				<AccountWishUnitPrice
-					price={price}
-					oldPrice={oldPrice}
-				/>
-			),
-		},
-		{
-			title: t('action'),
-			dataIndex: 'action',
-			key: 'action',
-			render: ({ slug }: AccountWishListActionsProps) => (
-				<AccountWishListActions
-					slug={slug}
-					addToCart={addToCart}
-					removeFromWishList={removeFromWishList}
-				/>
-			),
-		},
-	];
 
-	const addToCart = (slug: string): void => {};
-	const removeFromWishList = (slug: string): void => {};
+	const data = useMemo(() => transformItemsToTableData(items), [items]);
+
+	const columns = useMemo(
+		() => [
+			{
+				label: t('image'),
+				renderCell: (item: AccountWishListTableProps) => (
+					<AccountWishListImage
+						image={item.image.image}
+						slug={item.image.slug}
+						title={item.image.title}
+					/>
+				),
+			},
+			{
+				label: t('product_name'),
+				renderCell: (item: AccountWishListTableProps) => (
+					<AccountWishListProduct
+						slug={item.product_name.slug}
+						title={item.product_name.title}
+					/>
+				),
+			},
+			{
+				label: t('model'),
+				renderCell: (item: AccountWishListTableProps) => item.model,
+			},
+			{
+				label: t('stock'),
+				renderCell: (item: AccountWishListTableProps) => item.stock,
+			},
+			{
+				label: t('unit_price'),
+				renderCell: (item: AccountWishListTableProps) => (
+					<AccountWishUnitPrice
+						price={item.unit_price.price}
+						oldPrice={item.unit_price.oldPrice}
+					/>
+				),
+			},
+			{
+				label: t('action'),
+				renderCell: (item: AccountWishListTableProps) => (
+					<AccountWishListActions
+						slug={item.action.slug}
+						addToCart={addToCart}
+						removeFromWishList={removeFromWishList}
+					/>
+				),
+			},
+		],
+		[t]
+	);
 
 	return (
 		<div className={cls.AccountWishList}>

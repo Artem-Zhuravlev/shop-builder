@@ -43,4 +43,7 @@ export const admin = {
 	reports: 'Звіти',
 	whos_online: 'Користувачі онлайн',
 	statistics: 'Статистика',
+	category_name: 'Назва категорії',
+	sort_order: 'Порядок сортування',
+	action: 'Дія',
 };

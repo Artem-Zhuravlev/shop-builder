@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 
-export interface CartProductsTableProductProps {
+interface CartProductsTableProductProps {
 	slug: string;
 	title: string;
 }

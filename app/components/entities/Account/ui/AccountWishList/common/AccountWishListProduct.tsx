@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Link from 'next/link';
 import cls from '../AccountWishList.module.scss';
 
-export interface AccountWishListProductProps {
+interface AccountWishListProductProps {
 	slug: string;
 	title: string;
 }

@@ -4,7 +4,7 @@ import { InputNumber } from '@shared/inputs';
 import { ButtonBase } from '@shared/ButtonBase';
 import cls from '../CartProductsTable.module.scss';
 
-export interface CartProductsTableQuantityProps {
+interface CartProductsTableQuantityProps {
 	id: string | number;
 	quantity: number;
 }

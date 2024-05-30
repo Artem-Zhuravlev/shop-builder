@@ -2,38 +2,41 @@ import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { TableBase } from './TableBase';
 
+interface TableItem {
+	id: string | number;
+	name: string;
+	age: number;
+	address: string;
+}
+
 export default {
 	title: 'Shared/TableBase',
 	component: TableBase,
 	argTypes: { onClick: { action: 'clicked' } },
 } as Meta<typeof TableBase>;
 
-const Template: StoryFn<typeof TableBase> = (args) => <TableBase {...args} />;
+const Template: StoryFn<typeof TableBase<TableItem>> = (args) => (
+	<TableBase<TableItem> {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
 	columns: [
 		{
-			title: 'Name',
-			dataIndex: 'name',
-			key: 'name',
-			width: 100,
+			label: 'Name',
+			renderCell: (item: TableItem) => item.name,
 		},
 		{
-			title: 'Age',
-			dataIndex: 'age',
-			key: 'age',
-			width: 100,
+			label: 'Age',
+			renderCell: (item: TableItem) => item.age,
 		},
 		{
-			title: 'Address',
-			dataIndex: 'address',
-			key: 'address',
-			width: 200,
+			label: 'Address',
+			renderCell: (item: TableItem) => item.address,
 		},
 	],
 	data: [
-		{ name: 'Jack', age: 28, address: 'some where', key: '1' },
-		{ name: 'Rose', age: 36, address: 'some where', key: '2' },
+		{ id: 1, name: 'Jack', age: 28, address: 'some where' },
+		{ id: 2, name: 'Rose', age: 36, address: 'some where' },
 	],
 };

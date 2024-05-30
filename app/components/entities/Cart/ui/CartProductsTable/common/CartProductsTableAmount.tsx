@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { useSelector } from '@lib/redux';
 import cls from '../CartProductsTable.module.scss';
 
-export interface CartProductsTableAmountProps {
-	price: string;
+interface CartProductsTableAmountProps {
+	price: string | number;
 	currency?: string;
 }
 

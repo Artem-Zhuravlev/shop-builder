@@ -3,17 +3,10 @@ import { useTranslations } from 'next-intl';
 import { TableBase } from '@shared/TableBase';
 import {
 	CartProductsTableImage,
-	CartProductsTableImageProps,
 	CartProductsTableProduct,
-	CartProductsTableProductProps,
 	CartProductsTableQuantity,
-	CartProductsTableQuantityProps,
 	CartProductsTableAmount,
-	CartProductsTableAmountProps,
 } from './common';
-import { Form } from 'react-final-form';
-import { AutoSave, InputNumber } from '@shared/inputs';
-import { ButtonBase } from '@shared/ButtonBase';
 
 interface CartProductsTableItem {
 	id: string | number;
@@ -29,89 +22,109 @@ interface CartProductsTableProps {
 	items: CartProductsTableItem[];
 }
 
-export const CartProductsTable: FC<CartProductsTableProps> = (props) => {
-	const { items } = props;
+interface CartProductsTableData {
+	id: string | number;
+	image: {
+		slug: string;
+		title: string;
+		image: string;
+	};
+	product_name: {
+		title: string;
+		slug: string;
+	};
+	model: string;
+	quantity: {
+		quantity: number;
+		id: string | number;
+	};
+	unit_price: {
+		price: number;
+	};
+	total: {
+		price: number;
+	};
+}
 
-	const data = useMemo(() => {
-		return items.map((item, index) => {
-			return {
-				image: {
-					slug: item.slug,
-					title: item.title,
-					image: item.image,
-				},
-				product_name: {
-					title: item.title,
-					slug: item.slug,
-				},
-				model: item.model,
-				quantity: { quantity: item.quantity, id: item.id },
-				unit_price: {
-					price: item.price,
-				},
-				total: {
-					price: item.price * item.quantity,
-				},
-			};
-		});
-	}, [items]);
+const mapItemsToTableData = (
+	items: CartProductsTableItem[]
+): CartProductsTableData[] => {
+	return items.map((item) => ({
+		id: item.id,
+		image: {
+			slug: item.slug,
+			title: item.title,
+			image: item.image ?? '', // Provide a default value if image is undefined
+		},
+		product_name: {
+			title: item.title,
+			slug: item.slug,
+		},
+		model: item.model,
+		quantity: { quantity: item.quantity, id: item.id },
+		unit_price: {
+			price: item.price,
+		},
+		total: {
+			price: item.price * item.quantity,
+		},
+	}));
+};
 
+export const CartProductsTable: FC<CartProductsTableProps> = ({ items }) => {
 	const t = useTranslations('cart');
 
-	const columns = [
-		{
-			title: t('image'),
-			dataIndex: 'image',
-			key: 'image',
-			render: ({ image, slug, title }: CartProductsTableImageProps) => (
-				<CartProductsTableImage
-					image={image}
-					slug={slug}
-					title={title}
-				/>
-			),
-		},
-		{
-			title: t('product_name'),
-			dataIndex: 'product_name',
-			key: 'product_name',
-			render: ({ slug, title }: CartProductsTableProductProps) => (
-				<CartProductsTableProduct
-					slug={slug}
-					title={title}
-				/>
-			),
-		},
-		{ title: t('model'), dataIndex: 'model', key: 'model' },
-		{
-			title: t('quantity'),
-			dataIndex: 'quantity',
-			key: 'quantity',
-			render: ({ quantity, id }: CartProductsTableQuantityProps) => (
-				<CartProductsTableQuantity
-					quantity={quantity}
-					id={id}
-				/>
-			),
-		},
-		{
-			title: t('unit_price'),
-			dataIndex: 'unit_price',
-			key: 'unit_price',
-			render: ({ price }: CartProductsTableAmountProps) => (
-				<CartProductsTableAmount price={price} />
-			),
-		},
+	const data = useMemo(() => mapItemsToTableData(items), [items]);
 
-		{
-			title: t('total'),
-			dataIndex: 'total',
-			key: 'total',
-			render: ({ price }: CartProductsTableAmountProps) => (
-				<CartProductsTableAmount price={price} />
-			),
-		},
-	];
+	const columns = useMemo(
+		() => [
+			{
+				label: t('image'),
+				renderCell: (item: CartProductsTableData) => (
+					<CartProductsTableImage
+						image={item.image.image}
+						slug={item.image.slug}
+						title={item.image.title}
+					/>
+				),
+			},
+			{
+				label: t('product_name'),
+				renderCell: (item: CartProductsTableData) => (
+					<CartProductsTableProduct
+						slug={item.product_name.slug}
+						title={item.product_name.title}
+					/>
+				),
+			},
+			{
+				label: t('model'),
+				renderCell: (item: CartProductsTableData) => item.model,
+			},
+			{
+				label: t('quantity'),
+				renderCell: (item: CartProductsTableData) => (
+					<CartProductsTableQuantity
+						quantity={item.quantity.quantity}
+						id={item.quantity.id}
+					/>
+				),
+			},
+			{
+				label: t('unit_price'),
+				renderCell: (item: CartProductsTableData) => (
+					<CartProductsTableAmount price={item.unit_price.price} />
+				),
+			},
+			{
+				label: t('total'),
+				renderCell: (item: CartProductsTableData) => (
+					<CartProductsTableAmount price={item.total.price} />
+				),
+			},
+		],
+		[t]
+	);
 
 	return (
 		<TableBase

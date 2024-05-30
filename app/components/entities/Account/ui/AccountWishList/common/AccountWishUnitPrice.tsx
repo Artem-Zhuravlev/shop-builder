@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { useSelector } from '@lib/redux';
 import cls from '../AccountWishList.module.scss';
 
-export interface AccountWishUnitPriceProps {
-	price: string;
-	oldPrice?: string;
+interface AccountWishUnitPriceProps {
+	price: number;
+	oldPrice?: number;
 	currency?: string;
 }
 

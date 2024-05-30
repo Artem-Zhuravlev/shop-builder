@@ -41,6 +41,9 @@ export const admin = {
 	length_classes: 'Length Classes',
 	weight_classes: 'Weight Classes',
 	reports: 'Reports',
-	whos_online: 'Who\'s Online',
+	whos_online: "Who's Online",
 	statistics: 'Statistics',
+	category_name: 'Category Name',
+	sort_order: 'Sort Order',
+	action: 'Action',
 };
