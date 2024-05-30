@@ -1,24 +1,3 @@
-// import React, { FC } from 'react';
-// import Table, { TableProps } from 'rc-table';
-// import { ColumnType, DefaultRecordType } from 'rc-table/lib/interface';
-// import cls from './TableBase.module.scss';
-
-// interface TableBaseProps extends TableProps<DefaultRecordType> {
-// 	columns: ColumnType<DefaultRecordType>[];
-// }
-
-// export const TableBase: FC<TableBaseProps> = (props) => {
-// 	const { columns, data } = props;
-
-// 	return (
-// 		<Table
-// 			className={cls.TableBase}
-// 			columns={columns}
-// 			data={data}
-// 		/>
-// 	);
-// };
-
 import React, { FC } from 'react';
 import cls from './TableBase.module.scss';
 import {
@@ -39,14 +18,16 @@ type TableBaseProps<T extends TableNode> = Omit<
 > & {
 	data: T[];
 	columns: CompactTableProps<T>['columns'];
+	themeProps?: any;
 };
 
 export const TableBase = <T extends TableNode>({
 	columns,
 	data,
+	themeProps,
 	...rest
 }: TableBaseProps<T>) => {
-	const theme = useTheme(getTheme());
+	const theme = useTheme([getTheme(), { ...themeProps }]);
 
 	return (
 		<CompactTable

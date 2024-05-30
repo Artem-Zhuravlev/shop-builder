@@ -83,6 +83,17 @@ const removeFromWishList = (slug: string): void => {
 
 export const AccountWishList: FC<AccountWishListProps> = ({ items }) => {
 	const t = useTranslations('account.wish_list');
+	const theme = {
+		Table: `
+        --data-table-library_grid-template-columns:
+					minmax(80px, 1fr)
+					minmax(100px, 1fr)
+					minmax(100px, 1fr)
+					minmax(100px, 1fr)
+					minmax(100px, 1fr)
+					minmax(100px, 1fr);
+      `,
+	};
 
 	const data = useMemo(() => transformItemsToTableData(items), [items]);
 
@@ -144,6 +155,8 @@ export const AccountWishList: FC<AccountWishListProps> = ({ items }) => {
 			<TableBase
 				columns={columns}
 				data={data}
+				themeProps={theme}
+				layout={{ custom: true }}
 			/>
 		</div>
 	);

@@ -54,7 +54,7 @@ const mapItemsToTableData = (
 		image: {
 			slug: item.slug,
 			title: item.title,
-			image: item.image ?? '', // Provide a default value if image is undefined
+			image: item.image ?? '',
 		},
 		product_name: {
 			title: item.title,
@@ -73,6 +73,17 @@ const mapItemsToTableData = (
 
 export const CartProductsTable: FC<CartProductsTableProps> = ({ items }) => {
 	const t = useTranslations('cart');
+	const theme = {
+		Table: `
+        --data-table-library_grid-template-columns:
+					minmax(80px, 1fr)
+					minmax(100px, 1fr)
+					minmax(100px, 1fr)
+					minmax(250px, 1fr)
+					minmax(100px, 1fr)
+					minmax(100px, 1fr);
+      `,
+	};
 
 	const data = useMemo(() => mapItemsToTableData(items), [items]);
 
@@ -130,6 +141,8 @@ export const CartProductsTable: FC<CartProductsTableProps> = ({ items }) => {
 		<TableBase
 			columns={columns}
 			data={data}
+			themeProps={theme}
+			layout={{ custom: true }}
 		/>
 	);
 };
