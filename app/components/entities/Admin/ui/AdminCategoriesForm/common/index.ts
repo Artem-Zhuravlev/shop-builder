@@ -1,0 +1,1 @@
+export { AdminCategoriesGeneralForm } from './AdminCategoriesGeneralForm';

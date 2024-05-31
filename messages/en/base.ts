@@ -31,4 +31,8 @@ export const base = {
 	reset: 'Reset',
 	cancel: 'Cancel',
 	logout: 'Logout',
+	general: 'General',
+	data: 'Data',
+	seo: 'SEO',
+	design: 'Design',
 };

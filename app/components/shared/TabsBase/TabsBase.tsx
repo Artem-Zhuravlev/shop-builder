@@ -1,11 +1,11 @@
 'use client';
-import React, { FC, useState } from 'react';
+import React, { FC, useState, ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import cls from './TabsBase.module.scss';
 
 interface TabsBaseProps {
 	activeTab?: number;
-	items: { description: string; label: string }[];
+	items: { description: string | ReactNode; label: string }[];
 }
 
 export const TabsBase: FC<TabsBaseProps> = (props) => {

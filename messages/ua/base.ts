@@ -31,4 +31,8 @@ export const base = {
 	reset: 'Скинути',
 	cancel: 'Скасувати',
 	logout: 'Вихід',
+	general: 'Головне',
+	data: 'Дані',
+	seo: 'SEO',
+	design: 'Дизайн',
 };

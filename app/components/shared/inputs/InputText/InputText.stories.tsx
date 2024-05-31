@@ -45,7 +45,7 @@ const Template: StoryFn<InputStoryProps> = ({ ...args }) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-	field: 'Some string',
+	name: 'Some string',
 	placeholder: 'Please add text',
 	label: 'Field',
 	required: true,

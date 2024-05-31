@@ -31,4 +31,5 @@ export const inputs = {
 	login: 'Login',
 	admin_login: 'Admin Login',
 	forgot_password: 'Forgot Password',
+	category_name: 'Category name',
 };
