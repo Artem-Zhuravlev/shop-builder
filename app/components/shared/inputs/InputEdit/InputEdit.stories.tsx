@@ -40,4 +40,6 @@ const Template: StoryFn<typeof InputEdit> = (args) => {
 export const Default = Template.bind({});
 Default.args = {
 	name: 'field',
+	placeholder: 'Please add text',
+	required: true,
 };

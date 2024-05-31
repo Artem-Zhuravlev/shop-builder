@@ -19,7 +19,13 @@ interface InputEditProps extends EditorProps {
 }
 
 export const InputEdit: FC<InputEditProps> = (props) => {
-	const { className, name, required = false, validationHandler } = props;
+	const {
+		className,
+		name,
+		required = false,
+		placeholder,
+		validationHandler,
+	} = props;
 
 	const t = useTranslations();
 	const [error, setError] = useState(false);
@@ -43,6 +49,7 @@ export const InputEdit: FC<InputEditProps> = (props) => {
 				toolbarClassName={cls.InputEditToolbar}
 				editorClassName={cls.InputEditEditor}
 				onEditorStateChange={onEditorStateChange}
+				placeholder={required ? `${placeholder} *` : placeholder}
 			/>
 		);
 	};
