@@ -3,6 +3,7 @@
 	border: 1px solid var(--gray-40);
 	font-size: var(--font-size-md);
 	border-radius: var(--interface-size-sm);
+	min-height: 250px;
 	&:focus {
 		border-color: var(--gray-50);
 	}

@@ -1,0 +1,22 @@
+.FormLayout {
+	padding-top: var(--size-small);
+}
+
+.FormLayoutNav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: var(--space-medium);
+	align-items: center;
+	margin-bottom: var(--space-big);
+}
+
+.FormLayoutTitle {
+	margin-bottom: 0;
+}
+
+.FormLayoutControls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-medium);
+}

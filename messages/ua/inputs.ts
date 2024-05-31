@@ -32,4 +32,8 @@ export const inputs = {
 	admin_login: 'Адміністратор',
 	forgot_password: 'Забули пароль',
 	category_name: 'Назва категорії',
+	description: 'Опис',
+	meta_title: 'Заголовок мета-тегу',
+	meta_description: 'Опис мета-тегу',
+	meta_keywords: 'Ключові слова мета-тегу',
 };

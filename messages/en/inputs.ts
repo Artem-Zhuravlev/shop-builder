@@ -32,4 +32,8 @@ export const inputs = {
 	admin_login: 'Admin Login',
 	forgot_password: 'Forgot Password',
 	category_name: 'Category name',
+	description: 'Description',
+	meta_title: 'Meta Tag Title',
+	meta_description: 'Meta Tag Description',
+	meta_keywords: 'Meta Tag Keywords',
 };

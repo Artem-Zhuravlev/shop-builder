@@ -13,7 +13,6 @@ import { getValidationMessage } from '@utils/validations';
 interface InputEditProps extends EditorProps {
 	className?: string;
 	name: string;
-	value: EditorState;
 	required?: boolean;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 }
