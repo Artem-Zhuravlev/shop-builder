@@ -1,0 +1,19 @@
+.DropzoneBase {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: var(--space-small);
+	border: 2px dashed var(--gray-30);
+	padding: var(--size-small) var(--size-extra-small);
+	cursor: pointer;
+
+	p {
+		margin: 0;
+	}
+}
+
+.DropzoneBaseSelected {
+	border-color: var(--gray-50);
+	background-color: var(--gray-30);
+}

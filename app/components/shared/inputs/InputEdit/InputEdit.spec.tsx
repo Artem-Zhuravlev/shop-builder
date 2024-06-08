@@ -1,8 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import '@testing-library/jest-dom';
 import { EditorState } from 'draft-js';
 import { InputEdit } from './InputEdit';
+import { Form } from 'react-final-form';
 
 // Mocked EditorState and onEditorStateChange
 const mockEditorState = EditorState.createEmpty();
@@ -10,11 +11,17 @@ const mockOnEditorStateChange = jest.fn();
 
 describe('InputEdit Component', () => {
 	it('renders the editor with initial value if value is provided', () => {
-		const { container } = render(
-			<InputEdit
-				onEditorStateChange={mockOnEditorStateChange}
-				value={mockEditorState}
-			/>
+		const { container } = customRender(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputEdit
+							name='edit'
+							onEditorStateChange={mockOnEditorStateChange}
+						/>
+					</form>
+				)}
+			</Form>
 		);
 
 		const editor = container.querySelector('.rdw-editor-main') as HTMLElement;
@@ -22,11 +29,17 @@ describe('InputEdit Component', () => {
 	});
 
 	it('triggers onEditorStateChange when editor state changes', () => {
-		render(
-			<InputEdit
-				onEditorStateChange={mockOnEditorStateChange}
-				value={mockEditorState}
-			/>
+		customRender(
+			<Form onSubmit={() => {}}>
+				{({ handleSubmit }) => (
+					<form onSubmit={handleSubmit}>
+						<InputEdit
+							name='edit'
+							onEditorStateChange={mockOnEditorStateChange}
+						/>
+					</form>
+				)}
+			</Form>
 		);
 
 		const updatedEditorState = EditorState.createEmpty();

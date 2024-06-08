@@ -44,4 +44,6 @@ export const inputs = {
 	status: 'Status',
 	top: 'Top',
 	filters: 'Filters',
+	dropzone_active: 'Drop the files here...',
+	dropzone: 'Drag \'n\' drop some files here, or click to select files'
 };

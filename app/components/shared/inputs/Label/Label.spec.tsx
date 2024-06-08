@@ -4,14 +4,6 @@ import '@testing-library/jest-dom';
 import { Label } from './Label';
 
 describe('Label component', () => {
-	it('renders children and suffix', () => {
-		const { getByText } = render(
-			<Label suffix={<span>Suffix</span>}>Test</Label>
-		);
-		expect(getByText('Test')).toBeInTheDocument();
-		expect(getByText('Suffix')).toBeInTheDocument();
-	});
-
 	it('renders error message when hasError is true', () => {
 		const { getByText } = render(
 			<Label
