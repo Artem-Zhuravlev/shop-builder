@@ -35,4 +35,6 @@ export const base = {
 	data: 'Дані',
 	seo: 'SEO',
 	design: 'Дизайн',
+	download_files: 'Завантажити файли',
+	media_library: 'Бібліотека медіа',
 };

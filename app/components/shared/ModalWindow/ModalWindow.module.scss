@@ -1,38 +1,44 @@
 .ModalBackdrop {
-  position: fixed;
-  min-width: 100vw;
-  min-height: 100vh;
-  background-color: rgb(var(--gray-100), 0.5);
-  display: grid;
-  place-items: center;
+	position: fixed;
+	min-width: 100dvw;
+	min-height: 100dvh;
+	background-color: rgb(var(--gray-100), 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .ModalWindow {
-  position: relative;
-  background-color: var(--gray-10);
-  padding: var(--size-small);
-  border-radius: var(--interface-size-md);
-  max-width: 430px;
-  width: 100%;
-  min-height: 200px;
+	position: relative;
+	background-color: var(--gray-10);
+	padding: var(--size-small);
+	border-radius: var(--interface-size-md);
+	max-width: 430px;
+	width: 100%;
+	min-height: 200px;
 }
 
 .ModalBtn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  background-color: transparent;
-  width: var(--size-middle);
-  height: var(--size-middle);
-  cursor: pointer;
-  transition: var(--transition-base);
-  &:hover,
-  &:focus {
-    color: var(--primary-hover);
-  }
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	background-color: transparent;
+	width: var(--size-middle);
+	height: var(--size-middle);
+	cursor: pointer;
+	transition: var(--transition-base);
+	&:hover,
+	&:focus {
+		color: var(--primary-hover);
+	}
 }
 
 .ModalTitle {
-  margin-top: 0;
+	margin-top: 0;
+}
+
+.xxl {
+	max-width: calc(100% - calc(var(--size-extra-small) * 2));
+	min-height: 90dvh;
 }

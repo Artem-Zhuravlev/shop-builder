@@ -35,4 +35,6 @@ export const base = {
 	data: 'Data',
 	seo: 'SEO',
 	design: 'Design',
+	download_files: 'Download files',
+	media_library: 'Media library',
 };

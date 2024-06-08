@@ -1,23 +1,23 @@
 'use client';
 import React, { FC, ReactNode, useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import classNames from 'classnames';
 import cls from './ModalWindow.module.scss';
 
 interface ModalWindowProps {
 	children: ReactNode;
 	title?: string;
 	visibility: boolean;
-	onClose: (visible: boolean) => void;
+	size?: 'xxl';
 }
 
 export const ModalWindow: FC<ModalWindowProps> = (props) => {
-	const { children, title, visibility = false, onClose } = props;
+	const { children, title, visibility = false, size } = props;
 	const [visible, setVisible] = useState(visibility);
 	const t = useTranslations('base');
 
 	const handleClose = () => {
 		setVisible(false);
-		onClose(false);
 	};
 
 	useEffect(() => {
@@ -45,7 +45,7 @@ export const ModalWindow: FC<ModalWindowProps> = (props) => {
 					className={cls.ModalBackdrop}
 					onClick={handleClose}>
 					<div
-						className={cls.ModalWindow}
+						className={classNames(cls.ModalWindow, cls[`${size}`])}
 						onClick={(event) => event.stopPropagation()}>
 						{title && <h3 className={cls.ModalTitle}>{title}</h3>}
 						<button

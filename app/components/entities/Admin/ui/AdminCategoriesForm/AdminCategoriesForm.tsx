@@ -6,7 +6,7 @@ import { AdminCategoriesGeneralForm, AdminCategoriesDataForm } from './common';
 export const AdminCategoriesForm: FC = () => {
 	const t = useTranslations('base');
 
-	const items = [
+	const tabs = [
 		{
 			label: t('general'),
 			description: <AdminCategoriesGeneralForm />,
@@ -25,5 +25,5 @@ export const AdminCategoriesForm: FC = () => {
 		},
 	];
 
-	return <TabsBase items={items} />;
+	return <TabsBase items={tabs} />;
 };
