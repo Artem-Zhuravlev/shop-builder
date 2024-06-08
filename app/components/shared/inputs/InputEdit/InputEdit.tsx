@@ -3,7 +3,7 @@ import { Editor, EditorProps } from 'react-draft-wysiwyg';
 import { convertToRaw, EditorState } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
-import { TranslateFunction } from '@utils/validations/types/TranslateFunction';
+import { ValidationHandler } from '@utils/validations/types';
 import cls from './InputEdit.module.scss';
 import { Label } from '../Label/Label';
 import { useTranslations } from 'next-intl';
@@ -14,7 +14,7 @@ interface InputEditProps extends EditorProps {
 	className?: string;
 	name: string;
 	required?: boolean;
-	validationHandler?: (value: string, t: TranslateFunction) => string | void;
+	validationHandler?: ValidationHandler;
 }
 
 export const InputEdit: FC<InputEditProps> = (props) => {

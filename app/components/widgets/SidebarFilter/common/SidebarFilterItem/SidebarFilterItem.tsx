@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import cls from './SidebarFilterItem.module.scss';
+import cls from '../../SidebarFilter.module.scss';
 
 interface SidebarFilterItemProps {
 	amount?: number;
@@ -12,9 +12,7 @@ export const SidebarFilterItem: FC<SidebarFilterItemProps> = (props) => {
 	return (
 		<div className={cls.SidebarFilterItem}>
 			{children}
-			{amount > 0 && (
-				<span className={cls.SidebarFilterItemAmount}>{amount}</span>
-			)}
+			{amount > 0 && <span className={cls.suffix}>{amount}</span>}
 		</div>
 	);
 };

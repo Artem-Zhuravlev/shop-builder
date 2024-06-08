@@ -3,7 +3,7 @@ import React, { FC, InputHTMLAttributes, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Field } from 'react-final-form';
 import { getValidationMessage } from '@utils/validations';
-import { TranslateFunction } from '@utils/validations/types/TranslateFunction';
+import { ValidationHandler } from '@utils/validations/types';
 import cls from './InputText.module.scss';
 import { Label } from '../Label/Label';
 import classNames from 'classnames';
@@ -25,7 +25,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	validationHandler?: (value: string, t: TranslateFunction) => string | void;
+	validationHandler?: ValidationHandler;
 }
 
 export const InputText: FC<InputProps> = (props) => {

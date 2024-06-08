@@ -5,6 +5,7 @@ import React, { FC, useCallback, useState } from 'react';
 import { Form } from 'react-final-form';
 import { InputRating } from '@shared/inputs';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
+import cls from '../../SidebarFilter.module.scss';
 
 interface SidebarFilterRatingProps {
 	items: { stars: number; value: number }[];
@@ -44,7 +45,7 @@ export const SidebarFilterRating: FC<SidebarFilterRatingProps> = (props) => {
 									key={`stars-${item.stars}}`}
 									name='rating'
 									value={`${item.stars}`}
-									suffix={item.value}
+									suffix={<div className={cls.suffix}>{item.value}</div>}
 									disabled={item.value <= 0}
 									label={
 										<InputRating

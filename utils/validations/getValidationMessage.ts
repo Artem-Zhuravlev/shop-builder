@@ -1,4 +1,4 @@
-import { TranslateFunction } from './types/TranslateFunction';
+import { TranslateFunction, ValidationHandler } from './types';
 
 /**
  * Checks if a value is empty.
@@ -27,14 +27,10 @@ const isEmpty = (value: string | number | object): boolean => {
  */
 
 export const getValidationMessage = (
-	value: string | { value: string } | number,
+	value: string | { value: string | number } | number,
 	required: boolean,
 	t: TranslateFunction,
-	validationHandler?: (
-		value: string | number,
-		t: TranslateFunction,
-		additionalValue?: string
-	) => string | void,
+	validationHandler?: ValidationHandler,
 	additionalValue?: string
 ): string | void => {
 	if (required && isEmpty(value) && !validationHandler) {

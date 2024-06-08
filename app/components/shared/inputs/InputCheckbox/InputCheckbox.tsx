@@ -2,7 +2,8 @@
 import React, { FC, ReactNode, useState } from 'react';
 import { Field } from 'react-final-form';
 import { useTranslations } from 'next-intl';
-import { getValidationMessage, TranslateFunction } from '@utils/validations';
+import { getValidationMessage } from '@utils/validations';
+import { ValidationHandler } from '@utils/validations/types';
 import { Label } from '../Label/Label';
 import cls from './InputCheckbox.module.scss';
 import classNames from 'classnames';
@@ -16,7 +17,7 @@ interface InputCheckboxProps {
 	className?: string;
 	suffix?: ReactNode;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	validationHandler?: (value: string, t: TranslateFunction) => string | void;
+	validationHandler?: ValidationHandler;
 }
 
 export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
@@ -55,9 +56,7 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 				/>
 				<div className={cls.InputCheckboxLabel}>
 					{label}
-					{suffix ? (
-						<div className={cls.InputCheckboxSuffix}>{suffix}</div>
-					) : null}
+					{suffix}
 				</div>
 			</label>
 		);

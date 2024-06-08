@@ -1,6 +1,5 @@
 import React, { FC, ReactNode, memo } from 'react';
 import { Field } from 'react-final-form';
-
 import cls from './InputRadio.module.scss';
 import classNames from 'classnames';
 
@@ -48,7 +47,7 @@ export const InputRadio: FC<InputRadioProps> = memo((props) => {
 
 			<div className={cls.InputRadioLabel}>
 				{label || value}
-				{suffix ? <div className={cls.InputRadioSuffix}>{suffix}</div> : null}
+				{suffix}
 			</div>
 		</label>
 	);

@@ -1,7 +1,7 @@
 'use client';
 import React, { FC, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { TranslateFunction } from '@utils/validations/types/TranslateFunction';
+import { ValidationHandler } from '@utils/validations/types';
 import Select from 'react-select';
 import { Field } from 'react-final-form';
 import { GroupBase, OptionsOrGroups } from 'react-select';
@@ -28,7 +28,7 @@ interface SelectProps<
 	required?: boolean;
 	value?: { value: string | number; label: string | number };
 	label?: string;
-	validationHandler?: (value: string, t: TranslateFunction) => string | void;
+	validationHandler?: ValidationHandler;
 }
 
 export const InputSelect: FC<SelectProps> = (props) => {

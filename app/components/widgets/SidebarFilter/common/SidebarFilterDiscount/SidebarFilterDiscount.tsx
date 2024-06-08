@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';
 import { AutoSave, InputRadio } from '@shared/inputs';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
+import cls from '../../SidebarFilter.module.scss';
 
 interface SidebarFilterDiscountProps {
 	items: { discount: number; value: number }[];
@@ -46,7 +47,7 @@ export const SidebarFilterDiscount: FC<SidebarFilterDiscountProps> = (
 									name='discount'
 									value={`${item.discount}`}
 									label={`${item.discount}%`}
-									suffix={item.value}
+									suffix={<div className={cls.suffix}>{item.value}</div>}
 									disabled={item.value <= 0}
 								/>
 							))}

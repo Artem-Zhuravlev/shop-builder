@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 import { Form } from 'react-final-form';
 import { AutoSave, InputCheckbox } from '@shared/inputs';
+import cls from '../../SidebarFilter.module.scss';
 
 interface SidebarFilterAvailabilityProps {
 	inStock: number;
@@ -44,14 +45,14 @@ export const SidebarFilterAvailability: FC<SidebarFilterAvailabilityProps> = (
 							label={t('in_stock')}
 							name='in_stock'
 							className='mb-0'
-							suffix={inStock}
+							suffix={<div className={cls.suffix}>{inStock}</div>}
 							disabled={inStock <= 0}
 						/>
 						<InputCheckbox
 							label={t('pre_order')}
 							name='pre_order'
 							className='mb-0'
-							suffix={preOrder}
+							suffix={<div className={cls.suffix}>{preOrder}</div>}
 							disabled={preOrder <= 0}
 						/>
 					</div>

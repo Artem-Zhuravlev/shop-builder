@@ -4,14 +4,15 @@ import { useTranslations } from 'next-intl';
 import classNames from 'classnames';
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';
-import { getValidationMessage, TranslateFunction } from '@utils/validations';
+import { getValidationMessage } from '@utils/validations';
+import { ValidationHandler } from '@utils/validations/types';
 import cls from './InputTextarea.module.scss';
 
 export interface TextareaProps
 	extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 	name: string;
 	required?: boolean;
-	validationHandler?: (value: string, t: TranslateFunction) => string | void;
+	validationHandler?: ValidationHandler;
 	onBlur?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
