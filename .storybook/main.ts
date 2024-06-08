@@ -2,8 +2,9 @@ import { StorybookConfig } from '@storybook/nextjs';
 import path from 'path';
 
 const config: StorybookConfig = {
-	stories: ['../app/**/*.stories.@(js|jsx|ts|tsx)'],
-	addons: [
+    stories: ['../app/**/*.stories.@(js|jsx|ts|tsx)'],
+
+    addons: [
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
 		'@storybook/addon-onboarding',
@@ -33,11 +34,12 @@ const config: StorybookConfig = {
 		},
 		'@chromatic-com/storybook',
 	],
-	framework: '@storybook/nextjs',
-	docs: {
-		autodocs: 'tag',
-	},
-	webpackFinal: async (config) => {
+
+    framework: '@storybook/nextjs',
+
+    docs: {},
+
+    webpackFinal: async (config) => {
 		if (config && config.resolve) {
 			config.resolve.alias = {
 				'@shared': path.resolve(__dirname, '../app/components/shared'),
@@ -59,5 +61,9 @@ const config: StorybookConfig = {
 
 		return config;
 	},
+
+    typescript: {
+        reactDocgen: 'react-docgen-typescript'
+    }
 };
 export default config;
