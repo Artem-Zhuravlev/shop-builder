@@ -36,4 +36,11 @@ export const inputs = {
 	meta_title: 'Заголовок мета-тегу',
 	meta_description: 'Опис мета-тегу',
 	meta_keywords: 'Ключові слова мета-тегу',
+	parent: 'Батьківська категорія',
+	columns: 'Колонки',
+	sort_order: 'Порядок сортування',
+	enabled: 'Включено',
+	disabled: 'Відключено',
+	status: 'Статус',
+	top: 'Вгору',
 };

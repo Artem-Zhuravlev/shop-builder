@@ -26,7 +26,7 @@ interface SelectProps<
 	options: OptionsOrGroups<Option, Group>;
 	placeholder: string;
 	required?: boolean;
-	value?: { value: string; label: string };
+	value?: { value: string | number; label: string | number };
 	label?: string;
 	validationHandler?: (value: string, t: TranslateFunction) => string | void;
 }

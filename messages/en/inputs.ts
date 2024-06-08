@@ -36,4 +36,11 @@ export const inputs = {
 	meta_title: 'Meta Tag Title',
 	meta_description: 'Meta Tag Description',
 	meta_keywords: 'Meta Tag Keywords',
+	parent: 'Parent',
+	columns: 'Columns',
+	sort_order: 'Sort Order',
+	enabled: 'Enabled',
+	disabled: 'Disabled',
+	status: 'Status',
+	top: 'Top',
 };

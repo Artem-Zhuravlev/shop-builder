@@ -27,11 +27,11 @@ const isEmpty = (value: string | number | object): boolean => {
  */
 
 export const getValidationMessage = (
-	value: string | { value: string },
+	value: string | { value: string } | number,
 	required: boolean,
 	t: TranslateFunction,
 	validationHandler?: (
-		value: string,
+		value: string | number,
 		t: TranslateFunction,
 		additionalValue?: string
 	) => string | void,
