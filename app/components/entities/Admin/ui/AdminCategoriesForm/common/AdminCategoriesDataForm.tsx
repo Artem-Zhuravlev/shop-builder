@@ -14,6 +14,14 @@ export const AdminCategoriesDataForm: FC = () => {
 		{ label: t('inputs.disabled'), value: 'disabled' },
 	];
 
+	const filtersOptions = [
+		{ label: 'Color - Black', value: 'black' },
+		{ label: 'Color - Pink', value: 'pink' },
+		{ label: 'Color - White', value: 'white' },
+		{ label: 'Color - Yellow', value: 'yellow' },
+		{ label: 'Color - Red', value: 'red' },
+	];
+
 	return (
 		<Form onSubmit={onSubmit}>
 			{({ handleSubmit }) => (
@@ -24,14 +32,15 @@ export const AdminCategoriesDataForm: FC = () => {
 						name='parent_category'
 						placeholder={t('inputs.parent')}
 					/>
+					<InputSelect
+						name='filters'
+						isMulti
+						placeholder={t('inputs.filters')}
+						options={filtersOptions}
+					/>
 					<InputCheckbox
 						name='top'
 						label={t('inputs.top')}
-						suffix={
-							<TooltipBase content='some content'>
-								<span>?</span>
-							</TooltipBase>
-						}
 					/>
 					<InputText
 						name='columns'

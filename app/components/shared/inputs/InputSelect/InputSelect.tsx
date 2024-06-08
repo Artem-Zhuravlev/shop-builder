@@ -9,11 +9,12 @@ import { getValidationMessage } from '@utils/validations';
 import { Label } from '../Label/Label';
 import { InputSelectStyles } from './InputSelectStyles';
 import cls from './InputSelect.module.scss';
-import { CSSObject } from '@emotion/styled';
+// TODO: investigate CSSObject
+// import { CSSObject } from '@emotion/styled';
 
 interface SelectProps<
 	Option = unknown,
-	IsMulti extends boolean = false,
+	IsMulti extends boolean = false | true,
 	Group extends GroupBase<Option> = GroupBase<Option>,
 > {
 	className?: string;

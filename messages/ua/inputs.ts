@@ -43,4 +43,5 @@ export const inputs = {
 	disabled: 'Відключено',
 	status: 'Статус',
 	top: 'Вгору',
+	filters: 'Фільтри',
 };

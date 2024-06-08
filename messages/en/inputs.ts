@@ -43,4 +43,5 @@ export const inputs = {
 	disabled: 'Disabled',
 	status: 'Status',
 	top: 'Top',
+	filters: 'Filters',
 };
