@@ -39,6 +39,7 @@
 }
 
 .xxl {
-	max-width: calc(100% - calc(var(--size-extra-small) * 2));
+	// max-width: calc(100% - calc(var(--size-extra-small) * 2));
+	max-width: 95%;
 	min-height: 90dvh;
 }

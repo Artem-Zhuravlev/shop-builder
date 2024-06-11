@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useState, ReactNode } from 'react';
+import React, { FC, useState, useEffect, ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import cls from './TabsBase.module.scss';
 
@@ -8,11 +8,18 @@ interface TabsBaseProps {
 	items: { description: string | ReactNode; label: string }[];
 }
 
-export const TabsBase: FC<TabsBaseProps> = (props) => {
-	const { activeTab = 0, items } = props;
+export const TabsBase: FC<TabsBaseProps> = ({ activeTab = 0, items }) => {
 	const initialActiveTab =
 		activeTab >= items.length ? items.length - 1 : activeTab;
 	const [value, setValue] = useState(initialActiveTab);
+
+	useEffect(() => {
+		setValue(initialActiveTab);
+	}, [initialActiveTab]);
+
+	const handleTabClick = (index: number) => {
+		setValue(index);
+	};
 
 	return (
 		<div className={cls.TabsBase}>
@@ -28,7 +35,7 @@ export const TabsBase: FC<TabsBaseProps> = (props) => {
 							<button
 								className={tabClasses.join(' ')}
 								key={uuidv4()}
-								onClick={() => setValue(index)}>
+								onClick={() => handleTabClick(index)}>
 								{item.label}
 							</button>
 						);
