@@ -11,3 +11,28 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 }
+
+.ImagesManagerMediaContent {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+	gap: var(--space-medium);
+}
+
+.ImagesManagerMediaItem {
+	max-height: 140px;
+	max-width: 140px;
+	cursor: pointer;
+	border: none;
+	padding: 0;
+	transition: var(--transition-base) box-shadow;
+
+	&:focus {
+		box-shadow: 0 0 0 3px var(--primary-border);
+	}
+
+	img {
+		width: 100%;
+		max-height: 140px;
+		object-fit: cover;
+	}
+}
