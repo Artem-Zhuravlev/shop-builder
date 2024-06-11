@@ -1,6 +1,7 @@
 import { TranslateFunction } from './types/TranslateFunction';
+import { ValidationHandler } from './types/ValidationHandler';
 
-export const emailValidate = (
+export const emailValidate: ValidationHandler = (
 	value: string,
 	t: TranslateFunction
 ): string | void => {

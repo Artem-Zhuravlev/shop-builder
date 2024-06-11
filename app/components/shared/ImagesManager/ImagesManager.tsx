@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { TabsBase } from '@shared/TabsBase';
 import { ModalWindow } from '@shared/ModalWindow';
-import { ImagesManagerDownload } from './common';
+import { ImagesManagerDownload, ImagesManagerMedia } from './common';
 
 interface ImagesManagerProps {
 	title?: string;
@@ -27,7 +27,7 @@ export const ImagesManager: FC<ImagesManagerProps> = ({
 		},
 		{
 			label: t('base.media_library'),
-			description: 'description',
+			description: <ImagesManagerMedia />,
 		},
 	];
 

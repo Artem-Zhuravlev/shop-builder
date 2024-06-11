@@ -1,7 +1,7 @@
 import { TranslateFunction } from './TranslateFunction';
 
 export type ValidationHandler = (
-	value: string | { value: string | number } | number,
+	value: any,
 	t: TranslateFunction,
-	additionalValue?: string
+	additionalValue?: any
 ) => string | void;

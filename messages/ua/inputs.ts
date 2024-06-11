@@ -46,4 +46,6 @@ export const inputs = {
 	filters: 'Фільтри',
 	dropzone_active: 'Перетягніть файли сюди...',
 	dropzone: 'Перетягніть деякі файли сюди або натисніть, щоб вибрати файли',
+	search: 'Пошук',
+	all_dates: 'Всі дати',
 };

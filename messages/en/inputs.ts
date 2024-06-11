@@ -45,5 +45,7 @@ export const inputs = {
 	top: 'Top',
 	filters: 'Filters',
 	dropzone_active: 'Drop the files here...',
-	dropzone: 'Drag \'n\' drop some files here, or click to select files'
+	dropzone: "Drag 'n' drop some files here, or click to select files",
+	search: 'Search',
+	all_dates: 'All Dates',
 };
