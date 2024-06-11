@@ -1,30 +1,47 @@
 import React, { useCallback, FC } from 'react';
-import { useDropzone } from 'react-dropzone';
+import {
+	useDropzone,
+	DropzoneOptions,
+	DropEvent,
+	FileRejection,
+} from 'react-dropzone';
 import { useTranslations } from 'next-intl';
 import classNames from 'classnames';
 import cls from './DropzoneBase.module.scss';
 
-interface DropzoneBaseProps {
-	onDropAccepted?: (acceptedFiles: File[]) => void;
+interface DropzoneBaseProps extends DropzoneOptions {
 	textDrag?: string;
 	textDragActive?: string;
-  textMaxSize?: string;
+	textMaxSize?: string;
 }
 
 export const DropzoneBase: FC<DropzoneBaseProps> = (props) => {
-	const { textDrag, textDragActive, textMaxSize, onDropAccepted } = props;
+	const {
+		textDrag,
+		textDragActive,
+		textMaxSize,
+		onDropAccepted,
+		...dropzoneOptions
+	} = props;
 	const t = useTranslations();
 
 	const onDrop = useCallback(
-		(acceptedFiles: File[]) => {
+		(
+			acceptedFiles: File[],
+			fileRejections: FileRejection[],
+			event: DropEvent
+		) => {
 			if (onDropAccepted) {
-				onDropAccepted(acceptedFiles);
+				onDropAccepted(acceptedFiles, event);
 			}
 		},
 		[onDropAccepted]
 	);
 
-	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+	const { getRootProps, getInputProps, isDragActive } = useDropzone({
+		onDrop,
+		...dropzoneOptions,
+	});
 
 	return (
 		<div
@@ -38,8 +55,7 @@ export const DropzoneBase: FC<DropzoneBaseProps> = (props) => {
 			) : (
 				<p>{textDrag ?? t('inputs.dropzone')}</p>
 			)}
-      {textMaxSize && <p>{textMaxSize}</p>}
-
+			{textMaxSize && <p>{textMaxSize}</p>}
 		</div>
 	);
 };
