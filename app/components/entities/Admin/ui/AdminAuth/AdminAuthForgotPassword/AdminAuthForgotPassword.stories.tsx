@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AdminAuthForgotPassword } from './AdminAuthForgotPassword';
 
 export default {
-	title: 'Entities/Admin/AdminAuthForgotPassword',
+	title: 'Entities/Admin/Auth/AdminAuthForgotPassword',
 	component: AdminAuthForgotPassword,
 } as Meta<typeof AdminAuthForgotPassword>;
 

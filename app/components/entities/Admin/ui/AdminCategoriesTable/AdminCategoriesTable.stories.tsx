@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AdminCategoriesTable } from './AdminCategoriesTable';
 
 export default {
-	title: 'Entities/Admin/AdminCategoriesTable',
+	title: 'Entities/Admin/Categories/AdminCategoriesTable',
 	component: AdminCategoriesTable,
 } as Meta<typeof AdminCategoriesTable>;
 

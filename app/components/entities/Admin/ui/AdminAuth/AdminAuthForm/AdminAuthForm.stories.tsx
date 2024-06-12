@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AdminAuthForm } from './AdminAuthForm';
 
 export default {
-	title: 'Entities/Admin/AdminAuthForm',
+	title: 'Entities/Admin/Auth/AdminAuthForm',
 	component: AdminAuthForm,
 } as Meta<typeof AdminAuthForm>;
 

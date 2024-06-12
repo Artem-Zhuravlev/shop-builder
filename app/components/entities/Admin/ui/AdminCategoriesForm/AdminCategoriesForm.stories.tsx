@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AdminCategoriesForm } from './AdminCategoriesForm';
 
 export default {
-	title: 'Entities/Admin/AdminCategoriesForm',
+	title: 'Entities/Admin/Categories/AdminCategoriesForm',
 	component: AdminCategoriesForm,
 } as Meta<typeof AdminCategoriesForm>;
 

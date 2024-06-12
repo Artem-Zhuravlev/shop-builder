@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { AdminHeader } from './AdminHeader';
 
 export default {
-	title: 'Entities/Admin/AdminHeader',
+	title: 'Entities/Admin/Widgets/AdminHeader',
 	component: AdminHeader,
 } as Meta<typeof AdminHeader>;
 
