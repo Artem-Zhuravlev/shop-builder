@@ -5,16 +5,21 @@ import {
 	ImageFilterProps,
 } from './ImagesManagerMediaFilter';
 
-interface ImagesManagerMediaProps {}
+import { ImagesManagerMediaDetails } from './ImagesManagerMediaDetails';
 
-interface Image {
+interface ImagesManagerMediaProps {
+	onSelectMedia: (image: MediaProps) => void;
+}
+
+export interface MediaProps {
 	id: number;
 	url: string;
 	alt: string;
 }
 
 export const ImagesManagerMedia: FC<ImagesManagerMediaProps> = (props) => {
-	const [images, setImages] = useState<Image[]>([]);
+	const { onSelectMedia } = props;
+	const [images, setImages] = useState<MediaProps[]>([]);
 	const handleFilters = (value: ImageFilterProps) => {
 		console.log(value);
 	};
@@ -39,8 +44,14 @@ export const ImagesManagerMedia: FC<ImagesManagerMediaProps> = (props) => {
 		]);
 	}, []);
 
-	const handleFileChange = (image: Image) => {
+	const handleFileChange = (image: MediaProps) => {
 		// TODO: Image details by image id
+		// TODO: Logic for selected image
+		onSelectMedia({
+			id: 3,
+			url: 'https://picsum.photos/200/300',
+			alt: 'image 3',
+		});
 	};
 
 	return (
@@ -61,7 +72,15 @@ export const ImagesManagerMedia: FC<ImagesManagerMediaProps> = (props) => {
 					))}
 				</div>
 			</div>
-			<div className={cls.ImagesManagerMediaSidebar}></div>
+			<div className={cls.ImagesManagerMediaSidebar}>
+				<ImagesManagerMediaDetails
+					image={images[1]?.url}
+					fileName='partner-6-1.jpg'
+					publishedAt='2024-05-06'
+					size='1.5 MB'
+					resolution='1024 x 768'
+				/>
+			</div>
 		</div>
 	);
 };

@@ -46,4 +46,7 @@ export const admin = {
 	category_name: 'Назва категорії',
 	sort_order: 'Порядок сортування',
 	action: 'Дія',
+	download_files: 'Завантажити файли',
+	media_library: 'Бібліотека медіа',
+	attach_file_details: 'Деталі пррикріпленого файлу',
 };

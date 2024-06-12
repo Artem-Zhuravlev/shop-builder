@@ -27,3 +27,17 @@ WithContent.args = {
 		</div>
 	),
 };
+
+export const WithSubmitButton = Template.bind({});
+WithSubmitButton.args = {
+	title: 'Modal Title',
+	visibility: true,
+	children: (
+		<div>
+			<p>Some different content in this modal.</p>
+		</div>
+	),
+	onSubmit: () => {
+		console.log('submitted!');
+	},
+};

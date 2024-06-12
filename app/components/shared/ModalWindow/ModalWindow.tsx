@@ -3,20 +3,37 @@ import React, { FC, ReactNode, useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import classNames from 'classnames';
 import cls from './ModalWindow.module.scss';
+import { ButtonBase } from '@shared/ButtonBase';
 
 interface ModalWindowProps {
 	children: ReactNode;
 	title?: string;
 	visibility: boolean;
 	size?: 'xxl';
+	textSubmit?: string;
+	onSubmit?: () => void;
 }
 
 export const ModalWindow: FC<ModalWindowProps> = (props) => {
-	const { children, title, visibility = false, size } = props;
+	const {
+		children,
+		title,
+		visibility = false,
+		size,
+		textSubmit,
+		onSubmit,
+	} = props;
 	const [visible, setVisible] = useState(visibility);
 	const t = useTranslations('base');
 
 	const handleClose = () => {
+		setVisible(false);
+	};
+
+	const handleSubmit = () => {
+		if (onSubmit) {
+			onSubmit();
+		}
 		setVisible(false);
 	};
 
@@ -55,7 +72,14 @@ export const ModalWindow: FC<ModalWindowProps> = (props) => {
 							aria-label={t('close')}>
 							<span className='icon-cross' />
 						</button>
-						{children}
+						{children && <div className={cls.ModalContent}>{children}</div>}
+						{onSubmit && (
+							<div className={cls.ModalFooter}>
+								<ButtonBase onClick={handleSubmit}>
+									{textSubmit ?? t('save')}
+								</ButtonBase>
+							</div>
+						)}
 					</div>
 				</div>
 			)}

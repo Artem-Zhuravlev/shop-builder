@@ -1,10 +1,19 @@
+@import '@styles/abstracts/mixins.scss';
+
+.ImagesManager {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
 .ImagesManagerDownload {
 	padding-top: var(--size-middle);
 }
 
 .ImagesManagerMedia {
 	display: grid;
-	grid-template-columns: 1fr 300px;
+	grid-template-columns: 1fr 320px;
+	flex: 1;
 }
 
 .ImagesManagerMediaFilter {
@@ -16,6 +25,11 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 	gap: var(--space-medium);
+}
+
+.ImagesManagerMediaSidebar {
+	padding-left: var(--size-extra-small);
+	border-left: 1px solid var(--gray-40);
 }
 
 .ImagesManagerMediaItem {
@@ -35,4 +49,19 @@
 		max-height: 140px;
 		object-fit: cover;
 	}
+}
+
+.ImagesManagerMediaDetailsImage {
+	max-width: 100px;
+	max-height: 100px;
+	width: 100%;
+	object-fit: cover;
+	margin-bottom: var(--space-small);
+}
+
+.ImagesManagerMediaDetailsList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-extra-small);
+	@extend %listreset;
 }

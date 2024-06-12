@@ -2,13 +2,16 @@
 import React, { FC, useState, useEffect, ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import cls from './TabsBase.module.scss';
+import classNames from 'classnames';
 
 interface TabsBaseProps {
 	activeTab?: number;
 	items: { description: string | ReactNode; label: string }[];
+	className?: string;
 }
 
-export const TabsBase: FC<TabsBaseProps> = ({ activeTab = 0, items }) => {
+export const TabsBase: FC<TabsBaseProps> = (props) => {
+	const { activeTab = 0, items, className } = props;
 	const initialActiveTab =
 		activeTab >= items.length ? items.length - 1 : activeTab;
 	const [value, setValue] = useState(initialActiveTab);
@@ -22,7 +25,7 @@ export const TabsBase: FC<TabsBaseProps> = ({ activeTab = 0, items }) => {
 	};
 
 	return (
-		<div className={cls.TabsBase}>
+		<div className={classNames(cls.TabsBase, className)}>
 			<div className={cls.Tabs}>
 				{items &&
 					items.map((item, index) => {

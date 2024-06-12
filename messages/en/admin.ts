@@ -46,4 +46,7 @@ export const admin = {
 	category_name: 'Category Name',
 	sort_order: 'Sort Order',
 	action: 'Action',
+	download_files: 'Download files',
+	media_library: 'Media library',
+	attach_file_details: 'Details of attached file',
 };
