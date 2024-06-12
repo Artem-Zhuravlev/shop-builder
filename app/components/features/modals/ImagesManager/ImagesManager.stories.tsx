@@ -4,7 +4,7 @@ import { ImagesManager } from './ImagesManager';
 import { action } from '@storybook/addon-actions';
 
 export default {
-	title: 'Shared/ImagesManager',
+	title: 'Features/Modals/ImagesManager',
 	component: ImagesManager,
 } as Meta<typeof ImagesManager>;
 
