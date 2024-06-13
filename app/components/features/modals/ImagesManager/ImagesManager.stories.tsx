@@ -14,6 +14,5 @@ const Template: StoryFn<typeof ImagesManager> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-	visibility: true,
 	title: 'Main image',
 };

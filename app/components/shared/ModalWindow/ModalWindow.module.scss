@@ -1,6 +1,8 @@
 @import '@styles/abstracts/mixins.scss';
 .ModalBackdrop {
 	position: fixed;
+	top: 0;
+	left: 0;
 	min-width: 100dvw;
 	min-height: 100dvh;
 	background-color: rgb(var(--gray-100), 0.5);

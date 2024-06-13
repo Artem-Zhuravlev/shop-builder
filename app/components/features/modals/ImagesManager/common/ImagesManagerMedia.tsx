@@ -1,25 +1,19 @@
 import React, { FC, useEffect, useState } from 'react';
+import { ImageMetaProps } from '@lib/types/ImageMetaProps';
 import cls from '../ImagesManager.module.scss';
 import {
 	ImagesManagerMediaFilter,
 	ImageFilterProps,
 } from './ImagesManagerMediaFilter';
-
 import { ImagesManagerMediaDetails } from './ImagesManagerMediaDetails';
 
 interface ImagesManagerMediaProps {
-	onSelectMedia: (image: MediaProps) => void;
-}
-
-export interface MediaProps {
-	id: number;
-	url: string;
-	alt: string;
+	onSelectMedia: (image: ImageMetaProps) => void;
 }
 
 export const ImagesManagerMedia: FC<ImagesManagerMediaProps> = (props) => {
 	const { onSelectMedia } = props;
-	const [images, setImages] = useState<MediaProps[]>([]);
+	const [images, setImages] = useState<ImageMetaProps[]>([]);
 	const handleFilters = (value: ImageFilterProps) => {
 		console.log(value);
 	};
@@ -44,7 +38,7 @@ export const ImagesManagerMedia: FC<ImagesManagerMediaProps> = (props) => {
 		]);
 	}, []);
 
-	const handleFileChange = (image: MediaProps) => {
+	const handleFileChange = (image: ImageMetaProps) => {
 		// TODO: Image details by image id
 		// TODO: Logic for selected image
 		onSelectMedia({

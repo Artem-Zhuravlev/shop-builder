@@ -49,4 +49,5 @@ export const admin = {
 	download_files: 'Завантажити файли',
 	media_library: 'Бібліотека медіа',
 	attach_file_details: 'Деталі пррикріпленого файлу',
+	image_manager: 'Менеджер зображень',
 };

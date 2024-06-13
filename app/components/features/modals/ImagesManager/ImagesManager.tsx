@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { TabsBase } from '@shared/TabsBase';
+import { ImageMetaProps } from '@lib/types/ImageMetaProps';
 import { ModalWindow } from '@shared/ModalWindow';
 import {
 	ImagesManagerDownload,
@@ -11,15 +12,12 @@ import cls from './ImagesManager.module.scss';
 
 interface ImagesManagerProps {
 	title?: string;
-	visibility: boolean;
+	onSubmit: (value: ImageMetaProps | null) => void;
 }
 
-export const ImagesManager: FC<ImagesManagerProps> = ({
-	title,
-	visibility,
-}) => {
+export const ImagesManager: FC<ImagesManagerProps> = ({ title, onSubmit }) => {
 	const [activeTab, setActiveTab] = useState(0);
-	const [media, setMedia] = useState<MediaProps | null>(null);
+	const [media, setMedia] = useState<ImageMetaProps | null>(null);
 	const t = useTranslations();
 
 	const handleActiveTab = (index: number) => {
@@ -29,7 +27,7 @@ export const ImagesManager: FC<ImagesManagerProps> = ({
 	const handleSubmit = () => {
 		// TODO: handle submit
 		setActiveTab(0);
-		console.log(media);
+		onSubmit(media);
 	};
 
 	const handleSelectMedia = (image: MediaProps) => {
@@ -49,9 +47,9 @@ export const ImagesManager: FC<ImagesManagerProps> = ({
 
 	return (
 		<ModalWindow
-			visibility={visibility}
+			modalType='imagesManager'
 			size='xxl'
-			title={title}
+			title={title ?? t('admin.image_manager')}
 			onSubmit={handleSubmit}>
 			<TabsBase
 				items={tabs}

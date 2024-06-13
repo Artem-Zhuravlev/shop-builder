@@ -14,13 +14,13 @@ const Template: StoryFn<typeof ModalWindow> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
 	title: 'Modal Title',
-	visibility: true,
+	modalType: 'base',
 };
 
 export const WithContent = Template.bind({});
 WithContent.args = {
 	title: 'Modal Title',
-	visibility: true,
+	modalType: 'base',
 	children: (
 		<div>
 			<p>Some different content in this modal.</p>
@@ -31,7 +31,6 @@ WithContent.args = {
 export const WithSubmitButton = Template.bind({});
 WithSubmitButton.args = {
 	title: 'Modal Title',
-	visibility: true,
 	children: (
 		<div>
 			<p>Some different content in this modal.</p>
@@ -40,4 +39,5 @@ WithSubmitButton.args = {
 	onSubmit: () => {
 		console.log('submitted!');
 	},
+	modalType: 'base',
 };

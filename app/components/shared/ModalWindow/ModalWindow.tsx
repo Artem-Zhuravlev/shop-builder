@@ -1,40 +1,37 @@
 'use client';
-import React, { FC, ReactNode, useState, useEffect } from 'react';
+import React, { FC, ReactNode, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import classNames from 'classnames';
 import cls from './ModalWindow.module.scss';
 import { ButtonBase } from '@shared/ButtonBase';
+import { modalTypes } from '@lib/modalProvider/modalTypes';
+import { useModal } from '@lib/modalProvider/ModalContext';
 
 interface ModalWindowProps {
 	children: ReactNode;
 	title?: string;
-	visibility: boolean;
+	modalType: keyof typeof modalTypes;
 	size?: 'xxl';
 	textSubmit?: string;
 	onSubmit?: () => void;
 }
 
 export const ModalWindow: FC<ModalWindowProps> = (props) => {
-	const {
-		children,
-		title,
-		visibility = false,
-		size,
-		textSubmit,
-		onSubmit,
-	} = props;
-	const [visible, setVisible] = useState(visibility);
+	const { children, modalType, title, size, textSubmit, onSubmit } = props;
+	const { modalTypes, closeModal } = useModal();
+	const isVisible = modalTypes[modalType];
+
 	const t = useTranslations('base');
 
 	const handleClose = () => {
-		setVisible(false);
+		closeModal(modalType);
 	};
 
 	const handleSubmit = () => {
 		if (onSubmit) {
 			onSubmit();
 		}
-		setVisible(false);
+		closeModal(modalType);
 	};
 
 	useEffect(() => {
@@ -44,7 +41,7 @@ export const ModalWindow: FC<ModalWindowProps> = (props) => {
 			}
 		};
 
-		if (visible) {
+		if (isVisible) {
 			window.addEventListener('keydown', handleKeyPress);
 		} else {
 			window.removeEventListener('keydown', handleKeyPress);
@@ -53,11 +50,11 @@ export const ModalWindow: FC<ModalWindowProps> = (props) => {
 		return () => {
 			window.removeEventListener('keydown', handleKeyPress);
 		};
-	}, [visible, handleClose]);
+	}, [isVisible]);
 
 	return (
 		<>
-			{visible && (
+			{isVisible && (
 				<div
 					className={cls.ModalBackdrop}
 					onClick={handleClose}>

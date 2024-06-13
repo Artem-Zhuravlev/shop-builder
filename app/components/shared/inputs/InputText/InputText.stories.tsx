@@ -100,7 +100,7 @@ WithCustomValidation.args = {
 	placeholder: 'Please add text',
 	label: 'Field',
 	required: true,
-	validationHandler(value: string | number | { value: string }) {
+	validationHandler(value: string) {
 		if (!value) {
 			return 'Email is required';
 		}
