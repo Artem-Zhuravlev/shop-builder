@@ -33,3 +33,5 @@ export const HeaderBurger: FC<HeaderBurgerProps> = (props) => {
 		</button>
 	);
 };
+
+HeaderBurger.displayName = 'HeaderBurger';

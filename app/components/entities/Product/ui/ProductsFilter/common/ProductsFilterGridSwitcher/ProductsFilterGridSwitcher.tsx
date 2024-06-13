@@ -41,3 +41,5 @@ export const ProductsFilterGridSwitcher: FC = () => {
 		</div>
 	);
 };
+
+ProductsFilterGridSwitcher.displayName = 'ProductsFilterGridSwitcher';

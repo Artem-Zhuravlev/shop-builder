@@ -83,3 +83,5 @@ export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
 		</div>
 	);
 };
+
+ProductSlider.displayName = 'ProductSlider';

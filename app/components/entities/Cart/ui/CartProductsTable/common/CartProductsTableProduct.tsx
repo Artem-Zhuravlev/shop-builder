@@ -19,3 +19,5 @@ export const CartProductsTableProduct: FC<CartProductsTableProductProps> = (
 		</Link>
 	);
 };
+
+CartProductsTableProduct.displayName = 'CartProductsTableProduct';

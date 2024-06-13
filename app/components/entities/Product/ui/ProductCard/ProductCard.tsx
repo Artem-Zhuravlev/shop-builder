@@ -86,3 +86,5 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
 		</div>
 	);
 };
+
+ProductCard.displayName = 'ProductCard';

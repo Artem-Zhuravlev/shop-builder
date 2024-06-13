@@ -41,3 +41,5 @@ export const FooterCol: FC<FooterColProp> = (props) => {
 		</div>
 	);
 };
+
+FooterCol.displayName = 'FooterCol';

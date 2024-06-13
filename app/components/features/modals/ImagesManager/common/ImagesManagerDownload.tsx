@@ -22,3 +22,5 @@ export const ImagesManagerDownload: FC<ImagesManagerDownloadProps> = (
 		</div>
 	);
 };
+
+ImagesManagerDownload.displayName = 'ImagesManagerDownload';

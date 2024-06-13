@@ -61,3 +61,5 @@ export const SidebarFilterAvailability: FC<SidebarFilterAvailabilityProps> = (
 		/>
 	);
 };
+
+SidebarFilterAvailability.displayName = 'SidebarFilterAvailability';

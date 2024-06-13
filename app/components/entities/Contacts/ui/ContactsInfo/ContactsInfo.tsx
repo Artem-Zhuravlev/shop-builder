@@ -66,3 +66,5 @@ export const ContactsInfo: FC<ContactsInfoProps> = (props) => {
 		</SectionBase>
 	);
 };
+
+ContactsInfo.displayName = 'ContactsInfo';

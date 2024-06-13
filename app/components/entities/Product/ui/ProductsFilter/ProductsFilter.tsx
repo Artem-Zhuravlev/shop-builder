@@ -17,3 +17,5 @@ export const ProductsFilter: FC = () => {
 		</nav>
 	);
 };
+
+ProductsFilter.displayName = 'ProductsFilter';

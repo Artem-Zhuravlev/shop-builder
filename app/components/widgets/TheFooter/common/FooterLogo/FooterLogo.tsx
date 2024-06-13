@@ -12,3 +12,5 @@ export const FooterLogo: FC = () => {
 		</Link>
 	);
 };
+
+FooterLogo.displayName = 'FooterLogo';

@@ -102,3 +102,5 @@ export const InputPassword: FC<InputProps> = (props) => {
 		</Label>
 	);
 };
+
+InputPassword.displayName = 'InputPassword';

@@ -78,3 +78,5 @@ export const ImagesManagerMedia: FC<ImagesManagerMediaProps> = (props) => {
 		</div>
 	);
 };
+
+ImagesManagerMedia.displayName = 'ImagesManagerMedia';

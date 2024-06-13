@@ -65,3 +65,5 @@ export const InputNumber: FC<InputProps> = (props) => {
 		</div>
 	);
 };
+
+InputNumber.displayName = 'InputNumber';

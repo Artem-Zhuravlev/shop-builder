@@ -42,3 +42,5 @@ export const AdminHeader: FC = () => {
 		</header>
 	);
 };
+
+AdminHeader.displayName = 'AdminHeader';

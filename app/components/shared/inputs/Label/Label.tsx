@@ -22,3 +22,5 @@ export const Label: FC<LabelProps> = (props) => {
 		</div>
 	);
 };
+
+Label.displayName = 'Label';

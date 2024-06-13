@@ -84,3 +84,5 @@ export const AccountRegisterForm: FC = () => {
 		</div>
 	);
 };
+
+AccountRegisterForm.displayName = 'AccountRegisterForm';

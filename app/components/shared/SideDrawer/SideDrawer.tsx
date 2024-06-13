@@ -53,3 +53,5 @@ export const SideDrawer: FC<SideDrawerProps> = (props) => {
 		</div>
 	);
 };
+
+SideDrawer.displayName = 'SideDrawer';

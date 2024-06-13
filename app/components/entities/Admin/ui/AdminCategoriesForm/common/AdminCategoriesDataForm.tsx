@@ -60,3 +60,5 @@ export const AdminCategoriesDataForm: FC = () => {
 		</Form>
 	);
 };
+
+AdminCategoriesDataForm.displayName = 'AdminCategoriesDataForm';

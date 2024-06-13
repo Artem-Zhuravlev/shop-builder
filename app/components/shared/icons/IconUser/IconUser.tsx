@@ -17,3 +17,5 @@ export const IconUser: FC = () => {
 		</svg>
 	);
 };
+
+IconUser.displayName = 'IconUser';

@@ -48,3 +48,5 @@ export const TheFooter: FC = () => {
 		</footer>
 	);
 };
+
+TheFooter.displayName = 'TheFooter';

@@ -67,3 +67,5 @@ export const ContactsForm: FC<ContactsFormProps> = (props) => {
 		</SectionBase>
 	);
 };
+
+ContactsForm.displayName = 'ContactsForm';

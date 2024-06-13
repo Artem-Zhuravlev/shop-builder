@@ -97,3 +97,5 @@ export const DropdownBase: FC<DropdownProps> = (props) => {
 		</div>
 	);
 };
+
+DropdownBase.displayName = 'DropdownBase';

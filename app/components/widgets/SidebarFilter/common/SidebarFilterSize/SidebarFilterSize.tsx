@@ -45,3 +45,5 @@ export const SidebarFilterSize: FC<SidebarFilterSizeProps> = (props) => {
 		/>
 	);
 };
+
+SidebarFilterSize.displayName = 'SidebarFilterSize';

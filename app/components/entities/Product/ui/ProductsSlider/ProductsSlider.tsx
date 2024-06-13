@@ -49,3 +49,5 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
 		</SectionBase>
 	);
 };
+
+ProductsSlider.displayName = 'ProductsSlider';

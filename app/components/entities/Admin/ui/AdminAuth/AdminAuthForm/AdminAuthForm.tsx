@@ -46,3 +46,5 @@ export const AdminAuthForm: FC = () => {
 		/>
 	);
 };
+
+AdminAuthForm.displayName = 'AdminAuthForm';

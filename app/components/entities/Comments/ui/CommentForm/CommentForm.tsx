@@ -61,3 +61,5 @@ export const CommentForm: FC = () => {
 		/>
 	);
 };
+
+CommentForm.displayName = 'CommentForm';

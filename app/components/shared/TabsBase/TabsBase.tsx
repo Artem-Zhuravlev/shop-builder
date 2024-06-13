@@ -51,3 +51,5 @@ export const TabsBase: FC<TabsBaseProps> = (props) => {
 		</div>
 	);
 };
+
+TabsBase.displayName = 'TabsBase';

@@ -62,3 +62,5 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
 		</article>
 	);
 };
+
+BlogCard.displayName = 'BlogCard';

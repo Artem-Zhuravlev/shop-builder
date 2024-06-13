@@ -28,3 +28,5 @@ export const CategoriesDescription: FC<CategoriesDescriptionProps> = (
 		</div>
 	);
 };
+
+CategoriesDescription.displayName = 'CategoriesDescription';

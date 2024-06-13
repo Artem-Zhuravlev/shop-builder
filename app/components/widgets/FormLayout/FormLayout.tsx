@@ -35,3 +35,5 @@ export const FormLayout: FC<FormLayoutProps> = (props) => {
 		</form>
 	);
 };
+
+FormLayout.displayName = 'FormLayout';

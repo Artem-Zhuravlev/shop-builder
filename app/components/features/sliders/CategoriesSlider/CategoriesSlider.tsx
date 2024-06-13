@@ -32,3 +32,5 @@ export const CategoriesSlider: FC<CategoriesSliderProps> = (props) => {
 		</SectionBase>
 	);
 };
+
+CategoriesSlider.displayName = 'CategoriesSlider';

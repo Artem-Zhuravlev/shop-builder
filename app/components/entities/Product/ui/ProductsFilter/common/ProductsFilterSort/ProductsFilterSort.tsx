@@ -45,3 +45,5 @@ export const ProductsFilterSort: FC = () => {
 		</Form>
 	);
 };
+
+ProductsFilterSort.displayName = 'ProductsFilterSort';

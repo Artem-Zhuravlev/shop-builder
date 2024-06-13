@@ -85,3 +85,5 @@ export const AccountAddressForm: FC = () => {
 		</div>
 	);
 };
+
+AccountAddressForm.displayName = 'AccountAddressForm';

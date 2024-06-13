@@ -27,3 +27,5 @@ export const CardInfo: FC<CardInfoProps> = (props) => {
 		</div>
 	);
 };
+
+CardInfo.displayName = 'CardInfo';

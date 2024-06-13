@@ -14,3 +14,5 @@ export const ProductInfoRow: FC<ProductInfoRowProps> = (props) => {
 		<div className={classNames(cls.ProductInfoRow, className)}>{children}</div>
 	);
 };
+
+ProductInfoRow.displayName = 'ProductInfoRow';

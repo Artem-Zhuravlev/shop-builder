@@ -41,3 +41,5 @@ export const InputSwitcher: FC<InputSwitcherProps> = (props) => {
 		</>
 	);
 };
+
+InputSwitcher.displayName = 'InputSwitcher';

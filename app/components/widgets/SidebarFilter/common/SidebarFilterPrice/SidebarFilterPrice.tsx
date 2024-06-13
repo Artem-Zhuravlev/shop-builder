@@ -110,3 +110,5 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 		/>
 	);
 };
+
+SidebarFilterPrice.displayName = 'SidebarFilterPrice';

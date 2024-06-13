@@ -26,6 +26,8 @@ const ArrowPrev: FC<ArrowProps> = ({ onClick }) => {
 	);
 };
 
+ArrowPrev.displayName = 'ArrowPrev';
+
 const ArrowNext: FC<ArrowProps> = ({ onClick }) => {
 	return (
 		<button
@@ -36,6 +38,8 @@ const ArrowNext: FC<ArrowProps> = ({ onClick }) => {
 		</button>
 	);
 };
+
+ArrowNext.displayName = 'ArrowNext';
 
 export const SliderBase: FC<SliderBaseProps> = forwardRef((props, ref) => {
 	const { children, settings, className } = props;
@@ -55,3 +59,5 @@ export const SliderBase: FC<SliderBaseProps> = forwardRef((props, ref) => {
 		</Slider>
 	);
 });
+
+SliderBase.displayName = 'SliderCard';

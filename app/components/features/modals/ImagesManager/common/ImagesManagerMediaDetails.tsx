@@ -42,3 +42,5 @@ export const ImagesManagerMediaDetails: FC<ImagesManagerMediaDetailsProps> = (
 		</div>
 	);
 };
+
+ImagesManagerMediaDetails.displayName = 'ImagesManagerMediaDetails';

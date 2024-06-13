@@ -14,3 +14,5 @@ export const ProductsFilterCompare: FC = () => {
 		</Link>
 	);
 };
+
+ProductsFilterCompare.displayName = 'ProductsFilter';

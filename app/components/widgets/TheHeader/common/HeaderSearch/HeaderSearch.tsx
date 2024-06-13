@@ -63,3 +63,5 @@ export const HeaderSearch = () => {
 		</div>
 	);
 };
+
+HeaderSearch.displayName = 'HeaderSearch';

@@ -52,3 +52,5 @@ export const InputRadio: FC<InputRadioProps> = memo((props) => {
 		</label>
 	);
 });
+
+InputRadio.displayName = 'InputRadio';

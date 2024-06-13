@@ -45,3 +45,5 @@ export const ProductInfoPrice: FC<ProductInfoPriceProps> = (props) => {
 		</ProductInfoRow>
 	);
 };
+
+ProductInfoPrice.displayName = 'ProductInfoPrice';

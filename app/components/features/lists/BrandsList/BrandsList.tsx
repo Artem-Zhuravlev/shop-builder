@@ -34,3 +34,5 @@ export const BrandsList: FC<BrandsListProps> = (props) => {
 		</SectionBase>
 	);
 };
+
+BrandsList.displayName = 'BrandsList';

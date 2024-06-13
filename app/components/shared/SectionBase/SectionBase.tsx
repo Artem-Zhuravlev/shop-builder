@@ -24,3 +24,5 @@ export const SectionBase: FC<SectionBaseProps> = (props) => {
 		</section>
 	);
 };
+
+SectionBase.displayName = 'SectionBase';

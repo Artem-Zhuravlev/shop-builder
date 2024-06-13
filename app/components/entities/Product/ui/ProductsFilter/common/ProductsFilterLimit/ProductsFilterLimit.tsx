@@ -38,3 +38,5 @@ export const ProductsFilterLimit: FC = () => {
 		</Form>
 	);
 };
+
+ProductsFilterLimit.displayName = 'ProductsFilterLimit';

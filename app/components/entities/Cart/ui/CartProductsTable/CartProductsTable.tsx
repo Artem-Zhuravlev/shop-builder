@@ -146,3 +146,5 @@ export const CartProductsTable: FC<CartProductsTableProps> = ({ items }) => {
 		/>
 	);
 };
+
+CartProductsTable.displayName = 'CartProductsTable';

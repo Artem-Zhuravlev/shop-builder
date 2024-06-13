@@ -59,3 +59,5 @@ export const ImagesManager: FC<ImagesManagerProps> = ({ title, onSubmit }) => {
 		</ModalWindow>
 	);
 };
+
+ImagesManager.displayName = 'ImagesManager';

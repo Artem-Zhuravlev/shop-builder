@@ -43,3 +43,5 @@ export const FooterSubscribeForm: FC = () => {
 		</Form>
 	);
 };
+
+FooterSubscribeForm.displayName = 'FooterSubscribeForm';

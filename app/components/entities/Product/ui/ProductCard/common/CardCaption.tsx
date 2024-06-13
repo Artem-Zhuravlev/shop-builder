@@ -25,3 +25,5 @@ export const CardCaption: FC<CardCaptionProps> = (props) => {
 		</div>
 	);
 };
+
+CardCaption.displayName = 'CardCaption';

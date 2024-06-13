@@ -57,3 +57,5 @@ export const ProductReviewForm: FC = () => {
 		</div>
 	);
 };
+
+ProductReviewForm.displayName = 'ProductReviewForm';

@@ -101,3 +101,5 @@ export const InputSelect: FC<SelectProps> = (props) => {
 		</Label>
 	);
 };
+
+InputSelect.displayName = 'InputSelect';

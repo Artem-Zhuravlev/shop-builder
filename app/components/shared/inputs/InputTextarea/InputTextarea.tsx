@@ -76,3 +76,5 @@ export const InputTextarea: FC<TextareaProps> = (props) => {
 		</Label>
 	);
 };
+
+InputTextarea.displayName = 'InputTextarea';

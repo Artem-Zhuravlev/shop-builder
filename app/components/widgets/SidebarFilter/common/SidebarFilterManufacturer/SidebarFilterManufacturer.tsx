@@ -73,3 +73,5 @@ export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (
 		/>
 	);
 };
+
+SidebarFilterManufacturer.displayName = 'SidebarFilterManufacturer';

@@ -29,3 +29,5 @@ export const CardImages: FC<CardImagesProps> = (props) => {
 		</Link>
 	);
 };
+
+CardImages.displayName = 'CardImages';

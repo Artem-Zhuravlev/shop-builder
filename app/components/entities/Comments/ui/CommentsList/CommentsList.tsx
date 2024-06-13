@@ -84,3 +84,5 @@ export const CommentsList: FC<CommentsListProps> = ({ comments }) => {
 		</div>
 	);
 };
+
+CommentsList.displayName = 'CommentsList';

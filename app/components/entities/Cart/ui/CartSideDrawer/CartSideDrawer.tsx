@@ -63,3 +63,5 @@ export const CartSideDrawer: FC = () => {
 		</SideDrawer>
 	);
 };
+
+CartSideDrawer.displayName = 'CartSideDrawer';

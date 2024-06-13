@@ -35,3 +35,5 @@ export const AccountNav: FC<AccountNavProps> = (props) => {
 		</ul>
 	);
 };
+
+AccountNav.displayName = 'AccountNav';

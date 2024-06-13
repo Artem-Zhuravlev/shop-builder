@@ -58,3 +58,5 @@ export const ProductInfo: FC<ProductInfoProps> = (props) => {
 		</div>
 	);
 };
+
+ProductInfo.displayName = 'ProductInfo';

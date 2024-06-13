@@ -52,3 +52,5 @@ export const BlogCommentForm: FC = () => {
 		</div>
 	);
 };
+
+BlogCommentForm.displayName = 'BlogCommentForm';

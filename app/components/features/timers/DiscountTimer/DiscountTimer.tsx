@@ -38,3 +38,5 @@ export const DiscountTimer: FC<DiscountTimerProps> = (props) => {
 		</ContainerBase>
 	);
 };
+
+DiscountTimer.displayName = 'DiscountTimer';

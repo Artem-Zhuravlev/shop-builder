@@ -57,3 +57,5 @@ export const SidebarFilterDiscount: FC<SidebarFilterDiscountProps> = (
 		/>
 	);
 };
+
+SidebarFilterDiscount.displayName = 'SidebarFilterDiscount';

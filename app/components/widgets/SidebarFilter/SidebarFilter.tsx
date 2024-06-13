@@ -139,3 +139,5 @@ export const SidebarFilter: FC = () => {
 		</aside>
 	);
 };
+
+SidebarFilter.displayName = 'SidebarFilter';

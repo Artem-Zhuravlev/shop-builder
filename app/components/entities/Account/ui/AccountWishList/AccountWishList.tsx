@@ -20,11 +20,9 @@ interface AccountWishListItem {
 	stock: 'In stock' | 'Out of stock';
 	title: string;
 }
-
 interface AccountWishListProps {
 	items: AccountWishListItem[];
 }
-
 interface AccountWishListTableProps {
 	id: string | number;
 	image: {
@@ -161,3 +159,5 @@ export const AccountWishList: FC<AccountWishListProps> = ({ items }) => {
 		</div>
 	);
 };
+
+AccountWishList.displayName = 'AccountWishList';

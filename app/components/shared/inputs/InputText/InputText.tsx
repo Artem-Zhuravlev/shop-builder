@@ -113,3 +113,5 @@ export const InputText: FC<InputProps> = (props) => {
 		</Label>
 	);
 };
+
+InputText.displayName = 'InputText';

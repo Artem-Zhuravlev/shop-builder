@@ -32,3 +32,5 @@ export const ProductInfoReviews: FC<ProductInfoReviewsProps> = (props) => {
 		</ProductInfoRow>
 	);
 };
+
+ProductInfoReviews.displayName = 'ProductInfoReviews';

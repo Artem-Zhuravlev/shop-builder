@@ -24,3 +24,5 @@ export const CartProductsTableImage: FC<CartProductsTableImageProps> = (
 		</Link>
 	);
 };
+
+CartProductsTableImage.displayName = 'CartProductsTableImage';

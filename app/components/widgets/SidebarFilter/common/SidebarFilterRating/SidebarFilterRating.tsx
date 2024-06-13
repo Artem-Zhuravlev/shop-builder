@@ -62,3 +62,5 @@ export const SidebarFilterRating: FC<SidebarFilterRatingProps> = (props) => {
 		/>
 	);
 };
+
+SidebarFilterRating.displayName = 'SidebarFilterRating';

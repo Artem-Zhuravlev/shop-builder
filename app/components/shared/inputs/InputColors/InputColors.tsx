@@ -43,3 +43,5 @@ export const InputColors: FC<InputColorsProps> = (props) => {
 		</ul>
 	);
 };
+
+InputColors.displayName = 'InputColors';

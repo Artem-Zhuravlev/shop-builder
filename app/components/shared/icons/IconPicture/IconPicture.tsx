@@ -14,3 +14,5 @@ export const IconPicture: FC = () => {
 		</svg>
 	);
 };
+
+IconPicture.displayName = 'IconPicture';

@@ -12,3 +12,5 @@ export const HeaderLogo: FC = () => {
 		</Link>
 	);
 };
+
+HeaderLogo.displayName = 'HeaderLogo';

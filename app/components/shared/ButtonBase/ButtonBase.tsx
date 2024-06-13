@@ -66,3 +66,5 @@ export const ButtonBase: FC<ButtonProps> = (props) => {
 		</button>
 	);
 };
+
+ButtonBase.displayName = 'ButtonBase';

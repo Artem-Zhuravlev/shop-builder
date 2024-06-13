@@ -35,3 +35,5 @@ export const AlertBase: FC<AlertsProps> = (props) => {
 		</div>
 	);
 };
+
+AlertBase.displayName = 'AlertBase';

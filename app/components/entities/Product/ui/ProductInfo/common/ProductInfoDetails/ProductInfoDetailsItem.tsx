@@ -18,3 +18,5 @@ export const ProductInfoDetailsItem: FC<ProductInfoDetailsItemProps> = (
 		</li>
 	);
 };
+
+ProductInfoDetailsItem.displayName = 'ProductInfoDetailsItem';

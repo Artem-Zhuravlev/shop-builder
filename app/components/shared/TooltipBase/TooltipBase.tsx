@@ -25,3 +25,5 @@ export const TooltipBase: FC<TooltipBaseProps> = (props) => {
 		</>
 	);
 };
+
+TooltipBase.displayName = 'TooltipBase';

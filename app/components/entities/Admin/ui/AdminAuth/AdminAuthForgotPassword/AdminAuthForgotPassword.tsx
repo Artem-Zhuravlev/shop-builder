@@ -43,3 +43,5 @@ export const AdminAuthForgotPassword: FC = () => {
 		/>
 	);
 };
+
+AdminAuthForgotPassword.displayName = 'AdminAuthForgotPassword';

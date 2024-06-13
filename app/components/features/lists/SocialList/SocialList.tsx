@@ -31,3 +31,5 @@ export const SocialList: FC<SocialListProps> = (props) => {
 		</ul>
 	);
 };
+
+SocialList.displayName = 'SocialList';

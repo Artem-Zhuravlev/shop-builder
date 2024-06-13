@@ -54,3 +54,5 @@ export const CartSideDrawerItem: FC<CartSideDrawerItemProps> = (props) => {
 		</div>
 	);
 };
+
+CartSideDrawerItem.displayName = 'CartSideDrawerItem';

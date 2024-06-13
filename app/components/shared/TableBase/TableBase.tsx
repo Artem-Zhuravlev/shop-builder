@@ -69,3 +69,5 @@ export const TableBase = <T extends TableNode>({
 		/>
 	);
 };
+
+TableBase.displayName = 'TableBase';

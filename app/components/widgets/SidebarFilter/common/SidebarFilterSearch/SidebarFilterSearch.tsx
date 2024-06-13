@@ -41,3 +41,5 @@ export const SidebarFilterSearch: FC = () => {
 		/>
 	);
 };
+
+SidebarFilterSearch.displayName = 'SidebarFilterSearch';

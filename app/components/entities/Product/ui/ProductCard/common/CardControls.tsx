@@ -45,3 +45,5 @@ export const CardControls: FC<CardControlsProps> = (props) => {
 		</div>
 	);
 };
+
+CardControls.displayName = 'CardControls';

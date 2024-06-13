@@ -47,3 +47,5 @@ export const InputRange: FC<InputRangeProps> = (props) => {
 		/>
 	);
 };
+
+InputRange.displayName = 'InputRange';

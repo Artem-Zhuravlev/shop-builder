@@ -55,3 +55,5 @@ export const ImagesManagerMediaFilter: FC<ImagesManagerMediaFilterProps> = (
 		/>
 	);
 };
+
+ImagesManagerMediaFilter.displayName = 'ImagesManagerMediaFilter';

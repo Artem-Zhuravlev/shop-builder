@@ -16,3 +16,5 @@ export const ContainerBase: FC<ContainerBaseProps> = (props) => {
 
 	return <div className={containerClasses}>{children}</div>;
 };
+
+ContainerBase.displayName = 'ContainerBase';

@@ -80,3 +80,5 @@ export const InputCheckbox: FC<InputCheckboxProps> = (props) => {
 		</Label>
 	);
 };
+
+InputCheckbox.displayName = 'InputCheckbox';

@@ -20,3 +20,5 @@ export const CartProductsTableAmount: FC<CartProductsTableAmountProps> = (
 		</div>
 	);
 };
+
+CartProductsTableAmount.displayName = 'CartProductsTableAmount';

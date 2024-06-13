@@ -84,4 +84,4 @@ export const ModalWindow: FC<ModalWindowProps> = (props) => {
 	);
 };
 
-export default ModalWindow;
+ModalWindow.displayName = 'ModalWindow';

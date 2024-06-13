@@ -36,3 +36,5 @@ export const LogoBase: FC = () => {
 		</svg>
 	);
 };
+
+LogoBase.displayName = 'LogoBase';

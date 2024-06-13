@@ -14,3 +14,5 @@ export const FooterAboutUs = () => {
     />
   );
 }
+
+FooterAboutUs.displayName = 'FooterAboutUs';

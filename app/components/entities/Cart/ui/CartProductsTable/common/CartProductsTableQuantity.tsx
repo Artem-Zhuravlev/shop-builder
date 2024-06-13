@@ -41,3 +41,5 @@ export const CartProductsTableQuantity: FC<CartProductsTableQuantityProps> = ({
 		/>
 	);
 };
+
+CartProductsTableQuantity.displayName = 'CartProductsTableQuantity';

@@ -19,3 +19,5 @@ export const AdminAuthWrapper: FC<AdminAuthWrapperProps> = (props) => {
 		</div>
 	);
 };
+
+AdminAuthWrapper.displayName = 'AdminAuthWrapper';

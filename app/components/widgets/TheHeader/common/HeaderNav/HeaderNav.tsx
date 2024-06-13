@@ -82,3 +82,5 @@ export const HeaderNav: FC<HeaderNavProps> = (props) => {
 		</nav>
 	);
 };
+
+HeaderNav.displayName = 'HeaderNav';

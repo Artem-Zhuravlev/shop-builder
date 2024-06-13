@@ -68,3 +68,5 @@ export const InputEdit: FC<InputEditProps> = (props) => {
 		</Label>
 	);
 };
+
+InputEdit.displayName = 'InputEdit';

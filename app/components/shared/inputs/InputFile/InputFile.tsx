@@ -42,3 +42,5 @@ export const InputFile: FC<InputFileProps> = (props) => {
 		</>
 	);
 };
+
+InputFile.displayName = 'InputFile';

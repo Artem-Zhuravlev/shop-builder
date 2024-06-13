@@ -46,3 +46,5 @@ export const HeaderControls: FC<HeaderControlsProps> = (props) => {
 		</div>
 	);
 };
+
+HeaderControls.displayName = 'HeaderControls';

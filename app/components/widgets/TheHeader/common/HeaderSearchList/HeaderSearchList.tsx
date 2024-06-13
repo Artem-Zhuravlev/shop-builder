@@ -56,3 +56,5 @@ export const HeaderSearchList: FC<HeaderSearchListProps> = (props) => {
 
 	return <ul className={cls.HeaderSearchList}>{renderItemsList}</ul>;
 };
+
+HeaderSearchList.displayName = 'HeaderSearchList';

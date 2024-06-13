@@ -25,3 +25,5 @@ export const ProductInfoBenefits: FC = () => {
 		</ProductInfoRow>
 	);
 };
+
+ProductInfoBenefits.displayName = 'ProductInfoBenefits';

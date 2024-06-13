@@ -46,3 +46,5 @@ export const AccountChangePasswordForm: FC = () => {
 		</div>
 	);
 };
+
+AccountChangePasswordForm.displayName = 'AccountChangePasswordForm';

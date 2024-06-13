@@ -53,3 +53,5 @@ export const ProductInfoControls: FC = () => {
 		</div>
 	);
 };
+
+ProductInfoControls.displayName = 'ProductInfoControls';

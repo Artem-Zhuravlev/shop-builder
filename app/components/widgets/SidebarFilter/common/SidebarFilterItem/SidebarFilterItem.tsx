@@ -16,3 +16,5 @@ export const SidebarFilterItem: FC<SidebarFilterItemProps> = (props) => {
 		</div>
 	);
 };
+
+SidebarFilterItem.displayName = 'SidebarFilterItem';

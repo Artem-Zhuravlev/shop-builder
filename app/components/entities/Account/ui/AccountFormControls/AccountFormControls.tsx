@@ -26,3 +26,5 @@ export const AccountFormControls: FC<AccountFormControlsProps> = (props) => {
 		</div>
 	);
 };
+
+AccountFormControls.displayName = 'AccountFormControls';

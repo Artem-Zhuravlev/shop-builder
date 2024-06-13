@@ -16,3 +16,5 @@ export const InputDatePicker: FC<ReactDatePickerProps> = (props) => {
 		/>
 	);
 };
+
+InputDatePicker.displayName = 'InputDatePicker';

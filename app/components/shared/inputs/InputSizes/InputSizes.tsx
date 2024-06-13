@@ -31,3 +31,5 @@ export const InputSizes: FC<InputSizesProps> = (props) => {
 		</ul>
 	);
 };
+
+InputSizes.displayName = 'InputSizes';

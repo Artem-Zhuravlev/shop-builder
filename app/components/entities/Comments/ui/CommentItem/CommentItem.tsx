@@ -90,3 +90,5 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
 		</article>
 	);
 };
+
+CommentItem.displayName = 'CommentItem';

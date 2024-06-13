@@ -31,3 +31,5 @@ export const FooterGetInTouch = () => {
 		/>
 	);
 };
+
+FooterGetInTouch.displayName = 'FooterGetInTouch';

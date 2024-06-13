@@ -36,3 +36,5 @@ export const InputRating: FC<RatingProps> = (props) => {
 		/>
 	);
 };
+
+InputRating.displayName = 'InputRating';

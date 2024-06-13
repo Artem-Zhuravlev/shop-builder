@@ -124,3 +124,5 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 		</Table>
 	);
 };
+
+AdminCategoriesTable.displayName = 'AdminCategoriesTable';

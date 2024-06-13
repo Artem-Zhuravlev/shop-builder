@@ -40,3 +40,5 @@ export const AlertItem: FC<AlertItemProps> = (props) => {
 		</div>
 	);
 };
+
+AlertItem.displayName = 'AlertItem';

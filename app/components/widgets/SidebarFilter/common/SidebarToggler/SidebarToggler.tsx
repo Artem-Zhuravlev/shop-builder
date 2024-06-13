@@ -63,3 +63,5 @@ export const SidebarToggler: FC<SidebarTogglerProps> = (props) => {
 		</div>
 	);
 };
+
+SidebarToggler.displayName = 'SidebarToggler';

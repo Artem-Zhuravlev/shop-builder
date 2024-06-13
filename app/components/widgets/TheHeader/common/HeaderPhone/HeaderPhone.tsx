@@ -26,3 +26,5 @@ export const HeaderPhone: FC<HeaderPhoneProps> = ({ items }) => {
 		</details>
 	);
 };
+
+HeaderPhone.displayName = 'HeaderPhone';

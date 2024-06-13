@@ -59,3 +59,5 @@ export const DropzoneBase: FC<DropzoneBaseProps> = (props) => {
 		</div>
 	);
 };
+
+DropzoneBase.displayName = 'DropzoneBase';

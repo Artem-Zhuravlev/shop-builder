@@ -41,3 +41,5 @@ export const BlogHeader: FC<BlogHeaderProps> = (props) => {
 		</div>
 	);
 };
+
+BlogHeader.displayName = 'BlogHeader';

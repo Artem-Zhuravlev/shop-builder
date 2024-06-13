@@ -37,3 +37,5 @@ export const BreadcrumbsBase: FC<BreadcrumbsProps> = (props) => {
 		</nav>
 	);
 };
+
+BreadcrumbsBase.displayName = 'BreadcrumbsBase';

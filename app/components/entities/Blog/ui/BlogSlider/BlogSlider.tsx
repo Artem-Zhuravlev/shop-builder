@@ -39,3 +39,5 @@ export const BlogSlider: FC<BlogSliderProps> = (props) => {
 		</SectionBase>
 	);
 };
+
+BlogSlider.displayName = 'BlogSlider';

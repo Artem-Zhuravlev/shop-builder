@@ -35,3 +35,5 @@ export const HeaderSubmenu: FC<HeaderSubmenuProps> = (props) => {
 		</div>
 	);
 };
+
+HeaderSubmenu.displayName = 'HeaderSubmenu';

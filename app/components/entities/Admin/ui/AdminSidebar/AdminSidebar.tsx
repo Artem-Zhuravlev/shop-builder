@@ -62,3 +62,5 @@ export const AdminSidebar: FC = () => {
 		</aside>
 	);
 };
+
+AdminSidebar.displayName = 'AdminSidebar';

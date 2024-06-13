@@ -71,3 +71,5 @@ export const TimerBase: FC<TimerBaseProps> = (props) => {
 		</div>
 	);
 };
+
+TimerBase.displayName = 'TimerBase';

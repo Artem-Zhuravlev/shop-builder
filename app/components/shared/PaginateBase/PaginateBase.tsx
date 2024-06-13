@@ -28,3 +28,5 @@ export const PaginateBase: FC<ReactPaginateProps> = (props) => {
 		/>
 	);
 };
+
+PaginateBase.displayName = 'PaginateBase';

@@ -47,3 +47,5 @@ export const ProductCardSmall: FC<ProductCardSmallProps> = (props) => {
 		</article>
 	);
 };
+
+ProductCardSmall.displayName = 'ProductCardSmall';

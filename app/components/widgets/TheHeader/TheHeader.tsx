@@ -69,3 +69,5 @@ export const TheHeader: FC<TheHeaderProps> = (props) => {
 		</header>
 	);
 };
+
+TheHeader.displayName = 'TheHeader';

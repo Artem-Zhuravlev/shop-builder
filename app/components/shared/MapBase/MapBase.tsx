@@ -44,3 +44,5 @@ export const MapBase: FC<MapBaseProps> = (props) => {
 		</MapContainer>
 	);
 };
+
+MapBase.displayName = 'MapBase';

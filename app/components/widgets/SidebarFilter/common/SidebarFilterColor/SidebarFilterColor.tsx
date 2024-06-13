@@ -44,3 +44,5 @@ export const SidebarFilterColor: FC<Pick<InputColorsProps, 'items'>> = (
 		/>
 	);
 };
+
+SidebarFilterColor.displayName = 'SidebarFilterColor';

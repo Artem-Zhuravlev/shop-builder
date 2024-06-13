@@ -55,3 +55,5 @@ export default (props) => (
 		component={AutoSave}
 	/>
 );
+
+AutoSave.displayName = 'AutoSave';
