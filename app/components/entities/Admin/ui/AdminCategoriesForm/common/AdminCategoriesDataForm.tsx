@@ -1,9 +1,13 @@
-import { InputText, InputSelect, InputCheckbox } from '@shared/inputs';
 import React, { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { Form } from 'react-final-form';
 import { FormLayout } from '@widgets/FormLayout';
-import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
+import {
+	InputText,
+	InputSelect,
+	InputCheckbox,
+	InputImage,
+} from '@shared/inputs';
 
 export const AdminCategoriesDataForm: FC = () => {
 	const t = useTranslations();
@@ -38,6 +42,7 @@ export const AdminCategoriesDataForm: FC = () => {
 						placeholder={t('inputs.filters')}
 						options={filtersOptions}
 					/>
+					<InputImage name='image' />
 					<InputCheckbox
 						name='top'
 						label={t('inputs.top')}

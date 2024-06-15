@@ -44,9 +44,7 @@ export const InputImage: FC<InputImageProps> = (props) => {
 				</button>
 
 				<div className={cls.InputImageControls}>
-					<ButtonBase
-						variant='info'
-						onClick={() => openModal('imagesManager')}>
+					<ButtonBase onClick={() => openModal('imagesManager')}>
 						<span className='icon-pencil' />
 					</ButtonBase>
 					<ButtonBase

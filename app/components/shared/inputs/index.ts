@@ -16,4 +16,5 @@ export { Label } from './Label/Label';
 export { InputColors } from './InputColors/InputColors';
 export type { InputColorsProps } from './InputColors/InputColors';
 export { InputSizes } from './InputSizes/InputSizes';
+export { InputImage } from './InputImage/InputImage';
 export { AutoSave };
