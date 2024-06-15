@@ -63,6 +63,7 @@ export const ModalWindow: FC<ModalWindowProps> = (props) => {
 						onClick={(event) => event.stopPropagation()}>
 						{title && <h3 className={cls.ModalTitle}>{title}</h3>}
 						<button
+							data-testid='close'
 							type='button'
 							className={cls.ModalBtn}
 							onClick={handleClose}

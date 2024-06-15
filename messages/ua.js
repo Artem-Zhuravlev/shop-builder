@@ -7,6 +7,7 @@ import { inputs } from './ua/inputs';
 import { contacts } from './ua/contacts';
 import { cart } from './ua/cart';
 import { admin } from './ua/admin';
+import { languages } from './ua/languages';
 
 export default {
 	account,
@@ -18,4 +19,5 @@ export default {
 	contacts,
 	cart,
 	admin,
+	languages,
 };

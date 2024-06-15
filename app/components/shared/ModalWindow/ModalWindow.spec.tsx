@@ -1,33 +1,60 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
-import '@testing-library/jest-dom';
-import ModalWindow from './ModalWindow';
+import '@testing-library/jest-dom'; // for better assertion messages
+import { ModalWindow } from './ModalWindow';
 
-describe('ModalWindow component', () => {
-	test('renders with title and children when visible is true', () => {
+describe('ModalWindow', () => {
+	test('renders with all props', () => {
+		const onSubmit = jest.fn(); // Mock onSubmit function
+
 		const { getByText } = customRender(
 			<ModalWindow
+				modalType='base'
 				title='Test Modal'
-				visibility={true}>
+				size='xxl'
+				textSubmit='Submit'
+				onSubmit={onSubmit}>
 				<p>Modal Content</p>
 			</ModalWindow>
 		);
 
 		expect(getByText('Test Modal')).toBeInTheDocument();
 		expect(getByText('Modal Content')).toBeInTheDocument();
+		expect(getByText('Submit')).toBeInTheDocument();
 	});
 
-	test('does not render when visible is false', () => {
-		const { queryByText } = customRender(
+	test('calls handleClose when close button is clicked', () => {
+		const onSubmit = jest.fn();
+
+		const { getByTestId } = customRender(
 			<ModalWindow
-				title='Test Modal'
-				visibility={false}>
+				modalType='base'
+				onSubmit={onSubmit}>
 				<p>Modal Content</p>
 			</ModalWindow>
 		);
 
-		expect(queryByText('Test Modal')).not.toBeInTheDocument();
-		expect(queryByText('Modal Content')).not.toBeInTheDocument();
+		fireEvent.click(getByTestId('close'));
+
+		// Now we expect onSubmit not to be called, as handleClose should be called instead
+		expect(onSubmit).not.toHaveBeenCalled();
+	});
+
+	test('calls onSubmit when submit button is clicked', () => {
+		const onSubmit = jest.fn();
+
+		const { getByText } = customRender(
+			<ModalWindow
+				modalType='base'
+				textSubmit='Submit'
+				onSubmit={onSubmit}>
+				<p>Modal Content</p>
+			</ModalWindow>
+		);
+
+		fireEvent.click(getByText('Submit'));
+
+		expect(onSubmit).toHaveBeenCalledTimes(1);
 	});
 });
