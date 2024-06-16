@@ -1,7 +1,8 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { Editor, EditorProps } from 'react-draft-wysiwyg';
-import { convertToRaw, EditorState } from 'draft-js';
+import { ContentState, convertToRaw, EditorState } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import htmlToDraft from 'html-to-draftjs';
 import draftToHtml from 'draftjs-to-html';
 import { ValidationHandler } from '@utils/validations/types';
 import cls from './InputEdit.module.scss';
@@ -32,6 +33,21 @@ export const InputEdit: FC<InputEditProps> = (props) => {
 
 	const renderInputField = ({ input, meta }: any) => {
 		const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+		useEffect(() => {
+			if (input.value) {
+				const contentBlock = htmlToDraft(input.value);
+				if (contentBlock) {
+					const contentState = ContentState.createFromBlockArray(
+						contentBlock.contentBlocks
+					);
+					const initialEditorState =
+						EditorState.createWithContent(contentState);
+					setEditorState(initialEditorState);
+				}
+			}
+		}, [input.value]);
+
 		setError(!!meta.error && meta.touched && meta.submitFailed);
 		setErrorMessage(meta.error || '');
 
