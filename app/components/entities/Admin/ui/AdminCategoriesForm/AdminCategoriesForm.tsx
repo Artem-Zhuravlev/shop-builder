@@ -23,10 +23,6 @@ export const AdminCategoriesForm: FC = () => {
 			label: t('seo'),
 			description: <AdminCategoriesSeoForm />,
 		},
-		{
-			label: t('design'),
-			description: 'Tab 3 description (3)',
-		},
 	];
 
 	return <TabsBase items={tabs} />;
