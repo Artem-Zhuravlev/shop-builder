@@ -12,6 +12,11 @@ import cls from './InputSelect.module.scss';
 // TODO: investigate CSSObject
 // import { CSSObject } from '@emotion/styled';
 
+export type SelectOption = {
+	value: string | number;
+	label: string | number;
+};
+
 interface SelectProps<
 	Option = unknown,
 	IsMulti extends boolean = false | true,
@@ -27,7 +32,7 @@ interface SelectProps<
 	options: OptionsOrGroups<Option, Group>;
 	placeholder: string;
 	required?: boolean;
-	value?: { value: string | number; label: string | number };
+	value?: SelectOption;
 	label?: string;
 	validationHandler?: ValidationHandler;
 }

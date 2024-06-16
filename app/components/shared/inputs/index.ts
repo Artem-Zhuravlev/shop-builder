@@ -9,6 +9,7 @@ export { InputRadio } from './InputRadio/InputRadio';
 export { InputRange } from './InputRange/InputRange';
 export { InputRating } from './InputRating/InputRating';
 export { InputSelect } from './InputSelect/InputSelect';
+export type { SelectOption } from './InputSelect/InputSelect';
 export { InputSwitcher } from './InputSwitcher/InputSwitcher';
 export { InputText } from './InputText/InputText';
 export { InputTextarea } from './InputTextarea/InputTextarea';

@@ -1,10 +1,10 @@
 import React, { FC, useEffect } from 'react';
 import { Form } from 'react-final-form';
 import { useTranslations } from 'next-intl';
-import { InputText, InputSelect, AutoSave } from '@shared/inputs';
+import { InputText, InputSelect, SelectOption, AutoSave } from '@shared/inputs';
 
 export type ImageFilterProps = {
-	date: { value: string; label: string };
+	date: SelectOption;
 	search: string;
 };
 
