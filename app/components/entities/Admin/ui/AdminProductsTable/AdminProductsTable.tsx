@@ -30,6 +30,7 @@ import { useRouter } from 'next/router';
 import { TableNode } from '@table-library/react-table-library';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { getTheme } from '@table-library/react-table-library/baseline';
+import { useSelector } from '@lib/redux/store';
 
 interface AdminProductsTableItem extends TableNode {
 	id: string | number;
@@ -38,7 +39,7 @@ interface AdminProductsTableItem extends TableNode {
 	model: string;
 	price: string;
 	old_price?: string;
-	quantity: string | number;
+	quantity: number;
 	status: string;
 	slug: string;
 }
@@ -49,10 +50,10 @@ interface AdminProductsTableProps {
 
 export const AdminProductsTable: FC<AdminProductsTableProps> = (props) => {
 	const { nodes } = props;
+	const data = { nodes };
+	const defaultCurrency = useSelector((state) => state.product.currency);
 	const t = useTranslations('admin');
 	const router = useRouter();
-
-	const data = { nodes };
 	const theme = useTheme({
 		...getTheme(),
 		Table: `--data-table-library_grid-template-columns:  50px 90px 2fr 1fr 1fr 1fr 1fr 150px;`,
@@ -134,12 +135,27 @@ export const AdminProductsTable: FC<AdminProductsTableProps> = (props) => {
 								<Cell>{item.product_name}</Cell>
 								<Cell>{item.model}</Cell>
 								<Cell>
-									<del>{item.old_price}</del> <br />
-									<span style={{ color: 'var(--danger-main)' }}>
+									{item.old_price && (
+										<>
+											<del>
+												{defaultCurrency}
+												{item.old_price}
+											</del>
+											<br />
+										</>
+									)}
+
+									<span className={item.old_price && 'text-danger'}>
+										{defaultCurrency}
 										{item.price}
 									</span>
 								</Cell>
-								<Cell>{item.quantity}</Cell>
+								<Cell>
+									<span
+										className={`badge ${item.quantity > 0 ? 'badge-success' : 'badge-warning'}`}>
+										{item.quantity}
+									</span>
+								</Cell>
 								<Cell>{item.status}</Cell>
 								<Cell>
 									<ButtonBase

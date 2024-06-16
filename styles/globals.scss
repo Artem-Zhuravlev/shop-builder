@@ -135,5 +135,25 @@ input[type='number'] {
 	transition: height 500ms;
 }
 
+.text-danger {
+	color: var(--danger-main) !important;
+}
+
+.badge {
+	display: inline-block;
+	padding: var(--interface-size-md);
+	border-radius: var(--interface-size-sm);
+	color: var(--gray-10);
+	line-height: 1;
+
+	&-success {
+		background-color: var(--success-main);
+	}
+
+	&-warning {
+		background-color: var(--warning-main);
+	}
+}
+
 @import './abstracts/variables';
 @import './abstracts/include-media-or';

@@ -131,7 +131,7 @@ Default.args = {
 			price: '1000.00',
 			old_price: '1100.00',
 			slug: 'product-8',
-			quantity: 6,
+			quantity: 0,
 			status: 'Enabled',
 		},
 		{
@@ -144,7 +144,6 @@ Default.args = {
 			product_name: 'Sony PlayStation 5',
 			model: 'Product 91',
 			price: '500.00',
-			old_price: '550.00',
 			slug: 'product-9',
 			quantity: 25,
 			status: 'Enabled',
