@@ -48,4 +48,5 @@ export const inputs = {
 	dropzone: "Drag 'n' drop some files here, or click to select files",
 	search: 'Search',
 	all_dates: 'All Dates',
+	keywords: 'Keywords',
 };

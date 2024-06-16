@@ -1,7 +1,11 @@
 import React, { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { TabsBase } from '@shared/TabsBase';
-import { AdminCategoriesGeneralForm, AdminCategoriesDataForm } from './common';
+import {
+	AdminCategoriesGeneralForm,
+	AdminCategoriesDataForm,
+	AdminCategoriesSeoForm,
+} from './common';
 
 export const AdminCategoriesForm: FC = () => {
 	const t = useTranslations('base');
@@ -17,7 +21,7 @@ export const AdminCategoriesForm: FC = () => {
 		},
 		{
 			label: t('seo'),
-			description: 'Tab 3 description (3)',
+			description: <AdminCategoriesSeoForm />,
 		},
 		{
 			label: t('design'),
