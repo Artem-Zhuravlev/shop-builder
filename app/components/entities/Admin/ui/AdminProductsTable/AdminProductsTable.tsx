@@ -1,5 +1,6 @@
 import React, { FC, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
+import cls from './AdminProductsTable.module.scss';
 import {
 	Table,
 	Header,
@@ -23,23 +24,30 @@ import {
 	defaultSortIcon,
 } from '@shared/TableBase/TableBase';
 import { ButtonBase } from '@shared/ButtonBase';
+import { ImageMetaProps } from '@lib/types/ImageMetaProps';
+
 import { useRouter } from 'next/router';
 import { TableNode } from '@table-library/react-table-library';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { getTheme } from '@table-library/react-table-library/baseline';
 
-interface AdminCategoriesTableItem extends TableNode {
+interface AdminProductsTableItem extends TableNode {
 	id: string | number;
-	category_name: string;
-	sort_order: number;
+	image: ImageMetaProps;
+	product_name: string;
+	model: string;
+	price: string;
+	old_price?: string;
+	quantity: string | number;
+	status: string;
 	slug: string;
 }
 
-interface AdminCategoriesTableProps {
-	nodes: AdminCategoriesTableItem[];
+interface AdminProductsTableProps {
+	nodes: AdminProductsTableItem[];
 }
 
-export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
+export const AdminProductsTable: FC<AdminProductsTableProps> = (props) => {
 	const { nodes } = props;
 	const t = useTranslations('admin');
 	const router = useRouter();
@@ -47,7 +55,7 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 	const data = { nodes };
 	const theme = useTheme({
 		...getTheme(),
-		Table: `--data-table-library_grid-template-columns:  50px 1fr 150px 150px;`,
+		Table: `--data-table-library_grid-template-columns:  50px 90px 2fr 1fr 1fr 1fr 1fr 150px;`,
 		...defaultTableStyles,
 	});
 
@@ -60,9 +68,12 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 		{
 			sortIcon: { ...defaultSortIcon },
 			sortFns: {
-				CATEGORY: (array) =>
-					array.sort((a, b) => a.category_name.localeCompare(b.category_name)),
-				ORDER: (array) => array.sort((a, b) => a.sort_order - b.sort_order),
+				PRODUCT_NAME: (array) =>
+					array.sort((a, b) => a.product_name.localeCompare(b.product_name)),
+				MODEL: (array) => array.sort((a, b) => a.model.localeCompare(b.model)),
+				PRICE: (array) =>
+					array.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)),
+				QUANTITY: (array) => array.sort((a, b) => a.quantity - b.quantity),
 			},
 		}
 	);
@@ -86,15 +97,22 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 			layout={{ custom: true }}
 			sort={sort}
 			select={select}>
-			{(tableList: AdminCategoriesTableItem[]) => (
+			{(tableList: AdminProductsTableItem[]) => (
 				<>
 					<Header>
 						<HeaderRow>
 							<HeaderCellSelect />
-							<HeaderCellSort sortKey='CATEGORY'>
-								{t('category_name')}
+							<HeaderCell>{t('image')}</HeaderCell>
+							<HeaderCellSort sortKey='PRODUCT_NAME'>
+								{t('product_name')}
 							</HeaderCellSort>
-							<HeaderCellSort sortKey='ORDER'>{t('sort_order')}</HeaderCellSort>
+							<HeaderCellSort sortKey='MODEL'>{t('model')}</HeaderCellSort>
+							<HeaderCellSort sortKey='PRICE'>{t('price')}</HeaderCellSort>
+							<HeaderCellSort sortKey='QUANTITY'>
+								{t('quantity')}
+							</HeaderCellSort>
+							<HeaderCellSort sortKey='STATUS'>{t('status')}</HeaderCellSort>
+
 							<HeaderCell>{t('action')}</HeaderCell>
 						</HeaderRow>
 					</Header>
@@ -105,13 +123,27 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 								item={item}
 								key={item.id}>
 								<CellSelect item={item} />
-								<Cell>{item.category_name}</Cell>
-								<Cell>{item.sort_order}</Cell>
+								<Cell>
+									<img
+										src={item.image.url}
+										alt={item.image.alt}
+										width={50}
+										height={50}
+									/>
+								</Cell>
+								<Cell>{item.product_name}</Cell>
+								<Cell>{item.model}</Cell>
+								<Cell>
+									<del>{item.old_price}</del> <br />
+									<span style={{ color: 'var(--danger-main)' }}>
+										{item.price}
+									</span>
+								</Cell>
+								<Cell>{item.quantity}</Cell>
+								<Cell>{item.status}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() =>
-											router.push(`/admin/categories/${item.slug}`)
-										}>
+										onClick={() => router.push(`/admin/products/${item.slug}`)}>
 										<span className='icon-pencil' />
 									</ButtonBase>
 								</Cell>
@@ -124,4 +156,4 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 	);
 };
 
-AdminCategoriesTable.displayName = 'AdminCategoriesTable';
+AdminProductsTable.displayName = 'AdminProductsTable';

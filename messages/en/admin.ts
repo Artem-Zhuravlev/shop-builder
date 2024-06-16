@@ -50,4 +50,10 @@ export const admin = {
 	media_library: 'Media library',
 	attach_file_details: 'Details of attached file',
 	image_manager: 'Image manager',
+	image: 'Image',
+	product_name: 'Product Name',
+	model: 'Model',
+	price: 'Price',
+	quantity: 'Quantity',
+	status: 'Status',
 };
