@@ -6,6 +6,7 @@ export { InputFile } from './InputFile/InputFile';
 export { InputNumber } from './InputNumber/InputNumber';
 export { InputPassword } from './InputPassword/InputPassword';
 export { InputRadio } from './InputRadio/InputRadio';
+export { InputRadioGroup } from './InputRadio/InputRadioGroup';
 export { InputRange } from './InputRange/InputRange';
 export { InputRating } from './InputRating/InputRating';
 export { InputSelect } from './InputSelect/InputSelect';

@@ -2,13 +2,15 @@ import React, { FC, useState } from 'react';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.module.css';
 import { Field } from 'react-final-form';
 import { getValidationMessage } from '@utils/validations';
 import { ValidationHandler } from '@utils/validations/types';
 import { Label } from '../Label/Label';
 import cls from './InputDatePicker.module.scss';
 
-export interface InputDatePickerProps extends ReactDatePickerProps {
+export interface InputDatePickerProps
+	extends Omit<ReactDatePickerProps, 'onChange'> {
 	className?: string;
 	name: string;
 	required?: boolean;
@@ -62,12 +64,7 @@ export const InputDatePicker: FC<InputDatePickerProps> = (props) => {
 			<Field
 				name={name}
 				validate={(value) => {
-					getValidationMessage(
-						value.toString(),
-						required,
-						t,
-						validationHandler
-					);
+					getValidationMessage(value, required, t, validationHandler);
 				}}>
 				{renderInputField}
 			</Field>

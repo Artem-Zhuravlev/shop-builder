@@ -1,4 +1,5 @@
 .InputDatePicker {
+	width: 100%;
 	min-height: var(--input-height);
 	padding: var(--input-padding);
 	border: 1px solid var(--gray-40);
@@ -18,6 +19,12 @@
 
 	&::placeholder {
 		color: var(--gray-60);
+	}
+}
+
+:global {
+	.react-datepicker-wrapper {
+		width: 100%;
 	}
 }
 

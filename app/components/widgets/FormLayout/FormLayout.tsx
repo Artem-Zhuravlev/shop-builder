@@ -4,6 +4,7 @@ import { ButtonBase } from '@shared/ButtonBase';
 import cls from './FormLayout.module.scss';
 
 interface FormLayoutProps {
+	className?: string;
 	children: ReactNode;
 	title: string;
 	onSubmit: () => void;
@@ -12,7 +13,8 @@ interface FormLayoutProps {
 }
 
 export const FormLayout: FC<FormLayoutProps> = (props) => {
-	const { children, title, onSubmit, submitText, cancelText } = props;
+	const { className, children, title, onSubmit, submitText, cancelText } =
+		props;
 	const t = useTranslations('base');
 
 	return (
@@ -30,7 +32,7 @@ export const FormLayout: FC<FormLayoutProps> = (props) => {
 					</ButtonBase>
 				</div>
 			</div>
-			{children}
+			{className ? <div className={className}>{children}</div> : children}
 		</form>
 	);
 };

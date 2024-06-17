@@ -3,15 +3,20 @@
 	flex-wrap: wrap;
 	column-gap: var(--space-medium);
 }
+
 .row > * {
 	width: 100%;
 	max-width: 100%;
 	flex: 0 0 auto;
 }
 
+.align-items-center {
+	align-items: center;
+}
+
 @media (min-width: 576px) {
 	.col-sm-4 {
-		width: calc(33.33333333% - var(--space-medium) / 2);
+		width: calc((100% / 3) - (var(--space-medium) / 1.5));
 	}
 	.col-sm-6 {
 		width: calc(50% - var(--space-medium) / 2);
@@ -26,7 +31,7 @@
 
 @media (min-width: 768px) {
 	.col-md-4 {
-		width: calc(33.33333333% - var(--space-medium) / 2);
+		width: calc((100% / 3) - (var(--space-medium) / 1.5));
 	}
 	.col-md-6 {
 		width: calc(50% - var(--space-medium) / 2);
@@ -41,7 +46,7 @@
 
 @media (min-width: 992px) {
 	.col-lg-4 {
-		width: calc(33.33333333% - var(--space-medium) / 2);
+		width: calc((100% / 3) - (var(--space-medium) / 1.5));
 	}
 	.col-lg-6 {
 		width: calc(50% - var(--space-medium) / 2);
@@ -56,7 +61,7 @@
 
 @media (min-width: 1200px) {
 	.col-xl-4 {
-		width: calc(33.33333333% - var(--space-medium) / 2);
+		width: calc((100% / 3) - (var(--space-medium) / 2));
 	}
 	.col-xl-6 {
 		width: calc(50% - var(--space-medium) / 2);

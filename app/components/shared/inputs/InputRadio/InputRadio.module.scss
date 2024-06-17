@@ -77,3 +77,18 @@
 	min-height: var(--size-extra-small);
 	padding: 0 var(--interface-size-sm);
 }
+
+.InputRadioGroup {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-small);
+	&:not(:last-child) {
+		margin-bottom: var(--size-small);
+	}
+}
+
+.InputRadioGroupInputs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-medium);
+}

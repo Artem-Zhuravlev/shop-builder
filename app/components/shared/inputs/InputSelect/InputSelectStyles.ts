@@ -25,6 +25,7 @@ export const InputSelectStyles = {
 			minHeight: 'var(--input-height)',
 			boxShadow: 'none!important',
 			backgroundColor: controlBackground({ isDisabled }),
+			fontSize: 'var(--font-size-md)',
 			cursor: 'pointer',
 			'&:hover': {
 				borderColor,
