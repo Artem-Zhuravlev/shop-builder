@@ -49,4 +49,6 @@ export const inputs = {
 	search: 'Search',
 	all_dates: 'All Dates',
 	keywords: 'Keywords',
+	product_name: 'Product Name',
+	product_tags: 'Product Tags',
 };

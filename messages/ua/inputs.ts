@@ -49,4 +49,6 @@ export const inputs = {
 	search: 'Пошук',
 	all_dates: 'Всі дати',
 	keywords: 'Ключові слова',
+	product_name: 'Назва продукту',
+	product_tags: 'Теги продукту',
 };

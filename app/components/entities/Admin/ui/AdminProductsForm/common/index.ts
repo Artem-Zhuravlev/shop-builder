@@ -1,0 +1,1 @@
+export { AdminProductsGeneralForm } from './AdminProductsGeneralForm';
