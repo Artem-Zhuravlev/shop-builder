@@ -88,4 +88,8 @@ export const inputs = {
 	gram: 'Грам',
 	pound: 'Фунт',
 	ounce: 'Унція',
+	manufacturer: 'Виробник',
+	categories: 'Категорії',
+	downloads: 'Завантаження',
+	related_products: "Пов'язані продукти",
 };

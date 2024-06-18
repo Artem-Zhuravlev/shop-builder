@@ -50,7 +50,7 @@ export const AdminProductsDataForm: FC = () => {
 				<FormLayout
 					className='row align-items-center'
 					onSubmit={handleSubmit}
-					title={t('base.general')}>
+					title={t('base.data')}>
 					<InputText
 						className='col-md-6'
 						name='model'

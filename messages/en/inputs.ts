@@ -88,4 +88,8 @@ export const inputs = {
 	gram: 'Gram',
 	pound: 'Pound',
 	ounce: 'Ounce',
+	manufacturer: 'Manufacturer',
+	categories: 'Categories',
+	downloads: 'Downloads',
+	related_products: 'Related Products',
 };

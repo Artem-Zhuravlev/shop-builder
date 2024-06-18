@@ -36,4 +36,5 @@ export const base = {
 	seo: 'SEO',
 	design: 'Дизайн',
 	delete: 'Видалити',
+	links: 'Посилання',
 };

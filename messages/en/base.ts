@@ -36,4 +36,5 @@ export const base = {
 	seo: 'SEO',
 	design: 'Design',
 	delete: 'Delete',
+	links: 'Links',
 };
