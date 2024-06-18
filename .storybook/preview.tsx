@@ -17,7 +17,7 @@ const LanguageSwitcher = ({ onChange }) => {
 };
 
 const preview: Preview = {
-	parameters: {
+    parameters: {
 		// actions: { argTypesRegex: '^on[A-Z].*' },
 		controls: {
 			matchers: {
@@ -26,7 +26,8 @@ const preview: Preview = {
 			},
 		},
 	},
-	decorators: [
+
+    decorators: [
 		(Story) => {
 			const [locale, setLocale] = useState('en');
 
@@ -53,6 +54,8 @@ const preview: Preview = {
 			);
 		},
 	],
+
+    tags: ['autodocs']
 };
 
 export default preview;
