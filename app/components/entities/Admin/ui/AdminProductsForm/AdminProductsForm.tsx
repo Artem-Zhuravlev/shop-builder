@@ -5,6 +5,7 @@ import {
   AdminProductsDataForm,
   AdminProductsGeneralForm,
   AdminProductsLinksForm,
+  AdminProductsOptionsForm,
 } from './common';
 
 export const AdminProductsForm: FC = () => {
@@ -22,6 +23,10 @@ export const AdminProductsForm: FC = () => {
     {
       label: t('links'),
       description: <AdminProductsLinksForm />,
+    },
+    {
+      label: t('option'),
+      description: <AdminProductsOptionsForm />,
     },
   ];
 

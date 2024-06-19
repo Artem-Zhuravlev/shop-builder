@@ -95,6 +95,10 @@ h6 {
   margin-bottom: 0 !important;
 }
 
+.mb-30 {
+  margin-bottom: var(--size-small);
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

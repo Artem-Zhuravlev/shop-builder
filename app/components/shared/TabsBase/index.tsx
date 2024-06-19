@@ -1,3 +1,2 @@
-import { TabsBase } from './TabsBase';
-
-export { TabsBase };
+export { TabsBase } from './TabsBase';
+export type { TabItem } from './TabsBase';
