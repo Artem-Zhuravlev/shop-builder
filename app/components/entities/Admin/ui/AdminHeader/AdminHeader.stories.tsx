@@ -1,14 +1,13 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { AdminHeader } from './AdminHeader';
 
 export default {
-	title: 'Entities/Admin/Widgets/AdminHeader',
-	component: AdminHeader,
+  title: 'Entities/Admin/Widgets/AdminHeader',
+  component: AdminHeader,
 } as Meta<typeof AdminHeader>;
 
 const Template: StoryFn<typeof AdminHeader> = (args) => {
-	return <AdminHeader {...args} />;
+  return <AdminHeader {...args} />;
 };
 
 export const Default = Template.bind({});

@@ -1,6 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 import { BreadcrumbsBase } from './BreadcrumbsBase';
 
 describe('BreadcrumbsBase Component', () => {
@@ -12,7 +11,7 @@ describe('BreadcrumbsBase Component', () => {
 
   it('renders breadcrumbs with correct labels and links', () => {
     const { getByTestId, getAllByRole, getByText } = render(
-      <BreadcrumbsBase pages={mockPages} />
+      <BreadcrumbsBase pages={mockPages} />,
     );
 
     const breadcrumbsNav = getByTestId('breadcrumbs');
@@ -48,7 +47,7 @@ describe('BreadcrumbsBase Component', () => {
     ];
 
     const { getByTestId, getAllByRole, getByText } = render(
-      <BreadcrumbsBase pages={mockPagesNoLinks} />
+      <BreadcrumbsBase pages={mockPagesNoLinks} />,
     );
 
     const breadcrumbsNav = getByTestId('breadcrumbs');

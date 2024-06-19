@@ -1,5 +1,3 @@
 import { TabsBase } from './TabsBase';
 
-export {
-  TabsBase
-}
+export { TabsBase };

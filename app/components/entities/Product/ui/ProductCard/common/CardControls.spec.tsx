@@ -1,6 +1,5 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { fireEvent, render } from '@testing-library/react';
 import { CardControls } from './CardControls';
 
 describe('CardControls Component', () => {
@@ -16,7 +15,7 @@ describe('CardControls Component', () => {
         handleToFavorite={mockToFavorite}
         handleQuickView={mockQuickView}
         handleCompare={mockCompare}
-      />
+      />,
     );
 
     const toCardButton = getByLabelText('Add to card');

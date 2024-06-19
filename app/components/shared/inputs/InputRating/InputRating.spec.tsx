@@ -1,8 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { InputRating } from './InputRating';
+import { render } from '@testing-library/react';
 import { RatingProps } from 'react-simple-star-rating';
+import { InputRating } from './InputRating';
 
 describe('InputRating component', () => {
   it('renders the Rating component with props', () => {
@@ -29,4 +28,3 @@ describe('InputRating component', () => {
     }
   });
 });
-

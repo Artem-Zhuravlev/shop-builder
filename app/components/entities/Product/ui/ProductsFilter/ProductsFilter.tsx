@@ -1,21 +1,21 @@
-import React, { FC } from 'react';
-import {
-	ProductsFilterGridSwitcher,
-	ProductsFilterLimit,
-	ProductsFilterCompare,
-	ProductsFilterSort,
-} from './common';
+import { FC } from 'react';
 import cls from './ProductsFilter.module.scss';
+import {
+  ProductsFilterCompare,
+  ProductsFilterGridSwitcher,
+  ProductsFilterLimit,
+  ProductsFilterSort,
+} from './common';
 
 export const ProductsFilter: FC = () => {
-	return (
-		<nav className={cls.ProductsFilter}>
-			<ProductsFilterGridSwitcher />
-			<ProductsFilterLimit />
-			<ProductsFilterCompare />
-			<ProductsFilterSort />
-		</nav>
-	);
+  return (
+    <nav className={cls.ProductsFilter}>
+      <ProductsFilterGridSwitcher />
+      <ProductsFilterLimit />
+      <ProductsFilterCompare />
+      <ProductsFilterSort />
+    </nav>
+  );
 };
 
 ProductsFilter.displayName = 'ProductsFilter';

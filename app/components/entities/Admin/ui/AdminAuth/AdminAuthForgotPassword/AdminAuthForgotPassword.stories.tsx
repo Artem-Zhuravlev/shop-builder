@@ -1,14 +1,13 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { AdminAuthForgotPassword } from './AdminAuthForgotPassword';
 
 export default {
-	title: 'Entities/Admin/Auth/AdminAuthForgotPassword',
-	component: AdminAuthForgotPassword,
+  title: 'Entities/Admin/Auth/AdminAuthForgotPassword',
+  component: AdminAuthForgotPassword,
 } as Meta<typeof AdminAuthForgotPassword>;
 
 const Template: StoryFn<typeof AdminAuthForgotPassword> = (args) => {
-	return <AdminAuthForgotPassword {...args} />;
+  return <AdminAuthForgotPassword {...args} />;
 };
 
 export const Default = Template.bind({});

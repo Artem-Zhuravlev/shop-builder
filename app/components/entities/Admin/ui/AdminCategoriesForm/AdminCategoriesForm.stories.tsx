@@ -1,14 +1,13 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { AdminCategoriesForm } from './AdminCategoriesForm';
 
 export default {
-	title: 'Entities/Admin/Categories/AdminCategoriesForm',
-	component: AdminCategoriesForm,
+  title: 'Entities/Admin/Categories/AdminCategoriesForm',
+  component: AdminCategoriesForm,
 } as Meta<typeof AdminCategoriesForm>;
 
 const Template: StoryFn<typeof AdminCategoriesForm> = (args) => {
-	return <AdminCategoriesForm {...args} />;
+  return <AdminCategoriesForm {...args} />;
 };
 
 export const Default = Template.bind({});

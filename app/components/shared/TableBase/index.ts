@@ -1,5 +1,3 @@
 import { TableBase } from './TableBase';
 
-export {
-  TableBase
-}
+export { TableBase };

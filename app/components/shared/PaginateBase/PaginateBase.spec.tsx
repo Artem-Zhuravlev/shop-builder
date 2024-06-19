@@ -1,6 +1,5 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { fireEvent, render } from '@testing-library/react';
 import { PaginateBase } from './PaginateBase';
 
 describe('PaginateBase component', () => {
@@ -9,15 +8,14 @@ describe('PaginateBase component', () => {
     const pageCount = 10;
 
     const { getAllByRole } = render(
-      <PaginateBase
-        onPageChange={onPageChangeMock}
-        pageCount={pageCount}
-      />
+      <PaginateBase onPageChange={onPageChangeMock} pageCount={pageCount} />,
     );
 
     const pages = getAllByRole('button', { name: /Page \d+/ });
     fireEvent.click(pages[2]);
 
-    expect(onPageChangeMock).toHaveBeenCalledWith(expect.objectContaining({ selected: 2 }));
+    expect(onPageChangeMock).toHaveBeenCalledWith(
+      expect.objectContaining({ selected: 2 }),
+    );
   });
 });

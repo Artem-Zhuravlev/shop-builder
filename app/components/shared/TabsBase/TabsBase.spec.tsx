@@ -1,6 +1,5 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { fireEvent, render } from '@testing-library/react';
 import { TabsBase } from './TabsBase';
 
 describe('TabsBase component', () => {
@@ -13,7 +12,7 @@ describe('TabsBase component', () => {
   test('renders tabs with correct labels', () => {
     const { getByText } = render(<TabsBase items={tabs} />);
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       expect(getByText(tab.label)).toBeInTheDocument();
     });
   });

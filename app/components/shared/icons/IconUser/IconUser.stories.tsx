@@ -1,10 +1,9 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { IconUser } from './IconUser';
 
 export default {
-	title: 'Shared/Icons/IconUser',
-	component: IconUser,
+  title: 'Shared/Icons/IconUser',
+  component: IconUser,
 } as Meta<typeof IconUser>;
 
 const Template: StoryFn<typeof IconUser> = (args) => <IconUser {...args} />;

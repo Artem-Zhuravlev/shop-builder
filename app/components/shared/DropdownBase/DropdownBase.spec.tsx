@@ -1,6 +1,5 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { fireEvent, render } from '@testing-library/react';
 import { DropdownBase } from './DropdownBase';
 
 describe('DropdownBase Component', () => {
@@ -12,7 +11,9 @@ describe('DropdownBase Component', () => {
 
   it('renders the dropdown button', () => {
     const buttonText = 'Dropdown';
-    const { getByText } = render(<DropdownBase list={mockList}>{buttonText}</DropdownBase>);
+    const { getByText } = render(
+      <DropdownBase list={mockList}>{buttonText}</DropdownBase>,
+    );
     const dropdownButton = getByText(buttonText);
     expect(dropdownButton).toBeInTheDocument();
   });
@@ -20,7 +21,7 @@ describe('DropdownBase Component', () => {
   it('toggles the dropdown list on button click', () => {
     const buttonText = 'Dropdown';
     const { getByText, queryByText } = render(
-      <DropdownBase list={mockList}>{buttonText}</DropdownBase>
+      <DropdownBase list={mockList}>{buttonText}</DropdownBase>,
     );
 
     const dropdownButton = getByText(buttonText);

@@ -1,5 +1,3 @@
 import { ModalWindow } from './ModalWindow';
 
-export {
-  ModalWindow
-}
+export { ModalWindow };

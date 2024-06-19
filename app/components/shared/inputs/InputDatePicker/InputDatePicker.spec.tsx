@@ -1,6 +1,5 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { fireEvent, render } from '@testing-library/react';
 import { InputDatePicker } from './InputDatePicker';
 
 const mockOnChange = jest.fn();
@@ -11,10 +10,9 @@ describe('InputDatePicker Component', () => {
     const { getByPlaceholderText } = render(
       <InputDatePicker
         selected={null}
-        onChange={mockOnChange}
         placeholderText={placeholder}
-        dateFormat="MM/dd/yyyy"
-      />
+        dateFormat='MM/dd/yyyy'
+      />,
     );
 
     expect(getByPlaceholderText(placeholder)).toBeInTheDocument();
@@ -24,13 +22,14 @@ describe('InputDatePicker Component', () => {
     const { container } = render(
       <InputDatePicker
         selected={null}
-        onChange={mockOnChange}
-        placeholderText="Select Date"
-        dateFormat="MM/dd/yyyy"
-      />
+        placeholderText='Select Date'
+        dateFormat='MM/dd/yyyy'
+      />,
     );
 
-    const datepicker = container.querySelector('.react-datepicker__input-container input') as HTMLElement;
+    const datepicker = container.querySelector(
+      '.react-datepicker__input-container input',
+    ) as HTMLElement;
 
     fireEvent.change(datepicker, { target: { value: '10/25/2023' } });
 
@@ -42,13 +41,14 @@ describe('InputDatePicker Component', () => {
     const { container } = render(
       <InputDatePicker
         selected={date}
-        onChange={mockOnChange}
-        placeholderText="Select Date"
-        dateFormat="MM/dd/yyyy"
-      />
+        placeholderText='Select Date'
+        dateFormat='MM/dd/yyyy'
+      />,
     );
 
-    const datepicker = container.querySelector('.react-datepicker__input-container input') as HTMLInputElement;
+    const datepicker = container.querySelector(
+      '.react-datepicker__input-container input',
+    ) as HTMLInputElement;
 
     expect(datepicker.value).toBe('10/25/2023');
   });

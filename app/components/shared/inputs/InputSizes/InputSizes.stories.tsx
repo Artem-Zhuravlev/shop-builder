@@ -1,45 +1,41 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
-import { InputSizes } from './InputSizes';
-import { action as addonAction } from '@storybook/addon-actions';
-import { Form } from 'react-final-form';
 import { AutoSave } from '@shared/inputs';
+import { action as addonAction } from '@storybook/addon-actions';
+import { Meta, StoryFn } from '@storybook/react';
+import { Form } from 'react-final-form';
+import { InputSizes } from './InputSizes';
 
 export default {
-	title: 'Shared/Inputs/InputSizes',
-	component: InputSizes,
+  title: 'Shared/Inputs/InputSizes',
+  component: InputSizes,
 } as Meta<typeof InputSizes>;
 
 const Template: StoryFn<typeof InputSizes> = (args) => {
-	const onSubmit = (value: any) => {
-		addonAction('onSelectedSize')(value);
-	};
+  const onSubmit = (value: any) => {
+    addonAction('onSelectedSize')(value);
+  };
 
-	return (
-		<Form
-			onSubmit={onSubmit}
-			render={({ handleSubmit }) => (
-				<div>
-					<AutoSave
-						save={handleSubmit}
-						debounce={0}
-					/>
-					<InputSizes {...args} />
-				</div>
-			)}
-		/>
-	);
+  return (
+    <Form
+      onSubmit={onSubmit}
+      render={({ handleSubmit }) => (
+        <div>
+          <AutoSave save={handleSubmit} debounce={0} />
+          <InputSizes {...args} />
+        </div>
+      )}
+    />
+  );
 };
 
 const items = ['L', 'M', 'S', 'XL', 'XXL'];
 
 export const Default = Template.bind({});
 Default.args = {
-	items,
+  items,
 };
 
 export const WithRadioInputs = Template.bind({});
 WithRadioInputs.args = {
-	type: 'radio',
-	items,
+  type: 'radio',
+  items,
 };

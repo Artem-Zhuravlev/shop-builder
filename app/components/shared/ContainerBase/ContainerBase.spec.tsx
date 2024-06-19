@@ -1,6 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 import { ContainerBase } from './ContainerBase';
 
 describe('ContainerBase Component', () => {
@@ -8,7 +7,7 @@ describe('ContainerBase Component', () => {
     const { getByText } = render(
       <ContainerBase>
         <div>Hello, World!</div>
-      </ContainerBase>
+      </ContainerBase>,
     );
 
     expect(getByText('Hello, World!')).toBeInTheDocument();

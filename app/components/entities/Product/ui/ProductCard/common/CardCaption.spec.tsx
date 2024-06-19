@@ -1,6 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 import { CardCaption } from './CardCaption';
 
 describe('CardCaption component', () => {
@@ -10,7 +9,7 @@ describe('CardCaption component', () => {
     const mockRating = 4;
 
     const { getByText } = render(
-      <CardCaption to={mockTo} title={mockTitle} rating={mockRating} />
+      <CardCaption to={mockTo} title={mockTitle} rating={mockRating} />,
     );
 
     const titleElement = getByText(mockTitle);
