@@ -35,13 +35,15 @@ const config: StorybookConfig = {
 		'@chromatic-com/storybook',
 	],
 
-	framework: '@storybook/nextjs',
-
+	framework: {
+		name: '@storybook/nextjs',
+		options: { builder: { useSWC: true } },
+	},
 	docs: {},
 
 	webpackFinal: async (config) => {
 		if (config && config.resolve) {
-			config.resolve.alias = {
+			const alias = {
 				'@shared': path.resolve(__dirname, '../app/components/shared'),
 				'@features': path.resolve(__dirname, '../app/components/features'),
 				'@widgets': path.resolve(__dirname, '../app/components/widgets'),
@@ -51,12 +53,20 @@ const config: StorybookConfig = {
 				'@constants': path.resolve(__dirname, '../constants'),
 				'@styles': path.resolve(__dirname, '../styles'),
 				'@settings': path.resolve(__dirname, '../settings'),
+				'next/image': path.resolve(__dirname, './mocks/Image.tsx'),
 			};
 
-			config.resolve.alias['next/image'] = path.resolve(
-				__dirname,
-				'./mocks/Image.tsx'
-			);
+			config.resolve.alias = { ...config.resolve.alias, ...alias };
+		}
+
+		// Enable caching for faster rebuilds
+		if (config && config.cache) {
+			config.cache = {
+				type: 'filesystem',
+				buildDependencies: {
+					config: [__filename],
+				},
+			};
 		}
 
 		return config;
@@ -66,4 +76,5 @@ const config: StorybookConfig = {
 		reactDocgen: 'react-docgen-typescript',
 	},
 };
+
 export default config;
