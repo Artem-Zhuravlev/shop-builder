@@ -1,25 +1,25 @@
 .SidebarFilterManufacturerItem {
-	display: flex;
-	align-items: center;
-	gap: var(--space-small);
-	cursor: pointer;
-	&:not(:last-child) {
-		margin-bottom: var(--space-small);
-	}
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-bottom: var(--space-small);
+  }
 
-	&:first-child {
-		margin-top: var(--interface-size-sm);
-	}
+  &:first-child {
+    margin-top: var(--interface-size-sm);
+  }
 
-	input[type='checkbox'] {
-		&:checked + .SidebarFilterManufacturerImage {
-			outline: 1px solid var(--primary-main);
-		}
-	}
+  input[type='checkbox'] {
+    &:checked + .SidebarFilterManufacturerImage {
+      outline: 1px solid var(--primary-main);
+    }
+  }
 
-	&:focus-within {
-		.SidebarFilterManufacturerImage {
-			outline: 1px solid var(--primary-border);
-		}
-	}
+  &:focus-within {
+    .SidebarFilterManufacturerImage {
+      outline: 1px solid var(--primary-border);
+    }
+  }
 }

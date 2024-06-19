@@ -1,73 +1,73 @@
 .BlogCard {
-	display: flex;
-	flex-direction: column;
-	background-color: var(--gray-10);
-	border-radius: var(--space-medium);
-	overflow: hidden;
-	border: 1px solid var((--gray-40));
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var((--gray-40));
+  border-radius: var(--space-medium);
+  background-color: var(--gray-10);
+  overflow: hidden;
 }
 
 .BlogCardImage {
-	position: relative;
-	display: block;
-	min-height: 315px;
-	max-height: 315px;
-	background-color: var(--gray-50);
-	overflow: hidden;
-	margin: -1px;
+  display: block;
+  position: relative;
+  margin: -1px;
+  background-color: var(--gray-50);
+  min-height: 315px;
+  max-height: 315px;
+  overflow: hidden;
 
-	img {
-		display: block;
-		max-width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-		object-fit: cover;
-		transition: 0.4s ease transform;
-		transform-origin: 50%;
-	}
+  img {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 50%;
+    transition: 0.4s ease transform;
+    margin: auto;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-	&:hover,
-	&:focus {
-		img {
-			transform: scale(1.2);
-		}
-	}
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .BlogCardDescription {
-	padding-left: var(--space-medium);
-	padding-right: var(--space-medium);
+  padding-right: var(--space-medium);
+  padding-left: var(--space-medium);
 }
 
 .BlogCardInfo {
-	display: flex;
-	padding: var(--size-extra-small) 0;
-	flex-wrap: wrap;
-	row-gap: var(--space-small);
-	font-size: 14px;
+  display: flex;
+  row-gap: var(--space-small);
+  flex-wrap: wrap;
+  padding: var(--size-extra-small) 0;
+  font-size: 14px;
 }
 
 .BlogCardInfoItem {
-	display: flex;
-	align-items: center;
-	gap: var(--space-small);
-	&:not(:last-of-type) {
-		padding-right: var(--space-small);
-		margin-right: var(--space-small);
-		border-right: 1px solid var(--gray-90);
-	}
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+  &:not(:last-of-type) {
+    margin-right: var(--space-small);
+    border-right: 1px solid var(--gray-90);
+    padding-right: var(--space-small);
+  }
 }
 
 .BlogCardTitle {
-	transition: var(--transition-base);
+  transition: var(--transition-base);
 
-	&:hover,
-	&:focus {
-		color: var(--gray-80);
-	}
+  &:hover,
+  &:focus {
+    color: var(--gray-80);
+  }
 }

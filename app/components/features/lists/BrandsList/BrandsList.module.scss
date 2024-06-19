@@ -1,29 +1,29 @@
 @import '@styles/abstracts/mixins.scss';
 
 .BrandsList {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-	align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  align-items: stretch;
 
-	gap: var(--interface-size-lg);
-	@extend %listreset;
+  gap: var(--interface-size-lg);
+  @extend %listreset;
 }
 
 .BrandsLink {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 170px;
-	border: var(--btn-border-width) solid var(--gray-40);
-	padding: var(--space-medium);
-	transition: var(--transition-base);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-base);
+  border: var(--btn-border-width) solid var(--gray-40);
+  padding: var(--space-medium);
+  height: 170px;
 
-	&:hover,
-	&:focus {
-		border-color: var(--gray-60);
-	}
+  &:hover,
+  &:focus {
+    border-color: var(--gray-60);
+  }
 }
 
 .BrandsImg {
-	max-width: 80%;
+  max-width: 80%;
 }

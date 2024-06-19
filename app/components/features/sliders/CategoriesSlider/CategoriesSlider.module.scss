@@ -1,22 +1,22 @@
 .CategoriesSliderItem {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: var(--size-extra-small);
-	background-color: var(--gray-30);
-	padding: var(--space-small);
-	border-radius: var(--space-small);
-	border: 2px solid transparent;
-	transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-extra-small);
+  transition: var(--transition-base);
+  border: 2px solid transparent;
+  border-radius: var(--space-small);
+  background-color: var(--gray-30);
+  padding: var(--space-small);
 
-	&:hover,
-	&:focus {
-		border-color: var(--gray-40);
-	}
+  &:hover,
+  &:focus {
+    border-color: var(--gray-40);
+  }
 }
 
 .CategoriesSliderImage {
-	width: 250px;
-	height: 250px;
-	object-fit: cover;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }

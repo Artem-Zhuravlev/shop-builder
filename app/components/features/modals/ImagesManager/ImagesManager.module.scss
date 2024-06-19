@@ -1,67 +1,67 @@
 @import '@styles/abstracts/mixins.scss';
 
 .ImagesManager {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .ImagesManagerDownload {
-	padding-top: var(--size-middle);
+  padding-top: var(--size-middle);
 }
 
 .ImagesManagerMedia {
-	display: grid;
-	grid-template-columns: 1fr 320px;
-	flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  flex: 1;
 }
 
 .ImagesManagerMediaFilter {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .ImagesManagerMediaContent {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-	gap: var(--space-medium);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-medium);
 }
 
 .ImagesManagerMediaSidebar {
-	padding-left: var(--size-extra-small);
-	border-left: 1px solid var(--gray-40);
+  border-left: 1px solid var(--gray-40);
+  padding-left: var(--size-extra-small);
 }
 
 .ImagesManagerMediaItem {
-	max-height: 140px;
-	max-width: 140px;
-	cursor: pointer;
-	border: none;
-	padding: 0;
-	transition: var(--transition-base) box-shadow;
+  transition: var(--transition-base) box-shadow;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  max-width: 140px;
+  max-height: 140px;
 
-	&:focus {
-		box-shadow: 0 0 0 3px var(--primary-border);
-	}
+  &:focus {
+    box-shadow: 0 0 0 3px var(--primary-border);
+  }
 
-	img {
-		width: 100%;
-		max-height: 140px;
-		object-fit: cover;
-	}
+  img {
+    width: 100%;
+    max-height: 140px;
+    object-fit: cover;
+  }
 }
 
 .ImagesManagerMediaDetailsImage {
-	max-width: 100px;
-	max-height: 100px;
-	width: 100%;
-	object-fit: cover;
-	margin-bottom: var(--space-small);
+  margin-bottom: var(--space-small);
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
 }
 
 .ImagesManagerMediaDetailsList {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-extra-small);
-	@extend %listreset;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-extra-small);
+  @extend %listreset;
 }

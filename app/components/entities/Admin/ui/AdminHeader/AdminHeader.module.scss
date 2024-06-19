@@ -1,20 +1,17 @@
 .AdminHeader {
-	display: grid;
-	grid-template-columns: 100px 1fr;
-	background-color: var(--gray-10);
-	box-shadow: 0 0 var(--interface-size-sm) 0 var(--gray-40);
-	padding: var(--space-small) var(--space-medium);
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  box-shadow: 0 0 var(--interface-size-sm) 0 var(--gray-40);
+  background-color: var(--gray-10);
+  padding: var(--space-small) var(--space-medium);
 }
 
 .AdminHeaderLogo {
-	color: var(--primary-main);
-	// display: flex;
-	// max-width: 100px;
+  color: var(--primary-main);
 }
 
 .AdminHeaderControls {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-

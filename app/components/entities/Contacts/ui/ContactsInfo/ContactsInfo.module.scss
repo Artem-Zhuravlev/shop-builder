@@ -1,29 +1,29 @@
 @import '@styles/abstracts/mixins.scss';
 .ContactsInfo {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: var(--space-medium);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-medium);
 }
 
 .ContactsInfoItem {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-medium);
-	background-color: var(--gray-10);
-	padding: var(--size-small);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+  background-color: var(--gray-10);
+  padding: var(--size-small);
 }
 
 .ContactsInfoItemIcon {
-	font-size: var(--heading-3);
-	color: var(--warning-main);
+  color: var(--warning-main);
+  font-size: var(--heading-3);
 }
 
 .ContactsInfoList {
-	@extend %listreset;
+  @extend %listreset;
 }
 
 .ContactsInfoListItem {
-	address {
-		font-style: normal;
-	}
+  address {
+    font-style: normal;
+  }
 }

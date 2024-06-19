@@ -1,11 +1,11 @@
 @import '@styles/abstracts/mixins.scss';
 
 .HeaderLogo {
-	display: inline-block;
-	max-width: 100px;
-	width: 100%;
+  display: inline-block;
+  width: 100%;
+  max-width: 100px;
 
-	@include media('<tablet') {
-		order: 1;
-	}
+  @include media('<tablet') {
+    order: 1;
+  }
 }

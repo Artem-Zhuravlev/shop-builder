@@ -3,8 +3,8 @@
   align-items: center;
   margin: 0;
   padding: 0;
-  list-style: none;
   color: var(--gray-90);
+  list-style: none;
 }
 
 .PaginatePage,
@@ -19,12 +19,12 @@
 .PaginateBreakLink,
 .PaginatePrevLink,
 .PaginateNextLink {
-  min-width: var(--size-middle);
-  border: 1px solid var(--primary-border);
-  text-align: center;
   display: block;
-  padding: var(--interface-size-md) calc(var(--interface-size-md) * 2);
   cursor: pointer;
+  border: 1px solid var(--primary-border);
+  padding: var(--interface-size-md) calc(var(--interface-size-md) * 2);
+  min-width: var(--size-middle);
+  text-align: center;
   &:hover {
     background-color: var(--primary-main);
     color: var(--gray-10);

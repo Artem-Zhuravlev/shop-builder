@@ -1,28 +1,28 @@
 .InputTextarea {
-	width: 100%;
-	padding: var(--input-padding);
-	border: 1px solid var(--gray-40);
-	border-radius: var(--interface-size-sm);
-	min-height: 100px;
-	font-size: var(--font-size-md);
-	font-family: var(--font-family);
-	color: var(--gray-90);
+  border: 1px solid var(--gray-40);
+  border-radius: var(--interface-size-sm);
+  padding: var(--input-padding);
+  width: 100%;
+  min-height: 100px;
+  color: var(--gray-90);
+  font-size: var(--font-size-md);
+  font-family: var(--font-family);
 
-	&:focus {
-		border-color: var(--gray-50);
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+    border-color: var(--gray-50);
+  }
 
-	&:disabled {
-		color: var(--gray-70);
-		background-color: var(--gray-20);
-	}
+  &:disabled {
+    background-color: var(--gray-20);
+    color: var(--gray-70);
+  }
 
-	&::placeholder {
-		color: var(--gray-60);
-	}
+  &::placeholder {
+    color: var(--gray-60);
+  }
 }
 
 .InputTextareaError {
-	border-color: var(--danger-main) !important;
+  border-color: var(--danger-main) !important;
 }

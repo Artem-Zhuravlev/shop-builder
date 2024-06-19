@@ -1,78 +1,78 @@
 .SidebarToggler {
-	position: relative;
-	border-bottom: 1px solid var(--gray-40);
+  position: relative;
+  border-bottom: 1px solid var(--gray-40);
 
-	&:has(.SidebarResetBtn) {
-		display: grid;
-		grid-template-columns: 1fr 45px;
-		align-items: center;
+  &:has(.SidebarResetBtn) {
+    display: grid;
+    grid-template-columns: 1fr 45px;
+    align-items: center;
 
-		.SidebarContentWrapper {
-			grid-column: 1 / 3;
-		}
+    .SidebarContentWrapper {
+      grid-column: 1 / 3;
+    }
 
-		.SidebarCollapseBtn {
-			&::after {
-				display: none;
-			}
-		}
-	}
+    .SidebarCollapseBtn {
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
 
 .SidebarCollapseBtn {
-	position: relative;
-	display: flex;
-	align-items: center;
-	gap: var(--space-small);
-	width: 100%;
-	padding: var(--size-small) var(--space-medium);
-	border: none;
-	background-color: transparent;
-	cursor: pointer;
-	font-size: var(--heading-6);
-	z-index: 10;
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: var(--space-small);
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: var(--size-small) var(--space-medium);
+  width: 100%;
+  font-size: var(--heading-6);
 
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: var(--space-medium);
-		margin: auto;
-		width: var(--space-small);
-		height: var(--space-small);
-		border-top: 1px solid var(--gray-90);
-		border-right: 1px solid var(--gray-90);
-		transform-origin: 50%;
-		transform: rotate(135deg);
-		transition: var(--transition-base);
-	}
+  &::after {
+    position: absolute;
+    top: 0;
+    right: var(--space-medium);
+    bottom: 0;
+    transform: rotate(135deg);
+    transform-origin: 50%;
+    transition: var(--transition-base);
+    margin: auto;
+    border-top: 1px solid var(--gray-90);
+    border-right: 1px solid var(--gray-90);
+    width: var(--space-small);
+    height: var(--space-small);
+    content: '';
+  }
 
-	&:focus {
-		outline-color: var(--gray-50);
-	}
+  &:focus {
+    outline-color: var(--gray-50);
+  }
 }
 
 .buttonClose {
-	&::after {
-		transform: rotate(-45deg);
-	}
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 .SidebarResetBtn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	min-height: 45px;
-	border: none;
-	background-color: transparent;
-	color: var(--danger-main);
-	font-size: var(--font-size-sm);
-	cursor: pointer;
-	background-color: var(--gray-10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-color: var(--gray-10);
+  width: 100%;
+  min-height: 45px;
+  color: var(--danger-main);
+  font-size: var(--font-size-sm);
 }
 
 .SidebarContent {
-	padding: 0 var(--space-medium) var(--space-medium) var(--space-medium);
+  padding: 0 var(--space-medium) var(--space-medium) var(--space-medium);
 }

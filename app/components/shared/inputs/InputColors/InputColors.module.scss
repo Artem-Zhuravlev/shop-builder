@@ -1,49 +1,49 @@
 @import '@styles/abstracts/mixins.scss';
 .InputColors {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--space-extra-small);
-	align-items: flex-start;
-	@extend %listreset;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-extra-small);
+  @extend %listreset;
 }
 
 .InputColorsItem {
-	display: flex;
+  display: flex;
 }
 
 .InputColorsLabel {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
-	input[type='radio'],
-	input[type='checkbox'] {
-		&:checked ~ .InputColorsImage {
-			border-color: var(--gray-90);
-		}
-	}
+  input[type='radio'],
+  input[type='checkbox'] {
+    &:checked ~ .InputColorsImage {
+      border-color: var(--gray-90);
+    }
+  }
 
-	&:focus-within {
-		.InputColorsImage {
-			border-color: var(--primary-border);
-		}
-	}
+  &:focus-within {
+    .InputColorsImage {
+      border-color: var(--primary-border);
+    }
+  }
 }
 
 .InputColorsImage {
-	border: 1px solid transparent;
-	padding: 1px;
+  border: 1px solid transparent;
+  padding: 1px;
 
-	div {
-		width: var(--size-small);
-		height: var(--size-small);
-	}
+  div {
+    width: var(--size-small);
+    height: var(--size-small);
+  }
 }
 
 .InputColorsImageRounded {
-	border-radius: 50%;
-	div {
-		border-radius: 50%;
-	}
+  border-radius: 50%;
+  div {
+    border-radius: 50%;
+  }
 }

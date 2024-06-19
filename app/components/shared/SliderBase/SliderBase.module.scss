@@ -1,31 +1,31 @@
 .sliderArrow {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	width: var(--size-middle);
-	height: var(--size-middle);
-	border-radius: 50%;
-	border: none;
-	background-color: var(--gray-40);
-	cursor: pointer;
-	transition: var(--transition-base);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: var(--transition-base);
+  cursor: pointer;
+  margin: auto;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--gray-40);
+  width: var(--size-middle);
+  height: var(--size-middle);
 
-	&:hover,
-	&:focus {
-		background-color: var(--gray-50);
-	}
+  &:hover,
+  &:focus {
+    background-color: var(--gray-50);
+  }
 }
 
 .sliderArrowPrev {
-	left: calc(var(--size-small) * -2);
+  left: calc(var(--size-small) * -2);
 }
 
 .sliderArrowNext {
-	right: calc(var(--size-small) * -2);
+  right: calc(var(--size-small) * -2);
 }
 
 .SliderCard {
-	margin-left: var(--interface-size-md);
-	margin-right: var(--interface-size-md);
+  margin-right: var(--interface-size-md);
+  margin-left: var(--interface-size-md);
 }

@@ -1,31 +1,31 @@
 @import './include-media-or.scss';
 
 %scroll-bar {
-	&::-webkit-scrollbar {
-		width: var(--interface-size-sm);
-	}
+  &::-webkit-scrollbar {
+    width: var(--interface-size-sm);
+  }
 
-	&::-webkit-scrollbar-track {
-		background: var(--gray-40);
-		border-radius: var(--space-small);
-	}
+  &::-webkit-scrollbar-track {
+    border-radius: var(--space-small);
+    background: var(--gray-40);
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background: var(--primary-main);
-		border-radius: var(--space-small);
-	}
+  &::-webkit-scrollbar-thumb {
+    border-radius: var(--space-small);
+    background: var(--primary-main);
+  }
 }
 
 %listreset {
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-left: 0;
-	list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 $breakpoints: (
-	'phone': 480px,
-	'tablet': 768px,
-	'desktop': 980px,
-	'widescreen': 1200px,
+  'phone': 480px,
+  'tablet': 768px,
+  'desktop': 980px,
+  'widescreen': 1200px,
 );

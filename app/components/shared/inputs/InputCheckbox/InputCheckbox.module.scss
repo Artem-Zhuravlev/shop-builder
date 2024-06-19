@@ -1,69 +1,69 @@
 .InputCheckbox {
-	display: inline-flex;
-	align-items: center;
-	cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
 
-	input[type='checkbox'] {
-		&:checked + .InputCheckboxLabel {
-			&::before {
-				color: var(--gray-10);
-				background-color: var(--primary-main);
-				border-color: var(--gray-90);
-			}
-		}
-	}
+  input[type='checkbox'] {
+    &:checked + .InputCheckboxLabel {
+      &::before {
+        border-color: var(--gray-90);
+        background-color: var(--primary-main);
+        color: var(--gray-10);
+      }
+    }
+  }
 
-	&:focus-within {
-		.InputCheckboxLabel {
-			&::before {
-				border-color: var(--primary-border);
-			}
-		}
-	}
+  &:focus-within {
+    .InputCheckboxLabel {
+      &::before {
+        border-color: var(--primary-border);
+      }
+    }
+  }
 
-	&:has(.InputCheckboxSuffix) {
-		display: flex;
-		width: 100%;
-	}
+  &:has(.InputCheckboxSuffix) {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .InputCheckboxLabel {
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-	font-size: var(--font-size-lg);
-	padding-left: var(--size-small);
-	user-select: none;
-	width: 100%;
-	align-items: center;
-	gap: var(--space-small);
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-small);
+  padding-left: var(--size-small);
+  width: 100%;
+  font-size: var(--font-size-lg);
+  user-select: none;
 
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		left: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: transparent;
-		width: var(--input-prefix-size);
-		height: var(--input-prefix-size);
-		border: 1px solid var(--gray-90);
-		border-radius: var(--interface-size-sm);
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M20.293 5.293 9 16.586l-4.293-4.293-1.414 1.414L9 19.414 21.707 6.707l-1.414-1.414z' fill='%23fff'/%3E%3C/svg%3E");
-		background-size: contain;
-	}
+  &::before {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 1px solid var(--gray-90);
+    border-radius: var(--interface-size-sm);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M20.293 5.293 9 16.586l-4.293-4.293-1.414 1.414L9 19.414 21.707 6.707l-1.414-1.414z' fill='%23fff'/%3E%3C/svg%3E");
+    background-size: contain;
+    width: var(--input-prefix-size);
+    height: var(--input-prefix-size);
+    content: '';
+    color: transparent;
+  }
 }
 
 .InputCheckboxSuffix {
-	margin-right: 0;
-	margin-left: auto;
-	color: var(--gray-70);
-	font-size: var(--font-size-md);
-	background-color: var(--gray-30);
-	min-height: var(--size-extra-small);
-	padding: 0 var(--interface-size-sm);
+  margin-right: 0;
+  margin-left: auto;
+  background-color: var(--gray-30);
+  padding: 0 var(--interface-size-sm);
+  min-height: var(--size-extra-small);
+  color: var(--gray-70);
+  font-size: var(--font-size-md);
 }

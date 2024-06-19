@@ -1,20 +1,20 @@
 .Label {
-	position: relative;
-	&:not(:last-child) {
-		margin-bottom: var(--size-small);
-	}
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: var(--size-small);
+  }
 }
 
 .LabelName {
-	margin-bottom: var(--space-extra-small);
-	font-size: var(--font-size-lg);
-	cursor: pointer;
+  cursor: pointer;
+  margin-bottom: var(--space-extra-small);
+  font-size: var(--font-size-lg);
 }
 
 .ErrorMessage {
-	position: absolute;
-	left: 0;
-	bottom: calc(var(--size-extra-small) * -1);
-	color: var(--danger-main);
-	font-size: var(--font-size-sm);
+  position: absolute;
+  bottom: calc(var(--size-extra-small) * -1);
+  left: 0;
+  color: var(--danger-main);
+  font-size: var(--font-size-sm);
 }

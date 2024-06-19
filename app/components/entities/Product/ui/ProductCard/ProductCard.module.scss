@@ -1,97 +1,97 @@
 .ProductCard {
-	padding: var(--space-medium);
-	border: 1px solid var(--gray-40);
-	border-radius: var(--interface-size-md);
+  border: 1px solid var(--gray-40);
+  border-radius: var(--interface-size-md);
+  padding: var(--space-medium);
 }
 
 .CardImages {
-	position: relative;
-	display: flex;
-	min-height: 300px;
-	margin-bottom: var(--size-extra-small);
-	img {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-		max-height: 300px;
-		max-width: calc(100% - var(--space-medium) * 2);
-		transition: 0.3s ease opacity;
+  display: flex;
+  position: relative;
+  margin-bottom: var(--size-extra-small);
+  min-height: 300px;
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease opacity;
+    margin: auto;
+    max-width: calc(100% - var(--space-medium) * 2);
+    max-height: 300px;
 
-		&:last-child {
-			opacity: 0;
-		}
-	}
+    &:last-child {
+      opacity: 0;
+    }
+  }
 
-	&:hover {
-		img {
-			&:first {
-				opacity: 0;
-			}
-			&:last-child {
-				opacity: 1;
-			}
-		}
-	}
+  &:hover {
+    img {
+      &:first {
+        opacity: 0;
+      }
+      &:last-child {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .CardCaption {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: var(--space-small);
-	margin-bottom: var(--space-medium);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-small);
+  margin-bottom: var(--space-medium);
 }
 
 .CardTitle {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .CardControls {
-	display: flex;
-	justify-content: center;
-	gap: var(--interface-size-md);
-	margin-bottom: var(--space-medium);
+  display: flex;
+  justify-content: center;
+  gap: var(--interface-size-md);
+  margin-bottom: var(--space-medium);
 }
 
 .CardControlsBtn {
-	width: var(--size-middle);
-	height: var(--size-middle);
-	border: 1px solid var(--gray-40);
-	background-color: transparent;
-	font-size: 16px;
-	cursor: pointer;
-	transition: var(--transition-base);
-	border-radius: var(--interface-size-sm);
+  transition: var(--transition-base);
+  cursor: pointer;
+  border: 1px solid var(--gray-40);
+  border-radius: var(--interface-size-sm);
+  background-color: transparent;
+  width: var(--size-middle);
+  height: var(--size-middle);
+  font-size: 16px;
 
-	&:hover {
-		border-color: var(--success-border);
-	}
+  &:hover {
+    border-color: var(--success-border);
+  }
 }
 
 .CardInfo {
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
-	gap: var(--space-medium);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--space-medium);
 }
 
 .CardPriceNew {
-	font-weight: 700;
-	font-size: 20px;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .CardPriceOld {
-	color: var(--warning-hover);
+  color: var(--warning-hover);
 }
 
 .CardPriceTax {
-	padding: var(--interface-size-sm);
-	border-radius: var(--interface-size-sm);
-	background-color: var(--danger-main);
-	color: var(--gray-10);
-	font-size: 14px;
+  border-radius: var(--interface-size-sm);
+  background-color: var(--danger-main);
+  padding: var(--interface-size-sm);
+  color: var(--gray-10);
+  font-size: 14px;
 }

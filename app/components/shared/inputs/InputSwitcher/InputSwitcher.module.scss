@@ -1,37 +1,37 @@
 .InputSwitcher {
-	display: inline-flex;
-	align-items: center;
-	gap: var(--interface-size-lg);
-	cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--interface-size-lg);
+  cursor: pointer;
 
-	input[type='checkbox']:checked + .InputSwitcherControl {
-		&::before {
-			left: auto;
-			right: 0;
-			background-color: var(--primary-main);
-		}
-	}
+  input[type='checkbox']:checked + .InputSwitcherControl {
+    &::before {
+      right: 0;
+      left: auto;
+      background-color: var(--primary-main);
+    }
+  }
 }
 
 .InputSwitcherControl {
-	position: relative;
-	display: inline-flex;
-	width: var(--size-middle);
-	height: var(--space-small);
-	background-color: var(--gray-30);
-	border-radius: var(--interface-size-sm);
-	cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--interface-size-sm);
+  background-color: var(--gray-30);
+  width: var(--size-middle);
+  height: var(--space-small);
 
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		margin: auto;
-		border-radius: 50%;
-		width: var(--size-extra-small);
-		height: var(--size-extra-small);
-		background-color: var(--gray-50);
-	}
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50%;
+    background-color: var(--gray-50);
+    width: var(--size-extra-small);
+    height: var(--size-extra-small);
+    content: '';
+  }
 }

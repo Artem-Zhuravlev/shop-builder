@@ -1,25 +1,25 @@
 .BreadcrumbsList {
   display: flex;
-  list-style: none;
-  padding-left: 0;
   margin: 0;
-  font-size: var(--font-size-md);
+  padding-left: 0;
   color: var(--gray-90);
+  font-size: var(--font-size-md);
+  list-style: none;
 }
 
 .BreadcrumbsItem {
   position: relative;
-  padding-right: var(--space-medium);
   margin-right: var(--space-small);
+  padding-right: var(--space-medium);
 
   &:not(:last-of-type) {
     &::after {
-      content: "/";
       position: absolute;
-      right: 0;
       top: 0;
+      right: 0;
       bottom: 0;
       margin: auto;
+      content: '/';
     }
   }
 }

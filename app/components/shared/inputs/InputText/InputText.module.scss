@@ -1,59 +1,59 @@
 .InputText {
-	min-height: var(--input-height);
-	max-height: var(--input-height);
-	padding: var(--input-padding);
-	border: 1px solid var(--gray-40);
-	font-size: var(--font-size-md);
-	font-family: var(--font-family);
-	color: var(--gray-90);
-	border-radius: var(--interface-size-sm);
-	width: 100%;
+  border: 1px solid var(--gray-40);
+  border-radius: var(--interface-size-sm);
+  padding: var(--input-padding);
+  width: 100%;
+  min-height: var(--input-height);
+  max-height: var(--input-height);
+  color: var(--gray-90);
+  font-size: var(--font-size-md);
+  font-family: var(--font-family);
 
-	&:focus {
-		border-color: var(--gray-50);
-		outline: transparent;
-	}
-	&:disabled {
-		color: var(--gray-70);
-		background-color: var(--gray-20);
-	}
+  &:focus {
+    outline: transparent;
+    border-color: var(--gray-50);
+  }
+  &:disabled {
+    background-color: var(--gray-20);
+    color: var(--gray-70);
+  }
 
-	&::placeholder {
-		color: var(--gray-60);
-	}
+  &::placeholder {
+    color: var(--gray-60);
+  }
 }
 
 .InputTextDark {
-	border-color: var(--gray-20);
-	background-color: transparent;
-	color: var(--gray-10);
+  border-color: var(--gray-20);
+  background-color: transparent;
+  color: var(--gray-10);
 
-	&::placeholder {
-		color: var(--gray-20);
-	}
+  &::placeholder {
+    color: var(--gray-20);
+  }
 
-	&:focus {
-		border-color: var(--gray-40);
-	}
+  &:focus {
+    border-color: var(--gray-40);
+  }
 }
 
 .InputTextError {
-	border-color: var(--danger-main) !important;
+  border-color: var(--danger-main) !important;
 }
 
 .rounded {
-	padding-left: var(--size-extra-small);
-	padding-right: var(--size-extra-small);
-	border-radius: 30px;
+  border-radius: 30px;
+  padding-right: var(--size-extra-small);
+  padding-left: var(--size-extra-small);
 }
 
 .roundedLeftSide {
-	padding-left: var(--size-extra-small);
-	border-top-left-radius: 30px;
-	border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding-left: var(--size-extra-small);
 }
 
 .roundedRightSide {
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }

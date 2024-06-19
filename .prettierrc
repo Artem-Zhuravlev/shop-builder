@@ -4,7 +4,10 @@
   "tabWidth": 2,
   "semi": true,
   "arrowParens": "always",
-  "plugins": ["prettier-plugin-organize-imports"],
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-css-order"
+  ],
   "bracketSpacing": true,
   "endOfLine": "crlf",
   "bracketSameLine": true

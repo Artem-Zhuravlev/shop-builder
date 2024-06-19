@@ -1,39 +1,39 @@
 .AccountWishListProduct {
-	color: var(--primary-main);
-	border-bottom: 1px solid var(--primary-main);
-	transition: var(--transition-base);
-	&:hover,
-	&:focus {
-		border-color: transparent;
-	}
+  transition: var(--transition-base);
+  border-bottom: 1px solid var(--primary-main);
+  color: var(--primary-main);
+  &:hover,
+  &:focus {
+    border-color: transparent;
+  }
 }
 
 .AccountWishUnitPrice {
-	display: flex;
-	align-items: center;
-	gap: var(--space-small);
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
 }
 
 .AccountWishListActions {
-	display: flex;
-	gap: var(--interface-size-sm);
+  display: flex;
+  gap: var(--interface-size-sm);
 }
 
 .AccountWishListBtn {
-	width: var(--size-small);
-	height: var(--size-small);
-	border: none;
-	cursor: pointer;
-	font-size: var(--font-size-sm);
-	background-color: var(--gray-30);
-	transition: var(--transition-base);
+  transition: var(--transition-base);
+  cursor: pointer;
+  border: none;
+  background-color: var(--gray-30);
+  width: var(--size-small);
+  height: var(--size-small);
+  font-size: var(--font-size-sm);
 
-	&:hover,
-	&:focus {
-		background-color: var(--gray-40);
-	}
+  &:hover,
+  &:focus {
+    background-color: var(--gray-40);
+  }
 }
 
 .AccountWishListBtnDelete {
-	color: var(--danger-main);
+  color: var(--danger-main);
 }

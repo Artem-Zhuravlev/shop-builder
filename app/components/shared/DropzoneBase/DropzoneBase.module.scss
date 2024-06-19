@@ -1,19 +1,19 @@
 .DropzoneBase {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	gap: var(--space-small);
-	border: 2px dashed var(--gray-30);
-	padding: var(--size-small) var(--size-extra-small);
-	cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-small);
+  cursor: pointer;
+  border: 2px dashed var(--gray-30);
+  padding: var(--size-small) var(--size-extra-small);
 
-	p {
-		margin: 0;
-	}
+  p {
+    margin: 0;
+  }
 }
 
 .DropzoneBaseSelected {
-	border-color: var(--gray-50);
-	background-color: var(--gray-30);
+  border-color: var(--gray-50);
+  background-color: var(--gray-30);
 }

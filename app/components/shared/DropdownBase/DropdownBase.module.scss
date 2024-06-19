@@ -1,86 +1,86 @@
 .DropdownBase {
-	position: relative;
+  position: relative;
 }
 
 .DropdownBtn {
-	position: relative;
-	display: flex;
-	align-items: center;
-	padding-right: var(--size-extra-small);
-	border: none;
-	cursor: pointer;
-	color: var(--gray-90);
-	gap: var(--space-extra-small);
-	font-size: var(--font-size-lg);
-	font-family: var(--font-family);
-	background-color: transparent;
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: var(--space-extra-small);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding-right: var(--size-extra-small);
+  color: var(--gray-90);
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family);
 
-	&::after {
-		position: absolute;
-		top: var(--space-extra-small);
-		right: 0;
-		margin: auto;
-		content: '';
-		width: var(--interface-size-md);
-		height: var(--interface-size-md);
-		border-left: 1px solid var(--gray-90);
-		border-bottom: 1px solid var(--gray-90);
-		transform-origin: 50%;
-		transform: rotate(-45deg);
-	}
+  &::after {
+    position: absolute;
+    top: var(--space-extra-small);
+    right: 0;
+    transform: rotate(-45deg);
+    transform-origin: 50%;
+    margin: auto;
+    border-bottom: 1px solid var(--gray-90);
+    border-left: 1px solid var(--gray-90);
+    width: var(--interface-size-md);
+    height: var(--interface-size-md);
+    content: '';
+  }
 
-	&.DropdownBtnLight {
-		color: var(--gray-10);
-		&::after {
-			border-color: var(--gray-10);
-		}
-	}
+  &.DropdownBtnLight {
+    color: var(--gray-10);
+    &::after {
+      border-color: var(--gray-10);
+    }
+  }
 
-	&.DropdownBtnOpen {
-		&::after {
-			top: var(--space-small);
-			transform: rotate(135deg);
-		}
-	}
+  &.DropdownBtnOpen {
+    &::after {
+      top: var(--space-small);
+      transform: rotate(135deg);
+    }
+  }
 }
 
 .DropdownList {
-	position: absolute;
-	background-color: var(--gray-10);
-	border: 1px solid var(--gray-40);
-	list-style: none;
-	padding-left: 0;
-	border-radius: var(--interface-size-sm);
-	overflow: hidden;
-	min-width: 200px;
+  position: absolute;
+  border: 1px solid var(--gray-40);
+  border-radius: var(--interface-size-sm);
+  background-color: var(--gray-10);
+  padding-left: 0;
+  min-width: 200px;
+  overflow: hidden;
+  list-style: none;
 
-	a,
-	button {
-		display: flex;
-		align-items: center;
-		padding: var(--space-small) var(--space-medium);
-		gap: var(--space-small);
-		&:hover {
-			background-color: var(--primary-main);
-			color: var(--gray-10);
-		}
-	}
+  a,
+  button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-small);
+    padding: var(--space-small) var(--space-medium);
+    &:hover {
+      background-color: var(--primary-main);
+      color: var(--gray-10);
+    }
+  }
 
-	button {
-		background-color: transparent;
-		border: none;
-		font-size: var(--font-size-lg);
-		font-family: var(--font-family);
-		width: 100%;
-		text-align: left;
-		cursor: pointer;
-	}
+  button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: var(--font-size-lg);
+    font-family: var(--font-family);
+    text-align: left;
+  }
 }
 
 .left {
-	left: 0;
+  left: 0;
 }
 
 .right {
-	right: calc(var(--space-medium) * -1);
+  right: calc(var(--space-medium) * -1);
 }

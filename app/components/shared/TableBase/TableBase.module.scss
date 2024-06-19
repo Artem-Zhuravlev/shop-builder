@@ -1,20 +1,20 @@
 .TableBase {
-	:global {
-		table {
-			width: 100%;
-			border-collapse: collapse;
-		}
-		.rc-table-thead {
-			.rc-table-cell {
-				font-weight: 500;
-				background-color: var(--gray-30);
-			}
-		}
-		.rc-table-cell {
-			padding: var(--space-small) var(--space-medium);
-			border: 1px solid var(--gray-40);
-			text-align: left;
-			font-weight: 400;
-		}
-	}
+  :global {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .rc-table-thead {
+      .rc-table-cell {
+        background-color: var(--gray-30);
+        font-weight: 500;
+      }
+    }
+    .rc-table-cell {
+      border: 1px solid var(--gray-40);
+      padding: var(--space-small) var(--space-medium);
+      font-weight: 400;
+      text-align: left;
+    }
+  }
 }

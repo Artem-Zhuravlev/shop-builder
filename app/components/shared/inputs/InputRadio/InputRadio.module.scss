@@ -1,94 +1,94 @@
 .RadioGroup {
-	display: grid;
-	gap: var(--gap-middle);
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--gap-middle);
 }
 
 .InputRadio {
-	display: inline-flex;
-	align-items: center;
-	cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
 
-	input[type='radio'] {
-		&:checked + .InputRadioLabel {
-			&::after {
-				border-color: var(--gray-90);
-				background-color: var(--primary-main);
-			}
-		}
-	}
+  input[type='radio'] {
+    &:checked + .InputRadioLabel {
+      &::after {
+        border-color: var(--gray-90);
+        background-color: var(--primary-main);
+      }
+    }
+  }
 
-	&:focus-within {
-		.InputRadioLabel {
-			&::before {
-				border-color: var(--primary-border);
-			}
-		}
-	}
+  &:focus-within {
+    .InputRadioLabel {
+      &::before {
+        border-color: var(--primary-border);
+      }
+    }
+  }
 }
 
 .withSuffix {
-	display: flex;
-	.InputRadioLabel {
-		display: flex;
-		align-items: center;
-		width: 100%;
-		gap: var(--space-small);
-	}
+  display: flex;
+  .InputRadioLabel {
+    display: flex;
+    align-items: center;
+    gap: var(--space-small);
+    width: 100%;
+  }
 }
 
 .InputRadioLabel {
-	position: relative;
-	font-size: var(--font-size-lg);
-	padding-left: var(--size-small);
+  position: relative;
+  padding-left: var(--size-small);
+  font-size: var(--font-size-lg);
 
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		border-radius: 50%;
-	}
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    content: '';
+  }
 
-	&::before {
-		left: 0;
-		width: var(--input-prefix-size);
-		height: var(--input-prefix-size);
-		border: 1px solid var(--gray-90);
-		border-radius: 50%;
-	}
+  &::before {
+    left: 0;
+    border: 1px solid var(--gray-90);
+    border-radius: 50%;
+    width: var(--input-prefix-size);
+    height: var(--input-prefix-size);
+  }
 
-	&::after {
-		left: var(--space-extra-small);
-		width: calc(var(--input-prefix-size) * 0.5);
-		height: calc(var(--input-prefix-size) * 0.5);
-		background-color: transparent;
-	}
+  &::after {
+    left: var(--space-extra-small);
+    background-color: transparent;
+    width: calc(var(--input-prefix-size) * 0.5);
+    height: calc(var(--input-prefix-size) * 0.5);
+  }
 }
 
 .InputRadioSuffix {
-	margin-right: 0;
-	margin-left: auto;
-	color: var(--gray-70);
-	font-size: var(--font-size-md);
-	background-color: var(--gray-30);
-	min-height: var(--size-extra-small);
-	padding: 0 var(--interface-size-sm);
+  margin-right: 0;
+  margin-left: auto;
+  background-color: var(--gray-30);
+  padding: 0 var(--interface-size-sm);
+  min-height: var(--size-extra-small);
+  color: var(--gray-70);
+  font-size: var(--font-size-md);
 }
 
 .InputRadioGroup {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-small);
-	&:not(:last-child) {
-		margin-bottom: var(--size-small);
-	}
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-small);
+  &:not(:last-child) {
+    margin-bottom: var(--size-small);
+  }
 }
 
 .InputRadioGroupInputs {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--space-medium);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-medium);
 }

@@ -1,10 +1,10 @@
 .CartProductsTableAmount {
-	display: flex;
-	font-weight: 700;
+  display: flex;
+  font-weight: 700;
 }
 
 .CartProductsTableQuantity {
-	display: grid;
-	grid-template-columns: 1fr 38px 38px;
-	gap: var(--interface-size-sm);
+  display: grid;
+  grid-template-columns: 1fr 38px 38px;
+  gap: var(--interface-size-sm);
 }
