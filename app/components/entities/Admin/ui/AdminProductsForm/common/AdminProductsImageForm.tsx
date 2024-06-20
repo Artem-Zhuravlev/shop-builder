@@ -33,6 +33,10 @@ export const AdminProductsImageForm: FC = () => {
             className='row align-items-center'
             onSubmit={handleSubmit}
             title={t('base.special')}>
+            <h3 className='h4'>{t('base.image')}</h3>
+            <InputImage name='image' />
+            <hr />
+            <h3 className='h4'>{t('base.additional_images')}</h3>
             <div className='d-flex gap-1 mb-30'>
               <ButtonBase onClick={() => push('additional_images', undefined)}>
                 {t('base.add')}
@@ -43,10 +47,6 @@ export const AdminProductsImageForm: FC = () => {
                 {t('base.remove')}
               </ButtonBase>
             </div>
-            <h3 className='h4'>{t('base.image')}</h3>
-            <InputImage name='image' />
-            <hr />
-            <h3 className='h4'>{t('base.additional_images')}</h3>
             <FieldArray name='additional_images'>
               {({ fields }) =>
                 fields.map((name, index) => (

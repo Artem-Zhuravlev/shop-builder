@@ -5,4 +5,5 @@ export { AdminProductsImageForm } from './AdminProductsImageForm';
 export { AdminProductsLinksForm } from './AdminProductsLinksForm';
 export { AdminProductsOptionsForm } from './AdminProductsOptionsForm';
 export { AdminProductsRecurringForm } from './AdminProductsRecurringForm';
+export { AdminProductsSeoForm } from './AdminProductsSeoForm';
 export { AdminProductsSpecialForm } from './AdminProductsSpecialForm';

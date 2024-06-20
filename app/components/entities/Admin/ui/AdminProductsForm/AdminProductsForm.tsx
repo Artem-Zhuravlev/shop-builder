@@ -9,6 +9,7 @@ import {
   AdminProductsLinksForm,
   AdminProductsOptionsForm,
   AdminProductsRecurringForm,
+  AdminProductsSeoForm,
   AdminProductsSpecialForm,
 } from './common';
 
@@ -47,6 +48,10 @@ export const AdminProductsForm: FC = () => {
     {
       label: t('image'),
       description: <AdminProductsImageForm />,
+    },
+    {
+      label: t('seo'),
+      description: <AdminProductsSeoForm />,
     },
   ];
 
