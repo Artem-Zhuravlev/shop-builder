@@ -16,6 +16,9 @@ export const AdminProductsDiscountForm: FC = () => {
   return (
     <Form
       onSubmit={onSubmit}
+      initialValues={{
+        discount: [{}],
+      }}
       mutators={{
         ...arrayMutators,
       }}

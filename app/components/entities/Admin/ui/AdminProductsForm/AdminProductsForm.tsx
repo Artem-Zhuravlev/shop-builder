@@ -8,6 +8,7 @@ import {
   AdminProductsLinksForm,
   AdminProductsOptionsForm,
   AdminProductsRecurringForm,
+  AdminProductsSpecialForm,
 } from './common';
 
 export const AdminProductsForm: FC = () => {
@@ -37,6 +38,10 @@ export const AdminProductsForm: FC = () => {
     {
       label: t('discount'),
       description: <AdminProductsDiscountForm />,
+    },
+    {
+      label: t('special'),
+      description: <AdminProductsSpecialForm />,
     },
   ];
 

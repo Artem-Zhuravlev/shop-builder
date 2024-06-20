@@ -41,4 +41,5 @@ export const base = {
   option: 'Option',
   recurring: 'Recurring',
   discount: 'Discount',
+  special: 'Special',
 };

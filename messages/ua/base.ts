@@ -41,4 +41,5 @@ export const base = {
   option: 'Параметр',
   recurring: 'Періодичність',
   discount: 'Знижка',
+  special: 'Акція',
 };

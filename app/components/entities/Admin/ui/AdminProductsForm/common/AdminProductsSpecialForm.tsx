@@ -1,5 +1,5 @@
 import { ButtonBase } from '@shared/ButtonBase';
-import { InputSelect } from '@shared/inputs';
+import { InputDatePicker, InputSelect, InputText } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';
 import arrayMutators from 'final-form-arrays';
 import { useTranslations } from 'next-intl';
@@ -7,7 +7,7 @@ import { FC } from 'react';
 import { Form } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 
-export const AdminProductsRecurringForm: FC = () => {
+export const AdminProductsSpecialForm: FC = () => {
   const t = useTranslations();
   const onSubmit = (value: any) => {
     console.log(value);
@@ -17,7 +17,7 @@ export const AdminProductsRecurringForm: FC = () => {
     <Form
       onSubmit={onSubmit}
       initialValues={{
-        recurring: [{}],
+        special: [{}],
       }}
       mutators={{
         ...arrayMutators,
@@ -32,28 +32,28 @@ export const AdminProductsRecurringForm: FC = () => {
           <FormLayout
             className='row align-items-center'
             onSubmit={handleSubmit}
-            title={t('base.recurring')}>
+            title={t('base.special')}>
             <div className='d-flex gap-1 mb-30'>
-              <ButtonBase onClick={() => push('recurring', undefined)}>
+              <ButtonBase onClick={() => push('special', undefined)}>
                 {t('base.add')}
               </ButtonBase>
-              <ButtonBase variant='danger' onClick={() => pop('recurring')}>
+              <ButtonBase variant='danger' onClick={() => pop('special')}>
                 {t('base.remove')}
               </ButtonBase>
             </div>
-            <FieldArray name='recurring'>
+            <FieldArray name='special'>
               {({ fields }) =>
                 fields.map((name, index) => (
                   <div
                     key={name}
                     style={{
                       display: 'grid',
-                      gridTemplateColumns: '1fr 1fr 38px',
+                      gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 38px',
                       gap: 'var(--space-medium)',
                     }}>
                     <InputSelect
-                      name={`${name}.recurring_profile`}
-                      placeholder={t('inputs.recurring_profile')}
+                      name={`${name}.customer_group`}
+                      placeholder={t('inputs.customer_group')}
                       options={[
                         {
                           value: 'two_three_days',
@@ -65,19 +65,22 @@ export const AdminProductsRecurringForm: FC = () => {
                         },
                       ]}
                     />
-                    <InputSelect
-                      name={`${name}.customer_group`}
-                      placeholder={t('inputs.customer_group')}
-                      options={[
-                        {
-                          value: 'out_of_stock',
-                          label: t('inputs.out_of_stock'),
-                        },
-                        {
-                          value: 'pre_order',
-                          label: t('inputs.pre_order'),
-                        },
-                      ]}
+                    <InputText
+                      type='number'
+                      name={`${name}.priority`}
+                      placeholder={t('inputs.priority')}
+                    />
+                    <InputText
+                      name={`${name}.price`}
+                      placeholder={t('inputs.price')}
+                    />
+                    <InputDatePicker
+                      name={`${name}.start_date`}
+                      placeholder={t('inputs.start_date')}
+                    />
+                    <InputDatePicker
+                      name={`${name}.end_date`}
+                      placeholder={t('inputs.end_date')}
                     />
                     <ButtonBase
                       onClick={() => fields.remove(index)}
@@ -95,4 +98,4 @@ export const AdminProductsRecurringForm: FC = () => {
   );
 };
 
-AdminProductsRecurringForm.displayName = 'AdminProductsRecurringForm';
+AdminProductsSpecialForm.displayName = 'AdminProductsSpecialForm';
