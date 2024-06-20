@@ -98,4 +98,7 @@ export const inputs = {
   points: 'Points',
   recurring_profile: 'Recurring Profile',
   customer_group: 'Customer Group',
+  priority: 'Priority',
+  start_date: 'Start Date',
+  end_date: 'End Date',
 };

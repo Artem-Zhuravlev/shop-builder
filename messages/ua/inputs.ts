@@ -98,4 +98,7 @@ export const inputs = {
   points: 'Бали',
   recurring_profile: 'Профіль повторної оплати',
   customer_group: 'Група клієнтів',
+  priority: 'Пріорітет',
+  start_date: 'Дата початку',
+  end_date: 'Дата закінчення',
 };

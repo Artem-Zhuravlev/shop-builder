@@ -3,10 +3,11 @@ import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 import {
   AdminProductsDataForm,
+  AdminProductsDiscountForm,
   AdminProductsGeneralForm,
   AdminProductsLinksForm,
   AdminProductsOptionsForm,
-  AdminProductsRecurringForm
+  AdminProductsRecurringForm,
 } from './common';
 
 export const AdminProductsForm: FC = () => {
@@ -32,6 +33,10 @@ export const AdminProductsForm: FC = () => {
     {
       label: t('recurring'),
       description: <AdminProductsRecurringForm />,
+    },
+    {
+      label: t('discount'),
+      description: <AdminProductsDiscountForm />,
     },
   ];
 

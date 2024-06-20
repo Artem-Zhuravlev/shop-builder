@@ -40,4 +40,5 @@ export const base = {
   links: 'Посилання',
   option: 'Параметр',
   recurring: 'Періодичність',
+  discount: 'Знижка',
 };
