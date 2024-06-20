@@ -42,4 +42,6 @@ export const base = {
   recurring: 'Recurring',
   discount: 'Discount',
   special: 'Special',
+  image: 'Image',
+  additional_images: 'Additional images',
 };

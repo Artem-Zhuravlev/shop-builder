@@ -5,6 +5,7 @@ import {
   AdminProductsDataForm,
   AdminProductsDiscountForm,
   AdminProductsGeneralForm,
+  AdminProductsImageForm,
   AdminProductsLinksForm,
   AdminProductsOptionsForm,
   AdminProductsRecurringForm,
@@ -42,6 +43,10 @@ export const AdminProductsForm: FC = () => {
     {
       label: t('special'),
       description: <AdminProductsSpecialForm />,
+    },
+    {
+      label: t('image'),
+      description: <AdminProductsImageForm />,
     },
   ];
 

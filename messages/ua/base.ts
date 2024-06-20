@@ -42,4 +42,6 @@ export const base = {
   recurring: 'Періодичність',
   discount: 'Знижка',
   special: 'Акція',
+  image: 'Зображення',
+  additional_images: 'Додаткові зображення',
 };
