@@ -9,6 +9,7 @@ import {
   AdminProductsLinksForm,
   AdminProductsOptionsForm,
   AdminProductsRecurringForm,
+  AdminProductsRewardPointsForm,
   AdminProductsSeoForm,
   AdminProductsSpecialForm,
 } from './common';
@@ -48,6 +49,10 @@ export const AdminProductsForm: FC = () => {
     {
       label: t('image'),
       description: <AdminProductsImageForm />,
+    },
+    {
+      label: t('reward_points'),
+      description: <AdminProductsRewardPointsForm />,
     },
     {
       label: t('seo'),

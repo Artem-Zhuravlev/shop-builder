@@ -44,4 +44,5 @@ export const base = {
   special: 'Special',
   image: 'Image',
   additional_images: 'Additional images',
+  reward_points: 'Reward points',
 };

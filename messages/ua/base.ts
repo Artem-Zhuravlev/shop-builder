@@ -44,4 +44,5 @@ export const base = {
   special: 'Акція',
   image: 'Зображення',
   additional_images: 'Додаткові зображення',
+  reward_points: 'Бали нагород',
 };
