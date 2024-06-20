@@ -6,6 +6,7 @@ import {
   AdminProductsGeneralForm,
   AdminProductsLinksForm,
   AdminProductsOptionsForm,
+  AdminProductsRecurringForm
 } from './common';
 
 export const AdminProductsForm: FC = () => {
@@ -27,6 +28,10 @@ export const AdminProductsForm: FC = () => {
     {
       label: t('option'),
       description: <AdminProductsOptionsForm />,
+    },
+    {
+      label: t('recurring'),
+      description: <AdminProductsRecurringForm />,
     },
   ];
 

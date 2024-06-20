@@ -44,3 +44,5 @@ export const AdminProductsOptionsForm: FC = () => {
     </div>
   );
 };
+
+AdminProductsOptionsForm.displayName = 'AdminProductsOptionsForm';

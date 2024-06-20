@@ -39,4 +39,5 @@ export const base = {
   delete: 'Видалити',
   links: 'Посилання',
   option: 'Параметр',
+  recurring: 'Періодичність',
 };

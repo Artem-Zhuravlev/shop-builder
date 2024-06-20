@@ -96,4 +96,6 @@ export const inputs = {
   option_name: 'Option Name',
   required: 'Required',
   points: 'Points',
+  recurring_profile: 'Recurring Profile',
+  customer_group: 'Customer Group',
 };

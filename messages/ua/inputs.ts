@@ -96,4 +96,6 @@ export const inputs = {
   option_name: 'Назва опції',
   required: 'Обов’язково',
   points: 'Бали',
+  recurring_profile: 'Профіль повторної оплати',
+  customer_group: 'Група клієнтів',
 };

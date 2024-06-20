@@ -103,3 +103,5 @@ export const AdminProductsOptionForm: FC<AdminProductsOptionFormProps> = ({
     />
   );
 };
+
+AdminProductsOptionForm.displayName = 'AdminProductsOptionForm';

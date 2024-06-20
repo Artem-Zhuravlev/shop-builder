@@ -39,4 +39,5 @@ export const base = {
   delete: 'Delete',
   links: 'Links',
   option: 'Option',
+  recurring: 'Recurring',
 };
