@@ -36,7 +36,11 @@ export const ProductReviewForm: FC = () => {
               onClick={handleRating}
               className={cls.ProductReviewFormRating}
             />
-            <InputText name='name' placeholder={t('inputs.name')} required />
+            <InputText
+              name='name'
+              placeholder={t('inputs.your_name')}
+              required
+            />
             <InputTextarea
               name='review'
               placeholder={t('inputs.review')}
