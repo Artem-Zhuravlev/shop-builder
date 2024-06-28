@@ -1,5 +1,5 @@
 export const inputs = {
-  name: "Ваше ім'я",
+  your_name: "Ваше ім'я",
   review: 'Ваш відгук',
   write_review: 'Залишити відгук',
   first_name: "Ім'я",
@@ -101,4 +101,5 @@ export const inputs = {
   priority: 'Пріорітет',
   start_date: 'Дата початку',
   end_date: 'Дата закінчення',
+  name: "Назва або ім'я",
 };

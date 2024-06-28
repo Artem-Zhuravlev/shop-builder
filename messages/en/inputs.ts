@@ -1,5 +1,5 @@
 export const inputs = {
-  name: 'Your name',
+  your_name: 'Your name',
   review: 'Your Review',
   write_review: 'Write review',
   first_name: 'First Name',
@@ -101,4 +101,5 @@ export const inputs = {
   priority: 'Priority',
   start_date: 'Start Date',
   end_date: 'End Date',
+  name: 'Name',
 };
