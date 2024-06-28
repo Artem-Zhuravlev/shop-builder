@@ -59,4 +59,5 @@ export const admin = {
   status: 'Status',
   name: 'Name',
   trial_profile: 'Trial profile',
+  filter_group: 'Filter Group'
 };

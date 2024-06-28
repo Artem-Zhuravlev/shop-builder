@@ -59,4 +59,5 @@ export const admin = {
   status: 'Статус',
   name: 'Назва',
   trial_profile: 'Випробувальний профіль',
+  filter_group: 'Група фільтрів',
 };
