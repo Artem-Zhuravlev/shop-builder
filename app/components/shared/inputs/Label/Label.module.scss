@@ -1,6 +1,7 @@
 .Label {
   position: relative;
-  &:not(:last-child) {
+  &:not(:last-child),
+  &:last-child[class*=' col-'] {
     margin-bottom: var(--size-small);
   }
 }
