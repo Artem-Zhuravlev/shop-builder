@@ -5,6 +5,7 @@ export const admin = {
   categories: 'Категорії',
   products: 'Товари',
   recurring_profiles: 'Планові профілі',
+  recurring_profile: 'Плановий профіль',
   filters: 'Фільтри',
   attributes: 'Атрибути',
   attribute_groups: 'Групи атрибутів',
@@ -57,4 +58,5 @@ export const admin = {
   quantity: 'Кількість',
   status: 'Статус',
   name: 'Назва',
+  trial_profile: 'Випробувальний профіль',
 };

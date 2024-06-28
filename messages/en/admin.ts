@@ -5,6 +5,7 @@ export const admin = {
   categories: 'Categories',
   products: 'Products',
   recurring_profiles: 'Recurring Profiles',
+  recurring_profile: 'Recurring Profile',
   filters: 'Filters',
   attributes: 'Attributes',
   attribute_groups: 'Attribute Groups',
@@ -57,4 +58,5 @@ export const admin = {
   quantity: 'Quantity',
   status: 'Status',
   name: 'Name',
+  trial_profile: 'Trial profile',
 };
