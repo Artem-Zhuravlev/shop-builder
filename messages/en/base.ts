@@ -45,4 +45,7 @@ export const base = {
   image: 'Image',
   additional_images: 'Additional images',
   reward_points: 'Reward points',
+  filters: 'Filters',
+  filter_group: 'Filter group',
+  filter_values: 'Filter values'
 };

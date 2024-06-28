@@ -115,4 +115,6 @@ export const inputs = {
   trial_duration: 'Trial duration',
   trial_cycle: 'Trial cycle',
   trial_status: 'Trial status',
+  filter_group_name: 'Filter group name',
+  filter_name: 'Filter name',
 };

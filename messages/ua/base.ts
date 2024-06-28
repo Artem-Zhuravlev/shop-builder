@@ -45,4 +45,7 @@ export const base = {
   image: 'Зображення',
   additional_images: 'Додаткові зображення',
   reward_points: 'Бали нагород',
+  filters: 'Фільтри',
+  filter_group: 'Група фільтрів',
+  filter_values: 'Значення фільтрів',
 };

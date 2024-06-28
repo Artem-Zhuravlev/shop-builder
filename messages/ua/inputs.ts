@@ -115,4 +115,6 @@ export const inputs = {
   trial_duration: 'Тривалість пробного періоду',
   trial_cycle: 'Цикл пробного періоду',
   trial_status: 'Cтатус пробного періоду',
+  filter_group_name: 'Назва групи фільтрів',
+  filter_name: 'Назва фільтру',
 };
