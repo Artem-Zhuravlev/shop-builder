@@ -62,4 +62,5 @@ export const admin = {
   filter_group: 'Filter group',
   attribute_name: 'Attribute name',
   attribute_group: 'Attribute group',
+  attribute_group_name: 'Attribute group name',
 };

@@ -61,5 +61,6 @@ export const admin = {
   trial_profile: 'Випробувальний профіль',
   filter_group: 'Група фільтрів',
   attribute_name: 'Назва атрибуту',
-  attribute_group: 'Назва атрибутної групи',
+  attribute_group: 'Група атрибутів',
+  attribute_group_name: 'Назва групи атрибутів',
 };
