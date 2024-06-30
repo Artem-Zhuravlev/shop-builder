@@ -117,4 +117,6 @@ export const inputs = {
   trial_status: 'Cтатус пробного періоду',
   filter_group_name: 'Назва групи фільтрів',
   filter_name: 'Назва фільтру',
+  attribute_name: 'Назва атрибуту',
+  attribute_group: 'Група атрибуту',
 };

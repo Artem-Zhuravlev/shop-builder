@@ -47,5 +47,6 @@ export const base = {
   reward_points: 'Reward points',
   filters: 'Filters',
   filter_group: 'Filter group',
-  filter_values: 'Filter values'
+  filter_values: 'Filter values',
+  attributes: 'Attributes',
 };
