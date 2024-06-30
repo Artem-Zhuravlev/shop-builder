@@ -119,4 +119,5 @@ export const inputs = {
   filter_name: 'Назва фільтру',
   attribute_name: 'Назва атрибуту',
   attribute_group: 'Група атрибуту',
+  attribute_group_name: 'Назва групи атрибуту',
 };

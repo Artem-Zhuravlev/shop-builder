@@ -49,4 +49,5 @@ export const base = {
   filter_group: 'Група фільтрів',
   filter_values: 'Значення фільтрів',
   attributes: 'Атрибути',
+  attribute_groups: 'Гурпи атрибутів',
 };

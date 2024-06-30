@@ -49,4 +49,5 @@ export const base = {
   filter_group: 'Filter group',
   filter_values: 'Filter values',
   attributes: 'Attributes',
+  attribute_groups: 'Attribute groups',
 };

@@ -119,4 +119,5 @@ export const inputs = {
   filter_name: 'Filter name',
   attribute_name: 'Attribute name',
   attribute_group: 'Attribute group',
+  attribute_group_name: 'Attribute group name',
 };
