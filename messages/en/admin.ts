@@ -59,5 +59,7 @@ export const admin = {
   status: 'Status',
   name: 'Name',
   trial_profile: 'Trial profile',
-  filter_group: 'Filter Group'
+  filter_group: 'Filter group',
+  attribute_name: 'Attribute name',
+  attribute_group: 'Attribute group',
 };

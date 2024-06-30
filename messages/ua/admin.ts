@@ -60,4 +60,6 @@ export const admin = {
   name: 'Назва',
   trial_profile: 'Випробувальний профіль',
   filter_group: 'Група фільтрів',
+  attribute_name: 'Назва атрибуту',
+  attribute_group: 'Назва атрибутної групи',
 };
