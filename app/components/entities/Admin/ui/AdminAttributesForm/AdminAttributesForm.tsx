@@ -65,3 +65,5 @@ export const AdminAttributesForm: FC = () => {
     </>
   );
 };
+
+AdminAttributesForm.displayName = 'AdminAttributesForm';
