@@ -51,4 +51,5 @@ export const base = {
   attributes: 'Attributes',
   attribute_groups: 'Attribute groups',
   options: 'Options',
+  manufacturers: 'Manufacturers',
 };

@@ -122,4 +122,5 @@ export const inputs = {
   attribute_group_name: 'Назва групи атрибуту',
   type: 'Тип',
   option_value_name: 'Значення параметру',
+  manufacturer_name: "Ім'я виробника",
 };

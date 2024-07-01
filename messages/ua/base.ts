@@ -51,4 +51,5 @@ export const base = {
   attributes: 'Атрибути',
   attribute_groups: 'Гурпи атрибутів',
   options: 'Опції',
+  manufacturers: 'Виробники',
 };
