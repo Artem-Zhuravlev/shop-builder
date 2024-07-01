@@ -63,4 +63,5 @@ export const admin = {
   attribute_name: 'Назва атрибуту',
   attribute_group: 'Група атрибутів',
   attribute_group_name: 'Назва групи атрибутів',
+  option_name: 'Назва опції',
 };

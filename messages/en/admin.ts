@@ -63,4 +63,5 @@ export const admin = {
   attribute_name: 'Attribute name',
   attribute_group: 'Attribute group',
   attribute_group_name: 'Attribute group name',
+  option_name: 'Option name',
 };
