@@ -120,4 +120,6 @@ export const inputs = {
   attribute_name: 'Назва атрибуту',
   attribute_group: 'Група атрибуту',
   attribute_group_name: 'Назва групи атрибуту',
+  type: 'Тип',
+  option_value_name: 'Значення параметру',
 };

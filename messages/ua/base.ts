@@ -50,4 +50,5 @@ export const base = {
   filter_values: 'Значення фільтрів',
   attributes: 'Атрибути',
   attribute_groups: 'Гурпи атрибутів',
+  options: 'Опції',
 };

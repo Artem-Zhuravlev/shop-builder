@@ -120,4 +120,6 @@ export const inputs = {
   attribute_name: 'Attribute name',
   attribute_group: 'Attribute group',
   attribute_group_name: 'Attribute group name',
+  type: 'Type',
+  option_value_name: 'Option value name',
 };

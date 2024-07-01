@@ -50,4 +50,5 @@ export const base = {
   filter_values: 'Filter values',
   attributes: 'Attributes',
   attribute_groups: 'Attribute groups',
+  options: 'Options',
 };
