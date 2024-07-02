@@ -52,4 +52,6 @@ export const base = {
   attribute_groups: 'Гурпи атрибутів',
   options: 'Опції',
   manufacturers: 'Виробники',
+  upload_a_file: 'Завантажити файл',
+  downloads: 'Завантаження',
 };

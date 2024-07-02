@@ -52,4 +52,6 @@ export const base = {
   attribute_groups: 'Attribute groups',
   options: 'Options',
   manufacturers: 'Manufacturers',
+  upload_a_file: 'Upload a file',
+  downloads: 'Downloads',
 };

@@ -123,4 +123,7 @@ export const inputs = {
   type: 'Тип',
   option_value_name: 'Значення параметру',
   manufacturer_name: "Ім'я виробника",
+  download_name: "Ім'я завантаження",
+  filename: "Ім'я файлу",
+  mask: 'Маска',
 };

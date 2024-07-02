@@ -123,4 +123,7 @@ export const inputs = {
   type: 'Type',
   option_value_name: 'Option value name',
   manufacturer_name: 'Manufacturer name',
+  download_name: 'Download name',
+  filename: 'Filename',
+  mask: 'Mask',
 };
