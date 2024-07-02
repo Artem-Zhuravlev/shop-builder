@@ -50,6 +50,6 @@ Default.args = {
 
 export const WithOtherButtonText = Template.bind({});
 WithOtherButtonText.args = {
-  children: 'File',
+  placeholder: 'File',
   name: 'field',
 };
