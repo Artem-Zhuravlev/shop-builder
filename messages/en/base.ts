@@ -59,4 +59,5 @@ export const base = {
   status: 'Status',
   date_added: 'Date added',
   reviews: 'Reviews',
+  filter: 'Filter',
 };

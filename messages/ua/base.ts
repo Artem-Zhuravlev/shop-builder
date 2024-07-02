@@ -59,4 +59,5 @@ export const base = {
   status: 'Статус',
   date_added: 'Додано',
   reviews: 'Відгуки',
+  filter: 'Фільтр',
 };
