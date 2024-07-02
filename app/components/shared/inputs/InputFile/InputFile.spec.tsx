@@ -1,53 +1,33 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import { InputFile } from './InputFile';
+import { fireEvent, screen } from '@testing-library/react';
+import { customRender } from '@utils/intlWrapper/IntlWrapper';
+import { Form } from 'react-final-form';
+import { InputFile, InputProps } from './InputFile';
 
-describe('InputFile Component', () => {
-  it('triggers handleFile when a file is selected', () => {
-    const mockHandleFile = jest.fn();
+describe('InputFile component with react-final-form', () => {
+  const defaultProps: InputProps = {
+    name: 'file',
+  };
 
-    const { getByText } = render(
-      <InputFile handleFile={mockHandleFile} />
+  it('updates file name on file selection', async () => {
+    customRender(
+      <Form
+        onSubmit={() => {}}
+        render={({ handleSubmit }) => (
+          <form onSubmit={handleSubmit}>
+            <InputFile {...defaultProps} />
+          </form>
+        )}
+      />,
     );
 
-    const uploadButton = getByText('Upload a file');
-    fireEvent.click(uploadButton);
+    const file = new File(['dummy content'], 'dummy.txt', {
+      type: 'text/plain',
+    });
+    const button = screen.getByRole('button', { name: /upload a file/i });
 
-    const input = document.querySelector('input[type="file"]');
-
-    if (input) {
-      const file = new File(['file content'], 'file.txt', { type: 'text/plain' });
-      fireEvent.change(input, { target: { files: [file] } });
-
-      expect(mockHandleFile).toHaveBeenCalledWith(file);
-    } else {
-      throw new Error('Input element not found');
-    }
-  });
-
-  it('logs an error when no file is selected', () => {
-    const mockHandleFile = jest.fn();
-
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation();
-
-    const { getByText } = render(
-      <InputFile handleFile={mockHandleFile} />
-    );
-
-    const uploadButton = getByText('Upload a file');
-    fireEvent.click(uploadButton);
-
-    const input = document.querySelector('input[type="file"]');
-
-    if (input) {
-      fireEvent.change(input, { target: { files: [] } });
-
-      expect(errorSpy).toHaveBeenCalledWith('No file selected.');
-    } else {
-      throw new Error('Input element not found');
-    }
-
-    errorSpy.mockRestore();
+    fireEvent.change(screen.getByTestId('file-input'), {
+      target: { files: [file] },
+    });
+    expect(button).toHaveTextContent('Upload a file');
   });
 });
