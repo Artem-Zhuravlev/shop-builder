@@ -1,14 +1,33 @@
-import { ChangeEvent, FC, ReactNode, useRef } from 'react';
+import { getValidationMessage } from '@utils/validations';
+import { ValidationHandler } from '@utils/validations/types';
+import { useTranslations } from 'next-intl';
+import { ChangeEvent, FC, ReactNode, useRef, useState } from 'react';
+import { Field } from 'react-final-form';
 import { ButtonBase } from '../../ButtonBase';
+import { Label } from '../Label/Label';
 
-interface InputFileProps {
+export interface InputProps {
   children?: ReactNode;
-  handleFile: (file: File) => void;
+  className?: string;
+  name: string;
+  required?: boolean;
+  validationHandler?: ValidationHandler;
 }
 
-export const InputFile: FC<InputFileProps> = (props) => {
-  const { handleFile, children } = props;
+export const InputFile: FC<InputProps> = (props) => {
+  const {
+    children,
+    className,
+    name,
+    required = false,
+    validationHandler,
+  } = props;
+
+  const t = useTranslations();
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const hiddenFileInput = useRef<HTMLInputElement>(null);
+  const [fileName, setFileName] = useState(children ?? t('base.upload_a_file'));
 
   const handleClick = (): void => {
     if (hiddenFileInput.current) {
@@ -16,30 +35,54 @@ export const InputFile: FC<InputFileProps> = (props) => {
     }
   };
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement>,
+    input: any,
+  ): void => {
     const fileInput = event.target;
 
     if (fileInput.files && fileInput.files.length > 0) {
-      const fileUploaded = fileInput.files[0];
-      handleFile(fileUploaded);
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        setFileName(file.name);
+        input.onChange(file);
+      };
+      reader.readAsDataURL(file);
     } else {
       console.error('No file selected.');
     }
   };
 
-  return (
-    <>
-      <ButtonBase onClick={handleClick}>
-        {children ? children : 'Upload a file'}
-      </ButtonBase>
+  const renderInputField = ({ input, meta }: any) => {
+    setError(!!meta.error && meta.touched && meta.submitFailed);
+    setErrorMessage(meta.error || '');
 
-      <input
-        type='file'
-        onChange={handleChange}
-        ref={hiddenFileInput}
-        style={{ display: 'none' }}
-      />
-    </>
+    return (
+      <>
+        <ButtonBase onClick={handleClick} data-testid='file-input'>
+          {fileName}
+        </ButtonBase>
+        <input
+          type='file'
+          ref={hiddenFileInput}
+          style={{ display: 'none' }}
+          onChange={(e) => handleChange(e, input)}
+        />
+      </>
+    );
+  };
+
+  return (
+    <Label hasError={error} error={errorMessage} className={className}>
+      <Field
+        name={name}
+        validate={(value) =>
+          getValidationMessage(value, required, t, validationHandler)
+        }>
+        {renderInputField}
+      </Field>
+    </Label>
   );
 };
 
