@@ -1,6 +1,8 @@
+import { ButtonBase } from '@shared/ButtonBase';
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryFn } from '@storybook/react';
-import { InputFile } from './InputFile';
+import { Form } from 'react-final-form';
+import { InputFile, InputProps } from './InputFile';
 
 export default {
   title: 'Shared/Inputs/InputFile',
@@ -12,17 +14,42 @@ export default {
   },
 } as Meta<typeof InputFile>;
 
-const Template: StoryFn<typeof InputFile> = (args) => {
-  const onHandleFileAction = action('handleFile');
+interface InputStoryProps extends InputProps {
+  field?: string;
+}
 
-  const onHandleFile = () => {
-    onHandleFileAction('handleFile');
+const Template: StoryFn<InputStoryProps> = (args) => {
+  const onSubmit = (values: any) => {
+    action('submit')(values);
   };
 
-  return <InputFile handleFile={onHandleFile}>{args.children}</InputFile>;
+  return (
+    <Form onSubmit={onSubmit} initialValues={{ field: args.field }}>
+      {({ handleSubmit }) => (
+        <>
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              display: 'flex',
+              gap: '20px',
+              flexWrap: 'wrap',
+            }}>
+            <InputFile {...args} />
+            <ButtonBase type='submit'>Submit</ButtonBase>
+          </form>
+        </>
+      )}
+    </Form>
+  );
 };
 
 export const Default = Template.bind({});
 Default.args = {
+  name: 'field',
+};
+
+export const WithOtherButtonText = Template.bind({});
+WithOtherButtonText.args = {
   children: 'File',
+  name: 'field',
 };
