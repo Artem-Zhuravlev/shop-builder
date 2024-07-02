@@ -131,4 +131,6 @@ export const inputs = {
   text: 'Text',
   rating: 'Rating',
   date_added: 'Date added',
+  bottom: 'Bottom',
+  information_title: 'Information title',
 };

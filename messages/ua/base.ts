@@ -60,4 +60,5 @@ export const base = {
   date_added: 'Додано',
   reviews: 'Відгуки',
   filter: 'Фільтр',
+  information: 'Інформація',
 };

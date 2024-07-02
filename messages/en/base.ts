@@ -60,4 +60,5 @@ export const base = {
   date_added: 'Date added',
   reviews: 'Reviews',
   filter: 'Filter',
+  information: 'Information',
 };

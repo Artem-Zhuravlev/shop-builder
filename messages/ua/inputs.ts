@@ -131,4 +131,6 @@ export const inputs = {
   text: 'Текст',
   rating: 'Рейтинг',
   date_added: 'Додано',
+  bottom: 'Знизу',
+  information_title: 'Інформаційний заголовок',
 };
