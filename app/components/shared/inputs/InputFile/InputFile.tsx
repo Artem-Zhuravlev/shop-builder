@@ -1,13 +1,13 @@
 import { getValidationMessage } from '@utils/validations';
 import { ValidationHandler } from '@utils/validations/types';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, FC, ReactNode, useRef, useState } from 'react';
+import { ChangeEvent, FC, useRef, useState } from 'react';
 import { Field } from 'react-final-form';
 import { ButtonBase } from '../../ButtonBase';
 import { Label } from '../Label/Label';
 
 export interface InputProps {
-  children?: ReactNode;
+  placeholder?: string;
   className?: string;
   name: string;
   required?: boolean;
@@ -16,7 +16,7 @@ export interface InputProps {
 
 export const InputFile: FC<InputProps> = (props) => {
   const {
-    children,
+    placeholder,
     className,
     name,
     required = false,
@@ -27,7 +27,9 @@ export const InputFile: FC<InputProps> = (props) => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const hiddenFileInput = useRef<HTMLInputElement>(null);
-  const [fileName, setFileName] = useState(children ?? t('base.upload_a_file'));
+  const [fileName, setFileName] = useState(
+    placeholder ?? t('base.upload_a_file'),
+  );
 
   const handleClick = (): void => {
     if (hiddenFileInput.current) {
@@ -60,7 +62,7 @@ export const InputFile: FC<InputProps> = (props) => {
 
     return (
       <>
-        <ButtonBase onClick={handleClick} data-testid='file-input'>
+        <ButtonBase onClick={handleClick} data-testid='file-input' block>
           {fileName}
         </ButtonBase>
         <input
