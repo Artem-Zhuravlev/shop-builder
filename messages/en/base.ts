@@ -54,4 +54,8 @@ export const base = {
   manufacturers: 'Manufacturers',
   upload_a_file: 'Upload a file',
   downloads: 'Downloads',
+  product: 'Product',
+  rating: 'Rating',
+  status: 'Status',
+  date_added: 'Date added',
 };

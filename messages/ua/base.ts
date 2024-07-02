@@ -54,4 +54,8 @@ export const base = {
   manufacturers: 'Виробники',
   upload_a_file: 'Завантажити файл',
   downloads: 'Завантаження',
+  product: 'Продукт',
+  rating: 'Рейтинг',
+  status: 'Статус',
+  date_added: 'Додано',
 };
