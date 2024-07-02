@@ -64,5 +64,7 @@ export const admin = {
   attribute_group: 'Attribute group',
   attribute_group_name: 'Attribute group name',
   option_name: 'Option name',
-  manufacturer_name: 'Manufacturer name'
+  manufacturer_name: 'Manufacturer name',
+  download_name: 'Download name',
+  date_added: 'Date added',
 };

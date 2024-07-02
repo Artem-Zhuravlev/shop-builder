@@ -65,4 +65,6 @@ export const admin = {
   attribute_group_name: 'Назва групи атрибутів',
   option_name: 'Назва опції',
   manufacturer_name: "Ім'я виробника",
+  download_name: 'Назва завантажуваного файла',
+  date_added: 'Дата додавання',
 };
