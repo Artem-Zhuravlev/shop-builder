@@ -62,7 +62,12 @@ export const InputFile: FC<InputProps> = (props) => {
 
     return (
       <>
-        <ButtonBase onClick={handleClick} data-testid='file-input' block>
+        <ButtonBase
+          onClick={handleClick}
+          data-testid='file-input'
+          block
+          variant='outline'>
+          <span className='icon-download3' />
           {fileName}
         </ButtonBase>
         <input
