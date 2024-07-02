@@ -67,4 +67,5 @@ export const admin = {
   manufacturer_name: "Ім'я виробника",
   download_name: 'Назва завантажуваного файла',
   date_added: 'Дата додавання',
+  information_title: 'Інформаційний заголовок',
 };

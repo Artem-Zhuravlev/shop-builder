@@ -67,4 +67,5 @@ export const admin = {
   manufacturer_name: 'Manufacturer name',
   download_name: 'Download name',
   date_added: 'Date added',
+  information_title: 'Information title',
 };
