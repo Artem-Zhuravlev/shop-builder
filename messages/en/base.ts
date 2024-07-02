@@ -58,4 +58,5 @@ export const base = {
   rating: 'Rating',
   status: 'Status',
   date_added: 'Date added',
+  reviews: 'Reviews',
 };

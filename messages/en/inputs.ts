@@ -126,4 +126,9 @@ export const inputs = {
   download_name: 'Download name',
   filename: 'Filename',
   mask: 'Mask',
+  author: 'Author',
+  product: 'Product',
+  text: 'Text',
+  rating: 'Rating',
+  date_added: 'Date added',
 };
