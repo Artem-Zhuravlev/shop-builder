@@ -1,3 +1,4 @@
+import { Status, StatusLabel } from '@features/tables';
 import { useSelector } from '@lib/redux/store';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
@@ -28,12 +29,11 @@ import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
-
 interface AdminOrdersTableItem extends TableNode {
   id: string | number;
   order_id: number;
   customer: string;
-  status: string;
+  status: Status;
   total: string;
   date_added: string;
 }
@@ -122,7 +122,9 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
                 <CellSelect item={item} />
                 <Cell>{item.order_id}</Cell>
                 <Cell>{item.customer}</Cell>
-                <Cell>{item.status}</Cell>
+                <Cell>
+                  <StatusLabel value={item.status} />
+                </Cell>
                 <Cell>
                   {defaultCurrency}
                   {item.total}
