@@ -32,12 +32,10 @@ import { FC } from 'react';
 interface AdminOrdersTableItem extends TableNode {
   id: string | number;
   order_id: number;
-  store: string;
   customer: string;
   status: string;
   total: string;
   date_added: string;
-  date_modified: string;
 }
 
 interface AdminOrdersTableProps {
@@ -51,7 +49,7 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
   const router = useRouter();
   const theme = useTheme({
     ...getTheme(),
-    Table: `--data-table-library_grid-template-columns:  50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 150px;`,
+    Table: `--data-table-library_grid-template-columns:  50px 1fr 1fr 1fr 1fr 1fr 150px;`,
     ...defaultTableStyles,
   });
   const defaultCurrency = useSelector((state) => state.product.currency);
@@ -66,7 +64,6 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
       sortIcon: { ...defaultSortIcon },
       sortFns: {
         ORDER_ID: (array) => array.sort((a, b) => a.order_id - b.order_id),
-        STORE: (array) => array.sort((a, b) => a.store.localeCompare(b.store)),
         CUSTOMER: (array) =>
           array.sort((a, b) => a.customer.localeCompare(b.customer)),
         STATUS: (array) =>
@@ -76,8 +73,6 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
           array.sort((a, b) => a.sort_order - b.sort_order),
         DATE_ADDED: (array) =>
           array.sort((a, b) => a.date_added.localeCompare(b.date_added)),
-        DATE_MODIFIED: (array) =>
-          array.sort((a, b) => a.date_modified.localeCompare(b.date_modified)),
       },
     },
   );
@@ -109,7 +104,6 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
               <HeaderCellSort sortKey='ORDER_ID'>
                 {t('order_id')}
               </HeaderCellSort>
-              <HeaderCellSort sortKey='STORE'>{t('store')}</HeaderCellSort>
               <HeaderCellSort sortKey='CUSTOMER'>
                 {t('customer')}
               </HeaderCellSort>
@@ -117,9 +111,6 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
               <HeaderCellSort sortKey='TOTAL'>{t('total')}</HeaderCellSort>
               <HeaderCellSort sortKey='DATE_ADDED'>
                 {t('date_added')}
-              </HeaderCellSort>
-              <HeaderCellSort sortKey='DATE_MODIFIED'>
-                {t('date_modified')}
               </HeaderCellSort>
               <HeaderCell>{t('action')}</HeaderCell>
             </HeaderRow>
@@ -130,7 +121,6 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
               <Row item={item} key={item.id}>
                 <CellSelect item={item} />
                 <Cell>{item.order_id}</Cell>
-                <Cell>{item.store}</Cell>
                 <Cell>{item.customer}</Cell>
                 <Cell>{item.status}</Cell>
                 <Cell>
@@ -138,7 +128,6 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
                   {item.total}
                 </Cell>
                 <Cell>{item.date_added}</Cell>
-                <Cell>{item.date_modified}</Cell>
                 <Cell>
                   <ButtonBase
                     onClick={() =>
