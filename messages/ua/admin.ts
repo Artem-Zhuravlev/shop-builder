@@ -68,4 +68,9 @@ export const admin = {
   download_name: 'Назва завантажуваного файла',
   date_added: 'Дата додавання',
   information_title: 'Інформаційний заголовок',
+  order_id: 'ID Замовлення',
+  store: 'Магазин',
+  customer: 'Кліент',
+  total: 'Загальна сума',
+  date_modified: 'Дата модифікації',
 };

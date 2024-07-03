@@ -68,4 +68,9 @@ export const admin = {
   download_name: 'Download name',
   date_added: 'Date added',
   information_title: 'Information title',
+  order_id: 'Order ID',
+  store: 'Store',
+  customer: 'Customer',
+  total: 'Total',
+  date_modified: 'Date modified',
 };
