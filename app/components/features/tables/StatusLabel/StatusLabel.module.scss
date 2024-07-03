@@ -1,0 +1,31 @@
+.StatusLabel {
+  display: inline-flex;
+  border-radius: var(--btn-border-radius);
+  padding: var(--interface-size-sm) var(--space-extra-small);
+  font-size: var(--font-size-lg);
+}
+
+.pending {
+  background-color: var(--warning-main);
+  color: var(--gray-100);
+}
+
+.cancelled {
+  background-color: var(--danger-bg);
+  color: var(--gray-10);
+}
+
+.delivered {
+  background-color: var(--success-main);
+  color: var(--gray-10);
+}
+
+.processing {
+  background-color: var(--primary-border);
+  color: var(--gray-100);
+}
+
+.shipped {
+  background-color: var(--primary-pressed);
+  color: var(--gray-10);
+}
