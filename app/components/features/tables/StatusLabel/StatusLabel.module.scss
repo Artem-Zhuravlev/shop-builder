@@ -1,17 +1,18 @@
 .StatusLabel {
   display: inline-flex;
+  justify-content: center;
   border-radius: var(--btn-border-radius);
-  padding: var(--interface-size-sm) var(--space-extra-small);
+  padding: var(--interface-size-sm) var(--space-small);
   font-size: var(--font-size-lg);
 }
 
 .pending {
-  background-color: var(--warning-main);
-  color: var(--gray-100);
+  background-color: var(--warning-hover);
+  color: var(--gray-10);
 }
 
 .cancelled {
-  background-color: var(--danger-bg);
+  background-color: var(--danger-main);
   color: var(--gray-10);
 }
 
@@ -22,10 +23,10 @@
 
 .processing {
   background-color: var(--primary-border);
-  color: var(--gray-100);
+  color: var(--gray-10);
 }
 
 .shipped {
-  background-color: var(--primary-pressed);
+  background-color: var(--primary-main);
   color: var(--gray-10);
 }
