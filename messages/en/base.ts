@@ -61,4 +61,9 @@ export const base = {
   reviews: 'Reviews',
   filter: 'Filter',
   information: 'Information',
+  pending: 'Pending',
+  cancelled: 'Cancelled',
+  delivered: 'Delivered',
+  processing: 'Processing',
+  shipped: 'Shipped',
 };

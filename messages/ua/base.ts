@@ -61,4 +61,9 @@ export const base = {
   reviews: 'Відгуки',
   filter: 'Фільтр',
   information: 'Інформація',
+  pending: 'Очікується',
+  cancelled: 'Скасовано',
+  delivered: 'Доставлено',
+  processing: 'Обробка',
+  shipped: 'Відправлено',
 };
