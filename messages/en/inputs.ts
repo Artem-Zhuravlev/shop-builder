@@ -141,4 +141,5 @@ export const inputs = {
   unit_price: 'Unit price',
   total: 'Total',
   choose_language: 'Choose language',
+  notify_customer: 'Notify customer',
 };

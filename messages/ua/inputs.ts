@@ -141,4 +141,5 @@ export const inputs = {
   unit_price: 'Ціна за одиницю',
   total: 'Вього',
   choose_language: 'Виберіть мову',
+  notify_customer: 'Повідомлення клієнта',
 };

@@ -81,4 +81,5 @@ export const base = {
   customer: 'Клієнт',
   shipping_address: 'Адреса доставки',
   payment_address: 'Адреса платіжна',
+  history: 'Історія',
 };
