@@ -16,6 +16,7 @@ export { InputRating } from './InputRating/InputRating';
 export { InputSelect } from './InputSelect/InputSelect';
 export type { SelectOption } from './InputSelect/InputSelect';
 export { InputSizes } from './InputSizes/InputSizes';
+export { InputStatus } from './InputStatus/InputStatus';
 export { InputSwitcher } from './InputSwitcher/InputSwitcher';
 export { InputText } from './InputText/InputText';
 export { InputTextarea } from './InputTextarea/InputTextarea';
