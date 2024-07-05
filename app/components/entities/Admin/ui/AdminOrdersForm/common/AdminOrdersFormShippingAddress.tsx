@@ -30,11 +30,6 @@ export const AdminOrdersFormShippingAddress: FC = () => {
       />
       <InputText
         className='col-md-4'
-        name='shipping_address.address_2'
-        placeholder={t('inputs.address_2')}
-      />
-      <InputText
-        className='col-md-4'
         name='shipping_address.city'
         placeholder={t('inputs.city')}
       />
