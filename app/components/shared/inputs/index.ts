@@ -6,6 +6,7 @@ export { InputDatePicker } from './InputDatePicker/InputDatePicker';
 export { InputEdit } from './InputEdit/InputEdit';
 export { InputFile } from './InputFile/InputFile';
 export { InputImage } from './InputImage/InputImage';
+export { InputLanguage } from './InputLanguage/InputLanguage';
 export { InputNumber } from './InputNumber/InputNumber';
 export { InputPassword } from './InputPassword/InputPassword';
 export { InputRadio } from './InputRadio/InputRadio';
