@@ -15,6 +15,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   isDarkMode?: boolean;
   label?: string;
   name: string;
+  prefix?: string;
   required?: boolean;
   rounded?: boolean;
   roundedLeftSide?: boolean;
@@ -36,6 +37,7 @@ export const InputText: FC<InputProps> = (props) => {
     isDarkMode = false,
     name = 'field',
     placeholder,
+    prefix,
     required = false,
     rounded = false,
     roundedLeftSide = false,
@@ -58,6 +60,7 @@ export const InputText: FC<InputProps> = (props) => {
     [cls.rounded]: rounded,
     [cls.roundedLeftSide]: roundedLeftSide,
     [cls.roundedRightSide]: roundedRightSide,
+    [cls.withPrefix]: prefix,
   });
 
   const renderInputField = ({ input, meta }: any) => {
@@ -99,7 +102,11 @@ export const InputText: FC<InputProps> = (props) => {
   };
 
   return (
-    <Label hasError={error} error={errorMessage} className={className}>
+    <Label
+      hasError={error}
+      error={errorMessage}
+      className={className}
+      prefix={prefix}>
       <Field
         name={name}
         validate={(value) =>
