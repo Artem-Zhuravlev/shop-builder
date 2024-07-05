@@ -12,7 +12,7 @@
 }
 
 .cancelled {
-  background-color: var(--danger-main);
+  background-color: var(--gray-50);
   color: var(--gray-10);
 }
 
@@ -28,5 +28,55 @@
 
 .shipped {
   background-color: var(--primary-main);
+  color: var(--gray-10);
+}
+
+.canceled_reversal {
+  background-color: var(--gray-70);
+  color: var(--gray-10);
+}
+
+.chargeback {
+  background-color: var(--danger-main);
+  color: var(--gray-10);
+}
+
+.complete {
+  background-color: var(--success-bg);
+  color: var(--gray-10);
+}
+
+.denied {
+  background-color: var(--danger-pressed);
+  color: var(--gray-10);
+}
+
+.expired {
+  background-color: var(--warning-pressed);
+  color: var(--gray-10);
+}
+
+.failed {
+  background-color: var(--danger-hover);
+  color: var(--gray-10);
+}
+
+.processed {
+  background-color: var(--primary-hover);
+  color: var(--gray-10);
+}
+
+.refunded {
+  background-color: var(--info-hover);
+  color: var(--gray-10);
+}
+
+.reversed {
+  background-color: var(--info-pressed);
+  color: var(--gray-10);
+}
+
+.voided {
+  background-color: var(--gray-90);
   color: var(--gray-10);
 }
