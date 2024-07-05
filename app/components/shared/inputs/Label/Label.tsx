@@ -8,14 +8,16 @@ interface LabelProps {
   error?: string;
   hasError?: boolean;
   suffix?: ReactNode;
+  prefix?: ReactNode;
 }
 
 export const Label: FC<LabelProps> = (props) => {
-  const { children, className, error, hasError, suffix } = props;
+  const { children, className, error, hasError, suffix, prefix } = props;
   const labelClasses = classNames(cls.Label, className);
 
   return (
     <div className={labelClasses}>
+      {prefix && <div className={cls.prefix}>{prefix}</div>}
       {children}
       {suffix}
       {hasError && <span className={cls.ErrorMessage}>{error}</span>}
