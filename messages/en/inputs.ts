@@ -133,4 +133,12 @@ export const inputs = {
   date_added: 'Date added',
   bottom: 'Bottom',
   information_title: 'Information title',
+  order_invoice: 'Order invoice',
+  customer: 'Customer',
+  address_1: 'Address 1',
+  address_2: 'Address 2',
+  postcode: 'Postcode',
+  unit_price: 'Unit price',
+  total: 'Total',
+  choose_language: 'Choose language',
 };

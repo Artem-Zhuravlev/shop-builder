@@ -133,4 +133,12 @@ export const inputs = {
   date_added: 'Додано',
   bottom: 'Знизу',
   information_title: 'Інформаційний заголовок',
+  order_invoice: 'Номер рразунку',
+  customer: 'Кліент',
+  address_1: 'Адреса 1',
+  address_2: 'Адреса 2',
+  postcode: 'Посткод',
+  unit_price: 'Ціна за одиницю',
+  total: 'Вього',
+  choose_language: 'Виберіть мову',
 };

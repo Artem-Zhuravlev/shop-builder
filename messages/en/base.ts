@@ -55,6 +55,7 @@ export const base = {
   upload_a_file: 'Upload a file',
   downloads: 'Downloads',
   product: 'Product',
+  products: 'Products',
   rating: 'Rating',
   status: 'Status',
   date_added: 'Date added',
@@ -66,4 +67,7 @@ export const base = {
   delivered: 'Delivered',
   processing: 'Processing',
   shipped: 'Shipped',
+  customer: 'Customer',
+  shipping_address: 'Shipping address',
+  payment_address: 'Payment address',
 };

@@ -55,6 +55,7 @@ export const base = {
   upload_a_file: 'Завантажити файл',
   downloads: 'Завантаження',
   product: 'Продукт',
+  products: 'Продукти',
   rating: 'Рейтинг',
   status: 'Статус',
   date_added: 'Додано',
@@ -66,4 +67,7 @@ export const base = {
   delivered: 'Доставлено',
   processing: 'Обробка',
   shipped: 'Відправлено',
+  customer: 'Клієнт',
+  shipping_address: 'Адреса доставки',
+  payment_address: 'Адреса платіжна',
 };
