@@ -1,18 +1,20 @@
-import { FC } from 'react';
 import { useTranslations } from 'next-intl';
+import { FC } from 'react';
 import { InputSelect } from '../InputSelect/InputSelect';
 
 interface InputLanguageProps {
+  className?: string;
   name: string;
 }
 
 export const InputLanguage: FC<InputLanguageProps> = (props) => {
-  const { name } = props;
+  const { className, name } = props;
   const t = useTranslations();
   // TODO: Add languages API
 
   return (
     <InputSelect
+      className={className}
       name={name}
       options={[
         { value: 'en', label: 'English' },
