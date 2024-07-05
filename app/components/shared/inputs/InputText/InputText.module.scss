@@ -57,3 +57,7 @@
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }
+
+.withPrefix {
+  padding-left: calc(var(--input-height) + var(--space-small));
+}
