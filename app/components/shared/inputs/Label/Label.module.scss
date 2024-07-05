@@ -19,3 +19,17 @@
   color: var(--danger-main);
   font-size: var(--font-size-sm);
 }
+
+.prefix {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid var(--gray-40);
+  width: var(--input-height);
+  height: var(--input-height);
+  pointer-events: none;
+  color: var(--gray-60);
+}
