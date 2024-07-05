@@ -3,7 +3,23 @@ import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 import cls from './StatusLabel.module.scss';
 
-export type Status = 'pending' | 'cancelled' | 'delivered' | 'processing' | 'shipped'
+export type Status =
+  | 'pending'
+  | 'cancelled'
+  | 'canceled_reversal'
+  | 'complete'
+  | 'complete'
+  | 'chargeback'
+  | 'expired'
+  | 'failed'
+  | 'denied'
+  | 'delivered'
+  | 'processed'
+  | 'refunded'
+  | 'reversed'
+  | 'processing'
+  | 'shipped'
+  | 'voided';
 
 interface StatusLabelProps {
   value: Status;
