@@ -1,4 +1,4 @@
 export { AdminOrdersFormCustomer } from './AdminOrdersFormCustomer';
-export { AdminOrdersFormPaymentAddress } from './AdminOrdersFormPaymentAddress';
+export { AdminOrdersFormHistory } from './AdminOrdersFormHistory';
 export { AdminOrdersFormProducts } from './AdminOrdersFormProducts';
 export { AdminOrdersFormShippingAddress } from './AdminOrdersFormShippingAddress';
