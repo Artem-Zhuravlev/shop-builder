@@ -1,3 +1,4 @@
+import { useFormattedDate } from '@hooks/formatDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import { IconPicture } from '@shared/icons';
 import { useTranslations } from 'next-intl';
@@ -39,7 +40,7 @@ export const CommentItem: FC<CommentItemProps> = (props) => {
           <div className={cls.CommentAuthor}>{author}</div>
           <div className={cls.CommentDate}>
             <span className='icon-clock2' />
-            {new Date(publishedAt).toLocaleDateString()}
+            {useFormattedDate(publishedAt)}
           </div>
         </div>
 
