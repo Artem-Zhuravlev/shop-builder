@@ -1,4 +1,5 @@
 import { Status, StatusLabel } from '@features/tables';
+import { useFormattedDate } from '@hooks/formatDate';
 import { useSelector } from '@lib/redux/store';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
@@ -129,7 +130,7 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
                   {defaultCurrency}
                   {item.total}
                 </Cell>
-                <Cell>{item.date_added}</Cell>
+                <Cell>{useFormattedDate(item.date_added)}</Cell>
                 <Cell>
                   <ButtonBase
                     onClick={() =>
