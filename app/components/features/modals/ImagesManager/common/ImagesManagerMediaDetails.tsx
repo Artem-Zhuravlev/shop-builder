@@ -1,4 +1,4 @@
-import { useFormattedDate } from '@hooks/formatDate';
+import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';

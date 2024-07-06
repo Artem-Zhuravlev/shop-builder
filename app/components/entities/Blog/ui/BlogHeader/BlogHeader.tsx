@@ -1,4 +1,4 @@
-import { useFormattedDate } from '@hooks/formatDate';
+import { useFormattedDate } from '@hooks/useFormattedDate';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { FC } from 'react';

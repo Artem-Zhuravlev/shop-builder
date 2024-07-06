@@ -1,5 +1,5 @@
 import { Status, StatusLabel } from '@features/tables';
-import { useFormattedDate } from '@hooks/formatDate';
+import { useFormattedDate } from '@hooks/useFormattedDate';
 import { useSelector } from '@lib/redux/store';
 import { ButtonBase } from '@shared/ButtonBase';
 import {

@@ -1,4 +1,4 @@
-import { useFormattedDate } from '@hooks/formatDate';
+import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import { IconPicture } from '@shared/icons';
 import { useTranslations } from 'next-intl';
