@@ -1,4 +1,4 @@
-import { settings } from '@settings/slider/sliderWithThreeColumns';
+import { settings } from '@utils/settings/slider/sliderWithThreeColumns';
 import { SectionBase } from '@shared/SectionBase';
 import { SliderBase, SliderCard } from '@shared/SliderBase';
 import { FC } from 'react';

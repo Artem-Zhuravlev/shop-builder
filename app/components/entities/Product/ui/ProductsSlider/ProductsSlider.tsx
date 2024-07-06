@@ -1,6 +1,6 @@
-import { settings } from '@settings/slider/sliderWithFourColumns';
 import { SectionBase } from '@shared/SectionBase';
 import { SliderBase, SliderCard } from '@shared/SliderBase';
+import { settings } from '@utils/settings/slider/sliderWithFourColumns';
 import { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { ProductCard, ProductCardProps } from '../ProductCard';
