@@ -142,4 +142,5 @@ export const inputs = {
   total: 'Total',
   choose_language: 'Choose language',
   notify_customer: 'Notify customer',
+  order_id: 'Order ID'
 };

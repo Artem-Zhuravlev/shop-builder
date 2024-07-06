@@ -142,4 +142,5 @@ export const inputs = {
   total: 'Вього',
   choose_language: 'Виберіть мову',
   notify_customer: 'Повідомлення клієнта',
+  order_id: 'ID замовлення',
 };
