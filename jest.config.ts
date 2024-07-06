@@ -25,7 +25,6 @@ const config: Config = {
     '^@utils/(.*)$': '<rootDir>/utils/$1',
     '^@constants/(.*)$': '<rootDir>/constants/$1',
     '^@styles/(.*)$': '<rootDir>/styles/$1',
-    '^@settings/(.*)$': '<rootDir>/settings/$1',
     '^@hooks/(.*)$': '<rootDir>/hooks/$1',
   },
   transformIgnorePatterns: ['/node_modules/(?!(react-slick)/)'],
