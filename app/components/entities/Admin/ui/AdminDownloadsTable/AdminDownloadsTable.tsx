@@ -1,3 +1,4 @@
+import { useFormattedDate } from '@hooks/formatDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
   defaultSortIcon,
@@ -106,7 +107,7 @@ export const AdminDownloadsTable: FC<AdminDownloadsTableProps> = (props) => {
               <Row item={item} key={item.id}>
                 <CellSelect item={item} />
                 <Cell>{item.download_name}</Cell>
-                <Cell>{item.date_added}</Cell>
+                <Cell>{useFormattedDate(item.date_added)}</Cell>
                 <Cell>
                   <ButtonBase
                     onClick={() =>
