@@ -52,7 +52,6 @@ const config: StorybookConfig = {
         '@utils': path.resolve(__dirname, '../utils'),
         '@constants': path.resolve(__dirname, '../constants'),
         '@styles': path.resolve(__dirname, '../styles'),
-        '@settings': path.resolve(__dirname, '../settings'),
         '@hooks': path.resolve(__dirname, '../hooks'),
         'next/image': path.resolve(__dirname, './mocks/Image.tsx'),
       };
