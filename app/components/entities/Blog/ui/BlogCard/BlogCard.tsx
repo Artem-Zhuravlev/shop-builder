@@ -1,3 +1,4 @@
+import { useFormattedDate } from '@hooks/formatDate';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -45,7 +46,7 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
           </div>
           <div className={cls.BlogCardInfoItem}>
             <span className='icon-eye'></span>
-            {new Date(publishedAt).toLocaleDateString()}
+            {useFormattedDate(publishedAt)}
           </div>
         </div>
         <h5 className={cls.BlogCardTitle}>
