@@ -1,3 +1,4 @@
+import { useFormattedDate } from '@hooks/formatDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
   defaultSortIcon,
@@ -126,7 +127,7 @@ export const AdminReviewsTable: FC<AdminReviewsTableProps> = (props) => {
                 <Cell>{item.author}</Cell>
                 <Cell>{item.rating}</Cell>
                 <Cell>{item.status}</Cell>
-                <Cell>{item.date_added}</Cell>
+                <Cell>{useFormattedDate(item.date_added)}</Cell>
                 <Cell>
                   <ButtonBase
                     onClick={() => router.push(`/admin/reviews/${item.slug}`)}>
