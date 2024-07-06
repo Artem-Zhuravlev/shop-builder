@@ -1,3 +1,4 @@
+import { useFormattedDate } from '@hooks/formatDate';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -25,7 +26,7 @@ export const BlogHeader: FC<BlogHeaderProps> = (props) => {
           <Link href={`/blog/${slug}`} className='link'>
             {author}
           </Link>
-          - {new Date(publishedAt).toLocaleDateString()}
+          - {useFormattedDate(publishedAt)}
         </li>
         <li className={cls.BlogHeaderListItem}>
           <span className='icon-eye'></span>
