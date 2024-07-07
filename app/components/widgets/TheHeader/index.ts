@@ -1,3 +1,3 @@
-import { TheHeader } from './TheHeader';
+import { TheHeader } from "./TheHeader";
 
 export { TheHeader };

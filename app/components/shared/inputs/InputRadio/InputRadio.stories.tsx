@@ -1,7 +1,8 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
+import { ChangeEvent } from 'react';
 import { Form } from 'react-final-form';
-import { InputRadio, InputRadioProps } from './InputRadio';
+import { InputRadio, type InputRadioProps } from './InputRadio';
 
 interface InputRadioStoryProps extends InputRadioProps {
   radio?: string;
@@ -19,7 +20,7 @@ const Template: StoryFn<InputRadioStoryProps> = (args) => {
 
   const items = ['Label 1', 'Label 2', 'Label 3'];
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     action('change')(e.target.value);
   };
 
@@ -28,11 +29,11 @@ const Template: StoryFn<InputRadioStoryProps> = (args) => {
       {() => (
         <>
           <div className='d-flex gap-1'>
-            {items.map((item, index) => (
+            {items.map((item) => (
               <InputRadio
                 value={item}
                 name={args.name}
-                key={index}
+                key={item}
                 suffix={args.suffix}
                 label={args.label}
                 onChange={handleChange}

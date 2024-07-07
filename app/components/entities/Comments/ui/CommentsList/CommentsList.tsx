@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import { CommentItem } from '../CommentItem/CommentItem';
 import cls from './CommentsList.module.scss';
 
@@ -27,6 +27,7 @@ export const CommentsList: FC<CommentsListProps> = ({ comments }) => {
     const list: Comment[] = comments.reduce(
       (acc: Comment[], comment: Comment) => {
         if (!comment.replied_to && !comment.related_to) {
+          // biome-ignore lint/performance/noAccumulatingSpread: <explanation>
           return [...acc, { ...comment, nestedComments: [] }];
         }
 
@@ -35,6 +36,7 @@ export const CommentsList: FC<CommentsListProps> = ({ comments }) => {
       [],
     );
 
+    // biome-ignore lint/complexity/noForEach: <explanation>
     comments.forEach((comment) => {
       if (comment.replied_to && !comment.related_to) {
         const index = list.findIndex((item) => item?.id === comment.replied_to);
@@ -64,6 +66,7 @@ export const CommentsList: FC<CommentsListProps> = ({ comments }) => {
     setCommentsList(list);
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     parsedCommentsList();
   }, [comments]);

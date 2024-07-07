@@ -1,29 +1,29 @@
-import { FooterCol } from '../FooterCol/FooterCol';
+import { FooterCol } from "../FooterCol/FooterCol";
 
 export const FooterMyAccount = () => {
-  const { title, routes } = {
-    title: 'My account',
-    routes: [
-      {
-        to: '/my-order',
-        value: 'My order',
-      },
-      {
-        to: '/return',
-        value: 'Return',
-      },
-      {
-        to: '/return',
-        value: 'Return',
-      },
-      {
-        to: '/support',
-        value: 'Support',
-      },
-    ],
-  };
+	const { title, routes } = {
+		title: "My account",
+		routes: [
+			{
+				to: "/my-order",
+				value: "My order",
+			},
+			{
+				to: "/return",
+				value: "Return",
+			},
+			{
+				to: "/return",
+				value: "Return",
+			},
+			{
+				to: "/support",
+				value: "Support",
+			},
+		],
+	};
 
-  return <FooterCol title={title} list={routes} />;
+	return <FooterCol title={title} list={routes} />;
 };
 
-FooterMyAccount.displayName = 'FooterMyAccount';
+FooterMyAccount.displayName = "FooterMyAccount";

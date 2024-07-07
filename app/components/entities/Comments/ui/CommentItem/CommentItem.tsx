@@ -3,9 +3,9 @@ import { ButtonBase } from '@shared/ButtonBase';
 import { IconPicture } from '@shared/icons';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { CommentForm } from '../CommentForm/CommentForm';
-import { Comment } from '../CommentsList/CommentsList';
+import type { Comment } from '../CommentsList/CommentsList';
 import cls from './CommentItem.module.scss';
 
 interface CommentItemProps {

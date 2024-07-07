@@ -1,8 +1,8 @@
 'use client';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import cls from './AlertBase.module.scss';
-import { AlertItem, AlertItemProps } from './common/AlertItem';
+import { AlertItem, type AlertItemProps } from './common/AlertItem';
 
 export interface AlertsProps {
   alerts: Pick<AlertItemProps, 'type' | 'message'>[];
@@ -20,16 +20,15 @@ export const AlertBase: FC<AlertsProps> = (props) => {
 
   return (
     <div data-testid='alert-base' className={cls.AlertBase}>
-      {alertItems &&
-        alertItems.map(({ type, message }, index) => (
-          <AlertItem
-            index={index}
-            message={message}
-            type={type}
-            key={uuidv4()}
-            onClose={handleClose}
-          />
-        ))}
+      {alertItems?.map(({ type, message }, index) => (
+        <AlertItem
+          index={index}
+          message={message}
+          type={type}
+          key={uuidv4()}
+          onClose={handleClose}
+        />
+      ))}
     </div>
   );
 };

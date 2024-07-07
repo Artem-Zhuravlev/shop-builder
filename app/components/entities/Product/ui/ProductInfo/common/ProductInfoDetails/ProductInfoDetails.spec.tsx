@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
-import { Availability, ProductInfoDetails } from './ProductInfoDetails';
+import { ProductInfoDetails, type Availability } from './ProductInfoDetails';
 
 const item = {
   brand: {

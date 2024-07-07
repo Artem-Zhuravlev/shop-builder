@@ -1,3 +1,1 @@
-import { BreadcrumbsBase } from './BreadcrumbsBase';
-
-export { BreadcrumbsBase };
+export { BreadcrumbsBase } from './BreadcrumbsBase';

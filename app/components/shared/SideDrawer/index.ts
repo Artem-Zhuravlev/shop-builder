@@ -1,5 +1,1 @@
-import { SideDrawer } from './SideDrawer';
-
-export {
-  SideDrawer
-}
+export { SideDrawer } from './SideDrawer';

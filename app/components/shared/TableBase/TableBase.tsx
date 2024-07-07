@@ -1,10 +1,10 @@
 import { getTheme } from '@table-library/react-table-library/baseline';
 import {
   CompactTable,
-  CompactTableProps,
+  type CompactTableProps,
 } from '@table-library/react-table-library/compact';
 import { useTheme } from '@table-library/react-table-library/theme';
-import { SortOptionsIcon } from '@table-library/react-table-library/types/sort';
+import type { SortOptionsIcon } from '@table-library/react-table-library/types/sort';
 import cls from './TableBase.module.scss';
 
 interface TableNode {

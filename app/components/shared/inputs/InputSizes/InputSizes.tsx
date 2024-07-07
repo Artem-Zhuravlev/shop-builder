@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Field } from 'react-final-form';
 import cls from './InputSizes.module.scss';
 

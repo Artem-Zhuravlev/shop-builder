@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { BlogCard, BlogCardProps } from './BlogCard';
+import { BlogCard, type BlogCardProps } from './BlogCard';
 
 const testProps: BlogCardProps = {
   author: 'John Doe',

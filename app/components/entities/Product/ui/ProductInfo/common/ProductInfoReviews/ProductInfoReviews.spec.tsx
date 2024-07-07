@@ -16,7 +16,7 @@ describe('ProductInfoReviews', () => {
     );
 
     expect(getByText(`${rating}/5`)).toBeInTheDocument();
-    expect(getByText(`20 Reviews`)).toBeInTheDocument();
+    expect(getByText('20 Reviews')).toBeInTheDocument();
     expect(getByText(`${productCode}`)).toBeInTheDocument();
   });
 

@@ -1,6 +1,6 @@
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import classNames from 'classnames';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Field } from 'react-final-form';
 import cls from './InputColors.module.scss';
 

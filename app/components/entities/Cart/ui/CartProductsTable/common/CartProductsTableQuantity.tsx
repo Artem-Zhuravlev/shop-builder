@@ -1,6 +1,6 @@
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputNumber } from '@shared/inputs';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Form } from 'react-final-form';
 import cls from '../CartProductsTable.module.scss';
 

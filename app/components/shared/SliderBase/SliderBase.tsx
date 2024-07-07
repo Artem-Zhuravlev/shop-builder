@@ -1,5 +1,5 @@
-import { FC, forwardRef, ReactNode, Ref, RefObject } from 'react';
-import Slider, { Settings } from 'react-slick';
+import { type FC, forwardRef, type ReactNode, type Ref, type RefObject } from 'react';
+import Slider, { type Settings } from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import cls from './SliderBase.module.scss';

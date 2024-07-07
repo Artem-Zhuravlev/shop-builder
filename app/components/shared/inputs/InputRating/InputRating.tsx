@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Rating, RatingProps } from 'react-simple-star-rating';
+import type { FC } from 'react';
+import { Rating, type RatingProps } from 'react-simple-star-rating';
 
 export const InputRating: FC<RatingProps> = (props) => {
   const {

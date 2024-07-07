@@ -1,7 +1,7 @@
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './BlogCard.module.scss';
 
 export interface BlogCardProps {
@@ -33,19 +33,19 @@ export const BlogCard: FC<BlogCardProps> = (props) => {
       <div className={cls.BlogCardDescription}>
         <div className={cls.BlogCardInfo}>
           <div className={cls.BlogCardInfoItem}>
-            <span className='icon-user'></span>
+            <span className='icon-user' />
             {author}
           </div>
           <div className={cls.BlogCardInfoItem}>
-            <span className='icon-bubble2'></span>
+            <span className='icon-bubble2' />
             {comments}
           </div>
           <div className={cls.BlogCardInfoItem}>
-            <span className='icon-eye'></span>
+            <span className='icon-eye' />
             {viewed}
           </div>
           <div className={cls.BlogCardInfoItem}>
-            <span className='icon-eye'></span>
+            <span className='icon-eye' />
             {useFormattedDate(publishedAt)}
           </div>
         </div>

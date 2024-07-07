@@ -1,7 +1,7 @@
 import { SideDrawer } from '@shared/SideDrawer';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import cls from './CartSideDrawer.module.scss';
 import { CartSideDrawerItem } from './common/CartSideDrawerItem/CartSideDrawerItem';
 
@@ -50,7 +50,7 @@ export const CartSideDrawer: FC = () => {
           </Link>
         </div>
       }>
-      {products && products.length ? (
+      {products?.length ? (
         products.map((product) => (
           <CartSideDrawerItem key={product.id} {...product} />
         ))

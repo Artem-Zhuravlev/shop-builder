@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { FC, useMemo } from 'react';
+import { useMemo, type FC } from 'react';
 import { ProductInfoRow } from '../ProductInfoRow/ProductInfoRow';
 import cls from './ProductInfoDetails.module.scss';
 import { ProductInfoDetailsItem } from './ProductInfoDetailsItem';
@@ -23,9 +23,8 @@ export const ProductInfoDetails: FC<ProductInfoDetailsProps> = (props) => {
   const labelClass = useMemo(() => {
     if (availability && availability === 'In stock') {
       return cls.InStock;
-    } else {
-      return cls.OutOfStock;
     }
+    return cls.OutOfStock;
   }, [availability]);
 
   return (

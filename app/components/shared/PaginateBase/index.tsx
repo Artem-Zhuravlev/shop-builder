@@ -1,3 +1,1 @@
-import { PaginateBase } from './PaginateBase';
-
-export { PaginateBase };
+export { PaginateBase } from './PaginateBase';

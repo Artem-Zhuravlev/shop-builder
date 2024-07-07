@@ -1,9 +1,9 @@
 'use client';
 import { getValidationMessage } from '@utils/validations';
-import { ValidationHandler } from '@utils/validations/types';
+import type { ValidationHandler } from '@utils/validations/types';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, FC, TextareaHTMLAttributes, useState } from 'react';
+import { type ChangeEvent, type FC, type TextareaHTMLAttributes, useState } from 'react';
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';
 import cls from './InputTextarea.module.scss';

@@ -1,7 +1,14 @@
 'use client';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type FC,
+  type ReactNode,
+} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import cls from './DropdownBase.module.scss';
 
@@ -65,22 +72,21 @@ export const DropdownBase: FC<DropdownProps> = (props) => {
 
       {isOpen && (
         <ul className={classNames(cls.DropdownList, cls[direction])}>
-          {list &&
-            list.map((item) => (
-              <li key={uuidv4()}>
-                {item.to ? (
-                  <Link href={item.to}>
-                    {item.icon}
-                    {item.value}
-                  </Link>
-                ) : (
-                  <button type='button' onClick={item.onClick}>
-                    {item.icon}
-                    {item.value}
-                  </button>
-                )}
-              </li>
-            ))}
+          {list?.map((item) => (
+            <li key={uuidv4()}>
+              {item.to ? (
+                <Link href={item.to}>
+                  {item.icon}
+                  {item.value}
+                </Link>
+              ) : (
+                <button type='button' onClick={item.onClick}>
+                  {item.icon}
+                  {item.value}
+                </button>
+              )}
+            </li>
+          ))}
         </ul>
       )}
     </div>

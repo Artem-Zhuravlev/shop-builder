@@ -1,7 +1,7 @@
 import { useSelector } from '@lib/redux';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 export const ProductsFilterCompare: FC = () => {
   const t = useTranslations('filters');

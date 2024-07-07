@@ -1,24 +1,24 @@
 @import '@styles/abstracts/mixins.scss';
 
 .ProductInfoBenefits {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--size-extra-small);
-	align-items: center;
-	@extend %listreset;
-	@include media('<phone') {
-		justify-content: flex-start;
-	}
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--size-extra-small);
+  @extend %listreset;
+  @include media('<phone') {
+    justify-content: flex-start;
+  }
 }
 
 .ProductInfoBenefitsItem {
-	display: flex;
-	align-items: center;
-	gap: var(--space-small);
-	font-weight: 700;
-	font-size: var(--heading-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+  font-weight: 700;
+  font-size: var(--heading-6);
 
-	span {
-		color: var(--danger-hover);
-	}
+  span {
+    color: var(--danger-hover);
+  }
 }

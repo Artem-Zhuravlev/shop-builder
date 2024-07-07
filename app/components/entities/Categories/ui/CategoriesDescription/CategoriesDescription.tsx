@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './CategoriesDescription.module.scss';
 
 interface CategoriesDescriptionProps {

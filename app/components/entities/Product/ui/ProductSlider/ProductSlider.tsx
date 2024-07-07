@@ -1,8 +1,9 @@
 'use client';
 import { SliderBase } from '@shared/SliderBase';
 import Image from 'next/image';
-import { FC, useEffect, useRef, useState } from 'react';
-import Slider, { Settings } from 'react-slick';
+import { useEffect, useRef, useState, type FC } from 'react';
+import type Slider from 'react-slick';
+import type { Settings } from 'react-slick';
 import { v4 as uuidv4 } from 'uuid';
 import cls from './ProductSlider.module.scss';
 
@@ -48,35 +49,21 @@ export const ProductSlider: FC<ProductSliderProps> = ({ items }) => {
   return (
     <div className={cls.ProductSlider}>
       <SliderBase settings={mainSliderSettings} ref={mainSliderRef}>
-        {items &&
-          items.map((item) => (
-            <div className={cls.ProductSliderCard}>
-              <Image
-                key={uuidv4()}
-                src={item.image}
-                alt={item.alt}
-                width={450}
-                height={590}
-              />
-            </div>
-          ))}
+        {items?.map((item) => (
+          <div className={cls.ProductSliderCard} key={uuidv4()}>
+            <Image src={item.image} alt={item.alt} width={450} height={590} />
+          </div>
+        ))}
       </SliderBase>
       <SliderBase
         settings={thumbSliderSettings}
         ref={thumbsSliderRef}
         className={cls.ProductSliderPreviews}>
-        {items &&
-          items.map((item) => (
-            <div className={cls.ProductSliderThumb}>
-              <Image
-                key={uuidv4()}
-                src={item.image}
-                alt={item.alt}
-                width={140}
-                height={130}
-              />
-            </div>
-          ))}
+        {items?.map((item) => (
+          <div className={cls.ProductSliderThumb} key={uuidv4()}>
+            <Image src={item.image} alt={item.alt} width={140} height={130} />
+          </div>
+        ))}
       </SliderBase>
     </div>
   );

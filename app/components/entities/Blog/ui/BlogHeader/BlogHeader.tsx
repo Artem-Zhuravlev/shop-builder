@@ -1,7 +1,7 @@
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './BlogHeader.module.scss';
 
 interface BlogHeaderProps {
@@ -29,12 +29,11 @@ export const BlogHeader: FC<BlogHeaderProps> = (props) => {
           - {useFormattedDate(publishedAt)}
         </li>
         <li className={cls.BlogHeaderListItem}>
-          <span className='icon-eye'></span>
+          <span className='icon-eye' />
           {viewed}
         </li>
         <li className={cls.BlogHeaderListItem}>
-          <span className='icon-bubble2'></span>{' '}
-          {t('comments', { count: comments })}
+          <span className='icon-bubble2' /> {t('comments', { count: comments })}
         </li>
       </ul>
     </div>

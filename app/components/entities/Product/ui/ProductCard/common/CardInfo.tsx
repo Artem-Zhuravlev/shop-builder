@@ -1,5 +1,5 @@
 import { useSelector } from '@lib/redux';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from '../ProductCard.module.scss';
 
 interface CardInfoProps {

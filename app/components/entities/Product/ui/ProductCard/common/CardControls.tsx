@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from '../ProductCard.module.scss';
 
 interface CardControlsProps {
@@ -19,28 +19,28 @@ export const CardControls: FC<CardControlsProps> = (props) => {
         aria-label='Add to card'
         onClick={handleToCard}
         className={cls.CardControlsBtn}>
-        <span className='icon-cart'></span>
+        <span className='icon-cart' />
       </button>
       <button
         type='button'
         aria-label='Add to wish list'
         onClick={handleToFavorite}
         className={cls.CardControlsBtn}>
-        <span className='icon-heart'></span>
+        <span className='icon-heart' />
       </button>
       <button
         type='button'
         aria-label='Quick view'
         onClick={handleQuickView}
         className={cls.CardControlsBtn}>
-        <span className='icon-eye'></span>
+        <span className='icon-eye' />
       </button>
       <button
         type='button'
         aria-label='Compare this Product'
         onClick={handleCompare}
         className={cls.CardControlsBtn}>
-        <span className='icon-loop2'></span>
+        <span className='icon-loop2' />
       </button>
     </div>
   );

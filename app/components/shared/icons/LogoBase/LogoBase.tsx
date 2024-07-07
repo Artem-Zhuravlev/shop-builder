@@ -1,7 +1,8 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 export const LogoBase: FC = () => {
   return (
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 344 153' fill='none'>
       <path
         fill='currentColor'

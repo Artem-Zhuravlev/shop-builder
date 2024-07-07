@@ -1,7 +1,7 @@
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import cls from './ProductsFilterGridSwitcher.module.scss';
 
 export const ProductsFilterGridSwitcher: FC = () => {
@@ -22,8 +22,8 @@ export const ProductsFilterGridSwitcher: FC = () => {
 
   return (
     <div className={cls.ProductsFilterGridSwitcher}>
-      {buttons.map((button, index) => (
-        <TooltipBase content={button.label} key={index}>
+      {buttons.map((button) => (
+        <TooltipBase content={button.label} key={button.label}>
           <button
             type='button'
             className={classNames(cls.ProductsFilterGridSwitcherBtn, {

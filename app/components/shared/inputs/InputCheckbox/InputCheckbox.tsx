@@ -1,9 +1,10 @@
 'use client';
 import { getValidationMessage } from '@utils/validations';
-import { ValidationHandler } from '@utils/validations/types';
+import type { ValidationHandler } from '@utils/validations/types';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import React, { FC, ReactNode, useState } from 'react';
+import type React from 'react';
+import { useState, type FC, type ReactNode } from 'react';
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';
 import cls from './InputCheckbox.module.scss';

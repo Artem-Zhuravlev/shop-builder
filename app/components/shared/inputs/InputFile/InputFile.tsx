@@ -1,7 +1,7 @@
 import { getValidationMessage } from '@utils/validations';
-import { ValidationHandler } from '@utils/validations/types';
+import type { ValidationHandler } from '@utils/validations/types';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, FC, useRef, useState } from 'react';
+import { useRef, useState, type ChangeEvent, type FC } from 'react';
 import { Field } from 'react-final-form';
 import { ButtonBase } from '../../ButtonBase';
 import { Label } from '../Label/Label';

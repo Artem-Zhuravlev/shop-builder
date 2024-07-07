@@ -16,11 +16,11 @@ describe('StatusLabel', () => {
     'shipped',
   ] as const;
 
-  statuses.forEach((status) => {
+  for (const status of statuses) {
     it(`renders correctly for status: ${status}`, () => {
       const { getByText } = render(<StatusLabel value={status} />);
       expect(getByText(status)).toBeInTheDocument();
       expect(getByText(status).classList).toContain(status);
     });
-  });
+  }
 });

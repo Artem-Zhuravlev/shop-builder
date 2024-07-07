@@ -1,13 +1,12 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 import { SocialList } from './SocialList';
 
 describe('SocialList Component', () => {
   test('renders social items with correct URLs and icons', () => {
     const mockItems = [
       { url: 'https://example.com/facebook', icon: 'facebook' },
-      { url: 'https://example.com/twitter', icon: 'twitter' }
+      { url: 'https://example.com/twitter', icon: 'twitter' },
     ];
 
     const { container } = render(<SocialList items={mockItems} />);

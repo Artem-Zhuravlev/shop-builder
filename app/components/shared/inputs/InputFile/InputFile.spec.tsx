@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import { Form } from 'react-final-form';
-import { InputFile, InputProps } from './InputFile';
+import { InputFile, type InputProps } from './InputFile';
 
 describe('InputFile component with react-final-form', () => {
   const defaultProps: InputProps = {

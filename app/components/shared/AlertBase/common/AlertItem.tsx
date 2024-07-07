@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from '../AlertBase.module.scss';
 
 export interface AlertItemProps {

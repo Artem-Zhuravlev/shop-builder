@@ -1,4 +1,4 @@
-import { ImageMetaProps } from '@lib/types/ImageMetaProps';
+import type { ImageMetaProps } from '@lib/types/ImageMetaProps';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
   defaultSortIcon,
@@ -23,10 +23,10 @@ import {
   Table,
 } from '@table-library/react-table-library/table';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { useSelector } from '@lib/redux/store';
-import { TableNode } from '@table-library/react-table-library';
+import type { TableNode } from '@table-library/react-table-library';
 import { getTheme } from '@table-library/react-table-library/baseline';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useRouter } from 'next/router';
@@ -55,7 +55,8 @@ export const AdminProductsTable: FC<AdminProductsTableProps> = (props) => {
   const router = useRouter();
   const theme = useTheme({
     ...getTheme(),
-    Table: `--data-table-library_grid-template-columns:  50px 90px 2fr 1fr 1fr 1fr 1fr 150px;`,
+    Table:
+      '--data-table-library_grid-template-columns:  50px 90px 2fr 1fr 1fr 1fr 1fr 150px;',
     ...defaultTableStyles,
   });
 
@@ -72,7 +73,9 @@ export const AdminProductsTable: FC<AdminProductsTableProps> = (props) => {
           array.sort((a, b) => a.product_name.localeCompare(b.product_name)),
         MODEL: (array) => array.sort((a, b) => a.model.localeCompare(b.model)),
         PRICE: (array) =>
-          array.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)),
+          array.sort(
+            (a, b) => Number.parseFloat(a.price) - Number.parseFloat(b.price),
+          ),
         QUANTITY: (array) => array.sort((a, b) => a.quantity - b.quantity),
       },
     },

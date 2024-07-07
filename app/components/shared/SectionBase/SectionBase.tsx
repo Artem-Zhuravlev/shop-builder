@@ -1,6 +1,6 @@
 import { ContainerBase } from '@shared/ContainerBase';
 import classNames from 'classnames';
-import { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import cls from './SectionBase.module.scss';
 
 interface SectionBaseProps {

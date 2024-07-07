@@ -1,9 +1,9 @@
 import { getValidationMessage } from '@utils/validations';
-import { ValidationHandler } from '@utils/validations/types';
+import type { ValidationHandler } from '@utils/validations/types';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { FC, useState } from 'react';
-import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
+import { useState, type FC } from 'react';
+import ReactDatePicker, { type ReactDatePickerProps } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.module.css';
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';

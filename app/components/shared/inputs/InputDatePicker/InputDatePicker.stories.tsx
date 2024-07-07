@@ -1,9 +1,9 @@
 import { ButtonBase } from '@shared/ButtonBase';
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Form } from 'react-final-form';
-import { InputDatePicker, InputDatePickerProps } from './InputDatePicker';
+import { InputDatePicker, type InputDatePickerProps } from './InputDatePicker';
 
 export default {
   title: 'Shared/Inputs/InputDatePicker',

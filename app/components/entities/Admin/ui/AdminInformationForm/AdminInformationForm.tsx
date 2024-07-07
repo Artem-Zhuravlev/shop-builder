@@ -8,7 +8,7 @@ import {
 } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';
 import { useTranslations } from 'next-intl';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { Form } from 'react-final-form';
 
 export const AdminInformationForm: FC = () => {

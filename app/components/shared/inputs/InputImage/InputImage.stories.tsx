@@ -1,7 +1,7 @@
-import { ImageMetaProps } from '@lib/types/ImageMetaProps';
-import { Meta, StoryFn } from '@storybook/react';
+import type { ImageMetaProps } from '@lib/types/ImageMetaProps';
+import type { Meta, StoryFn } from '@storybook/react';
 import { Form } from 'react-final-form';
-import { InputImage, InputImageProps } from './InputImage';
+import { InputImage, type InputImageProps } from './InputImage';
 
 interface InputStoryProps extends InputImageProps {
   field?: ImageMetaProps;

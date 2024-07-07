@@ -1,10 +1,10 @@
 'use client';
 import { getValidationMessage } from '@utils/validations';
-import { ValidationHandler } from '@utils/validations/types';
+import type { ValidationHandler } from '@utils/validations/types';
 import { useTranslations } from 'next-intl';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { Field } from 'react-final-form';
-import Select, { GroupBase, OptionsOrGroups } from 'react-select';
+import Select, { type GroupBase, type OptionsOrGroups } from 'react-select';
 import { Label } from '../Label/Label';
 import cls from './InputSelect.module.scss';
 import { InputSelectStyles } from './InputSelectStyles';

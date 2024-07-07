@@ -1,6 +1,6 @@
 import { InputRating } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { ProductInfoRow } from '../ProductInfoRow/ProductInfoRow';
 import cls from './ProductInfoReviews.module.scss';
 

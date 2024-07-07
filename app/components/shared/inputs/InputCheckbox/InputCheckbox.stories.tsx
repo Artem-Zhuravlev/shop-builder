@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
+import type { ChangeEvent } from 'react';
 import { Form } from 'react-final-form';
 import { InputCheckbox } from './InputCheckbox';
 
@@ -13,7 +14,7 @@ const Template: StoryFn<typeof InputCheckbox> = ({ ...args }) => {
     console.log('Form submitted with values:', values);
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     action('change')(e.target.checked);
   };
 

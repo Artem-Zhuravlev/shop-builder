@@ -1,10 +1,10 @@
 import 'leaflet/dist/leaflet.css';
-import { FC } from 'react';
+import type { FC } from 'react';
 import {
   MapContainer,
-  MapContainerProps,
+  type MapContainerProps,
   Marker,
-  MarkerProps,
+  type MarkerProps,
   Popup,
   TileLayer,
 } from 'react-leaflet';

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
-import React, { FC, ReactNode, memo } from 'react';
+import type React from 'react';
+import { memo, type FC, type ReactNode } from 'react';
 import { Field } from 'react-final-form';
 import cls from './InputRadio.module.scss';
 

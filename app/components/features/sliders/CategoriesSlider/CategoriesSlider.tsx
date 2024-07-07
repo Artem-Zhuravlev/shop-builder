@@ -1,11 +1,11 @@
 import { SectionBase } from '@shared/SectionBase';
 import { SliderBase, SliderCard } from '@shared/SliderBase';
 import { settings } from '@utils/settings/slider/sliderWithFourColumns';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import {
   CategoriesSliderItem,
-  CategoriesSliderItemProps,
+  type CategoriesSliderItemProps,
 } from './common/CategoriesSliderItem';
 
 interface CategoriesSliderProps {
@@ -18,16 +18,15 @@ export const CategoriesSlider: FC<CategoriesSliderProps> = (props) => {
   return (
     <SectionBase>
       <SliderBase settings={settings}>
-        {items &&
-          items.map((item) => (
-            <SliderCard key={uuidv4()}>
-              <CategoriesSliderItem
-                title={item.title}
-                to={item.to}
-                image={item.image}
-              />
-            </SliderCard>
-          ))}
+        {items?.map((item) => (
+          <SliderCard key={uuidv4()}>
+            <CategoriesSliderItem
+              title={item.title}
+              to={item.to}
+              image={item.image}
+            />
+          </SliderCard>
+        ))}
       </SliderBase>
     </SectionBase>
   );

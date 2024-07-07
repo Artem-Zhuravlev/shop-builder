@@ -1,8 +1,8 @@
 import { ButtonBase } from '@shared/ButtonBase';
 import { action } from '@storybook/addon-actions';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { Form } from 'react-final-form';
-import { InputFile, InputProps } from './InputFile';
+import { InputFile, type InputProps } from './InputFile';
 
 export default {
   title: 'Shared/Inputs/InputFile',

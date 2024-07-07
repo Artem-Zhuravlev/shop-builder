@@ -1,7 +1,7 @@
-import { TabItem, TabsBase } from '@shared/TabsBase';
-import { AutoSave, InputSelect, SelectOption } from '@shared/inputs';
+import { TabsBase, type TabItem } from '@shared/TabsBase';
+import { AutoSave, InputSelect, type SelectOption } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { Form } from 'react-final-form';
 import cls from '../AdminProductsForm.module.scss';
 import { AdminProductsOptionForm } from './AdminProductsOptionForm';

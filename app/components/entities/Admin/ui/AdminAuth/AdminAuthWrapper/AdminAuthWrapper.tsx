@@ -1,5 +1,5 @@
 import { ContainerBase } from '@shared/ContainerBase';
-import { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import cls from './AdminAuthWrapper.module.scss';
 
 interface AdminAuthWrapperProps {

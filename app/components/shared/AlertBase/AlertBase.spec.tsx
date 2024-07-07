@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, screen } from '@testing-library/react';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
 import { AlertBase } from './AlertBase';
-import { AlertItemProps } from './common/AlertItem';
+import type { AlertItemProps } from './common/AlertItem';
 
 describe('AlertBase Component', () => {
   const mockAlerts: Pick<AlertItemProps, 'type' | 'message'>[] = [

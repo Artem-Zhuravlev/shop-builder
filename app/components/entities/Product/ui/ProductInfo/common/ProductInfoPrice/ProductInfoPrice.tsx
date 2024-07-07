@@ -2,7 +2,7 @@ import { useSelector } from '@lib/redux';
 import { TimerBase } from '@shared/TimerBase/TimerBase';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { ProductInfoRow } from '../ProductInfoRow/ProductInfoRow';
 import cls from './ProductInfoPrice.module.scss';
 

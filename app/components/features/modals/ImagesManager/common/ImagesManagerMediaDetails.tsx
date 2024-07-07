@@ -1,7 +1,7 @@
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from '../ImagesManager.module.scss';
 
 interface ImagesManagerMediaDetailsProps {

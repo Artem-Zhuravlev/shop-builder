@@ -4,7 +4,7 @@ import {
   defaultSortIcon,
   defaultTableStyles,
 } from '@shared/TableBase/TableBase';
-import { TableNode } from '@table-library/react-table-library';
+import type { TableNode } from '@table-library/react-table-library';
 import { getTheme } from '@table-library/react-table-library/baseline';
 import {
   CellSelect,
@@ -27,7 +27,7 @@ import {
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 interface AdminDownloadsTableItem extends TableNode {
   id: string | number;
@@ -47,7 +47,7 @@ export const AdminDownloadsTable: FC<AdminDownloadsTableProps> = (props) => {
   const router = useRouter();
   const theme = useTheme({
     ...getTheme(),
-    Table: `--data-table-library_grid-template-columns:  50px 1fr 1fr 150px;`,
+    Table: '--data-table-library_grid-template-columns:  50px 1fr 1fr 150px;',
     ...defaultTableStyles,
   });
 

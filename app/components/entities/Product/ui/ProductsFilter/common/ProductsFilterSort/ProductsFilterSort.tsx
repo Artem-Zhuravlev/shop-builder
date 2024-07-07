@@ -1,6 +1,6 @@
 import { AutoSave, InputSelect } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Form } from 'react-final-form';
 
 export const ProductsFilterSort: FC = () => {

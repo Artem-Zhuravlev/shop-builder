@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import { RatingProps } from 'react-simple-star-rating';
+import type { RatingProps } from 'react-simple-star-rating';
 import { InputRating } from './InputRating';
 
 describe('InputRating component', () => {

@@ -1,6 +1,6 @@
 import { SectionBase } from '@shared/SectionBase';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import cls from './ContactsInfo.module.scss';
 

@@ -3,7 +3,7 @@ import { LogoBase } from '@shared/icons';
 import { IconUser } from '@shared/icons/IconUser/IconUser';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './AdminHeader.module.scss';
 
 export const AdminHeader: FC = () => {

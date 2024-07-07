@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { Collapse } from 'react-collapse';
 import cls from './AdminSidebar.module.scss';
-import { SidebarItem, navbarList } from './AdminSidebarList';
+import { navbarList, type SidebarItem } from './AdminSidebarList';
 
 const SidebarNavItem: FC<{ item: SidebarItem }> = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);

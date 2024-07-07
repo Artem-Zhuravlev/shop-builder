@@ -1,12 +1,12 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './ProductInfo.module.scss';
 import {
   ProductInfoBenefits,
   ProductInfoControls,
   ProductInfoDetails,
-  ProductInfoDetailsProps,
-  ProductInfoPriceProps,
   ProductInfoReviews,
+  type ProductInfoDetailsProps,
+  type ProductInfoPriceProps,
 } from './common';
 import { ProductInfoPrice } from './common/ProductInfoPrice/ProductInfoPrice';
 

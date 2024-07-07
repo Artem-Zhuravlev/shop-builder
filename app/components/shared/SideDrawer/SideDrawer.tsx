@@ -1,7 +1,7 @@
 'use client';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { FC, ReactNode, useState } from 'react';
+import { type FC, type ReactNode, useState } from 'react';
 import cls from './SideDrawer.module.scss';
 
 interface SideDrawerProps {

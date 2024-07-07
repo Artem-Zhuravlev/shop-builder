@@ -4,7 +4,7 @@ import { InputText, InputTextarea } from '@shared/inputs';
 import { emailValidate } from '@utils/validations';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Form } from 'react-final-form';
 import cls from './ContactsForm.module.scss';
 

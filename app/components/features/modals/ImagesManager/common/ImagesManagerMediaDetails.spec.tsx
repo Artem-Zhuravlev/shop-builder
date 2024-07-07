@@ -13,7 +13,7 @@ jest.mock('next-intl', () => ({
 jest.mock('@shared/ButtonBase', () => ({
 	// @ts-ignore
 	ButtonBase: ({ children, variant }) => (
-		<button className={`btn-${variant}`}>{children}</button>
+		<button type="button" className={`btn-${variant}`}>{children}</button>
 	),
 }));
 

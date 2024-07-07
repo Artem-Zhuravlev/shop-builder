@@ -1,9 +1,9 @@
 import { SectionBase } from '@shared/SectionBase';
 import { SliderBase, SliderCard } from '@shared/SliderBase';
 import { settings } from '@utils/settings/slider/sliderWithFourColumns';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { ProductCard, ProductCardProps } from '../ProductCard';
+import { ProductCard, type ProductCardProps } from '../ProductCard';
 import cls from './ProductsSlider.module.scss';
 interface ProductsSliderProps {
   title: string;
@@ -23,9 +23,8 @@ export const ProductsSlider: FC<ProductsSliderProps> = (props) => {
         <SliderBase settings={settings} className={cls.ProductSlider}>
           {items.map(
             ({ images, slug, title, rating, price, oldPrice, tax }) => (
-              <SliderCard>
+              <SliderCard key={uuidv4()}>
                 <ProductCard
-                  key={uuidv4()}
                   images={images}
                   title={title}
                   rating={rating}

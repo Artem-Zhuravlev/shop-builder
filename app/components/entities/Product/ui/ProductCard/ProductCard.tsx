@@ -1,6 +1,6 @@
 import { useSelector } from '@lib/redux';
 import classNames from 'classnames';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './ProductCard.module.scss';
 import { CardCaption } from './common/CardCaption';
 import { CardControls } from './common/CardControls';

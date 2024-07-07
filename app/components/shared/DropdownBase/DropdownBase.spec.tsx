@@ -29,16 +29,16 @@ describe('DropdownBase Component', () => {
 
     fireEvent.click(dropdownButton);
 
-    mockList.forEach((item) => {
+    for (const item of mockList) {
       const link = queryByText(item.value);
       expect(link).toBeInTheDocument();
-    });
+    }
 
     fireEvent.click(dropdownButton);
 
-    mockList.forEach((item) => {
+    for (const item of mockList) {
       const link = queryByText(item.value);
       expect(link).toBeNull();
-    });
+    }
   });
 });

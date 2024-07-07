@@ -2,7 +2,7 @@ import { LanguageTabs } from '@features/tabs';
 import { InputText } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';
 import { useTranslations } from 'next-intl';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { Form } from 'react-final-form';
 
 interface CategoriesSeoForm {

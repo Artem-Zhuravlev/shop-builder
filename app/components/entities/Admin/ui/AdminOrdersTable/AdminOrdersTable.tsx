@@ -1,4 +1,4 @@
-import { Status, StatusLabel } from '@features/tables';
+import { StatusLabel, type Status } from '@features/tables';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { useSelector } from '@lib/redux/store';
 import { ButtonBase } from '@shared/ButtonBase';
@@ -6,7 +6,7 @@ import {
   defaultSortIcon,
   defaultTableStyles,
 } from '@shared/TableBase/TableBase';
-import { TableNode } from '@table-library/react-table-library';
+import type { TableNode } from '@table-library/react-table-library';
 import { getTheme } from '@table-library/react-table-library/baseline';
 import {
   CellSelect,
@@ -29,7 +29,7 @@ import {
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import type { FC } from 'react';
 interface AdminOrdersTableItem extends TableNode {
   id: string | number;
   order_id: number;
@@ -50,7 +50,8 @@ export const AdminOrdersTable: FC<AdminOrdersTableProps> = (props) => {
   const router = useRouter();
   const theme = useTheme({
     ...getTheme(),
-    Table: `--data-table-library_grid-template-columns:  50px 1fr 1fr 1fr 1fr 1fr 150px;`,
+    Table:
+      '--data-table-library_grid-template-columns:  50px 1fr 1fr 1fr 1fr 1fr 150px;',
     ...defaultTableStyles,
   });
   const defaultCurrency = useSelector((state) => state.product.currency);

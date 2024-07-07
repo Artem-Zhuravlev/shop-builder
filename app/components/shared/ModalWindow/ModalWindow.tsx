@@ -1,10 +1,10 @@
 'use client';
 import { useModal } from '@lib/modalProvider/ModalContext';
-import { modalTypes } from '@lib/modalProvider/modalTypes';
+import type { modalTypes } from '@lib/modalProvider/modalTypes';
 import { ButtonBase } from '@shared/ButtonBase';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { FC, ReactNode, useEffect } from 'react';
+import { type FC, type ReactNode, useEffect } from 'react';
 import cls from './ModalWindow.module.scss';
 
 interface ModalWindowProps {

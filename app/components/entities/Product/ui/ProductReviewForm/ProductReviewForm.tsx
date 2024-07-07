@@ -2,7 +2,7 @@
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputRating, InputText, InputTextarea } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import { FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { Form } from 'react-final-form';
 import cls from './ProductReviewForm.module.scss';
 

@@ -1,7 +1,7 @@
 import { ButtonBase } from '@shared/ButtonBase';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { Form } from 'react-final-form';
-import { InputProps, InputText } from './InputText';
+import { type InputProps, InputText } from './InputText';
 
 interface InputStoryProps extends InputProps {
   field?: string;

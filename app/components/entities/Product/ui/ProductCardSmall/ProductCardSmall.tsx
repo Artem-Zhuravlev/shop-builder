@@ -2,7 +2,7 @@ import { useSelector } from '@lib/redux';
 import { InputRating } from '@shared/inputs';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './ProductCardSmall.module.scss';
 
 interface ProductCardSmallProps {

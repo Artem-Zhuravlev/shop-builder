@@ -1,6 +1,6 @@
 import { InputRating } from '@shared/inputs';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from '../ProductCard.module.scss';
 
 interface CardCaptionProps {

@@ -1,11 +1,11 @@
 import { getValidationMessage } from '@utils/validations';
-import { ValidationHandler } from '@utils/validations/types';
+import type { ValidationHandler } from '@utils/validations/types';
 import { ContentState, EditorState, convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import { useTranslations } from 'next-intl';
-import { FC, useEffect, useState } from 'react';
-import { Editor, EditorProps } from 'react-draft-wysiwyg';
+import { useEffect, useState, type FC } from 'react';
+import { Editor, type EditorProps } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';

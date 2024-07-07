@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { customRender } from '@utils/intlWrapper/IntlWrapper';
-import { Comment, CommentsList } from './CommentsList';
+import { CommentsList, type Comment } from './CommentsList';
 
 jest.mock('../CommentItem/CommentItem', () => ({
   CommentItem: jest.fn(() => null),

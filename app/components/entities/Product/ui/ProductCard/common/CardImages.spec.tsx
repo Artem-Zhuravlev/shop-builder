@@ -5,6 +5,7 @@ import { CardImages } from './CardImages';
 jest.mock('next/image', () => ({
   __esModule: true,
   default: (props: any) => {
+    // biome-ignore lint/a11y/useAltText: <explanation>
     return <img {...props} />;
   },
 }));

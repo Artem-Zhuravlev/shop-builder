@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import ReactPaginate, { ReactPaginateProps } from 'react-paginate';
+import type { FC } from 'react';
+import ReactPaginate, { type ReactPaginateProps } from 'react-paginate';
 import cls from './PaginateBase.module.scss';
 
 export const PaginateBase: FC<ReactPaginateProps> = (props) => {

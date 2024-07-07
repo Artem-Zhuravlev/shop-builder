@@ -21,12 +21,12 @@ import {
   HeaderRow,
   Row,
   Table,
-  TableNode,
+  type TableNode,
 } from '@table-library/react-table-library/table';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 interface AdminRecurringProfilesTableItem extends TableNode {
   id: string | number;
@@ -49,7 +49,7 @@ export const AdminRecurringProfilesTable: FC<
   const router = useRouter();
   const theme = useTheme({
     ...getTheme(),
-    Table: `--data-table-library_grid-template-columns:  50px 1fr 1fr 150px;`,
+    Table: '--data-table-library_grid-template-columns:  50px 1fr 1fr 150px;',
     ...defaultTableStyles,
   });
 
@@ -65,7 +65,8 @@ export const AdminRecurringProfilesTable: FC<
         NAME: (array) => array.sort((a, b) => a.name.localeCompare(b.name)),
         SORT_ORDER: (array) =>
           array.sort(
-            (a, b) => parseFloat(a.sort_order) - parseFloat(b.sort_order),
+            (a, b) =>
+              Number.parseFloat(a.sort_order) - Number.parseFloat(b.sort_order),
           ),
       },
     },

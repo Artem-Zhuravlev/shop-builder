@@ -1,27 +1,21 @@
-import React, { FC } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import type { FC } from 'react';
 import cls from '../CategoriesSlider.module.scss';
 
 export interface CategoriesSliderItemProps {
-	image: string;
-	title: string;
-	to: string;
+  image: string;
+  title: string;
+  to: string;
 }
 
 export const CategoriesSliderItem: FC<CategoriesSliderItemProps> = (props) => {
-	const { image, title, to } = props;
+  const { image, title, to } = props;
 
-	return (
-		<Link
-			href={to}
-			className={cls.CategoriesSliderItem}>
-			<Image
-				src={image}
-				alt={title}
-				className={cls.CategoriesSliderImage}
-			/>
-			<h5 className={cls.CategoriesSliderTit}>{title}</h5>
-		</Link>
-	);
+  return (
+    <Link href={to} className={cls.CategoriesSliderItem}>
+      <Image src={image} alt={title} className={cls.CategoriesSliderImage} />
+      <h5 className={cls.CategoriesSliderTit}>{title}</h5>
+    </Link>
+  );
 };

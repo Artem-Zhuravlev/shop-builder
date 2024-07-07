@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { FC, useCallback } from 'react';
+import { useCallback, type FC } from 'react';
 import {
-  DropEvent,
-  DropzoneOptions,
-  FileRejection,
   useDropzone,
+  type DropEvent,
+  type DropzoneOptions,
+  type FileRejection,
 } from 'react-dropzone';
 import cls from './DropzoneBase.module.scss';
 

@@ -2,7 +2,7 @@ import { useSelector } from '@lib/redux/store';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputLanguage, InputText } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { FieldArray } from 'react-final-form-arrays';
 
 interface AdminOrdersFormProductsProps {

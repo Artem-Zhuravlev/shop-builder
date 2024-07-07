@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { InputSelect } from '../InputSelect/InputSelect';
 
 interface InputLanguageProps {

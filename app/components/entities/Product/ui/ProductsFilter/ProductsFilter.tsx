@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './ProductsFilter.module.scss';
 import {
   ProductsFilterCompare,

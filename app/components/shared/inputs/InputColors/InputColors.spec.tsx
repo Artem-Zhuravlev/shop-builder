@@ -21,10 +21,10 @@ describe('InputColors component', () => {
       </Form>,
     );
 
-    items.forEach((item) => {
+    for (const item of items) {
       const checkbox = getByLabelText(item.value);
       expect(checkbox).toBeInTheDocument();
-    });
+    }
   });
 
   it('renders correctly with radio buttons', () => {
@@ -38,9 +38,9 @@ describe('InputColors component', () => {
       </Form>,
     );
 
-    items.forEach((item) => {
+    for (const item of items) {
       const radio = getByLabelText(item.value);
       expect(radio).toBeInTheDocument();
-    });
+    }
   });
 });

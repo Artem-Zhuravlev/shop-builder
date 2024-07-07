@@ -34,9 +34,9 @@ describe('InputSizes component', () => {
       </Form>,
     );
 
-    items.forEach((item) => {
+    for (const item of items ) {
       const labelElement = getByText(item);
       expect(labelElement).toBeInTheDocument();
-    });
+    }
   });
 });

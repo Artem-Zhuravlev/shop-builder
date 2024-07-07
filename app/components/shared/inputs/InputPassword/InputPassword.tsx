@@ -1,8 +1,16 @@
 'use client';
-import { TranslateFunction, getValidationMessage } from '@utils/validations';
+import {
+  getValidationMessage,
+  type TranslateFunction,
+} from '@utils/validations';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, FC, InputHTMLAttributes, useState } from 'react';
+import {
+  useState,
+  type ChangeEvent,
+  type FC,
+  type InputHTMLAttributes,
+} from 'react';
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';
 import cls from './InputPassword.module.scss';

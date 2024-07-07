@@ -1,7 +1,8 @@
 'use client';
 import { ButtonBase } from '@shared/ButtonBase';
 import { useTranslations } from 'next-intl';
-import React, { FC, InputHTMLAttributes } from 'react';
+import type React from 'react';
+import type { FC, InputHTMLAttributes } from 'react';
 import { Field, useForm, useFormState } from 'react-final-form';
 import cls from './InputNumber.module.scss';
 
@@ -18,12 +19,12 @@ export const InputNumber: FC<InputProps> = (props) => {
 
   const handleDecrement = () => {
     if (inputValue > 0) {
-      form.change(name, parseInt(inputValue) - 1);
+      form.change(name, Number.parseInt(inputValue) - 1);
     }
   };
 
   const handleIncrement = () => {
-    form.change(name, parseInt(inputValue) + 1);
+    form.change(name, Number.parseInt(inputValue) + 1);
   };
 
   const renderInputField = ({ input }: any) => {

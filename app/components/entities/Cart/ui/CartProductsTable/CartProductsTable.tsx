@@ -1,6 +1,6 @@
 import { TableBase } from '@shared/TableBase';
 import { useTranslations } from 'next-intl';
-import { FC, useMemo } from 'react';
+import { useMemo, type FC } from 'react';
 import {
   CartProductsTableAmount,
   CartProductsTableImage,

@@ -3,7 +3,7 @@ import { IconPicture } from '@shared/icons';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import cls from './CartSideDrawerItem.module.scss';
 
 interface CartSideDrawerItemProps {

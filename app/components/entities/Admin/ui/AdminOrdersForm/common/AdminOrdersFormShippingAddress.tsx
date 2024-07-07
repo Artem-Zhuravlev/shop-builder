@@ -1,6 +1,6 @@
 import { InputSelect, InputText } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 export const AdminOrdersFormShippingAddress: FC = () => {
   const t = useTranslations();

@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { AdminRecurringProfilesForm } from './AdminRecurringProfilesForm';
 
 export default {

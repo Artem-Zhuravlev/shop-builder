@@ -3,7 +3,7 @@ import { InputSelect, InputText } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';
 import arrayMutators from 'final-form-arrays';
 import { useTranslations } from 'next-intl';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Form } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 
