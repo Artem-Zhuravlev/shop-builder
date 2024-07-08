@@ -74,4 +74,6 @@ export const admin = {
 	total: 'Total',
 	date_modified: 'Date modified',
 	return_id: 'Return ID',
+	order_information: 'Order information',
+	product_information: 'Product Information & Reason for Return',
 };

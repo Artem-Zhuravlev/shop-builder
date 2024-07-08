@@ -74,4 +74,6 @@ export const admin = {
 	total: 'Загальна сума',
 	date_modified: 'Дата модифікації',
 	return_id: 'ID Повернення',
+	order_information: 'Інформація про замовлення',
+	product_information: 'Інформація про продукт та причина повернення',
 };

@@ -83,4 +83,5 @@ export const base = {
 	payment_address: 'Payment address',
 	history: 'History',
 	awaiting_products: 'Awaiting products',
+	product_returns: 'Product returns',
 };

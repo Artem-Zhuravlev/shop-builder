@@ -83,4 +83,5 @@ export const base = {
 	payment_address: 'Адреса платіжна',
 	history: 'Історія',
 	awaiting_products: 'Очікування продукту',
+	product_returns: 'Повернення продукту',
 };
