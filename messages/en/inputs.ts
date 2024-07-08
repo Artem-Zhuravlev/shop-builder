@@ -144,4 +144,6 @@ export const inputs = {
 	choose_language: 'Choose language',
 	notify_customer: 'Notify customer',
 	order_id: 'Order ID',
+	return_id: 'Return ID',
+	return_status: 'Return status',
 };

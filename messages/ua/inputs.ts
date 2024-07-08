@@ -144,4 +144,6 @@ export const inputs = {
 	choose_language: 'Виберіть мову',
 	notify_customer: 'Повідомлення клієнта',
 	order_id: 'ID замовлення',
+	return_id: 'ID повернення',
+	return_status: 'Статус повернення',
 };
