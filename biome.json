@@ -25,8 +25,7 @@
 		}
 	},
 	"formatter": {
-		"lineEnding": "crlf",
-		"attributePosition": "auto"
+		"lineEnding": "crlf"
 	},
 	"css": {
 		"parser": {
@@ -38,6 +37,13 @@
 		},
 		"linter": {
 			"enabled": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"jsxQuoteStyle": "single",
+			"lineEnding": "lf"
 		}
 	}
 }
