@@ -22,3 +22,4 @@ export { InputText } from './InputText/InputText';
 export { InputTextarea } from './InputTextarea/InputTextarea';
 export { Label } from './Label/Label';
 export { AutoSave };
+export { InputReturnStatus } from './InputReturnStatus/InputReturnStatus';
