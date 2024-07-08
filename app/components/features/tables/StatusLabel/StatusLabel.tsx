@@ -4,31 +4,32 @@ import type { FC } from 'react';
 import cls from './StatusLabel.module.scss';
 
 export type Status =
-  | 'pending'
-  | 'cancelled'
-  | 'canceled_reversal'
-  | 'complete'
-  | 'complete'
-  | 'chargeback'
-  | 'expired'
-  | 'failed'
-  | 'denied'
-  | 'delivered'
-  | 'processed'
-  | 'refunded'
-  | 'reversed'
-  | 'processing'
-  | 'shipped'
-  | 'voided';
+	| 'awaiting_products'
+	| 'pending'
+	| 'cancelled'
+	| 'canceled_reversal'
+	| 'complete'
+	| 'complete'
+	| 'chargeback'
+	| 'expired'
+	| 'failed'
+	| 'denied'
+	| 'delivered'
+	| 'processed'
+	| 'refunded'
+	| 'reversed'
+	| 'processing'
+	| 'shipped'
+	| 'voided';
 
 interface StatusLabelProps {
-  value: Status;
+	value: Status;
 }
 
 export const StatusLabel: FC<StatusLabelProps> = ({ value }) => {
-  const t = useTranslations('base');
+	const t = useTranslations('base');
 
-  return (
-    <div className={classNames(cls.StatusLabel, cls[value])}>{t(value)}</div>
-  );
+	return (
+		<div className={classNames(cls.StatusLabel, cls[value])}>{t(value)}</div>
+	);
 };
