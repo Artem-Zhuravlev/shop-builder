@@ -11,12 +11,12 @@
   color: var(--gray-10);
 }
 
-.cancelled {
+.cancelled, .disabled {
   background-color: var(--gray-50);
   color: var(--gray-10);
 }
 
-.delivered {
+.delivered, .enabled {
   background-color: var(--success-main);
   color: var(--gray-10);
 }

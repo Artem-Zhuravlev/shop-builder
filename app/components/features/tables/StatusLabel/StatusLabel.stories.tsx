@@ -2,67 +2,75 @@ import type { Meta, StoryFn } from '@storybook/react';
 import { StatusLabel } from './StatusLabel';
 
 export default {
-  title: 'Features/Tables/StatusLabel',
-  component: StatusLabel,
+	title: 'Features/Tables/StatusLabel',
+	component: StatusLabel,
 } as Meta<typeof StatusLabel>;
 
 const Template: StoryFn<typeof StatusLabel> = (args) => {
-  return <StatusLabel {...args} />;
+	return <StatusLabel {...args} />;
 };
 
 export const Pending = Template.bind({});
 Pending.args = {
-  value: 'pending',
+	value: 'pending',
 };
 export const Cancelled = Template.bind({});
 Cancelled.args = {
-  value: 'cancelled',
+	value: 'cancelled',
+};
+export const Disabled = Template.bind({});
+Disabled.args = {
+	value: 'disabled',
+};
+export const Enabled = Template.bind({});
+Enabled.args = {
+	value: 'enabled',
 };
 export const CancelledReversal = Template.bind({});
 CancelledReversal.args = {
-  value: 'canceled_reversal',
+	value: 'canceled_reversal',
 };
 export const Chargeback = Template.bind({});
 Chargeback.args = {
-  value: 'chargeback',
+	value: 'chargeback',
 };
 export const Denied = Template.bind({});
 Denied.args = {
-  value: 'denied',
+	value: 'denied',
 };
 export const Expired = Template.bind({});
 Expired.args = {
-  value: 'expired',
+	value: 'expired',
 };
 export const Failed = Template.bind({});
 Failed.args = {
-  value: 'failed',
+	value: 'failed',
 };
 export const Complete = Template.bind({});
 Complete.args = {
-  value: 'complete',
+	value: 'complete',
 };
 export const Delivered = Template.bind({});
 Delivered.args = {
-  value: 'delivered',
+	value: 'delivered',
 };
 export const Processing = Template.bind({});
 Processing.args = {
-  value: 'processing',
+	value: 'processing',
 };
 export const Processed = Template.bind({});
 Processed.args = {
-  value: 'processed',
+	value: 'processed',
 };
 export const Refunded = Template.bind({});
 Refunded.args = {
-  value: 'refunded',
+	value: 'refunded',
 };
 export const Shipped = Template.bind({});
 Shipped.args = {
-  value: 'shipped',
+	value: 'shipped',
 };
 export const Voided = Template.bind({});
 Voided.args = {
-  value: 'voided',
+	value: 'voided',
 };
