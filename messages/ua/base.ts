@@ -84,4 +84,6 @@ export const base = {
 	history: 'Історія',
 	awaiting_products: 'Очікування продукту',
 	product_returns: 'Повернення продукту',
+	disabled: 'Вимкнено',
+	enabled: 'Увімкнено',
 };

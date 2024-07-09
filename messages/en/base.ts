@@ -84,4 +84,6 @@ export const base = {
 	history: 'History',
 	awaiting_products: 'Awaiting products',
 	product_returns: 'Product returns',
+	disabled: 'Disabled',
+	enabled: 'Enabled',
 };

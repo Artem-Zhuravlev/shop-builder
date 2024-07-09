@@ -76,4 +76,8 @@ export const admin = {
 	return_id: 'Return ID',
 	order_information: 'Order information',
 	product_information: 'Product Information & Reason for Return',
+	customer_name: 'Customer name',
+	tracking: 'Tracking',
+	commission: 'Commission',
+	balance: 'Balance',
 };

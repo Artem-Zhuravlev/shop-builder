@@ -76,4 +76,7 @@ export const admin = {
 	return_id: 'ID Повернення',
 	order_information: 'Інформація про замовлення',
 	product_information: 'Інформація про продукт та причина повернення',
+	customer_name: "Ім'я клієнта",
+	tracking: 'Відстежування',
+	commission: 'Комісія',
 };
