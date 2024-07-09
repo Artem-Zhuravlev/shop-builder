@@ -158,4 +158,6 @@ export const inputs = {
 	credit_issued: 'Кредит виданий',
 	refunded: 'Повернуто',
 	replacement_sent: 'Відправлено заміну',
+	tracking_code: 'Код відстеження',
+	commission: 'Комісія',
 };

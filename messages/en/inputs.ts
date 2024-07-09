@@ -158,4 +158,6 @@ export const inputs = {
 	credit_issued: 'Credit issued',
 	refunded: 'Refunded',
 	replacement_sent: 'Replacement sent',
+	tracking_code: 'Tracking code',
+	commission: 'Commission',
 };
