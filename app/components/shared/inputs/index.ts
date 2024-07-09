@@ -24,3 +24,4 @@ export { Label } from './Label/Label';
 export { AutoSave };
 export { InputReturnStatus } from './InputReturnStatus/InputReturnStatus';
 export { InputCountry } from './InputCountry/InputCountry';
+export { InputTimezone } from './InputTimezone/InputTimezone';
