@@ -80,4 +80,6 @@ export const admin = {
 	tracking: 'Tracking',
 	commission: 'Commission',
 	balance: 'Balance',
+	store_name: 'Store name',
+	store_url: 'Store URL',
 };

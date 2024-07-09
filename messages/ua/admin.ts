@@ -79,4 +79,6 @@ export const admin = {
 	customer_name: "Ім'я клієнта",
 	tracking: 'Відстежування',
 	commission: 'Комісія',
+	store_name: 'Назва магазину',
+	store_url: 'URL магазину',
 };
