@@ -1,3 +1,4 @@
+export { InputCurrency } from './InputCurrency/InputCurrency';
 import AutoSave from './AutoSave/AutoSave';
 export { InputCheckbox } from './InputCheckbox/InputCheckbox';
 export { InputColors } from './InputColors/InputColors';
@@ -25,3 +26,4 @@ export { AutoSave };
 export { InputReturnStatus } from './InputReturnStatus/InputReturnStatus';
 export { InputCountry } from './InputCountry/InputCountry';
 export { InputTimezone } from './InputTimezone/InputTimezone';
+export { InputLength } from './InputLength/InputLength';
