@@ -27,3 +27,4 @@ export { InputReturnStatus } from './InputReturnStatus/InputReturnStatus';
 export { InputCountry } from './InputCountry/InputCountry';
 export { InputTimezone } from './InputTimezone/InputTimezone';
 export { InputLength } from './InputLength/InputLength';
+export { InputWeight } from './InputWeight/InputWeight';
