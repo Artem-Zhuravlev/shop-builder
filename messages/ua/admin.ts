@@ -81,4 +81,6 @@ export const admin = {
 	commission: 'Комісія',
 	store_name: 'Назва магазину',
 	store_url: 'URL магазину',
+	european_central_bank_currency_converter:
+		'Конвертер валют Європейського центрального банку',
 };

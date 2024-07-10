@@ -82,4 +82,6 @@ export const admin = {
 	balance: 'Balance',
 	store_name: 'Store name',
 	store_url: 'Store URL',
+	european_central_bank_currency_converter:
+		'European central bank currency converter',
 };
