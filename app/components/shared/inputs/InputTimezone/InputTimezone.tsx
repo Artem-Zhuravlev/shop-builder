@@ -24,3 +24,5 @@ export const InputTimezone: FC<InputTimezoneProps> = (props) => {
 		/>
 	);
 };
+
+InputTimezone.displayName = 'InputTimezone';
