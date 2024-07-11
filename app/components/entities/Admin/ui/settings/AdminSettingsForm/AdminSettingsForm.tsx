@@ -6,6 +6,7 @@ import {
 	AdminSettingsStoreForm,
 	AdminSettingsLocalForm,
 	AdminSettingsOptionForm,
+	AdminSettingsImageForm,
 } from './common';
 
 export const AdminSettingsForm: FC = () => {
@@ -27,6 +28,10 @@ export const AdminSettingsForm: FC = () => {
 		{
 			label: t('option'),
 			description: <AdminSettingsOptionForm />,
+		},
+		{
+			label: t('image'),
+			description: <AdminSettingsImageForm />,
 		},
 	];
 
