@@ -105,4 +105,6 @@ export const base = {
 	active: 'Активний',
 	stock: 'Залишок',
 	return: 'Повернення',
+	mail: 'Пошта',
+	mail_alerts: 'Повідомлення пошти',
 };

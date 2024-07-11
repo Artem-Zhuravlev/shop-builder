@@ -105,4 +105,6 @@ export const base = {
 	active: 'Active',
 	stock: 'Stock',
 	return: 'Return',
+	mail: 'Mail',
+	mail_alerts: 'Mail alerts',
 };
