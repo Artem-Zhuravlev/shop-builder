@@ -96,4 +96,13 @@ export const base = {
 	ounce: 'Унція',
 	store: 'Магазин',
 	local: 'Локаль',
+	voucher: 'Ваучер',
+	legal: 'Правовий',
+	taxes: 'Податки',
+	account: 'Акаунт',
+	checkout: 'Оформлення замовлення',
+	subscription: 'Підписка',
+	active: 'Активний',
+	stock: 'Залишок',
+	return: 'Повернення',
 };

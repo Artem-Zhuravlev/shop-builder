@@ -96,4 +96,13 @@ export const base = {
 	ounce: 'Ounce',
 	store: 'Store',
 	local: 'Local',
+	voucher: 'Voucher',
+	legal: 'Legal',
+	taxes: 'Taxes',
+	account: 'Account',
+	checkout: 'Checkout',
+	subscription: 'Subscription',
+	active: 'Active',
+	stock: 'Stock',
+	return: 'Return',
 };
