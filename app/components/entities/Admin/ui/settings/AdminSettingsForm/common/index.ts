@@ -3,3 +3,4 @@ export { AdminSettingsLocalForm } from './AdminSettingsLocalForm';
 export { AdminSettingsGeneralForm } from './AdminSettingsGeneralForm';
 export { AdminSettingsOptionForm } from './AdminSettingsOptionForm';
 export { AdminSettingsImageForm } from './AdminSettingsImageForm';
+import { AdminSettingsMailForm } from './AdminSettingsMailForm';

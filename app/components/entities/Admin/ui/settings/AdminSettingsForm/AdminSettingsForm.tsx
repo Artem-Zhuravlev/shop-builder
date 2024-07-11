@@ -8,6 +8,7 @@ import {
 	AdminSettingsOptionForm,
 	AdminSettingsImageForm,
 } from './common';
+import { AdminSettingsMailForm } from './common/AdminSettingsMailForm';
 
 export const AdminSettingsForm: FC = () => {
 	const t = useTranslations('base');
@@ -32,6 +33,10 @@ export const AdminSettingsForm: FC = () => {
 		{
 			label: t('image'),
 			description: <AdminSettingsImageForm />,
+		},
+		{
+			label: t('mail'),
+			description: <AdminSettingsMailForm />,
 		},
 	];
 
