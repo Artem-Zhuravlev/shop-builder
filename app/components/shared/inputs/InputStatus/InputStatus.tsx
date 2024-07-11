@@ -5,10 +5,12 @@ import { InputSelect } from '../InputSelect/InputSelect';
 interface InputStatusProps {
 	className?: string;
 	name: string;
+	isMulti?: boolean;
+	placeholder?: string;
 }
 
 export const InputStatus: FC<InputStatusProps> = (props) => {
-	const { className, name } = props;
+	const { className, isMulti, name, placeholder } = props;
 	const t = useTranslations();
 	const statuses = [
 		{ value: 'canceled', label: t('base.canceled') },
@@ -32,7 +34,8 @@ export const InputStatus: FC<InputStatusProps> = (props) => {
 			className={className}
 			name={name}
 			options={statuses}
-			placeholder={t('inputs.status')}
+			placeholder={placeholder ?? t('inputs.status')}
+			isMulti={isMulti}
 		/>
 	);
 };
