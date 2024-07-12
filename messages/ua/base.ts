@@ -110,4 +110,5 @@ export const base = {
 	languages: 'Мови',
 	currency: 'Валюта',
 	order_statuses: 'Статуси замовлення',
+	stock_statuses: 'Статуси залишків',
 };

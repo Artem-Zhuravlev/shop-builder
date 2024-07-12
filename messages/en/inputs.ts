@@ -258,4 +258,5 @@ export const inputs = {
 	symbol: 'Symbol',
 	value: 'Value',
 	order_status_name: 'Order status name',
+	stock_status_name: 'Stock status name',
 };

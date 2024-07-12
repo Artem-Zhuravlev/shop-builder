@@ -259,4 +259,5 @@ export const inputs = {
 	symbol: 'Символ',
 	value: 'Значення',
 	order_status_name: 'Назва статусу замовлення',
+	stock_status_name: 'Назва статусу наявності',
 };
