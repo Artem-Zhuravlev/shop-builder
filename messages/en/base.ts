@@ -112,4 +112,5 @@ export const base = {
 	order_statuses: 'Order statuses',
 	stock_statuses: 'Stock statuses',
 	countries: 'Countries',
+	zones: 'Zones',
 };
