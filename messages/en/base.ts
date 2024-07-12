@@ -107,4 +107,5 @@ export const base = {
 	return: 'Return',
 	mail: 'Mail',
 	mail_alerts: 'Mail alerts',
+	languages: 'Languages',
 };

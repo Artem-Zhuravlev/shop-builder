@@ -19,7 +19,7 @@ export const AdminLanguagesForm: FC = () => {
 					<FormLayout
 						className='row align-items-center'
 						onSubmit={handleSubmit}
-						title={t('base.options')}
+						title={t('base.languages')}
 					>
 						<InputText
 							className='col-md-4'

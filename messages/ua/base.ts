@@ -107,4 +107,5 @@ export const base = {
 	return: 'Повернення',
 	mail: 'Пошта',
 	mail_alerts: 'Повідомлення пошти',
+	languages: 'Мови',
 };
