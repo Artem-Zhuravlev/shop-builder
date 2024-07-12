@@ -97,4 +97,5 @@ export const admin = {
 	country: 'Country',
 	zone_name: 'Zone name',
 	zone_code: 'Zone code',
+	geo_zone_name: 'Geo zone name',
 };
