@@ -108,4 +108,5 @@ export const base = {
 	mail: 'Пошта',
 	mail_alerts: 'Повідомлення пошти',
 	languages: 'Мови',
+	currency: 'Валюта',
 };

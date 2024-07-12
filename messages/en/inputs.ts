@@ -253,4 +253,8 @@ export const inputs = {
 	language_name: 'Language name',
 	code: 'Code (example: en-gb)',
 	locale: 'Locale (example: en_US)',
+	currency_title: 'Currency title',
+	decimal_places: 'Decimal places',
+	symbol: 'Symbol',
+	value: 'Value',
 };

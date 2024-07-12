@@ -254,4 +254,8 @@ export const inputs = {
 	language_name: 'Назва мови',
 	code: 'Код (наприклад: en-gb)',
 	locale: 'Локалізація (наприклад: en_US)',
+	currency_title: 'Назва валюти',
+	decimal_places: 'Кількість знаків після коми',
+	symbol: 'Символ',
+	value: 'Значення',
 };
