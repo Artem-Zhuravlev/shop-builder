@@ -90,4 +90,7 @@ export const admin = {
 	value: 'Value',
 	order_status_name: 'Order status name',
 	stock_status_name: 'Stock status name',
+	country_name: 'Country name',
+	iso_code_2: 'ISO Code (2)',
+	iso_code_3: 'ISO Code (3)',
 };
