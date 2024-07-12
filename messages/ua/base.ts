@@ -109,4 +109,5 @@ export const base = {
 	mail_alerts: 'Повідомлення пошти',
 	languages: 'Мови',
 	currency: 'Валюта',
+	order_statuses: 'Статуси замовлення',
 };

@@ -258,4 +258,5 @@ export const inputs = {
 	decimal_places: 'Кількість знаків після коми',
 	symbol: 'Символ',
 	value: 'Значення',
+	order_status_name: 'Назва статусу замовлення',
 };

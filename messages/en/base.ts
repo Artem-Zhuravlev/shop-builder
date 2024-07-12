@@ -109,4 +109,5 @@ export const base = {
 	mail_alerts: 'Mail alerts',
 	languages: 'Languages',
 	currency: 'Currency',
+	order_statuses: 'Order statuses',
 };

@@ -257,4 +257,5 @@ export const inputs = {
 	decimal_places: 'Decimal places',
 	symbol: 'Symbol',
 	value: 'Value',
+	order_status_name: 'Order status name',
 };
