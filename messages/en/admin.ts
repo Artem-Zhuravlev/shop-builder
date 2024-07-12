@@ -88,4 +88,5 @@ export const admin = {
 	code: 'Code',
 	currency_title: 'Currency title',
 	value: 'Value',
+	order_status_name: 'Order status name',
 };

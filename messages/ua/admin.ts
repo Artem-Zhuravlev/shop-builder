@@ -87,4 +87,5 @@ export const admin = {
 	code: 'Код',
 	currency_title: 'Назва валюти',
 	value: 'Значення',
+	order_status_name: 'Назва статусу замовлення',
 };
