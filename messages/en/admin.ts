@@ -86,4 +86,6 @@ export const admin = {
 		'European central bank currency converter',
 	language_name: 'Language name',
 	code: 'Code',
+	currency_title: 'Currency title',
+	value: 'Value',
 };
