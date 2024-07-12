@@ -113,4 +113,5 @@ export const base = {
 	stock_statuses: 'Статуси залишків',
 	countries: 'Країни',
 	zones: 'Зони',
+	geo_zones: 'Гео зони',
 };

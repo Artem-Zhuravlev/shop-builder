@@ -259,4 +259,6 @@ export const inputs = {
 	value: 'Value',
 	order_status_name: 'Order status name',
 	stock_status_name: 'Stock status name',
+	geo_zone_name: 'Geo zone name',
+	zone: 'Zone',
 };

@@ -260,4 +260,6 @@ export const inputs = {
 	value: 'Значення',
 	order_status_name: 'Назва статусу замовлення',
 	stock_status_name: 'Назва статусу наявності',
+	geo_zone_name: 'Назва гео зони',
+	zone: 'Зона',
 };
