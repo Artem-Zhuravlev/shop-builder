@@ -251,4 +251,7 @@ export const inputs = {
 	orders: 'Замовлення',
 	reviews: 'Відгуки',
 	additional_alert_mail: 'Додаткова поштова адреса',
+	language_name: 'Назва мови',
+	code: 'Код (наприклад: en-gb)',
+	locale: 'Локалізація (наприклад: en_US)',
 };

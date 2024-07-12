@@ -250,4 +250,7 @@ export const inputs = {
 	orders: 'Orders',
 	reviews: 'Reviews',
 	additional_alert_mail: 'Additional alert mail',
+	language_name: 'Language name',
+	code: 'Code (example: en-gb)',
+	locale: 'Locale (example: en_US)',
 };
