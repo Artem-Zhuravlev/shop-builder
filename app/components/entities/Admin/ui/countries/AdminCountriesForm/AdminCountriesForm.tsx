@@ -19,7 +19,7 @@ export const AdminCountriesForm: FC = () => {
 					<FormLayout
 						className='row align-items-center'
 						onSubmit={handleSubmit}
-						title={t('base.languages')}
+						title={t('base.countries')}
 					>
 						<InputText
 							className='col-md-4'

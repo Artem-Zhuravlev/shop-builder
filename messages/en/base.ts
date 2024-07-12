@@ -111,4 +111,5 @@ export const base = {
 	currency: 'Currency',
 	order_statuses: 'Order statuses',
 	stock_statuses: 'Stock statuses',
+	countries: 'Countries',
 };

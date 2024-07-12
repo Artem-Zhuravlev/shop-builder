@@ -111,4 +111,5 @@ export const base = {
 	currency: 'Валюта',
 	order_statuses: 'Статуси замовлення',
 	stock_statuses: 'Статуси залишків',
+	countries: 'Країни',
 };
