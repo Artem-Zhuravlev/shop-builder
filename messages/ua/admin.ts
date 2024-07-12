@@ -92,4 +92,5 @@ export const admin = {
 	country_name: 'Назва країни',
 	iso_code_2: 'ISO Code (2)',
 	iso_code_3: 'ISO Code (3)',
+	postcode_required: "Обов'язкове поле",
 };
