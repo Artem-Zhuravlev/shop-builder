@@ -89,4 +89,5 @@ export const admin = {
 	currency_title: 'Currency title',
 	value: 'Value',
 	order_status_name: 'Order status name',
+	stock_status_name: 'Stock status name',
 };
