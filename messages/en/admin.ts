@@ -94,4 +94,7 @@ export const admin = {
 	iso_code_2: 'ISO Code (2)',
 	iso_code_3: 'ISO Code (3)',
 	postcode_required: 'Postcode required',
+	country: 'Country',
+	zone_name: 'Zone name',
+	zone_code: 'Zone code',
 };
