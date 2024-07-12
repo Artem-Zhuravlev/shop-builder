@@ -83,4 +83,6 @@ export const admin = {
 	store_url: 'URL магазину',
 	european_central_bank_currency_converter:
 		'Конвертер валют Європейського центрального банку',
+	language_name: 'Назва мови',
+	code: 'Код',
 };
