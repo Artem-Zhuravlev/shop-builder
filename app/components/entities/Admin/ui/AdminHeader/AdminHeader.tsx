@@ -6,8 +6,12 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React, { type FC } from 'react';
 import cls from './AdminHeader.module.scss';
+import classNames from 'classnames';
 
-export const AdminHeader: FC = () => {
+interface AdminHeaderProps {
+	className?: string;
+}
+export const AdminHeader: FC<AdminHeaderProps> = ({ className }) => {
 	const t = useTranslations();
 
 	const handleLogout = () => {
@@ -16,7 +20,7 @@ export const AdminHeader: FC = () => {
 	};
 
 	return (
-		<header className={cls.AdminHeader}>
+		<header className={classNames(cls.AdminHeader, className)}>
 			<Link href='/admin' className={cls.AdminHeaderLogo}>
 				<LogoBase />
 			</Link>
