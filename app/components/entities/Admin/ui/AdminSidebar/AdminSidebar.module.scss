@@ -5,6 +5,7 @@
   height: 100dvh;
   max-height: calc(100dvh - 70px);
   overflow: auto;
+  z-index: 2;
   @extend %scroll-bar;
   &::-webkit-scrollbar-thumb {
     background-color: #000;
