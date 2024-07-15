@@ -26,7 +26,11 @@ export const AdminCategoriesForm: FC = () => {
 		},
 	];
 
-	return <TabsBase items={tabs} />;
+	return (
+		<div className='form-holder'>
+			<TabsBase items={tabs} />
+		</div>
+	);
 };
 
 AdminCategoriesForm.displayName = 'AdminCategoriesForm';
