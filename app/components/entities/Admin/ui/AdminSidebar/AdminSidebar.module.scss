@@ -22,6 +22,11 @@
   & .SidebarList {
     background-color: var(--gray-70);
     padding-left: var(--space-small);
+
+    .SidebarItemLink:hover,
+    .SidebarItemBtn:hover {
+      background-color: var(--gray-80);
+    }
   }
 }
 
@@ -38,6 +43,11 @@
   width: 100%;
   color: var(--info-secondary);
   font-size: var(--font-size-lg);
+  transition: var(--transition-base) background-color;
+}
+
+.SidebarItemLinkActive {
+  background-color: var(--gray-80);
 }
 
 .SidebarItemBtn {

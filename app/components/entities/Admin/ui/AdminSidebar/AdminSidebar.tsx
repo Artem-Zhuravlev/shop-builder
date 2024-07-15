@@ -4,17 +4,23 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React, { useState, type FC } from 'react';
 import { Collapse } from 'react-collapse';
+import { usePathname } from 'next/navigation';
 import cls from './AdminSidebar.module.scss';
 import { navbarList, type SidebarItem } from './AdminSidebarList';
 
 const SidebarNavItem: FC<{ item: SidebarItem }> = ({ item }) => {
 	const [isOpen, setIsOpen] = useState(false);
+	const currentPath = usePathname();
 	const t = useTranslations('admin');
+	const linkClasses = classNames(cls.SidebarItemLink, {
+		[cls.SidebarItemLinkActive]:
+			currentPath === item.to || currentPath.startsWith(`${item.to}/`),
+	});
 
 	return (
 		<li key={item.value}>
 			{item.to ? (
-				<Link href={item.to} className={cls.SidebarItemLink}>
+				<Link href={item.to} className={linkClasses}>
 					{item.icon && <span className={item.icon} />}
 					{t(item.value)}
 				</Link>
