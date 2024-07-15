@@ -115,7 +115,7 @@ export const AdminRecurringProfilesTable: FC<
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`/admin/recurring-products/${item.slug}`)
+											router.push(`/admin/recurring-profiles/${item.slug}`)
 										}
 									>
 										<span className='icon-pencil' />
