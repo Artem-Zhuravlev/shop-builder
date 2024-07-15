@@ -24,7 +24,7 @@ export const AdminAttributeGroupForm: FC = () => {
 	};
 
 	return (
-		<>
+		<div className='form-holder'>
 			<LanguageTabs
 				items={['en', 'ua']}
 				onSelect={(language) => setLanguage(language as 'en' | 'ua')}
@@ -55,6 +55,6 @@ export const AdminAttributeGroupForm: FC = () => {
 					);
 				}}
 			/>
-		</>
+		</div>
 	);
 };
