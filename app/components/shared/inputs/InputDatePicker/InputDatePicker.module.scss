@@ -21,13 +21,6 @@
     color: var(--gray-60);
   }
 }
-
-:global {
-  .react-datepicker-wrapper {
-    width: 100%;
-  }
-}
-
 .Popper {
   :global {
     .react-datepicker {
