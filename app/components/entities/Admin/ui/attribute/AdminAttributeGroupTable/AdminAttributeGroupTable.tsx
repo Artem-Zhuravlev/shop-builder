@@ -116,7 +116,7 @@ export const AdminAttributeGroupTable: FC<AdminAttributeGroupTableProps> = (
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`/admin/attributes-group/${item.slug}`)
+											router.push(`/admin/attribute-groups/${item.slug}`)
 										}
 									>
 										<span className='icon-pencil' />
