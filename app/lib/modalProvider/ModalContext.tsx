@@ -1,11 +1,11 @@
-import {
+import React, {
 	type FC,
 	type ReactNode,
 	createContext,
 	useContext,
 	useState,
-} from "react";
-import { modalTypes } from "./modalTypes";
+} from 'react';
+import { modalTypes } from './modalTypes';
 
 type ModalStateType = typeof modalTypes;
 type ModalType = keyof ModalStateType;
