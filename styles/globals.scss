@@ -159,5 +159,11 @@ input[type='number'] {
   }
 }
 
+.form-holder {
+  border-radius: var(--interface-size-sm);
+  padding: var(--size-small);
+  background-color: var(--gray-10);
+}
+
 @import './abstracts/variables';
 @import './abstracts/include-media-or';
