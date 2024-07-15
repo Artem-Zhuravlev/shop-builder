@@ -1,9 +1,10 @@
 .AdminHeader {
   display: grid;
   grid-template-columns: 100px 1fr;
-  box-shadow: 0 0 var(--interface-size-sm) 0 var(--gray-40);
+  box-shadow: 0 0 var(--interface-size-md) 0 var(--gray-40);
   background-color: var(--gray-10);
   padding: var(--space-small) var(--space-medium);
+  z-index: 1;
 }
 
 .AdminHeaderLogo {
