@@ -1,8 +1,8 @@
-"use client";
-import { ContainerBase } from "@shared/ContainerBase";
-import classNames from "classnames";
-import { type FC, useState } from "react";
-import cls from "./TheHeader.module.scss";
+'use client';
+import { ContainerBase } from '@shared/ContainerBase';
+import classNames from 'classnames';
+import React, { type FC, useState } from 'react';
+import cls from './TheHeader.module.scss';
 import {
 	HeaderBurger,
 	HeaderControls,
@@ -11,7 +11,7 @@ import {
 	HeaderPhone,
 	HeaderSearch,
 	type IMenuItem,
-} from "./common";
+} from './common';
 
 interface TheHeaderProps {
 	cartTotal?: number;
@@ -70,4 +70,4 @@ export const TheHeader: FC<TheHeaderProps> = (props) => {
 	);
 };
 
-TheHeader.displayName = "TheHeader";
+TheHeader.displayName = 'TheHeader';

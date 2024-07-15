@@ -1,24 +1,25 @@
-import { FooterCol } from "../FooterCol/FooterCol";
+import React from 'react';
+import { FooterCol } from '../FooterCol/FooterCol';
 
 export const FooterMyAccount = () => {
 	const { title, routes } = {
-		title: "My account",
+		title: 'My account',
 		routes: [
 			{
-				to: "/my-order",
-				value: "My order",
+				to: '/my-order',
+				value: 'My order',
 			},
 			{
-				to: "/return",
-				value: "Return",
+				to: '/return',
+				value: 'Return',
 			},
 			{
-				to: "/return",
-				value: "Return",
+				to: '/return',
+				value: 'Return',
 			},
 			{
-				to: "/support",
-				value: "Support",
+				to: '/support',
+				value: 'Support',
 			},
 		],
 	};
@@ -26,4 +27,4 @@ export const FooterMyAccount = () => {
 	return <FooterCol title={title} list={routes} />;
 };
 
-FooterMyAccount.displayName = "FooterMyAccount";
+FooterMyAccount.displayName = 'FooterMyAccount';

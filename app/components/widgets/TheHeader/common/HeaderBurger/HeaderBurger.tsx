@@ -1,8 +1,8 @@
-"use client";
-import classNames from "classnames";
-import { useTranslations } from "next-intl";
-import { type FC, useState } from "react";
-import cls from "./HeaderBurger.module.scss";
+'use client';
+import classNames from 'classnames';
+import { useTranslations } from 'next-intl';
+import React, { type FC, useState } from 'react';
+import cls from './HeaderBurger.module.scss';
 
 interface HeaderBurgerProps {
 	toggleBurger: (isActive: boolean) => void;
@@ -10,7 +10,7 @@ interface HeaderBurgerProps {
 
 export const HeaderBurger: FC<HeaderBurgerProps> = (props) => {
 	const { toggleBurger } = props;
-	const t = useTranslations("base");
+	const t = useTranslations('base');
 	const [isActive, setIsActive] = useState<boolean>(false);
 
 	const handleClick = () => {
@@ -25,9 +25,9 @@ export const HeaderBurger: FC<HeaderBurgerProps> = (props) => {
 
 	return (
 		<button
-			type="button"
+			type='button'
 			className={headerBurgerClasses}
-			aria-label={t("burger_label")}
+			aria-label={t('burger_label')}
 			onClick={handleClick}
 		>
 			<span />
@@ -35,4 +35,4 @@ export const HeaderBurger: FC<HeaderBurgerProps> = (props) => {
 	);
 };
 
-HeaderBurger.displayName = "HeaderBurger";
+HeaderBurger.displayName = 'HeaderBurger';

@@ -1,6 +1,6 @@
-import type { FC } from "react";
-import { v4 as uuidv4 } from "uuid";
-import cls from "./HeaderPhone.module.scss";
+import React, { type FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import cls from './HeaderPhone.module.scss';
 
 interface HeaderPhoneProps {
 	items: string[];
@@ -24,4 +24,4 @@ export const HeaderPhone: FC<HeaderPhoneProps> = ({ items }) => {
 	);
 };
 
-HeaderPhone.displayName = "HeaderPhone";
+HeaderPhone.displayName = 'HeaderPhone';

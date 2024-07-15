@@ -1,13 +1,13 @@
-"use client";
-import classNames from "classnames";
-import {
+'use client';
+import classNames from 'classnames';
+import React, {
 	type FC,
 	type ReactNode,
 	useCallback,
 	useEffect,
 	useState,
-} from "react";
-import cls from "./TabsBase.module.scss";
+} from 'react';
+import cls from './TabsBase.module.scss';
 
 export type TabItem = { description: string | ReactNode; label: string };
 
@@ -49,16 +49,16 @@ export const TabsBase: FC<TabsBaseProps> = ({
 
 	return (
 		<div className={classNames(cls.TabsBase, className)}>
-			<div className={cls.Tabs} role="tablist">
+			<div className={cls.Tabs} role='tablist'>
 				{items.map((item, index) => (
 					<button
-						type="button"
+						type='button'
 						key={`${item.label}-${index}`}
 						className={classNames(cls.Tab, {
 							[cls.TabActive]: index === activeIndex,
 						})}
 						onClick={() => handleTabClick(index)}
-						role="tab"
+						role='tab'
 						aria-selected={index === activeIndex}
 						aria-controls={`tabpanel-${index}`}
 						id={`tab-${index}`}
@@ -71,7 +71,7 @@ export const TabsBase: FC<TabsBaseProps> = ({
 			{items.length > 0 && (
 				<div
 					id={`tabpanel-${activeIndex}`}
-					role="tabpanel"
+					role='tabpanel'
 					aria-labelledby={`tab-${activeIndex}`}
 					className={cls.TabDescription}
 				>
@@ -82,4 +82,4 @@ export const TabsBase: FC<TabsBaseProps> = ({
 	);
 };
 
-TabsBase.displayName = "TabsBase";
+TabsBase.displayName = 'TabsBase';

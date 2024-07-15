@@ -2,7 +2,7 @@ import { InputImage, InputText, InputTextarea } from '@shared/inputs';
 import { emailValidate, phoneValidate } from '@utils/validations';
 import { FormLayout } from '@widgets/FormLayout';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 
 export const AdminSettingsStoreForm: FC = () => {

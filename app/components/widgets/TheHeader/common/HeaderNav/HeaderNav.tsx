@@ -1,10 +1,10 @@
-"use client";
-import classNames from "classnames";
-import Link from "next/link";
-import { type FC, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import cls from "./HeaderNav.module.scss";
-import { HeaderSubmenu } from "./HeaderSubmenu";
+'use client';
+import classNames from 'classnames';
+import Link from 'next/link';
+import React, { type FC, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import cls from './HeaderNav.module.scss';
+import { HeaderSubmenu } from './HeaderSubmenu';
 
 export interface ISubMenu {
 	title: string;
@@ -33,7 +33,7 @@ export const HeaderNav: FC<HeaderNavProps> = (props) => {
 
 	const submenuCls = (sub: object[]): string => {
 		if (sub.length < 1) {
-			return "";
+			return '';
 		}
 
 		return `${cls.HeaderNavSubmenuFull}`;
@@ -51,11 +51,11 @@ export const HeaderNav: FC<HeaderNavProps> = (props) => {
 						{mainItem.sub && (
 							<>
 								<button
-									type="button"
+									type='button'
 									className={cls.HeaderNavToggler}
 									onClick={() => setCollapse((prev) => !prev)}
 								>
-									{collapse ? "-" : "+"}
+									{collapse ? '-' : '+'}
 								</button>
 								<div
 									className={classNames(
@@ -77,4 +77,4 @@ export const HeaderNav: FC<HeaderNavProps> = (props) => {
 	);
 };
 
-HeaderNav.displayName = "HeaderNav";
+HeaderNav.displayName = 'HeaderNav';

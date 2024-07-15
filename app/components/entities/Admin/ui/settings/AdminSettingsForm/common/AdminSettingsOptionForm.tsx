@@ -1,18 +1,12 @@
 import {
 	InputCheckbox,
-	InputCountry,
-	InputCurrency,
-	InputLanguage,
-	InputLength,
 	InputSelect,
 	InputStatus,
 	InputText,
-	InputTimezone,
-	InputWeight,
 } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 
 export const AdminSettingsOptionForm: FC = () => {

@@ -1,10 +1,10 @@
-import { IconPicture } from "@shared/icons";
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import Link from "next/link";
-import { type FC, useMemo } from "react";
-import { v4 as uuidv4 } from "uuid";
-import cls from "./HeaderSearchList.module.scss";
+import { IconPicture } from '@shared/icons';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { type FC, useMemo } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import cls from './HeaderSearchList.module.scss';
 
 export type IResultList = Array<{
 	slug: string;
@@ -22,7 +22,7 @@ interface HeaderSearchListProps {
 
 export const HeaderSearchList: FC<HeaderSearchListProps> = (props) => {
 	const { items, noResults } = props;
-	const t = useTranslations("base");
+	const t = useTranslations('base');
 
 	const renderItemsList = useMemo(() => {
 		return !noResults ? (
@@ -43,11 +43,11 @@ export const HeaderSearchList: FC<HeaderSearchListProps> = (props) => {
 				</li>
 			))
 		) : (
-			<li>{t("no_result")}</li>
+			<li>{t('no_result')}</li>
 		);
 	}, [noResults, items]);
 
 	return <ul className={cls.HeaderSearchList}>{renderItemsList}</ul>;
 };
 
-HeaderSearchList.displayName = "HeaderSearchList";
+HeaderSearchList.displayName = 'HeaderSearchList';

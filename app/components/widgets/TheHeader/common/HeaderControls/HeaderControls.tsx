@@ -1,6 +1,6 @@
-import { useTranslations } from "next-intl";
-import type { FC } from "react";
-import cls from "./HeaderControls.module.scss";
+import { useTranslations } from 'next-intl';
+import React, { type FC } from 'react';
+import cls from './HeaderControls.module.scss';
 
 interface HeaderControlsProps {
 	cartTotal?: number;
@@ -17,37 +17,37 @@ export const HeaderControls: FC<HeaderControlsProps> = (props) => {
 		handleWishlist,
 	} = props;
 
-	const t = useTranslations("product");
+	const t = useTranslations('product');
 
 	return (
 		<div className={cls.HeaderControls}>
 			<button
-				type="button"
-				aria-label={t("compare")}
+				type='button'
+				aria-label={t('compare')}
 				className={cls.HeaderControlsBtn}
 				onClick={() => handleCompare()}
 			>
-				<span className="icon-loop2" />
+				<span className='icon-loop2' />
 			</button>
 			<button
-				type="button"
-				aria-label={t("wishlist")}
+				type='button'
+				aria-label={t('wishlist')}
 				className={cls.HeaderControlsBtn}
 				onClick={() => handleWishlist()}
 			>
-				<span className="icon-heart" />
+				<span className='icon-heart' />
 			</button>
 			<button
-				type="button"
-				aria-label={t("cart_total")}
+				type='button'
+				aria-label={t('cart_total')}
 				className={cls.HeaderControlsBtn}
 				onClick={() => handleAddToCart()}
 			>
 				<span className={cls.CartItemTotal}>{cartTotal}</span>
-				<span className="icon-cart" />
+				<span className='icon-cart' />
 			</button>
 		</div>
 	);
 };
 
-HeaderControls.displayName = "HeaderControls";
+HeaderControls.displayName = 'HeaderControls';

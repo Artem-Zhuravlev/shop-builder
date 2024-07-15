@@ -1,22 +1,22 @@
-import type { FC, ReactNode } from 'react';
+import React, { type FC, type ReactNode } from 'react';
 import cls from './ProductInfoDetails.module.scss';
 
 interface ProductInfoDetailsItemProps {
-  children: ReactNode;
-  label: string;
+	children: ReactNode;
+	label: string;
 }
 
 export const ProductInfoDetailsItem: FC<ProductInfoDetailsItemProps> = (
-  props,
+	props,
 ) => {
-  const { children, label } = props;
+	const { children, label } = props;
 
-  return (
-    <li className={cls.ProductInfoDetailsItem}>
-      <strong className={cls.ProductInfoDetailsLabel}>{label}</strong>
-      <span>{children}</span>
-    </li>
-  );
+	return (
+		<li className={cls.ProductInfoDetailsItem}>
+			<strong className={cls.ProductInfoDetailsLabel}>{label}</strong>
+			<span>{children}</span>
+		</li>
+	);
 };
 
 ProductInfoDetailsItem.displayName = 'ProductInfoDetailsItem';

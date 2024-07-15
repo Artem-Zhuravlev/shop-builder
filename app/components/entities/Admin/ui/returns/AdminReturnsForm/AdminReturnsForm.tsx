@@ -1,7 +1,7 @@
 import { FormLayout } from '@widgets/FormLayout';
 import arrayMutators from 'final-form-arrays';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 import {
 	AdminReturnsHistory,

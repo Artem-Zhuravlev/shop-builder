@@ -1,14 +1,9 @@
 import { ButtonBase } from '@shared/ButtonBase';
-import {
-	InputCountry,
-	InputImage,
-	InputSelect,
-	InputText,
-} from '@shared/inputs';
+import { InputCountry, InputSelect, InputText } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';
 import arrayMutators from 'final-form-arrays';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 

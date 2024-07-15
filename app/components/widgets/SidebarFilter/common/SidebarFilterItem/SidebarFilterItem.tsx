@@ -1,5 +1,5 @@
-import type { FC, ReactNode } from "react";
-import cls from "../../SidebarFilter.module.scss";
+import React, { type FC, type ReactNode } from 'react';
+import cls from '../../SidebarFilter.module.scss';
 
 interface SidebarFilterItemProps {
 	amount?: number;
@@ -17,4 +17,4 @@ export const SidebarFilterItem: FC<SidebarFilterItemProps> = (props) => {
 	);
 };
 
-SidebarFilterItem.displayName = "SidebarFilterItem";
+SidebarFilterItem.displayName = 'SidebarFilterItem';

@@ -1,7 +1,7 @@
-import { SocialList } from "@features/lists";
-import { ContainerBase } from "@shared/ContainerBase";
-import type { FC } from "react";
-import cls from "./TheFooter.module.scss";
+import { SocialList } from '@features/lists';
+import { ContainerBase } from '@shared/ContainerBase';
+import React, { type FC } from 'react';
+import cls from './TheFooter.module.scss';
 import {
 	FooterAboutUs,
 	FooterGetInTouch,
@@ -9,21 +9,21 @@ import {
 	FooterMyAccount,
 	FooterQuickLinks,
 	FooterSubscribeForm,
-} from "./common";
+} from './common';
 
 export const TheFooter: FC = () => {
 	const socials = [
 		{
-			url: "/youtube",
-			icon: "youtube",
+			url: '/youtube',
+			icon: 'youtube',
 		},
 		{
-			url: "/facebook",
-			icon: "facebook",
+			url: '/facebook',
+			icon: 'facebook',
 		},
 		{
-			url: "/instagram",
-			icon: "instagram",
+			url: '/instagram',
+			icon: 'instagram',
 		},
 	];
 
@@ -46,4 +46,4 @@ export const TheFooter: FC = () => {
 	);
 };
 
-TheFooter.displayName = "TheFooter";
+TheFooter.displayName = 'TheFooter';

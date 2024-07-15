@@ -29,7 +29,7 @@ import {
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 interface AdminStockStatusTableItem extends TableNode {
 	id: string | number;
 	stock_status_name: string;

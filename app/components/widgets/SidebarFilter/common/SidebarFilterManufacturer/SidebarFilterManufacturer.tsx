@@ -1,12 +1,12 @@
-"use client";
-import { AutoSave } from "@shared/inputs";
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import { type FC, useCallback, useState } from "react";
-import { Field, Form } from "react-final-form";
-import { SidebarFilterItem } from "../SidebarFilterItem/SidebarFilterItem";
-import { SidebarToggler } from "../SidebarToggler/SidebarToggler";
-import cls from "./SidebarFilterManufacturer.module.scss";
+'use client';
+import { AutoSave } from '@shared/inputs';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import React, { type FC, useCallback, useState } from 'react';
+import { Field, Form } from 'react-final-form';
+import { SidebarFilterItem } from '../SidebarFilterItem/SidebarFilterItem';
+import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
+import cls from './SidebarFilterManufacturer.module.scss';
 interface SidebarFilterManufacturerProps {
 	items: {
 		image: string;
@@ -21,7 +21,7 @@ export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (
 ) => {
 	const { items } = props;
 	const [resetMode, setResetMode] = useState(false);
-	const t = useTranslations("filters");
+	const t = useTranslations('filters');
 
 	const handleSubmit = useCallback((values: object) => {
 		const mode = Object.values(values).some((item) => item === true);
@@ -38,7 +38,7 @@ export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (
 			onSubmit={handleSubmit}
 			render={({ handleSubmit, form }) => (
 				<SidebarToggler
-					title={t("manufacturer")}
+					title={t('manufacturer')}
 					onReset={() => handleReset(form.reset)}
 					resetMode={resetMode}
 				>
@@ -51,9 +51,9 @@ export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (
 							<label className={cls.SidebarFilterManufacturerItem}>
 								<Field
 									name={item.slug}
-									component="input"
-									type="checkbox"
-									className="sr-only"
+									component='input'
+									type='checkbox'
+									className='sr-only'
 								/>
 								<Image
 									src={item.image}
@@ -72,4 +72,4 @@ export const SidebarFilterManufacturer: FC<SidebarFilterManufacturerProps> = (
 	);
 };
 
-SidebarFilterManufacturer.displayName = "SidebarFilterManufacturer";
+SidebarFilterManufacturer.displayName = 'SidebarFilterManufacturer';

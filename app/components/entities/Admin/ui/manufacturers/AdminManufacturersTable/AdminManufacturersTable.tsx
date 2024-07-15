@@ -26,7 +26,7 @@ import {
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 
 interface AdminManufacturersTableItem extends TableNode {
 	id: string | number;

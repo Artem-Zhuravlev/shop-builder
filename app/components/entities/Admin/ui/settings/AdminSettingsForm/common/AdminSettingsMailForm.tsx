@@ -1,5 +1,4 @@
 import {
-	InputImage,
 	InputPassword,
 	InputSelect,
 	InputText,
@@ -8,7 +7,7 @@ import {
 import { passwordValidate } from '@utils/validations';
 import { FormLayout } from '@widgets/FormLayout';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 
 export const AdminSettingsMailForm: FC = () => {

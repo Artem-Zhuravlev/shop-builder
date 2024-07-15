@@ -1,18 +1,18 @@
-"use client";
-import { ButtonBase } from "@shared/ButtonBase";
-import { InputText } from "@shared/inputs";
-import { emailValidate } from "@utils/validations";
-import { useTranslations } from "next-intl";
-import { type FC, useState } from "react";
-import { Form } from "react-final-form";
-import cls from "./FooterSubscribeForm.module.scss";
+'use client';
+import { ButtonBase } from '@shared/ButtonBase';
+import { InputText } from '@shared/inputs';
+import { emailValidate } from '@utils/validations';
+import { useTranslations } from 'next-intl';
+import React, { type FC, useState } from 'react';
+import { Form } from 'react-final-form';
+import cls from './FooterSubscribeForm.module.scss';
 
 export const FooterSubscribeForm: FC = () => {
-	const [searchValue, setSearchValue] = useState("");
-	const t = useTranslations("base");
+	const [searchValue, setSearchValue] = useState('');
+	const t = useTranslations('base');
 
 	const onSubmit = () => {
-		console.log("submit");
+		console.log('submit');
 	};
 
 	return (
@@ -22,20 +22,20 @@ export const FooterSubscribeForm: FC = () => {
 					<InputText
 						value={searchValue}
 						onChange={(e) => setSearchValue(e.target.value)}
-						name="subscribe"
-						placeholder="Email"
+						name='subscribe'
+						placeholder='Email'
 						validationHandler={emailValidate}
 						isDarkMode
 						roundedLeftSide
 						withForm={false}
 					/>
 					<ButtonBase
-						type="submit"
-						variant="warning"
+						type='submit'
+						variant='warning'
 						roundedRightSide
 						className={cls.FooterSubscribeBtn}
 					>
-						{t("subscribe")}
+						{t('subscribe')}
 					</ButtonBase>
 				</form>
 			)}
@@ -43,4 +43,4 @@ export const FooterSubscribeForm: FC = () => {
 	);
 };
 
-FooterSubscribeForm.displayName = "FooterSubscribeForm";
+FooterSubscribeForm.displayName = 'FooterSubscribeForm';

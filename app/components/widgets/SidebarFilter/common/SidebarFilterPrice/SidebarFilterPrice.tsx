@@ -1,11 +1,11 @@
-"use client";
-import { FORM_SUBMIT_DEBOUNCE_DELAY } from "@constants/easing.constants";
-import { AutoSave, InputRange, InputText } from "@shared/inputs";
-import { useTranslations } from "next-intl";
-import type React from "react";
-import { type FC, useCallback, useEffect, useState } from "react";
-import { Form } from "react-final-form";
-import { SidebarToggler } from "../SidebarToggler/SidebarToggler";
+'use client';
+import { FORM_SUBMIT_DEBOUNCE_DELAY } from '@constants/easing.constants';
+import { AutoSave, InputRange, InputText } from '@shared/inputs';
+import { useTranslations } from 'next-intl';
+// biome-ignore lint/style/useImportType: <explanation>
+import React, { type FC, useCallback, useEffect, useState } from 'react';
+import { Form } from 'react-final-form';
+import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 
 interface SidebarFilterPriceProps {
 	defaultMax?: number;
@@ -16,7 +16,7 @@ interface SidebarFilterPriceProps {
 
 export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 	const { defaultMax = 100, defaultMin = 0, max = 100, min = 0 } = props;
-	const t = useTranslations("filters");
+	const t = useTranslations('filters');
 	const [minValue, setMinValue] = useState(defaultMin);
 	const [maxValue, setMaxValue] = useState(defaultMax);
 	const [resetMode, setResetMode] = useState(false);
@@ -44,7 +44,7 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 			setter: React.Dispatch<React.SetStateAction<number>>,
 			defaultValue: number,
 		) => {
-			let numericValue = Number.parseFloat(value.replace(/[^0-9.-]/g, ""));
+			let numericValue = Number.parseFloat(value.replace(/[^0-9.-]/g, ''));
 
 			if (Number.isNaN(numericValue)) {
 				numericValue = defaultValue;
@@ -69,17 +69,17 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 			render={() => {
 				return (
 					<SidebarToggler
-						title={t("price")}
+						title={t('price')}
 						resetMode={resetMode}
 						onReset={handleReset}
 					>
-						<div className="row" style={{ gap: "var(--space-medium)" }}>
+						<div className='row' style={{ gap: 'var(--space-medium)' }}>
 							<AutoSave
 								debounce={FORM_SUBMIT_DEBOUNCE_DELAY}
 								save={handleSubmit}
 							/>
 							<InputRange
-								className="col-12"
+								className='col-12'
 								min={min}
 								max={max}
 								defaultValue={[defaultMin, defaultMax]}
@@ -88,16 +88,16 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 								onChange={handleRange}
 							/>
 							<InputText
-								name="min"
-								className="col-md-6 mb-0"
+								name='min'
+								className='col-md-6 mb-0'
 								value={minValue}
 								onChange={(e) =>
 									handleInputChange(e.target.value, setMinValue, defaultMin)
 								}
 							/>
 							<InputText
-								name="max"
-								className="col-md-6 mb-0"
+								name='max'
+								className='col-md-6 mb-0'
 								value={maxValue}
 								onChange={(e) =>
 									handleInputChange(e.target.value, setMaxValue, defaultMax)
@@ -111,4 +111,4 @@ export const SidebarFilterPrice: FC<SidebarFilterPriceProps> = (props) => {
 	);
 };
 
-SidebarFilterPrice.displayName = "SidebarFilterPrice";
+SidebarFilterPrice.displayName = 'SidebarFilterPrice';

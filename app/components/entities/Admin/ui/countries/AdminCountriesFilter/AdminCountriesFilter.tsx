@@ -1,7 +1,7 @@
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputText } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 
 export const AdminCountriesFilter: FC = () => {

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import cls from './StatusLabel.module.scss';
 
 export type Status =

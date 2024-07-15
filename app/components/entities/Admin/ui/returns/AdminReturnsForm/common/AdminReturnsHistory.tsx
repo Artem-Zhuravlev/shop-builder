@@ -6,7 +6,7 @@ import {
 	InputTextarea,
 } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import { FieldArray } from 'react-final-form-arrays';
 
 interface AdminReturnsHistoryProps {

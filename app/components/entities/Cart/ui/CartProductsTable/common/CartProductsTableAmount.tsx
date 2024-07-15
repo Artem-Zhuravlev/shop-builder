@@ -1,24 +1,24 @@
 import { useSelector } from '@lib/redux';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import cls from '../CartProductsTable.module.scss';
 
 interface CartProductsTableAmountProps {
-  price: string | number;
-  currency?: string;
+	price: string | number;
+	currency?: string;
 }
 
 export const CartProductsTableAmount: FC<CartProductsTableAmountProps> = (
-  props,
+	props,
 ) => {
-  const { price, currency } = props;
-  const defaultCurrency = useSelector((state) => state.product.currency);
+	const { price, currency } = props;
+	const defaultCurrency = useSelector((state) => state.product.currency);
 
-  return (
-    <div className={cls.CartProductsTableAmount}>
-      <span>{currency || defaultCurrency}</span>
-      <span>{price}</span>
-    </div>
-  );
+	return (
+		<div className={cls.CartProductsTableAmount}>
+			<span>{currency || defaultCurrency}</span>
+			<span>{price}</span>
+		</div>
+	);
 };
 
 CartProductsTableAmount.displayName = 'CartProductsTableAmount';

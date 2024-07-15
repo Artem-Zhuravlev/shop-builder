@@ -1,8 +1,5 @@
 import { ButtonBase } from '@shared/ButtonBase';
-import {
-	defaultSortIcon,
-	defaultTableStyles,
-} from '@shared/TableBase/TableBase';
+import { defaultTableStyles } from '@shared/TableBase/TableBase';
 import type { TableNode } from '@table-library/react-table-library';
 import { getTheme } from '@table-library/react-table-library/baseline';
 import {
@@ -10,10 +7,6 @@ import {
 	HeaderCellSelect,
 	useRowSelect,
 } from '@table-library/react-table-library/select';
-import {
-	HeaderCellSort,
-	useSort,
-} from '@table-library/react-table-library/sort';
 import {
 	Body,
 	Cell,
@@ -26,7 +19,7 @@ import {
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 
 interface AdminSettingsTableItem extends TableNode {
 	id: string | number;
@@ -53,10 +46,6 @@ export const AdminSettingsTable: FC<AdminSettingsTableProps> = (props) => {
 	const select = useRowSelect(data, {
 		onChange: onSelectChange,
 	});
-
-	function onSortChange(action: any, state: any) {
-		console.log(action, state);
-	}
 
 	function onSelectChange(action: any, state: any) {
 		console.log(action, state);

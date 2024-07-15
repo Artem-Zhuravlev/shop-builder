@@ -1,10 +1,10 @@
-"use client";
-import { AutoSave, InputRadio, InputRating } from "@shared/inputs";
-import { useTranslations } from "next-intl";
-import { type FC, useCallback, useState } from "react";
-import { Form } from "react-final-form";
-import cls from "../../SidebarFilter.module.scss";
-import { SidebarToggler } from "../SidebarToggler/SidebarToggler";
+'use client';
+import { AutoSave, InputRadio, InputRating } from '@shared/inputs';
+import { useTranslations } from 'next-intl';
+import React, { type FC, useCallback, useState } from 'react';
+import { Form } from 'react-final-form';
+import cls from '../../SidebarFilter.module.scss';
+import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 
 interface SidebarFilterRatingProps {
 	items: { stars: number; value: number }[];
@@ -12,11 +12,11 @@ interface SidebarFilterRatingProps {
 
 export const SidebarFilterRating: FC<SidebarFilterRatingProps> = (props) => {
 	const { items } = props;
-	const t = useTranslations("filters");
+	const t = useTranslations('filters');
 	const [resetMode, setResetMode] = useState(false);
 
 	const handleSubmit = useCallback((values: { rating: string }) => {
-		const mode = "rating" in values;
+		const mode = 'rating' in values;
 		setResetMode(mode);
 	}, []);
 
@@ -30,16 +30,16 @@ export const SidebarFilterRating: FC<SidebarFilterRatingProps> = (props) => {
 			onSubmit={handleSubmit}
 			render={({ handleSubmit, form }) => (
 				<SidebarToggler
-					title={t("rating")}
+					title={t('rating')}
 					onReset={() => handleReset(form.reset)}
 					resetMode={resetMode}
 				>
 					<AutoSave debounce={0} save={handleSubmit} />
-					<div className="d-flex flex-column gap-1">
+					<div className='d-flex flex-column gap-1'>
 						{items?.map((item) => (
 							<InputRadio
 								key={`stars-${item.stars}}`}
-								name="rating"
+								name='rating'
 								value={`${item.stars}`}
 								suffix={<div className={cls.suffix}>{item.value}</div>}
 								disabled={item.value <= 0}
@@ -55,4 +55,4 @@ export const SidebarFilterRating: FC<SidebarFilterRatingProps> = (props) => {
 	);
 };
 
-SidebarFilterRating.displayName = "SidebarFilterRating";
+SidebarFilterRating.displayName = 'SidebarFilterRating';

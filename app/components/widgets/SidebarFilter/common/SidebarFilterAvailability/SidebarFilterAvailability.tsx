@@ -1,10 +1,10 @@
-"use client";
-import { AutoSave, InputCheckbox } from "@shared/inputs";
-import { useTranslations } from "next-intl";
-import { type FC, useCallback, useState } from "react";
-import { Form } from "react-final-form";
-import cls from "../../SidebarFilter.module.scss";
-import { SidebarToggler } from "../SidebarToggler/SidebarToggler";
+'use client';
+import { AutoSave, InputCheckbox } from '@shared/inputs';
+import { useTranslations } from 'next-intl';
+import React, { type FC, useCallback, useState } from 'react';
+import { Form } from 'react-final-form';
+import cls from '../../SidebarFilter.module.scss';
+import { SidebarToggler } from '../SidebarToggler/SidebarToggler';
 
 interface SidebarFilterAvailabilityProps {
 	inStock: number;
@@ -15,7 +15,7 @@ export const SidebarFilterAvailability: FC<SidebarFilterAvailabilityProps> = (
 	props,
 ) => {
 	const { inStock, preOrder } = props;
-	const t = useTranslations("filters");
+	const t = useTranslations('filters');
 	const [resetMode, setResetMode] = useState(false);
 
 	const handleSubmit = useCallback((values: object): void => {
@@ -33,23 +33,23 @@ export const SidebarFilterAvailability: FC<SidebarFilterAvailabilityProps> = (
 			onSubmit={handleSubmit}
 			render={({ handleSubmit, form }) => (
 				<SidebarToggler
-					title={t("availability")}
+					title={t('availability')}
 					onReset={() => handleReset(form.reset)}
 					resetMode={resetMode}
 				>
 					<AutoSave debounce={0} save={handleSubmit} />
-					<div className="d-flex flex-column gap-1">
+					<div className='d-flex flex-column gap-1'>
 						<InputCheckbox
-							label={t("in_stock")}
-							name="in_stock"
-							className="mb-0"
+							label={t('in_stock')}
+							name='in_stock'
+							className='mb-0'
 							suffix={<div className={cls.suffix}>{inStock}</div>}
 							disabled={inStock <= 0}
 						/>
 						<InputCheckbox
-							label={t("pre_order")}
-							name="pre_order"
-							className="mb-0"
+							label={t('pre_order')}
+							name='pre_order'
+							className='mb-0'
 							suffix={<div className={cls.suffix}>{preOrder}</div>}
 							disabled={preOrder <= 0}
 						/>
@@ -60,4 +60,4 @@ export const SidebarFilterAvailability: FC<SidebarFilterAvailabilityProps> = (
 	);
 };
 
-SidebarFilterAvailability.displayName = "SidebarFilterAvailability";
+SidebarFilterAvailability.displayName = 'SidebarFilterAvailability';

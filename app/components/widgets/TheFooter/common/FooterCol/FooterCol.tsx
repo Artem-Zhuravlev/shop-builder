@@ -1,7 +1,7 @@
-import Link from "next/link";
-import type { FC } from "react";
-import { v4 as uuidv4 } from "uuid";
-import cls from "./FooterCol.module.scss";
+import Link from 'next/link';
+import React, { type FC } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import cls from './FooterCol.module.scss';
 
 interface FooterColProp {
 	description?: string;
@@ -38,4 +38,4 @@ export const FooterCol: FC<FooterColProp> = (props) => {
 	);
 };
 
-FooterCol.displayName = "FooterCol";
+FooterCol.displayName = 'FooterCol';

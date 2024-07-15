@@ -1,7 +1,7 @@
 import { InputDatePicker, InputText } from '@shared/inputs';
 import { emailValidate, phoneValidate } from '@utils/validations';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 
 export const AdminReturnsOrderInformation: FC = () => {
 	const t = useTranslations();

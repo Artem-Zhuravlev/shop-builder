@@ -1,8 +1,8 @@
-"use client";
-import classNames from "classnames";
-import { useTranslations } from "next-intl";
-import { type FC, useEffect, useState } from "react";
-import cls from "./TimerBase.module.scss";
+'use client';
+import classNames from 'classnames';
+import { useTranslations } from 'next-intl';
+import React, { type FC, useEffect, useState } from 'react';
+import cls from './TimerBase.module.scss';
 
 interface TimerBaseProps {
 	className?: string;
@@ -13,7 +13,7 @@ interface TimerBaseProps {
 
 export const TimerBase: FC<TimerBaseProps> = (props) => {
 	const { className, deadline, secondary, small } = props;
-	const t = useTranslations("base");
+	const t = useTranslations('base');
 	const [days, setDays] = useState(0);
 	const [hours, setHours] = useState(0);
 	const [minutes, setMinutes] = useState(0);
@@ -45,31 +45,31 @@ export const TimerBase: FC<TimerBaseProps> = (props) => {
 					{days < 10 ? 0 : null}
 					{days}
 				</div>
-				<div className={cls.TimerBaseCaption}>{t("days")}</div>
+				<div className={cls.TimerBaseCaption}>{t('days')}</div>
 			</div>
 			<div className={cls.TimerBaseCol}>
 				<div className={cls.TimerBaseValue}>
 					{hours < 10 ? 0 : null}
 					{hours}
 				</div>
-				<div className={cls.TimerBaseCaption}>{t("hours")}</div>
+				<div className={cls.TimerBaseCaption}>{t('hours')}</div>
 			</div>
 			<div className={cls.TimerBaseCol}>
 				<div className={cls.TimerBaseValue}>
 					{minutes < 10 ? 0 : null}
 					{minutes}
 				</div>
-				<div className={cls.TimerBaseCaption}>{t("minutes")}</div>
+				<div className={cls.TimerBaseCaption}>{t('minutes')}</div>
 			</div>
 			<div className={cls.TimerBaseCol}>
 				<div className={cls.TimerBaseValue}>
 					{seconds < 10 ? 0 : null}
 					{seconds}
 				</div>
-				<div className={cls.TimerBaseCaption}>{t("seconds")}</div>
+				<div className={cls.TimerBaseCaption}>{t('seconds')}</div>
 			</div>
 		</div>
 	);
 };
 
-TimerBase.displayName = "TimerBase";
+TimerBase.displayName = 'TimerBase';

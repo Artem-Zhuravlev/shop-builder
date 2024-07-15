@@ -1,6 +1,6 @@
 import { InputSelect, InputText, InputTextarea } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 
 export const AdminReturnsProductInformation: FC = () => {
 	const t = useTranslations();

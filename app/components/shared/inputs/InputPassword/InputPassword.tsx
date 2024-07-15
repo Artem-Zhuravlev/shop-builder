@@ -5,7 +5,7 @@ import {
 } from '@utils/validations';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import {
+import React, {
 	useState,
 	type ChangeEvent,
 	type FC,

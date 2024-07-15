@@ -1,19 +1,19 @@
-"use client";
-import { DEBOUNCE_DELAY } from "@constants/easing.constants";
-import { InputText } from "@shared/inputs";
-import { debounce } from "@utils/debounce";
-import { useTranslations } from "next-intl";
-import { useCallback, useEffect, useState } from "react";
-import { Form } from "react-final-form";
+'use client';
+import { DEBOUNCE_DELAY } from '@constants/easing.constants';
+import { InputText } from '@shared/inputs';
+import { debounce } from '@utils/debounce';
+import { useTranslations } from 'next-intl';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Form } from 'react-final-form';
 import {
 	HeaderSearchList,
 	type IResultList,
-} from "../HeaderSearchList/HeaderSearchList";
-import cls from "./HeaderSearch.module.scss";
+} from '../HeaderSearchList/HeaderSearchList';
+import cls from './HeaderSearch.module.scss';
 
 export const HeaderSearch = () => {
-	const t = useTranslations("base");
-	const [searchValue, setSearchValue] = useState<string>("");
+	const t = useTranslations('base');
+	const [searchValue, setSearchValue] = useState<string>('');
 	const [noResults, setNoResults] = useState(true);
 	const [searchResult, setSearchResult] = useState<IResultList>(null);
 
@@ -31,8 +31,8 @@ export const HeaderSearch = () => {
 			setNoResults(false);
 			setSearchResult([
 				{
-					name: "Adidas",
-					slug: "adidas",
+					name: 'Adidas',
+					slug: 'adidas',
 				},
 			]);
 		}, 1000);
@@ -44,9 +44,9 @@ export const HeaderSearch = () => {
 				{({ handleSubmit }) => (
 					<form onSubmit={handleSubmit}>
 						<InputText
-							placeholder={t("search")}
-							name="search"
-							className="mb-0"
+							placeholder={t('search')}
+							name='search'
+							className='mb-0'
 							onChange={handleSearch}
 						/>
 					</form>
@@ -61,4 +61,4 @@ export const HeaderSearch = () => {
 	);
 };
 
-HeaderSearch.displayName = "HeaderSearch";
+HeaderSearch.displayName = 'HeaderSearch';
