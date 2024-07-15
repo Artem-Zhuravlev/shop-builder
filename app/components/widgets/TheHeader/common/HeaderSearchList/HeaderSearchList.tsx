@@ -1,3 +1,4 @@
+'use client';
 import { IconPicture } from '@shared/icons';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
