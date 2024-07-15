@@ -2,8 +2,8 @@
 
 .AdminSidebar {
   background-color: var(--gray-90);
-  height: 100vh;
-  max-height: 100vh;
+  height: 100dvh;
+  max-height: calc(100dvh - 70px);
   overflow: auto;
   @extend %scroll-bar;
   &::-webkit-scrollbar-thumb {
