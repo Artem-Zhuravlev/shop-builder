@@ -60,7 +60,11 @@ export const AdminProductsForm: FC = () => {
 		},
 	];
 
-	return <TabsBase items={tabs} />;
+	return (
+		<div className='form-holder'>
+			<TabsBase items={tabs} />
+		</div>
+	);
 };
 
 AdminProductsForm.displayName = 'AdminProductsForm';
