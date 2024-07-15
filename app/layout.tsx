@@ -1,14 +1,25 @@
 import React from 'react';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 import { Providers } from '@lib/providers';
 
 import '@styles/globals.scss';
 
-export default function RootLayout(props: React.PropsWithChildren) {
+export default async function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
+	const locale = await getLocale();
+	const messages = await getMessages();
+
 	return (
 		<Providers>
-			<html lang='en'>
+			<html lang={locale}>
 				<body>
-					<main>{props.children}</main>
+					<NextIntlClientProvider messages={messages}>
+						{children}
+					</NextIntlClientProvider>
 				</body>
 			</html>
 		</Providers>
