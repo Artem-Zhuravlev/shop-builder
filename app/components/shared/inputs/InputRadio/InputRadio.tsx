@@ -1,7 +1,7 @@
 'use client';
 import classNames from 'classnames';
-import type React from 'react';
-import { memo, type FC, type ReactNode } from 'react';
+// biome-ignore lint/style/useImportType: <explanation>
+import React, { memo, type FC, type ReactNode } from 'react';
 import { Field } from 'react-final-form';
 import cls from './InputRadio.module.scss';
 

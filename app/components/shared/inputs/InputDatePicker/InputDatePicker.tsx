@@ -3,7 +3,7 @@ import { getValidationMessage } from '@utils/validations';
 import type { ValidationHandler } from '@utils/validations/types';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { useState, type FC } from 'react';
+import React, { useState, type FC } from 'react';
 import ReactDatePicker, { type ReactDatePickerProps } from 'react-datepicker';
 import './react-datepicker.css';
 import { Field } from 'react-final-form';
