@@ -1,3 +1,4 @@
+'use client';
 import Slider, { type SliderProps } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import React, { type FC } from 'react';

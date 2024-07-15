@@ -1,3 +1,4 @@
+'use client';
 import { ButtonBase } from '@shared/ButtonBase';
 import { AutoSave, InputNumber } from '@shared/inputs';
 import { useTranslations } from 'next-intl';

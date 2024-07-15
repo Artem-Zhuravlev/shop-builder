@@ -1,3 +1,4 @@
+'use client';
 import { TableBase } from '@shared/TableBase';
 import { useTranslations } from 'next-intl';
 import React, { useMemo, type FC } from 'react';

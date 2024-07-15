@@ -1,3 +1,4 @@
+'use client';
 import { ImagesManager } from '@features/modals';
 import { useModal } from '@lib/modalProvider/ModalContext';
 import { ButtonBase } from '@shared/ButtonBase';

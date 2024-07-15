@@ -1,3 +1,4 @@
+'use client';
 import type { ImageMetaProps } from '@lib/types/ImageMetaProps';
 import { ModalWindow } from '@shared/ModalWindow';
 import { TabsBase } from '@shared/TabsBase';

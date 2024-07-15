@@ -1,3 +1,4 @@
+'use client';
 import type { ImageMetaProps } from '@lib/types/ImageMetaProps';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
@@ -29,7 +30,7 @@ import { useSelector } from '@lib/redux/store';
 import type { TableNode } from '@table-library/react-table-library';
 import { getTheme } from '@table-library/react-table-library/baseline';
 import { useTheme } from '@table-library/react-table-library/theme';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface AdminProductsTableItem extends TableNode {
 	id: string | number;

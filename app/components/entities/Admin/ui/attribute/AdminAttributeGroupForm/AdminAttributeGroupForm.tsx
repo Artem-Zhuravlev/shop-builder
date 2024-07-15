@@ -1,3 +1,4 @@
+'use client';
 import { LanguageTabs } from '@features/tabs';
 import { InputText } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';

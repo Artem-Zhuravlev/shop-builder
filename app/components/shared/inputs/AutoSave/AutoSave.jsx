@@ -1,45 +1,46 @@
+'use client';
 import diff from 'object-diff';
 import React from 'react';
 import { FormSpy } from 'react-final-form';
 
 class AutoSave extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { values: props.values, submitting: false };
-  }
+	constructor(props) {
+		super(props);
+		this.state = { values: props.values, submitting: false };
+	}
 
-  componentWillReceiveProps(nextProps) {
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
-    this.timeout = setTimeout(this.save, this.props.debounce);
-  }
+	componentWillReceiveProps(nextProps) {
+		if (this.timeout) {
+			clearTimeout(this.timeout);
+		}
+		this.timeout = setTimeout(this.save, this.props.debounce);
+	}
 
-  save = async () => {
-    if (this.promise) {
-      await this.promise;
-    }
-    const { values, save } = this.props;
+	save = async () => {
+		if (this.promise) {
+			await this.promise;
+		}
+		const { values, save } = this.props;
 
-    // This diff step is totally optional
-    const difference = diff(this.state.values, values);
-    if (Object.keys(difference).length) {
-      // values have changed
-      this.setState({ submitting: true, values });
-      this.promise = save(difference);
-      await this.promise;
-      delete this.promise;
-      this.setState({ submitting: false });
-    }
-  };
+		// This diff step is totally optional
+		const difference = diff(this.state.values, values);
+		if (Object.keys(difference).length) {
+			// values have changed
+			this.setState({ submitting: true, values });
+			this.promise = save(difference);
+			await this.promise;
+			delete this.promise;
+			this.setState({ submitting: false });
+		}
+	};
 
-  render() {
-    // This component doesn't have to render anything, but it can render
-    // submitting state.
-    return (
-      this.state.submitting && <div className='submitting'>Submitting...</div>
-    );
-  }
+	render() {
+		// This component doesn't have to render anything, but it can render
+		// submitting state.
+		return (
+			this.state.submitting && <div className='submitting'>Submitting...</div>
+		);
+	}
 }
 
 // Make a HOC
@@ -49,7 +50,7 @@ class AutoSave extends React.Component {
 // - Render a message when submitting
 // - Pass in debounce and save props nicely
 export default (props) => (
-  <FormSpy {...props} subscription={{ values: true }} component={AutoSave} />
+	<FormSpy {...props} subscription={{ values: true }} component={AutoSave} />
 );
 
 AutoSave.displayName = 'AutoSave';

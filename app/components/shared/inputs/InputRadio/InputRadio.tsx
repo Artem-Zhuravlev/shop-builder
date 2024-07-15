@@ -1,3 +1,4 @@
+'use client';
 import classNames from 'classnames';
 import type React from 'react';
 import { memo, type FC, type ReactNode } from 'react';

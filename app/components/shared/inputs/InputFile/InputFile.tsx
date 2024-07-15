@@ -1,3 +1,4 @@
+'use client';
 import { getValidationMessage } from '@utils/validations';
 import type { ValidationHandler } from '@utils/validations/types';
 import { useTranslations } from 'next-intl';

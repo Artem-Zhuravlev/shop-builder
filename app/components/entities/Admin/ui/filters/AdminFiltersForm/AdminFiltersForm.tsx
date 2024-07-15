@@ -1,3 +1,4 @@
+'use client';
 import { LanguageTabs } from '@features/tabs';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputText } from '@shared/inputs';

@@ -1,3 +1,4 @@
+'use client';
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useState, type FC } from 'react';
 import cls from './LanguageTabs.module.scss';

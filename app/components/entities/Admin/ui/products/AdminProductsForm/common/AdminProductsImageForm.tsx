@@ -1,3 +1,4 @@
+'use client';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputImage, InputText } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';

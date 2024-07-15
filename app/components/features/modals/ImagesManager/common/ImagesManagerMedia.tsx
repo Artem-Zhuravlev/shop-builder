@@ -1,3 +1,4 @@
+'use client';
 import type { ImageMetaProps } from '@lib/types/ImageMetaProps';
 import React, { useEffect, useState, type FC } from 'react';
 import cls from '../ImagesManager.module.scss';

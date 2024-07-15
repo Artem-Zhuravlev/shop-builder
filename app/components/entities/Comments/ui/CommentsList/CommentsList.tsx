@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState, type FC } from 'react';
 import { CommentItem } from '../CommentItem/CommentItem';
 import cls from './CommentsList.module.scss';

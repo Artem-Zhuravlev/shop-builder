@@ -1,3 +1,4 @@
+'use client';
 import { TooltipBase } from '@shared/TooltipBase/TooltipBase';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';

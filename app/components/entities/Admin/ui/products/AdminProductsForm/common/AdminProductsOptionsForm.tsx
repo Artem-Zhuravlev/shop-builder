@@ -1,3 +1,4 @@
+'use client';
 import { TabsBase, type TabItem } from '@shared/TabsBase';
 import { AutoSave, InputSelect, type SelectOption } from '@shared/inputs';
 import { useTranslations } from 'next-intl';

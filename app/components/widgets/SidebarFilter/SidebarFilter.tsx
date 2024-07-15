@@ -1,3 +1,4 @@
+'use client';
 import React, { type FC, useState } from 'react';
 import cls from './SidebarFilter.module.scss';
 import { SidebarFilterAvailability } from './common/SidebarFilterAvailability/SidebarFilterAvailability';

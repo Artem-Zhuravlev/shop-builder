@@ -1,3 +1,4 @@
+'use client';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import { IconPicture } from '@shared/icons';
