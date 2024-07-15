@@ -41,7 +41,7 @@ export const AdminRecurringProfilesForm: FC = () => {
 	};
 
 	return (
-		<>
+		<div className='form-holder'>
 			<LanguageTabs
 				items={['en', 'ua']}
 				onSelect={(language) => setLanguage(language as 'en' | 'ua')}
@@ -121,6 +121,6 @@ export const AdminRecurringProfilesForm: FC = () => {
 					</FormLayout>
 				)}
 			</Form>
-		</>
+		</div>
 	);
 };
