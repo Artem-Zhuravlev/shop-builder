@@ -1,13 +1,8 @@
+'use client';
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
-export default function IndexPage() {
-  return (
-    <div>
-      Home
-    </div>
-  )
-}
-
-export const metadata = {
-  title: 'Redux Toolkit',
+export default function Index() {
+	const t = useTranslations('base');
+	return <h1>{t('local')}</h1>;
 }
