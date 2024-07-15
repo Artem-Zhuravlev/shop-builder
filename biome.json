@@ -17,10 +17,14 @@
 				"noExplicitAny": "info"
 			},
 			"a11y": {
-				"useKeyWithClickEvents": "off"
+				"useKeyWithClickEvents": "off",
+				"noSvgWithoutTitle": "off"
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "off"
+			},
+			"style": {
+				"useImportType": "off"
 			}
 		}
 	},
