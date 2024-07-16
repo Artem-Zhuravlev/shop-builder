@@ -21,7 +21,7 @@ export const AdminInformationForm: FC = () => {
 	};
 
 	return (
-		<>
+		<div className='form-holder'>
 			<LanguageTabs
 				items={['en', 'ua']}
 				onSelect={(language) => setLanguage(language as 'en' | 'ua')}
@@ -84,7 +84,7 @@ export const AdminInformationForm: FC = () => {
 					);
 				}}
 			/>
-		</>
+		</div>
 	);
 };
 
