@@ -1,2 +1,2 @@
-import { AdminManufacturersForm } from './AdminManufacturersForm/AdminManufacturersForm';
-import { AdminManufacturersTable } from './AdminManufacturersTable/AdminManufacturersTable';
+export { AdminManufacturersForm } from './AdminManufacturersForm/AdminManufacturersForm';
+export { AdminManufacturersTable } from './AdminManufacturersTable/AdminManufacturersTable';
