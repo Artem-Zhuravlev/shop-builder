@@ -1,3 +1,4 @@
+'use client';
 import { LanguageTabs } from '@features/tabs';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputImage, InputSelect, InputText } from '@shared/inputs';
@@ -17,7 +18,7 @@ export const AdminOptionsForm: FC = () => {
 	};
 
 	return (
-		<>
+		<div className='form-holder'>
 			<LanguageTabs
 				items={['en', 'ua']}
 				onSelect={(language) => setLanguage(language as 'en' | 'ua')}
@@ -117,7 +118,7 @@ export const AdminOptionsForm: FC = () => {
 					);
 				}}
 			/>
-		</>
+		</div>
 	);
 };
 
