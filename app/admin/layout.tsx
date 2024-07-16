@@ -11,7 +11,7 @@ export default async function AdminLayout({ children }: LocaleLayoutProps) {
 	return (
 		<div className={cls.AdminLayout}>
 			<AdminHeader className={cls.AdminHeader} />
-			<AdminSidebar className={cls.AdminSidebar} />
+			<AdminSidebar />
 			<main className={cls.AdminMain}>{children}</main>
 		</div>
 	);
