@@ -1,4 +1,5 @@
 'use client';
+import { StatusLabel, type Status } from '@features/tables';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
@@ -30,12 +31,12 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 
-interface AdminReviewsTableItem extends TableNode {
+export interface AdminReviewsTableItem extends TableNode {
 	id: string | number;
 	product: string;
 	author: string;
 	rating: number;
-	status: string;
+	status: Status;
 	date_added: string;
 	slug: string;
 }
@@ -129,7 +130,9 @@ export const AdminReviewsTable: FC<AdminReviewsTableProps> = (props) => {
 								<Cell>{item.product}</Cell>
 								<Cell>{item.author}</Cell>
 								<Cell>{item.rating}</Cell>
-								<Cell>{item.status}</Cell>
+								<Cell>
+									<StatusLabel value={item.status} />
+								</Cell>
 								<Cell>{useFormattedDate(item.date_added)}</Cell>
 								<Cell>
 									<ButtonBase
