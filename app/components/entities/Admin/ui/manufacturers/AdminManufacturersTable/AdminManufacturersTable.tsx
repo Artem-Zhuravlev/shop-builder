@@ -1,3 +1,4 @@
+'use client';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -25,7 +26,7 @@ import {
 } from '@table-library/react-table-library/table';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 
 interface AdminManufacturersTableItem extends TableNode {
