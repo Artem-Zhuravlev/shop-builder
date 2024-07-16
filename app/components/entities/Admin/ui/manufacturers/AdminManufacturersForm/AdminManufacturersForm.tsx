@@ -1,3 +1,4 @@
+'use client';
 import { LanguageTabs } from '@features/tabs';
 import { InputImage, InputText } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';
@@ -14,7 +15,7 @@ export const AdminManufacturersForm: FC = () => {
 	};
 
 	return (
-		<>
+		<div className='form-holder'>
 			<LanguageTabs
 				items={['en', 'ua']}
 				onSelect={(language) => setLanguage(language as 'en' | 'ua')}
@@ -50,7 +51,7 @@ export const AdminManufacturersForm: FC = () => {
 					);
 				}}
 			/>
-		</>
+		</div>
 	);
 };
 
