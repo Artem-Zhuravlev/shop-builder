@@ -1,3 +1,4 @@
+'use client';
 import { FormLayout } from '@widgets/FormLayout';
 import arrayMutators from 'final-form-arrays';
 import { useTranslations } from 'next-intl';
@@ -17,30 +18,32 @@ export const AdminReturnsForm: FC = () => {
 	};
 
 	return (
-		<Form
-			onSubmit={onSubmit}
-			mutators={{
-				...arrayMutators,
-			}}
-			render={({
-				handleSubmit,
-				form: {
-					mutators: { push, pop },
-				},
-			}) => {
-				return (
-					<FormLayout
-						className='row align-items-center'
-						onSubmit={handleSubmit}
-						title={t('base.product_returns')}
-					>
-						<AdminReturnsOrderInformation />
-						<AdminReturnsProductInformation />
-						<AdminReturnsHistory pop={pop} push={push} />
-					</FormLayout>
-				);
-			}}
-		/>
+		<div className='form-holder'>
+			<Form
+				onSubmit={onSubmit}
+				mutators={{
+					...arrayMutators,
+				}}
+				render={({
+					handleSubmit,
+					form: {
+						mutators: { push, pop },
+					},
+				}) => {
+					return (
+						<FormLayout
+							className='row align-items-center'
+							onSubmit={handleSubmit}
+							title={t('base.product_returns')}
+						>
+							<AdminReturnsOrderInformation />
+							<AdminReturnsProductInformation />
+							<AdminReturnsHistory pop={pop} push={push} />
+						</FormLayout>
+					);
+				}}
+			/>
+		</div>
 	);
 };
 
