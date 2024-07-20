@@ -82,19 +82,6 @@ export const navbarList = [
 				to: '/admin/returns',
 				value: 'returns',
 			},
-			{
-				value: 'gift_vouchers',
-				children: [
-					{
-						to: '/admin/gift-vouchers',
-						value: 'gift_vouchers',
-					},
-					{
-						to: '/admin/voucher-themes',
-						value: 'voucher_themes',
-					},
-				],
-			},
 		],
 	},
 	{
@@ -193,24 +180,6 @@ export const navbarList = [
 						value: 'weight_classes',
 					},
 				],
-			},
-		],
-	},
-	{
-		icon: 'icon-stats-bars',
-		value: 'reports',
-		children: [
-			{
-				to: '/admin/reports',
-				value: 'reports',
-			},
-			{
-				to: '/admin/reports/whos-online',
-				value: 'whos_online',
-			},
-			{
-				to: '/admin/reports/statistics',
-				value: 'statistics',
 			},
 		],
 	},
