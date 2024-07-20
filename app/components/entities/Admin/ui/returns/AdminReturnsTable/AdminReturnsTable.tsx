@@ -1,3 +1,4 @@
+'use client';
 import { StatusLabel, type Status } from '@features/tables';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
@@ -27,10 +28,10 @@ import {
 } from '@table-library/react-table-library/table';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 
-interface AdminReturnsTableItem extends TableNode {
+export interface AdminReturnsTableItem extends TableNode {
 	id: string | number;
 	return_id: number;
 	order_id: number;
