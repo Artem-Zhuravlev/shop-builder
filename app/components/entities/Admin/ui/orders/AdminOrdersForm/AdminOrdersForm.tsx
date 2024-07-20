@@ -1,3 +1,4 @@
+'use client';
 import { LanguageTabs } from '@features/tabs';
 import { useSelector } from '@lib/redux/store';
 import { InputText } from '@shared/inputs';
