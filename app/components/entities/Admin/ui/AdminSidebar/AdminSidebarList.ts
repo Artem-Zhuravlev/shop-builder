@@ -1,3 +1,5 @@
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
+
 export interface SidebarItem {
 	to?: string;
 	icon?: string;
@@ -16,52 +18,52 @@ export const navbarList = [
 		value: 'catalog',
 		children: [
 			{
-				to: '/admin/categories',
+				to: ADMIN_ROUTES.categories,
 				value: 'categories',
 			},
 			{
-				to: '/admin/products',
+				to: ADMIN_ROUTES.products,
 				value: 'products',
 			},
 			{
-				to: '/admin/recurring-profiles',
+				to: ADMIN_ROUTES.recurringProfiles,
 				value: 'recurring_profiles',
 			},
 			{
-				to: '/admin/filters',
+				to: ADMIN_ROUTES.filters,
 				value: 'filters',
 			},
 			{
 				value: 'attributes',
 				children: [
 					{
-						to: '/admin/attributes',
+						to: ADMIN_ROUTES.attributes,
 						value: 'attributes',
 					},
 					{
-						to: '/admin/attribute-groups',
+						to: ADMIN_ROUTES.attributeGroups,
 						value: 'attribute_groups',
 					},
 				],
 			},
 			{
-				to: '/admin/options',
+				to: ADMIN_ROUTES.options,
 				value: 'options',
 			},
 			{
-				to: '/admin/manufacturers',
+				to: ADMIN_ROUTES.manufacturers,
 				value: 'manufacturers',
 			},
 			{
-				to: '/admin/downloads',
+				to: ADMIN_ROUTES.downloads,
 				value: 'downloads',
 			},
 			{
-				to: '/admin/reviews',
+				to: ADMIN_ROUTES.reviews,
 				value: 'reviews',
 			},
 			{
-				to: '/admin/information',
+				to: ADMIN_ROUTES.information,
 				value: 'information',
 			},
 		],
@@ -71,15 +73,15 @@ export const navbarList = [
 		value: 'sales',
 		children: [
 			{
-				to: '/admin/orders',
+				to: ADMIN_ROUTES.orders,
 				value: 'orders',
 			},
 			{
-				to: '/admin/recurring-orders',
+				to: ADMIN_ROUTES.recurringOrders,
 				value: 'recurring_orders',
 			},
 			{
-				to: '/admin/returns',
+				to: ADMIN_ROUTES.returns,
 				value: 'returns',
 			},
 		],
@@ -89,15 +91,15 @@ export const navbarList = [
 		value: 'marketing',
 		children: [
 			{
-				to: '/admin/marketing',
+				to: ADMIN_ROUTES.marketing,
 				value: 'marketing',
 			},
 			{
-				to: '/admin/coupons',
+				to: ADMIN_ROUTES.coupons,
 				value: 'coupons',
 			},
 			{
-				to: '/admin/mail',
+				to: ADMIN_ROUTES.mail,
 				value: 'mail',
 			},
 		],
@@ -107,38 +109,38 @@ export const navbarList = [
 		value: 'system',
 		children: [
 			{
-				to: '/admin/settings',
+				to: ADMIN_ROUTES.settings,
 				value: 'settings',
 			},
 			{
 				value: 'localization',
 				children: [
 					{
-						to: '/admin/languages',
+						to: ADMIN_ROUTES.languages,
 						value: 'languages',
 					},
 					{
-						to: '/admin/currencies',
+						to: ADMIN_ROUTES.currencies,
 						value: 'currencies',
 					},
 					{
-						to: '/admin/stock-statuses',
+						to: ADMIN_ROUTES.stockStatuses,
 						value: 'stock_statuses',
 					},
 					{
-						to: '/admin/order-statuses',
+						to: ADMIN_ROUTES.orderStatuses,
 						value: 'order_statuses',
 					},
 					{
-						to: '/admin/countries',
+						to: ADMIN_ROUTES.countries,
 						value: 'countries',
 					},
 					{
-						to: '/admin/zones',
+						to: ADMIN_ROUTES.zones,
 						value: 'zones',
 					},
 					{
-						to: '/admin/geo-zones',
+						to: ADMIN_ROUTES.geoZones,
 						value: 'geo_zones',
 					},
 				],
