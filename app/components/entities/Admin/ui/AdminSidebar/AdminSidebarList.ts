@@ -110,74 +110,32 @@ export const navbarList = [
 				value: 'localization',
 				children: [
 					{
-						to: '/admin/system/localization/store-localization',
-						value: 'store_localization',
-					},
-					{
-						to: '/admin/system/localization/languages',
+						to: '/admin/languages',
 						value: 'languages',
 					},
 					{
-						to: '/admin/system/localization/currencies',
+						to: '/admin/currencies',
 						value: 'currencies',
 					},
 					{
-						to: '/admin/system/localization/stock-statuses',
+						to: '/admin/stock-statuses',
 						value: 'stock_statuses',
 					},
 					{
-						to: '/admin/system/localization/order-statuses',
+						to: '/admin/order-statuses',
 						value: 'order_statuses',
 					},
 					{
-						value: 'returns',
-						children: [
-							{
-								to: '/admin/system/localization/return-statuses',
-								value: 'return_statuses',
-							},
-							{
-								to: '/admin/system/localization/return-actions',
-								value: 'return_actions',
-							},
-							{
-								to: '/admin/system/localization/return-reasons',
-								value: 'return_reasons',
-							},
-						],
-					},
-					{
-						to: '/admin/system/localization/countries',
+						to: '/admin/countries',
 						value: 'countries',
 					},
 					{
-						to: '/admin/system/localization/zones',
+						to: '/admin/zones',
 						value: 'zones',
 					},
 					{
-						to: '/admin/system/localization/geo-zones',
+						to: '/admin/geo-zones',
 						value: 'geo_zones',
-					},
-					{
-						value: 'taxes',
-						children: [
-							{
-								to: '/admin/system/localization/tax-classes',
-								value: 'tax_classes',
-							},
-							{
-								to: '/admin/system/localization/tax-rates',
-								value: 'tax_rates',
-							},
-						],
-					},
-					{
-						to: '/admin/system/localization/length-classes',
-						value: 'length_classes',
-					},
-					{
-						to: '/admin/system/localization/weight-classes',
-						value: 'weight_classes',
 					},
 				],
 			},
