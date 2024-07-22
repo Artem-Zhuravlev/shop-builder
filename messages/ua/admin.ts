@@ -97,4 +97,5 @@ export const admin = {
 	zone_name: 'Назва зони',
 	zone_code: 'Код зони',
 	geo_zone_name: 'Назва гео-зони',
+	settings: 'Налаштування',
 };
