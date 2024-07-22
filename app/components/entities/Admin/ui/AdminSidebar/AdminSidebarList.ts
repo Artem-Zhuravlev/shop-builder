@@ -107,6 +107,10 @@ export const navbarList = [
 		value: 'system',
 		children: [
 			{
+				to: '/admin/settings',
+				value: 'settings',
+			},
+			{
 				value: 'localization',
 				children: [
 					{
