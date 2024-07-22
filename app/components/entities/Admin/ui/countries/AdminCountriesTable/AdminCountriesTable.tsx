@@ -1,3 +1,4 @@
+'use client';
 import { StatusLabel, type Status } from '@features/tables';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { useSelector } from '@lib/redux/store';
@@ -28,7 +29,7 @@ import {
 } from '@table-library/react-table-library/table';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 interface AdminCountriesTableItem extends TableNode {
 	id: string | number;
