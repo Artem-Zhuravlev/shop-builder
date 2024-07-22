@@ -1,6 +1,4 @@
-import { StatusLabel, type Status } from '@features/tables';
-import { useFormattedDate } from '@hooks/useFormattedDate';
-import { useSelector } from '@lib/redux/store';
+'use client';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -28,7 +26,7 @@ import {
 } from '@table-library/react-table-library/table';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 interface AdminOrderStatusTableItem extends TableNode {
 	id: string | number;
@@ -52,7 +50,6 @@ export const AdminOrderStatusTable: FC<AdminOrderStatusTableProps> = (
 		Table: '--data-table-library_grid-template-columns:  50px 1fr 150px;',
 		...defaultTableStyles,
 	});
-	const defaultCurrency = useSelector((state) => state.product.currency);
 
 	const sort = useSort(
 		data,
