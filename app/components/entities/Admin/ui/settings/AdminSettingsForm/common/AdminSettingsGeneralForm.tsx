@@ -1,3 +1,4 @@
+'use client';
 import { InputImage, InputText, InputTextarea } from '@shared/inputs';
 import { FormLayout } from '@widgets/FormLayout';
 import { useTranslations } from 'next-intl';
