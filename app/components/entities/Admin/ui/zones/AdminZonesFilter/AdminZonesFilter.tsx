@@ -1,3 +1,4 @@
+'use client';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputText } from '@shared/inputs';
 import { useTranslations } from 'next-intl';
@@ -11,23 +12,25 @@ export const AdminZonesFilter: FC = () => {
 	};
 
 	return (
-		<Form
-			onSubmit={onSubmit}
-			render={({ handleSubmit }) => {
-				return (
-					<form onSubmit={handleSubmit}>
-						<h3 className='h2'>{t('base.filter')}</h3>
-						<InputText name='country' placeholder={t('admin.country')} />
-						<InputText name='zone_name' placeholder={t('admin.zone_name')} />
-						<InputText name='zone_code' placeholder={t('admin.zone_code')} />
-						<ButtonBase>
-							<span className='icon-filter' />
-							{t('base.filter')}
-						</ButtonBase>
-					</form>
-				);
-			}}
-		/>
+		<div className='form-holder'>
+			<Form
+				onSubmit={onSubmit}
+				render={({ handleSubmit }) => {
+					return (
+						<form onSubmit={handleSubmit}>
+							<h3 className='h2'>{t('base.filter')}</h3>
+							<InputText name='country' placeholder={t('admin.country')} />
+							<InputText name='zone_name' placeholder={t('admin.zone_name')} />
+							<InputText name='zone_code' placeholder={t('admin.zone_code')} />
+							<ButtonBase>
+								<span className='icon-filter' />
+								{t('base.filter')}
+							</ButtonBase>
+						</form>
+					);
+				}}
+			/>
+		</div>
 	);
 };
 
