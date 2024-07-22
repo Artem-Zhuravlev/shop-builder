@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { StatusLabel, type Status } from '@features/tables';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
@@ -136,7 +137,7 @@ export const AdminReturnsTable: FC<AdminReturnsTableProps> = (props) => {
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`/admin/returns/${item.return_id}`)
+											router.push(`${ADMIN_ROUTES.returns}/${item.return_id}`)
 										}
 									>
 										<span className='icon-pencil' />

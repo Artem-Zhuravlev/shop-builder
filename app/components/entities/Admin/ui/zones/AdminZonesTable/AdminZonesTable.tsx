@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -117,7 +118,9 @@ export const AdminZonesTable: FC<AdminZonesTableProps> = (props) => {
 								<Cell>{item.zone_code}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/zones/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.zones}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

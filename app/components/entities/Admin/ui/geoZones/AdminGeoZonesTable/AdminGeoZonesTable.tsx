@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -111,7 +112,9 @@ export const AdminGeoZonesTable: FC<AdminGeoZonesTableProps> = (props) => {
 								<Cell>{item.description}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/geo-zones/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.geoZones}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

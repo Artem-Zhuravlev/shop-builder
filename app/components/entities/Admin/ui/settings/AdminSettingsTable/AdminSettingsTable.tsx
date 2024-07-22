@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import { defaultTableStyles } from '@shared/TableBase/TableBase';
 import type { TableNode } from '@table-library/react-table-library';
@@ -73,7 +74,9 @@ export const AdminSettingsTable: FC<AdminSettingsTableProps> = (props) => {
 								<Cell>{item.store_url}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/settings/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.settings}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

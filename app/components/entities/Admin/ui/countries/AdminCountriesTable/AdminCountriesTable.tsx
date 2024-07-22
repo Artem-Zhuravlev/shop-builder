@@ -1,7 +1,5 @@
 'use client';
-import { StatusLabel, type Status } from '@features/tables';
-import { useFormattedDate } from '@hooks/useFormattedDate';
-import { useSelector } from '@lib/redux/store';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -121,7 +119,9 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 								<Cell>{item.iso_code_3}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/countries/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.countries}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

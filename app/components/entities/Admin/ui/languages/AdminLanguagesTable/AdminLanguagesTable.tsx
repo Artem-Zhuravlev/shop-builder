@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -116,7 +117,9 @@ export const AdminLanguagesTable: FC<AdminLanguagesTableProps> = (props) => {
 								<Cell>{item.sort_order}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/languages/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.languages}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

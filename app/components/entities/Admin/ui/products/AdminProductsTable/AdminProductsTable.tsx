@@ -31,6 +31,7 @@ import type { TableNode } from '@table-library/react-table-library';
 import { getTheme } from '@table-library/react-table-library/baseline';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useRouter } from 'next/navigation';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 
 interface AdminProductsTableItem extends TableNode {
 	id: string | number;
@@ -162,7 +163,9 @@ export const AdminProductsTable: FC<AdminProductsTableProps> = (props) => {
 								<Cell>{item.status}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/products/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.products}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

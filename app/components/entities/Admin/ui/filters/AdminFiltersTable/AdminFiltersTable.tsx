@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -111,7 +112,9 @@ export const AdminFiltersTable: FC<AdminFiltersTableProps> = (props) => {
 								<Cell>{item.sort_order}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/filters/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.filters}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

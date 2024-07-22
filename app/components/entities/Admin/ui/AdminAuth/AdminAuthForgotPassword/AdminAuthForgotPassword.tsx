@@ -1,3 +1,4 @@
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputText } from '@shared/inputs';
 import { emailValidate } from '@utils/validations';
@@ -33,7 +34,7 @@ export const AdminAuthForgotPassword: FC = () => {
 							<ButtonBase
 								type='submit'
 								variant='light'
-								onClick={() => router.push('/admin/login')}
+								onClick={() => router.push(`${ADMIN_ROUTES.login}`)}
 							>
 								{t('base.cancel')}
 							</ButtonBase>

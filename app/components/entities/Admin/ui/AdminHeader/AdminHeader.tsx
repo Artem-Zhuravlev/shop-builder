@@ -7,6 +7,7 @@ import Link from 'next/link';
 import React, { type FC } from 'react';
 import cls from './AdminHeader.module.scss';
 import classNames from 'classnames';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 
 interface AdminHeaderProps {
 	className?: string;
@@ -29,7 +30,7 @@ export const AdminHeader: FC<AdminHeaderProps> = ({ className }) => {
 					direction='right'
 					list={[
 						{
-							to: '/admin/profile',
+							to: `${ADMIN_ROUTES.profile}`,
 							value: t('admin.profile'),
 							icon: <span className='icon-user' />,
 						},

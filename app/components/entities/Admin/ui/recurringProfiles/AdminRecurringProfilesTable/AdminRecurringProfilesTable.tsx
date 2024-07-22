@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -115,7 +116,9 @@ export const AdminRecurringProfilesTable: FC<
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`/admin/recurring-profiles/${item.slug}`)
+											router.push(
+												`${ADMIN_ROUTES.recurringProfiles}/${item.slug}`,
+											)
 										}
 									>
 										<span className='icon-pencil' />

@@ -7,6 +7,7 @@ import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 import { AdminAuthWrapper } from '../AdminAuthWrapper/AdminAuthWrapper';
 import cls from './AdminAuthForm.module.scss';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 
 export const AdminAuthForm: FC = () => {
 	const t = useTranslations('inputs');
@@ -35,7 +36,7 @@ export const AdminAuthForm: FC = () => {
 							required
 						/>
 						<Link
-							href='/admin/forgot-password'
+							href={ADMIN_ROUTES.forgotPassword}
 							className={`${cls.ForgotPassword} link-primary`}
 						>
 							{t('forgot_password')}

@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { StatusLabel, type Status } from '@features/tables';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { useSelector } from '@lib/redux/store';
@@ -112,7 +113,7 @@ export const AdminStockStatusTable: FC<AdminStockStatusTableProps> = (
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`/admin/stock-statuses/${item.slug}`)
+											router.push(`${ADMIN_ROUTES.stockStatuses}/${item.slug}`)
 										}
 									>
 										<span className='icon-pencil' />

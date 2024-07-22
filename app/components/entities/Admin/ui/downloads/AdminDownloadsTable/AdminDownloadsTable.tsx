@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
@@ -112,7 +113,9 @@ export const AdminDownloadsTable: FC<AdminDownloadsTableProps> = (props) => {
 								<Cell>{useFormattedDate(item.date_added)}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/downloads/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.downloads}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

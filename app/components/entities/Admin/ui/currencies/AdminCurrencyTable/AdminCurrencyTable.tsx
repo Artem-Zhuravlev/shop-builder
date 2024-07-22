@@ -30,6 +30,7 @@ import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 
 export interface AdminCurrencyTableItem extends TableNode {
 	id: string | number;
@@ -130,7 +131,7 @@ export const AdminCurrencyTable: FC<AdminCurrencyTableProps> = (props) => {
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`/admin/currencies/${item.slug}`)
+											router.push(`${ADMIN_ROUTES.currencies}/${item.slug}`)
 										}
 									>
 										<span className='icon-pencil' />

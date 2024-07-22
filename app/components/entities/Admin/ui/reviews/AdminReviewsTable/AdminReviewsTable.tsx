@@ -1,4 +1,5 @@
 'use client';
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { StatusLabel, type Status } from '@features/tables';
 import { useFormattedDate } from '@hooks/useFormattedDate';
 import { ButtonBase } from '@shared/ButtonBase';
@@ -136,7 +137,9 @@ export const AdminReviewsTable: FC<AdminReviewsTableProps> = (props) => {
 								<Cell>{useFormattedDate(item.date_added)}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/reviews/${item.slug}`)}
+										onClick={() =>
+											router.push(`${ADMIN_ROUTES.reviews}/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>

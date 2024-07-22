@@ -1,5 +1,6 @@
 'use client';
 
+import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import {
 	defaultSortIcon,
@@ -111,7 +112,7 @@ export const AdminCategoriesTable: FC<AdminCategoriesTableProps> = (props) => {
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`/admin/categories/${item.slug}`)
+											router.push(`${ADMIN_ROUTES.categories}/${item.slug}`)
 										}
 									>
 										<span className='icon-pencil' />
