@@ -1,3 +1,4 @@
+'use client';
 import { TabsBase } from '@shared/TabsBase';
 import { useTranslations } from 'next-intl';
 import React, { type FC } from 'react';
@@ -40,7 +41,11 @@ export const AdminSettingsForm: FC = () => {
 		},
 	];
 
-	return <TabsBase items={tabs} />;
+	return (
+		<div className='form-wrapper'>
+			<TabsBase items={tabs} />
+		</div>
+	);
 };
 
 AdminSettingsForm.displayName = 'AdminSettingsForm';
