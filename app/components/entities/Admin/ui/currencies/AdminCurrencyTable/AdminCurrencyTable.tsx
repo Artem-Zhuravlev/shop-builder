@@ -129,7 +129,9 @@ export const AdminCurrencyTable: FC<AdminCurrencyTableProps> = (props) => {
 								<Cell>{useFormattedDate(item.date_added)}</Cell>
 								<Cell>
 									<ButtonBase
-										onClick={() => router.push(`/admin/currency/${item.slug}`)}
+										onClick={() =>
+											router.push(`/admin/currencies/${item.slug}`)
+										}
 									>
 										<span className='icon-pencil' />
 									</ButtonBase>
