@@ -1,3 +1,4 @@
+'use client';
 import { InputImage, InputText, InputTextarea } from '@shared/inputs';
 import { emailValidate, phoneValidate } from '@utils/validations';
 import { FormLayout } from '@widgets/FormLayout';
