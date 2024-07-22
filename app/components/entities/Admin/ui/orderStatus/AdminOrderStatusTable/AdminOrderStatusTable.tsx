@@ -108,7 +108,7 @@ export const AdminOrderStatusTable: FC<AdminOrderStatusTableProps> = (
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`/admin/order-status/${item.slug}`)
+											router.push(`/admin/order-statuses/${item.slug}`)
 										}
 									>
 										<span className='icon-pencil' />
