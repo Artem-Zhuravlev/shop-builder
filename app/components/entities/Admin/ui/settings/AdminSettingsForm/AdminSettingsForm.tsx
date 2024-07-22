@@ -42,7 +42,7 @@ export const AdminSettingsForm: FC = () => {
 	];
 
 	return (
-		<div className='form-wrapper'>
+		<div className='form-holder'>
 			<TabsBase items={tabs} />
 		</div>
 	);
