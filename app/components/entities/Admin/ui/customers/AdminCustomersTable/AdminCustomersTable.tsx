@@ -36,6 +36,7 @@ export interface AdminCustomersTableItem extends TableNode {
 	name: string;
 	email: string;
 	customer_group: string;
+	date_added: string;
 	slug: string;
 }
 
