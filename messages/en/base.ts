@@ -114,4 +114,5 @@ export const base = {
 	countries: 'Countries',
 	zones: 'Zones',
 	geo_zones: 'Geo zones',
+	addresses: 'Addresses',
 };
