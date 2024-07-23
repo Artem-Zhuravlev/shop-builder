@@ -37,7 +37,7 @@ export const AdminReturnsFilter: FC = () => {
 								name='date_added'
 								placeholder={t('inputs.date_added')}
 							/>
-							<ButtonBase>
+							<ButtonBase type='submit'>
 								<span className='icon-filter' />
 								{t('base.filter')}
 							</ButtonBase>

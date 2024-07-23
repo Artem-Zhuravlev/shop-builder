@@ -22,7 +22,7 @@ export const AdminZonesFilter: FC = () => {
 							<InputText name='country' placeholder={t('admin.country')} />
 							<InputText name='zone_name' placeholder={t('admin.zone_name')} />
 							<InputText name='zone_code' placeholder={t('admin.zone_code')} />
-							<ButtonBase>
+							<ButtonBase type='submit'>
 								<span className='icon-filter' />
 								{t('base.filter')}
 							</ButtonBase>
