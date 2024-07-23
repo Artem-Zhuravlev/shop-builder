@@ -115,4 +115,6 @@ export const base = {
 	zones: 'Zones',
 	geo_zones: 'Geo zones',
 	addresses: 'Addresses',
+	customer_details: 'Customer details',
+	other: 'Other',
 };

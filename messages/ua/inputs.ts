@@ -262,4 +262,6 @@ export const inputs = {
 	stock_status_name: 'Назва статусу наявності',
 	geo_zone_name: 'Назва гео зони',
 	zone: 'Зона',
+	store: 'Магазин',
+	newsletter: 'Розсилка',
 };

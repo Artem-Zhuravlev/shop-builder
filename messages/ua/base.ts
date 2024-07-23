@@ -115,4 +115,6 @@ export const base = {
 	zones: 'Зони',
 	geo_zones: 'Гео зони',
 	addresses: 'Адреси',
+	customer_details: 'Дані користувача',
+	other: 'Інше',
 };

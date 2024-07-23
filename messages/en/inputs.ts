@@ -261,4 +261,6 @@ export const inputs = {
 	stock_status_name: 'Stock status name',
 	geo_zone_name: 'Geo zone name',
 	zone: 'Zone',
+	store: 'Store',
+	newsletter: 'Newsletter',
 };
