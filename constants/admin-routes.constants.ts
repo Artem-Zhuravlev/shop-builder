@@ -27,4 +27,5 @@ export const ADMIN_ROUTES = Object.freeze({
 	profile: '/admin/profile',
 	forgotPassword: '/admin/forgot-password',
 	login: '/admin/login',
+	customers: '/admin/customers',
 });
