@@ -31,7 +31,7 @@ export const AdminCountriesFilter: FC = () => {
 								name='iso_code_3'
 								placeholder={t('admin.iso_code_3')}
 							/>
-							<ButtonBase>
+							<ButtonBase type='submit'>
 								<span className='icon-filter' />
 								{t('base.filter')}
 							</ButtonBase>
