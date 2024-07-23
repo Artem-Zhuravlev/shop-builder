@@ -4,6 +4,11 @@ import { AdminGeoZonesTable } from './AdminGeoZonesTable';
 export default {
 	title: 'Entities/Admin/Geo Zones/AdminGeoZonesTable',
 	component: AdminGeoZonesTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminGeoZonesTable>;
 
 const Template: StoryFn<typeof AdminGeoZonesTable> = (args) => {

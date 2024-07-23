@@ -4,6 +4,11 @@ import { AdminCurrencyTable } from './AdminCurrencyTable';
 export default {
 	title: 'Entities/Admin/Currency/AdminCurrencyTable',
 	component: AdminCurrencyTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminCurrencyTable>;
 
 const Template: StoryFn<typeof AdminCurrencyTable> = (args) => {

@@ -4,6 +4,11 @@ import { AdminZonesTable } from './AdminZonesTable';
 export default {
 	title: 'Entities/Admin/Zones/AdminZonesTable',
 	component: AdminZonesTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminZonesTable>;
 
 const Template: StoryFn<typeof AdminZonesTable> = (args) => {

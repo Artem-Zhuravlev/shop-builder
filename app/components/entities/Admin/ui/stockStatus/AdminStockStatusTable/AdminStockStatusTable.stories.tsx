@@ -4,6 +4,11 @@ import { AdminStockStatusTable } from './AdminStockStatusTable';
 export default {
 	title: 'Entities/Admin/Stock Status/AdminStockStatusTable',
 	component: AdminStockStatusTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminStockStatusTable>;
 
 const Template: StoryFn<typeof AdminStockStatusTable> = (args) => {

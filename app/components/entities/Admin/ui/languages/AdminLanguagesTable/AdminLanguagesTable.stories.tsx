@@ -4,6 +4,11 @@ import { AdminLanguagesTable } from './AdminLanguagesTable';
 export default {
 	title: 'Entities/Admin/Languages/AdminLanguagesTable',
 	component: AdminLanguagesTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminLanguagesTable>;
 
 const Template: StoryFn<typeof AdminLanguagesTable> = (args) => {

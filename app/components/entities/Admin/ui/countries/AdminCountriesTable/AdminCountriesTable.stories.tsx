@@ -4,6 +4,11 @@ import { AdminCountriesTable } from './AdminCountriesTable';
 export default {
 	title: 'Entities/Admin/Countries/AdminCountriesTable',
 	component: AdminCountriesTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminCountriesTable>;
 
 const Template: StoryFn<typeof AdminCountriesTable> = (args) => {

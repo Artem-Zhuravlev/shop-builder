@@ -4,6 +4,11 @@ import { AdminReviewsTable } from './AdminReviewsTable';
 export default {
 	title: 'Entities/Admin/Reviews/AdminReviewsTable',
 	component: AdminReviewsTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminReviewsTable>;
 
 const Template: StoryFn<typeof AdminReviewsTable> = (args) => {

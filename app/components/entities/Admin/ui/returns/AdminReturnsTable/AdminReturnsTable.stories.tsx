@@ -4,6 +4,11 @@ import { AdminReturnsTable } from './AdminReturnsTable';
 export default {
 	title: 'Entities/Admin/Returns/AdminReturnsTable',
 	component: AdminReturnsTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminReturnsTable>;
 
 const Template: StoryFn<typeof AdminReturnsTable> = (args) => {

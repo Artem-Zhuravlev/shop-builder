@@ -4,6 +4,11 @@ import { AdminSettingsTable } from './AdminSettingsTable';
 export default {
 	title: 'Entities/Admin/Settings/AdminSettingsTable',
 	component: AdminSettingsTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminSettingsTable>;
 
 const Template: StoryFn<typeof AdminSettingsTable> = (args) => {

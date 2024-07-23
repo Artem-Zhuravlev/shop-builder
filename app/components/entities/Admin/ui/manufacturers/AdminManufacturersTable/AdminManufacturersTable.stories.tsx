@@ -4,6 +4,11 @@ import { AdminManufacturersTable } from './AdminManufacturersTable';
 export default {
 	title: 'Entities/Admin/Manufacturers/AdminManufacturersTable',
 	component: AdminManufacturersTable,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminManufacturersTable>;
 
 const Template: StoryFn<typeof AdminManufacturersTable> = (args) => {
