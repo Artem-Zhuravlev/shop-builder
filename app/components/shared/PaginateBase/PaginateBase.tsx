@@ -1,3 +1,4 @@
+'use client';
 import React, { type FC } from 'react';
 import ReactPaginate, { type ReactPaginateProps } from 'react-paginate';
 import cls from './PaginateBase.module.scss';
