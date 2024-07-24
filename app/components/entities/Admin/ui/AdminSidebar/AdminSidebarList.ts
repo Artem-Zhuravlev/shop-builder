@@ -87,6 +87,20 @@ export const navbarList = [
 		],
 	},
 	{
+		icon: 'icon-user',
+		value: 'customers',
+		children: [
+			{
+				to: ADMIN_ROUTES.customers,
+				value: 'customers',
+			},
+			{
+				to: ADMIN_ROUTES.customerGroups,
+				value: 'customer_groups',
+			},
+		],
+	},
+	{
 		icon: 'icon-share2',
 		value: 'marketing',
 		children: [
