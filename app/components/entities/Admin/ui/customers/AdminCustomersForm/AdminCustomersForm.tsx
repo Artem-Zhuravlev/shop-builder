@@ -4,6 +4,7 @@ import React, { type FC } from 'react';
 import {
 	AdminCustomersAddressesForm,
 	AdminCustomersGeneralForm,
+	AdminCustomersHistoryForm,
 } from './common';
 
 export const AdminCustomersForm: FC = () => {
@@ -20,7 +21,7 @@ export const AdminCustomersForm: FC = () => {
 		},
 		{
 			label: t('history'),
-			description: 'History',
+			description: <AdminCustomersHistoryForm />,
 		},
 		{
 			label: t('reward_points'),
