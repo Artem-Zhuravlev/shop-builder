@@ -1,7 +1,7 @@
 import React from 'react';
 import { AdminCustomersForm } from '@entities/Admin/ui/customers';
 
-export default function CategoriesFormPage({
+export default function CustomersFormPage({
 	params,
 }: { params: { slug: string } }) {
 	// TODO: add logic if NEW - slug don't send request
