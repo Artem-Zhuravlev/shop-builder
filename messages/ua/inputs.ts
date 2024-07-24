@@ -265,4 +265,5 @@ export const inputs = {
 	store: 'Магазин',
 	newsletter: 'Розсилка',
 	approve_new_customers: 'Підтвердження нових клієнтів',
+	safe: 'Безпечний',
 };

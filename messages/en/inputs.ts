@@ -264,4 +264,5 @@ export const inputs = {
 	store: 'Store',
 	newsletter: 'Newsletter',
 	approve_new_customers: 'Approve new customers',
+	safe: 'Safe',
 };
