@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminOptionsTable } from '@entities/Admin/ui/options';
 
 export default function OptionsPage() {
@@ -29,7 +30,11 @@ export default function OptionsPage() {
 		},
 	];
 
-	return <AdminOptionsTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminOptionsTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

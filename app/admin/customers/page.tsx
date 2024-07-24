@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import {
 	AdminCustomersTable,
 	AdminCustomersFilter,
@@ -73,17 +74,9 @@ export default function CustomersPage() {
 	];
 
 	return (
-		<div
-			style={{
-				display: 'grid',
-				gridTemplateColumns: '3fr 1fr',
-				gap: 'var(--size-extra-small)',
-				alignItems: 'flex-start',
-			}}
-		>
+		<AdminTableLayout filter={<AdminCustomersFilter />}>
 			<AdminCustomersTable nodes={nodes} />
-			<AdminCustomersFilter />
-		</div>
+		</AdminTableLayout>
 	);
 }
 

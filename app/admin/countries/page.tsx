@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import {
 	AdminCountriesTable,
 	AdminCountriesFilter,
@@ -44,17 +45,9 @@ export default function ReturnsPage() {
 	];
 
 	return (
-		<div
-			style={{
-				display: 'grid',
-				gridTemplateColumns: '3fr 1fr',
-				gap: 'var(--size-extra-small)',
-				alignItems: 'flex-start',
-			}}
-		>
+		<AdminTableLayout filter={<AdminCountriesFilter />}>
 			<AdminCountriesTable nodes={nodes} />
-			<AdminCountriesFilter />
-		</div>
+		</AdminTableLayout>
 	);
 }
 

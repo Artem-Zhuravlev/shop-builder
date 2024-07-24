@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import {
 	AdminCurrencyTable,
 	type AdminCurrencyTableItem,
@@ -44,7 +45,11 @@ export default function CurrenciesPage() {
 		},
 	];
 
-	return <AdminCurrencyTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminCurrencyTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

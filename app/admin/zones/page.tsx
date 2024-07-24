@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminZonesFilter, AdminZonesTable } from '@entities/Admin/ui/zones';
 
 export default function ZonesPage() {
@@ -27,17 +28,9 @@ export default function ZonesPage() {
 	];
 
 	return (
-		<div
-			style={{
-				display: 'grid',
-				gridTemplateColumns: '3fr 1fr',
-				gap: 'var(--size-extra-small)',
-				alignItems: 'flex-start',
-			}}
-		>
+		<AdminTableLayout filter={<AdminZonesFilter />}>
 			<AdminZonesTable nodes={nodes} />
-			<AdminZonesFilter />
-		</div>
+		</AdminTableLayout>
 	);
 }
 

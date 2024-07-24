@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminFiltersTable } from '@entities/Admin/ui/filters';
 
 export default function FiltersPage() {
@@ -65,7 +66,11 @@ export default function FiltersPage() {
 		},
 	];
 
-	return <AdminFiltersTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminFiltersTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

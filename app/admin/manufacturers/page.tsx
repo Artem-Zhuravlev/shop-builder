@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminManufacturersTable } from '@entities/Admin/ui/manufacturers';
 
 export default function ManufacturersPage() {
@@ -47,7 +48,11 @@ export default function ManufacturersPage() {
 		},
 	];
 
-	return <AdminManufacturersTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminManufacturersTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

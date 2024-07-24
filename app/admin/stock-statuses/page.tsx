@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminStockStatusTable } from '@entities/Admin/ui/stockStatus';
 export default function StockStatusesPage() {
 	const nodes = [
@@ -24,7 +25,11 @@ export default function StockStatusesPage() {
 		},
 	];
 
-	return <AdminStockStatusTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminStockStatusTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import {
 	AdminReviewsTable,
 	type AdminReviewsTableItem,
@@ -100,17 +101,9 @@ export default function ReviewsPage() {
 	];
 
 	return (
-		<div
-			style={{
-				display: 'grid',
-				gridTemplateColumns: '3fr 1fr',
-				gap: 'var(--size-extra-small)',
-				alignItems: 'flex-start',
-			}}
-		>
+		<AdminTableLayout filter={<AdminReviewsFilter />}>
 			<AdminReviewsTable nodes={nodes} />
-			<AdminReviewsFilter />
-		</div>
+		</AdminTableLayout>
 	);
 }
 

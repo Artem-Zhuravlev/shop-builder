@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminRecurringProfilesTable } from '@entities/Admin/ui/recurringProfiles';
 
 export default function RecurringProfilesPage() {
@@ -83,7 +84,11 @@ export default function RecurringProfilesPage() {
 		},
 	];
 
-	return <AdminRecurringProfilesTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminRecurringProfilesTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

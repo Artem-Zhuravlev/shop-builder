@@ -18,7 +18,7 @@ export const ADMIN_ROUTES = Object.freeze({
 	mail: '/admin/mail',
 	settings: '/admin/settings',
 	languages: '/admin/languages',
-	currencies: 'admin/currencies',
+	currencies: '/admin/currencies',
 	stockStatuses: '/admin/stock-statuses',
 	orderStatuses: '/admin/order-statuses',
 	countries: '/admin/countries',

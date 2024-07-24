@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminAttributeGroupTable } from '@entities/Admin/ui/attribute';
 
 export default function AttributeGroupPage() {
@@ -29,7 +30,11 @@ export default function AttributeGroupPage() {
 		},
 	];
 
-	return <AdminAttributeGroupTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminAttributeGroupTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

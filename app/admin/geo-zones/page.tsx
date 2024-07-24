@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminGeoZonesTable } from '@entities/Admin/ui/geoZones';
 
 export default function StockStatusesPage() {
@@ -17,7 +18,11 @@ export default function StockStatusesPage() {
 		},
 	];
 
-	return <AdminGeoZonesTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminGeoZonesTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

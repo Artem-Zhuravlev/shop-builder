@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminInformationTable } from '@entities/Admin/ui/information';
 
 export default function InformationPage() {
@@ -29,7 +30,11 @@ export default function InformationPage() {
 		},
 	];
 
-	return <AdminInformationTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminInformationTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

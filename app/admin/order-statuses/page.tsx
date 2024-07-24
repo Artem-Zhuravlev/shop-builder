@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminOrderStatusTable } from '@entities/Admin/ui/orderStatus';
 
 export default function OrderStatusesPage() {
@@ -35,7 +36,11 @@ export default function OrderStatusesPage() {
 		},
 	];
 
-	return <AdminOrderStatusTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminOrderStatusTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

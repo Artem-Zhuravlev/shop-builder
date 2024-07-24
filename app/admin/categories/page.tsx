@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminCategoriesTable } from '@entities/Admin/ui/categories';
 
 export default function CategoriesPage() {
@@ -23,7 +24,11 @@ export default function CategoriesPage() {
 		},
 	];
 
-	return <AdminCategoriesTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminCategoriesTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

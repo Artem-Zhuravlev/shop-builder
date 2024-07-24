@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminCustomerGroupsTable } from '@entities/Admin/ui/customerGroups';
 
 export default function CustomerGroupsPage() {
@@ -11,7 +12,11 @@ export default function CustomerGroupsPage() {
 		},
 	];
 
-	return <AdminCustomerGroupsTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminCustomerGroupsTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

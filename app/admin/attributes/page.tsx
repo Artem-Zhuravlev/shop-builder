@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminAttributesTable } from '@entities/Admin/ui/attribute';
 
 export default function AttributesPage() {
@@ -89,7 +90,11 @@ export default function AttributesPage() {
 		},
 	];
 
-	return <AdminAttributesTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminAttributesTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminSettingsTable } from '@entities/Admin/ui/settings';
 
 export default function ReviewsPage() {
@@ -11,7 +12,11 @@ export default function ReviewsPage() {
 		},
 	];
 
-	return <AdminSettingsTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminSettingsTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

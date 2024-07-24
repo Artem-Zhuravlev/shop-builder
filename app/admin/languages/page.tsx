@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminLanguagesTable } from '@entities/Admin/ui/languages';
 
 export default function LanguagesPage() {
@@ -40,7 +41,11 @@ export default function LanguagesPage() {
 		},
 	];
 
-	return <AdminLanguagesTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminLanguagesTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {

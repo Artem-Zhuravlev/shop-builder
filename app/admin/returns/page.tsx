@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import {
 	AdminReturnsTable,
 	type AdminReturnsTableItem,
@@ -120,17 +121,9 @@ export default function ReturnsPage() {
 	];
 
 	return (
-		<div
-			style={{
-				display: 'grid',
-				gridTemplateColumns: '3fr 1fr',
-				gap: 'var(--size-extra-small)',
-				alignItems: 'flex-start',
-			}}
-		>
+		<AdminTableLayout filter={<AdminReturnsFilter />}>
 			<AdminReturnsTable nodes={nodes} />
-			<AdminReturnsFilter />
-		</div>
+		</AdminTableLayout>
 	);
 }
 

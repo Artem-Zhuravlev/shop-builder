@@ -1,4 +1,5 @@
 import React from 'react';
+import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminDownloadsTable } from '@entities/Admin/ui/downloads';
 
 export default function DownloadsPage() {
@@ -71,7 +72,11 @@ export default function DownloadsPage() {
 		},
 	];
 
-	return <AdminDownloadsTable nodes={nodes} />;
+	return (
+		<AdminTableLayout>
+			<AdminDownloadsTable nodes={nodes} />
+		</AdminTableLayout>
+	);
 }
 
 export const metadata = {
