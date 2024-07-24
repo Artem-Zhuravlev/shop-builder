@@ -27,7 +27,7 @@ export const AdminCustomersRewardPointsForm: FC = () => {
 				},
 			}) => {
 				return (
-					<FormLayout title={t('base.history')} onSubmit={handleSubmit}>
+					<FormLayout title={t('base.reward_points')} onSubmit={handleSubmit}>
 						<div className='d-flex gap-1 mb-30'>
 							<ButtonBase onClick={() => push('reward_points', undefined)}>
 								{t('base.add')}
