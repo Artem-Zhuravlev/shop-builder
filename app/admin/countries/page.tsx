@@ -4,6 +4,7 @@ import {
 	AdminCountriesTable,
 	AdminCountriesFilter,
 } from '@entities/Admin/ui/countries';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ReturnsPage() {
 	const nodes = [
@@ -47,6 +48,7 @@ export default function ReturnsPage() {
 	return (
 		<AdminTableLayout filter={<AdminCountriesFilter />}>
 			<AdminCountriesTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

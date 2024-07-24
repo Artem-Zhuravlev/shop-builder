@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminFiltersTable } from '@entities/Admin/ui/filters';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function FiltersPage() {
 	const nodes = [
@@ -69,6 +70,7 @@ export default function FiltersPage() {
 	return (
 		<AdminTableLayout>
 			<AdminFiltersTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

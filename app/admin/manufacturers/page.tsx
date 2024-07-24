@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminManufacturersTable } from '@entities/Admin/ui/manufacturers';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ManufacturersPage() {
 	const nodes = [
@@ -51,6 +52,7 @@ export default function ManufacturersPage() {
 	return (
 		<AdminTableLayout>
 			<AdminManufacturersTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

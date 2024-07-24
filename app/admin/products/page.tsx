@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminProductsTable } from '@entities/Admin/ui/products';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ProductsPage() {
 	const nodes = [
@@ -158,6 +159,7 @@ export default function ProductsPage() {
 	return (
 		<AdminTableLayout>
 			<AdminProductsTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

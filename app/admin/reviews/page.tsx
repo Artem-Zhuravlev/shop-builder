@@ -5,6 +5,7 @@ import {
 	type AdminReviewsTableItem,
 	AdminReviewsFilter,
 } from '@entities/Admin/ui/reviews';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ReviewsPage() {
 	const nodes: AdminReviewsTableItem[] = [
@@ -103,6 +104,7 @@ export default function ReviewsPage() {
 	return (
 		<AdminTableLayout filter={<AdminReviewsFilter />}>
 			<AdminReviewsTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

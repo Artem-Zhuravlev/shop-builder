@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminInformationTable } from '@entities/Admin/ui/information';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function InformationPage() {
 	const nodes = [
@@ -33,6 +34,7 @@ export default function InformationPage() {
 	return (
 		<AdminTableLayout>
 			<AdminInformationTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

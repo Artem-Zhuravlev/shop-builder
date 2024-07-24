@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminDownloadsTable } from '@entities/Admin/ui/downloads';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function DownloadsPage() {
 	const nodes = [
@@ -75,6 +76,7 @@ export default function DownloadsPage() {
 	return (
 		<AdminTableLayout>
 			<AdminDownloadsTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

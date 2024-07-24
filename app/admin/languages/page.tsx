@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminLanguagesTable } from '@entities/Admin/ui/languages';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function LanguagesPage() {
 	const nodes = [
@@ -44,6 +45,7 @@ export default function LanguagesPage() {
 	return (
 		<AdminTableLayout>
 			<AdminLanguagesTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

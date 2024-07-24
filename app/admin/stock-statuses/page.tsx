@@ -1,6 +1,8 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminStockStatusTable } from '@entities/Admin/ui/stockStatus';
+import { PaginateBase } from '@shared/PaginateBase';
+
 export default function StockStatusesPage() {
 	const nodes = [
 		{
@@ -28,6 +30,7 @@ export default function StockStatusesPage() {
 	return (
 		<AdminTableLayout>
 			<AdminStockStatusTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

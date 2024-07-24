@@ -4,6 +4,7 @@ import {
 	AdminCustomersTable,
 	AdminCustomersFilter,
 } from '@entities/Admin/ui/customers';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function CustomersPage() {
 	const nodes = [
@@ -76,6 +77,7 @@ export default function CustomersPage() {
 	return (
 		<AdminTableLayout filter={<AdminCustomersFilter />}>
 			<AdminCustomersTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

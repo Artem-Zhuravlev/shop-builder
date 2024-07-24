@@ -5,6 +5,7 @@ import {
 	type AdminReturnsTableItem,
 	AdminReturnsFilter,
 } from '@entities/Admin/ui/returns';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ReturnsPage() {
 	const nodes: AdminReturnsTableItem[] = [
@@ -123,6 +124,7 @@ export default function ReturnsPage() {
 	return (
 		<AdminTableLayout filter={<AdminReturnsFilter />}>
 			<AdminReturnsTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

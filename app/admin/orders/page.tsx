@@ -5,6 +5,7 @@ import {
 	type AdminOrdersTableItem,
 	AdminOrdersFilter,
 } from '@entities/Admin/ui/orders';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function OrdersPage() {
 	const nodes: AdminOrdersTableItem[] = [
@@ -237,6 +238,7 @@ export default function OrdersPage() {
 	return (
 		<AdminTableLayout filter={<AdminOrdersFilter />}>
 			<AdminOrdersTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

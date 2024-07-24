@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminZonesFilter, AdminZonesTable } from '@entities/Admin/ui/zones';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ZonesPage() {
 	const nodes = [
@@ -30,6 +31,7 @@ export default function ZonesPage() {
 	return (
 		<AdminTableLayout filter={<AdminZonesFilter />}>
 			<AdminZonesTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

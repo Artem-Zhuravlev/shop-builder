@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminRecurringProfilesTable } from '@entities/Admin/ui/recurringProfiles';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function RecurringProfilesPage() {
 	const nodes = [
@@ -87,6 +88,7 @@ export default function RecurringProfilesPage() {
 	return (
 		<AdminTableLayout>
 			<AdminRecurringProfilesTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }

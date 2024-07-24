@@ -1,6 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import { AdminAttributeGroupTable } from '@entities/Admin/ui/attribute';
+import { PaginateBase } from '@shared/PaginateBase';
 
 export default function AttributeGroupPage() {
 	const nodes = [
@@ -33,6 +34,7 @@ export default function AttributeGroupPage() {
 	return (
 		<AdminTableLayout>
 			<AdminAttributeGroupTable nodes={nodes} />
+			<PaginateBase pageCount={5} />
 		</AdminTableLayout>
 	);
 }
