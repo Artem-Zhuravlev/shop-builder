@@ -98,4 +98,5 @@ export const admin = {
 	zone_code: 'Код зони',
 	geo_zone_name: 'Назва гео-зони',
 	settings: 'Налаштування',
+	customer_group_name: 'Назва групи клієнтів',
 };

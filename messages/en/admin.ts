@@ -99,4 +99,5 @@ export const admin = {
 	zone_code: 'Zone code',
 	geo_zone_name: 'Geo zone name',
 	settings: 'Settings',
+	customer_group_name: 'Customer group name',
 };
