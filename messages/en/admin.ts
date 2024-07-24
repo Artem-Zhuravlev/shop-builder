@@ -100,4 +100,8 @@ export const admin = {
 	geo_zone_name: 'Geo zone name',
 	settings: 'Settings',
 	customer_group_name: 'Customer group name',
+	customers: 'Customers',
+	customer_groups: 'Customer groups',
+	customer_group: 'Customer group',
+	email: 'Email',
 };
