@@ -5,6 +5,7 @@ import {
 	AdminCustomersAddressesForm,
 	AdminCustomersGeneralForm,
 	AdminCustomersHistoryForm,
+	AdminCustomersRewardPointsForm,
 } from './common';
 
 export const AdminCustomersForm: FC = () => {
@@ -25,7 +26,7 @@ export const AdminCustomersForm: FC = () => {
 		},
 		{
 			label: t('reward_points'),
-			description: 'Reward points',
+			description: <AdminCustomersRewardPointsForm />,
 		},
 	];
 
