@@ -263,4 +263,5 @@ export const inputs = {
 	zone: 'Zone',
 	store: 'Store',
 	newsletter: 'Newsletter',
+	approve_new_customers: 'Approve new customers',
 };

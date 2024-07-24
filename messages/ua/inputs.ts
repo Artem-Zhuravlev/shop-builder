@@ -264,4 +264,5 @@ export const inputs = {
 	zone: 'Зона',
 	store: 'Магазин',
 	newsletter: 'Розсилка',
+	approve_new_customers: 'Підтвердження нових клієнтів',
 };
