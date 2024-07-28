@@ -151,14 +151,14 @@ export const AdminSettingsImageForm: FC = () => {
 							className='col-md-6'
 							type='number'
 							name='store_image_width'
-							placeholder={t('inputs.cart_image_width')}
+							placeholder={t('inputs.store_image_width')}
 							required
 						/>
 						<InputText
 							className='col-md-6'
 							type='number'
 							name='store_image_height'
-							placeholder={t('inputs.cart_image_height')}
+							placeholder={t('inputs.store_image_height')}
 							required
 						/>
 					</FormLayout>

@@ -51,18 +51,21 @@ export const AdminSettingsOptionForm: FC = () => {
 					>
 						<h3 className='h4'>{t('base.products')}</h3>
 						<InputText
+							type='number'
 							className='col-md-4'
 							name='list_description_limit'
 							placeholder={t('inputs.list_description_limit')}
 							required
 						/>
 						<InputText
+							type='number'
 							className='col-md-4'
 							name='default_items_per_page'
 							placeholder={t('inputs.default_items_per_page')}
 							required
 						/>
 						<InputText
+							type='number'
 							className='col-md-4'
 							name='default_items_per_page_admin'
 							placeholder={t('inputs.default_items_per_page_admin')}
