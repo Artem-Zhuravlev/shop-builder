@@ -1,18 +1,22 @@
 {
-  "sourceType": "unambiguous",
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "chrome": 100,
-          "safari": 15,
-          "firefox": 91
-        }
-      }
-    ],
-    "@babel/preset-typescript",
-    "@babel/preset-react"
-  ],
-  "plugins": []
+	"sourceType": "unambiguous",
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"chrome": 100,
+					"safari": 15,
+					"firefox": 91
+				}
+			}
+		],
+		"@babel/preset-typescript",
+		"@babel/preset-react"
+	],
+	"plugins": [
+		["@babel/plugin-proposal-decorators", { "legacy": true }],
+		"@babel/plugin-proposal-class-properties",
+		"@babel/plugin-transform-private-methods"
+	]
 }
