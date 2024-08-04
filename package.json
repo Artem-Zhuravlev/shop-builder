@@ -18,6 +18,7 @@
 		"@emotion/react": "^11.11.4",
 		"@emotion/styled": "^11.11.0",
 		"@reduxjs/toolkit": "1.9.5",
+		"@sap/hana-client": "^2.21.28",
 		"@storybook/addon-a11y": "^8.2.6",
 		"@storybook/addon-styling-webpack": "^1.0.0",
 		"@table-library/react-table-library": "^4.1.7",
@@ -32,8 +33,10 @@
 		"final-form": "^4.20.10",
 		"final-form-arrays": "^3.1.0",
 		"html-to-draftjs": "^1.5.0",
+		"http-errors": "^2.0.0",
 		"leaflet": "^1.9.4",
 		"moment": "^2.30.1",
+		"mysql": "^2.18.1",
 		"next": "latest",
 		"next-intl": "^3.17.0",
 		"object-diff": "^0.0.4",
@@ -63,6 +66,9 @@
 		"uuid": "^9.0.1"
 	},
 	"devDependencies": {
+		"@babel/plugin-proposal-class-properties": "^7.18.6",
+		"@babel/plugin-proposal-decorators": "^7.24.7",
+		"@babel/plugin-transform-private-methods": "^7.24.7",
 		"@babel/preset-env": "^7.22.20",
 		"@babel/preset-react": "^7.22.15",
 		"@babel/preset-typescript": "^7.22.15",
