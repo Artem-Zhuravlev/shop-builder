@@ -12,6 +12,7 @@
     var(--space-medium);
   max-width: 250px;
   color: var(--gray-10);
+  animation: alert 1s;
 
   &:not(:last-of-type) {
     margin-bottom: var(--space-medium);
@@ -38,4 +39,15 @@
   height: var(--space-big);
   color: var(--gray-10);
   font-size: 10px;
+}
+
+@keyframes alert {
+  from {
+    opacity: 0;
+    transition: translateX(var(--size-middle));
+  }
+  to {
+    opacity: 1;
+    transition: translateX(0);
+  }
 }
