@@ -13,12 +13,15 @@ export const AlertBase: FC<AlertsProps> = (props) => {
 	const [alertItems, setAlertItems] = useState<AlertItemInterface[]>(alerts);
 
 	useEffect(() => {
-		setAlertItems(alerts);
+		const uniqueAlerts = alerts.filter(
+			(alert, index, self) =>
+				index === self.findIndex((a) => a.message === alert.message),
+		);
+		setAlertItems(uniqueAlerts);
 	}, [alerts]);
 
 	const handleClose = (index: number) => {
 		const updatedAlerts = alertItems.filter((_, i) => i !== index);
-
 		setAlertItems(updatedAlerts);
 	};
 
