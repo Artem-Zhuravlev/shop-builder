@@ -3,10 +3,13 @@ import { useTranslations } from 'next-intl';
 import React, { type FC } from 'react';
 import cls from '../AlertBase.module.scss';
 
-export interface AlertItemProps {
-	index: number;
+export interface AlertItemInterface {
 	message: string;
 	type: 'error' | 'success';
+}
+
+export interface AlertItemProps extends AlertItemInterface {
+	index: number;
 	onClose: (index: number) => void;
 }
 
