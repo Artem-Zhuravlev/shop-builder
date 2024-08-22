@@ -1,6 +1,6 @@
 import type { FindOperator } from 'typeorm';
 
-export interface UpdateSettingsInterface {
+export interface SettingsInterface {
 	id: number | FindOperator<number> | undefined;
 	meta_title?: string;
 	meta_description?: string;

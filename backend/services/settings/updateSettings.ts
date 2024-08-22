@@ -1,9 +1,9 @@
 import { getDatabaseConnection } from '../../config/data-source';
 import { Settings } from '../../entities/Settings';
-import type { UpdateSettingsInterface } from './interfaces/updateSettings.interface';
+import type { SettingsInterface } from './interfaces/updateSettings.interface';
 
 export const updateSettings = async (
-	data: UpdateSettingsInterface,
+	data: SettingsInterface,
 ): Promise<Settings> => {
 	const connection = await getDatabaseConnection();
 
