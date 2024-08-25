@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminRecurringProfilesForm } from '@entities/Admin/ui/recurringProfiles';
+import { AdminRecurringProfilesForm } from '@entities/Admin';
 
 export default function RecurringProfilesFormPage({
 	params,

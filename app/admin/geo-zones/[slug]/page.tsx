@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminGeoZonesForm } from '@entities/Admin/ui/geoZones';
+import { AdminGeoZonesForm } from '@entities/Admin';
 
 export default function GeoZonesFormPage({
 	params,

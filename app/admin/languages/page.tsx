@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminLanguagesTable } from '@entities/Admin/ui/languages';
+import { AdminLanguagesTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function LanguagesPage() {

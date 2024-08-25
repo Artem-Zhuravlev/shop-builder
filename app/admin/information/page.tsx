@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminInformationTable } from '@entities/Admin/ui/information';
+import { AdminInformationTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function InformationPage() {

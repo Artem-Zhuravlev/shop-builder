@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminLanguagesForm } from '@entities/Admin/ui/languages';
+import { AdminLanguagesForm } from '@entities/Admin';
 
 export default function LanguagesFormPage({
 	params,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminAttributesTable } from '@entities/Admin/ui/attribute';
+import { AdminAttributesTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function AttributesPage() {

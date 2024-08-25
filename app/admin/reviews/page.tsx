@@ -4,7 +4,7 @@ import {
 	AdminReviewsTable,
 	type AdminReviewsTableItem,
 	AdminReviewsFilter,
-} from '@entities/Admin/ui/reviews';
+} from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ReviewsPage() {

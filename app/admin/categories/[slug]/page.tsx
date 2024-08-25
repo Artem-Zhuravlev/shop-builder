@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminCategoriesForm } from '@entities/Admin/ui/categories';
+import { AdminCategoriesForm } from '@entities/Admin';
 
 export default function CategoriesFormPage({
 	params,

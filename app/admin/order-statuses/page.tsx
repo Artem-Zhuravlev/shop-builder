@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminOrderStatusTable } from '@entities/Admin/ui/orderStatus';
+import { AdminOrderStatusTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function OrderStatusesPage() {

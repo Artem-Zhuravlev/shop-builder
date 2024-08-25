@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminGeoZonesTable } from '@entities/Admin/ui/geoZones';
+import { AdminGeoZonesTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function StockStatusesPage() {

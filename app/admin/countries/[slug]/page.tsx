@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminCountriesForm } from '@entities/Admin/ui/countries';
+import { AdminCountriesForm } from '@entities/Admin';
 
 export default function CountriesFormPage({
 	params,

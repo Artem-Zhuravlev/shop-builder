@@ -1,9 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import {
-	AdminCountriesTable,
-	AdminCountriesFilter,
-} from '@entities/Admin/ui/countries';
+import { AdminCountriesTable, AdminCountriesFilter } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ReturnsPage() {

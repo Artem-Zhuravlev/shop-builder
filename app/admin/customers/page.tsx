@@ -1,9 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import {
-	AdminCustomersTable,
-	AdminCustomersFilter,
-} from '@entities/Admin/ui/customers';
+import { AdminCustomersTable, AdminCustomersFilter } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function CustomersPage() {

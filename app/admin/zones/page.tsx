@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminZonesFilter, AdminZonesTable } from '@entities/Admin/ui/zones';
+import { AdminZonesFilter, AdminZonesTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ZonesPage() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminProductsForm } from '@entities/Admin/ui/products';
+import { AdminProductsForm } from '@entities/Admin';
 
 export default function ProductsFormPage({
 	params,

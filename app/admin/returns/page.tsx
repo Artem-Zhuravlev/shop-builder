@@ -4,7 +4,7 @@ import {
 	AdminReturnsTable,
 	type AdminReturnsTableItem,
 	AdminReturnsFilter,
-} from '@entities/Admin/ui/returns';
+} from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ReturnsPage() {

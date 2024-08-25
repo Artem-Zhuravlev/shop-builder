@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminZonesForm } from '@entities/Admin/ui/zones';
+import { AdminZonesForm } from '@entities/Admin';
 
 export default function ZonesFormPage({
 	params,

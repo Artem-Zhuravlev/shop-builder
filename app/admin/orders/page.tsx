@@ -4,7 +4,7 @@ import {
 	AdminOrdersTable,
 	type AdminOrdersTableItem,
 	AdminOrdersFilter,
-} from '@entities/Admin/ui/orders';
+} from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function OrdersPage() {

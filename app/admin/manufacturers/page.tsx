@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminManufacturersTable } from '@entities/Admin/ui/manufacturers';
+import { AdminManufacturersTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function ManufacturersPage() {

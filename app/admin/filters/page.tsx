@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminFiltersTable } from '@entities/Admin/ui/filters';
+import { AdminFiltersTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function FiltersPage() {

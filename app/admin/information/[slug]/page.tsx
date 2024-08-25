@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminInformationForm } from '@entities/Admin/ui/information';
+import { AdminInformationForm } from '@entities/Admin';
 
 export default function InformationFormPage({
 	params,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminDownloadsTable } from '@entities/Admin/ui/downloads';
+import { AdminDownloadsTable } from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function DownloadsPage() {

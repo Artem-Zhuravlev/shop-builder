@@ -3,7 +3,7 @@ import { AdminTableLayout } from '@widgets/AdminTableLayout';
 import {
 	AdminCurrencyTable,
 	type AdminCurrencyTableItem,
-} from '@entities/Admin/ui/currencies';
+} from '@entities/Admin';
 import { PaginateBase } from '@shared/PaginateBase';
 
 export default function CurrenciesPage() {
