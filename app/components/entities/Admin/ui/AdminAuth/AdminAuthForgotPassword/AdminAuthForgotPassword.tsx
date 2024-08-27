@@ -1,9 +1,10 @@
+'use client';
 import { ADMIN_ROUTES } from '@constants/admin-routes.constants';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputText } from '@shared/inputs';
 import { emailValidate } from '@utils/validations';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 import { AdminAuthWrapper } from '../AdminAuthWrapper/AdminAuthWrapper';
