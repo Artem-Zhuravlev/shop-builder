@@ -1,5 +1,5 @@
-import { StorybookConfig } from '@storybook/nextjs';
-import path from 'path';
+import type { StorybookConfig } from '@storybook/nextjs';
+import path from 'node:path';
 
 const config: StorybookConfig = {
 	stories: ['../app/**/*.stories.@(js|jsx|ts|tsx)'],
