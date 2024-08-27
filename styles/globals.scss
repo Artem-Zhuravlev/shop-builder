@@ -96,7 +96,11 @@ h6 {
 }
 
 .mb-30 {
-  margin-bottom: var(--size-small);
+  margin-bottom: var(--size-small)!important;
+}
+
+.mt-30 {
+  margin-top: var(--size-small)!important;
 }
 
 input::-webkit-outer-spin-button,
