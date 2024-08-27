@@ -1,11 +1,14 @@
 import React from 'react';
 import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminSettingsTable } from '@entities/Admin/ui/settings';
+import {
+	AdminSettingsTable,
+	type AdminSettingsTableItem,
+} from '@entities/Admin/ui/settings';
 import { PaginateBase } from '@shared/PaginateBase';
 import { getApiSettings } from '@shared/api/admin';
 
 export default async function SettingsPage() {
-	const nodes = await getApiSettings();
+	const nodes: AdminSettingsTableItem[] = await getApiSettings();
 
 	return (
 		<AdminTableLayout>
