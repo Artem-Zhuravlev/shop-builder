@@ -1,3 +1,4 @@
+'use client';
 import { ButtonBase } from '@shared/ButtonBase';
 import { InputPassword, InputText } from '@shared/inputs';
 import { nameValidate, passwordValidate } from '@utils/validations';
