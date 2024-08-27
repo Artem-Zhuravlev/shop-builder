@@ -2,7 +2,7 @@
 import { InputSelect, InputText } from '@shared/inputs';
 import { postCodeValidate } from '@utils/validations';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
 import { AccountFormControls } from '../AccountFormControls/AccountFormControls';
