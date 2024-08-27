@@ -1,2 +1,5 @@
 export { AdminSettingsForm } from './AdminSettingsForm/AdminSettingsForm';
-export { AdminSettingsTable } from './AdminSettingsTable/AdminSettingsTable';
+export {
+	AdminSettingsTable,
+	type AdminSettingsTableItem,
+} from './AdminSettingsTable/AdminSettingsTable';
