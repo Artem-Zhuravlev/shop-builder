@@ -4,6 +4,11 @@ import { AdminCountriesForm } from './AdminCountriesForm';
 export default {
 	title: 'Entities/Admin/Countries/AdminCountriesForm',
 	component: AdminCountriesForm,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminCountriesForm>;
 
 const Template: StoryFn<typeof AdminCountriesForm> = (args) => {

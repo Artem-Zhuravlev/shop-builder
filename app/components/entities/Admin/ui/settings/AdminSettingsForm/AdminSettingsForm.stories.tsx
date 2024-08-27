@@ -4,6 +4,11 @@ import { AdminSettingsForm } from './AdminSettingsForm';
 export default {
 	title: 'Entities/Admin/Settings/AdminSettingsForm',
 	component: AdminSettingsForm,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminSettingsForm>;
 
 const Template: StoryFn<typeof AdminSettingsForm> = (args) => {

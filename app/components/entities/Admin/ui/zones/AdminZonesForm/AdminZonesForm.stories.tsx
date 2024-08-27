@@ -4,6 +4,11 @@ import { AdminZonesForm } from './AdminZonesForm';
 export default {
 	title: 'Entities/Admin/Zones/AdminZonesForm',
 	component: AdminZonesForm,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminZonesForm>;
 
 const Template: StoryFn<typeof AdminZonesForm> = (args) => {

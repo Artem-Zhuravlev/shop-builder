@@ -4,6 +4,11 @@ import { AdminLanguagesForm } from './AdminLanguagesForm';
 export default {
 	title: 'Entities/Admin/Languages/AdminLanguagesForm',
 	component: AdminLanguagesForm,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminLanguagesForm>;
 
 const Template: StoryFn<typeof AdminLanguagesForm> = (args) => {

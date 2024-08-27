@@ -4,6 +4,11 @@ import { AdminOrderStatusForm } from './AdminOrderStatusForm';
 export default {
 	title: 'Entities/Admin/Order Status/AdminOrderStatusForm',
 	component: AdminOrderStatusForm,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminOrderStatusForm>;
 
 const Template: StoryFn<typeof AdminOrderStatusForm> = (args) => {

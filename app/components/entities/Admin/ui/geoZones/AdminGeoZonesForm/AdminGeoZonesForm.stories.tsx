@@ -4,6 +4,11 @@ import { AdminGeoZonesForm } from './AdminGeoZonesForm';
 export default {
 	title: 'Entities/Admin/Geo Zones/AdminGeoZonesForm',
 	component: AdminGeoZonesForm,
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 } as Meta<typeof AdminGeoZonesForm>;
 
 const Template: StoryFn<typeof AdminGeoZonesForm> = (args) => {
