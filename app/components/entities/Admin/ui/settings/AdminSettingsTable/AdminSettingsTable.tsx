@@ -23,7 +23,7 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 
-interface AdminSettingsTableItem extends TableNode {
+export interface AdminSettingsTableItem extends TableNode {
 	id: string | number;
 	store_name: string;
 	store_url: string;
