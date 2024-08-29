@@ -149,8 +149,8 @@ export class Settings {
 	@Column({ type: 'boolean', nullable: false, default: false })
 	billing_address_required!: boolean;
 
-	@Column({ type: 'boolean', nullable: false, default: false })
-	checkout_terms!: boolean;
+	@Column({ type: 'json', nullable: true })
+	checkout_terms!: object;
 
 	@Column({ type: 'json', nullable: true })
 	processing_order_status!: object;
