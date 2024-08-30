@@ -104,7 +104,7 @@ export class Settings {
 	@Column({ type: 'boolean', nullable: false, default: false })
 	display_prices_with_tax!: boolean;
 
-	@Column({ type: 'boolean', nullable: false, default: false })
+	@Column({ type: 'json', nullable: true })
 	use_store_tax_address!: object;
 
 	@Column({ type: 'json', nullable: true })
