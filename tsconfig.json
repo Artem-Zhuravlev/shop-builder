@@ -3,15 +3,7 @@
 	"compilerOptions": {
 		"baseUrl": "./",
 		"paths": {
-			"@shared/*": ["app/components/shared/*"],
-			"@features/*": ["app/components/features/*"],
-			"@entities/*": ["app/components/entities/*"],
-			"@widgets/*": ["app/components/widgets/*"],
-			"@lib/*": ["app/lib/*"],
-			"@utils/*": ["utils/*"],
-			"@constants/*": ["constants/*"],
-			"@styles/*": ["styles/*"],
-			"@hooks/*": ["hooks/*"],
+			"@/*": ["src/*"],
 			"@interfaces/*": ["interfaces/*"]
 		},
 		"target": "ESNext",
@@ -37,7 +29,7 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"app/components/shared/inputs/AutoSave/AutoSave.jsx",
+		"src/components/shared/inputs/AutoSave/AutoSave.jsx",
 		"i18n.ts"
 	],
 	"exclude": ["node_modules"]

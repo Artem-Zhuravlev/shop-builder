@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/nextjs';
 import path from 'node:path';
 
 const config: StorybookConfig = {
-	stories: ['../app/**/*.stories.@(js|jsx|ts|tsx)'],
+	stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
 
 	addons: [
 		'@storybook/addon-links',
@@ -44,15 +44,7 @@ const config: StorybookConfig = {
 	webpackFinal: async (config) => {
 		if (config?.resolve) {
 			const alias = {
-				'@shared': path.resolve(__dirname, '../app/components/shared'),
-				'@features': path.resolve(__dirname, '../app/components/features'),
-				'@widgets': path.resolve(__dirname, '../app/components/widgets'),
-				'@entities': path.resolve(__dirname, '../app/components/entities'),
-				'@lib': path.resolve(__dirname, '../app/lib'),
-				'@utils': path.resolve(__dirname, '../utils'),
-				'@constants': path.resolve(__dirname, '../constants'),
-				'@styles': path.resolve(__dirname, '../styles'),
-				'@hooks': path.resolve(__dirname, '../hooks'),
+				'@/': path.resolve(__dirname, '../src'),
 				'@interfaces': path.resolve(__dirname, '../interfaces'),
 				'/fonts': path.resolve(__dirname, '../public/fonts'),
 				'next/image': path.resolve(__dirname, './mocks/Image.tsx'),
