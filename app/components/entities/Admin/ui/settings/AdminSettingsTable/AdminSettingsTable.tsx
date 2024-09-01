@@ -27,7 +27,6 @@ export interface AdminSettingsTableItem extends TableNode {
 	id: string | number;
 	store_name: string;
 	store_url: string;
-	slug: string;
 }
 
 interface AdminSettingsTableProps {
@@ -75,7 +74,7 @@ export const AdminSettingsTable: FC<AdminSettingsTableProps> = (props) => {
 								<Cell>
 									<ButtonBase
 										onClick={() =>
-											router.push(`${ADMIN_ROUTES.settings}/${item.slug}`)
+											router.push(`${ADMIN_ROUTES.settings}/${item.id}`)
 										}
 									>
 										<span className='icon-pencil' />
