@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
-		"baseUrl": ".",
+		"baseUrl": "./",
 		"paths": {
 			"@shared/*": ["app/components/shared/*"],
 			"@features/*": ["app/components/features/*"],
@@ -11,7 +11,8 @@
 			"@utils/*": ["utils/*"],
 			"@constants/*": ["constants/*"],
 			"@styles/*": ["styles/*"],
-			"@hooks/*": ["hooks/*"]
+			"@hooks/*": ["hooks/*"],
+			"@interfaces/*": ["interfaces/*"]
 		},
 		"target": "ESNext",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
