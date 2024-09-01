@@ -1,10 +1,10 @@
 import { getDatabaseConnection } from '../../config/data-source';
 import { Settings } from '../../entities/Settings';
-import type { SettingsInterface } from './interfaces/settings.interface';
+import type { RequestSettingsInterface } from './interfaces/settings.interface';
 
 export const updateSettings = async (
 	id: number,
-	data: SettingsInterface,
+	data: RequestSettingsInterface,
 ): Promise<Settings> => {
 	const connection = await getDatabaseConnection();
 
