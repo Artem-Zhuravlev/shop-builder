@@ -14,5 +14,17 @@ export const fetchApi = async <T>(
 ): Promise<T> => {
 	const response = await fetch(`${apiBaseUrl}/api${endpoint}`, config);
 
+	// Check if the response is OK (status code 200-299)
+	if (!response.ok) {
+		const errorText = await response.text(); // Get raw response text
+		throw new Error(`Error: ${response.status} - ${errorText}`);
+	}
+
+	// Check if the response is JSON
+	const contentType = response.headers.get('content-type');
+	if (!contentType || !contentType.includes('application/json')) {
+		throw new Error(`Expected JSON but received ${contentType}`);
+	}
+
 	return response.json() as Promise<T>;
 };
