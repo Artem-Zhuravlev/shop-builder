@@ -1,6 +1,3 @@
-import type { AdminSettingsTableItem } from '@entities/Admin/ui/settings';
-import { fetchApi } from '@utils/fetchApi';
-
 /**
  * Fetches the application settings for a specific ID from the API.
  *
