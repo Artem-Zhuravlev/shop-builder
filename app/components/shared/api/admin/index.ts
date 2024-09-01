@@ -1,1 +1,1 @@
-export { getApiSettings, getApiSettingsById } from '../admin/settings/settings';
+export * from './settings';
