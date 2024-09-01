@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import type { Preview } from '@storybook/react';
-import { Providers } from '../app/lib/providers';
+import { Providers } from '../src/lib/providers';
 import { NextIntlClientProvider } from 'next-intl';
-import en from '../messages/en';
-import ua from '../messages/ua'; // Assuming you have messages for French
-import '../styles/globals.scss';
+import en from '../src/messages/en';
+import ua from '../src/messages/ua'; // Assuming you have messages for French
+import '../src/styles/globals.scss';
 
 // Language switcher component
 const LanguageSwitcher = ({ onChange }) => {
 	return (
 		<div style={{ marginBottom: '20px', display: 'flex', gap: '20px' }}>
+			{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
 			<button onClick={() => onChange('en')}>English</button>
+			{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
 			<button onClick={() => onChange('ua')}>Українська</button>
 		</div>
 	);
 };
 
 const preview: Preview = {
-    parameters: {
+	parameters: {
 		// actions: { argTypesRegex: '^on[A-Z].*' },
 		controls: {
 			matchers: {
@@ -27,7 +29,7 @@ const preview: Preview = {
 		},
 	},
 
-    decorators: [
+	decorators: [
 		(Story) => {
 			const [locale, setLocale] = useState('en');
 
@@ -42,9 +44,7 @@ const preview: Preview = {
 
 			return (
 				<Providers>
-					<NextIntlClientProvider
-						locale={locale}
-						messages={messages[locale]}>
+					<NextIntlClientProvider locale={locale} messages={messages[locale]}>
 						<>
 							<LanguageSwitcher onChange={handleLocaleChange} />
 							<Story />
@@ -55,7 +55,7 @@ const preview: Preview = {
 		},
 	],
 
-    tags: ['autodocs']
+	tags: ['autodocs'],
 };
 
 export default preview;
