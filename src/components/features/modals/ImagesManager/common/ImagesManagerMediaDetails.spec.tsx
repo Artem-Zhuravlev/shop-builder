@@ -10,10 +10,12 @@ jest.mock('next-intl', () => ({
 }));
 
 // Mock the ButtonBase component
-jest.mock('@shared/ButtonBase', () => ({
+jest.mock('@/components/shared/ButtonBase', () => ({
 	// @ts-ignore
 	ButtonBase: ({ children, variant }) => (
-		<button type="button" className={`btn-${variant}`}>{children}</button>
+		<button type='button' className={`btn-${variant}`}>
+			{children}
+		</button>
 	),
 }));
 
@@ -26,7 +28,7 @@ describe('ImagesManagerMediaDetails', () => {
 	beforeEach(() => {
 		(useTranslations as jest.Mock).mockReturnValue(
 			// @ts-ignore
-			(key: string) => mockTranslations[key]
+			(key: string) => mockTranslations[key],
 		);
 	});
 
@@ -45,16 +47,16 @@ describe('ImagesManagerMediaDetails', () => {
 		expect(screen.getByRole('img')).toHaveAttribute('alt', '');
 
 		expect(
-			screen.getByText(mockTranslations['admin.attach_file_details'])
+			screen.getByText(mockTranslations['admin.attach_file_details']),
 		).toBeInTheDocument();
 		expect(screen.getByText(props.fileName)).toBeInTheDocument();
 		expect(
-			screen.getByText(new Date(props.publishedAt).toLocaleDateString())
+			screen.getByText(new Date(props.publishedAt).toLocaleDateString()),
 		).toBeInTheDocument();
 		expect(screen.getByText(props.size)).toBeInTheDocument();
 		expect(screen.getAllByText(props.resolution)).toHaveLength(2);
 		expect(
-			screen.getByText(mockTranslations['base.delete'])
+			screen.getByText(mockTranslations['base.delete']),
 		).toBeInTheDocument();
 	});
 
