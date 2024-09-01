@@ -1,0 +1,44 @@
+@import '@/styles/abstracts/mixins.scss';
+.InputSizes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-extra-small);
+  @extend %listreset;
+}
+
+.InputSizesItem {
+  display: flex;
+}
+
+.InputSizesLabel {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  input[type='radio'],
+  input[type='checkbox'] {
+    &:checked + .InputSizesContent {
+      border-color: var(--gray-90);
+      background-color: var(--gray-90);
+      color: var(--gray-10);
+    }
+  }
+
+  &:focus-within {
+    .InputSizesContent {
+      border-color: var(--gray-90);
+    }
+  }
+}
+
+.InputSizesContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--gray-40);
+  padding: 0 var(--space-extra-small);
+  min-width: var(--size-middle);
+  min-height: var(--size-middle);
+}

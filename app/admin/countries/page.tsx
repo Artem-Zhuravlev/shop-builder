@@ -1,7 +1,10 @@
 import React from 'react';
-import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminCountriesTable, AdminCountriesFilter } from '@entities/Admin';
-import { PaginateBase } from '@shared/PaginateBase';
+import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
+import {
+	AdminCountriesTable,
+	AdminCountriesFilter,
+} from '@/components/entities/Admin';
+import { PaginateBase } from '@/components/shared/PaginateBase';
 
 export default function ReturnsPage() {
 	const nodes = [

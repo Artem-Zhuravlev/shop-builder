@@ -1,11 +1,11 @@
 import React from 'react';
-import { AdminTableLayout } from '@widgets/AdminTableLayout';
+import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
 import {
 	AdminReviewsTable,
 	type AdminReviewsTableItem,
 	AdminReviewsFilter,
-} from '@entities/Admin';
-import { PaginateBase } from '@shared/PaginateBase';
+} from '@/components/entities/Admin';
+import { PaginateBase } from '@/components/shared/PaginateBase';
 
 export default function ReviewsPage() {
 	const nodes: AdminReviewsTableItem[] = [

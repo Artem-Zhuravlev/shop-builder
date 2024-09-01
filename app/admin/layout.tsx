@@ -1,5 +1,5 @@
 import React, { type ReactNode } from 'react';
-import { AdminHeader, AdminSidebar } from '@entities/Admin';
+import { AdminHeader, AdminSidebar } from '@/components/entities/Admin';
 import cls from './AdminLayout.module.scss';
 
 interface LocaleLayoutProps {

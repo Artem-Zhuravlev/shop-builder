@@ -1,0 +1,73 @@
+@import '@/styles/abstracts/mixins.scss';
+
+.AdminSidebar {
+  background-color: var(--gray-90);
+  height: 100dvh;
+  max-height: calc(100dvh - 70px);
+  overflow: auto;
+  z-index: 2;
+  @extend %scroll-bar;
+  &::-webkit-scrollbar-thumb {
+    background-color: #000;
+  }
+
+  & > .SidebarList > li {
+    border-bottom: 1px solid var(--gray-60);
+  }
+}
+
+.SidebarList {
+  @extend %listreset;
+
+  & .SidebarList {
+    background-color: var(--gray-70);
+    padding-left: var(--space-small);
+
+    .SidebarItemLink:hover,
+    .SidebarItemBtn:hover {
+      background-color: var(--gray-80);
+    }
+  }
+}
+
+.SidebarItemLink,
+.SidebarItemBtn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-small);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: var(--space-small) var(--space-medium);
+  width: 100%;
+  color: var(--info-secondary);
+  font-size: var(--font-size-lg);
+  transition: var(--transition-base) background-color;
+}
+
+.SidebarItemLinkActive {
+  background-color: var(--gray-80);
+}
+
+.SidebarItemBtn {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    right: var(--space-medium);
+    transform: rotate(315deg);
+    transform-origin: 50%;
+    border-right: 1px solid var(--info-secondary);
+    border-bottom: 1px solid var(--info-secondary);
+    width: var(--interface-size-md);
+    height: var(--interface-size-md);
+    content: '';
+  }
+}
+
+.SidebarItemBtnOpen {
+  &::after {
+    transform: rotate(45deg);
+  }
+}

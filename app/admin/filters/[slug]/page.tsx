@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminFiltersForm } from '@entities/Admin';
+import { AdminFiltersForm } from '@/components/entities/Admin';
 
 export default function CategoriesFormPage({
 	params,

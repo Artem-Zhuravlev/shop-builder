@@ -1,6 +1,6 @@
 import React from 'react';
-import { AdminSettingsForm } from '@entities/Admin/ui/settings';
-import { getApiSettingsById } from '@shared/api/admin';
+import { AdminSettingsForm } from '@/components/entities/Admin/ui/settings';
+import { getApiSettingsById } from '@/components/shared/api/admin';
 
 export default async function SettingsFormPage({
 	params,

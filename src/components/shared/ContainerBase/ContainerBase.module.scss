@@ -1,0 +1,18 @@
+@import '@/styles/abstracts/mixins.scss';
+
+.ContainerBase {
+  margin: 0 auto;
+  padding-right: var(--size-extra-small);
+  padding-left: var(--size-extra-small);
+  width: 100%;
+  max-width: 1170px;
+
+  @include media('<tablet') {
+    padding-right: var(--space-medium);
+    padding-left: var(--space-medium);
+  }
+}
+
+.small {
+  max-width: 600px;
+}

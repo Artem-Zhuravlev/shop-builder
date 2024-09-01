@@ -1,7 +1,7 @@
 import React from 'react';
-import { AdminTableLayout } from '@widgets/AdminTableLayout';
-import { AdminOrderStatusTable } from '@entities/Admin';
-import { PaginateBase } from '@shared/PaginateBase';
+import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
+import { AdminOrderStatusTable } from '@/components/entities/Admin';
+import { PaginateBase } from '@/components/shared/PaginateBase';
 
 export default function OrderStatusesPage() {
 	const nodes = [

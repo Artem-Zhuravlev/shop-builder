@@ -1,0 +1,50 @@
+@import '@/styles/abstracts/mixins.scss';
+
+.Header {
+  max-width: 100%;
+}
+
+.HeaderTop {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  align-items: center;
+  padding: var(--space-extra-small) 0;
+  @include media('<tablet') {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.HeaderBottom {
+  background-color: var(--warning-border);
+  @include media('<tablet') {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    transition: var(--transition-base);
+    box-shadow: -2px 0px 4px var(--gray-40);
+    background-color: var(--gray-20);
+    width: 100%;
+    max-width: 300px;
+    min-height: 100vh;
+  }
+}
+
+.HeaderBottomActive {
+  @include media('<tablet') {
+    left: 0;
+  }
+}
+
+.HeaderBottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--size-extra-small);
+
+  @include media('<tablet') {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+  }
+}

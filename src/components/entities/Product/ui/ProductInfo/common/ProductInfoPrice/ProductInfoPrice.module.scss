@@ -1,0 +1,34 @@
+@import '@/styles/abstracts/mixins.scss';
+
+.ProductInfoPrice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-medium);
+}
+
+.ProductInfoCurrentPrice {
+  margin-bottom: 0;
+}
+
+.ProductInfoOldPrice {
+  color: var(--gray-50);
+}
+
+.ProductInfoDiscount {
+  display: flex;
+  align-items: center;
+  gap: var(--interface-size-sm);
+  color: var(--success-main);
+
+  span {
+    color: var(--gray-60);
+  }
+}
+
+.ProductInfoTimer {
+  margin-left: auto;
+  @include media('<520px') {
+    margin-left: 0;
+  }
+}

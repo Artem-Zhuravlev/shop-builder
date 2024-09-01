@@ -1,0 +1,62 @@
+@import '@/styles/abstracts/mixins.scss';
+.DiscountTimer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  background-color: var(--gray-20);
+  background: linear-gradient(172deg, var(--gray-20) 50%, var(--gray-30) 50%);
+  padding-top: var(--space-medium);
+  padding-bottom: var(--space-medium);
+  @include media('<desktop') {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--size-extra-small);
+  }
+
+  @include media('<phone') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.DiscountTimerCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:first-of-type {
+    @include media('<desktop') {
+      grid-column: 1 / 3;
+    }
+    @include media('<phone') {
+      grid-column: auto;
+    }
+  }
+}
+
+.DiscountTimerAdv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--warning-main);
+  width: 200px;
+  height: 200px;
+  color: var(--gray-10);
+  font-size: 18px;
+  @include media('<tablet') {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.DiscountTimerAdvValue {
+  font-weight: 700;
+  font-size: 52px;
+  @include media('<tablet') {
+    font-size: 32px;
+  }
+}
+
+.DiscountTimerImage {
+  max-width: 80%;
+}

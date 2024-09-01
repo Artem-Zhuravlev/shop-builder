@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminOptionsForm } from '@entities/Admin';
+import { AdminOptionsForm } from '@/components/entities/Admin';
 
 export default function OptionsFormPage({
 	params,

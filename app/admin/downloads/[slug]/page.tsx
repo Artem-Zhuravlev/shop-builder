@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminDownloadsForm } from '@entities/Admin';
+import { AdminDownloadsForm } from '@/components/entities/Admin';
 
 export default function DownloadsFormPage({
 	params,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminCurrencyForm } from '@entities/Admin';
+import { AdminCurrencyForm } from '@/components/entities/Admin';
 
 export default function CategoriesFormPage({
 	params,

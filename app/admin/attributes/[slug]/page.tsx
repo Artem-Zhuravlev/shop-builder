@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminAttributesForm } from '@entities/Admin';
+import { AdminAttributesForm } from '@/components/entities/Admin';
 
 export default function AttributesFormPage({
 	params,

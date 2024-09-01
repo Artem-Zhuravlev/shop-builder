@@ -1,11 +1,11 @@
 import React from 'react';
-import { AdminTableLayout } from '@widgets/AdminTableLayout';
+import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
 import {
 	AdminOrdersTable,
 	type AdminOrdersTableItem,
 	AdminOrdersFilter,
-} from '@entities/Admin';
-import { PaginateBase } from '@shared/PaginateBase';
+} from '@/components/entities/Admin';
+import { PaginateBase } from '@/components/shared/PaginateBase';
 
 export default function OrdersPage() {
 	const nodes: AdminOrdersTableItem[] = [

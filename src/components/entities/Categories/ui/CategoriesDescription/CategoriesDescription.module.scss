@@ -1,0 +1,14 @@
+@import '@/styles/abstracts/mixins.scss';
+
+.CategoriesDescriptionContent {
+  display: flex;
+  gap: var(--space-medium);
+
+  p {
+    margin: 0;
+  }
+
+  @include media('<tablet') {
+    flex-direction: column;
+  }
+}

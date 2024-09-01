@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminStockStatusForm } from '@entities/Admin';
+import { AdminStockStatusForm } from '@/components/entities/Admin';
 
 export default function StockStatusesFormPage({
 	params,

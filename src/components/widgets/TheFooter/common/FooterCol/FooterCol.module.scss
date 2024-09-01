@@ -1,0 +1,60 @@
+@import '@/styles/abstracts/mixins.scss';
+.FooterCol {
+  color: var(--gray-10);
+}
+
+.FooterTitle {
+  margin-bottom: var(--space-medium);
+  border-bottom: 2px solid var(--info-colors);
+  padding-bottom: var(--space-small);
+  color: var(--gray-10);
+}
+
+.FooterDescription {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+.FooterList {
+  @extend %listreset;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-small);
+}
+
+.FooterListItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+}
+
+.FooterListLink {
+  display: block;
+  position: relative;
+  transition: var(--transition-base);
+  padding-bottom: var(--space-extra-small);
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    transition: var(--transition-base);
+    background-color: var(--warning-main);
+    width: 0;
+    height: 2px;
+    content: '';
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--warning-main);
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:focus {
+    outline-color: transparent;
+  }
+}

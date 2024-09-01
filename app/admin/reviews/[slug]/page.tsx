@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminReviewsForm } from '@entities/Admin';
+import { AdminReviewsForm } from '@/components/entities/Admin';
 
 export default function ReviewsFormPage({
 	params,

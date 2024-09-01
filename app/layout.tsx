@@ -1,9 +1,10 @@
+// biome-ignore lint/style/useImportType: <explanation>
 import React from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
-import { Providers } from '@lib/providers';
+import { Providers } from '@/lib/providers';
 
-import '@styles/globals.scss';
+import '@/styles/globals.scss';
 
 export default async function RootLayout({
 	children,
