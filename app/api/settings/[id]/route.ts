@@ -1,7 +1,5 @@
-import { getApiSettingsById } from '@/components/shared/api/admin';
 import type { SettingsInterface } from '@interfaces/settings';
-import { updateSettings } from 'backend/services/settings/updateSettings';
-import type { NextApiRequest } from 'next';
+import { getByIdSettings, updateSettings } from 'backend/services/settings';
 import { type NextRequest, NextResponse } from 'next/server';
 
 export async function PUT(request: NextRequest, context: any) {
@@ -24,12 +22,12 @@ export async function PUT(request: NextRequest, context: any) {
 	}
 }
 
-export async function GET(context: any) {
+export async function GET(_: any, context: { params: { id: number } }) {
 	try {
 		const { params } = context;
 		const id: number = Number(params.id);
 
-		const settings = await getApiSettingsById(id);
+		const settings = await getByIdSettings(id);
 
 		return NextResponse.json(settings, { status: 200 });
 	} catch (error) {
@@ -37,7 +35,7 @@ export async function GET(context: any) {
 		const errorMessage =
 			error instanceof Error ? error.message : 'Unknown error occurred';
 		return NextResponse.json(
-			{ message: 'Error updating settings', error: errorMessage },
+			{ message: 'Error getting settings', error: errorMessage },
 			{ status: 500 },
 		);
 	}
