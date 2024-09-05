@@ -1,5 +1,4 @@
-import { createSettings } from 'backend/services/settings/createSettings';
-import { getSettings } from 'backend/services/settings/getSettings';
+import { createSettings, getSettings } from 'backend/services/settings';
 import type { SettingsInterface } from '@interfaces/settings';
 import { type NextRequest, NextResponse } from 'next/server';
 
@@ -8,7 +7,6 @@ export async function GET() {
 		let settingsInput: SettingsInterface | undefined;
 		const settings = await getSettings(settingsInput);
 
-		// Возвращаем результат, даже если settings пустой
 		return NextResponse.json(settings, { status: 200 });
 	} catch (error) {
 		const errorMessage =
