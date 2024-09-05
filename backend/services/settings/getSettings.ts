@@ -4,6 +4,7 @@ import type { RequestSettingsInterface } from './interfaces/settings.interface';
 
 export const getSettings = async (
 	data?: RequestSettingsInterface,
+	id?: number,
 ): Promise<Settings[]> => {
 	const connection = await getDatabaseConnection();
 
@@ -20,4 +21,19 @@ export const getSettings = async (
 	}
 
 	return settingsRecords;
+};
+
+export const getByIdSettings = async (id: number): Promise<Settings | null> => {
+	const connection = await getDatabaseConnection();
+
+	try {
+		const settingsRecord = await connection.manager.findOne(Settings, {
+			where: { id },
+		});
+
+		return settingsRecord ?? null;
+	} catch (error) {
+		console.error('Error fetching settings by ID:', error);
+		return null;
+	}
 };
