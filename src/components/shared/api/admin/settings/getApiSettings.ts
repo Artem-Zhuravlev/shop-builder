@@ -1,4 +1,4 @@
-import type { AdminSettingsTableItem } from '@/components/entities/Admin/ui/settings';
+import type { SettingsInterface } from '@interfaces/settings';
 import { fetchApi } from '@/utils/fetchApi';
 
 /**
@@ -7,9 +7,9 @@ import { fetchApi } from '@/utils/fetchApi';
  * @returns {Promise<any>} - A promise that resolves with the settings data.
  * @throws {Error} - Throws an error if the fetch operation fails or the response is not ok.
  */
-export const getApiSettings = async (): Promise<AdminSettingsTableItem[]> => {
+export const getApiSettings = async (): Promise<SettingsInterface[]> => {
 	try {
-		const response: AdminSettingsTableItem[] = await fetchApi('/settings', {
+		const response: SettingsInterface[] = await fetchApi('/settings', {
 			method: 'GET',
 		});
 		return response;
