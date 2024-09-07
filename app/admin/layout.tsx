@@ -1,12 +1,21 @@
-import React, { type ReactNode } from 'react';
+'use client';
+import React, { type ReactNode, useEffect } from 'react';
+import { useDispatch } from '@/lib/redux';
 import { AdminHeader, AdminSidebar } from '@/components/entities/Admin';
 import cls from './AdminLayout.module.scss';
+import { fetchSettings } from '@/lib/redux';
 
 interface LocaleLayoutProps {
 	children: ReactNode;
 }
 
-export default async function AdminLayout({ children }: LocaleLayoutProps) {
+export default function AdminLayout({ children }: LocaleLayoutProps) {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchSettings());
+	}, [dispatch]);
+
 	return (
 		<div className={cls.AdminLayout}>
 			<AdminHeader className={cls.AdminHeader} />
