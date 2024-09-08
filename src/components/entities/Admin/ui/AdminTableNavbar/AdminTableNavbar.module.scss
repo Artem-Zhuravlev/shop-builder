@@ -1,0 +1,15 @@
+@import '@/styles/abstracts/mixins.scss';
+
+.AdminTableNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-medium);
+}
+
+.AdminTableNavbarList {
+  @extend %listreset;
+
+  display: flex;
+  gap: var(--space-medium);
+}
