@@ -140,3 +140,4 @@ export {
 
 export { AdminHeader } from './ui/AdminHeader/AdminHeader';
 export { AdminSidebar } from './ui/AdminSidebar/AdminSidebar';
+export { AdminTableNavbar } from './ui/AdminTableNavbar/AdminTableNavbar';
