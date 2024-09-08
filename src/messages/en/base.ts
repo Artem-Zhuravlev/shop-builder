@@ -117,4 +117,5 @@ export const base = {
 	addresses: 'Addresses',
 	customer_details: 'Customer details',
 	other: 'Other',
+	add_new: 'Add new',
 };

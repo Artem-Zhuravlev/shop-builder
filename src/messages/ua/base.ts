@@ -117,4 +117,5 @@ export const base = {
 	addresses: 'Адреси',
 	customer_details: 'Дані користувача',
 	other: 'Інше',
+	add_new: 'Додати новий',
 };
