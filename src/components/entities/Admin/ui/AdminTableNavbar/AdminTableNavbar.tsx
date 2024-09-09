@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState, type FC } from 'react';
 import cls from './AdminTableNavbar.module.scss';
 import { useTranslations } from 'next-intl';
