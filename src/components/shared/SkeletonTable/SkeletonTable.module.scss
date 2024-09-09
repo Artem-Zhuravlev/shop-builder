@@ -1,0 +1,13 @@
+.SkeletonTable {
+  background-color: var(--gray-10);
+}
+
+.SkeletonRow {
+  display: grid;
+  padding: var(--interface-size-lg) 0;
+  gap: var(--space-medium);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--gray-30);
+  }
+}
