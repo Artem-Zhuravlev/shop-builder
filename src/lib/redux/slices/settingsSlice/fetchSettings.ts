@@ -1,15 +1,19 @@
-import type { SettingsInterface } from '@interfaces/settings';
+import type { ReduxState } from './../../store';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import type { ThunkConfig } from '../../interfaces/thunk.interface';
 import { getApiSettings } from '@/components/shared/api/admin';
 
 export const fetchSettings = createAsyncThunk(
 	'settings/fetchSettings',
 	async (_, thunkApi) => {
-		const { rejectWithValue } = thunkApi;
+		const { rejectWithValue, getState } = thunkApi;
 
 		try {
 			const response = await getApiSettings();
+			const state = getState() as ReduxState;
+
+			if (state.settings.data) {
+				return state.settings.data;
+			}
 
 			if (!response) {
 				return rejectWithValue('No settings found');
