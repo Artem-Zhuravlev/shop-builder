@@ -4,7 +4,7 @@
 
 .SkeletonRow {
   display: grid;
-  padding: var(--interface-size-lg) 0;
+  padding: var(--interface-size-lg) var(--space-medium);
   gap: var(--space-medium);
 
   &:not(:last-child) {
