@@ -104,4 +104,5 @@ export const admin = {
 	customer_groups: 'Customer groups',
 	customer_group: 'Customer group',
 	email: 'Email',
+	store_owner: 'Store owner',
 };
