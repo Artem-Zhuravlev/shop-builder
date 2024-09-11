@@ -14,6 +14,7 @@ import {
 	createApiSettings,
 	updateApiSettings,
 } from '@/components/shared/api/admin';
+import { useRouter } from 'next/navigation';
 import type { SettingsInterface } from '@interfaces/settings';
 
 interface AdminSettingsFormProps {
@@ -26,6 +27,7 @@ export const AdminSettingsForm: FC<AdminSettingsFormProps> = ({
 	initialValues,
 }) => {
 	const t = useTranslations('base');
+	const router = useRouter();
 
 	const tabs = [
 		{
@@ -62,6 +64,7 @@ export const AdminSettingsForm: FC<AdminSettingsFormProps> = ({
 			}
 
 			await updateApiSettings(Number(id), values);
+			router.push('/admin/settings');
 		} catch (error) {
 			console.error(
 				'Error during API call:',
