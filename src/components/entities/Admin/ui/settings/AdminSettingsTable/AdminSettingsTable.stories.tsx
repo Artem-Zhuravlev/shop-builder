@@ -21,7 +21,7 @@ Default.args = {
 		{
 			id: 1,
 			store_name: 'Your Store (Default)',
-			store_url: 'https://test.com',
+			store_owner: 'https://test.com',
 		},
 	],
 };
