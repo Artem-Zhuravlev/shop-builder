@@ -41,7 +41,6 @@ export const StepForm: FC<StepFormProps> = ({
 						title={activeTabItem.label}
 						submitting={submitting}
 					>
-						{submitting}
 						<TabsBase
 							items={tabs}
 							className='mb-30'
