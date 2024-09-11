@@ -2,7 +2,7 @@ import React, { useState, type FC, useMemo } from 'react';
 import { TabsBase, type TabItem } from '@/components/shared/TabsBase';
 import { Form } from 'react-final-form';
 import { FormLayout } from '@/components/widgets/FormLayout';
-import { ErrorAlert } from '@/components/features/alerts';
+import { ErrorAlert, SuccessAlert } from '@/components/features/alerts';
 
 interface StepFormProps {
 	tabs: TabItem[];
@@ -30,8 +30,18 @@ export const StepForm: FC<StepFormProps> = ({
 			<Form
 				onSubmit={handleFormSubmit}
 				initialValues={initialValues}
-				render={({ handleSubmit, submitFailed }) => (
-					<FormLayout onSubmit={handleSubmit} title={activeTabItem.label}>
+				render={({
+					handleSubmit,
+					submitFailed,
+					submitSucceeded,
+					submitting,
+				}) => (
+					<FormLayout
+						onSubmit={handleSubmit}
+						title={activeTabItem.label}
+						submitting={submitting}
+					>
+						{submitting}
 						<TabsBase
 							items={tabs}
 							className='mb-30'
@@ -39,6 +49,7 @@ export const StepForm: FC<StepFormProps> = ({
 							useCssVisibility
 						/>
 						<ErrorAlert submitFailed={submitFailed} />
+						<SuccessAlert submitSucceeded={submitSucceeded} />
 					</FormLayout>
 				)}
 			/>
