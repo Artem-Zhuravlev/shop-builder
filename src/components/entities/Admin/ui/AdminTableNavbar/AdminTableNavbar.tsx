@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState, type FC } from 'react';
+import React, { type FC } from 'react';
 import cls from './AdminTableNavbar.module.scss';
 import { useTranslations } from 'next-intl';
 import { ButtonBase } from '@/components/shared/ButtonBase';
@@ -9,32 +9,23 @@ interface AdminTableNavbarProps {
 	id?: number;
 	title: string;
 	route: string;
-	onDelete: (id: number) => void;
+	onDelete: () => void;
+	isDeleteBtn: boolean;
 }
 
 export const AdminTableNavbar: FC<AdminTableNavbarProps> = ({
 	id,
 	title,
 	route,
+	isDeleteBtn,
 	onDelete,
 }) => {
-	const [showDeleteBtn, setShowDeleteBtn] = useState(false);
 	const t = useTranslations('base');
 	const router = useRouter();
 
-	useEffect(() => {
-		setShowDeleteBtn(id !== undefined);
-	}, [id]);
-
-	const handleDelete = () => {
-		if (id !== undefined) {
-			onDelete(id);
-		}
-	};
-
 	return (
 		<nav className={cls.AdminTableNavbar}>
-			<h3 className='mb-0'>{title}</h3>
+			<h4 className='mb-0'>{title}</h4>
 			<ul className={cls.AdminTableNavbarList}>
 				<li className={cls.AdminTableNavbarItem}>
 					<ButtonBase
@@ -44,11 +35,11 @@ export const AdminTableNavbar: FC<AdminTableNavbarProps> = ({
 						{t('add_new')}
 					</ButtonBase>
 				</li>
-				{showDeleteBtn && (
+				{isDeleteBtn && (
 					<li className={cls.AdminTableNavbarItem}>
 						<ButtonBase
 							variant='danger'
-							onClick={handleDelete}
+							onClick={() => onDelete()}
 							data-testid='delete'
 						>
 							<span className='icon-bin' />
