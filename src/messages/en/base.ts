@@ -118,4 +118,5 @@ export const base = {
 	customer_details: 'Customer details',
 	other: 'Other',
 	add_new: 'Add new',
+	no_table_data: 'No data available',
 };

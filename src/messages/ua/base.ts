@@ -118,4 +118,5 @@ export const base = {
 	customer_details: 'Дані користувача',
 	other: 'Інше',
 	add_new: 'Додати новий',
+	no_table_data: 'No data available',
 };

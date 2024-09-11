@@ -103,4 +103,5 @@ export const admin = {
 	customer_groups: 'Групи клієнтів',
 	customer_group: 'Група клієнта',
 	email: 'Email',
+	store_owner: 'Власник магазину',
 };
