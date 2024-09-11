@@ -1,5 +1,13 @@
 .AdminTableLayout {
   display: flex;
   flex-direction: column;
-  gap: var(--size-small);
+
+}
+.AdminTableLayoutHeader {
+  border-bottom: 1px solid var(--gray-40);
+}
+.AdminTableLayoutFooter {
+  padding-top: var(--size-small);
+  background-color: var(--gray-10);
+  padding: var(--space-medium);
 }
