@@ -124,7 +124,7 @@ export {
 } from './ui/reviews';
 
 // settings ui
-export { AdminSettingsForm, AdminSettingsTable } from './ui/settings';
+export { AdminSettingsForm } from './ui/settings';
 
 // stock status ui
 export { AdminStockStatusForm, AdminStockStatusTable } from './ui/stockStatus';
