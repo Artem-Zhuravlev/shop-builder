@@ -11,10 +11,9 @@ interface SettingsResponse {
  * @throws {Error} Throws an error if the update fails, containing the error message from the API.
  */
 export const updateApiSettings = async (
-	id: number,
 	data: SettingsInterface,
 ): Promise<SettingsResponse> => {
-	const response = await fetch(`/api/settings/${id}`, {
+	const response = await fetch('/api/settings', {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json',
