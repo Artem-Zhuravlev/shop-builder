@@ -1,8 +1,8 @@
 import React from 'react';
-import { AdminSettingsTableView } from '@/components/entities/Admin/ui/settings';
+import { AdminSettingsForm } from '@/components/entities/Admin';
 
 export default async function SettingsPage() {
-	return <AdminSettingsTableView />;
+	return <AdminSettingsForm />;
 }
 
 export const metadata = {
