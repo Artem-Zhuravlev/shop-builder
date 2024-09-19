@@ -1,4 +1,4 @@
-const apiBaseUrl: string = process.env.NEXT_PUBLIC_VERCEL_URL || '';
+export const apiBaseUrl: string = process.env.NEXT_PUBLIC_VERCEL_URL || '';
 
 /**
  * A wrapper around the fetch API for making API requests.
