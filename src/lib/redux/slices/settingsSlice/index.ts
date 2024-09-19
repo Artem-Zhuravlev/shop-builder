@@ -1,3 +1,3 @@
 export * from './settingsSlice';
 export * from './selectors';
-export { fetchSettings } from './fetchSettings';
+export { getSettings, updateSettings } from './async-actions';
