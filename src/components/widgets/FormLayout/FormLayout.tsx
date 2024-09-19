@@ -12,6 +12,7 @@ interface FormLayoutProps {
 	title: string;
 	onSubmit: () => void;
 	onCancel?: () => void;
+	showCancelBtn?: boolean;
 	submitText?: string;
 	cancelText?: string;
 	status?: AlertItemInterface[];
@@ -28,6 +29,7 @@ export const FormLayout: FC<FormLayoutProps> = (props) => {
 		onCancel,
 		submitText,
 		cancelText,
+		showCancelBtn = true,
 		status,
 		submitting = false,
 		pristine = false,
@@ -47,13 +49,15 @@ export const FormLayout: FC<FormLayoutProps> = (props) => {
 					>
 						{submitText ? submitText : t('save')}
 					</ButtonBase>
-					<ButtonBase
-						variant='outline'
-						disabled={submitting}
-						onClick={() => (onCancel ? onCancel() : router.back())}
-					>
-						{cancelText ? cancelText : t('cancel')}
-					</ButtonBase>
+					{showCancelBtn && (
+						<ButtonBase
+							variant='outline'
+							disabled={submitting}
+							onClick={() => (onCancel ? onCancel() : router.back())}
+						>
+							{cancelText ? cancelText : t('cancel')}
+						</ButtonBase>
+					)}
 				</div>
 			</div>
 			{className ? <div className={className}>{children}</div> : children}
