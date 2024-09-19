@@ -1,6 +1,6 @@
 import type { SettingsInterface } from '@interfaces/settings';
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchSettings } from './fetchSettings';
+import { getSettings, updateSettings } from './async-actions';
 
 const initialState: SettingsSliceState = {
 	data: null,
@@ -14,19 +14,28 @@ export const settingsSlice = createSlice({
 	reducers: {},
 	extraReducers(builder) {
 		builder
-			.addCase(fetchSettings.pending, (state) => {
+			.addCase(getSettings.pending, (state) => {
 				state.error = undefined;
 				state.isLoading = true;
 			})
-			.addCase(fetchSettings.fulfilled, (state, action) => {
+			.addCase(getSettings.fulfilled, (state, action) => {
 				state.isLoading = false;
-				if (Array.isArray(action.payload) && action.payload.length > 0) {
-					state.data = action.payload[0];
-				} else {
-					state.data = null;
-				}
+				state.data = action.payload;
 			})
-			.addCase(fetchSettings.rejected, (state, action) => {
+			.addCase(getSettings.rejected, (state, action) => {
+				state.isLoading = false;
+				state.error = action.payload as string;
+			});
+		builder
+			.addCase(updateSettings.pending, (state) => {
+				state.error = undefined;
+				state.isLoading = true;
+			})
+			.addCase(updateSettings.fulfilled, (state, action) => {
+				state.data = action.payload;
+				state.isLoading = false;
+			})
+			.addCase(updateSettings.rejected, (state, action) => {
 				state.isLoading = false;
 				state.error = action.payload as string;
 			});
