@@ -1,6 +1,6 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import React, { type FC } from 'react';
+import React, { useEffect, type FC } from 'react';
 import {
 	AdminSettingsGeneralForm,
 	AdminSettingsStoreForm,
@@ -11,23 +11,27 @@ import {
 import { AdminSettingsMailForm } from './common/AdminSettingsMailForm';
 import { StepForm } from '@/components/features/forms';
 import {
-	createApiSettings,
-	updateApiSettings,
-} from '@/components/shared/api/admin';
-import { useRouter } from 'next/navigation';
+	getSettings,
+	selectSettings,
+	updateSettings,
+	useDispatch,
+	useSelector,
+} from '@/lib/redux';
 import type { SettingsInterface } from '@interfaces/settings';
 
-interface AdminSettingsFormProps {
-	id: number | string;
-	initialValues: object | null;
-}
+// interface AdminSettingsFormProps {
+// 	initialValues?: object | null;
+// }
 
-export const AdminSettingsForm: FC<AdminSettingsFormProps> = ({
-	id,
-	initialValues,
-}) => {
+export const AdminSettingsForm: FC = () => {
 	const t = useTranslations('base');
-	const router = useRouter();
+
+	const dispatch = useDispatch();
+	const initialValues = useSelector(selectSettings);
+
+	useEffect(() => {
+		dispatch(getSettings());
+	}, [dispatch]);
 
 	const tabs = [
 		{
@@ -58,13 +62,7 @@ export const AdminSettingsForm: FC<AdminSettingsFormProps> = ({
 
 	const onSubmit = async (values: SettingsInterface) => {
 		try {
-			if (id === 'new') {
-				await createApiSettings(values);
-				return;
-			}
-
-			await updateApiSettings(Number(id), values);
-			router.push('/admin/settings');
+			await dispatch(updateSettings(values));
 		} catch (error) {
 			console.error(
 				'Error during API call:',
@@ -74,7 +72,12 @@ export const AdminSettingsForm: FC<AdminSettingsFormProps> = ({
 	};
 
 	return (
-		<StepForm tabs={tabs} onSubmit={onSubmit} initialValues={initialValues} />
+		<StepForm
+			tabs={tabs}
+			onSubmit={onSubmit}
+			initialValues={initialValues}
+			showCancelBtn={false}
+		/>
 	);
 };
 
