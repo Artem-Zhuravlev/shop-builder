@@ -1,25 +1,23 @@
 import { getDatabaseConnection } from '../../config/data-source';
 import { Settings } from '../../entities/Settings';
-import type { RequestSettingsInterface } from './interfaces/settings.interface';
+import type { SettingsInterface } from '@interfaces/settings';
 
 export const updateSettings = async (
-	id: number,
-	data: RequestSettingsInterface,
+	data: SettingsInterface,
 ): Promise<Settings> => {
 	const connection = await getDatabaseConnection();
 
-	const settingsRecord = await connection.manager
-		.createQueryBuilder()
-		.select('settings')
-		.from(Settings, 'settings')
-		.where('settings.id = :id', { id })
-		.getOne();
+	const settingsRecords = await connection.manager.find(Settings);
 
-	if (settingsRecord) {
-		Object.assign(settingsRecord, data);
-		await connection.manager.save(settingsRecord);
-		return settingsRecord;
+	if (settingsRecords.length > 0) {
+		const settingsToUpdate = settingsRecords[0];
+		Object.assign(settingsToUpdate.data, data);
+		await connection.manager.save(settingsToUpdate);
+		return settingsToUpdate;
 	}
 
-	throw new Error(`Settings with id ${id} not found.`);
+	const newSettings = new Settings();
+	newSettings.data = Object.assign({}, data);
+	await connection.manager.save(newSettings);
+	return newSettings;
 };
