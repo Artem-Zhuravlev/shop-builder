@@ -1,5 +1,5 @@
 import type { SettingsInterface } from '@interfaces/settings';
-import { fetchApi } from '@/utils/fetchApi';
+import { apiBaseUrl } from '@/utils/fetchApi';
 
 /**
  * Fetches the application settings from the API.
@@ -7,12 +7,12 @@ import { fetchApi } from '@/utils/fetchApi';
  * @returns {Promise<any>} - A promise that resolves with the settings data.
  * @throws {Error} - Throws an error if the fetch operation fails or the response is not ok.
  */
-export const getApiSettings = async (): Promise<SettingsInterface[]> => {
+export const getApiSettings = async (): Promise<SettingsInterface> => {
 	try {
-		const response: SettingsInterface[] = await fetchApi('/settings', {
+		const response = await fetch(`${apiBaseUrl}/api/settings`, {
 			method: 'GET',
 		});
-		return response;
+		return await response.json();
 	} catch (error) {
 		if (error instanceof Error) {
 			throw new Error(`Failed to fetch settings: ${error.message}`);
