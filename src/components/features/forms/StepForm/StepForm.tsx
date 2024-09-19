@@ -7,13 +7,15 @@ import { ErrorAlert, SuccessAlert } from '@/components/features/alerts';
 interface StepFormProps {
 	tabs: TabItem[];
 	onSubmit: (values: any) => void;
-	initialValues: object | null;
+	initialValues?: object | null;
+	showCancelBtn?: boolean;
 }
 
 export const StepForm: FC<StepFormProps> = ({
 	tabs,
 	onSubmit,
 	initialValues,
+	showCancelBtn,
 }) => {
 	const [activeTabItem, setActiveTabItem] = useState<TabItem>(tabs[0]);
 
@@ -40,6 +42,7 @@ export const StepForm: FC<StepFormProps> = ({
 						onSubmit={handleSubmit}
 						title={activeTabItem.label}
 						submitting={submitting}
+						showCancelBtn={showCancelBtn}
 					>
 						<TabsBase
 							items={tabs}
