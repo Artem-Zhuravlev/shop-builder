@@ -1,9 +1,9 @@
-import { TranslateFunction } from './types/TranslateFunction';
+import type { TranslateFunction } from './types/TranslateFunction';
 
 export const passwordValidate = (
 	value: string,
-	t: TranslateFunction
-): string | void => {
+	t: TranslateFunction,
+): string | undefined => {
 	if (!value) {
 		return t('field_error.required');
 	}
