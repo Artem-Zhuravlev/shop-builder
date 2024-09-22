@@ -1,5 +1,5 @@
 import { getSettings, updateSettings } from 'backend/services/settings';
-import type { SettingsInterface } from '@interfaces/settings';
+import type { SettingsInterface } from '@interfaces/index';
 import { type NextRequest, NextResponse } from 'next/server';
 
 export async function GET() {
