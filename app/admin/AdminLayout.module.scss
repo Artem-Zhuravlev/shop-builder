@@ -16,7 +16,7 @@
 
 .AdminMain {
   grid-column: 2 / 3;
-  background-color: var(--gray-30);
+  background-color: #f2f5ff;
   padding: var(--size-extra-small) var(--space-medium);
   overflow: auto;
   @extend %scroll-bar;

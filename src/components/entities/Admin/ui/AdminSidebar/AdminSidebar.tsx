@@ -13,9 +13,19 @@ const SidebarNavItem: FC<{ item: SidebarItem }> = ({ item }) => {
 	const currentPath = usePathname();
 	const t = useTranslations('admin');
 	const linkClasses = classNames(cls.SidebarItemLink, {
-		[cls.SidebarItemLinkActive]:
-			currentPath === item.to || currentPath.startsWith(`${item.to}/`),
+		[cls.SidebarItemLinkActive]: isActive(item),
 	});
+
+	function isActive(item: SidebarItem): boolean {
+		if (!item.to) return isOpen; // If it's a button (not a link), check if it's open
+		if (currentPath === item.to) {
+			return true; // Direct match
+		}
+		if (item.children) {
+			return item.children.some((child) => isActive(child)); // Check children recursively
+		}
+		return false; // No match found
+	}
 
 	return (
 		<li key={item.value}>
@@ -38,7 +48,7 @@ const SidebarNavItem: FC<{ item: SidebarItem }> = ({ item }) => {
 			)}
 
 			{item.children && (
-				<Collapse isOpened={isOpen}>
+				<Collapse isOpened={isOpen || isActive(item)}>
 					<SidebarList items={item.children} />
 				</Collapse>
 			)}
