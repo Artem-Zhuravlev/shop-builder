@@ -12,4 +12,7 @@ export const field_error = {
 	passwords_do_not_match: 'Password confirmation does not match password!',
 	comment_not_valid: 'Comment must be between 25 and 1000 characters!',
 	name_not_valid: 'Name must be between 3 and 25 characters long!',
+	iso_code_2: 'ISO code must include only 2 characters',
+	iso_code_3: 'ISO code must include only 3 characters',
+	only_characters: 'This field must include only characters',
 };
