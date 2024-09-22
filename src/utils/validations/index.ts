@@ -7,3 +7,5 @@ export { postCodeValidate } from './postCodeValidate';
 export { confirmPasswordValidate } from './confirmPasswordValidate';
 export { commentValidate } from './commentValidate';
 export { nameValidate } from './nameValidate';
+export { isoCode2Validate } from './isoCode2Validate';
+export { isoCode3Validate } from './isoCode3Validate';
