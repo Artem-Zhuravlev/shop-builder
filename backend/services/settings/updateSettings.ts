@@ -1,6 +1,6 @@
+import type { SettingsInterface } from '@interfaces/index';
 import { getDatabaseConnection } from '../../config/data-source';
 import { Settings } from '../../entities/Settings';
-import type { SettingsInterface } from '@interfaces/settings';
 
 export const updateSettings = async (
 	data: SettingsInterface,
