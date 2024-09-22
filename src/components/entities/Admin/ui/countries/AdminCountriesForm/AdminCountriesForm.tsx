@@ -1,6 +1,7 @@
 'use client';
 import { InputCheckbox, InputText } from '@/components/shared/inputs';
 import { FormLayout } from '@/components/widgets/FormLayout';
+import { isoCode2Validate, isoCode3Validate } from '@/utils/validations';
 import { useTranslations } from 'next-intl';
 import React, { type FC } from 'react';
 import { Form } from 'react-final-form';
@@ -33,11 +34,13 @@ export const AdminCountriesForm: FC = () => {
 								className='col-md-4'
 								name='iso_code_2'
 								placeholder={t('admin.iso_code_2')}
+								validationHandler={isoCode2Validate}
 							/>
 							<InputText
 								className='col-md-4'
 								name='iso_code_3'
 								placeholder={t('admin.iso_code_3')}
+								validationHandler={isoCode3Validate}
 							/>
 							<InputCheckbox
 								name='postcode_required'
