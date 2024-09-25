@@ -29,6 +29,7 @@ import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
+import { AdminTableNavbar } from '../../AdminTableNavbar/AdminTableNavbar';
 interface AdminCountriesTableItem extends TableNode {
 	id: string | number;
 	country_name: string;
@@ -85,53 +86,61 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 	}
 
 	return (
-		<Table
-			data={data}
-			theme={theme}
-			layout={{ custom: true }}
-			sort={sort}
-			select={select}
-		>
-			{(tableList: AdminCountriesTableItem[]) => (
-				<>
-					<Header>
-						<HeaderRow>
-							<HeaderCellSelect />
-							<HeaderCellSort sortKey='COUNTRY_NAME'>
-								{t('country_name')}
-							</HeaderCellSort>
-							<HeaderCellSort sortKey='ISO_CODE_2'>
-								{t('iso_code_2')}
-							</HeaderCellSort>
-							<HeaderCellSort sortKey='ISO_CODE_3'>
-								{t('iso_code_3')}
-							</HeaderCellSort>
-							<HeaderCell>{t('action')}</HeaderCell>
-						</HeaderRow>
-					</Header>
+		<>
+			<AdminTableNavbar
+				title={t('countries')}
+				route='/admin/countries'
+				onDelete={() => {}}
+				isDeleteBtn
+			/>
+			<Table
+				data={data}
+				theme={theme}
+				layout={{ custom: true }}
+				sort={sort}
+				select={select}
+			>
+				{(tableList: AdminCountriesTableItem[]) => (
+					<>
+						<Header>
+							<HeaderRow>
+								<HeaderCellSelect />
+								<HeaderCellSort sortKey='COUNTRY_NAME'>
+									{t('country_name')}
+								</HeaderCellSort>
+								<HeaderCellSort sortKey='ISO_CODE_2'>
+									{t('iso_code_2')}
+								</HeaderCellSort>
+								<HeaderCellSort sortKey='ISO_CODE_3'>
+									{t('iso_code_3')}
+								</HeaderCellSort>
+								<HeaderCell>{t('action')}</HeaderCell>
+							</HeaderRow>
+						</Header>
 
-					<Body>
-						{tableList.map((item) => (
-							<Row item={item} key={item.id}>
-								<CellSelect item={item} />
-								<Cell>{item.country_name}</Cell>
-								<Cell>{item.iso_code_2}</Cell>
-								<Cell>{item.iso_code_3}</Cell>
-								<Cell>
-									<ButtonBase
-										onClick={() =>
-											router.push(`${ADMIN_ROUTES.countries}/${item.slug}`)
-										}
-									>
-										<span className='icon-pencil' />
-									</ButtonBase>
-								</Cell>
-							</Row>
-						))}
-					</Body>
-				</>
-			)}
-		</Table>
+						<Body>
+							{tableList.map((item) => (
+								<Row item={item} key={item.id}>
+									<CellSelect item={item} />
+									<Cell>{item.country_name}</Cell>
+									<Cell>{item.iso_code_2}</Cell>
+									<Cell>{item.iso_code_3}</Cell>
+									<Cell>
+										<ButtonBase
+											onClick={() =>
+												router.push(`${ADMIN_ROUTES.countries}/${item.slug}`)
+											}
+										>
+											<span className='icon-pencil' />
+										</ButtonBase>
+									</Cell>
+								</Row>
+							))}
+						</Body>
+					</>
+				)}
+			</Table>
+		</>
 	);
 };
 
