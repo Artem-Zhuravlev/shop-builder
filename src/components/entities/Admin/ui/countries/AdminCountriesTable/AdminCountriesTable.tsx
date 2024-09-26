@@ -30,16 +30,11 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { type FC } from 'react';
 import { AdminTableNavbar } from '../../AdminTableNavbar/AdminTableNavbar';
-interface AdminCountriesTableItem extends TableNode {
-	id: string | number;
-	country_name: string;
-	iso_code_2: string;
-	iso_code_3: string;
-	slug: string;
-}
+
+interface CountriesInterface extends TableNode {}
 
 interface AdminCountriesTableProps {
-	nodes: AdminCountriesTableItem[];
+	nodes: CountriesInterface[];
 }
 
 export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
@@ -64,7 +59,7 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 			sortIcon: { ...defaultSortIcon },
 			sortFns: {
 				COUNTRY_NAME: (array) =>
-					array.sort((a, b) => a.country_name.localeCompare(b.country_name)),
+					array.sort((a, b) => a.country.localeCompare(b.country)),
 				ISO_CODE_2: (array) =>
 					array.sort((a, b) => a.iso_code_2.localeCompare(b.iso_code_2)),
 				ISO_CODE_3: (array) =>
@@ -100,7 +95,7 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 				sort={sort}
 				select={select}
 			>
-				{(tableList: AdminCountriesTableItem[]) => (
+				{(tableList: CountriesInterface[]) => (
 					<>
 						<Header>
 							<HeaderRow>
@@ -122,13 +117,13 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 							{tableList.map((item) => (
 								<Row item={item} key={item.id}>
 									<CellSelect item={item} />
-									<Cell>{item.country_name}</Cell>
+									<Cell>{item.country}</Cell>
 									<Cell>{item.iso_code_2}</Cell>
 									<Cell>{item.iso_code_3}</Cell>
 									<Cell>
 										<ButtonBase
 											onClick={() =>
-												router.push(`${ADMIN_ROUTES.countries}/${item.slug}`)
+												router.push(`${ADMIN_ROUTES.countries}/${item.id}`)
 											}
 										>
 											<span className='icon-pencil' />
