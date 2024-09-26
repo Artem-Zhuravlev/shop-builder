@@ -4,7 +4,7 @@ import {
 	getApiSettings,
 	updateApiSettings,
 } from '@/components/shared/api/admin';
-import type { SettingsInterface } from '@interfaces/settings';
+import type { SettingsInterface } from '@interfaces/index';
 
 export const getSettings = createAsyncThunk(
 	'settings/getSettings',
