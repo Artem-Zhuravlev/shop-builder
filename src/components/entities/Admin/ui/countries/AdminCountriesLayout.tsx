@@ -15,14 +15,12 @@ import { DEFAULT_ITEMS_PER_PAGE } from '@/utils/settings/paginate/paginateSettin
 export const AdminCountriesLayout: FC = () => {
 	const { default_items_per_page_admin } = useSelector(selectSettings) || {}; // Provide fallback as an empty object
 
-	// States to track nodes (data), total items, and current page
 	const [nodes, setNodes] = useState<CountriesInterface[] | null>(null);
 	const [totalItems, setTotalItems] = useState<number>(0);
 	const [currentPage, setCurrentPage] = useState<number>(1);
 	const itemsPerPage = default_items_per_page_admin ?? DEFAULT_ITEMS_PER_PAGE;
 
 	useEffect(() => {
-		// Fetch countries whenever the current page changes
 		fetchCountries(currentPage);
 	}, [currentPage]);
 
