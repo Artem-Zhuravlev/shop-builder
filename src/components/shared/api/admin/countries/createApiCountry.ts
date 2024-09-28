@@ -9,7 +9,7 @@ import type { CountriesInterface } from '@interfaces/index';
  */
 export const createApiCountry = async (
 	data: CountriesInterface,
-): Promise<{ data: CountriesInterface }> => {
+): Promise<CountriesInterface> => {
 	try {
 		const response = await fetch('/api/countries', {
 			method: 'POST',
