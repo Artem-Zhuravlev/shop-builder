@@ -1,4 +1,4 @@
-import type { SettingsInterface } from '@interfaces/settings';
+import type { SettingsInterface } from '@interfaces/index';
 import { apiBaseUrl } from '@/utils/fetchApi';
 
 /**
