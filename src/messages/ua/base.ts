@@ -119,4 +119,5 @@ export const base = {
 	other: 'Інше',
 	add_new: 'Додати новий',
 	no_table_data: 'No data available',
+	accept: 'Підтвердити',
 };

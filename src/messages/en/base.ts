@@ -119,4 +119,5 @@ export const base = {
 	other: 'Other',
 	add_new: 'Add new',
 	no_table_data: 'No data available',
+	accept: 'Accept',
 };
