@@ -13,11 +13,13 @@ interface ModalWindowProps {
 	modalType: keyof typeof modalTypes;
 	size?: 'xxl';
 	textSubmit?: string;
+	textCancel?: string;
 	onSubmit?: () => void;
 }
 
 export const ModalWindow: FC<ModalWindowProps> = (props) => {
-	const { children, modalType, title, size, textSubmit, onSubmit } = props;
+	const { children, modalType, title, size, textSubmit, textCancel, onSubmit } =
+		props;
 	const { modalTypes, closeModal } = useModal();
 	const isVisible = modalTypes[modalType];
 
@@ -73,6 +75,9 @@ export const ModalWindow: FC<ModalWindowProps> = (props) => {
 						{children && <div className={cls.ModalContent}>{children}</div>}
 						{onSubmit && (
 							<div className={cls.ModalFooter}>
+								<ButtonBase variant='outline' onClick={handleClose}>
+									{textCancel ?? t('cancel')}
+								</ButtonBase>
 								<ButtonBase onClick={handleSubmit}>
 									{textSubmit ?? t('save')}
 								</ButtonBase>
