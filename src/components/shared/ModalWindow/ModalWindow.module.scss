@@ -61,6 +61,8 @@
 }
 
 .ModalFooter {
+  display: flex;
+  gap: var(--space-medium);
   margin-right: calc(var(--size-small) * -1);
   margin-left: calc(var(--size-small) * -1);
   border-top: 2px solid var(--gray-40);
