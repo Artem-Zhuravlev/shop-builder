@@ -28,8 +28,12 @@ import {
 import { useTheme } from '@table-library/react-table-library/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import React, { type FC } from 'react';
+import React, { useState, type FC } from 'react';
 import { AdminTableNavbar } from '../../AdminTableNavbar/AdminTableNavbar';
+import type {
+	Action,
+	State,
+} from '@table-library/react-table-library/types/common';
 
 interface CountriesInterface extends TableNode {}
 
@@ -41,6 +45,7 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 	const { nodes } = props;
 	const data = { nodes };
 	const t = useTranslations('admin');
+	const [selectedRows, setSelectedRows] = useState([]);
 	const router = useRouter();
 	const theme = useTheme({
 		...getTheme(),
@@ -72,12 +77,12 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 		onChange: onSelectChange,
 	});
 
-	function onSortChange(action: any, state: any) {
+	function onSortChange(action: Action, state: State) {
 		console.log(action, state);
 	}
 
-	function onSelectChange(action: any, state: any) {
-		console.log(action, state);
+	function onSelectChange(action: Action, state: State) {
+		setSelectedRows(state.ids);
 	}
 
 	return (
@@ -86,7 +91,7 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 				title={t('countries')}
 				route='/admin/countries'
 				onDelete={() => {}}
-				isDeleteBtn
+				isDeleteBtn={selectedRows.length > 0}
 			/>
 			<Table
 				data={data}
