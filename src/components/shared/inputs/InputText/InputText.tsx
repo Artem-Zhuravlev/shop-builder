@@ -34,6 +34,57 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	validationHandler?: ValidationHandler;
 }
 
+const InputTextAdapter: FC<{
+	input: any;
+	meta: any;
+	className: string;
+	defaultValue: string | number | undefined;
+	disabled: boolean | undefined;
+	placeholder: string | undefined;
+	required: boolean;
+	type: 'text' | 'number' | undefined;
+	value: string | number | undefined;
+	onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+	onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
+	onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
+}> = ({
+	input,
+	meta,
+	className,
+	defaultValue,
+	disabled,
+	placeholder,
+	required,
+	type,
+	value,
+	onChange,
+	onBlur,
+	onFocus,
+}) => {
+	const hasError = !!meta.error && meta.touched;
+
+	return (
+		<input
+			{...input}
+			className={classNames(className, { [cls.InputTextError]: hasError })}
+			defaultValue={defaultValue}
+			disabled={disabled}
+			placeholder={required ? `${placeholder} *` : placeholder}
+			type={type}
+			value={value !== undefined ? value : input.value}
+			onChange={(e) => {
+				input.onChange(e);
+				if (onChange) onChange(e);
+			}}
+			onBlur={(e) => {
+				input.onBlur(e);
+				if (onBlur) onBlur(e);
+			}}
+			onFocus={onFocus}
+		/>
+	);
+};
+
 export const InputText: FC<InputProps> = (props) => {
 	const {
 		className,
@@ -56,72 +107,45 @@ export const InputText: FC<InputProps> = (props) => {
 	} = props;
 
 	const t = useTranslations();
-	const [error, setError] = useState(false);
-	const [errorMessage, setErrorMessage] = useState('');
-
 	const inputClasses = classNames(cls.InputText, {
 		[cls.InputTextDark]: isDarkMode,
-		[cls.InputTextError]: error,
 		[cls.rounded]: rounded,
 		[cls.roundedLeftSide]: roundedLeftSide,
 		[cls.roundedRightSide]: roundedRightSide,
 		[cls.withPrefix]: prefix,
 	});
 
-	const renderInputField = ({ input, meta }: any) => {
-		setError(!!meta.error && meta.touched && meta.submitFailed);
-		setErrorMessage(meta.error || '');
-
-		const inputProps: Record<string, any> = {
-			className: inputClasses,
-			defaultValue: defaultValue,
-			disabled: disabled,
-			placeholder: required ? `${placeholder} *` : placeholder,
-			type: type,
-			onBlur,
-			onFocus,
-		};
-
-		if (value !== undefined) {
-			inputProps.value = value;
-		}
-
-		return (
-			<input
-				{...input}
-				{...inputProps}
-				onChange={(e) => {
-					input.onChange(e);
-					if (onChange) {
-						onChange(e);
-					}
-				}}
-				onBlur={(e) => {
-					input.onBlur(e);
-					if (onBlur) {
-						onBlur(e);
-					}
-				}}
-			/>
-		);
-	};
-
 	return (
-		<Label
-			hasError={error}
-			error={errorMessage}
-			className={className}
-			prefix={prefix}
+		<Field
+			name={name}
+			validate={(value) =>
+				getValidationMessage(value, required, t, validationHandler)
+			}
 		>
-			<Field
-				name={name}
-				validate={(value) =>
-					getValidationMessage(value, required, t, validationHandler)
-				}
-			>
-				{renderInputField}
-			</Field>
-		</Label>
+			{({ input, meta }) => (
+				<Label
+					hasError={!!meta.error && meta.touched}
+					error={meta.error}
+					className={className}
+					prefix={prefix}
+				>
+					<InputTextAdapter
+						input={input}
+						meta={meta}
+						className={inputClasses}
+						defaultValue={defaultValue}
+						disabled={disabled}
+						required={required}
+						type={type}
+						value={value}
+						onChange={onChange}
+						onBlur={onBlur}
+						onFocus={onFocus}
+						placeholder={placeholder}
+					/>
+				</Label>
+			)}
+		</Field>
 	);
 };
 
