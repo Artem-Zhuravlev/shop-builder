@@ -12,6 +12,7 @@ import React, {
 import { Field } from 'react-final-form';
 import { Label } from '../Label/Label';
 import cls from './InputText.module.scss';
+import { InputTextAdapter } from './InputTextAdapter';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	className?: string;
@@ -33,57 +34,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 	validationHandler?: ValidationHandler;
 }
-
-const InputTextAdapter: FC<{
-	input: any;
-	meta: any;
-	className: string;
-	defaultValue: string | number | undefined;
-	disabled: boolean | undefined;
-	placeholder: string | undefined;
-	required: boolean;
-	type: 'text' | 'number' | undefined;
-	value: string | number | undefined;
-	onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-	onBlur?: (event: ChangeEvent<HTMLInputElement>) => void;
-	onFocus?: (event: ChangeEvent<HTMLInputElement>) => void;
-}> = ({
-	input,
-	meta,
-	className,
-	defaultValue,
-	disabled,
-	placeholder,
-	required,
-	type,
-	value,
-	onChange,
-	onBlur,
-	onFocus,
-}) => {
-	const hasError = !!meta.error && meta.touched;
-
-	return (
-		<input
-			{...input}
-			className={classNames(className, { [cls.InputTextError]: hasError })}
-			defaultValue={defaultValue}
-			disabled={disabled}
-			placeholder={required ? `${placeholder} *` : placeholder}
-			type={type}
-			value={value !== undefined ? value : input.value}
-			onChange={(e) => {
-				input.onChange(e);
-				if (onChange) onChange(e);
-			}}
-			onBlur={(e) => {
-				input.onBlur(e);
-				if (onBlur) onBlur(e);
-			}}
-			onFocus={onFocus}
-		/>
-	);
-};
 
 export const InputText: FC<InputProps> = (props) => {
 	const {
