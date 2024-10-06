@@ -55,6 +55,7 @@
     "react-paginate": "^8.2.0",
     "react-redux": "8.1.0",
     "react-resizable": "^3.0.5",
+    "react-responsive-modal": "^6.4.2",
     "react-select": "^5.7.7",
     "react-simple-star-rating": "^5.1.7",
     "react-slick": "^0.30.2",
