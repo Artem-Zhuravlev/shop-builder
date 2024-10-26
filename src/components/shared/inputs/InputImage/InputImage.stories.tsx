@@ -1,3 +1,4 @@
+import React from 'react';
 import type { ImageMetaProps } from '@/lib/types/ImageMetaProps';
 import type { Meta, StoryFn } from '@storybook/react';
 import { Form } from 'react-final-form';
