@@ -6,5 +6,9 @@ export const getCountries = async (
 	offset: number,
 	limit: number,
 ): Promise<PaginateInterface<Countries>> => {
-	return await paginateService(Countries, offset, limit);
+	return await paginateService(Countries, offset, limit, {
+		order: {
+			country: 'ASC',
+		},
+	});
 };
