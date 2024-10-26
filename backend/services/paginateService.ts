@@ -1,10 +1,11 @@
-import type { EntityTarget, ObjectLiteral } from 'typeorm';
+import type { EntityTarget, ObjectLiteral, FindManyOptions } from 'typeorm';
 import { getDatabaseConnection } from '../config/data-source';
 
 export const paginateService = async <T extends ObjectLiteral>(
 	entity: EntityTarget<T>,
 	offset: number,
 	limit: number,
+	options?: FindManyOptions<T>,
 ) => {
 	const connection = await getDatabaseConnection();
 
@@ -13,6 +14,7 @@ export const paginateService = async <T extends ObjectLiteral>(
 	const [data, total] = await connection.manager.findAndCount(entity, {
 		skip,
 		take: limit,
+		...options,
 	});
 
 	return {
