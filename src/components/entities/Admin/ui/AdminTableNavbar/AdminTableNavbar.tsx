@@ -4,6 +4,7 @@ import cls from './AdminTableNavbar.module.scss';
 import { useTranslations } from 'next-intl';
 import { ButtonBase } from '@/components/shared/ButtonBase';
 import { useRouter } from 'next/navigation';
+import { useConfirmModal } from '@/lib/modalProvider/ModalContext';
 
 interface AdminTableNavbarProps {
 	id?: number;
@@ -22,6 +23,7 @@ export const AdminTableNavbar: FC<AdminTableNavbarProps> = ({
 }) => {
 	const t = useTranslations('base');
 	const router = useRouter();
+	const { handleConfirm } = useConfirmModal();
 
 	return (
 		<nav className={cls.AdminTableNavbar}>
@@ -39,7 +41,7 @@ export const AdminTableNavbar: FC<AdminTableNavbarProps> = ({
 					<li className={cls.AdminTableNavbarItem}>
 						<ButtonBase
 							variant='danger'
-							onClick={() => onDelete()}
+							onClick={() => handleConfirm(() => onDelete())}
 							data-testid='delete'
 						>
 							<span className='icon-bin' />
