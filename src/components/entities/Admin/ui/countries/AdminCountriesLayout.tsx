@@ -1,23 +1,26 @@
 'use client';
-import React, { useCallback, useEffect, useState, type FC } from 'react';
+import React, { useEffect, useMemo, useState, type FC } from 'react';
 import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
 import {
 	AdminCountriesTable,
 	AdminCountriesFilter,
 } from '@/components/entities/Admin';
-import { PaginateBase } from '@/components/shared/PaginateBase';
-import { getApiCountries } from '@/components/shared/api/admin';
+import { Paginate } from '@/components/shared/Paginate';
+import {
+	deleteApiCountry,
+	getApiCountries,
+} from '@/components/shared/api/admin';
 import type { CountriesInterface } from '@interfaces/index';
 import { SkeletonTable } from '@/components/shared/SkeletonTable';
 import { selectSettings, useSelector } from '@/lib/redux';
 import { DEFAULT_ITEMS_PER_PAGE } from '@/utils/settings/paginate/paginateSettings';
+import useLocalStorage from '@/hooks/useLocalStorage';
 
 export const AdminCountriesLayout: FC = () => {
 	const { default_items_per_page_admin } = useSelector(selectSettings) || {}; // Provide fallback as an empty object
-
 	const [nodes, setNodes] = useState<CountriesInterface[] | null>(null);
 	const [totalItems, setTotalItems] = useState<number>(0);
-	const [currentPage, setCurrentPage] = useState<number>(1);
+	const [currentPage, setCurrentPage] = useLocalStorage('country_page', 1);
 	const itemsPerPage = default_items_per_page_admin ?? DEFAULT_ITEMS_PER_PAGE;
 
 	useEffect(() => {
@@ -34,25 +37,36 @@ export const AdminCountriesLayout: FC = () => {
 		}
 	};
 
-	const pageCount = useCallback(() => {
-		return Math.ceil(totalItems / itemsPerPage);
-	}, [totalItems, itemsPerPage]);
+	const handleDeleteCountries = async (ids: number[]) => {
+		if (!nodes) return;
 
-	const handlePageChange = ({ selected }: { selected: number }) => {
-		setCurrentPage(selected + 1);
+		try {
+			const updatedNodes = nodes.filter((node) => !ids.includes(node.id));
+			setNodes(updatedNodes);
+
+			await deleteApiCountry(ids);
+		} catch (e) {
+			throw new Error('An unknown error occurred while deleting country.');
+		}
+	};
+
+	const handlePageChange = (page: number) => {
+		setCurrentPage(page);
 	};
 
 	return (
 		<AdminTableLayout filter={<AdminCountriesFilter />}>
 			{nodes ? (
-				<AdminCountriesTable nodes={nodes} />
+				<AdminCountriesTable nodes={nodes} onDelete={handleDeleteCountries} />
 			) : (
 				<SkeletonTable rows={itemsPerPage} cellsGrid={'1fr 1fr 1fr'} />
 			)}
-
-			{totalItems > 0 && (
-				<PaginateBase pageCount={pageCount()} onPageChange={handlePageChange} />
-			)}
+			<Paginate
+				pageSize={itemsPerPage}
+				current={currentPage}
+				total={totalItems}
+				onChange={handlePageChange}
+			/>
 		</AdminTableLayout>
 	);
 };
