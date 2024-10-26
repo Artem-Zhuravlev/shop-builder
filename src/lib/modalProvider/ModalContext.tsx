@@ -1,52 +1,75 @@
 'use client';
 import React, {
-	type FC,
-	type ReactNode,
 	createContext,
 	useContext,
 	useState,
+	type FC,
+	type ReactNode,
 } from 'react';
-import { modalTypes } from './modalTypes';
-
-type ModalStateType = typeof modalTypes;
-type ModalType = keyof ModalStateType;
+import { ConfirmModal } from '@/components/features/modals';
 
 interface ModalContextType {
-	isOpen?: boolean;
-	openModal: (type: ModalType) => void;
-	closeModal: (type: ModalType) => void;
-	modalTypes: ModalStateType;
+	isOpen: boolean;
+	openModal: () => void;
+	closeModal: () => void;
+	handleConfirm: (onConfirmCallback: () => void) => void;
 }
 
-const ModalContext = createContext<ModalContextType>({
-	isOpen: false,
-	openModal: () => {},
-	closeModal: () => {},
-	modalTypes,
-});
+const ConfirmModalContext = createContext<ModalContextType | undefined>(
+	undefined,
+);
 
 interface ModalProviderProps {
 	children: ReactNode;
 }
 
 export const ModalProvider: FC<ModalProviderProps> = ({ children }) => {
-	const [modalStates, setModalStates] = useState<ModalStateType>(modalTypes);
+	const [isOpen, setIsOpen] = useState(false);
+	const [onConfirmCallback, setOnConfirmCallback] = useState<
+		(() => void) | null
+	>(null);
 
-	const openModal = (type: ModalType) => {
-		setModalStates((prevState) => ({ ...prevState, [type]: true }));
+	const openModal = () => setIsOpen(true);
+
+	const closeModal = () => setIsOpen(false);
+
+	const handleConfirm = () => {
+		if (onConfirmCallback) {
+			onConfirmCallback();
+		}
+		closeModal();
 	};
 
-	const closeModal = (type: ModalType) => {
-		setModalStates((prevState) => ({ ...prevState, [type]: false }));
+	const handleConfirmSetup = (callback: () => void) => {
+		setOnConfirmCallback(() => callback);
+		openModal();
 	};
 
 	return (
-		<ModalContext.Provider
-			value={{ openModal, closeModal, modalTypes: modalStates }}
+		<ConfirmModalContext.Provider
+			value={{
+				isOpen,
+				openModal,
+				closeModal,
+				handleConfirm: handleConfirmSetup,
+			}}
 		>
 			{children}
-		</ModalContext.Provider>
+			<ConfirmModal
+				isOpen={isOpen}
+				onClose={closeModal}
+				onConfirm={handleConfirm}
+			/>
+		</ConfirmModalContext.Provider>
 	);
 };
 
-export const useModal = () => useContext(ModalContext);
+export const useConfirmModal = (): ModalContextType => {
+	const context = useContext(ConfirmModalContext);
+
+	if (!context) {
+		throw new Error('useConfirmModal must be used within a ModalProvider');
+	}
+
+	return context;
+};
