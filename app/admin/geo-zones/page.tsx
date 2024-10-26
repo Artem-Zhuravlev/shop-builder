@@ -1,7 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
 import { AdminGeoZonesTable } from '@/components/entities/Admin';
-import { PaginateBase } from '@/components/shared/PaginateBase';
+import { Paginate } from '@/components/shared/Paginate';
 
 export default function StockStatusesPage() {
 	const nodes = [
@@ -22,7 +22,7 @@ export default function StockStatusesPage() {
 	return (
 		<AdminTableLayout>
 			<AdminGeoZonesTable nodes={nodes} />
-			<PaginateBase pageCount={5} />
+			<Paginate total={5} />
 		</AdminTableLayout>
 	);
 }

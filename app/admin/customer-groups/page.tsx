@@ -1,7 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
 import { AdminCustomerGroupsTable } from '@/components/entities/Admin';
-import { PaginateBase } from '@/components/shared/PaginateBase';
+import { Paginate } from '@/components/shared/Paginate';
 
 export default function CustomerGroupsPage() {
 	const nodes = [
@@ -16,7 +16,7 @@ export default function CustomerGroupsPage() {
 	return (
 		<AdminTableLayout>
 			<AdminCustomerGroupsTable nodes={nodes} />
-			<PaginateBase pageCount={5} />
+			<Paginate total={5} />
 		</AdminTableLayout>
 	);
 }

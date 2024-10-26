@@ -5,7 +5,7 @@ import {
 	type AdminOrdersTableItem,
 	AdminOrdersFilter,
 } from '@/components/entities/Admin';
-import { PaginateBase } from '@/components/shared/PaginateBase';
+import { Paginate } from '@/components/shared/Paginate';
 
 export default function OrdersPage() {
 	const nodes: AdminOrdersTableItem[] = [
@@ -238,7 +238,7 @@ export default function OrdersPage() {
 	return (
 		<AdminTableLayout filter={<AdminOrdersFilter />}>
 			<AdminOrdersTable nodes={nodes} />
-			<PaginateBase pageCount={5} />
+			<Paginate total={5} />
 		</AdminTableLayout>
 	);
 }

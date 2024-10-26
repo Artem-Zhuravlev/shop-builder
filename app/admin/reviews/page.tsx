@@ -5,7 +5,7 @@ import {
 	type AdminReviewsTableItem,
 	AdminReviewsFilter,
 } from '@/components/entities/Admin';
-import { PaginateBase } from '@/components/shared/PaginateBase';
+import { Paginate } from '@/components/shared/Paginate';
 
 export default function ReviewsPage() {
 	const nodes: AdminReviewsTableItem[] = [
@@ -104,7 +104,7 @@ export default function ReviewsPage() {
 	return (
 		<AdminTableLayout filter={<AdminReviewsFilter />}>
 			<AdminReviewsTable nodes={nodes} />
-			<PaginateBase pageCount={5} />
+			<Paginate total={5} />
 		</AdminTableLayout>
 	);
 }

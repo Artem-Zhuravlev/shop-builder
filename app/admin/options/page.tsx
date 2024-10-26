@@ -1,7 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
 import { AdminOptionsTable } from '@/components/entities/Admin';
-import { PaginateBase } from '@/components/shared/PaginateBase';
+import { Paginate } from '@/components/shared/Paginate';
 
 export default function OptionsPage() {
 	const nodes = [
@@ -34,7 +34,7 @@ export default function OptionsPage() {
 	return (
 		<AdminTableLayout>
 			<AdminOptionsTable nodes={nodes} />
-			<PaginateBase pageCount={5} />
+			<Paginate total={5} />
 		</AdminTableLayout>
 	);
 }

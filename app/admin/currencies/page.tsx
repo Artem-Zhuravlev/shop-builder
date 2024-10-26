@@ -4,7 +4,7 @@ import {
 	AdminCurrencyTable,
 	type AdminCurrencyTableItem,
 } from '@/components/entities/Admin';
-import { PaginateBase } from '@/components/shared/PaginateBase';
+import { Paginate } from '@/components/shared/Paginate';
 
 export default function CurrenciesPage() {
 	const nodes: AdminCurrencyTableItem[] = [
@@ -49,7 +49,7 @@ export default function CurrenciesPage() {
 	return (
 		<AdminTableLayout>
 			<AdminCurrencyTable nodes={nodes} />
-			<PaginateBase pageCount={5} />
+			<Paginate total={5} />
 		</AdminTableLayout>
 	);
 }

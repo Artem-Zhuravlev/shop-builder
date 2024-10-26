@@ -1,7 +1,7 @@
 import React from 'react';
 import { AdminTableLayout } from '@/components/widgets/AdminTableLayout';
 import { AdminOrderStatusTable } from '@/components/entities/Admin';
-import { PaginateBase } from '@/components/shared/PaginateBase';
+import { Paginate } from '@/components/shared/Paginate';
 
 export default function OrderStatusesPage() {
 	const nodes = [
@@ -40,7 +40,7 @@ export default function OrderStatusesPage() {
 	return (
 		<AdminTableLayout>
 			<AdminOrderStatusTable nodes={nodes} />
-			<PaginateBase pageCount={5} />
+			<Paginate total={5} />
 		</AdminTableLayout>
 	);
 }
