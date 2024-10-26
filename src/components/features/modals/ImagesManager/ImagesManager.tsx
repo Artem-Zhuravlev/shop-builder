@@ -14,9 +14,16 @@ import {
 interface ImagesManagerProps {
 	title?: string;
 	onSubmit: (value: ImageMetaProps | null) => void;
+	open: boolean;
+	onClose: (value: boolean) => void;
 }
 
-export const ImagesManager: FC<ImagesManagerProps> = ({ title, onSubmit }) => {
+export const ImagesManager: FC<ImagesManagerProps> = ({
+	title,
+	onSubmit,
+	open,
+	onClose,
+}) => {
 	const [activeTab, setActiveTab] = useState(0);
 	const [media, setMedia] = useState<ImageMetaProps | null>(null);
 	const t = useTranslations();
@@ -48,16 +55,13 @@ export const ImagesManager: FC<ImagesManagerProps> = ({ title, onSubmit }) => {
 
 	return (
 		<ModalWindow
-			modalType='imagesManager'
 			size='xxl'
 			title={title ?? t('admin.image_manager')}
-			onSubmit={handleSubmit}
+			onSave={handleSubmit}
+			open={open}
+			onClose={onClose}
 		>
-			<TabsBase
-				items={tabs}
-				activeTab={activeTab}
-				className={cls.ImagesManager}
-			/>
+			<TabsBase items={tabs} activeTab={activeTab} />
 		</ModalWindow>
 	);
 };
