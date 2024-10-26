@@ -1,92 +1,74 @@
-'use client';
-import { useModal } from '@/lib/modalProvider/ModalContext';
-import type { modalTypes } from '@/lib/modalProvider/modalTypes';
-import { ButtonBase } from '@/components/shared/ButtonBase';
-import classNames from 'classnames';
-import { useTranslations } from 'next-intl';
-import React, { type FC, type ReactNode, useEffect } from 'react';
+import React, { type FC, type ReactNode } from 'react';
+import 'react-responsive-modal/styles.css';
 import cls from './ModalWindow.module.scss';
+import classNames from 'classnames';
+import { ButtonBase } from '@/components/shared/ButtonBase';
+import { useTranslations } from 'next-intl';
+import { Modal } from 'react-responsive-modal';
 
 interface ModalWindowProps {
 	children: ReactNode;
 	title?: string;
-	modalType: keyof typeof modalTypes;
+	open: boolean;
 	size?: 'xxl';
 	textSubmit?: string;
 	textCancel?: string;
-	onSubmit?: () => void;
+	onSave?: () => void;
+	onClose: (value: boolean) => void;
+	onCancel?: () => void;
 }
 
-export const ModalWindow: FC<ModalWindowProps> = (props) => {
-	const { children, modalType, title, size, textSubmit, textCancel, onSubmit } =
-		props;
-	const { modalTypes, closeModal } = useModal();
-	const isVisible = modalTypes[modalType];
-
+export const ModalWindow: FC<ModalWindowProps> = ({
+	children,
+	title,
+	size,
+	textSubmit,
+	textCancel,
+	onSave,
+	open,
+	onClose,
+	onCancel,
+}) => {
 	const t = useTranslations('base');
 
-	const handleClose = () => {
-		closeModal(modalType);
+	const handleClose = () => onClose(false);
+
+	const handleCancel = () => {
+		onClose(false);
+		if (onCancel) onCancel();
 	};
 
-	const handleSubmit = () => {
-		if (onSubmit) {
-			onSubmit();
-		}
-		closeModal(modalType);
+	const handleSave = () => {
+		onClose(false);
+		if (onSave) onSave();
 	};
 
-	useEffect(() => {
-		const handleKeyPress = (event: KeyboardEvent) => {
-			if (event.key === 'Escape') {
-				handleClose();
-			}
-		};
-
-		if (isVisible) {
-			window.addEventListener('keydown', handleKeyPress);
-		} else {
-			window.removeEventListener('keydown', handleKeyPress);
-		}
-
-		return () => {
-			window.removeEventListener('keydown', handleKeyPress);
-		};
-	}, [isVisible]);
+	const renderFooter = () => (
+		<div className={cls.ModalFooter}>
+			<ButtonBase onClick={handleSave}>{textSubmit ?? t('save')}</ButtonBase>
+			<ButtonBase variant='outline' onClick={handleCancel}>
+				{textCancel ?? t('cancel')}
+			</ButtonBase>
+		</div>
+	);
 
 	return (
-		<>
-			{isVisible && (
-				<div className={cls.ModalBackdrop} onClick={handleClose}>
-					<div
-						className={classNames(cls.ModalWindow, cls[`${size}`])}
-						onClick={(event) => event.stopPropagation()}
-					>
-						{title && <h3 className={cls.ModalTitle}>{title}</h3>}
-						<button
-							data-testid='close'
-							type='button'
-							className={cls.ModalBtn}
-							onClick={handleClose}
-							aria-label={t('close')}
-						>
-							<span className='icon-cross' />
-						</button>
-						{children && <div className={cls.ModalContent}>{children}</div>}
-						{onSubmit && (
-							<div className={cls.ModalFooter}>
-								<ButtonBase variant='outline' onClick={handleClose}>
-									{textCancel ?? t('cancel')}
-								</ButtonBase>
-								<ButtonBase onClick={handleSubmit}>
-									{textSubmit ?? t('save')}
-								</ButtonBase>
-							</div>
-						)}
-					</div>
-				</div>
-			)}
-		</>
+		<Modal
+			open={open}
+			onClose={handleClose}
+			center
+			blockScroll={false}
+			closeIcon={<span className='icon-cross' />}
+			classNames={{
+				overlay: cls.ModalBackdrop,
+				modal: classNames(cls.ModalWindow, cls[`${size}`]),
+				closeButton: cls.ModalBtn,
+			}}
+		>
+			{title && <h3 className={cls.ModalTitle}>{title}</h3>}
+			{children && <div className={cls.ModalContent}>{children}</div>}
+			{onSave && renderFooter()}
+		</Modal>
 	);
 };
 
