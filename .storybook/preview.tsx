@@ -43,14 +43,14 @@ const preview: Preview = {
 			};
 
 			return (
-				<Providers>
-					<NextIntlClientProvider locale={locale} messages={messages[locale]}>
+				<NextIntlClientProvider locale={locale} messages={messages[locale]}>
+					<Providers>
 						<>
 							<LanguageSwitcher onChange={handleLocaleChange} />
 							<Story />
 						</>
-					</NextIntlClientProvider>
-				</Providers>
+					</Providers>
+				</NextIntlClientProvider>
 			);
 		},
 	],
