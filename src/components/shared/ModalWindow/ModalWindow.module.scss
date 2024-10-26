@@ -1,19 +1,11 @@
 @import '@/styles/abstracts/mixins.scss';
+
 .ModalBackdrop {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
   background-color: rgb(var(--gray-100), 0.5);
-  min-width: 100dvw;
-  min-height: 100dvh;
 }
 
 .ModalWindow {
-  display: flex;
+  display: inline-flex;
   position: relative;
   flex-direction: column;
   border-radius: var(--interface-size-md);
@@ -38,8 +30,9 @@
   background-color: transparent;
   width: var(--size-middle);
   height: var(--size-middle);
-  &:hover,
-  &:focus {
+  display: block;
+
+  &:hover {
     color: var(--primary-hover);
   }
 }
@@ -49,7 +42,6 @@
 }
 
 .xxl {
-  // max-width: calc(100% - calc(var(--size-extra-small) * 2));
   max-width: 95%;
   min-height: 80dvh;
 }
@@ -62,6 +54,7 @@
 
 .ModalFooter {
   display: flex;
+  justify-content: flex-end;
   gap: var(--space-medium);
   margin-right: calc(var(--size-small) * -1);
   margin-left: calc(var(--size-small) * -1);
@@ -70,4 +63,5 @@
   padding-right: var(--size-small);
   padding-bottom: 10px;
   padding-left: var(--size-small);
+  margin-top: auto;
 }
