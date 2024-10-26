@@ -39,10 +39,11 @@ interface CountriesInterface extends TableNode {}
 
 interface AdminCountriesTableProps {
 	nodes: CountriesInterface[];
+	onDelete: (ids: number[]) => void;
 }
 
 export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
-	const { nodes } = props;
+	const { nodes, onDelete } = props;
 	const data = { nodes };
 	const t = useTranslations('admin');
 	const [selectedRows, setSelectedRows] = useState([]);
@@ -53,6 +54,14 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 			'--data-table-library_grid-template-columns:  50px 1fr 1fr 1fr 150px;',
 		...defaultTableStyles,
 	});
+
+	const onSelectChange = (action: Action, state: State) => {
+		setSelectedRows(state.ids);
+	};
+
+	const onSortChange = (action: Action, state: State) => {
+		console.log(action, state);
+	};
 
 	const sort = useSort(
 		data,
@@ -77,20 +86,12 @@ export const AdminCountriesTable: FC<AdminCountriesTableProps> = (props) => {
 		onChange: onSelectChange,
 	});
 
-	function onSortChange(action: Action, state: State) {
-		console.log(action, state);
-	}
-
-	function onSelectChange(action: Action, state: State) {
-		setSelectedRows(state.ids);
-	}
-
 	return (
 		<>
 			<AdminTableNavbar
 				title={t('countries')}
 				route='/admin/countries'
-				onDelete={() => {}}
+				onDelete={() => onDelete(selectedRows)}
 				isDeleteBtn={selectedRows.length > 0}
 			/>
 			<Table
