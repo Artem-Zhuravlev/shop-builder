@@ -3,6 +3,7 @@ import { DataSource, type DataSourceOptions } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { Settings } from '../entities/Settings';
 import { Countries } from '../entities/Countries';
+import { Languages } from '../entities/Languages';
 import 'dotenv/config';
 
 const config = {
@@ -15,7 +16,7 @@ const config = {
 	synchronize: false,
 	namingStrategy: new SnakeNamingStrategy(),
 	logging: false,
-	entities: [Settings, Countries],
+	entities: [Settings, Countries, Languages],
 };
 
 export const AppDataSource = new DataSource({
