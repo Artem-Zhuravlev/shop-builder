@@ -22,14 +22,28 @@ export const AdminCountriesLayout: FC = () => {
 	const [totalItems, setTotalItems] = useState<number>(0);
 	const [currentPage, setCurrentPage] = useLocalStorage('country_page', 1);
 	const itemsPerPage = default_items_per_page_admin ?? DEFAULT_ITEMS_PER_PAGE;
+	const [filterParams, setFilterParams] = useState<CountriesInterface | null>(
+		null,
+	);
 
 	useEffect(() => {
-		fetchCountries(currentPage);
-	}, [currentPage]);
+		fetchCountries(currentPage, filterParams);
+	}, [currentPage, filterParams]);
 
-	const fetchCountries = async (offset: number) => {
+	const fetchCountries = async (
+		offset: number,
+		filters: CountriesInterface | null,
+	) => {
+		const { country, iso_code_2, iso_code_3 } = filters || {};
+
 		try {
-			const { data, total } = await getApiCountries(offset, itemsPerPage);
+			const { data, total } = await getApiCountries(
+				offset,
+				itemsPerPage,
+				country ?? undefined,
+				iso_code_2 ?? undefined,
+				iso_code_3 ?? undefined,
+			);
 			setNodes(data);
 			setTotalItems(total);
 		} catch (e) {
@@ -50,23 +64,32 @@ export const AdminCountriesLayout: FC = () => {
 		}
 	};
 
+	const handleFilteredCountries = async (value: CountriesInterface) => {
+		setFilterParams({ ...value });
+		setCurrentPage(1);
+	};
+
 	const handlePageChange = (page: number) => {
 		setCurrentPage(page);
 	};
 
 	return (
-		<AdminTableLayout filter={<AdminCountriesFilter />}>
+		<AdminTableLayout
+			filter={<AdminCountriesFilter onFilter={handleFilteredCountries} />}
+		>
 			{nodes ? (
-				<AdminCountriesTable nodes={nodes} onDelete={handleDeleteCountries} />
+				<>
+					<AdminCountriesTable nodes={nodes} onDelete={handleDeleteCountries} />
+					<Paginate
+						pageSize={itemsPerPage}
+						current={currentPage}
+						total={totalItems}
+						onChange={handlePageChange}
+					/>
+				</>
 			) : (
 				<SkeletonTable rows={itemsPerPage} cellsGrid={'1fr 1fr 1fr'} />
 			)}
-			<Paginate
-				pageSize={itemsPerPage}
-				current={currentPage}
-				total={totalItems}
-				onChange={handlePageChange}
-			/>
 		</AdminTableLayout>
 	);
 };
