@@ -1,5 +1,17 @@
 import type { CountriesInterface } from '@interfaces/index';
 
+/**
+ * Updates a country resource on the server.
+ *
+ * Sends a PUT request to the `/api/countries/{id}` endpoint to update
+ * the country data with the provided `data` object.
+ *
+ * @param {CountriesInterface} data - The country data to be updated.
+ * @param {number} id - The ID of the country resource to update.
+ * @returns {Promise<CountriesInterface>} - A promise that resolves to the updated country data.
+ * @throws {Error} Throws an error if the update request fails or the response is not OK.
+ */
+
 export const updateApiCountry = async (
 	data: CountriesInterface,
 	id: number,
