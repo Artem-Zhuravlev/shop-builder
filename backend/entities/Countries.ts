@@ -26,7 +26,7 @@ export class Countries {
 		length: 3,
 		nullable: false,
 	})
-	iso_code_3!: true;
+	iso_code_3!: string;
 
 	@Column({
 		name: 'postcode_required',
