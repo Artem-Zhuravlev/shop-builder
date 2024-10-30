@@ -78,17 +78,17 @@ export const AdminCountriesLayout: FC = () => {
 			filter={<AdminCountriesFilter onFilter={handleFilteredCountries} />}
 		>
 			{nodes ? (
-				<>
-					<AdminCountriesTable nodes={nodes} onDelete={handleDeleteCountries} />
-					<Paginate
-						pageSize={itemsPerPage}
-						current={currentPage}
-						total={totalItems}
-						onChange={handlePageChange}
-					/>
-				</>
+				<AdminCountriesTable nodes={nodes} onDelete={handleDeleteCountries} />
 			) : (
 				<SkeletonTable rows={itemsPerPage} cellsGrid={'1fr 1fr 1fr'} />
+			)}
+			{totalItems > itemsPerPage && (
+				<Paginate
+					pageSize={itemsPerPage}
+					current={currentPage}
+					total={totalItems}
+					onChange={handlePageChange}
+				/>
 			)}
 		</AdminTableLayout>
 	);
