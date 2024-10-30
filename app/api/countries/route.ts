@@ -28,7 +28,18 @@ export async function GET(request: NextRequest) {
 	try {
 		const { offset, limit } = getPaginationParams(request);
 
-		const countries = await getCountries(offset, limit);
+		const { searchParams } = new URL(request.url);
+		const countryName = searchParams.get('country') || undefined;
+		const isoCode2 = searchParams.get('iso_code_2') || undefined;
+		const isoCode3 = searchParams.get('iso_code_3') || undefined;
+
+		const countries = await getCountries(
+			offset,
+			limit,
+			countryName,
+			isoCode2,
+			isoCode3,
+		);
 
 		return NextResponse.json(countries, { status: 200 });
 	} catch (error) {
