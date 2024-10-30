@@ -28,9 +28,9 @@ export class Languages {
 
 	@Column({
 		name: 'sort_order',
-		type: 'boolean',
-		nullable: true,
-		default: false,
+		type: 'int',
+		nullable: false,
+		default: 1,
 	})
 	sort_order?: boolean | null;
 
