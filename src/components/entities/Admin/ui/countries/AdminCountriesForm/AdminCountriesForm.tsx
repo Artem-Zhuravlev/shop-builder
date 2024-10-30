@@ -4,6 +4,7 @@ import type { CountriesInterface } from '@interfaces/index';
 import {
 	createApiCountry,
 	updateApiCountry,
+	getApiCountry,
 } from '@/components/shared/api/admin';
 import { InputCheckbox, InputText } from '@/components/shared/inputs';
 import { FormLayout } from '@/components/widgets/FormLayout';
@@ -13,7 +14,6 @@ import React, { useEffect, useState, type FC } from 'react';
 import { Form } from 'react-final-form';
 import { useParams, useRouter } from 'next/navigation';
 import { fetchPreselectedForm, handleFormAction } from '@/utils/form';
-import { getApiCountry } from '@/components/shared/api/admin/countries/getApiCountry';
 
 export const AdminCountriesForm: FC = () => {
 	const t = useTranslations();
