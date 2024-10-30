@@ -3,17 +3,23 @@ import { DEFAULT_ITEMS_PER_PAGE } from '@/utils/settings/paginate/paginateSettin
 import type { PaginateInterface, CountriesInterface } from '@interfaces/index';
 
 /**
- * Fetches the application countries from the API using query parameters for pagination.
+ * Fetches the application countries from the API using query parameters for pagination and filtering.
  *
- * @param {number} [offset=1] - The pagination offset.
- * @param {number} [limit=15] - The number of countries to fetch.
- * @returns {Promise<CountriesInterface[]>} - A promise that resolves with the countries data.
+ * @param {number} [offset=1] - The pagination offset, defaulting to 1.
+ * @param {number} [limit=15] - The number of countries to fetch per page, defaulting to 15.
+ * @param {string} [countryName] - Optional filter for the country name (case-insensitive).
+ * @param {string} [isoCode2] - Optional filter for the 2-character ISO code of the country.
+ * @param {string} [isoCode3] - Optional filter for the 3-character ISO code of the country.
+ * @returns {Promise<PaginateInterface<CountriesInterface>>} - A promise that resolves with paginated countries data.
  * @throws {Error} - Throws an error if the fetch operation fails or the response is not ok.
  */
 
 export const getApiCountries = async (
 	offset?: number,
 	limit?: number,
+	countryName?: string,
+	isoCode2?: string,
+	isoCode3?: string,
 ): Promise<PaginateInterface<CountriesInterface>> => {
 	try {
 		const effectiveOffset = offset ?? 1;
@@ -23,6 +29,10 @@ export const getApiCountries = async (
 			offset: effectiveOffset.toString(),
 			limit: effectiveLimit.toString(),
 		});
+
+		if (countryName) queryParams.append('country', countryName);
+		if (isoCode2) queryParams.append('iso_code_2', isoCode2);
+		if (isoCode3) queryParams.append('iso_code_3', isoCode3);
 
 		const response = await fetch(
 			`${apiBaseUrl}/api/countries?${queryParams.toString()}`,
